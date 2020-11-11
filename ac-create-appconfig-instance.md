@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Create an {{site.data.keyword.appconfig_notm}} service instance
 {: #ac-create-an-instance}
 
-{{site.data.keyword.appconfig_notm}} provides capabilities to embark on a truly agile development methodology by separating feature rollouts from regular release cycles. Reduce risk by controlling the release of features and rolling back as required. Create user segments and target features to selected user segments based on different criteria.
+{{site.data.keyword.appconfig_notm}} provides capabilities to embark on a truly agile development methodology by separating feature rollouts from regular release cycles. {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting.
 {: shortdesc}
 
 You need an {{site.data.keyword.cloud}} account to create an instance of the {{site.data.keyword.appconfig_short}} service.

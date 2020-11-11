@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, getting help and support
 
@@ -27,13 +27,13 @@ subcollection: app-configuration
 
 When you have problems while you are working with {{site.data.keyword.appconfig_short}}, consider these options for getting help.
 
-By default, account users don't have access to create, update, search, or view cases. The account owner must provide users access by assigning an {{site.data.keyword.iamlong}} (IAM) access policy. For more information, see [Assigning user access for working with support cases](/docs/get-support?topic=get-support-access#access).
+By default, account users don't have access to create, update, search, or view cases. The account owner must provide users access by assigning an {{site.data.keyword.iamlong}} (IAM) access policy. For more information, see [Assigning user access for working with support cases](/docs/get-support?topic=get-support-access#access){: external}.
 {: tip}
 
 ## Creating a cloud support case
 {: #ac-cloud-support-case}
 
-For information on how to create a cloud support case, refer [here](https://cloud.ibm.com/docs/get-support?topic=get-support-using-avatar).
+For information on how to create a cloud support case, refer [here](/docs/get-support?topic=get-support-using-avatar){: external}.
 
 ### Creating a support case for UI issue
 {: #ac-ui-support-case}
@@ -41,7 +41,7 @@ For information on how to create a cloud support case, refer [here](https://clou
 Collecting the following information can help a faster support case resolution for UI issues, 
 
 - Provide error codes and reference IDs.
-- Save the full URL of the console when the problem occurred, for example: https://cloud.ibm.com/apprapp/provision/ar
+- Save the full URL of the console when the problem occurred, for example: https://cloud.ibm.com/appconfig/provision/ac
 - Include the steps to reproduce the issue, along with your inputs and expected outputs.
 - Note the approximate time that the error occurred.
 - Provide the code version and error details:

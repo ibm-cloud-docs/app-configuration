@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Getting started with {{site.data.keyword.appconfig_short}}
 {: #getting-started}
 
-{{site.data.keyword.appconfig_full}} provides capabilities to enable app developers quickly build mobile and web apps. With feature management of {{site.data.keyword.appconfig_short}}, you can embark on a truly agile development methodology by separating feature roll outs from release cycles. Reduce risk by controlling the release of features and rolling back as required. Create user groups (segments) and target features to selected user groups based on different criteria.
+{{site.data.keyword.appconfig_full}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting.
 {: shortdesc}
 
 {{site.data.keyword.appconfig_short}} currently offers only Standard pricing plan.

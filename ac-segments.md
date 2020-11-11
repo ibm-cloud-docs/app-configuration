@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, segments
 
@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Segments
 {: #ac-segments}
 
-Use segments to target feature flags to your intended audience for A/B testing, beta launches, experiments etc.
+Use segments to define a group of users or resources based on rules. Feature flags can target segments to deliver variants of a feature based on the needs like beta launches and experiments.
 {: shortdesc}
 
 By default, the Segments pane displays the list of segments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with Name of the segment, tags, and date of creation.

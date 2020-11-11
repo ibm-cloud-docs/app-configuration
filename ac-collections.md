@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, create a collection, collections
 
@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Collections
 {: #ac-collections}
 
-Collections are a way to group feature flags. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs.
+Collections are a way to group feature flags. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature will need to be in a collection, and it is often convenient to create your collection first.
 {:shortdesc}
 
 By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Tags** associated, and the date of creation of the collection.

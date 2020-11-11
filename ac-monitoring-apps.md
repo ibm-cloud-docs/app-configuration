@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, managing service access, monitor apps, crash analytics
 
@@ -46,4 +46,4 @@ Monitor your app status by using the following steps:
    - Version
    - Runtime (operating system and version)
    - Period (daily, weekly, monthly)
-   - Crashes (Crash types, affected instances, active instances, affected sessions)
+   - Crashes (crash types, affected instances, active instances, affected sessions)
