@@ -37,10 +37,5 @@ IBM Cloud App Configuration
 
     {: .navgroup id="help"}
     faq.md
- 
-    {: .topicgroup}
-    Troubleshooting
-        ac-troubleshooting.md
-
     ac-getting-support.md
 	{: .navgroup-end}
