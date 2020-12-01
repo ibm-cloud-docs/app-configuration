@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-12-01"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
 
@@ -107,27 +107,26 @@ subcollection: app-configuration
 
    ```javascript
    var attributes = {
-       "email":"tester@us.ibm.com",
-       "creditCardExists":true,
-       "name": "Tester",
+       "city":"Bengaluru",
        "country": "India"
      }
-     featureClient.setClientAttributes(attributes)
+     featureClient.setClientAttributes(attributes)   
    ```
    {: codeblock}
 
    The feature evaluation can also be done by using the `request` object in the APIs. Pass the values in `query` or `headers` or `body` to evaluate the feature rules. All these values are used during the `getCurrentValue` of the feature object.
 
+   For example, you can pass the attributes as part of the headers in the request to your API as below:
+
+   ```
+   curl --request GET 'https://customerapiserver.com/api/v2/getAppData' --header 'city: Bengaluru' --header 'country: India'
+   ```
+   {: codeblock}
+
 ### Example
 {: #ac-integrate-ff-example}
 
-#### Request queries
-{: #ac-integrate-ff-ex-request-queries}
-
-```
-https://custom.server.com/api/v2/getFeature?email=tester@us.ibm.com&country=India
-```
-{: codeblock}
+Refer to the below examples for using the feature related APIs.
 
 #### Get all features
 {: #ac-integrate-ff-get-all-features}
