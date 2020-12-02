@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-12-01"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
 
@@ -107,27 +107,26 @@ subcollection: app-configuration
 
    ```javascript
    var attributes = {
-       "email":"tester@us.ibm.com",
-       "creditCardExists":true,
-       "name": "Tester",
+       "city":"Bengaluru",
        "country": "India"
      }
-     featureClient.setClientAttributes(attributes)
+     featureClient.setClientAttributes(attributes)   
    ```
    {: codeblock}
 
    The feature evaluation can also be done by using the `request` object in the APIs. Pass the values in `query` or `headers` or `body` to evaluate the feature rules. All these values are used during the `getCurrentValue` of the feature object.
 
-### Example
+   For example, you can pass the attributes as part of the headers in the request to your API as below:
+
+   ```
+   curl --request GET 'https://customerapiserver.com/api/v2/getAppData' --header 'city: Bengaluru' --header 'country: India'
+   ```
+   {: codeblock}
+
+### Examples
 {: #ac-integrate-ff-example}
 
-#### Request queries
-{: #ac-integrate-ff-ex-request-queries}
-
-```
-https://custom.server.com/api/v2/getFeature?email=tester@us.ibm.com&country=India
-```
-{: codeblock}
+Refer to the below examples for using the feature related APIs.
 
 #### Get all features
 {: #ac-integrate-ff-get-all-features}
@@ -262,13 +261,13 @@ To listen to the data changes add the following code in your application
 
    where, `appName` is the name of your application.
 
-## Reporting Node app crashes
+### Reporting Node app crashes
 {: #ac-integrate-crash-report-node-crashes}
 
-### Crash handling by using Node process events
+#### Crash handling by using Node process events
 {: #ac-integrate-crash-handling-node-process-events}
 
-#### Unhandled errors
+##### Unhandled errors
 {: #ac-integrate-crash-unhandled-errors}
 
 All kinds of errors such as [Standard JavaScript errors](https://nodejs.org/api/errors.html#errors_errors){: external}, [System errors](https://nodejs.org/api/errors.html#errors_common_system_errors){: external}, and [User-specified errors](https://nodejs.org/api/errors.html#errors_class_error){: external} are triggered by application code and did not have an exception handling mechanism, bubbles all the way up to the event loop.
@@ -286,7 +285,7 @@ In the main file (app.js or index.js), add the following
 ```
 {: codeblock}
 
-#### Unhandled promises
+##### Unhandled promises
 {: #ac-integrate-crash-unhandled-promises}
 
 Warnings for unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a nonzero exit code. [See here](https://nodejs.org/api/all.html#deprecations_dep0018_unhandled_promise_rejections){: external}.
@@ -305,7 +304,7 @@ In the main file (app.js or index.js), add the following
 ```
 {: codeblock}
 
-### Node apps with Express framework
+#### Node apps with Express framework
 {: #ac-integrate-crash-node-apps-express-framework}
 
 Express comes with a built-in error handler that takes care of any errors that might be encountered in the app. This default error-handling middleware function is added at the end of the middleware function stack. [See here](https://expressjs.com/en/guide/error-handling.html){: external}.
