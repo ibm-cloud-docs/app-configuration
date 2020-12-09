@@ -20,7 +20,11 @@ IBM Cloud App Configuration
 
     {: .navgroup id="howto"}
     [Target feature flags to segments](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
-    ac-integrate-sdk.md
+
+    {: .topicgroup}
+    Integrate App Configuration service SDKs
+        [Node.JS](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+        [Android](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
 
     {: .topicgroup}
     Tutorials
