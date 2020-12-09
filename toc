@@ -14,17 +14,17 @@ IBM Cloud App Configuration
         ac-create-appconfig-instance.md
         ac-collections.md
         ac-feature-flags.md
-        [Integrating SDKs](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+        [Integrating SDKs](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
         ac-segments.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    [Target feature flags to segments](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
+    [Target feature flags to segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
-    Integrate App Configuration service SDKs
-        [Node.JS](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
-        [Android](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
+    Integrating service SDKs
+        [Node.JS](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+        [Android](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
 
     {: .topicgroup}
     Tutorials
