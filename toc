@@ -14,7 +14,7 @@ IBM Cloud App Configuration
         ac-create-appconfig-instance.md
         ac-collections.md
         ac-feature-flags.md
-        [Integrating SDKs](/app-configuration/app-configuration-ac-integrate-sdk#ac-integrate-sdks)
+        [Integrating SDKs](https://test.cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
         ac-segments.md
     {: .navgroup-end}
 
@@ -23,8 +23,8 @@ IBM Cloud App Configuration
 
     {: .topicgroup}
     Integrating service SDKs
-        [Node.js SDK](/app-configuration/app-configuration-ac-integrate-sdk#ac-integrate-sdks)
-        [Android SDK](/app-configuration/app-configuration-ac-integrate-sdk-android#ac-integrate-sdks-android)
+        [Node.js SDK](https://test.cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+        [Android SDK](https://test.cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
 
     {: .topicgroup}
     Tutorials
