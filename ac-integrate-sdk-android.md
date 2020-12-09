@@ -35,7 +35,7 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# Integrate {{site.data.keyword.appconfig_short}} service SDKs
+# App Configuration service SDKs for Android
 {: #ac-integrate-sdks-android}
 
 {{site.data.keyword.appconfig_short}} service provides feature flags SDK, and crash insights SDK to integrate with your Android application. 

@@ -35,7 +35,7 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# Integrate {{site.data.keyword.appconfig_short}} service SDKs
+# App Configuration service SDKs for Node.js
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides feature flags SDK, and crash insights SDK to integrate with your Node.js microservice or application. 
