@@ -3,7 +3,7 @@
 {: topicgroup: .topicgroup}
 
 {: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/apprapp" path="app-configuration"}
-IBM Cloud App Configuration
+App Configuration
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -36,6 +36,7 @@ IBM Cloud App Configuration
     {: .navgroup id="reference"}
     ac-iam.md
     ac-service-credentials.md
+    ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
 	{: .navgroup-end}
 

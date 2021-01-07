@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-09"
+  years: 2021
+lastupdated: "2021-01-07"
 
-keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, maven
+keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
 
 subcollection: app-configuration
 
@@ -34,21 +34,194 @@ subcollection: app-configuration
 {:xml: .ph data-hd-programlang='xml'}
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
+{:kotlin: .ph data-hd-programlang='Kotlin'}
 
 # App Configuration service SDKs for Android
 {: #ac-integrate-sdks-android}
 
-{{site.data.keyword.appconfig_short}} service provides feature flags SDK, and crash insights SDK to integrate with your Android application. 
+{{site.data.keyword.appconfig_short}} service provides feature flags SDK to integrate with your Android application written in Kotlin or Java programming language. 
 {:shortdesc}
+
+## Prerequisites
+{: #ac-integrate-ff-sdk-android-prereqs}
+
+Following are the prerequisites for using the {{site.data.keyword.appconfig_short}} service SDK for Android:
+
+- Android API level 17 or later
+- [Android Studio](https://developer.android.com/studio/index.html){:external}
+- [Gradle](https://gradle.org/install){:external}
 
 ## Integrating feature flag SDK
 {: #ac-integrate-ff-sdk-android}
 
 {{site.data.keyword.appconfig_short}} service provides feature flag SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the feature flag SDK. 
 
-<!-- placeholder for the steps -->
-1. Install the sdks using 
-1. In your Android application gradle file, include the sdk module with: 
+1. Install the SDK using either one of the following option:
+   - [Download]() and import the package to your Android studio project.
+   - Get the package through Gradle by adding {{site.data.keyword.appconfig_short}} Android SDK dependency to Module level `build.gradle` file.
+
+      ```javascript
+      dependencies {
+         implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+      }
+      ```
+      {:codeblock}
+
+1. Configure the `AndroidManifest.xml` file for Internet permission.
+
+   ```xml
+   <uses-permission android:name="android.permission.INTERNET"/>
+   ```
+   {:codeblock}
+
+1. *Optional*: Integrate Kotlin to your Java project with these steps:
+   - Add the Kotlin gradle plugin to the Module level `build.gradle`
+
+      ```javascript
+      dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+      }
+      ```
+      {:codeblock}
+
+   - Add `kotlin-android` plugin to the App level `build.gradle`
+
+      ```javascript
+      plugins {
+         id 'com.android.application'
+         id 'kotlin-android'
+      }
+      ```
+      {:codeblock}
+
+1. Initialize the SDK based on the programming language used in your project.
+
+   ```kotlin
+   val appConfiguration = AppConfiguration.getInstance()
+
+   appConfiguration.init( application,
+                        AppConfiguration.REGION_US_SOUTH,
+                        "guid",
+                        "apikey")
+   ```
+   {:codeblock}
+   {:kotlin}
+
+   ```java
+   AppConfiguration appConfiguration = AppConfiguration.getInstance();
+   appConfiguration.init(getApplication(), AppConfiguration.REGION_US_SOUTH, "guid", "apikey");
+   ```
+   {:codeblock}
+   {:java}
+
+   where,
+   - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
+   - `guid` - Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
+   - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
+
+1. Set the Collection ID for feature fetching operation.
+
+   ```kotlin
+   appConfiguration.setCollectionId("collectionId")
+   ```
+   {:codeblock}
+   {:kotlin}
+
+   ```java
+   appConfiguration.setCollectionId("collectionId");
+   ```
+   {:codeblock}
+   {:java}
+
+   where, `collectionId` is the Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+
+1. Set client attributes for feature evaluation.
+
+   ```kotlin
+   JSONObject attributes = new JSONObject();
+   try {
+
+       attributes.put("cityRadius", "40");
+       attributes.put("radius", "50");
+       attributes.put("email", "tester@live.mail");
+
+   } catch (JSONException e) {
+       e.printStackTrace();
+   }
+
+   appConfiguration.setClientAttributes(attributes)
+   ```
+   {:codeblock}
+   {:kotlin}
+
+   ```java
+   JSONObject attributes = new JSONObject();
+
+   try {
+       attributes.put("cityRadius", "40");
+       attributes.put("radius", "50");
+       attributes.put("email", "tester@live.mail");
+   } catch (JSONException e) {
+       e.printStackTrace();
+   }
+
+   appConfiguration.setClientAttributes(attributes);
+   ```
+   {:codeblock}
+   {:java}
+
+1. Listen to the feature changes
+
+   ```kotlin
+   appConfiguration.registerFeaturesUpdateListener(object : FeaturesUpdateListener {
+
+       override fun onFeaturesUpdate() {
+           // ADD YOUR CODE
+       }
+   })
+   ```
+   {:codeblock}
+   {:kotlin}
+
+   ```java
+   appConfiguration.registerFeaturesUpdateListener(new FeaturesUpdateListener() {
+       @Override
+       public void onFeaturesUpdate() {
+          // ADD YOUR CODE
+       }
+   });
+   ```
+   {:codeblock}
+   {:java}
+
+1. Enable or disable logger. By default, it is set to disable.
+
+   ```kotlin
+   val appConfiguration = AppConfiguration.getInstance()
+
+   // Enable Logger 
+
+   appConfiguration.enableDebug(true)
+
+   // Disable Logger
+
+   appConfiguration.enableDebug(false)
+   ```
+   {:codeblock}
+   {:kotlin}
+
+   ```java
+   AppConfiguration appConfiguration = AppConfiguration.getInstance();
+
+   // Enable Logger 
+   appConfiguration.enableDebug(true);
+
+   // Disable Logger
+   appConfiguration.enableDebug(false);
+   ```
+   {:codeblock}
+   {:java}
 
 ### Examples
 {: #ac-integrate-ff-example-android}
@@ -58,37 +231,77 @@ Refer to the below examples for using the feature related APIs.
 #### Get all features
 {: #ac-integrate-ff-get-all-features-android}
 
+```kotlin
+val features: HashMap<String, Feature>? = appConfiguration.getFeatures();
+```
+{:codeblock}
+{:kotlin}
+
+```java
+HashMap<String,Feature> features =  appConfiguration.getFeatures();
+```
+{:codeblock}
+{:java}
+
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature-android}
+
+```kotlin
+val feature: Feature? = appConfiguration.getFeature("featureId")
+```
+{:codeblock}
+{:kotlin}
+
+```java
+Feature feature = appConfiguration.getFeature("featureId");
+```
+{:codeblock}
+{:java}
 
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation-android}
 
+```kotlin
+val appConfiguration = AppConfiguration.getInstance()
+val feature: Feature? = appConfiguration.getFeature("featureId")
 
-#### Listen to the feature changes
-{: #ac-integrate-ff-listen-feature-changes-android}
+if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) {
 
-To listen to the data changes add the following code in your application
+    val value = feature.getCurrentValue<Int>()
 
-## Integrating Crash SDK
-{: #ac-integrate-crash-sdk-android}
+} else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) {
 
-{{site.data.keyword.appconfig_short}} service provides crash insights SDK to integrate with your Android application. You can monitor and analyze the crashes and errors encountered in your application in the {{site.data.keyword.appconfig_short}} service dashboard by integrating the crash SDK.
+    val value = feature.getCurrentValue<Boolean>()
 
-### Reporting Android app crashes
-{: #ac-integrate-crash-report-android-crashes}
+} else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) {
 
-#### Crash handling by using Android process events
-{: #ac-integrate-crash-handling-android-process-events}
+    val value = feature.getCurrentValue<String>()
 
-##### Unhandled errors
-{: #ac-integrate-crash-unhandled-errors-android}
+}
+```
+{:codeblock}
+{:kotlin}
 
-##### Unhandled promises
-{: #ac-integrate-crash-unhandled-promises-android}
-
-
-#### Android apps with Express framework
-{: #ac-integrate-crash-android-apps-express-framework}
-
+```java
+AppConfiguration appConfiguration = AppConfiguration.getInstance();
+Feature feature = appConfiguration.getFeature("featureId")
+if(feature != null) 
+    switch (feature.getFeatureDataType())
+        case STRING:
+            String value = (String) feature.getCurrentValue();
+            System.out.println(value);
+            break;
+        case BOOLEAN:
+            Boolean boolVal = (Boolean) feature.getCurrentValue();
+            System.out.println(boolVal);
+            break;
+        case NUMERIC:
+            Integer intVal = (Integer) feature.getCurrentValue();
+            System.out.println(intVal);
+            break;
+    }
+}
+```
+{:codeblock}
+{:java}
 
