@@ -3,7 +3,7 @@
 {: topicgroup: .topicgroup}
 
 {: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/apprapp" path="app-configuration"}
-IBM Cloud App Configuration
+App Configuration
 
     {: .navgroup id="learn"}
     getting-started.md
