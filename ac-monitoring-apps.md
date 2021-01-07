@@ -20,7 +20,7 @@ subcollection: app-configuration
 {:tip: .tip}
 
 # Monitor Apps
-{: #ac-monitoring-apps}
+{: #ac-monitor-apps}
 
 {{site.data.keyword.appconfig_short}} helps you to monitor your Node.js microservice apps in the runtime. The dashboard displays the status of all your app. You can view the stack trace of your apps crashes.
 {: shortdesc}
