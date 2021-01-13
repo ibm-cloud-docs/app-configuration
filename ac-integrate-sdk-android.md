@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-13"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
 
@@ -36,10 +36,10 @@ subcollection: app-configuration
 {:node: .ph data-hd-programlang='node'}
 {:kotlin: .ph data-hd-programlang='Kotlin'}
 
-# App Configuration service SDKs for Android
+# App Configuration service SDK for Android
 {: #ac-integrate-sdks-android}
 
-{{site.data.keyword.appconfig_short}} service provides feature flags SDK to integrate with your Android application written in Kotlin or Java programming language. 
+{{site.data.keyword.appconfig_short}} service provides Android SDK to integrate with your Android application written in Kotlin or Java programming language. 
 {:shortdesc}
 
 ## Prerequisites
@@ -51,10 +51,10 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 - [Android Studio](https://developer.android.com/studio/index.html){:external}
 - [Gradle](https://gradle.org/install){:external}
 
-## Integrating feature flag SDK
+## Integrating {{site.data.keyword.appconfig_short}} SDK
 {: #ac-integrate-ff-sdk-android}
 
-{{site.data.keyword.appconfig_short}} service provides feature flag SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the feature flag SDK. 
+{{site.data.keyword.appconfig_short}} service provides Android SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
 
 1. Install the SDK using either one of the following option:
    - [Download]() and import the package to your Android studio project.
@@ -76,6 +76,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
 1. *Optional*: Integrate Kotlin to your Java project with these steps:
    - Add the Kotlin gradle plugin to the Module level `build.gradle`
+   {:java}
 
       ```javascript
       dependencies {
@@ -84,8 +85,10 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
       }
       ```
       {:codeblock}
+      {:java}
 
    - Add `kotlin-android` plugin to the App level `build.gradle`
+   {:java}
 
       ```javascript
       plugins {
@@ -94,6 +97,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
       }
       ```
       {:codeblock}
+      {:java}
 
 1. Initialize the SDK based on the programming language used in your project.
 
@@ -120,7 +124,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    - `guid` - Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
 
-1. Set the Collection ID for feature fetching operation.
+1. Set the `collectionId` for feature fetching operation.
 
    ```kotlin
    appConfiguration.setCollectionId("collectionId")
@@ -144,7 +148,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
        attributes.put("cityRadius", "40");
        attributes.put("radius", "50");
-       attributes.put("email", "tester@live.mail");
+       attributes.put("city", "Bengaluru"); 
+       attributes.put("country", "India");
 
    } catch (JSONException e) {
        e.printStackTrace();
@@ -161,7 +166,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    try {
        attributes.put("cityRadius", "40");
        attributes.put("radius", "50");
-       attributes.put("email", "tester@live.mail");
+       attributes.put("city", "Bengaluru"); 
+       attributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
@@ -223,7 +229,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {:codeblock}
    {:java}
 
-### Examples
+### Examples for using feature related APIs
 {: #ac-integrate-ff-example-android}
 
 Refer to the below examples for using the feature related APIs.

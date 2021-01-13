@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-13"
 
 keywords: app-configuration, app configuration, sample apps
 
@@ -25,6 +25,6 @@ subcollection: app-configuration
 To get you started quickly!
 {: shortdesc}
 
-- [Node.JS sample app](){:external}
-- [Java sample app](){:external}
-- [Python sample app](){:external}
+- [Node.JS sample app](https://github.com/IBM/appconfiguration-samples/tree/main/node){:external}
+<!-- - [Java sample app](){:external}
+- [Python sample app](){:external} -->
