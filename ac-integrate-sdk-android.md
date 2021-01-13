@@ -75,7 +75,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {:codeblock}
 
 1. *Optional*: Integrate Kotlin to your Java project with these steps:
-   {:java}
+{:java}
+
    - Add the Kotlin gradle plugin to the Module level `build.gradle`
    {:java}
 
