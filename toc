@@ -25,7 +25,9 @@ App Configuration
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
-    {: .navgroup-end}
+
+    ac-monitoring-apps.md
+	{: .navgroup-end}
 
     {: .navgroup id="reference"}
     ac-iam.md

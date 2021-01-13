@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-01-12"
+  years: 2020
+lastupdated: "2020-11-11"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -39,5 +39,6 @@ Key features of {{site.data.keyword.appconfig_short}}
 - **Centralized configuration** - Configure multiple, distributed resources from a central location. Use collections to organize your flags by app or resource.
 - **Dark Launch** - Includes features that are not ready for launch into your deployments, and activate them when they are ready.
 - **Segmented Feature Rollout** - Activate features for different segments at different times, or vary features by segment.
+- **Problem detection** - Discover problems quickly by using the {{site.data.keyword.appconfig_short}} crash SDKs and dashboard metrics.
 - **Feature Rollback** - Instantly roll back problematic features by toggling feature flags in the {{site.data.keyword.appconfig_short}} cloud dashboard.
 
