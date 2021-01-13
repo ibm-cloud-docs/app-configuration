@@ -26,5 +26,4 @@ To get you started quickly!
 {: shortdesc}
 
 - [Node.JS sample app](https://github.com/IBM/appconfiguration-samples/tree/main/node){:external}
-<!-- - [Java sample app](){:external}
-- [Python sample app](){:external} -->
+<!--  Java sample app  Python sample app -->
