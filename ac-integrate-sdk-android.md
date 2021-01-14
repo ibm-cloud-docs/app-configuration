@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
 
@@ -75,7 +75,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {:codeblock}
 
 1. *Optional*: Integrate Kotlin to your Java project with these steps:
-{:java}
+   {:java}
 
    - Add the Kotlin gradle plugin to the Module level `build.gradle`
    {:java}
