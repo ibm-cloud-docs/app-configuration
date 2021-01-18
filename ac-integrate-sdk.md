@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-18"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
 
@@ -35,7 +35,7 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# Integrate {{site.data.keyword.appconfig_short}} service SDKs
+# App Configuration service SDK for Node
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. 
@@ -123,28 +123,10 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-### Examples
+### Examples for using feature related APIs
 {: #ac-integrate-ff-example}
 
 Refer to the below examples for using the feature related APIs.
-
-#### Get all features
-{: #ac-integrate-ff-get-all-features}
-
-```javascript
-var features = featureClient.getFeatures();
-
-var feature = features["feature_Id"];
-
-if(feature) {
-    console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature ShortName ${feature.getFeatureId()} `);
-    console.log(`Feature Type ${feature.getFeatureDataType()} `);
-    console.log(`Feature is enabled ${feature.isEnabled()} `);
-    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
-}
-```
-{: codeblock}
 
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature}
@@ -171,6 +153,24 @@ if(feature) {
 
 The AppConfigurationFeature getFeature can be `null` if the featureId is invalid. In this case SDK shows the error message. To avoid errors in the app, check for `null` AppConfigurationFeature getFeature.
 {: note}
+
+#### Get all features
+{: #ac-integrate-ff-get-all-features}
+
+```javascript
+var features = featureClient.getFeatures();
+
+var feature = features["feature_Id"];
+
+if(feature) {
+    console.log(`Feature Name ${feature.getFeatureName()} `);
+    console.log(`Feature ShortName ${feature.getFeatureId()} `);
+    console.log(`Feature Type ${feature.getFeatureDataType()} `);
+    console.log(`Feature is enabled ${feature.isEnabled()} `);
+    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
+}
+```
+{: codeblock}
 
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}

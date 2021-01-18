@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-18"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
 
@@ -36,10 +36,10 @@ subcollection: app-configuration
 {:node: .ph data-hd-programlang='node'}
 {:kotlin: .ph data-hd-programlang='Kotlin'}
 
-# App Configuration service SDK for Android
+# App Configuration client SDK for Android
 {: #ac-integrate-sdks-android}
 
-{{site.data.keyword.appconfig_short}} service provides Android SDK to integrate with your Android application written in Kotlin or Java programming language. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application written in Kotlin or Java programming language. 
 {:shortdesc}
 
 ## Prerequisites
@@ -47,25 +47,35 @@ subcollection: app-configuration
 
 Following are the prerequisites for using the {{site.data.keyword.appconfig_short}} service SDK for Android:
 
-- Android API level 17 or later
+- Android API level 22 or later
 - [Android Studio](https://developer.android.com/studio/index.html){:external}
 - [Gradle](https://gradle.org/install){:external}
 
-## Integrating {{site.data.keyword.appconfig_short}} SDK for Android app written in Kotlin
+## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
-{{site.data.keyword.appconfig_short}} service provides Android SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
 
 1. Install the SDK using either one of the following option:
-   - [Download]() and import the package to your Android studio project.
-   - Get the package through Gradle by adding {{site.data.keyword.appconfig_short}} Android SDK dependency to Module level `build.gradle` file.
+   - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
+   - Get the package through Gradle by adding the following:
+      - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
 
-      ```javascript
-      dependencies {
-         implementation "com.ibm.appconfiguration.android:lib:1.0.0"
-      }
-      ```
-      {:codeblock}
+         ```javascript
+         repositories {
+            jcenter()
+         }
+         ```
+         {:codeblock}
+   
+      - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
+
+         ```javascript
+         dependencies {
+            implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+         }
+         ```
+         {:codeblock}
 
 1. Configure the `AndroidManifest.xml` file for Internet permission.
 
@@ -83,22 +93,17 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
                         AppConfiguration.REGION_US_SOUTH,
                         "guid",
                         "apikey")
+
+   //To start the feature fetching operation, set the collection_id in the following way.
+   appConfiguration.setCollectionId("collection_id")
    ```
    {:codeblock}
 
    where,
    - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
-   - `guid` - Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
+   - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
-
-1. Set the `collectionId` for feature fetching operation.
-
-   ```kotlin
-   appConfiguration.setCollectionId("collectionId")
-   ```
-   {:codeblock}
-
-   where, `collectionId` is the Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
 1. Set client attributes for feature evaluation.
 
@@ -106,9 +111,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    JSONObject attributes = new JSONObject();
    try {
 
-       attributes.put("cityRadius", "40");
-       attributes.put("radius", "50");
-       attributes.put("city", "Bengaluru"); 
+       attributes.put("city", "Bengaluru");
        attributes.put("country", "India");
 
    } catch (JSONException e) {
@@ -131,37 +134,22 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    ```
    {:codeblock}
 
-1. Enable or disable logger. By default, it is set to disable.
-
-   ```kotlin
-   val appConfiguration = AppConfiguration.getInstance()
-
-   // Enable Logger 
-
-   appConfiguration.enableDebug(true)
-
-   // Disable Logger
-
-   appConfiguration.enableDebug(false)
-   ```
-   {:codeblock}
-
 ### Examples for using feature related APIs for Android app written in Kotlin
 {: #ac-integrate-ff-example-android-kotlin}
 
 Refer to the below examples for using the feature related APIs.
 
-- **Get all features**
-
-   ```kotlin
-   val features: HashMap<String, Feature>? = appConfiguration.getFeatures();
-   ```
-   {:codeblock}
-
 - **Get single feature**
 
    ```kotlin
    val feature: Feature? = appConfiguration.getFeature("featureId")
+   ```
+   {:codeblock}
+
+- **Get all features**
+
+   ```kotlin
+   val features: HashMap<String, Feature>? = appConfiguration.getFeatures();
    ```
    {:codeblock}
 
@@ -181,21 +169,37 @@ Refer to the below examples for using the feature related APIs.
    ```
    {:codeblock}
 
-## Integrating {{site.data.keyword.appconfig_short}} SDK for Android app written in Java
+- Force fetch the features from server.
+   ```kotlin
+   appConfiguration.fetchFeatureData()
+   ```
+   {:codeblock}
+
+## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
 
-{{site.data.keyword.appconfig_short}} service provides Android SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
 
 1. Install the SDK using either one of the following option:
    - [Download]() and import the package to your Android studio project.
-   - Get the package through Gradle by adding {{site.data.keyword.appconfig_short}} Android SDK dependency to Module level `build.gradle` file.
+   - Get the package through Gradle by adding the following:
+      - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
 
-      ```javascript
-      dependencies {
-         implementation "com.ibm.appconfiguration.android:lib:1.0.0"
-      }
-      ```
-      {:codeblock}
+         ```javascript
+         repositories {
+            jcenter()
+         }
+         ```
+         {:codeblock}
+   
+      - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
+
+         ```javascript
+         dependencies {
+            implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+         }
+         ```
+         {:codeblock}
 
 1. Configure the `AndroidManifest.xml` file for Internet permission.
 
@@ -204,7 +208,7 @@ Refer to the below examples for using the feature related APIs.
    ```
    {:codeblock}
 
-1. *Optional*: Integrate Kotlin to your Java project with these steps:
+1. Integrate Kotlin to your Java project with these steps:
 
    - Add the Kotlin gradle plugin to the Module level `build.gradle`
 
@@ -231,22 +235,17 @@ Refer to the below examples for using the feature related APIs.
    ```java
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
    appConfiguration.init(getApplication(), AppConfiguration.REGION_US_SOUTH, "guid", "apikey");
+
+   // To start the feature fetching operation, set the collectioId in the following way.
+   appConfiguration.setCollectionId("collection_id");
    ```
    {:codeblock}
 
    where,
    - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
-   - `guid` - Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
+   - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
-
-1. Set the `collectionId` for feature fetching operation.
-
-   ```java
-   appConfiguration.setCollectionId("collectionId");
-   ```
-   {:codeblock}
-
-   where, `collectionId` is the Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
 1. Set client attributes for feature evaluation.
 
@@ -254,8 +253,6 @@ Refer to the below examples for using the feature related APIs.
    JSONObject attributes = new JSONObject();
 
    try {
-       attributes.put("cityRadius", "40");
-       attributes.put("radius", "50");
        attributes.put("city", "Bengaluru"); 
        attributes.put("country", "India");
    } catch (JSONException e) {
@@ -278,35 +275,22 @@ Refer to the below examples for using the feature related APIs.
    ```
    {:codeblock}
 
-1. Enable or disable logger. By default, it is set to disable.
-
-   ```java
-   AppConfiguration appConfiguration = AppConfiguration.getInstance();
-
-   // Enable Logger 
-   appConfiguration.enableDebug(true);
-
-   // Disable Logger
-   appConfiguration.enableDebug(false);
-   ```
-   {:codeblock}
-
 ### Examples for using feature related APIs for Android app written in Java
 {: #ac-integrate-ff-example-android-java}
 
 Refer to the below examples for using the feature related APIs.
 
-- **Get all features**
-
-   ```java
-   HashMap<String,Feature> features =  appConfiguration.getFeatures();
-   ```
-   {:codeblock}
-
 - **Get single feature**
 
    ```java
    Feature feature = appConfiguration.getFeature("featureId");
+   ```
+   {:codeblock}
+
+- **Get all features**
+
+   ```java
+   HashMap<String,Feature> features =  appConfiguration.getFeatures();
    ```
    {:codeblock}
 
@@ -331,5 +315,10 @@ Refer to the below examples for using the feature related APIs.
                break;
        }
    }
+   ```
+   {:codeblock}
+- Force fetch the features from server.
+   ```java
+   appConfiguration.fetchFeatureData()
    ```
    {:codeblock}
