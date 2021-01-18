@@ -181,7 +181,7 @@ Refer to the below examples for using the feature related APIs.
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
 
 1. Install the SDK using either one of the following option:
-   - [Download]() and import the package to your Android studio project.
+   - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
    - Get the package through Gradle by adding the following:
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
 
