@@ -24,7 +24,7 @@ subcollection: app-configuration
 # Videos
 {: #ac-videos}
 
-You can watch these getting started video series to learn more about how to use {{site.data.keyword.mobilepushshort}} service.
+You can watch these video series to learn more about {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
 ![What are Feature Flags?](https://www.youtube.com/embed/AJa2B-twtG4){: video output="iframe" id="youtubeplayer1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
