@@ -1,0 +1,30 @@
+---
+
+copyright:
+  years: 2021
+lastupdated: "2021-01-19"
+
+keywords: app-configuration, app configuration, sample apps
+
+subcollection: app-configuration
+
+---
+
+{:codeblock: .codeblock}
+{:external: target="_blank" .external}
+{:important: .important}
+{:note: .note}
+{:pre: .pre}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:tip: .tip}
+{:download: .download}
+{:video: .video}
+
+# Videos
+{: #ac-videos}
+
+You can watch these getting started video series to learn more about how to use {{site.data.keyword.mobilepushshort}} service.
+{: shortdesc}
+
+![What are Feature Flags?](https://www.youtube.com/embed/AJa2B-twtG4){: video output="iframe" id="youtubeplayer1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
