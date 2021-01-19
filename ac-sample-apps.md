@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Sample Apps
 {: #ac-sample-apps}
 
-To get you started quickly!
+Explore the sample apps to understand the features of {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
 - [Node.JS sample app](https://github.com/IBM/appconfiguration-samples/tree/master/nodejs){:external}
