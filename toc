@@ -29,10 +29,10 @@ App Configuration
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
+    ac-iam.md
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
-    ac-iam.md
     ac-service-credentials.md
     ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
