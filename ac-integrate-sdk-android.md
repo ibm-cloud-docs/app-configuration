@@ -74,7 +74,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          dependencies {
             implementation "com.ibm.appconfiguration.android:lib:1.0.0"
             implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"         }
+            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
+         }
          ```
          {:codeblock}
 
@@ -199,7 +200,7 @@ Refer to the below examples for using the feature related APIs.
          dependencies {
             implementation "com.ibm.appconfiguration.android:lib:1.0.0"
             implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"         }
+            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
          }
          ```
          {:codeblock}
