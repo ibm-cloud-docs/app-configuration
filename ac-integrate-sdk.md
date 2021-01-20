@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-01"
+  years: 2020, 2021
+lastupdated: "2021-01-18"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
 
@@ -35,18 +35,18 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# Integrate {{site.data.keyword.appconfig_short}} service SDKs
+# App Configuration service SDK for Node
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides feature flags SDK, and crash insights SDK to integrate with your Node.js microservice or application. 
 {:shortdesc}
 
-## Integrating feature flag SDK
+## Integrating {{site.data.keyword.appconfig_short}} SDK
 {: #ac-integrate-ff-sdk}
 
 {{site.data.keyword.appconfig_short}} service provides feature flag SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag by integrating the feature flag SDK. 
 
-1. Install the sdks using the following code from the `npm` registry or add these packages as dependencies in the `package.json` file .
+1. Install the SDK using the following code from the `npm` registry or add these packages as dependencies in the `package.json` file.
 
    ```
    npm install ibm-appconfiguration-node-core --save
@@ -54,7 +54,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. In your Node.js microservice, include the sdk module with: 
+1. In your Node.js microservice, include the SDK module with: 
 
    ```javascript
    const {
@@ -83,7 +83,7 @@ subcollection: app-configuration
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
 
-1. Initialize the feature flag sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+1. Initialize the feature flag SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
    ```javascript
    const featureClient = AppConfigurationFeature.getInstance({
@@ -123,28 +123,10 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-### Examples
+### Examples for using feature related APIs
 {: #ac-integrate-ff-example}
 
 Refer to the below examples for using the feature related APIs.
-
-#### Get all features
-{: #ac-integrate-ff-get-all-features}
-
-```javascript
-var features = featureClient.getFeatures();
-
-var feature = features["feature_Id"];
-
-if(feature) {
-    console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature ShortName ${feature.getFeatureId()} `);
-    console.log(`Feature Type ${feature.getFeatureDataType()} `);
-    console.log(`Feature is enabled ${feature.isEnabled()} `);
-    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
-}
-```
-{: codeblock}
 
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature}
@@ -172,10 +154,28 @@ if(feature) {
 The AppConfigurationFeature getFeature can be `null` if the featureId is invalid. In this case SDK shows the error message. To avoid errors in the app, check for `null` AppConfigurationFeature getFeature.
 {: note}
 
+#### Get all features
+{: #ac-integrate-ff-get-all-features}
+
+```javascript
+var features = featureClient.getFeatures();
+
+var feature = features["feature_Id"];
+
+if(feature) {
+    console.log(`Feature Name ${feature.getFeatureName()} `);
+    console.log(`Feature ShortName ${feature.getFeatureId()} `);
+    console.log(`Feature Type ${feature.getFeatureDataType()} `);
+    console.log(`Feature is enabled ${feature.isEnabled()} `);
+    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
+}
+```
+{: codeblock}
+
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values used for evaluation using one of the below methods :
+You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values used for evaluation using one of the below methods:
 
 - Feature evaluation using the attributes set in `Client Attributes`. Refer to [Set Attributes](#set-attributes) for more details. 
 
