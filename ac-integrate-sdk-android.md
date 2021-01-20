@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-01-20"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
 
@@ -73,7 +73,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          ```javascript
          dependencies {
             implementation "com.ibm.appconfiguration.android:lib:1.0.0"
-         }
+            implementation "com.squareup.okhttp3:okhttp:4.9.0"
+            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"         }
          ```
          {:codeblock}
 
@@ -197,6 +198,8 @@ Refer to the below examples for using the feature related APIs.
          ```javascript
          dependencies {
             implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+            implementation "com.squareup.okhttp3:okhttp:4.9.0"
+            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"         }
          }
          ```
          {:codeblock}
