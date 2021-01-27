@@ -44,6 +44,7 @@ App Configuration
 	{: .navgroup-end}
 
     {: .navgroup id="help"}
+    ac-videos.md
     faq.md
     ac-getting-support.md
 	{: .navgroup-end}
