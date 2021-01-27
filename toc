@@ -22,14 +22,15 @@ App Configuration
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
-    Integrating App Configuration service SDKs
-        ac-integrate-sdk.md
+    ac-integrate-sdk.md
+        ac-integrate-sdk-node.md
         ac-integrate-sdk-android.md
 
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
     ac-iam.md
+    ac-razee.md
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
