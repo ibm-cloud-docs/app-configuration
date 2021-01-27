@@ -35,13 +35,13 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# App Configuration service SDKs
+# Integrating SDKs
 {: #ac-sdks}
 
 Following are the list of {{site.data.keyword.appconfig_short}} SDKs. The {{site.data.keyword.appconfig_short}} SDKs are available for Node and Android to integrate with your microservice or applications. 
 {:shortdesc}
 
 For more information about installation and technical concepts, refer:
-- [Node SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
-- [Android SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
+- [Node SDK](/app-configuration/app-configuration-ac-integrate-sdks)
+- [Android SDK](/app-configuration/app-configuration-ac-integrate-sdks-android)
 

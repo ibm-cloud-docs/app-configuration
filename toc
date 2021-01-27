@@ -22,7 +22,7 @@ App Configuration
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
-    [Integrating SDKs](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+    [Integrating SDKs](/app-configuration/app-configuration-ac-integrate-sdks)
         ac-integrate-sdk-node.md
         ac-integrate-sdk-android.md
 
