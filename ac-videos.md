@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-27"
 
-keywords: app-configuration, app configuration, sample apps
+keywords: app-configuration, app configuration, learning videos, concept videos, videos
 
 subcollection: app-configuration
 

@@ -31,7 +31,7 @@ subcollection: app-configuration
 - Fetches the feature flag values from {{site.data.keyword.appconfig_short}} service instance 
 - Templatizes and controls the deployment of Kubernetes resources across clusters
 
-You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](). 
+You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](https://github.com/IBM/appconfiguration-razee). 
 
 ## Common use-cases for {{site.data.keyword.appconfig_short}} Razee plugin 
 {: #ac-create-a-collection}

@@ -23,15 +23,15 @@ App Configuration
 
     {: .topicgroup}
     SDKs
-        [Integrating SDKs](/app-configuration/app-configuration-ac-integrate-sdks)
-           ac-integrate-sdk-node.md
-           ac-integrate-sdk-android.md
+        [Integrating SDKs](/docs/app-configuration?topic=app-configuration-ac-sdks)
+        ac-integrate-sdk-node.md
+        ac-integrate-sdk-android.md
+    ac-razee.md
 
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
     ac-iam.md
-    ac-razee.md
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
