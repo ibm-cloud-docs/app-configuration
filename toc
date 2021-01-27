@@ -23,7 +23,7 @@ App Configuration
 
     {: .topicgroup}
     SDKs
-        [Integrating SDKs](/docs/app-configuration?topic=app-configuration-ac-sdks)
+        [Integrating SDKs](/app-configuration/app-configuration-ac-sdks)
         ac-integrate-sdk-node.md
         ac-integrate-sdk-android.md
     ac-razee.md

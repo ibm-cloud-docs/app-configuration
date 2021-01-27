@@ -42,6 +42,6 @@ Following are the list of {{site.data.keyword.appconfig_short}} SDKs. The {{site
 {:shortdesc}
 
 For more information about installation and technical concepts, refer:
-- [Node SDK](/app-configuration/app-configuration-ac-integrate-sdks)
-- [Android SDK](/app-configuration/app-configuration-ac-integrate-sdks-android)
+- [Node SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+- [Android SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
 
