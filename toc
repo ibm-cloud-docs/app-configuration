@@ -30,7 +30,8 @@ App Configuration
     Integrating App Configuration service SDKs
         ac-integrate-sdk.md
         ac-integrate-sdk-android.md
-
+    ac-razee.md
+    
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
