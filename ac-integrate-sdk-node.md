@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-02"
 
 keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
 
@@ -49,8 +49,7 @@ subcollection: app-configuration
 1. Install the SDK using the following code from the `npm` registry or add these packages as dependencies in the `package.json` file.
 
    ```
-   npm install ibm-appconfiguration-node-core --save
-   npm install ibm-appconfiguration-node-feature --save
+   npm install ibm-appconfiguration-node-sdk
    ```
    {: codeblock}
 
@@ -58,23 +57,24 @@ subcollection: app-configuration
 
    ```javascript
    const {
-     AppConfigurationCore
-   } = require('ibm-appconfiguration-node-core');
-   
-   const {
-     AppConfigurationFeature
-   } = require('ibm-appconfiguration-node-feature');
+     AppConfiguration
+   } = require('ibm-appconfiguration-node-sdk');
    ```
    {: codeblock}
 
-1. Initialize the core sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
    ```javascript
-   const coreClient = AppConfigurationCore.getInstance({
-       region: 'us-south',
-       guid: '6fcXXXX-XXX-4cd9-XXX-fXXXXXXX00',
-       apikey: 'abcd',
-     })
+   const client = AppConfiguration.getInstance();
+
+   let region = 'us-south';
+   let guid = 'abc-def-xyz';
+   let apikey = 'j9qc-abc-z79';
+
+   client.init(region, guid, apikey)
+
+   // Initialize feature
+   client.setCollectionId('collectionId')
    ```
    {: codeblock}
 
@@ -82,46 +82,47 @@ subcollection: app-configuration
    - region: Region name where the service instance is created. Use `us-south` for Dallas and `eu-gb` for London.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-1. Initialize the feature flag SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
+   The `AppConfiguration` client can be `null` if any of the configurations in `init()` and `setCollectionId()` are missing or invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration object.
+   {: note}
+
+1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
 
    ```javascript
-   const featureClient = AppConfigurationFeature.getInstance({
-     collectionId: "collection_id",
-     liveFeatureUpdateEnabled: true,
-     featureFile: 'custom/userJson.json'
-   })
+   client.setCollectionId('collectionId')
+   client.fetchFeaturesFromFile(liveFeatureUpdateEnabled, featureFile='path/to/feature/file.json')
    ```
    {: codeblock}
 
    where,
-   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFile` path. By default, this value is enabled.
    - featureFile: Path to the JSON file, which contains feature details and segment details.
 
-   The `AppConfigurationFeature` client can be `null` if any of the configurations are invalid. In this case SDK shows the error message. To avoid errors in the app, check for `null` AppConfigurationFeature object.
+   The `AppConfiguration` client can be `null` if any of the configurations are invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration object.
    {: note}
 
-1. Set attributes: You can set the attributes values that define the segments using `setClientAttributes` method. This value is used as the default attributes to evaluate the feature rules. 
+1. Set identity: You can set the attributes values that define the segments using `setIdentity()` method. The identity object contains the identifier and the attributes. `setIdentity()` is to be set mandatorily. This value is used as the default attributes to evaluate the feature rules. 
 {: #set-attributes}
 
    ```javascript
-   var attributes = {
-       "city":"Bengaluru",
-       "country": "India"
-     }
-     featureClient.setClientAttributes(attributes)   
+   var identity = {
+       "id":"pvQ213",
+       "city": "Bangalore",
+   }
+   client.setIdentity(identity)
    ```
    {: codeblock}
 
-   The feature evaluation can also be done by using the `request` object in the APIs. Pass the values in `query` or `headers` or `body` to evaluate the feature rules. All these values are used during the `getCurrentValue` of the feature object.
-
-   For example, you can pass the attributes as part of the headers in the request to your API as below:
-
-   ```
-   curl --request GET 'https://customerapiserver.com/api/v2/getAppData' --header 'city: Bengaluru' --header 'country: India'
+   Use the updateIdentity() method, as shown below for updating the indentity.
+   ```javascript
+   var identity = {
+       "city": "Chennai",
+   }
+   client.updateIdentity(identity)
    ```
    {: codeblock}
+   {: note}
 
 ### Examples for using feature related APIs
 {: #ac-integrate-ff-example}
@@ -132,33 +133,33 @@ Refer to the below examples for using the feature related APIs.
 {: #ac-integrate-ff-get-single-feature}
 
 ```javascript
-const feature = featureClient.getFeature('feature_Id')
+const feature = client.getFeature('feature_Id')
 
 if(feature) {
 
-    if(feature.isEnabled()) {
-        // enable feature
-    } else {
-        // disable the feature
-    }
-    console.log("data", feature);
-    console.log(`\n Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature ShortName ${feature.getFeatureId()} `);
-    console.log(`Feature Type ${feature.getFeatureDataType()} `);
-    console.log(`Feature is enabled ${feature.isEnabled()} `);
-    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
+   if(feature.isEnabled()) {
+       // enable feature
+   } else {
+      // disable the feature
+   }
+   console.log('data', feature);
+   console.log(`Feature Name ${feature.getFeatureName()} `);
+   console.log(`Feature ShortName ${feature.getFeatureId()} `);
+   console.log(`Feature Type ${feature.getFeatureDataType()} `);
+   console.log(`Feature is enabled ${feature.isEnabled()} `);
+   console.log(`Feature currentValue ${feature.getCurrentValue()} `);
 }
 ```
 {: codeblock}
 
-The AppConfigurationFeature getFeature can be `null` if the featureId is invalid. In this case SDK shows the error message. To avoid errors in the app, check for `null` AppConfigurationFeature getFeature.
+The AppConfiguration getFeature can be `null` if the `feature_Id` is invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration getFeature.
 {: note}
 
 #### Get all features
 {: #ac-integrate-ff-get-all-features}
 
 ```javascript
-var features = featureClient.getFeatures();
+var features = client.getFeatures();
 
 var feature = features["feature_Id"];
 
@@ -175,37 +176,22 @@ if(feature) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values used for evaluation using one of the below methods:
+You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values using the [identity object](#set-attributes).
 
-- Feature evaluation using the attributes set in `Client Attributes`. Refer to [Set Attributes](#set-attributes) for more details. 
-
-   ```javascript
-   console.log(`Feature currentValue ${feature.getCurrentValue()} `);
-   ```
-   {: codeblock}
-
-- Feature evaluation using the `Request` object. Pass the request object, to use the attributes set in request headers, body and query parameters for feature evaluation.
-
-   ```javascript
-   app.get('/', function (req, res) {
-
-     ........
-     console.log(`Feature currentValue with req object :  ${feature.getCurrentValue(req)}`)
-     .....
-
-   })
-   ```
-   {: codeblock}
+```javascript
+console.log(`Feature currentValue ${feature.getCurrentValue()} `);
+```
+{: codeblock}
 
 #### Listen to the feature changes
 {: #ac-integrate-ff-listen-feature-changes}
 
-To listen to the data changes add the following code in your application
+To listen to the data changes, add the following code in your application:
 
 ```javascript
-  featureClient.emitter.on('featuresUpdate', () => {
-      // add your code
-  })
+client.emitter.on('featuresUpdate', () => {
+    // add your code
+})
 ```
 {: codeblock}
 
