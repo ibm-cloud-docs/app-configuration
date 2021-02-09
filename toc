@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/apprapp" path="app-configuration"}
+{: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/app-configuration" path="app-configuration"}
 App Configuration
 
     {: .navgroup id="learn"}
@@ -36,6 +36,7 @@ App Configuration
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
+    /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
     ac-service-credentials.md
     ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
