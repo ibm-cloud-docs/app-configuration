@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-09"
 
-keywords: app-configuration, app configuration, integrate sdk, python sdk
+keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
 subcollection: app-configuration
 
@@ -35,13 +35,13 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# App Configuration service SDK for Python
+# App Configuration server SDK for Python
 {: #ac-python}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. 
 {:shortdesc}
 
-## Integrating {{site.data.keyword.appconfig_short}} SDK
+## Integrating server SDK for Python
 {: #ac-integrate-python}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
@@ -51,14 +51,14 @@ subcollection: app-configuration
    - Using `pip`
 
       ```
-      pip install --upgrade ibm-watson
+      pip install --upgrade ibm-appconfiguration-python-client-sdk
       ```
       {: codeblock}
 
    - Using `easy_install`
 
       ```
-      easy_install --upgrade ibm-watson
+      easy_install --upgrade ibm-appconfiguration-python-client-sdk
       ```
       {: codeblock}
 
@@ -66,7 +66,7 @@ subcollection: app-configuration
 1. In your Python application code, include the SDK module with: 
 
    ```javascript
-   from app_configuration.app_configuration import AppConfiguration, Feature, FeatureType
+   from ibm_appconfiguration import AppConfiguration, Feature, FeatureType
    ```
    {: codeblock}
 
@@ -93,43 +93,19 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-python-example).
 
    ```javascript
-   app_config.fetch_features_from_file(live_feature_update_enabled=True, # This is for live update from server.
-                                   feature_file='custom/userJson.json')  # Add this field if liveFeatureUpdateEnabled false or get features when the device is offline during the first app load.
+   app_config.fetch_features_from_file(feature_file='custom/userJson.json', # Add this field if liveFeatureUpdateEnabled false or get features when the device is offline during the first app load.
+                                       live_feature_update_enabled=True) # This is for live update from server.
    ```
    {: codeblock}
 
    where,
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFile` path. By default, this value is enabled.
-   - featureFile: Path to the JSON file, which contains feature details and segment details.
-
-1. Set identity: You can set the attributes values that define the segments using `set_Identity()` method. The identity object contains the identifier and the attributes. `set_Identity()` is to be set mandatorily. This value is used as the default attributes to evaluate the feature rules. 
-{: #set-attributes}
-
-   ```javascript
-   identity = {
-       'id': 'pvQ23r',
-       'country': 'India'
-   }
-
-   app_config.set_identity(identity)
-   ```
-   {: codeblock}
-
-   Use the update_Identity() method, as shown below for updating the indentity.
-   ```javascript
-    identity = {
-     'country': 'USA'
-   }
-
-   app_config.update_identity(identity)
-   ```
-   {: codeblock}
-   {: note}
+   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `feature_file` path. By default, this value is `enabled`.
+   - feature_file: Path to the JSON file which contains feature details and segment details.
 
 ### Examples for using feature related APIs
 {: #ac-python-example}
@@ -156,18 +132,15 @@ features_dictionary = app_config.get_features()
 {: #ac-python-feature-evaluation}
 
 ```javascript
-## STRING type
-evaluated_value = feature.getCurrentValue(str)
-
-## BOOLEAN type
-evaluated_value = feature.getCurrentValue(bool)
-
-## NUMERIC type
-evaluated_value = feature.getCurrentValue(int)
+identity = {
+    'city': 'Bangalore',
+    'country': 'India'
+}
+feature_value = feature.get_current_value(identity_id='pvQr45', identity_attributes=identity)
 ```
 {: codeblock}
 
-#### Listen to the feature changes
+#### Listen to the feature data changes
 {: #ac-python-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
@@ -177,5 +150,13 @@ def features_update(self):
     print('Get your Feature value NOW')
 
 app_config.register_features_update_listener(features_update)
+```
+{: codeblock}
+
+#### Fetch latest data
+{: #ac-python-fetch-latest-data}
+
+```javascript
+app_config.fetch_feature_data()
 ```
 {: codeblock}

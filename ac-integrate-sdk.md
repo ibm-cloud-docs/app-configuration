@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-09"
 
-keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm, sdk, android sdk
+keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python
 
 subcollection: app-configuration
 
@@ -38,10 +38,13 @@ subcollection: app-configuration
 # Integrating SDKs
 {: #ac-sdks}
 
-Following are the list of {{site.data.keyword.appconfig_short}} SDKs. The {{site.data.keyword.appconfig_short}} SDKs are available for Node and Android to integrate with your microservice or applications. 
+Following are the list of {{site.data.keyword.appconfig_short}} client and server SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, and the server SDKs are available for Node and Python to integrate with your microservice or applications. 
 {:shortdesc}
 
-For more information about installation and technical concepts, refer:
-- [Node SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
-- [Android SDK](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
+For more information about installation and technical concepts, see the 'README' document in the SDK.
 
+|Server SDKs                          |Client SDKs                          |
+|-------------------------------------|-------------------------------------|
+|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external} </br>[Node SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks) |[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external} </br>[Android SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android) |
+|[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) |  |
+{:caption="Table 1. Server and client SDKs" caption-side="top"}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-09"
 
-keywords: app-configuration, app configuration, integrate sdk, core sdk, node sdk, npm
+keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
 subcollection: app-configuration
 
@@ -35,13 +35,13 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# App Configuration service SDK for Node
+# App Configuration server SDK for Node
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. 
 {:shortdesc}
 
-## Integrating {{site.data.keyword.appconfig_short}} SDK
+## Integrating server SDK for Node
 {: #ac-integrate-ff-sdk}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 

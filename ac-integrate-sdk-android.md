@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-02-09"
 
-keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
+keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
 subcollection: app-configuration
 
@@ -51,7 +51,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 - [Android Studio](https://developer.android.com/studio/index.html){:external}
 - [Gradle](https://gradle.org/install){:external}
 
-## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Kotlin
+## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
@@ -177,7 +177,7 @@ Refer to the below examples for using the feature related APIs.
    ```
    {:codeblock}
 
-## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Java
+## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
