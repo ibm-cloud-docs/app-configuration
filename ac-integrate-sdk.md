@@ -46,5 +46,5 @@ For more information about installation and technical concepts, see the 'README'
 |Server SDKs                          |Client SDKs                          |
 |-------------------------------------|-------------------------------------|
 |[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external} </br>[Node SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks) |[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external} </br>[Android SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android) |
-|[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) |  |
-{:caption="Table 1. Server and client SDKs" caption-side="top"}
+|[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) | &nbsp;&nbsp; |
+{:caption="Table 1. List of {{site.data.keyword.appconfig_short}} server and client SDKs" caption-side="top"}

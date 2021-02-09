@@ -72,9 +72,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          dependencies {
-            implementation "com.ibm.appconfiguration.android:lib:1.0.0"
-            implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
+            implementation "com.ibm.appconfiguration.android:lib:1.1.0"
          }
          ```
          {:codeblock}
@@ -92,11 +90,11 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    val appConfiguration = AppConfiguration.getInstance()
 
    appConfiguration.init( application,
-                        AppConfiguration.REGION_US_SOUTH,
-                        "guid",
-                        "apikey")
+                         AppConfiguration.REGION_US_SOUTH,
+                         "guid",
+                         "apikey")
 
-   //To start the feature fetching operation, set the collection_id in the following way.
+   //To start the feature fetching operation, set the collectioId in the following way.
    appConfiguration.setCollectionId("collection_id")
    ```
    {:codeblock}
@@ -110,17 +108,24 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 1. Set client attributes for feature evaluation.
 
    ```kotlin
-   JSONObject attributes = new JSONObject();
+   JSONObject identityAttributes = new JSONObject();
    try {
-
-       attributes.put("city", "Bengaluru");
-       attributes.put("country", "India");
-
+       identityAttributes.put("city", "Bangalore");
+       identityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
 
-   appConfiguration.setClientAttributes(attributes)
+   val appConfiguration = AppConfiguration.getInstance()
+   val feature: Feature? = appConfiguration.getFeature("featureId")
+
+   if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) {
+       val value = feature.getCurrentValue("identityId", identityAttributes)
+   } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) {
+       val value = feature.getCurrentValue("identityId", identityAttributes)
+   } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) {
+       val value = feature.getCurrentValue("identityId", identityAttributes)
+   }
    ```
    {:codeblock}
 
@@ -199,8 +204,6 @@ Refer to the below examples for using the feature related APIs.
          ```javascript
          dependencies {
             implementation "com.ibm.appconfiguration.android:lib:1.0.0"
-            implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
          }
          ```
          {:codeblock}
@@ -254,16 +257,33 @@ Refer to the below examples for using the feature related APIs.
 1. Set client attributes for feature evaluation.
 
    ```java
-   JSONObject attributes = new JSONObject();
+   JSONObject identityAttributes = new JSONObject();
 
    try {
-       attributes.put("city", "Bengaluru"); 
-       attributes.put("country", "India");
+       identityAttributes.put("city", "Bengaluru");
+       identityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
 
-   appConfiguration.setClientAttributes(attributes);
+   AppConfiguration appConfiguration = AppConfiguration.getInstance();
+   Feature feature = appConfiguration.getFeature("featureId")
+   if(feature != null) 
+       switch (feature.getFeatureDataType())
+           case STRING:
+               String value = (String) feature.getCurrentValue(identityId, identityAttributes);
+               System.out.println(value);
+               break;
+           case BOOLEAN:
+               Boolean boolVal = (Boolean) feature.getCurrentValue(identityId, identityAttributes);
+               System.out.println(boolVal);
+               break;
+           case NUMERIC:
+               Integer intVal = (Integer) feature.getCurrentValue(identityId, identityAttributes);
+               System.out.println(intVal);
+               break;
+       } 
+   }
    ```
    {:codeblock}
 
@@ -301,26 +321,36 @@ Refer to the below examples for using the feature related APIs.
 - **Feature evaluation**
 
    ```java
+   JSONObject identityAttributes = new JSONObject();
+
+   try {
+       identityAttributes.put("city", "Bengaluru");
+       identityAttributes.put("country", "India");
+   } catch (JSONException e) {
+       e.printStackTrace();
+   }
+
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
    Feature feature = appConfiguration.getFeature("featureId")
    if(feature != null) 
        switch (feature.getFeatureDataType())
            case STRING:
-               String value = (String) feature.getCurrentValue();
+               String value = (String) feature.getCurrentValue(identityId, identityAttributes);
                System.out.println(value);
                break;
            case BOOLEAN:
-               Boolean boolVal = (Boolean) feature.getCurrentValue();
+               Boolean boolVal = (Boolean) feature.getCurrentValue(identityId, identityAttributes);
                System.out.println(boolVal);
                break;
            case NUMERIC:
-               Integer intVal = (Integer) feature.getCurrentValue();
+               Integer intVal = (Integer) feature.getCurrentValue(identityId, identityAttributes);
                System.out.println(intVal);
                break;
        }
    }
    ```
    {:codeblock}
+
 - Force fetch the features from server.
    ```java
    appConfiguration.fetchFeatureData()
