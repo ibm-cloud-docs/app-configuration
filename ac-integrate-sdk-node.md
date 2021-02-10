@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -46,10 +46,10 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
 
-1. Install the SDK using the following code from the `npm` registry or add these packages as dependencies in the `package.json` file.
+1. Install the SDK using the following code from the `npm` registry.
 
    ```
-   npm install ibm-appconfiguration-node-sdk
+   $ npm install ibm-appconfiguration-node-sdk
    ```
    {: codeblock}
 
@@ -63,6 +63,7 @@ subcollection: app-configuration
    {: codeblock}
 
 1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+   {: #ac-init-node-sdk}
 
    ```javascript
    const client = AppConfiguration.getInstance();
@@ -73,7 +74,7 @@ subcollection: app-configuration
 
    client.init(region, guid, apikey)
 
-   // Initialize feature
+   // Set the collectionId
    client.setCollectionId('collectionId')
    ```
    {: codeblock}
@@ -84,45 +85,21 @@ subcollection: app-configuration
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-   The `AppConfiguration` client can be `null` if any of the configurations in `init()` and `setCollectionId()` are missing or invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration object.
-   {: note}
+   by default live features update from the server is enabled. To turn off this mode see [here](#ac-work-offline-ff).
 
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
+   {: #ac-work-offline-ff}
+
+   After setting the [`collectionId`](#ac-init-node-sdk), follow the below step:
 
    ```javascript
-   client.setCollectionId('collectionId')
-   client.fetchFeaturesFromFile(liveFeatureUpdateEnabled, featureFile='path/to/feature/file.json')
+   client.fetchFeaturesFromFile(featureFile='path/to/feature/file.json', liveFeatureUpdateEnabled)
    ```
    {: codeblock}
 
    where,
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFile` path. By default, this value is enabled.
    - featureFile: Path to the JSON file, which contains feature details and segment details.
-
-   The `AppConfiguration` client can be `null` if any of the configurations are invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration object.
-   {: note}
-
-1. Set identity: You can set the attributes values that define the segments using `setIdentity()` method. The identity object contains the identifier and the attributes. `setIdentity()` is to be set mandatorily. This value is used as the default attributes to evaluate the feature rules. 
-{: #set-attributes}
-
-   ```javascript
-   var identity = {
-       "id":"pvQ213",
-       "city": "Bangalore",
-   }
-   client.setIdentity(identity)
-   ```
-   {: codeblock}
-
-   Use the updateIdentity() method, as shown below for updating the indentity.
-   ```javascript
-   var identity = {
-       "city": "Chennai",
-   }
-   client.updateIdentity(identity)
-   ```
-   {: codeblock}
-   {: note}
+   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, `liveFeatureUpdateEnabled` value is enabled.
 
 ### Examples for using feature related APIs
 {: #ac-integrate-ff-example}
@@ -133,27 +110,23 @@ Refer to the below examples for using the feature related APIs.
 {: #ac-integrate-ff-get-single-feature}
 
 ```javascript
-const feature = client.getFeature('feature_Id')
+const feature = client.getFeature('feature_id')
 
 if(feature) {
 
-   if(feature.isEnabled()) {
-       // enable feature
-   } else {
-      // disable the feature
-   }
-   console.log('data', feature);
-   console.log(`Feature Name ${feature.getFeatureName()} `);
-   console.log(`Feature ShortName ${feature.getFeatureId()} `);
-   console.log(`Feature Type ${feature.getFeatureDataType()} `);
-   console.log(`Feature is enabled ${feature.isEnabled()} `);
-   console.log(`Feature currentValue ${feature.getCurrentValue()} `);
+    if(feature.isEnabled()) {
+        // enable feature
+    } else {
+        // disable the feature
+    }
+    console.log('data', feature);
+    console.log(`Feature Name ${feature.getFeatureName()} `);
+    console.log(`Feature ShortName ${feature.getFeatureId()} `);
+    console.log(`Feature Type ${feature.getFeatureDataType()} `);
+    console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
-
-The AppConfiguration getFeature can be `null` if the `feature_Id` is invalid. In this case, the SDK shows the error message. To avoid errors in the app, check for `null` AppConfiguration getFeature.
-{: note}
 
 #### Get all features
 {: #ac-integrate-ff-get-all-features}
@@ -161,14 +134,13 @@ The AppConfiguration getFeature can be `null` if the `feature_Id` is invalid. In
 ```javascript
 var features = client.getFeatures();
 
-var feature = features["feature_Id"];
+var feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()} `);
     console.log(`Feature ShortName ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
-    console.log(`Feature currentValue ${feature.getCurrentValue()} `);
 }
 ```
 {: codeblock}
@@ -176,12 +148,30 @@ if(feature) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values using the [identity object](#set-attributes).
+You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation.
 
-```javascript
-console.log(`Feature currentValue ${feature.getCurrentValue()} `);
-```
-{: codeblock}
+##### Usage
+
+* If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `identityAttributes` parameter to this method.
+
+   ```javascript
+   let identityId = 'identityId'
+   let identityAttributes = {
+       'city': 'Bangalore',
+       'country': 'India'
+   }
+
+   feature.getCurrentValue(identityId, identityAttributes)
+   ```
+   {: codeblock}
+
+* If the feature flag is not targeted to any segments and the feature flag is turned **ON** this method returns the feature **enabled value**. And when the feature flag is turned **OFF** this method returns the feature **disabled value**.
+
+   ```javascript
+   let identityId = 'identityId'
+   feature.getCurrentValue(identityId)
+   ```
+   {: codeblock}
 
 #### Listen to the feature changes
 {: #ac-integrate-ff-listen-feature-changes}
