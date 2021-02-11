@@ -43,5 +43,5 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.0.0 | 11 February 2021 | <ul><li>Initial release to support CRUD operations for the `collections`, `features`, and `segments`.</li> </ul>|
+| 1.0.0 | 11 February 2021 | * Initial release to support CRUD operations for the `collections`, `features`, and `segments`. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 

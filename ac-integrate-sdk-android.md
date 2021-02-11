@@ -286,16 +286,16 @@ Refer to the below examples for using the feature related APIs.
    if(feature != null) {
    	switch (feature.getFeatureDataType()) {
    		case STRING: 
-   			String value = (String) feature.getCurrentValue("identityId", identityAttributes); 						 
-                           System.out.println(value); 
+   			String value = (String) feature.getCurrentValue("identityId", identityAttributes);
+            System.out.println(value); 
    			break; 	
    		case BOOLEAN: 
    			Boolean boolVal = (Boolean) feature.getCurrentValue("identityId", identityAttributes);
-                           System.out.println(boolVal); 
+   			System.out.println(boolVal); 
    			break; 
    		case NUMERIC: 
-   			Integer intVal = (Integer) feature.getCurrentValue("identityId", identityAttributes); 					
-                            System.out.println(intVal); 
+   			Integer intVal = (Integer) feature.getCurrentValue("identityId", identityAttributes);
+            System.out.println(intVal); 
    			break;
    	 } 
    }
