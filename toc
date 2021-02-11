@@ -35,11 +35,11 @@ App Configuration
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
-
     {: .topicgroup}
     CLI reference
         /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
         ac-cli-changelog.md
+
     ac-service-credentials.md
     ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
