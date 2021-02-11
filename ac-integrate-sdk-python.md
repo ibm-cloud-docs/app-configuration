@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-11"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -51,14 +51,14 @@ subcollection: app-configuration
    - Using `pip`
 
       ```
-      pip install --upgrade ibm-appconfiguration-python-client-sdk
+      pip install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
 
    - Using `easy_install`
 
       ```
-      easy_install --upgrade ibm-appconfiguration-python-client-sdk
+      easy_install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
 
@@ -74,18 +74,18 @@ subcollection: app-configuration
 
    ```javascript
    app_config = AppConfiguration.get_instance()
-   app_config.init(region=AppConfiguration.REGION_US_SOUTH,
+   app_config.init(region='REGION',
                   guid='GUID',
                   apikey='APIKEY')
    ```
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. For example, use `AppConfiguration.REGION_US_SOUTH` for Dallas.
+   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
 
-1. Initialize the feature with the following command:
+1. Set the collection_id with the following command:
 
    ```javascript
    app_config.set_collection_id(collection_id='collection_id') 
@@ -98,14 +98,15 @@ subcollection: app-configuration
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-python-example).
 
    ```javascript
-   app_config.fetch_features_from_file(feature_file='custom/userJson.json', # Add this field if liveFeatureUpdateEnabled false or get features when the device is offline during the first app load.
-                                       live_feature_update_enabled=True) # This is for live update from server.
+   app_config.fetch_features_from_file(feature_file='custom/userJson.json', 
+                                       live_feature_update_enabled=True) 
    ```
    {: codeblock}
 
    where,
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `feature_file` path. By default, this value is `enabled`.
    - feature_file: Path to the JSON file which contains feature details and segment details.
+   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `feature_file` path. By default, this value is `true`.
+   
 
 ### Examples for using feature related APIs
 {: #ac-python-example}
@@ -131,12 +132,14 @@ features_dictionary = app_config.get_features()
 #### Feature evaluation
 {: #ac-python-feature-evaluation}
 
+You can use the feature.get_current_value(identity_id, identity_attributes) method to evaluate the value of the feature flag. You should pass an unique identity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the App Configuration service, you can set the attributes values as a dictionary.
+
 ```javascript
-identity = {
+identityAttributes = {
     'city': 'Bangalore',
     'country': 'India'
 }
-feature_value = feature.get_current_value(identity_id='pvQr45', identity_attributes=identity)
+feature_value = feature.get_current_value(identity_id='identityId', identity_attributes=identityAttributes)
 ```
 {: codeblock}
 

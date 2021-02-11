@@ -23,7 +23,6 @@ App Configuration
 
     {: .topicgroup}
     SDKs
-        [Integrating SDKs](/app-configuration/app-configuration-ac-sdks)
         ac-integrate-sdk-node.md
         ac-integrate-sdk-python.md
         ac-integrate-sdk-android.md
@@ -36,7 +35,11 @@ App Configuration
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
-    /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+
+    {: .topicgroup}
+    CLI reference
+        /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+        ac-cli-changelog.md
     ac-service-credentials.md
     ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)

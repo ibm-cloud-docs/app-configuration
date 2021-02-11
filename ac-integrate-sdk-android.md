@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-11"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -90,7 +90,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    val appConfiguration = AppConfiguration.getInstance()
 
    appConfiguration.init( application,
-                         AppConfiguration.REGION_US_SOUTH,
+                         "region",
                          "guid",
                          "apikey")
 
@@ -100,7 +100,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {:codeblock}
 
    where,
-   - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
+   - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
@@ -150,13 +150,13 @@ Refer to the below examples for using the feature related APIs.
    }
 
    val feature: Feature? = appConfiguration.getFeature("featureId") 
-   if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) { 
-   	val value = feature.getCurrentValue("identityId", identityAttributes) 
-   } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) { 
-   	val value = feature.getCurrentValue("identityId", identityAttributes) 
-   } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) { 
-   	val value = feature.getCurrentValue("identityId", identityAttributes) 
-   }
+      if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) { 
+      	val value = feature.getCurrentValue("identityId", identityAttributes) 
+      } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) { 
+   	   val value = feature.getCurrentValue("identityId", identityAttributes) 
+      } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) { 
+   	   val value = feature.getCurrentValue("identityId", identityAttributes) 
+      }
    ```
    {:codeblock}
 
@@ -225,7 +225,7 @@ Refer to the below examples for using the feature related APIs.
 
    ```java
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   appConfiguration.init(getApplication(), AppConfiguration.REGION_US_SOUTH, "guid", "apikey");
+   appConfiguration.init(getApplication(), "region", "guid", "apikey");
 
    // To start the feature fetching operation, set the collection_id in the following way.
    appConfiguration.setCollectionId("collection_id");
@@ -233,7 +233,7 @@ Refer to the below examples for using the feature related APIs.
    {:codeblock}
 
    where,
-   - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
+   - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.

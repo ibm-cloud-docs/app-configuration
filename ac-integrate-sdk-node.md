@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-11"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -85,12 +85,10 @@ subcollection: app-configuration
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-   by default live features update from the server is enabled. To turn off this mode see [here](#ac-work-offline-ff).
-
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
    {: #ac-work-offline-ff}
 
-   After setting the [`collectionId`](#ac-init-node-sdk), follow the below step:
+   After setting the `collectionId`, follow the below step:
 
    ```javascript
    client.fetchFeaturesFromFile(featureFile='path/to/feature/file.json', liveFeatureUpdateEnabled)
@@ -121,7 +119,7 @@ if(feature) {
     }
     console.log('data', feature);
     console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature ShortName ${feature.getFeatureId()} `);
+    console.log(`FeatureId ShortName ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
@@ -138,7 +136,7 @@ var feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature ShortName ${feature.getFeatureId()} `);
+    console.log(`FeatureId ShortName ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
