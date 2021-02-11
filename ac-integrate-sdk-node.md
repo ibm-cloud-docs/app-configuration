@@ -119,7 +119,7 @@ if(feature) {
     }
     console.log('data', feature);
     console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`FeatureId ShortName ${feature.getFeatureId()} `);
+    console.log(`Feature Id  ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
@@ -136,7 +136,7 @@ var feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`FeatureId ShortName ${feature.getFeatureId()} `);
+    console.log(`Feature Id  ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
 }

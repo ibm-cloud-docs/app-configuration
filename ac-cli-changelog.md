@@ -38,10 +38,10 @@ subcollection: app-configuration
 # CLI version history 
 {: #cli_versions}
 
-Find a summary of changes for each version of {{site.data.keyword.codeengineshort}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
+Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
 {:shortdesc}
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.0.0 | 11 February 2021 | * Initial release to support CRUD operations for the `collections`, `features`, and `segments`. |
+| 0.0.1 BETA | 11 February 2021 | Initial release. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
