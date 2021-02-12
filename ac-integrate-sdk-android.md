@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-12"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -287,7 +287,7 @@ Refer to the below examples for using the feature related APIs.
    	switch (feature.getFeatureDataType()) {
    		case STRING: 
    			String value = (String) feature.getCurrentValue("identityId", identityAttributes);
-            System.out.println(value); 
+   			System.out.println(value); 
    			break; 	
    		case BOOLEAN: 
    			Boolean boolVal = (Boolean) feature.getCurrentValue("identityId", identityAttributes);
@@ -295,7 +295,7 @@ Refer to the below examples for using the feature related APIs.
    			break; 
    		case NUMERIC: 
    			Integer intVal = (Integer) feature.getCurrentValue("identityId", identityAttributes);
-            System.out.println(intVal); 
+   			System.out.println(intVal); 
    			break;
    	 } 
    }
