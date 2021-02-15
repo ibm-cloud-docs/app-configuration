@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-02-15"
 
-keywords: app-configuration, app configuration, integrate sdk, core sdk, android sdk, android, kotlin, java
+keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
 subcollection: app-configuration
 
@@ -51,7 +51,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 - [Android Studio](https://developer.android.com/studio/index.html){:external}
 - [Gradle](https://gradle.org/install){:external}
 
-## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Kotlin
+## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
@@ -72,7 +72,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          dependencies {
-            implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+            implementation "com.ibm.appconfiguration.android:lib:1.1.0"
             implementation "com.squareup.okhttp3:okhttp:4.9.0"
             implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
          }
@@ -92,9 +92,9 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    val appConfiguration = AppConfiguration.getInstance()
 
    appConfiguration.init( application,
-                        AppConfiguration.REGION_US_SOUTH,
-                        "guid",
-                        "apikey")
+                         "region",
+                         "guid",
+                         "apikey")
 
    //To start the feature fetching operation, set the collection_id in the following way.
    appConfiguration.setCollectionId("collection_id")
@@ -102,27 +102,10 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {:codeblock}
 
    where,
-   - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
+   - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-
-1. Set client attributes for feature evaluation.
-
-   ```kotlin
-   JSONObject attributes = new JSONObject();
-   try {
-
-       attributes.put("city", "Bengaluru");
-       attributes.put("country", "India");
-
-   } catch (JSONException e) {
-       e.printStackTrace();
-   }
-
-   appConfiguration.setClientAttributes(attributes)
-   ```
-   {:codeblock}
 
 1. Listen to the feature changes
 
@@ -157,17 +140,25 @@ Refer to the below examples for using the feature related APIs.
 
 - **Feature evaluation**
 
-   ```kotlin
-   val appConfiguration = AppConfiguration.getInstance()
-   val feature: Feature? = appConfiguration.getFeature("featureId")
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
-   if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) {
-       val value = feature.getCurrentValue<Int>()
-   } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) {
-       val value = feature.getCurrentValue<Boolean>()
-   } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) {
-       val value = feature.getCurrentValue<String>()
+   ```kotlin
+   JSONObject identityAttributes = new JSONObject(); 
+   try { 
+   	identityAttributes.put("city", "Bangalore"); 
+   	identityAttributes.put("country", "India"); 
+   } catch (JSONException e) { 
+   	e.printStackTrace(); 
    }
+
+   val feature: Feature? = appConfiguration.getFeature("featureId") 
+      if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) { 
+      	val value = feature.getCurrentValue("identityId", identityAttributes) 
+      } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) { 
+   	   val value = feature.getCurrentValue("identityId", identityAttributes) 
+      } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) { 
+   	   val value = feature.getCurrentValue("identityId", identityAttributes) 
+      }
    ```
    {:codeblock}
 
@@ -177,7 +168,7 @@ Refer to the below examples for using the feature related APIs.
    ```
    {:codeblock}
 
-## Integrating {{site.data.keyword.appconfig_short}} client SDK for Android app written in Java
+## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your feature flag by integrating the SDK. 
@@ -198,7 +189,7 @@ Refer to the below examples for using the feature related APIs.
 
          ```javascript
          dependencies {
-            implementation "com.ibm.appconfiguration.android:lib:1.0.0"
+            implementation "com.ibm.appconfiguration.android:lib:1.1.0"
             implementation "com.squareup.okhttp3:okhttp:4.9.0"
             implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
          }
@@ -238,34 +229,18 @@ Refer to the below examples for using the feature related APIs.
 
    ```java
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   appConfiguration.init(getApplication(), AppConfiguration.REGION_US_SOUTH, "guid", "apikey");
+   appConfiguration.init(getApplication(), "region", "guid", "apikey");
 
-   // To start the feature fetching operation, set the collectioId in the following way.
+   // To start the feature fetching operation, set the collection_id in the following way.
    appConfiguration.setCollectionId("collection_id");
    ```
    {:codeblock}
 
    where,
-   - `region` - Region name where the service instance is created. For example, `AppConfiguration.REGION_US_SOUTH`.
+   - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-
-1. Set client attributes for feature evaluation.
-
-   ```java
-   JSONObject attributes = new JSONObject();
-
-   try {
-       attributes.put("city", "Bengaluru"); 
-       attributes.put("country", "India");
-   } catch (JSONException e) {
-       e.printStackTrace();
-   }
-
-   appConfiguration.setClientAttributes(attributes);
-   ```
-   {:codeblock}
 
 1. Listen to the feature changes
 
@@ -300,27 +275,37 @@ Refer to the below examples for using the feature related APIs.
 
 - **Feature evaluation**
 
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+
    ```java
-   AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   Feature feature = appConfiguration.getFeature("featureId")
-   if(feature != null) 
-       switch (feature.getFeatureDataType())
-           case STRING:
-               String value = (String) feature.getCurrentValue();
-               System.out.println(value);
-               break;
-           case BOOLEAN:
-               Boolean boolVal = (Boolean) feature.getCurrentValue();
-               System.out.println(boolVal);
-               break;
-           case NUMERIC:
-               Integer intVal = (Integer) feature.getCurrentValue();
-               System.out.println(intVal);
-               break;
-       }
+   JSONObject identityAttributes = new JSONObject(); 
+   try { 
+   	identityAttributes.put("city", "Bengaluru"); 
+   	identityAttributes.put("country", "India"); 
+   } catch (JSONException e) { 
+   	e.printStackTrace(); 
+   } 
+
+   Feature feature = appConfiguration.getFeature("featureId") 
+   if(feature != null) {
+   	switch (feature.getFeatureDataType()) {
+   		case STRING: 
+   			String value = (String) feature.getCurrentValue("identityId", identityAttributes);
+   			System.out.println(value); 
+   			break; 	
+   		case BOOLEAN: 
+   			Boolean boolVal = (Boolean) feature.getCurrentValue("identityId", identityAttributes);
+   			System.out.println(boolVal); 
+   			break; 
+   		case NUMERIC: 
+   			Integer intVal = (Integer) feature.getCurrentValue("identityId", identityAttributes);
+   			System.out.println(intVal); 
+   			break;
+   	 } 
    }
    ```
    {:codeblock}
+
 - Force fetch the features from server.
    ```java
    appConfiguration.fetchFeatureData()

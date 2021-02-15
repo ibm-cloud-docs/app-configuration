@@ -14,12 +14,7 @@ App Configuration
         ac-create-appconfig-instance.md
         ac-collections.md
         ac-feature-flags.md
-
-        {: .topicgroup}
-        Integrating App Configuration service SDKs
-            [Node.js](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
-            [Android](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)
- 
+        ac-integrate-sdk.md
         ac-segments.md
     {: .navgroup-end}
 
@@ -27,8 +22,9 @@ App Configuration
     [Target feature flags to segments](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
-    Integrating App Configuration service SDKs
-        ac-integrate-sdk.md
+    SDKs
+        ac-integrate-sdk-node.md
+        ac-integrate-sdk-python.md
         ac-integrate-sdk-android.md
     ac-razee.md
     
