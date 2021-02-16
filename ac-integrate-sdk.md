@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-16"
 
-keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python
+keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang
 
 subcollection: app-configuration
 
@@ -47,4 +47,5 @@ For more information about installation and technical concepts, see the 'README'
 |-------------------------------------|-------------------------------------|
 |[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external} </br>[Node SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks) |[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external} </br>[Android SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android) |
 |[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) | &nbsp;&nbsp; |
+|[Golang SDK](https://github.com/IBM/appconfiguration-sdk-go){: external} </br>[Golang SDK documentation](/docs/app-configuration?topic=app-configuration-ac-golang) | &nbsp;&nbsp; |
 {:caption="Table 1. List of {{site.data.keyword.appconfig_short}} server and client SDKs" caption-side="top"}
