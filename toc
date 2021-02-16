@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/apprapp" path="app-configuration"}
+{: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/app-configuration" path="app-configuration"}
 App Configuration
 
     {: .navgroup id="learn"}
@@ -19,7 +19,7 @@ App Configuration
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    [Target feature flags to segments](https://{DomainName}/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
+    [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
     SDKs
@@ -27,7 +27,7 @@ App Configuration
         ac-integrate-sdk-python.md
         ac-integrate-sdk-android.md
     ac-razee.md
-    
+
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
@@ -36,7 +36,7 @@ App Configuration
 
     {: .navgroup id="reference"}
     ac-service-credentials.md
-    ac-sample-apps.md
+    ac-sample-apps.md   
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
 	{: .navgroup-end}
 
