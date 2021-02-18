@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-18"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -39,25 +39,25 @@ subcollection: app-configuration
 # App Configuration server SDK for Go
 {: #ac-golang}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang microservice or application. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. 
 {:shortdesc}
 
 ## Integrating server SDK for Go
 {: #ac-integrate-golang-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang microservice or application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
 
 1. Install the SDK using the following code from the `git` repository.
 
    ```sh
-   go get -u github.com/IBM/appconfiguration-sdk-go
+   go get -u github.com/IBM/appconfiguration-go-sdk
    ```
    {: codeblock}
 
 1. In your Golang microservice or application, include the SDK module with: 
 
    ```javascript
-   import AppConfiguration "appconfiguration-sdk-go/lib"
+   import AppConfiguration "appconfiguration-go-sdk/lib"
    ```
    {: codeblock}
 
@@ -66,24 +66,29 @@ subcollection: app-configuration
 
    ```javascript
    appConfiguration = AppConfiguration.GetInstance()
-   appConfiguration.Init(<REGION>, <GUID>, <API_KEY>)
+   appConfiguration.Init("region", "guid", "apikey")
 
-   // initialize feature
-   appConfiguration.SetCollectionId(<COLLECTION_ID>)
-
-   // set the file or offline feature
-   appConfiguration.FetchFromFeatureFile(<FEATURE_FILE_PATH>, //Add this field if liveFeatureUpdateEnabled false or get features when the device is offline during the first app load.                            
-   <LIVE_FEATURE_UPDATE_ENABLED>) // This is for live update from server.
+   // Set the collection Id
+   appConfiguration.SetCollectionId("collectionId")
    ```
    {: codeblock}
 
    where,
-   - REGION: Region name where the service instance is created. Use `us-south` for Dallas and `eu-gb` for London.
-   - GUID: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - API_KEY: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - COLLECTION_ID: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - FEATURE_FILE_PATH: Path to the JSON file which contains feature details and segment details.
-   - LIVE_FEATURE_UPDATE_ENABLED: Set this value to false if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the feature_file path. By default, this value is enabled.
+   - region: Region name where the service instance is created. Use `us-south` for Dallas and `eu-gb` for London.
+   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+
+1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-golang-example).
+
+   ```javascript
+   appConfiguration.FetchFromFeatureFile( "featureFilePath", "liveFeatureUpdateEnabled")
+   ```
+   {: codeblock}
+
+   where,
+   - featureFilePath: Path to the JSON file which contains feature details and segment details.
+   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath`. By default, this value is enabled.
 
 ### Examples for using feature related APIs
 {: #ac-golang-example}
@@ -94,7 +99,21 @@ Refer to the below examples for using the feature related APIs.
 {: #ac-golang-get-single-feature}
 
 ```javascript
-feature := appConfiguration.GetFeature(<FEATURE_ID>)
+feature := appConfiguration.GetFeature("featureId")
+
+if(feature) {
+
+    if(feature.IsEnabled()) {
+        // enable feature
+    } else {
+        // disable the feature
+    }
+    fmt.Println(feature);
+    fmt.Println("Feature Name %s", feature.GetFeatureName());
+    fmt.Println("Feature Id  %s", feature.GetFeatureId());
+    fmt.Println("Feature Type %s", feature.GetFeatureDataType());
+    fmt.Println("Feature is enabled %t ", feature.IsEnabled());
+}
 ```
 {: codeblock}
 
@@ -103,20 +122,30 @@ feature := appConfiguration.GetFeature(<FEATURE_ID>)
 
 ```javascript
 features := appConfiguration.GetFeatures()
+
+feature := features["featureId"];
+
+if(feature) {
+    fmt.Println("Feature Name %s", feature.GetFeatureName());
+    fmt.Println("Feature Id  %s", feature.GetFeatureId());
+    fmt.Println("Feature Type %s", feature.GetFeatureDataType());
+    fmt.Println("Feature is enabled %t ", feature.IsEnabled());
+}
 ```
 {: codeblock}
 
 #### Feature evaluation
 {: #ac-golang-feature-evaluation}
 
-You can use the `feature.GetCurrentValue(identityId, identity)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation.
+You can use the `feature.GetCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
 
 ```javascript
-identity := make(map[string]interface{})
-identity["email"] = "ibm.com"
-identity["city"] = "Bengaluru"
-identityId := "pvQr45"
-featureVal := feature.GetCurrentValue(identityId, identity)
+identityId := "identityId"
+identityAttributes := make(map[string]interface{})
+identityAttributes["email"] = "ibm.com"
+identityAttributes["city"] = "Bengaluru"
+
+featureVal := feature.GetCurrentValue(identityId, identityAttributes)
 ```
 {: codeblock}
 
@@ -127,7 +156,7 @@ To listen to the data changes, add the following code in your application:
 
 ```javascript
 appConfiguration.RegisterFeaturesUpdateListener(func() {
-	fmt.Println("Get your feature value now ")
+    fmt.Println("Get your feature value now ")
 })
 ```
 {: codeblock}
