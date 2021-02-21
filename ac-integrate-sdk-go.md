@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-21"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -57,7 +57,7 @@ subcollection: app-configuration
 1. In your Golang microservice or application, include the SDK module with: 
 
    ```javascript
-   import AppConfiguration "appconfiguration-go-sdk/lib"
+   import AppConfiguration "github.com/IBM/appconfiguration-go-sdk/lib"
    ```
    {: codeblock}
 
@@ -74,12 +74,15 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `us-south` for Dallas and `eu-gb` for London.
+   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-golang-example).
+   By default, live features update from the server is enabled. To turn off live features update, see [feature operations](#ac-golang-example).
+   {: note}
+
+1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-golang-example). After setting the `collectionId`, follow the below step:
 
    ```javascript
    appConfiguration.FetchFromFeatureFile( "featureFilePath", "liveFeatureUpdateEnabled")
@@ -101,19 +104,16 @@ Refer to the below examples for using the feature related APIs.
 ```javascript
 feature := appConfiguration.GetFeature("featureId")
 
-if(feature) {
-
-    if(feature.IsEnabled()) {
+if(feature.IsEnabled()) {
         // enable feature
-    } else {
+} else {
         // disable the feature
-    }
-    fmt.Println(feature);
-    fmt.Println("Feature Name %s", feature.GetFeatureName());
-    fmt.Println("Feature Id  %s", feature.GetFeatureId());
-    fmt.Println("Feature Type %s", feature.GetFeatureDataType());
-    fmt.Println("Feature is enabled %t ", feature.IsEnabled());
 }
+fmt.Println(feature);
+fmt.Println("Feature Name %s", feature.GetFeatureName());
+fmt.Println("Feature Id  %s", feature.GetFeatureId());
+fmt.Println("Feature Type %s", feature.GetFeatureDataType());
+fmt.Println("Feature is enabled %t ", feature.IsEnabled());
 ```
 {: codeblock}
 
@@ -125,12 +125,10 @@ features := appConfiguration.GetFeatures()
 
 feature := features["featureId"];
 
-if(feature) {
-    fmt.Println("Feature Name %s", feature.GetFeatureName());
-    fmt.Println("Feature Id  %s", feature.GetFeatureId());
-    fmt.Println("Feature Type %s", feature.GetFeatureDataType());
-    fmt.Println("Feature is enabled %t ", feature.IsEnabled());
-}
+fmt.Println("Feature Name %s", feature.GetFeatureName());
+fmt.Println("Feature Id  %s", feature.GetFeatureId());
+fmt.Println("Feature Type %s", feature.GetFeatureDataType());
+fmt.Println("Feature is enabled %t ", feature.IsEnabled());
 ```
 {: codeblock}
 
