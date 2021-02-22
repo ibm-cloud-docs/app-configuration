@@ -140,8 +140,8 @@ You can use the `feature.GetCurrentValue(identityId, identityAttributes)` method
 ```javascript
 identityId := "identityId"
 identityAttributes := make(map[string]interface{})
-identityAttributes["email"] = "ibm.com"
-identityAttributes["city"] = "Bengaluru"
+identityAttributes["city"] = "Bangalore"
+identityAttributes["country"] = "India"
 
 featureVal := feature.GetCurrentValue(identityId, identityAttributes)
 ```
