@@ -34,7 +34,7 @@ subcollection: app-configuration
 You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](https://github.com/IBM/appconfiguration-razee). 
 
 ## Common use-cases for {{site.data.keyword.appconfig_short}} Razee plugin 
-{: #ac-create-a-collection}
+{: #ac-usecases-razee-plugin}
 
 - Controlling Kubernetes deployments to scale up or down for a segment of clusters 
 - For few privileged customers, roll-out a new feature to their clusters, without any code deployments 
