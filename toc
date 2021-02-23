@@ -25,6 +25,7 @@ App Configuration
     SDKs
         ac-integrate-sdk-node.md
         ac-integrate-sdk-python.md
+        ac-integrate-sdk-go.md
         ac-integrate-sdk-android.md
     ac-razee.md
 
