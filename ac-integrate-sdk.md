@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-21"
+lastupdated: "2021-02-24"
 
-keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang
+keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
 subcollection: app-configuration
 
@@ -38,14 +38,15 @@ subcollection: app-configuration
 # Integrating SDKs
 {: #ac-sdks}
 
-Following are the list of {{site.data.keyword.appconfig_short}} client and server SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, and the server SDKs are available for Node and Python to integrate with your microservice or applications. 
+Following are the list of {{site.data.keyword.appconfig_short}} client, server, and admin SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, and the server SDKs are available for Node, Python, Go, and Java to integrate with your web and mobile applications, microservices, and distributed environments. 
 {:shortdesc}
 
 For more information about installation and technical concepts, see the 'README' document in the SDK.
 
-|Server SDKs                          |Client SDKs                          |
-|-------------------------------------|-------------------------------------|
-|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external} </br>[Node SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks) |[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external} </br>[Android SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android) |
-|[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) | &nbsp;&nbsp; |
-|[Golang SDK](https://github.com/IBM/appconfiguration-go-sdk){: external} </br>[Golang SDK documentation](/docs/app-configuration?topic=app-configuration-ac-golang) | &nbsp;&nbsp; |
-{:caption="Table 1. List of {{site.data.keyword.appconfig_short}} server and client SDKs" caption-side="top"}
+|Server SDKs                          |Client SDKs                          |Admin SDKs                          |
+|-------------------------------------|-------------------------------------|------------------------------------|
+|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external} </br>[Node SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks) |[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external} </br>[Android SDK documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android) |[Go Admin SDK](https://github.com/IBM/appconfiguration-go-admin-sdk){: external} </br>[Go Admin SDK documentation](https://{DomainName}/apidocs/app-configuration?code=go) |
+|[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external} </br>[Python SDK documentation](/docs/app-configuration?topic=app-configuration-ac-python) | &nbsp;&nbsp; | &nbsp;&nbsp; |
+|[Golang SDK](https://github.com/IBM/appconfiguration-go-sdk){: external} </br>[Golang SDK documentation](/docs/app-configuration?topic=app-configuration-ac-golang) | &nbsp;&nbsp; | &nbsp;&nbsp; |
+|[Java SDK](https://github.com/IBM/appconfiguration-java-sdk){: external} </br>[Java SDK documentation](/docs/app-configuration?topic=app-configuration-ac-java) | &nbsp;&nbsp; | &nbsp;&nbsp; |
+{:caption="Table 1. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="top"}
