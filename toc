@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="app-configuration" category="devops" audience="service" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/app-configuration#about" path="app-configuration"}
+{: .toc subcollection="app-configuration" category="devops" audience="service" release-level="beta" href="/docs/app-configuration?topic=app-configuration-getting-started" console-page="/catalog/services/app-configuration#about" path="app-configuration"}
 App Configuration
 
     {: .navgroup id="learn"}
@@ -27,6 +27,7 @@ App Configuration
         ac-integrate-sdk-python.md
         ac-integrate-sdk-go.md
         ac-integrate-sdk-android.md
+        [App Configuration admin SDK for Go](https://{DomainName}/apidocs/app-configuration?code=go)
     ac-razee.md
 
     {: .topicgroup}
