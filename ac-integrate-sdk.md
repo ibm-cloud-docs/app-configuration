@@ -38,7 +38,7 @@ subcollection: app-configuration
 # Integrating SDKs
 {: #ac-sdks}
 
-Following are the list of {{site.data.keyword.appconfig_short}} client, server, and admin SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, and the server SDKs are available for Node, Python, Go, and Java to integrate with your web and mobile applications, microservices, and distributed environments. 
+Following are the list of {{site.data.keyword.appconfig_short}} client, server, and admin SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, the server SDKs for Node, Python, Go, and Java, and the admin SDK for Go, to integrate with your web and mobile applications, microservices, and distributed environments. 
 {:shortdesc}
 
 For more information about installation and technical concepts, see the 'README' document in the SDK.
