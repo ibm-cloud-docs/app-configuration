@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-01"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -39,13 +39,13 @@ subcollection: app-configuration
 # App Configuration server SDK for Java
 {: #ac-java}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Java web and mobile applications, microservices, and distributed environments. 
+{{site.data.keyword.appconfig_short}} service provides SDKs to integrate with your applications, microservices, and distributed environments. 
 {:shortdesc}
 
 ## Integrating server SDK for Java
 {: #ac-integrate-java-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Java web and mobile applications, microservices, and distributed environments. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Java applications. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
 
 1. Install the SDK using one of the following ways.
 
@@ -67,7 +67,7 @@ subcollection: app-configuration
       ```
       {: codeblock}
 
-1. In your Java microservice or application, include the SDK module with: 
+1. In your Java microservice or application, include the SDK with: 
 
    ```javascript
    import com.ibm.cloud.appconfiguration.sdk.AppConfiguration
@@ -79,9 +79,9 @@ subcollection: app-configuration
 
    ```javascript
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   appConfiguration.init(AppConfiguration.REGION_US_SOUTH,'GUID','APIKEY');
+   appConfiguration.init('region','guid','apikey');
 
-   // Initialize feature 
+   // Set the Collection ID
    appConfiguration.setCollectionId('collectionId');
    ```
    {: codeblock}
@@ -98,14 +98,13 @@ subcollection: app-configuration
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-java-example). After setting the `collectionId`, follow the below step:
 
    ```javascript
-   // set the file or offline feature
-   appConfiguration.fetchFeaturesFromFile('custom/userJson.json', true);
+   appConfiguration.fetchFeaturesFromFile('featureFilePath', liveFeatureUpdateEnabled);
    ```
    {: codeblock}
 
    where,
    - featureFilePath: Path to the JSON file which contains feature details and segment details.
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `feature_File` path. By default, this value is enabled.
+   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath` path. By default, this value is enabled.
 
 ### Examples for using feature related APIs
 {: #ac-java-example}
@@ -117,6 +116,21 @@ Refer to the below examples for using the feature related APIs.
 
 ```java
 Feature feature = appConfiguration.getFeature("feature_id");
+
+if (feature) {
+   if (feature.isEnabled()) {
+      // enable feature
+   }
+   else {
+      // disable the feature
+   }
+
+   System.out.println("Feature Name : " + feature.getFeatureName());
+   System.out.println("Feature Id : " + feature.getFeatureId());
+   System.out.println("Feature Type : " + feature.getFeatureDataType());
+   System.out.println("Feature is enabled : " + feature.isEnabled());
+}
+
 ```
 {: codeblock}
 
@@ -124,7 +138,16 @@ Feature feature = appConfiguration.getFeature("feature_id");
 {: #ac-java-get-all-features}
 
 ```java
-Feature feature = appConfiguration.getFeatures();
+HashMap<String, Feature> features = appConfiguration.getFeatures();
+
+Feature feature = features.get("feature_id");
+
+if (feature) {
+   System.out.println("Feature Name : " + feature.getFeatureName());
+   System.out.println("Feature Id : " + feature.getFeatureId());
+   System.out.println("Feature Type : " + feature.getFeatureDataType());
+   System.out.println("Feature is enabled : " + feature.isEnabled());
+}
 ```
 {: codeblock}
 
@@ -161,6 +184,6 @@ appConfiguration.registerFeaturesUpdateListener(new FeaturesUpdateListener() {
 {: #ac-java-fetch-latest-data}
 
 ```java
-appConfiguration.fetchFeatureData()
+appConfiguration.fetchFeatureData();
 ```
 {: codeblock}
