@@ -22,6 +22,10 @@ App Configuration
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
     {: .topicgroup}
+    Enhancing security
+        ac-high-availability.md
+
+    {: .topicgroup}
     SDKs
         ac-integrate-sdk-node.md
         ac-integrate-sdk-python.md
