@@ -79,9 +79,6 @@ subcollection: app-configuration
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-   By default, live features update from the server is enabled. To turn off live features update, see [feature operations](#ac-golang-example).
-   {: note}
-
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-golang-example). After setting the `collectionId`, follow the below step:
 
    ```javascript
