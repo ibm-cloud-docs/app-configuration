@@ -30,6 +30,7 @@ App Configuration
         ac-integrate-sdk-node.md
         ac-integrate-sdk-python.md
         ac-integrate-sdk-go.md
+        ac-integrate-sdk-java.md
         ac-integrate-sdk-android.md
         [App Configuration admin SDK for Go](https://{DomainName}/apidocs/app-configuration?code=go)
     ac-razee.md
