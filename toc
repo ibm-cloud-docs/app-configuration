@@ -21,6 +21,8 @@ App Configuration
     {: .navgroup id="howto"}
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
 
+    ac-toolchain.md
+
     {: .topicgroup}
     Enhancing security
         ac-high-availability.md
