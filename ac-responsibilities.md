@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-12"
 
 keywords: app-configuration, app configuration, customer responsibilities, IBM responsibilities, terms and conditions, disaster recovery, toolchain backup
 
@@ -52,7 +52,7 @@ You are responsible for change management of your application and application da
 
 |Resource     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Service instance |Provide infrastructure operating system (OS), version, and security updates. |Use the API, CLI, or console tools to apply the provided updates, including version updates, new features, and security patches. |
+|Service instance |Provide infrastructure operating system (OS), version, and security updates. |Use the API, SDK, CLI, or console tools to apply the provided updates for the local entities (app code, CLI, and SDK). |
 {:caption="Table 2. Responsibilities for change management" caption-side="top"}
 
 ## Identity and access management
