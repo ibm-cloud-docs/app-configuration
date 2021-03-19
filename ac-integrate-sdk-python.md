@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-19"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -81,7 +81,7 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas and `AppConfiguration.REGION_EU_GB` for London.
+   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-19"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -80,7 +80,7 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `us-south` for Dallas and `eu-gb` for London.
+   - region: Region name where the service instance is created. Use `us-south` for Dallas, `eu-gb` for London, and `au-syd` for Sydney.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
