@@ -24,10 +24,6 @@ App Configuration
     ac-toolchain.md
 
     {: .topicgroup}
-    Enhancing security
-        ac-high-availability.md
-
-    {: .topicgroup}
     SDKs
         ac-integrate-sdk-node.md
         ac-integrate-sdk-python.md
@@ -48,6 +44,10 @@ App Configuration
     CLI reference
         /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
         ac-cli-changelog.md
+
+    {: .topicgroup}
+    High availability and disaster recovery
+        ac-high-availability.md
 
     ac-service-credentials.md
     ac-regions-endpoints.md
