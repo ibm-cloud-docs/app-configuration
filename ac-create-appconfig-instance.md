@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-29"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -19,10 +19,10 @@ subcollection: app-configuration
 {:shortdesc: .shortdesc}
 {:tip: .tip}
 
-# Create an {{site.data.keyword.appconfig_notm}} service instance
+# Create an {{site.data.keyword.appconfig_short}} service instance
 {: #ac-create-an-instance}
 
-{{site.data.keyword.appconfig_notm}} provides capabilities to embark on a truly agile development methodology by separating feature rollouts from regular release cycles. {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting.
+{{site.data.keyword.appconfig_short}} provides capabilities to embark on a truly agile development methodology by separating feature rollouts from regular release cycles. {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting. 
 {: shortdesc}
 
 You need an {{site.data.keyword.cloud}} account to create an instance of the {{site.data.keyword.appconfig_short}} service.

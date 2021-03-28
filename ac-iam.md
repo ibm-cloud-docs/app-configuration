@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-03-29"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -51,7 +51,7 @@ Review the available platform and service roles available and the actions that a
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
 | Viewer | As a viewer, you can view service instances, but you can't modify them. |
 {: row-headers}
-{: caption="Table 1. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 2. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #platform-roles-table1}
 {: tab-title="Platform roles"}
 {: tab-group="app-rapp"}
@@ -65,7 +65,7 @@ Review the available platform and service roles available and the actions that a
 | Writer | All service APIs can be accessed. |
 | ConfigReader | All service APIs can be accessed. |
 {: row-headers}
-{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 2. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}
@@ -87,7 +87,7 @@ Review the available platform and service roles available and the actions that a
 | `apprapp.segments.create` | Create a segment of users. | Manager, Reader, Writer, ConfigReader |
 | `apprapp.segments.update` | Update the segment properties. | Manager, Reader, Writer, ConfigReader |
 | `apprapp.segments.delete` | Delete a segment. | Manager, Reader, Writer, ConfigReader |
-{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 2. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
 {: tab-title="Actions"}
 {: tab-group="app-rapp"}

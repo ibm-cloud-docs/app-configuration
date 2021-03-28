@@ -13,14 +13,20 @@ App Configuration
     Basic steps
         ac-create-appconfig-instance.md
         ac-collections.md
-        ac-feature-flags.md
+
+        {: .topicgroup}
+        [Feature flags and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
+            ac-feature-flags.md
+            ac-properties.md
+
         ac-integrate-sdk.md
         ac-segments.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    ac-ff-prop-env.md
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
-
+    [Target properties to segments](/app-configuration/app-configuration-ac-properties#targeting-segment-with-properties) 
     ac-toolchain.md
 
     {: .topicgroup}
