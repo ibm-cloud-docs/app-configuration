@@ -13,12 +13,8 @@ App Configuration
     Basic steps
         ac-create-appconfig-instance.md
         ac-collections.md
-
-        {: .topicgroup}
-        [Feature flags and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
-            ac-feature-flags.md
-            ac-properties.md
-
+        ac-feature-flags.md
+        ac-properties.md
         ac-integrate-sdk.md
         ac-segments.md
     {: .navgroup-end}
