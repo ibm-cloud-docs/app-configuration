@@ -41,7 +41,7 @@ To create a property, complete these steps:
 
    ![Create property](images/ac-create-property.png "Creating property"){: caption="Figure 15. Creating a new property" caption-side="bottom"}
 
-   ![Create peoperty with further details](images/ac-create-property1.png "Creating property further details"){: caption="Figure 16. Creating a propery further details" caption-side="bottom"}
+   ![Create peoperty with further details](images/ac-create-property1.png "Creating property further details"){: caption="Figure 16. Creating a property further details" caption-side="bottom"}
 
 1. Provide the property details: 
    - **Name** - name of the property. 
@@ -64,7 +64,7 @@ You can have one of the following property types that is associated to a propert
 Each of the **Property type** is having a default value. 
 {: #property-type-default-value}
 
-- The value for the **Enabled value** is required, which can be overridden while targeting to a segment.
+- The value for the **Property value** is required, which can be overridden while targeting to a segment.
 
 ### Boolean
 {: #property-type-boolean}
@@ -87,7 +87,7 @@ When you select the **Property type** as *String*, the **Default value** details
 ### Numeric
 {: #property-type-numeric}
 
-When you select the **Flag type** as *Numeric*, the **Default value** details are displayed:
+When you select the **Property type** as *Numeric*, the **Default value** details are displayed:
 
 ![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Figure 19. Property type - Numeric" caption-side="bottom"}
 
@@ -114,7 +114,7 @@ You can roll out property to one or more target segments. You can set different 
    ![Target property to segments](images/ac-property-to-segments.png "Target property to segments"){: caption="Figure 20. Target property to segments" caption-side="bottom"}
 
 1. Select **Segments** from the list. If there are no segments available to target, click **Create segment**. For more information about creating a segment, refer [here](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
-1. Select the **Property value** (Inherit from proprty or Override).
+1. Select the **Property value** (Inherit from property or Override).
 1. Click **Save rule** to save the changes to the rules.
 1. Click **Add targeting**.
 
