@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-03-29"
 
 keywords: app-configuration, app configuration, tutorial
 
@@ -55,13 +55,14 @@ You can create a collection and enable App Service capabilities like feature fla
 
 To create a collection, see [here](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection).
 
-## Create Feature flags
+## Create Feature flags and Properties
 {: #ac-create-feature-flags}
 {: step}
 
-Create and manage feature flags for collections across platforms. Using Feature flags you, as an app owner, can control the applicability of a feature by enabling or disabling it at run time.
+Create and manage feature flags and properties for collections across platforms. Using Feature flags you, as an app owner, can control the applicability of a feature by enabling or disabling it at run time. You can also manage the properties for distributed applications centrally.
 
-To create a feature flag, see [here](/docs/app-configuration?topic=app-configuration-ac-feature-flags#ac-create-feature-flag).
+- To create a feature flag, see [here](/docs/app-configuration?topic=app-configuration-ac-feature-flags#ac-create-feature-flag).
+- To create a property, see [here](/docs/app-configuration?topic=app-configuration-ac-properties#ac-create-properties).
 
 ## Integrate {{site.data.keyword.appconfig_short}} service SDK
 {: #ac-integrate-sdk}
@@ -81,4 +82,5 @@ To create a segment, see [here](/docs/app-configuration?topic=app-configuration-
 {: #ac-gs-next-steps}
 
 - [How to target Feature flags to Segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag)
+- [How to target Properties to Segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties)
 - [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).

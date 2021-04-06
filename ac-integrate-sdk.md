@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-29"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -50,3 +50,5 @@ For more information about installation and technical concepts, see the 'README'
 |[Go SDK](https://github.com/IBM/appconfiguration-go-sdk){: external} </br>[Go SDK documentation](/docs/app-configuration?topic=app-configuration-ac-golang) | &nbsp;&nbsp; | &nbsp;&nbsp; |
 |[Java SDK](https://github.com/IBM/appconfiguration-java-sdk){: external} </br>[Java SDK documentation](/docs/app-configuration?topic=app-configuration-ac-java) | &nbsp;&nbsp; | &nbsp;&nbsp; |
 {:caption="Table 1. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="top"}
+You can also access these documents and download the SDKs from the {{site.data.keyword.appconfig_short}} console under SDKs on the navigation menu.
+{: note}

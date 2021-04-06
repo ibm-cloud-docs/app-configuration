@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-29"
 
 keywords: app-configuration, app configuration, regions, endpoints
 
@@ -48,4 +48,4 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-{:caption="Table 1. Service endpoints" caption-side="top"}
+{:caption="Table 3. Service endpoints" caption-side="top"}

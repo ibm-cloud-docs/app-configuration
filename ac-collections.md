@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-03-29"
 
-keywords: app-configuration, app configuration, create a collection, collections
+keywords: app-configuration, app configuration, create a collection, collections, properties, property
 
 subcollection: app-configuration
 
@@ -22,10 +22,10 @@ subcollection: app-configuration
 # Collections
 {: #ac-collections}
 
-Collections are a way to group feature flags. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature will need to be in a collection, and it is often convenient to create your collection first.
+Collections are a way to group feature flags and properties. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature will need to be in a collection, and it is often convenient to create your collection first.
 {:shortdesc}
 
-By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Tags** associated, and the date of creation of the collection.
+By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Tags** associated, the date of creation of the collection, and the collection **Content** (number of feature flags and number of properties).
 {: note}
 
 ## Create a collection
@@ -57,7 +57,6 @@ The overflow menu for each of the collection (three vertical dots) consists of *
 
 * When **Edit** option is selected, you can change the values for **Name** and **Tags** field.
 * When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected collection. Delete option will permanently deletes the collection and the action cannot be undone.
-* When **View features** option is selected, a list of features that are associated with this collection is displayed in the **Feature flags** pane.
 
 To copy the **Collection ID** to the clipboard, expand the collection name by clicking collapse arrow next to the required **Collection ID** and click the **Copy to clipboard** icon. Use this value as the identifier in your SDK or API code.
 {: note}
