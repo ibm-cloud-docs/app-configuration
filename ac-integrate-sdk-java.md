@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -69,44 +69,68 @@ subcollection: app-configuration
 
 1. In your Java microservice or application, include the SDK with: 
 
-   ```javascript
+   ```java
    import com.ibm.cloud.appconfiguration.sdk.AppConfiguration
    ```
    {: codeblock}
 
-1. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
+1. **Authentication**
+
+   In order to use an {{site.data.keyword.appconfig_short}} service in a Java application, you will need to authenticate. The following describes the typical path you need to take to do so.
+
+   - Getting credentials
+
+      Credentials to use an {{site.data.keyword.appconfig_short}} service are obtained via {{site.data.keyword.cloud_notm}}. You will need an active account and a service instance for the service that you wish to use prior to authenticating in your Java app.
+
+      You can access the service credentials for your instance by taking the following steps:
+
+      1. Go to the {{site.data.keyword.cloud_notm}} [Dashboard](https://cloud.ibm.com/) page.
+      1. Either click an existing {{site.data.keyword.appconfig_short}} service instance in your [resource list](https://cloud.ibm.com/resources) or click [**Create resource > Services > Developer Tools**](https://cloud.ibm.com/catalog?category=devops#services) and create an {{site.data.keyword.appconfig_short}} service instance.
+      1. Click on the **Service credentials** item in the left nav bar of your {{site.data.keyword.appconfig_short}} service instance.
+
+         On this page, you will see your credentials to use in the SDK to access your service instance. Get the `apikey` and `guid` from the credentials. 
+
+   - Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
    {: #ac-init-java-sdk}
 
-   ```javascript
-   AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   appConfiguration.init('region','guid','apikey');
+      ```java
+      AppConfiguration appConfiguration = AppConfiguration.getInstance();
 
-   // Set the Collection ID
-   appConfiguration.setCollectionId('collectionId');
+      String guid =  "guid"
+      String apikey = "apikey";
+
+      appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey);
+
+      String collectionId = "collectionId";
+      //Set the collection Id
+      appConfiguration.setCollectionId(collectionId);
+      ```
+      {: codeblock}
+
+      where,
+      - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+      - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+      - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+      - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+
+1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `collectionId`, follow the below step:
+
+   ```java
+   String configurationFile = "custom/userJson.json";
+   Boolean liveConfigUpdateEnabled = true;
+   // set the file or offline feature
+   appConfiguration.fetchConfigurationFromFile(configurationFile, liveConfigUpdateEnabled);
    ```
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - configurationFile: Path to the JSON file which contains configuration details.
+   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
-1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-java-example). After setting the `collectionId`, follow the below step:
-
-   ```javascript
-   appConfiguration.fetchFeaturesFromFile('featureFilePath', liveFeatureUpdateEnabled);
-   ```
-   {: codeblock}
-
-   where,
-   - featureFilePath: Path to the JSON file which contains feature details and segment details.
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath` path. By default, this value is enabled.
-
-### Examples for using feature related APIs
+### Examples for using feature and property related APIs
 {: #ac-java-example}
 
-Refer to the below examples for using the feature related APIs.
+Refer to the below examples for using the feature and property related APIs.
 
 #### Get single feature
 {: #ac-java-get-single-feature}
@@ -115,19 +139,11 @@ Refer to the below examples for using the feature related APIs.
 Feature feature = appConfiguration.getFeature("feature_id");
 
 if (feature) {
-   if (feature.isEnabled()) {
-      // enable feature
-   }
-   else {
-      // disable the feature
-   }
-
-   System.out.println("Feature Name : " + feature.getFeatureName());
-   System.out.println("Feature Id : " + feature.getFeatureId());
-   System.out.println("Feature Type : " + feature.getFeatureDataType());
-   System.out.println("Feature is enabled : " + feature.isEnabled());
+    System.out.println("Feature Name : " + feature.getFeatureName());
+    System.out.println("Feature Id : " + feature.getFeatureId());
+    System.out.println("Feature Type : " + feature.getFeatureDataType());
+    System.out.println("Feature is enabled : " + feature.isEnabled());
 }
-
 ```
 {: codeblock}
 
@@ -136,15 +152,6 @@ if (feature) {
 
 ```java
 HashMap<String, Feature> features = appConfiguration.getFeatures();
-
-Feature feature = features.get("feature_id");
-
-if (feature) {
-   System.out.println("Feature Name : " + feature.getFeatureName());
-   System.out.println("Feature Id : " + feature.getFeatureId());
-   System.out.println("Feature Type : " + feature.getFeatureDataType());
-   System.out.println("Feature is enabled : " + feature.isEnabled());
-}
 ```
 {: codeblock}
 
@@ -153,7 +160,7 @@ if (feature) {
 
 You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
 
-```json
+```java
 JSONObject identityAttributes = new JSONObject();
 identityAttributes.put("city", "Bangalore");
 identityAttributes.put("country", "India");
@@ -162,16 +169,54 @@ String value = (String) feature.getCurrentValue("identityId", identityAttributes
 ```
 {: codeblock}
 
-#### Listen to the feature changes
+#### Get single property
+{: #ac-java-get-single-property}
+
+```java
+Property property = appConfiguration.getProperty("property_id");
+
+if (property) {
+    System.out.println("Property Name : " + property.getPropertyName());
+    System.out.println("Property Id : " + property.getPropertyId());
+    System.out.println("Property Type : " + property.getPropertyDataType());
+}
+```
+{: codeblock}
+
+#### Get all properties 
+{: #ac-java-get-all-property}
+
+```java
+HashMap<String, Property> property = appConfiguration.getProperties();
+```
+{: codeblock}
+
+## Property evalation
+{: #ac-java-property-evaluation}
+
+You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. 
+
+You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
+
+```java
+JSONObject identityAttributes = new JSONObject();
+identityAttributes.put("city", "Bangalore");
+identityAttributes.put("country", "India");
+
+String value = (String) property.getCurrentValue("identityId", identityAttributes);
+```
+{: codeblock}
+
+#### Listen to the feature or property changes
 {: #ac-java-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
 
 ```java
-appConfiguration.registerFeaturesUpdateListener(new FeaturesUpdateListener() {
+appConfiguration.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
     @Override
-    public void onFeaturesUpdate() {
-       System.out.println("Got feature now");
+    public void onConfigurationUpdate() {
+       System.out.println("Got feature/property now");
     }
 });
 ```
@@ -181,6 +226,6 @@ appConfiguration.registerFeaturesUpdateListener(new FeaturesUpdateListener() {
 {: #ac-java-fetch-latest-data}
 
 ```java
-appConfiguration.fetchFeatureData();
+appConfiguration.fetchConfigurations()
 ```
 {: codeblock}

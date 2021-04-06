@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -44,11 +44,11 @@ subcollection: app-configuration
 ## Integrating server SDK for Node
 {: #ac-integrate-ff-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK. 
 
 1. Install the SDK using the following code from the `npm` registry.
 
-   ```
+   ```bash
    $ npm install ibm-appconfiguration-node-sdk
    ```
    {: codeblock}
@@ -68,19 +68,19 @@ subcollection: app-configuration
    ```javascript
    const client = AppConfiguration.getInstance();
 
-   let region = 'us-south';
+   let region = AppConfiguration.REGION_US_SOUTH;;
    let guid = 'abc-def-xyz';
    let apikey = 'j9qc-abc-z79';
 
    client.init(region, guid, apikey)
 
-   // Set the collectionId
+   // Set the collection Id
    client.setCollectionId('collectionId')
    ```
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `us-south` for Dallas, `eu-gb` for London, and `au-syd` for Sydney.
+   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
@@ -91,13 +91,13 @@ subcollection: app-configuration
    After setting the `collectionId`, follow the below step:
 
    ```javascript
-   client.fetchFeaturesFromFile(featureFile='path/to/feature/file.json', liveFeatureUpdateEnabled)
+   client.fetchConfigurationFromFile(configurationFile='path/to/configuration/file.json', liveConfigUpdateEnabled)
    ```
    {: codeblock}
 
    where,
-   - featureFile: Path to the JSON file, which contains feature details and segment details.
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, `liveFeatureUpdateEnabled` value is enabled.
+   - configurationFile: Path to the JSON file, which contains configuration details and segment details.
+   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, `liveConfigUpdateEnabled` value is enabled.
 
 ### Examples for using feature related APIs
 {: #ac-integrate-ff-example}
@@ -119,7 +119,7 @@ if(feature) {
     }
     console.log('data', feature);
     console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature Id  ${feature.getFeatureId()} `);
+    console.log(`Feature Id ${feature.getFeatureId()} `);
     console.log(`Feature Type ${feature.getFeatureDataType()} `);
     console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
@@ -135,10 +135,10 @@ var features = client.getFeatures();
 var feature = features["feature_id"];
 
 if(feature) {
-    console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature Id  ${feature.getFeatureId()} `);
-    console.log(`Feature Type ${feature.getFeatureDataType()} `);
-    console.log(`Feature is enabled ${feature.isEnabled()} `);
+    console.log(`Feature Name ${feature.getFeatureName()}`);
+    console.log(`Feature ShortName ${feature.getFeatureId()}`);
+    console.log(`Feature Type ${feature.getFeatureDataType()}`);
+    console.log(`Feature is enabled ${feature.isEnabled()}`);
 }
 ```
 {: codeblock}
@@ -171,13 +171,72 @@ You can use the `feature.getCurrentValue(identityId, identityAttributes)` method
    ```
    {: codeblock}
 
-#### Listen to the feature changes
+#### Get single property
+{: #ac-integrate-ff-get-single-property}
+
+```javascript
+const property = client.getProperty('property_id')
+
+if(property) {
+    console.log('data', property);
+    console.log(`Property Name ${property.getPropertyName()}`);
+    console.log(`Property Id ${property.getPropertyId()}`);
+    console.log(`Property Type ${property.getPropertyDataType()}`);
+}
+```
+{: codeblock}
+
+#### Get all properties
+{: #ac-integrate-ff-get-all-properties}
+
+```javascript
+var properties = client.getProperties();
+
+var property = properties["property_id"];
+
+if(property) {
+    console.log(`Property Name ${property.getPropertyName()}`);
+    console.log(`Property Id ${property.getPropertyId()}`);
+    console.log(`Property Type ${property.getPropertyDataType()}`);
+}
+```
+{: codeblock}
+
+#### Evaluate a property
+{: #ac-integrate-ff-property-evaluation}
+
+You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation.
+
+##### Usage
+
+- If the property is configured with segments in the App Configuration service, provide a json object as `identityAttributes` parameter to this method.
+
+   ```javascript
+   let identityId = 'identityId'
+   let identityAttributes = {
+       'city': 'Bangalore',
+       'country': 'India'
+   }
+
+   property.getCurrentValue(identityId, identityAttributes)    
+   ```
+   {: codeblock}
+
+- If the property is not targeted to any segments, this method returns the property value.
+
+   ```javascript
+   let identityId = 'identityId'
+   property.getCurrentValue(identityId)
+   ```
+   {: codeblock}
+
+#### Listen to the feature or property changes
 {: #ac-integrate-ff-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
 
 ```javascript
-client.emitter.on('featuresUpdate', () => {
+client.emitter.on('configurationUpdate', () => {
     // add your code
 })
 ```

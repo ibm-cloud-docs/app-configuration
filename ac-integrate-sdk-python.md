@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -44,13 +44,13 @@ subcollection: app-configuration
 ## Integrating server SDK for Python
 {: #ac-integrate-python}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK. 
 
 1. Install the SDK using either one of the following method:
 
    - Using `pip`
 
-      ```
+      ```sh
       pip install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
@@ -62,69 +62,68 @@ subcollection: app-configuration
       ```
       {: codeblock}
 
-
 1. In your Python application code, include the SDK module with: 
 
-   ```javascript
-   from ibm_appconfiguration import AppConfiguration, Feature, FeatureType
+   ```py
+   from ibm_appconfiguration import AppConfiguration, Feature, Property, ConfigurationType
    ```
    {: codeblock}
 
 1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
-   ```javascript
+   ```py
    app_config = AppConfiguration.get_instance()
-   app_config.init(region='REGION',
+   app_config.init(region=AppConfiguration.REGION_US_SOUTH,
                   guid='GUID',
                   apikey='APIKEY')
-   ```
-   {: codeblock}
 
-   where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-
-1. Set the collection_id with the following command:
-
-   ```javascript
+   ## Initialize configurations 
    app_config.set_collection_id(collection_id='collection_id') 
    ```
    {: codeblock}
 
    where,
+   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-python-example).
+1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-python-example).
 
-   ```javascript
-   app_config.fetch_features_from_file(feature_file='custom/userJson.json', 
-                                       live_feature_update_enabled=True) 
+   ```py
+   ## set the file or offline configurations
+   app_config.fetch_configuration_from_file(configuration_file='custom/userJson.json', 
+                                       live_config_update_enabled=True)
    ```
    {: codeblock}
 
    where,
-   - feature_file: Path to the JSON file which contains feature details and segment details.
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `feature_file` path. By default, this value is `true`.
+   - configuration_file: Path to the JSON file which contains configuration details.
+   - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
    
-
-### Examples for using feature related APIs
+### Examples for using feature and property related APIs
 {: #ac-python-example}
 
-Refer to the below examples for using the feature related APIs.
+Refer to the below examples for using the feature and property related APIs.
 
 #### Get single feature
 {: #ac-python-get-single-feature}
 
-```javascript
+```py
 feature = app_config.get_feature('feature_id')
+if (feature) {
+    print('Feature Name : {0}'.format(feature.get_feature_name()));
+    print('Feature Id : {0}'.format(feature.get_feature_id()));
+    print('Feature Type : {0}'.format(feature.get_feature_data_type()));
+    print('Feature is enabled : {0}'.format(feature.is_enabled()));
+}
 ```
 {: codeblock}
 
 #### Get all features
 {: #ac-python-get-all-features}
 
-```javascript
+```py
 features_dictionary = app_config.get_features()
 ```
 {: codeblock}
@@ -132,34 +131,73 @@ features_dictionary = app_config.get_features()
 #### Feature evaluation
 {: #ac-python-feature-evaluation}
 
-You can use the feature.get_current_value(identity_id, identity_attributes) method to evaluate the value of the feature flag. You should pass an unique identity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the App Configuration service, you can set the attributes values as a dictionary.
+You can use the feature.get_current_value(identity_id, identity_attributes) method to evaluate the value of the feature flag. You should pass an unique identity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
-```javascript
-identityAttributes = {
+```py
+identity_attributes = {
     'city': 'Bangalore',
     'country': 'India'
 }
-feature_value = feature.get_current_value(identity_id='identityId', identity_attributes=identityAttributes)
+feature_value = feature.get_current_value(identity_id='identity_id', identity_attributes=identity_attributes)
 ```
 {: codeblock}
 
-#### Listen to the feature data changes
+#### Get single Property
+{: #ac-python-get-single-property}
+
+```py
+property = app_config.get_property('property_id')
+if (property) {
+    print('Property Name : {0}'.format(property.get_property_name()));
+    print('Property Id : {0}'.format(property.get_property_id()));
+    print('Property Type : {0}'.format(property.get_property_data_type()));
+}
+```
+{: codeblock}
+
+#### Get all Properties 
+{: #ac-python-get-all-properties}
+
+```py
+properties_dictionary = app_config.get_properties()
+```
+{: codeblock}
+
+#### Property evaluation
+{: #ac-python-property-evaluation}
+
+You can use the `property.get_current_value(identity_id, identity_attributes)` method to evaluate the value of the property. 
+
+You should pass an unique `identity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
+
+```py
+identity_attributes = {
+    'city': 'Bangalore',
+    'country': 'India'
+}
+property_value = property.get_current_value(identity_id='identity_id', identity_attributes=identity_attributes)
+```
+{: codeblock}
+
+#### Listen to the feature and property data changes
 {: #ac-python-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
 
-```javascript
-def features_update(self):
-    print('Get your Feature value NOW')
+```py
+def configuration_update(self):
+    print('Get your Feature/Property value now')
 
-app_config.register_features_update_listener(features_update)
+app_config.register_configuration_update_listener(configuration_update)
+
 ```
 {: codeblock}
 
 #### Fetch latest data
 {: #ac-python-fetch-latest-data}
 
-```javascript
-app_config.fetch_feature_data()
+```py
+app_config.fetch_configurations()
 ```
 {: codeblock}
+
