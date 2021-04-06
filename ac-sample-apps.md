@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-03-30"
 
 keywords: app-configuration, app configuration, sample apps
 
@@ -26,4 +26,6 @@ Explore the sample apps to understand the features of {{site.data.keyword.appcon
 {: shortdesc}
 
 - [Node.JS sample app](https://github.com/IBM/appconfiguration-samples/tree/master/nodejs){:external}
-<!--  Java sample app  Python sample app -->
+- [Android - Kotlin sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-kotlin){:external}
+- [Android - Java sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-java){:external}
+
