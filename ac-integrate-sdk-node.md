@@ -38,13 +38,13 @@ subcollection: app-configuration
 # App Configuration server SDK for Node
 {: #ac-integrate-sdks}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application.
 {:shortdesc}
 
 ## Integrating server SDK for Node
 {: #ac-integrate-ff-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
 1. Install the SDK using the following code from the `npm` registry.
 
@@ -53,7 +53,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. In your Node.js microservice, include the SDK module with: 
+1. In your Node.js microservice, include the SDK module with:
 
    ```javascript
    const {
@@ -99,7 +99,7 @@ subcollection: app-configuration
    - configurationFile: Path to the JSON file, which contains configuration details and segment details.
    - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, `liveConfigUpdateEnabled` value is enabled.
 
-### Examples for using feature related APIs
+### Examples for using feature and property related APIs
 {: #ac-integrate-ff-example}
 
 Refer to the below examples for using the feature related APIs.
@@ -136,7 +136,7 @@ var feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()}`);
-    console.log(`Feature ShortName ${feature.getFeatureId()}`);
+    console.log(`Feature Id ${feature.getFeatureId()}`);
     console.log(`Feature Type ${feature.getFeatureDataType()}`);
     console.log(`Feature is enabled ${feature.isEnabled()}`);
 }
@@ -241,4 +241,3 @@ client.emitter.on('configurationUpdate', () => {
 })
 ```
 {: codeblock}
-

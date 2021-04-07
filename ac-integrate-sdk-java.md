@@ -39,13 +39,13 @@ subcollection: app-configuration
 # App Configuration server SDK for Java
 {: #ac-java}
 
-{{site.data.keyword.appconfig_short}} service provides SDKs to integrate with your applications, microservices, and distributed environments. 
+{{site.data.keyword.appconfig_short}} service provides SDKs to integrate with your applications, microservices, and distributed environments.
 {:shortdesc}
 
 ## Integrating server SDK for Java
 {: #ac-integrate-java-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Java applications. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Java applications. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
 1. Install the SDK using one of the following ways.
 
@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>1.0.0</version>
+         <version>1.2.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,34 +63,18 @@ subcollection: app-configuration
    - Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.0.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.2.0'
       ```
       {: codeblock}
 
-1. In your Java microservice or application, include the SDK with: 
+1. In your Java microservice or application, include the SDK with:
 
    ```java
    import com.ibm.cloud.appconfiguration.sdk.AppConfiguration
    ```
    {: codeblock}
 
-1. **Authentication**
-
-   In order to use an {{site.data.keyword.appconfig_short}} service in a Java application, you will need to authenticate. The following describes the typical path you need to take to do so.
-
-   - Getting credentials
-
-      Credentials to use an {{site.data.keyword.appconfig_short}} service are obtained via {{site.data.keyword.cloud_notm}}. You will need an active account and a service instance for the service that you wish to use prior to authenticating in your Java app.
-
-      You can access the service credentials for your instance by taking the following steps:
-
-      1. Go to the {{site.data.keyword.cloud_notm}} [Dashboard](https://cloud.ibm.com/) page.
-      1. Either click an existing {{site.data.keyword.appconfig_short}} service instance in your [resource list](https://cloud.ibm.com/resources) or click [**Create resource > Services > Developer Tools**](https://cloud.ibm.com/catalog?category=devops#services) and create an {{site.data.keyword.appconfig_short}} service instance.
-      1. Click on the **Service credentials** item in the left nav bar of your {{site.data.keyword.appconfig_short}} service instance.
-
-         On this page, you will see your credentials to use in the SDK to access your service instance. Get the `apikey` and `guid` from the credentials. 
-
-   - Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
+1. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
    {: #ac-init-java-sdk}
 
       ```java
@@ -183,7 +167,7 @@ if (property) {
 ```
 {: codeblock}
 
-#### Get all properties 
+#### Get all properties
 {: #ac-java-get-all-property}
 
 ```java
@@ -194,7 +178,7 @@ HashMap<String, Property> property = appConfiguration.getProperties();
 ## Property evalation
 {: #ac-java-property-evaluation}
 
-You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. 
+You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property.
 
 You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
 
