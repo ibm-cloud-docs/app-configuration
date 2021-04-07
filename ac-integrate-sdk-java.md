@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>1.2.0</version>
+         <version>1.1.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,7 +63,7 @@ subcollection: app-configuration
    - Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.2.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.1.0'
       ```
       {: codeblock}
 
@@ -175,7 +175,7 @@ HashMap<String, Property> property = appConfiguration.getProperties();
 ```
 {: codeblock}
 
-## Property evalation
+#### Property evaluation
 {: #ac-java-property-evaluation}
 
 You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property.
