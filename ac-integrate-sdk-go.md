@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-14"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -39,13 +39,13 @@ subcollection: app-configuration
 # App Configuration server SDK for Go
 {: #ac-golang}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments.
 {:shortdesc}
 
 ## Integrating server SDK for Go
 {: #ac-integrate-golang-sdk}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. You can evaluate the values of your feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. You can evaluate the values of your property and feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
 1. Install the SDK using the following code from the `git` repository.
 
@@ -54,7 +54,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. In your Golang microservice or application, include the SDK module with: 
+1. In your Golang microservice or application, include the SDK module with:
 
    ```javascript
    import AppConfiguration "github.com/IBM/appconfiguration-go-sdk/lib"
@@ -79,21 +79,21 @@ subcollection: app-configuration
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
 
-1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-golang-example). After setting the `collectionId`, follow the below step:
+1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-golang-example). After setting the `collectionId`, follow the below step:
 
    ```javascript
-   appConfiguration.FetchFromFeatureFile( "featureFilePath", "liveFeatureUpdateEnabled")
+   appConfiguration.FetchConfigurationFromFile( "configurationFilePath", "liveConfigUpdateEnabled")
    ```
    {: codeblock}
 
    where,
-   - featureFilePath: Path to the JSON file which contains feature details and segment details.
-   - liveFeatureUpdateEnabled: Set this value to `false` if the new feature values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath`. By default, this value is enabled.
+   - configurationFilePath: Path to the JSON file which contains feature details and segment details.
+   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath`. By default, this value is enabled.
 
-### Examples for using feature related APIs
+### Examples for using property and feature related APIs
 {: #ac-golang-example}
 
-Refer to the below examples for using the feature related APIs.
+Refer to the below examples for using the property and feature related APIs.
 
 #### Get single feature
 {: #ac-golang-get-single-feature}
@@ -137,21 +137,63 @@ You can use the `feature.GetCurrentValue(identityId, identityAttributes)` method
 ```javascript
 identityId := "identityId"
 identityAttributes := make(map[string]interface{})
-identityAttributes["city"] = "Bangalore"
-identityAttributes["country"] = "India"
+identityAttributes["email"] = "ibm.com"
+identityAttributes["city"] = "Bengaluru"
 
 featureVal := feature.GetCurrentValue(identityId, identityAttributes)
 ```
 {: codeblock}
 
-#### Listen to the feature changes
+#### Get single property
+{: #ac-golang-get-single-property}
+
+```javascript
+property := appConfiguration.GetProperty("propertyId")
+
+fmt.Println(property);
+fmt.Println("Property Name %s", property.GetPropertyName());
+fmt.Println("Property Id  %s", property.GetPropertyId());
+fmt.Println("Property Type %s", property.GetPropertyDataType());
+```
+{: codeblock}
+
+#### Get all properties
+{: #ac-golang-get-all-properties}
+
+```javascript
+properties := appConfiguration.GetProperties()
+
+property := properties["propertyId"];
+
+fmt.Println("Property Name %s", property.GetPropertyName());
+fmt.Println("Property Id  %s", property.GetPropertyId());
+fmt.Println("Property Type %s", property.GetPropertyDataType());
+```
+{: codeblock}
+
+#### Property evaluation
+{: #ac-golang-property-evaluation}
+
+You can use the `property.GetCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
+
+```javascript
+identityId := "identityId"
+identityAttributes := make(map[string]interface{})
+identityAttributes["email"] = "ibm.com"
+identityAttributes["city"] = "Bengaluru"
+
+propertyVal := property.GetCurrentValue(identityId, identityAttributes)
+```
+{: codeblock}
+
+#### Listen to the property and feature changes
 {: #ac-golang-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
 
 ```javascript
-appConfiguration.RegisterFeaturesUpdateListener(func() {
-    fmt.Println("Get your feature value now ")
+appConfiguration.RegisterConfigurationUpdateListener(func() {
+    fmt.Println("Get your feature/property value now ")
 })
 ```
 {: codeblock}
