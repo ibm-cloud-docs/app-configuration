@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-04-18"
 
-keywords: app-configuration, app configuration, set up feature flags and properties, feature flags, properties
+keywords: app-configuration, app configuration, set up environments feature flags and properties, feature flags, properties, environments
 
 subcollection: app-configuration
 
@@ -19,11 +19,16 @@ subcollection: app-configuration
 {:shortdesc: .shortdesc}
 {:tip: .tip}
 
-# Set up feature flags and properties
+# Set up environments, feature flags, and properties
 {: #ac-ff-prop-env}
 
 Use feature flags to enable or disable a feature in your application code. You can also manage the properties for distributed applications centrally.
 {: shortdesc}
+
+## Environments
+{: #ac-setup-environments}
+
+Use environments to manage your feature flags and properties. You can create new environments based on your needs. For more information, see [environments](/docs/app-configuration?topic=app-configuration-ac-environments).
 
 ## Feature flags
 {: #ac-setup-ff}

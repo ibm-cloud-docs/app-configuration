@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-18"
 
 keywords: app-configuration, app configuration, tutorial
 
@@ -55,12 +55,13 @@ You can create a collection and enable App Service capabilities like feature fla
 
 To create a collection, see [here](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection).
 
-## Create Feature flags and Properties
+## Create Environment, Feature flags, and Properties
 {: #ac-create-feature-flags}
 {: step}
 
-Create and manage feature flags and properties for collections across platforms. Using Feature flags you, as an app owner, can control the applicability of a feature by enabling or disabling it at run time. You can also manage the properties for distributed applications centrally.
+Create and manage environments, feature flags, and properties for collections across platforms. Using Feature flags you, as an app owner, can control the applicability of a feature by enabling or disabling it at run time. You can also manage the properties for distributed applications centrally.
 
+- To create an environment, see [here](/docs/app-configuration?topic=app-configuration-ac-environments#ac-create-environment).
 - To create a feature flag, see [here](/docs/app-configuration?topic=app-configuration-ac-feature-flags#ac-create-feature-flag).
 - To create a property, see [here](/docs/app-configuration?topic=app-configuration-ac-properties#ac-create-properties).
 
