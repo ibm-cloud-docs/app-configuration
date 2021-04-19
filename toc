@@ -15,8 +15,8 @@ App Configuration
         ac-collections.md
         ac-feature-flags.md
         ac-properties.md
-        ac-integrate-sdk.md
         ac-segments.md
+        ac-integrate-sdk.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -38,7 +38,11 @@ App Configuration
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
-    ac-iam.md
+
+    {: .topicgroup}
+    Enhancing Security
+        ac-iam.md
+        ac-securing-data.md
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
