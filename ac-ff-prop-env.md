@@ -28,7 +28,7 @@ Use feature flags to enable or disable a feature in your application code. You c
 ## Environments
 {: #ac-setup-environments}
 
-Use environments to manage your feature flags and properties. You can create new environments based on your needs. For more information, see [environments](/docs/app-configuration?topic=app-configuration-ac-environments).
+Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. For more information, see [environments](/docs/app-configuration?topic=app-configuration-ac-environments).
 
 ## Feature flags
 {: #ac-setup-ff}
