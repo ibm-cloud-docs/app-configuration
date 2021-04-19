@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-18"
+lastupdated: "2021-04-19"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -50,7 +50,7 @@ These information can be deleted using the APIs mentioned [here](https://cloud.i
 When you delete an instance of {{site.data.keyword.appconfig_short}}, all of the associated data is also deleted. When the service instance is deleted, a 7-day reclamation period begins. During that time, you are able to restore the instance and all of the associated user data. However, if the instance and data are permanently deleted, it cannot be restored. {{site.data.keyword.appconfig_short}} does not store any data from permanently deleted instances.
 The {{site.data.keyword.appconfig_short}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.appconfig_short}} service description, which you can find in the [IBM Cloud Terms and Notices](https://cloud.ibm.com/docs/overview?topic=overview-terms).
 
-## Deleting an instance
+### Deleting an instance
 {: #ac-deleting-instance}
 
 If you no longer need an instance of {{site.data.keyword.appconfig_short}}, you can delete the service instance and any data that is stored using `ibmcloud CLI`. You can also choose to delete your service instance by using the console.

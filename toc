@@ -17,8 +17,8 @@ App Configuration
         ac-collections.md
         ac-feature-flags.md
         ac-properties.md
-        ac-integrate-sdk.md
         ac-segments.md
+        ac-integrate-sdk.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
