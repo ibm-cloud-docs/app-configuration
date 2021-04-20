@@ -148,7 +148,7 @@ if(feature) {
 
 You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation.
 
-##### Usage
+##### Feature usage
 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `identityAttributes` parameter to this method.
 
@@ -207,7 +207,7 @@ if(property) {
 
 You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation.
 
-##### Usage
+##### Property usage
 
 - If the property is configured with segments in the App Configuration service, provide a json object as `identityAttributes` parameter to this method.
 
