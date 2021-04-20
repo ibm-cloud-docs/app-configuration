@@ -88,7 +88,7 @@ subcollection: app-configuration
 
    where,
    - configurationFilePath: Path to the JSON file which contains feature details and segment details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `featureFilePath`. By default, this value is enabled.
+   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFilePath`. By default, this value is enabled.
 
 ### Examples for using property and feature related APIs
 {: #ac-golang-example}
@@ -202,6 +202,6 @@ appConfiguration.RegisterConfigurationUpdateListener(func() {
 {: #ac-golang-fetch-latest-data}
 
 ```javascript
-appConfiguration.FetchFeatureData()
+appConfiguration.FetchConfigurations()
 ```
 {: codeblock}

@@ -359,7 +359,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Property evaluation**
 
-   You can use the `property.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```java
    JSONObject identityAttributes = new JSONObject();
@@ -372,7 +372,7 @@ Refer to the below examples for using the property and feature related APIs.
    }
 
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
-   Property property = appConfiguration.getProperty("propertyId")
+   Property property = appConfiguration.getProperty("propertyId");
    String value = (String) property.getCurrentValue(identityId, identityAttributes);
    ```
    {:codeblock}

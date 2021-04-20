@@ -8,15 +8,17 @@ App Configuration
     {: .navgroup id="learn"}
     getting-started.md
     ac-about.md
+    ac-release-notes.md
 
     {: .topicgroup}
     Basic steps
         ac-create-appconfig-instance.md
+        ac-environments.md
         ac-collections.md
         ac-feature-flags.md
         ac-properties.md
-        ac-integrate-sdk.md
         ac-segments.md
+        ac-integrate-sdk.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -38,7 +40,11 @@ App Configuration
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
-    ac-iam.md
+    
+    {: .topicgroup}
+    Enhancing security
+        ac-iam.md
+        ac-securing-data.md
 	{: .navgroup-end}
 
     {: .navgroup id="reference"}
