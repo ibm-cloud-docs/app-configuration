@@ -23,8 +23,8 @@ App Configuration
 
     {: .navgroup id="howto"}
     ac-ff-prop-env.md
-    [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) 
-    [Target properties to segments](/app-configuration/app-configuration-ac-properties#targeting-segment-with-properties) 
+    [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag)
+    [Target properties to segments](/app-configuration/app-configuration-ac-properties#targeting-segment-with-properties)
     ac-toolchain.md
 
     {: .topicgroup}
@@ -40,7 +40,7 @@ App Configuration
     {: .topicgroup}
     Tutorials
         ac-tutorial.md
-    
+
     {: .topicgroup}
     Enhancing security
         ac-iam.md
@@ -56,11 +56,11 @@ App Configuration
     {: .topicgroup}
     High availability and disaster recovery
         ac-high-availability.md
-
+    ac-monitoring.md
     ac-service-credentials.md
     ac-responsibilities.md
     ac-regions-endpoints.md
-    ac-sample-apps.md   
+    ac-sample-apps.md
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
 	{: .navgroup-end}
 
