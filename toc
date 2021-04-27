@@ -22,10 +22,12 @@ App Configuration
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    ac-monitor.md
     ac-ff-prop-env.md
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag)
     [Target properties to segments](/app-configuration/app-configuration-ac-properties#targeting-segment-with-properties)
     ac-toolchain.md
+
 
     {: .topicgroup}
     SDKs
@@ -56,7 +58,6 @@ App Configuration
     {: .topicgroup}
     High availability and disaster recovery
         ac-high-availability.md
-    ac-monitoring.md
     ac-service-credentials.md
     ac-responsibilities.md
     ac-regions-endpoints.md
