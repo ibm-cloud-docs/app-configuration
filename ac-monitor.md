@@ -19,7 +19,7 @@ subcollection: app-configuration
 {:shortdesc: .shortdesc}
 {:tip: .tip}
 
-# Monitoring {{site.data.keyword.appconfig_short}} service metrics with {{site.data.keyword.mon_full_notm}}
+# Monitor {{site.data.keyword.appconfig_short}} service metrics with {{site.data.keyword.mon_full_notm}}
 {: #ac-monitoring}
 
 <!-- All IBM Cloud® general availability (GA) services have a Service Level Agreement of 99.99% availability.  -->
@@ -63,8 +63,8 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
   The following tables describe the specific metrics provided by {{site.data.keyword.appconfig_short}}.
 
   | Deployment region    | Monitoring region |
-  |-------------|-------------|
-  | `Metric Name`| ibm_apprapp_instance_evaluation |
-  | `Metric Type`| `counter`|
-  | `Value Type`| `none`|
-  | `Segment By`| `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`,ibm_apprapp_instance_id|
+|-------------|-------------|
+| `Metric Name` | `ibm_apprapp_instance_evaluation` |
+| `Metric Type` | `counter`|
+| `Value Type` | `none`|
+| `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
