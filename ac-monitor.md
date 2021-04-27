@@ -62,7 +62,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
 
   The following tables describe the specific metrics provided by {{site.data.keyword.appconfig_short}}.
 
-  | Deployment region    | Monitoring region |
+| Deployment region    | Monitoring region |
 |-------------|-------------|
 | `Metric Name` | `ibm_apprapp_instance_evaluation` |
 | `Metric Type` | `counter`|
