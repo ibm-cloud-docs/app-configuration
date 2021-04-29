@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-28"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -68,8 +68,7 @@ subcollection: app-configuration
    appConfiguration = AppConfiguration.GetInstance()
    appConfiguration.Init("region", "guid", "apikey")
 
-   // Set the collection Id
-   appConfiguration.SetCollectionId("collectionId")
+   appConfiguration.SetContext("collectionId", "environmentId")
    ```
    {: codeblock}
 
@@ -78,17 +77,23 @@ subcollection: app-configuration
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-golang-example). After setting the `collectionId`, follow the below step:
+1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-golang-example).
+
+After `appConfiguration.Init("region", "guid", "apikey")`, follow the below steps:
 
    ```javascript
-   appConfiguration.FetchConfigurationFromFile( "configurationFilePath", "liveConfigUpdateEnabled")
+  appConfiguration.SetContext("collectionId", "environmentId", AppConfiguration.ContextOptions{
+  ConfigurationFile: "path/to/configuration/file.json",
+  LiveConfigUpdateEnabled: false,
+})
    ```
    {: codeblock}
 
    where,
-   - configurationFilePath: Path to the JSON file which contains feature details and segment details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFilePath`. By default, this value is enabled.
+   - ConfigurationFile: Path to the JSON file, which contains configuration details.
+   - LiveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `ConfigurationFile`. By default, this value is enabled.
 
 ### Examples for using property and feature related APIs
 {: #ac-golang-example}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-29"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -74,8 +74,9 @@ subcollection: app-configuration
 
    client.init(region, guid, apikey)
 
-   // Set the collection Id
-   client.setCollectionId('collectionId')
+   let collectionId = '<collectionId>';
+   let environmentId = '<environmentId>';
+   client.setContext(collectionId, environmentId)
    ```
    {: codeblock}
 
@@ -83,21 +84,25 @@ subcollection: app-configuration
    - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
+   - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
    {: #ac-work-offline-ff}
 
-   After setting the `collectionId`, follow the below step:
+   After `client.init(region, guid, apikey)`:
 
    ```javascript
-   client.fetchConfigurationFromFile(configurationFile='path/to/configuration/file.json', liveConfigUpdateEnabled)
+   let configurationFile = 'path/to/configuration/file.json';
+   let liveConfigUpdateEnabled = false;
+   client.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled)
    ```
    {: codeblock}
 
    where,
-   - configurationFile: Path to the JSON file, which contains configuration details and segment details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, `liveConfigUpdateEnabled` value is enabled.
+   - configurationFile: Path to the JSON file, which contains configuration details.
+   - liveConfigUpdateEnabled: Set this value to false if the new configuration values shouldn't be fetched from the    server. Make sure to provide a proper JSON file in the path. By default, liveConfigUpdateEnabled value is enabled.
+
 
 ### Examples for using feature and property related APIs
 {: #ac-integrate-ff-example}
@@ -148,7 +153,7 @@ if(feature) {
 
 You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation.
 
-##### Usage
+##### Feature usage
 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `identityAttributes` parameter to this method.
 
@@ -207,7 +212,7 @@ if(property) {
 
 You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation.
 
-##### Usage
+##### Property usage
 
 - If the property is configured with segments in the App Configuration service, provide a json object as `identityAttributes` parameter to this method.
 
