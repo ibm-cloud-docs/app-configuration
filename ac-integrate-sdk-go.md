@@ -85,15 +85,15 @@ After `appConfiguration.Init("region", "guid", "apikey")`, follow the below step
 
    ```javascript
   appConfiguration.SetContext("collectionId", "environmentId", AppConfiguration.ContextOptions{
-  ConfigurationFile:       "path/to/configuration/file.json",
+  ConfigurationFile: "path/to/configuration/file.json",
   LiveConfigUpdateEnabled: false,
 })
    ```
    {: codeblock}
 
    where,
-   - configurationFilePath: Path to the JSON file, which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFilePath`. By default, this value is enabled.
+   - ConfigurationFile: Path to the JSON file, which contains configuration details.
+   - LiveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `ConfigurationFile`. By default, this value is enabled.
 
 ### Examples for using property and feature related APIs
 {: #ac-golang-example}

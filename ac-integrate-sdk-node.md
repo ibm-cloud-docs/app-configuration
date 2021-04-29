@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -90,7 +90,7 @@ subcollection: app-configuration
 1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
    {: #ac-work-offline-ff}
 
-   After setting the `collectionId`, follow the below step:
+   After `client.init(region, guid, apikey)`:
 
    ```javascript
    let configurationFile = 'path/to/configuration/file.json';
