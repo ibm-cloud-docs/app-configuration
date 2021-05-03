@@ -49,7 +49,7 @@ subcollection: app-configuration
 
 1. Install the SDK using one of the following ways.
 
-   - Using **Maven**:
+   Using **Maven**:
 
       ```xml
       <dependency>
@@ -60,7 +60,7 @@ subcollection: app-configuration
       ```
       {: codeblock}
 
-   - Get the package through **Gradle** by adding the following:
+   Get the package through **Gradle** by adding the following:
 
       ```sh
       implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.1.0'
