@@ -99,7 +99,7 @@ subcollection: app-configuration
       - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
       - environmentId : Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `collectionId`, follow the below step:
+1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow the below step:
 
    ```java
    String configurationFile = "custom/userJson.json";
