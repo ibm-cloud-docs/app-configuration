@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-18"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -84,6 +84,10 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.collections.create` | Manager, Administrator | Create a collection. |
 | `apprapp.collections.update` | Manager, Administrator | Update the collection name, tags, and description. |
 | `apprapp.collections.delete` | Manager, Administrator | Delete the collection. |
+| `apprapp.environments.create` | Manager, Administrator | Create an environment. |
+| `apprapp.environments.update` | Manager, Administrator | Update an environment. |
+| `apprapp.environements.delete` | Manager, Administrator | Delete an environment. |
+| `apprapp.environments.list` | Manager, Reader, Writer, Config Operator | Get list of environments. |
 | `apprapp.features.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of feature flags. |
 | `apprapp.features.create` | Manager, Administrator | Create a feature flag. |
 | `apprapp.features.update` | Manager, Administrator | Update a feature flag. |
@@ -105,5 +109,3 @@ Review the platform and service roles available and the actions that are mapped 
 {: tab-group="app-rapp"}
 {: class="simple-tab-table"}
 {: summary="Use the tab buttons to change the context of the table. This table provides the available actions for the service, descriptions of each, and the roles that each action is mapped to."}
-
-
