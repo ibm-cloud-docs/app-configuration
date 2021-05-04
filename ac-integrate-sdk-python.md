@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-05-04"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -48,14 +48,14 @@ subcollection: app-configuration
 
 1. Install the SDK using either one of the following method:
 
-   - Using `pip`
+ Using `pip`
 
       ```sh
       pip install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
 
-   - Using `easy_install`
+ Using `easy_install`
 
       ```
       easy_install --upgrade ibm-appconfiguration-python-sdk
@@ -78,7 +78,8 @@ subcollection: app-configuration
                   apikey='APIKEY')
 
    ## Initialize configurations
-   app_config.set_collection_id(collection_id='collection_id')
+   app_config.set_context(collection_id='collection_id',
+                       environment_id='environment_id')
    ```
    {: codeblock}
 
@@ -87,19 +88,23 @@ subcollection: app-configuration
    - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - environment_id : Id of the environment created in App Configuration service instance.
 
 1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-python-example).
 
    ```py
    ## set the file or offline configurations
-   app_config.fetch_configuration_from_file(configuration_file='custom/userJson.json',
-                                       live_config_update_enabled=True)
+   app_config.set_context(collection_id='collection_id',
+                        environment_id='environment_id',
+                        configuration_file='custom/userJson.json',
+                        live_config_update_enabled=True)
    ```
    {: codeblock}
 
    where,
    - configuration_file: Path to the JSON file which contains configuration details.
    - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
+
 
 ### Examples for using feature and property related APIs
 {: #ac-python-example}

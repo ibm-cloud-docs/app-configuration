@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-05-03"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -49,21 +49,21 @@ subcollection: app-configuration
 
 1. Install the SDK using one of the following ways.
 
-   - Using **Maven**:
+   Using **Maven**:
 
       ```xml
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>1.1.0</version>
+         <version>2.0.0</version>
       </dependency>
       ```
       {: codeblock}
 
-   - Get the package through **Gradle** by adding the following:
+   Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.1.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '2.0.0'
       ```
       {: codeblock}
 
@@ -86,8 +86,9 @@ subcollection: app-configuration
       appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey);
 
       String collectionId = "collectionId";
-      //Set the collection Id
-      appConfiguration.setCollectionId(collectionId);
+      String environmentId = "environmentId";
+      // set the context.
+      appConfiguration.setContext(collectionId, environmentId)
       ```
       {: codeblock}
 
@@ -95,15 +96,17 @@ subcollection: app-configuration
       - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
       - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
       - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-      - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+      - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
+      - environmentId : Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `collectionId`, follow the below step:
+1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow the below step:
 
    ```java
    String configurationFile = "custom/userJson.json";
    Boolean liveConfigUpdateEnabled = true;
-   // set the file or offline feature
-   appConfiguration.fetchConfigurationFromFile(configurationFile, liveConfigUpdateEnabled);
+
+   // set the context.
+  appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
    ```
    {: codeblock}
 
@@ -191,7 +194,7 @@ String value = (String) property.getCurrentValue("identityId", identityAttribute
 ```
 {: codeblock}
 
-#### Listen to the feature or property changes
+#### Set listener for feature or property changes
 {: #ac-java-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
