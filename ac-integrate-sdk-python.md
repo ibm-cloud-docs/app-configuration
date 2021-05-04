@@ -78,7 +78,8 @@ subcollection: app-configuration
                   apikey='APIKEY')
 
    ## Initialize configurations
-   app_config.set_collection_id(collection_id='collection_id', environment_id='environment_id'))
+   app_config.set_context(collection_id='collection_id',
+                       environment_id='environment_id')
    ```
    {: codeblock}
 
@@ -102,7 +103,10 @@ subcollection: app-configuration
 
    where,
    - configuration_file: Path to the JSON file which contains configuration details.
-   - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
+   - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server.
+
+   Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
+   {:note: .note}
 
 ### Examples for using feature and property related APIs
 {: #ac-python-example}
