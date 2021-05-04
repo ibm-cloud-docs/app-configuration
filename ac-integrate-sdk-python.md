@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-05-04"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -38,31 +38,31 @@ subcollection: app-configuration
 # App Configuration server SDK for Python
 {: #ac-python}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application.
 {:shortdesc}
 
 ## Integrating server SDK for Python
 {: #ac-integrate-python}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK. 
+{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
 1. Install the SDK using either one of the following method:
 
-   - Using `pip`
+ Using `pip`
 
       ```sh
       pip install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
 
-   - Using `easy_install`
+ Using `easy_install`
 
       ```
       easy_install --upgrade ibm-appconfiguration-python-sdk
       ```
       {: codeblock}
 
-1. In your Python application code, include the SDK module with: 
+1. In your Python application code, include the SDK module with:
 
    ```py
    from ibm_appconfiguration import AppConfiguration, Feature, Property, ConfigurationType
@@ -77,8 +77,8 @@ subcollection: app-configuration
                   guid='GUID',
                   apikey='APIKEY')
 
-   ## Initialize configurations 
-   app_config.set_collection_id(collection_id='collection_id') 
+   ## Initialize configurations
+   app_config.set_collection_id(collection_id='collection_id', environment_id='environment_id'))
    ```
    {: codeblock}
 
@@ -87,20 +87,23 @@ subcollection: app-configuration
    - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - environment_id : Id of the environment created in App Configuration service instance.
 
 1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-python-example).
 
    ```py
    ## set the file or offline configurations
-   app_config.fetch_configuration_from_file(configuration_file='custom/userJson.json', 
-                                       live_config_update_enabled=True)
+   app_config.set_context(collection_id='collection_id',
+                        environment_id='environment_id',
+                        configuration_file='custom/userJson.json',
+                        live_config_update_enabled=True)
    ```
    {: codeblock}
 
    where,
    - configuration_file: Path to the JSON file which contains configuration details.
    - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
-   
+
 ### Examples for using feature and property related APIs
 {: #ac-python-example}
 
@@ -155,7 +158,7 @@ if (property) {
 ```
 {: codeblock}
 
-#### Get all Properties 
+#### Get all Properties
 {: #ac-python-get-all-properties}
 
 ```py
@@ -166,7 +169,7 @@ properties_dictionary = app_config.get_properties()
 #### Property evaluation
 {: #ac-python-property-evaluation}
 
-You can use the `property.get_current_value(identity_id, identity_attributes)` method to evaluate the value of the property. 
+You can use the `property.get_current_value(identity_id, identity_attributes)` method to evaluate the value of the property.
 
 You should pass an unique `identity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
@@ -200,4 +203,3 @@ app_config.register_configuration_update_listener(configuration_update)
 app_config.fetch_configurations()
 ```
 {: codeblock}
-

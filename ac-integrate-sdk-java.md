@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>1.1.0</version>
+         <version>2.0.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,7 +63,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '1.1.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '2.0.0'
       ```
       {: codeblock}
 
@@ -87,7 +87,7 @@ subcollection: app-configuration
 
       String collectionId = "collectionId";
       String environmentId = "environmentId";
-      // set the context Ids
+      // set the context.
       appConfiguration.setContext(collectionId, environmentId)
       ```
       {: codeblock}
@@ -105,7 +105,7 @@ subcollection: app-configuration
    String configurationFile = "custom/userJson.json";
    Boolean liveConfigUpdateEnabled = true;
 
-   // set the context Ids.
+   // set the context.
   appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
    ```
    {: codeblock}
