@@ -26,6 +26,9 @@ subcollection: app-configuration
 
 Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
+## Set up your {{site.data.keyword.mon_full_notm}} service instance
+{: #setup-monitor}
+
 To get started, you need to [provision IBM Cloud Monitoring ](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information on provisioning a {{site.data.keyword.mon_full_notm}} instance, see [here. ](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
 
 
@@ -49,18 +52,20 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where the {{site.data.keyword.Bluemix_notm}} instance is provisioned.
  {:note: .note}
 
- ### Launching {{site.data.keyword.mon_full_notm}} web UI from the Observability page
+ ## Accessing your {{site.data.keyword.mon_full_notm}} metrics
+ {: #access-monitor}
 
- 1. [Launch the {{site.data.keyword.mon_full_notm}} web UI](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-launch)
+ 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-launch)from the **Observability** page
  1. Click DASHBOARDS
  1. In the Default Dashboards section, expand IBM
  1. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list
  Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}} , it's in the sidebar, under IBM.
  Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service  instance.
 
-  ## {{site.data.keyword.appconfig_short}} metrics details
+ ## Metrics available
+ {: metrics-by-plan}
 
-  The following tables describe the specific metrics provided by {{site.data.keyword.appconfig_short}}.
+Evaluation count per instance
 
 | Metadata   | Description |
 |-------------|-------------|
