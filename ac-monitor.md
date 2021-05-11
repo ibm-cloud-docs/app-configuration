@@ -142,17 +142,18 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}} , it's in the sidebar, under IBM.
  Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service  instance.
 
- ## Metrics available by Service Plan
+## Metrics available by Service Plan
  {: metrics-by-plan}
+
 
  | Metric Name |
  | ------------|
- | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_evaluation) |
- 
- ### ibm_apprapp_instance_evaluation
- {: #ibm_apprapp_instance_evaluation}
+ | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_evaluation)|
 
- Evaluation count per instance
+ ### ibm_apprapp_instance_evaluation
+ {: ibm_apprapp_instance_evaluation}
+
+Evaluation count per instance
 
 | Metadata   | Description |
 |-------------|-------------|
