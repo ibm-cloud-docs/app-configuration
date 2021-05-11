@@ -112,7 +112,7 @@ Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the 
 To get started, you need to [provision IBM Cloud Monitoring ](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information on provisioning a {{site.data.keyword.mon_full_notm}} instance, see [here. ](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
 
 
-{Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{site.data.keyword.appconfig_short}} service deployments according to the following table:
+Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{site.data.keyword.appconfig_short}} service deployments according to the following table:
 
 | Deployment region    | Monitoring region |
 |-------------|-------------|
@@ -142,14 +142,22 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}} , it's in the sidebar, under IBM.
  Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service  instance.
 
- ## Metrics available
+ ## Metrics available by Service Plan
  {: metrics-by-plan}
 
-Evaluation count per instance
+ | Metric Name |
+ |-----------|
+ | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_evaluation) |
+ {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+ ### ibm_apprapp_instance_evaluation
+ {: #ibm_apprapp_instance_evaluation}
+
+ Evaluation count per instance
 
 | Metadata   | Description |
 |-------------|-------------|
 | `Metric Name` | `ibm_apprapp_instance_evaluation` |
-| `Metric Type` | `counter`|
+| `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
