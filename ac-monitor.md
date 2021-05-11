@@ -146,10 +146,9 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  {: metrics-by-plan}
 
  | Metric Name |
- |-----------|
+ | ------------|
  | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_evaluation) |
- {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
-
+ 
  ### ibm_apprapp_instance_evaluation
  {: #ibm_apprapp_instance_evaluation}
 
