@@ -135,7 +135,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  ## Access your {{site.data.keyword.mon_full_notm}} metrics
  {: #access-monitor}
 
- 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-launch)from the **Observability** page
+ 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the **Observability** page
  2. Click DASHBOARDS
  3. In the Default Dashboards section, expand IBM
  4. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list
@@ -144,7 +144,6 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
 
 ## Metrics available by Service Plan
  {: metrics-by-plan}
-
 
  | Metric Name |
  | ------------|
