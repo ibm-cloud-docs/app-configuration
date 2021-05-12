@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-05-12"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -63,7 +63,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          repositories {
-            jcenter()
+             mavenCentral()
          }
          ```
          {:codeblock}
@@ -72,9 +72,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          dependencies {
-            implementation "com.ibm.appconfiguration.android:lib:1.2.0"
-            implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
+            implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
+
          }
          ```
          {:codeblock}
@@ -96,8 +95,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
                         "guid",
                         "apikey")
 
-   //To start the configuration fetching operation, set the collectionId in the following way.
-   appConfiguration.setCollectionId("collectionId")
+   //To start the configuration fetching operation, set the collectionId and environmentId in the following way.
+    appConfiguration.setContext("collectionId","environmentId")
    ```
    {:codeblock}
 
@@ -105,9 +104,10 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
-   - `collection_id` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `collectionId` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
+   - `environmentId` -  Id of the environment created in App Configuration service instance under the Environments section.
 
-1. Listen to the feature or property data changes
+1. Set listener for feature or property data changes
 
    ```kotlin
    appConfiguration.registerConfigurationUpdateListener(object : ConfigurationUpdateListener {
@@ -215,7 +215,7 @@ Refer to the below examples for using the property and feature related APIs.
 
          ```javascript
          repositories {
-            jcenter()
+            mavenCentral()
          }
          ```
          {:codeblock}
@@ -224,9 +224,8 @@ Refer to the below examples for using the property and feature related APIs.
 
          ```javascript
          dependencies {
-            implementation "com.ibm.appconfiguration.android:lib:1.2.0"
-            implementation "com.squareup.okhttp3:okhttp:4.9.0"
-            implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
+            implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
+   
          }
          ```
          {:codeblock}
@@ -267,7 +266,7 @@ Refer to the below examples for using the property and feature related APIs.
    appConfiguration.init(getApplication(), "region", "guid", "apikey");
 
    // To start the configuration fetching operation, set the collectionId in the following way.
-   appConfiguration.setCollectionId("collectionId");
+   appConfiguration.setContext("collectionId", "environmentId");
    ```
    {:codeblock}
 
@@ -276,6 +275,7 @@ Refer to the below examples for using the property and feature related APIs.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collectionId` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `environmentId`: Id of the environment created in App Configuration service instance under the Environments section.
 
 1. Listen to the feature changes
 
