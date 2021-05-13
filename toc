@@ -9,6 +9,8 @@ App Configuration
     getting-started.md
     ac-about.md
     ac-release-notes.md
+    monitor-location-test.md
+    adding-appconfig.md
 
     {: .topicgroup}
     Basic steps
