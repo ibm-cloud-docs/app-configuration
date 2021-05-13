@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, data model, high availability, ha
 
@@ -152,7 +152,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  ### ibm_apprapp_instance_evaluation
  {: ibm_apprapp_instance_evaluation}
 
-Evaluation count per instance
+Evaluation count per instance: Count of feature or property evaluations in the SDK.
 
 | Metadata   | Description |
 |-------------|-------------|
