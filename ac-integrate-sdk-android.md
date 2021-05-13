@@ -39,7 +39,7 @@ subcollection: app-configuration
 # App Configuration client SDK for Android
 {: #ac-integrate-sdks-android}
 
-{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application written in Kotlin or Java programming language. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application written in Kotlin or Java programming language.
 {:shortdesc}
 
 ## Prerequisites
@@ -54,7 +54,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 ## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
-{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
 1. Install the SDK using either one of the following option:
    - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
@@ -67,7 +67,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          }
          ```
          {:codeblock}
-   
+
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
 
          ```javascript
@@ -140,13 +140,13 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Feature evaluation**
 
-   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```kotlin
-   JSONObject identityAttributes = new JSONObject();
+   JSONObject entityAttributes = new JSONObject();
    try {
-       identityAttributes.put("city", "Bangalore");
-       identityAttributes.put("country", "India");
+       entityAttributes.put("city", "Bangalore");
+       entityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
@@ -155,11 +155,11 @@ Refer to the below examples for using the property and feature related APIs.
    val feature: Feature? = appConfiguration.getFeature("featureId")
 
    if (feature?.getFeatureDataType() === Feature.FeatureType.NUMERIC) {
-       val value = feature.getCurrentValue("identityId", identityAttributes)
+       val value = feature.getCurrentValue("entityId", entityAttributes)
    } else if (feature?.getFeatureDataType() === Feature.FeatureType.BOOLEAN) {
-       val value = feature.getCurrentValue("identityId", identityAttributes)
+       val value = feature.getCurrentValue("entityId", entityAttributes)
    } else if (feature?.getFeatureDataType() === Feature.FeatureType.STRING) {
-       val value = feature.getCurrentValue("identityId", identityAttributes)
+       val value = feature.getCurrentValue("entityId", entityAttributes)
    }
    ```
    {:codeblock}
@@ -180,20 +180,20 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Property evaluation**
 
-   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```kotlin
-   JSONObject identityAttributes = new JSONObject();
+   JSONObject entityAttributes = new JSONObject();
    try {
-       identityAttributes.put("city", "Bangalore");
-       identityAttributes.put("country", "India");
+       entityAttributes.put("city", "Bangalore");
+       entityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
 
    val appConfiguration = AppConfiguration.getInstance()
    val property: Property? = appConfiguration.getProperty("propertyId")
-   val value = property.getCurrentValue("identityId", identityAttributes)
+   val value = property.getCurrentValue("entityId", entityAttributes)
    ```
    {:codeblock}
 
@@ -206,7 +206,7 @@ Refer to the below examples for using the property and feature related APIs.
 ## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
 
-{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK. 
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
 1. Install the SDK using either one of the following option:
    - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
@@ -219,13 +219,13 @@ Refer to the below examples for using the property and feature related APIs.
          }
          ```
          {:codeblock}
-   
+
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
 
          ```javascript
          dependencies {
             implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
-   
+
          }
          ```
          {:codeblock}
@@ -310,32 +310,32 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Feature evaluation**
 
-   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```java
-   JSONObject identityAttributes = new JSONObject();
+   JSONObject entityAttributes = new JSONObject();
 
    try {
-       identityAttributes.put("city", "Bengaluru");
-       identityAttributes.put("country", "India");
+       entityAttributes.put("city", "Bengaluru");
+       entityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
 
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
    Feature feature = appConfiguration.getFeature("featureId")
-   if(feature != null) 
+   if(feature != null)
        switch (feature.getFeatureDataType())
            case STRING:
-               String value = (String) feature.getCurrentValue(identityId, identityAttributes);
+               String value = (String) feature.getCurrentValue(entityId, entityAttributes);
                System.out.println(value);
                break;
            case BOOLEAN:
-               Boolean boolVal = (Boolean) feature.getCurrentValue(identityId, identityAttributes);
+               Boolean boolVal = (Boolean) feature.getCurrentValue(entityId, entityAttributes);
                System.out.println(boolVal);
                break;
            case NUMERIC:
-               Integer intVal = (Integer) feature.getCurrentValue(identityId, identityAttributes);
+               Integer intVal = (Integer) feature.getCurrentValue(entityId, entityAttributes);
                System.out.println(intVal);
                break;
        }
@@ -359,21 +359,21 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Property evaluation**
 
-   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```java
-   JSONObject identityAttributes = new JSONObject();
+   JSONObject entityAttributes = new JSONObject();
 
    try {
-       identityAttributes.put("city", "Bengaluru");
-       identityAttributes.put("country", "India");
+       entityAttributes.put("city", "Bengaluru");
+       entityAttributes.put("country", "India");
    } catch (JSONException e) {
        e.printStackTrace();
    }
 
    AppConfiguration appConfiguration = AppConfiguration.getInstance();
    Property property = appConfiguration.getProperty("propertyId");
-   String value = (String) property.getCurrentValue(identityId, identityAttributes);
+   String value = (String) property.getCurrentValue(entityId, entityAttributes);
    ```
    {:codeblock}
 

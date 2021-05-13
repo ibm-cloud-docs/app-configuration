@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -136,14 +136,14 @@ features_dictionary = app_config.get_features()
 #### Feature evaluation
 {: #ac-python-feature-evaluation}
 
-You can use the feature.get_current_value(identity_id, identity_attributes) method to evaluate the value of the feature flag. You should pass an unique identity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
+You can use the feature.get_current_value(entity_id, entity_attributes) method to evaluate the value of the feature flag. You should pass an unique entity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
 ```py
-identity_attributes = {
+entity_attributes = {
     'city': 'Bangalore',
     'country': 'India'
 }
-feature_value = feature.get_current_value(identity_id='identity_id', identity_attributes=identity_attributes)
+feature_value = feature.get_current_value(entity_id='entity_id', entity_attributes=entity_attributes)
 ```
 {: codeblock}
 
@@ -171,16 +171,16 @@ properties_dictionary = app_config.get_properties()
 #### Property evaluation
 {: #ac-python-property-evaluation}
 
-You can use the `property.get_current_value(identity_id, identity_attributes)` method to evaluate the value of the property.
+You can use the `property.get_current_value(entity_id, entity_attributes)` method to evaluate the value of the property.
 
-You should pass an unique `identity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
+You should pass an unique `entity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
 ```py
-identity_attributes = {
+entity_attributes = {
     'city': 'Bangalore',
     'country': 'India'
 }
-property_value = property.get_current_value(identity_id='identity_id', identity_attributes=identity_attributes)
+property_value = property.get_current_value(entity_id='entity_id', entity_attributes=entity_attributes)
 ```
 {: codeblock}
 
