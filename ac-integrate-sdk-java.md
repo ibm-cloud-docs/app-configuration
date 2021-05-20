@@ -87,7 +87,7 @@ subcollection: app-configuration
 
       String collectionId = "collectionId";
       String environmentId = "environmentId";
-      // set the context.
+      // Set the collectionId and environmentId to start the configuration fetching operation..
       appConfiguration.setContext(collectionId, environmentId)
       ```
       {: codeblock}
@@ -105,7 +105,7 @@ subcollection: app-configuration
    String configurationFile = "custom/userJson.json";
    Boolean liveConfigUpdateEnabled = true;
 
-   // set the context.
+   // Set the collectionId and environmentId to start the configuration fetching operation.
   appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
    ```
    {: codeblock}
