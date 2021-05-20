@@ -73,7 +73,6 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          ```javascript
          dependencies {
             implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
-
          }
          ```
          {:codeblock}
