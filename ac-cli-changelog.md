@@ -44,4 +44,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
 | 0.0.1 BETA | 11 February 2021 | Initial release. |
+| 1.0.0      | 28 May 2021      | GA release.      |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
