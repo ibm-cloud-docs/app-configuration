@@ -13,7 +13,7 @@ subcollection: app-configuration
 {:codeblock: .codeblock}
 {:external: target="_blank" .external}
 {:important: .important}
-{:note: .note}
+{:note .note}
 {:pre: .pre}
 {:screen: .screen}
 {:shortdesc: .shortdesc}
@@ -93,7 +93,7 @@ If your pricing plan includes a free allotment of API calls, then you will not b
 ## Can you give me some example pricing scenarios?
 {: #faq-ac-cost}
 {: faq}
-<u>_Pricing Scenario 1:  Mobile App with Feature Flags_</u>
+<u>_Pricing Scenario 1:  Mobile App with Feature Flags_</u> </br>
 Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a given month. An average active user will open the app or bring it to the foreground once every day. You expect to roll out a new feature twice per month.</br>
 You will need the  {{site.data.keyword.appconfig_short}} Enterprise plan since both feature flags and segmentation are required. </br> 
  {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
@@ -106,7 +106,7 @@ You will need the  {{site.data.keyword.appconfig_short}} Enterprise plan since b
  Net API Calls: 3,000,000 - 1,000,000 = 2,000,000 @ $10/ 100,000 API Calls = $200 </br>
  TOTAL COST: $500 + $900 + $200 = $1600 per month </br></br>
  
- _Pricing Scenario 2: Microservice with Feature Flags_
+<u>_Pricing Scenario 2: Microservice with Feature Flags_</u> </br>
 Assume you have five backend microservices that support your mobile app. To fully test new microservice features, you want to dark launch them into production and target them only to testers. The mobile app is used worldwide, so you have the set of five microservices in each of 3 regions worldwide, and you want to test in your app in each region before going live. </br>
 You are moving toward continuous delivery so on average you dark launch a new feature every 3 days (10 dark launches per month), and the feature undergoes a day or two of testing before being released (i.e. targeting removed). This results in 2 toggles per feature, one to activate the feature for testers, and one to remove targeting and activate for the general user population.</br>
 You will need the {{site.data.keyword.appconfig_short}} Enterprise plan since both feature flags and segmentation are required.</br>   
@@ -119,8 +119,8 @@ Included API Calls:  1,000,000</br>
 Net API Calls:  0 (all included)  = $0</br></br>
 TOTAL COST:   $500 + $0 + $0 = $500 per month</br>
 
-You could use the same instance of {{site.data.keyword.appconfig_short}}  for both scenarios above for a total cost of just over $1600 per month.
-{:note: .note}
+You could use the same instance of {{site.data.keyword.appconfig_short}} for both scenarios above for a total cost of just over $1600 per month.
+{:note .note}
 
 ## What are the capabilities, quotas, and limits for various aspects of the {{site.data.keyword.appconfig_short}} plans?
 {: #faq-ac-capabilities}
@@ -160,11 +160,14 @@ You could use the same instance of {{site.data.keyword.appconfig_short}}  for bo
 | Support | per your IBM Cloud support plan| per your IBM Cloud support plan|per your IBM Cloud support plan|
 | Satellite integration and [Razee CRD](https://github.com/IBM/appconfiguration-razee)| - | -|Yes|
  
+## How do I audit {{site.data.keyword.appconfig_short}} activity?
+{: #faq-ac-audit}
+{: faq}
+If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) of the {{site.data.keyword.Bluemix_notm}} console and use that to record and audit {{site.data.keyword.appconfig_short}}activity.
 
-
-
-
-
+## How do I archive App Configuration activity data?
+{: #faq-ac-archive}
+{: faq}
 
 
 
