@@ -85,10 +85,10 @@ You can see all your existing instances in the {{site.data.keyword.Bluemix_notm}
 Some  {{site.data.keyword.appconfig_short}} pricing plans have a monthly Application Instance price and others do not.  If the plan you select has an instance price, the price for the instance will include a set number of entity IDs and API calls included in the instance price.  If you exceed the included allotment, your instance will continue to operate normally but you will accumulate an overage charge based on the published rate for entity IDs and API calls. </br></br>
 
 The **Active Entity ID** cost is based on the number of unique entities that interact with your  {{site.data.keyword.appconfig_short}} instance during the month. Entities self-identify when an API call is made, and each instance of your application should provide a unique entity ID. You are not charged for entities that do not call {{site.data.keyword.appconfig_short}} during the month.  If your pricing plan includes a free allotment of Active Entity IDs, then you will not be charged until the allotment is exceeded.</br>
-Active Entity ID cost can be difficult to predict so you will need to closely monitor your historical activity; see [How do I view usage metrics for {{site.data.keyword.appconfig_short}}?](/#faq-ac-metrics) and rely on your own domain knowledge, business metrics, and usage forecasts to predict Active Entity ID cost. </br></br>
+Active Entity ID cost can be difficult to predict so you will need to closely monitor your historical activity; see [How do I view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) and rely on your own domain knowledge, business metrics, and usage forecasts to predict Active Entity ID cost. </br></br>
 
-The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined.  See section above [What am I charged for when I use  {{site.data.keyword.appconfig_short}}](/#faq-ac-charges) to determine what constitutes and API call.</br>
-If your pricing plan includes a free allotment of API calls, then you will not be charged until the allotment is exceeded.     Closely monitor your historical activity; see [How do I view usage metrics for {{site.data.keyword.appconfig_short}}?](/#faq-ac-metrics) and call on your own domain knowledge, business metrics, and usage forecasts to predict cost. </br></br>
+The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined.  See section above [What am I charged for when I use  {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-charges) to determine what constitutes and API call.</br>
+If your pricing plan includes a free allotment of API calls, then you will not be charged until the allotment is exceeded.     Closely monitor your historical activity; see [How do I view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) and call on your own domain knowledge, business metrics, and usage forecasts to predict cost. </br></br>
 
 ## Can you give me some example pricing scenarios?
 {: #faq-ac-cost}
@@ -150,8 +150,7 @@ You could use the same instance of {{site.data.keyword.appconfig_short}}  for bo
 | Segment definition rules per segment| 3 | -|25|
 | Max targeting definition rules per instance| 3 | - |100|
 | Targeting definition rules per feature| -| -|50|
-| Delivery mode | Websocket (server)pull/get (client)| Websocket (server)pull/get (client)|Websocket (server)
-pull/get (client)|
+| Delivery mode | Websocket (server)pull/get (client)|Websocket (server)pull/get(client)|Websocket(server)pull/get (client)|
 | Role-based access| Env-level | Env-level|Env-level|
 | Locations| London, Dallas, Sydney |  London, Dallas, Sydney | London, Dallas, Sydney |
 | HA| Regional| Regional|Regional|
