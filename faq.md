@@ -93,7 +93,7 @@ If your pricing plan includes a free allotment of API calls, then you are not ch
 {: #faq-ac-sample}
 {: faq}
 ### Pricing Scenario 1: Mobile App with Feature Flags
-Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br>
+Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br></br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.</br> 
  {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
  Active Entity IDs: 200,000 total app instances (users) * 50% active = 100,000</br>
