@@ -90,9 +90,9 @@ The **API Call** cost is based on the number of API calls sent or received by {{
 If your pricing plan includes a free allotment of API calls, then you are not charged until the allotment is exceeded. Closely monitor your historical activity and check out [How to view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) Rely on your own domain knowledge, business metrics, and usage forecasts to predict cost. </br></br>
 
 ## Can you give some example pricing scenarios?
-{: #faq-ac-cost}
+{: #faq-ac-sample}
 {: faq}
-**_Pricing Scenario 1: Mobile App with Feature Flags_**  
+### Pricing Scenario 1: Mobile App with Feature Flags
 Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.</br> 
  {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
@@ -111,10 +111,10 @@ You are moving toward continuous delivery so on average you dark launch a new fe
 You will need the {{site.data.keyword.appconfig_short}} Enterprise plan since both feature flags and segmentation are required.</br></br>     
 
 {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
-Active Entity IDs: 5 entity IDs per region * 3 regions = 15</br>
+Active Entity IDs: 5 entity IDs per region \* 3 regions = 15</br>
 Included Active Entity IDs: 10,000 </br>
 Net Active Entity IDs: 0 (all included) = $0 </br></br>
-API Calls: 3 instances per region * 3 regions * (10 dark launches per month * 2 toggles per release) = 180</br>
+API Calls: 3 instances per region \* 3 regions \* (10 dark launches per month \* 2 toggles per release) = 180</br>
 Included API Calls:  1,000,000</br>
 Net API Calls:  0 (all included)  = $0</br></br>
 TOTAL COST: $500 + $0 + $0 = $500 per month</br>
