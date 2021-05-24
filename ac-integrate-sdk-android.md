@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -73,6 +73,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          ```javascript
          dependencies {
             implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
+
          }
          ```
          {:codeblock}
