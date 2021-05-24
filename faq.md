@@ -92,7 +92,7 @@ If your pricing plan includes a free allotment of API calls, then you are not ch
 ## Can you give some example pricing scenarios?
 {: #faq-ac-cost}
 {: faq}
-_<ul>Pricing Scenario 1: Mobile App with Feature Flags</ul>_ </br>
+**_Pricing Scenario 1: Mobile App with Feature Flags_**  
 Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.</br> 
  {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
@@ -105,11 +105,12 @@ You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support bo
  Net API Calls: 3,000,000 - 1,000,000 = 2,000,000 @ $10/ 100,000 API Calls = $200 </br>
  TOTAL COST: $500 + $900 + $200 = $1600 per month </br></br>
  
-_<ul>Pricing Scenario 2: Microservice with Feature Flags</ul>_ </br>
+**_Pricing Scenario 2: Microservice with Feature Flags**_
 Assume you have five backend microservices that support your mobile app. To fully test new microservice features, you want to dark-launch them into production and target them only to testers. The mobile app is used worldwide, so you have the set of five microservices in each of three regions worldwide, and you want to test in your app in each region before you decide to go-live.</br>
 You are moving toward continuous delivery so on average you dark-launch a new feature every 3 days (10 dark launches per month). And the feature undergoes a day or two of testing before it is released (that is, targeting removed). This activity calls for two toggles per feature, one to activate the feature for testers, and one to remove targeting and activate for the general user population.</br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan that enables both feature flags and segmentation.</br>   
 {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
+
 Active Entity IDs: 5 entity IDs per region * 3 regions = 15</br>
 Included Active Entity IDs: 10,000 </br>
 Net Active Entity IDs: 0 (all included) = $0 </br></br>
