@@ -55,13 +55,13 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 {: faq}
 The fundamental pricing metrics for {{site.data.keyword.appconfig_short}} are Application Instance, Active Entity ID, and API Call.  
 
-<cite>Application Instance</cite>- An Application Instance is a uniquely named copy of {{site.data.keyword.appconfig_short}} created by you but managed by {{site.data.keyword.IBM_notm}}. Multiple instances of {{site.data.keyword.appconfig_short}} within a single environment are all considered separate application instances, as are individual {{site.data.keyword.appconfig_short}}instances in multiple environments (such as test, development, staging, or production). 
+**Application Instance**- An Application Instance is a uniquely named copy of {{site.data.keyword.appconfig_short}} created by you but managed by {{site.data.keyword.IBM_notm}}. Multiple instances of {{site.data.keyword.appconfig_short}} within a single environment are all considered separate application instances, as are individual {{site.data.keyword.appconfig_short}}instances in multiple environments (such as test, development, staging, or production). 
 
 A single instance of {{site.data.keyword.appconfig_short}} can serve multiple environments, and in fact the service is designed to do so.{:note: .note} 
 
-<cite>Active Entity ID</cite>- An active entity ID is a unique identifier for each entity that interacts with the {{site.data.keyword.appconfig_short}} service. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID. This task is most easily accomplished by programming your app or microservice to send the Entity ID by using the {{site.data.keyword.appconfig_short}}SDK.
+**Active Entity ID**- An active entity ID is a unique identifier for each entity that interacts with the {{site.data.keyword.appconfig_short}} service. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID. This task is most easily accomplished by programming your app or microservice to send the Entity ID by using the {{site.data.keyword.appconfig_short}}SDK.
 
-<cite>API Call</cite> - An API call is the invocation of the {{site.data.keyword.appconfig_short}} through a programmable interface.</br>
+**API Call** - An API call is the invocation of the {{site.data.keyword.appconfig_short}} through a programmable interface.</br>
 Exactly what constitutes an API call varies depending on the entity type (for example, a microservice or a mobile app). For server-side entities like microservices, when the state of a feature flag or property changes in the {{site.data.keyword.appconfig_short}}, a websocket connection notifies the SDK in the microservice that a state change occurred. The microservice then calls back into the {{site.data.keyword.appconfig_short}} to retrieve the update. This action is an API call.</br>
 An API call also occurs on startup to the retrieve the initial configuration state. For client-side entities like mobile apps, websockets are not used. Instead, an API call fetches the current configuration state when a user opens the app, or brings it to the foreground. You can also programmatically call the {{site.data.keyword.appconfig_short}} to retrieve the most recent configuration state.
 
@@ -86,13 +86,13 @@ Some {{site.data.keyword.appconfig_short}} pricing plans have a monthly Applicat
 The **Active Entity ID** cost is based on the number of unique entities that interact with your {{site.data.keyword.appconfig_short}} instance during the month. Entities self-identify when an API call is made, and each instance of your application provides a unique entity ID. You are not charged for entities that do not call {{site.data.keyword.appconfig_short}} during the month. If your pricing plan includes a free allotment of Active Entity IDs, then you are not charged until the allotment is exceeded.</br>
 Active Entity ID cost can be difficult to predict so you need to closely monitor your historical activity. See [How to view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) Rely on your own domain knowledge, business metrics, and usage forecasts to predict Active Entity ID cost. </br></br>
 
-The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined. Check section - [What are the charges to use {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-charges) to determine what constitutes an API call.</br>
+The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined. Check section - [What are the charges to use {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-charges) to determine what constitutes an API call.</br>
 If your pricing plan includes a free allotment of API calls, then you are not charged until the allotment is exceeded. Closely monitor your historical activity and check out [How to view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) Rely on your own domain knowledge, business metrics, and usage forecasts to predict cost. </br></br>
 
 ## Can you give some example pricing scenarios?
 {: #faq-ac-cost}
 {: faq}
-<cite>Pricing Scenario 1: Mobile App with Feature Flags</cite> </br>
+_<ul>Pricing Scenario 1: Mobile App with Feature Flags</ul>_ </br>
 Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.</br> 
  {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month </br>
@@ -105,7 +105,7 @@ You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support bo
  Net API Calls: 3,000,000 - 1,000,000 = 2,000,000 @ $10/ 100,000 API Calls = $200 </br>
  TOTAL COST: $500 + $900 + $200 = $1600 per month </br></br>
  
-<cite> Pricing Scenario 2: Microservice with Feature Flags</cite> </br>
+_<ul>Pricing Scenario 2: Microservice with Feature Flags</ul>_ </br>
 Assume you have five backend microservices that support your mobile app. To fully test new microservice features, you want to dark-launch them into production and target them only to testers. The mobile app is used worldwide, so you have the set of five microservices in each of three regions worldwide, and you want to test in your app in each region before you decide to go-live.</br>
 You are moving toward continuous delivery so on average you dark-launch a new feature every 3 days (10 dark launches per month). And the feature undergoes a day or two of testing before it is released (that is, targeting removed). This activity calls for two toggles per feature, one to activate the feature for testers, and one to remove targeting and activate for the general user population.</br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan that enables both feature flags and segmentation.</br>   
@@ -162,14 +162,14 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?
 {: #faq-ac-audit}
 {: faq}
-If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) of the {{site.data.keyword.Bluemix_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}}activity.
+If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) of the {{site.data.keyword.Bluemix_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
 
 ## How do I archive {{site.data.keyword.appconfig_short}} activity data?
 {: #faq-ac-archive}
 {: faq}
-If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) section of the {{site.data.keyword.Bluemix_notm}} console. Then archive events from an{{site.data.keyword.Bluemix_notm}} Activity Tracker instance into a bucket in an {{site.data.keyword.Bluemix_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving )
+If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) section of the {{site.data.keyword.Bluemix_notm}} console. Then archive events from an {{site.data.keyword.Bluemix_notm}} Activity Tracker instance into a bucket in an {{site.data.keyword.Bluemix_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving )
  
-## In what regions is {{site.data.keyword.appconfig_short}}available?
+## In what regions is {{site.data.keyword.appconfig_short}} available?
 {: #faq-ac-regions}
 {: faq}
 To see a list of {{site.data.keyword.Bluemix_notm}} regions where you can provision instances of {{site.data.keyword.appconfig_short}}, see the [{{site.data.keyword.appconfig_short}} About](https://cloud.ibm.com/catalog/services/app-configuration#about ) page in the{{site.data.keyword.Bluemix_notm}} catalog.
@@ -179,7 +179,7 @@ To see a list of {{site.data.keyword.Bluemix_notm}} regions where you can provis
 {: faq}
 Yes. {{site.data.keyword.appconfig_short}}is designed as a high availability service designed for enterprise workloads, and conforming to the [{{site.data.keyword.appconfig_short}} Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8986#detail-documentand) and the [{{site.data.keyword.Bluemix_notm}} Service Level Agreement]( https://cloud.ibm.com/docs/overview?topic=overview-slas) for availability. Within a single region, {{site.data.keyword.appconfig_short}} is deployed across a multi-zone cluster. 
 
-## Is {{site.data.keyword.appconfig_short}}secure?
+## Is {{site.data.keyword.appconfig_short}} secure?
 {: #faq-ac-security}
 {: faq}
 Yes. While {{site.data.keyword.appconfig_short}} is not designed as a vault for secrets (use {{site.data.keyword.secrets-manager_full_notm}} instead), the service itself adheres to strict security guidelines in the development process and in securing and protecting your data. The development process includes things like vulnerability scanning and remediation, periodic penetration testing, and frequent security reviews by world-class security experts. The data in {{site.data.keyword.appconfig_short}} is encrypted by default both in transit and at rest. (See the {{site.data.keyword.appconfig_short}} Data Processing and Protection data sheet to learn more). Additionally, you secure access to your own instances of {{site.data.keyword.appconfig_short}} by using {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). You can use {{site.data.keyword.Bluemix_notm}} Security and Compliance Center for ongoing security monitoring and alerts for your {{site.data.keyword.appconfig_short}} instances.
