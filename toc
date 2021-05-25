@@ -68,10 +68,8 @@ App Configuration
     {: .navgroup id="help"}
     faq.md
     faqts.md
-    {: .topicgroup}   
-    Troubleshooting
-       ac-ts-ff.md  
-       ac-ts-ff-eval.md  
+    ac-ts-ff.md  
+    ac-ts-ff-eval.md  
     ac-videos.md
     ac-getting-support.md
 	{: .navgroup-end}
