@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-25"
 
-keywords: app-configuration, app configuration, data model, high availability, ha
+keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
 subcollection: app-configuration
 
@@ -105,6 +105,7 @@ subcollection: app-configuration
 <!-- All IBM Cloud® general availability (GA) services have a Service Level Agreement of 99.99% availability.  -->
 
 Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+{:shortdesc: .shortdesc}
 
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}

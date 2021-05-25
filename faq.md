@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2021
 lastupdated: "2021-05-24"
 
-keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question
+keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
 subcollection: app-configuration
 
@@ -20,7 +20,7 @@ subcollection: app-configuration
 {:tip: .tip}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs for {{site.data.keyword.appconfig_short}}
+# FAQs for {{site.data.keyword.appconfig_short}} - usage and billing
 {: #ac-faqs}
 
 FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questions about {{site.data.keyword.appconfig_short}}.
@@ -163,7 +163,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?
 {: #faq-ac-audit}
 {: faq}
-If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) of the {{site.data.keyword.Bluemix_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
+If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) section of the {{site.data.keyword.Bluemix_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
 
 ## How do I archive {{site.data.keyword.appconfig_short}} activity data?
 {: #faq-ac-archive}
@@ -173,7 +173,7 @@ If you would like to retain a long-term record of activity within your {{site.da
 ## In what regions is {{site.data.keyword.appconfig_short}} available?
 {: #faq-ac-regions}
 {: faq}
-To see a list of {{site.data.keyword.Bluemix_notm}} regions where you can provision instances of {{site.data.keyword.appconfig_short}}, see the [{{site.data.keyword.appconfig_short}} About](https://cloud.ibm.com/catalog/services/app-configuration#about ) page in the{{site.data.keyword.Bluemix_notm}} catalog.
+To see a list of {{site.data.keyword.Bluemix_notm}} regions where you can provision instances of {{site.data.keyword.appconfig_short}}, see the [{{site.data.keyword.appconfig_short}} About](https://cloud.ibm.com/catalog/services/app-configuration#about ) page in the {{site.data.keyword.Bluemix_notm}} catalog.
 
 ## Is {{site.data.keyword.appconfig_short}} a highly available service?
 {: #faq-ac-available}
