@@ -42,17 +42,18 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# 1.Why can't I toggle a newly created feature flag?
-{: #ac-troubleshooting}
+# Does deleting a feature flag or property in an environment delete it across all environments?
+{: #ac-troubleshooting-del}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Feature flag is disabled and cannot be toggled.  
+Deleting a feature flag or property in an environment deletes it for all environments.
 
 {: tsCauses}
-A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
+Feature flag or property is available to all environments. Updates to values are per environment. Create and delete action executes across all environments.
 
 {: tsResolve}
-Link the feature flag with an existing collection. This allows you to toggle between on or off states. 
+Deletion of feature flag or property is across all environments. If a flag is not required in a particular environment, disable the flag or set the values default. If a flag is not required in any environment, it can be deleted.
+

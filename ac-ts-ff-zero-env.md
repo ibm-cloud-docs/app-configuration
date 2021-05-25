@@ -42,17 +42,18 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# 1.Why can't I toggle a newly created feature flag?
-{: #ac-troubleshooting}
+# Why do I see the values of my feature flags or properties as default values (0 for Number type, false for Boolean type and empty string for String type) in certain environments?
+{: #ac-troubleshooting-def-value}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Feature flag is disabled and cannot be toggled.  
+Default values are assigned to the feature flags or properties in certain environments.
 
 {: tsCauses}
-A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
+A feature flag is always created under an environment. Though the flag is created under an environment, it is made available to all environments with default values. Flag Values, tags, segment values are relevant only to the environment where the update is executed.
 
 {: tsResolve}
-Link the feature flag with an existing collection. This allows you to toggle between on or off states. 
+Feature flag or Property values can be updated specifically to an environment.  
+

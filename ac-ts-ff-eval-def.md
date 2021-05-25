@@ -42,17 +42,30 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# 1.Why can't I toggle a newly created feature flag?
+# Feature flag or property is evaluated with default values always and not according to segment rule definition?   
 {: #ac-troubleshooting}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Feature flag is disabled and cannot be toggled.  
+Feature flags are evaluated with default values and segments are not getting applied.  
 
 {: tsCauses}
-A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
+Segments are applied for the entity_attributes defined in the SDK. If entity_attributes are not defined, then default values are considered.
 
 {: tsResolve}
-Link the feature flag with an existing collection. This allows you to toggle between on or off states. 
+Segments are defined with attribute names, values to consider and an operator.  
+User can set a local JSON to be considered for evaluation:
+```javascript
+var entity_attributes = {
+    "email":"tester1@us.ibm.com",
+    "country": "India"
+  }
+var feature = client.getFeature(<feature_id>);
+feature.getCurrentValue(<entity_id>,entity_attributes);
+```
+{:codeblock: .codeblock}
+Entity attributes are used to evaluate if the entity is valid for the segment, and the corresponding value of the segment is returned for the feature flag.
+
+The same fix is applicable for properties.

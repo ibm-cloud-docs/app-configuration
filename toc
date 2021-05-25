@@ -65,11 +65,18 @@ App Configuration
     [API Explorer](https://{DomainName}/apidocs/app-configuration)
 	{: .navgroup-end}
 
-    {: .navgroup id="help"}
-    faq.md
-    faqts.md
-    ac-ts-ff.md  
-    ac-ts-ff-eval.md  
-    ac-videos.md
-    ac-getting-support.md
-	{: .navgroup-end}
+  {: .navgroup id="help"}
+  faq.md
+  faqts.md
+  {: .topicgroup}
+  Troubleshooting
+     ac-ts-ff.md
+     ac-ts-ff-eval.md
+     ac-ts-ff-eval-def.md
+     ac-ts-ff-toggle.md
+     ac-ts-ff-zero-env.md
+     ac-ts-ff-del.md
+
+  ac-videos.md
+  ac-getting-support.md
+  {: .navgroup-end} 

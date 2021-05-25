@@ -55,4 +55,4 @@ Feature flag is targeted with segment rules. Rule execution is not as expected.
 Feature flag is targeted with segment rules. Segmented rules are executed in order of the rule definition.
 
 {: tsResolve}
-To fix the order of evaluation, move the rules defined in the ‘Edit targeting’ slider using the direction arrows. Same fix is applicable for properties.
+To fix the order of evaluation, move the rules that are defined in the ‘Edit targeting’ slider by using the direction arrows. Same fix is applicable for properties.

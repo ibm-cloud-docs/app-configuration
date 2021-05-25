@@ -42,17 +42,18 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# 1.Why can't I toggle a newly created feature flag?
-{: #ac-troubleshooting}
+# Why am I denied permission to toggle a feature flag? 
+{: #ac-troubleshooting-toggle}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Feature flag is disabled and cannot be toggled.  
+Toggling a feature flag fails with a `permission denied' error. 
 
 {: tsCauses}
-A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
+All actions in the {{site.data.keyword.appconfig_short}} service are governed by access. Toggling the feature flag needs a specific role to be assigned to the user.
 
 {: tsResolve}
-Link the feature flag with an existing collection. This allows you to toggle between on or off states. 
+You can manage access for users and resources by using IAM roles that are defined by the service. To learn more, refer [here](/docs/app-configuration?topic=app-configuration-ac-service-access-management#ac-roles-permissions)
+
