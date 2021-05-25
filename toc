@@ -66,10 +66,10 @@ App Configuration
 	{: .navgroup-end}
 
     {: .navgroup id="help"}
-    {: .topicgroup}
-    FAQs for App Configuration
-       faq.md
-       faqts.md
+    faq.md
+    faqts.md
+
+    {: .topicgroup}   
     Troubleshooting
        ac-ts-ff.md    
     ac-videos.md
