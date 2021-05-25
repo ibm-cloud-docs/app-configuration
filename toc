@@ -68,7 +68,9 @@ App Configuration
     {: .navgroup id="help"}
     faq.md
     faqts.md
-  
+    ac-videos.md
+    ac-getting-support.md
+
     {: .topicgroup}
     Troubleshooting
        ac-ts-ff.md
@@ -77,7 +79,4 @@ App Configuration
        ac-ts-ff-toggle.md
        ac-ts-ff-zero-env.md
        ac-ts-ff-del.md
-
-    ac-videos.md
-    ac-getting-support.md
-    {: .navgroup-end} 
+    {: .navgroup-end}
