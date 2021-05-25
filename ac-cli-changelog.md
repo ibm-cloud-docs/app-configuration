@@ -41,8 +41,8 @@ subcollection: app-configuration
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
 {:shortdesc}
 
-| Version | Release date | Changes |
-| ----- | ------- | -------------- |
+| Version    | Release date     | Changes                   |
+| ---------- | ---------------- | ------------------------- |
 | 0.0.1 BETA | 11 February 2021 | Initial release.          |
 | 0.0.2 BETA | 2 March 2021     | Config support.           |
 | 0.0.3 BETA | 9 April 2021     | Properties support.       |
