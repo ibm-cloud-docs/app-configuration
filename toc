@@ -69,14 +69,14 @@ App Configuration
     faq.md
     faqts.md
     ac-videos.md
-    ac-getting-support.md
 
     {: .topicgroup}
     Troubleshooting
-       ac-ts-ff.md
-       ac-ts-ff-eval.md
-       ac-ts-ff-eval-def.md
-       ac-ts-ff-toggle.md
-       ac-ts-ff-zero-env.md
-       ac-ts-ff-del.md
+        ac-getting-support.md
+        ac-ts-ff.md
+        ac-ts-ff-eval.md
+        ac-ts-ff-eval-def.md
+        ac-ts-ff-toggle.md
+        ac-ts-ff-zero-env.md
+        ac-ts-ff-del.md
     {: .navgroup-end}
