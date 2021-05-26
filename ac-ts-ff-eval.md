@@ -43,7 +43,7 @@ subcollection: app-configuration
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Why is my feature flag or property evaluated with an unexpected segment rule?
-{: #ac-troubleshooting}
+{: #ac-troubleshooting-two}
 {: troubleshoot}
 {: support}
 {:shortdesc}

@@ -42,8 +42,8 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# 1.Why can't I toggle a newly created feature flag?
-{: #ac-troubleshooting}
+# Why can't I toggle a newly created feature flag?
+{: #ac-troubleshooting-one}
 {: troubleshoot}
 {: support}
 {:shortdesc}
@@ -55,4 +55,4 @@ Feature flag is disabled and cannot be toggled.
 A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
 
 {: tsResolve}
-Link the feature flag with an existing collection. This allows you to toggle between on or off states. 
+Link the feature flag with an existing collection. This allows you to toggle between on or off states.

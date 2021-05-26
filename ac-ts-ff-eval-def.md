@@ -43,7 +43,7 @@ subcollection: app-configuration
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Feature flag or property is evaluated with default values always and not according to segment rule definition?   
-{: #ac-troubleshooting}
+{: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
 {:shortdesc}

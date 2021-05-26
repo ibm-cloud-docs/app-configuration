@@ -21,7 +21,7 @@ subcollection: app-configuration
 {:faq: data-hd-content-type='faq'}
 
 # FAQs for {{site.data.keyword.appconfig_short}} - usage and billing
-{: #ac-faqs}
+{: #ac-faqs-usage}
 
 FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questions about {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
