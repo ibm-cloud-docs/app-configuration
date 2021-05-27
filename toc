@@ -8,6 +8,7 @@ App Configuration
     {: .navgroup id="learn"}
     getting-started.md
     ac-about.md
+    ac-concepts.md
     ac-release-notes.md
 
     {: .topicgroup}
