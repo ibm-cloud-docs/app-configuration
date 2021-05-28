@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>2.0.0</version>
+         <version>0.1.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,7 +63,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '2.0.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.1.0'
       ```
       {: codeblock}
 

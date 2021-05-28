@@ -63,7 +63,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          repositories {
-             mavenCentral()
+             mavenCentral()0.1.0
          }
          ```
          {:codeblock}
@@ -72,7 +72,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          ```javascript
          dependencies {
-            implementation "com.ibm.cloud:appconfiguration-android-sdk:2.0.0"
+            implementation "com.ibm.cloud:appconfiguration-android-sdk:0.1.0"
 
          }
          ```
