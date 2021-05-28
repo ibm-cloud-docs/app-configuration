@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-18"
 
 keywords: app-configuration, app configuration, segments
 
@@ -27,7 +27,7 @@ Use segments to define a group of users or resources based on rules. Feature fla
 
 By default, the Segments pane displays the list of segments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with Name of the segment, tags, and date of creation.
 
-![List of segments](images/ac-segments-default.png "List of segments"){: caption="Figure 22. List of segments" caption-side="bottom"}
+![List of segments](images/ac-segments-default.png "List of segments"){: caption="Figure 25. List of segments" caption-side="bottom"}
 
 ## Create a segment
 {: #ac-create-segment}
@@ -37,7 +37,7 @@ To create a segment, complete these steps:
 1. In the {{site.data.keyword.appconfig_short}} console, click **Segments**. 
 1. Click **Create**. The side-panel opens with fields for creating a new segment.
 
-   ![Create a segment](images/ac-segments-create.png "Creating a segment"){: caption="Figure 23. Creating a new segment" caption-side="bottom"}
+   ![Create a segment](images/ac-segments-create.png "Creating a segment"){: caption="Figure 26. Creating a new segment" caption-side="bottom"}
 
 1. Provide the segment details: 
    - **Name** - name of the segment. 
@@ -71,7 +71,7 @@ To define a rule, at the time of creating or editing a segment, in **Include use
 
 The overflow menu for each of the segments (three vertical dots) consists of **Edit**, **Copy**, and **Delete** operations.
 
-![Overflow menu for a segment](images/ac-segments-overflow-menu.png "Overflow menu for a segment"){: caption="Figure 24. Overflow menu for a segment" caption-side="bottom"}
+![Overflow menu for a segment](images/ac-segments-overflow-menu.png "Overflow menu for a segment"){: caption="Figure 27. Overflow menu for a segment" caption-side="bottom"}
 
 * When **Edit** option is selected, you can make changes to the **Name**, **Description**, add or modify the rule for **Including user attributes in segment**.
 * When **Copy** option is selected, the segment information is copied and you need to modify the **Name** of the segment. Optionally, modify the other details based on your need.

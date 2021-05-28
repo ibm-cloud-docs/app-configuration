@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-11"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -41,7 +41,11 @@ subcollection: app-configuration
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
 {:shortdesc}
 
-| Version | Release date | Changes |
-| ----- | ------- | -------------- |
-| 0.0.1 BETA | 17 February 2021 | Initial release. |
+| Version    | Release date     | Changes                   |
+| ---------- | ---------------- | ------------------------- |
+| 0.0.1 BETA | 11 February 2021 | Initial release.          |
+| 0.0.2 BETA | 2 March 2021     | Config support.           |
+| 0.0.3 BETA | 9 April 2021     | Properties support.       |
+| 0.0.4 BETA | 5 May 2021       | Bug Fix.                  |
+| 1.0.0 BETA | 21 May 2021      | Environment support.      |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 

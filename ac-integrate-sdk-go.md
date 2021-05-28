@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -137,15 +137,15 @@ fmt.Println("Feature is enabled %t ", feature.IsEnabled());
 #### Feature evaluation
 {: #ac-golang-feature-evaluation}
 
-You can use the `feature.GetCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
+You can use the `feature.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
 
 ```javascript
-identityId := "identityId"
-identityAttributes := make(map[string]interface{})
-identityAttributes["email"] = "ibm.com"
-identityAttributes["city"] = "Bengaluru"
+entityId := "entityId"
+entityAttributes := make(map[string]interface{})
+entityAttributes["email"] = "ibm.com"
+entityAttributes["city"] = "Bengaluru"
 
-featureVal := feature.GetCurrentValue(identityId, identityAttributes)
+featureVal := feature.GetCurrentValue(entityId, entityAttributes)
 ```
 {: codeblock}
 
@@ -179,15 +179,15 @@ fmt.Println("Property Type %s", property.GetPropertyDataType());
 #### Property evaluation
 {: #ac-golang-property-evaluation}
 
-You can use the `property.GetCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
+You can use the `property.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
 
 ```javascript
-identityId := "identityId"
-identityAttributes := make(map[string]interface{})
-identityAttributes["email"] = "ibm.com"
-identityAttributes["city"] = "Bengaluru"
+entityId := "entityId"
+entityAttributes := make(map[string]interface{})
+entityAttributes["email"] = "ibm.com"
+entityAttributes["city"] = "Bengaluru"
 
-propertyVal := property.GetCurrentValue(identityId, identityAttributes)
+propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 ```
 {: codeblock}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>2.0.0</version>
+         <version>0.1.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,7 +63,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding the following:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '2.0.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.1.0'
       ```
       {: codeblock}
 
@@ -87,7 +87,7 @@ subcollection: app-configuration
 
       String collectionId = "collectionId";
       String environmentId = "environmentId";
-      // Set the collectionId and environmentId to start the configuration fetching operation..
+      // Set the collectionId and environmentId to start the configuration fetching operation.
       appConfiguration.setContext(collectionId, environmentId)
       ```
       {: codeblock}
@@ -145,14 +145,14 @@ HashMap<String, Feature> features = appConfiguration.getFeatures();
 #### Feature evaluation
 {: #ac-java-feature-evaluation}
 
-You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
+You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
 
 ```java
-JSONObject identityAttributes = new JSONObject();
-identityAttributes.put("city", "Bangalore");
-identityAttributes.put("country", "India");
+JSONObject entityAttributes = new JSONObject();
+entityAttributes.put("city", "Bangalore");
+entityAttributes.put("country", "India");
 
-String value = (String) feature.getCurrentValue("identityId", identityAttributes);
+String value = (String) feature.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
@@ -181,16 +181,16 @@ HashMap<String, Property> property = appConfiguration.getProperties();
 #### Property evaluation
 {: #ac-java-property-evaluation}
 
-You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.
 
-You should pass an unique `identityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
+You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
 
 ```java
-JSONObject identityAttributes = new JSONObject();
-identityAttributes.put("city", "Bangalore");
-identityAttributes.put("country", "India");
+JSONObject entityAttributes = new JSONObject();
+entityAttributes.put("city", "Bangalore");
+entityAttributes.put("country", "India");
 
-String value = (String) property.getCurrentValue("identityId", identityAttributes);
+String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 

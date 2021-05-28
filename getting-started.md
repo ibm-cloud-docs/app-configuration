@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-18"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -34,10 +34,9 @@ The basic steps that get you started:
 
 1. [Create an {{site.data.keyword.appconfig_short}} service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance)
 1. [Create a collection](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection)
-1. [Set up feature flags and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
+1. [Set up environments, feature flags, and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
 1. [Integrate {{site.data.keyword.appconfig_short}} service SDKs](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
 1. [Create segments](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment)
 1. [Target feature flags to segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) or [Target properties to segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties) 
 1. [Target collections to feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags) or [Target collections to properties](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags)
 1. [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).
-

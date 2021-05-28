@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-01-27"
 
 keywords: app-configuration, app configuration, razee plugin, razee
 

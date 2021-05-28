@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-13"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -101,7 +101,7 @@ subcollection: app-configuration
 
    where,
    - configurationFile: Path to the JSON file, which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to false if the new configuration values shouldn't be fetched from the    server. Make sure to provide a proper JSON file in the path. By default, liveConfigUpdateEnabled value is enabled.
+   - liveConfigUpdateEnabled: Set this value to false if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, liveConfigUpdateEnabled value is enabled.
 
 
 ### Examples for using feature and property related APIs
@@ -151,28 +151,28 @@ if(feature) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `identityId` as the parameter to perform the feature flag evaluation.
+You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation.
 
 ##### Feature usage
 
-* If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `identityAttributes` parameter to this method.
+* If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let identityId = 'identityId'
-   let identityAttributes = {
+   let entityId = 'entityId'
+   let entityAttributes = {
        'city': 'Bangalore',
        'country': 'India'
    }
 
-   feature.getCurrentValue(identityId, identityAttributes)
+   feature.getCurrentValue(entityId, entityAttributes)
    ```
    {: codeblock}
 
 * If the feature flag is not targeted to any segments and the feature flag is turned **ON** this method returns the feature **enabled value**. And when the feature flag is turned **OFF** this method returns the feature **disabled value**.
 
    ```javascript
-   let identityId = 'identityId'
-   feature.getCurrentValue(identityId)
+   let entityId = 'entityId'
+   feature.getCurrentValue(entityId)
    ```
    {: codeblock}
 
@@ -210,28 +210,28 @@ if(property) {
 #### Evaluate a property
 {: #ac-integrate-ff-property-evaluation}
 
-You can use the `property.getCurrentValue(identityId, identityAttributes)` method to evaluate the value of the property. You should pass an unique `identityId` as the parameter to perform the property evaluation.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation.
 
 ##### Property usage
 
-- If the property is configured with segments in the App Configuration service, provide a json object as `identityAttributes` parameter to this method.
+- If the property is configured with segments in the App Configuration service, provide a json object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let identityId = 'identityId'
-   let identityAttributes = {
+   let entityId = 'entityId'
+   let entityAttributes = {
        'city': 'Bangalore',
        'country': 'India'
    }
 
-   property.getCurrentValue(identityId, identityAttributes)    
+   property.getCurrentValue(entityId, entityAttributes)    
    ```
    {: codeblock}
 
 - If the property is not targeted to any segments, this method returns the property value.
 
    ```javascript
-   let identityId = 'identityId'
-   property.getCurrentValue(identityId)
+   let entityId = 'entityId'
+   property.getCurrentValue(entityId)
    ```
    {: codeblock}
 
