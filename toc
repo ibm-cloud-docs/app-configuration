@@ -23,7 +23,11 @@ App Configuration
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    ac-monitor.md
+
+    {: .topicgroup}
+    Logging and monitoring
+        ac-monitor.md
+        ac-audit.md
     ac-ff-prop-env.md
     [Target feature flags to segments](/app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag)
     [Target properties to segments](/app-configuration/app-configuration-ac-properties#targeting-segment-with-properties)
