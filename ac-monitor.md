@@ -110,7 +110,7 @@ Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the 
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To get started, you need to [provision IBM Cloud Monitoring ](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information, see [here. ](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
+To get started, you need to [provision IBM Cloud Monitoring ](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information, see [here. ](https://cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
 
 
 Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{site.data.keyword.appconfig_short}} service deployments in the following regions:
@@ -121,7 +121,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | London| London|
 | Sydney| Sydney|
 
-Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling)
+Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling)
 {:note .note}
 
 You can configure only one instance of the {{site.data.keyword.mon_full_notm}} service per region to collect platform metrics.
@@ -136,7 +136,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  ## Access your {{site.data.keyword.mon_full_notm}} metrics
  {: #access-monitor}
 
- 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the <wintitle>Observability</wintitle> page
+ 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the <wintitle>Observability</wintitle> page
  2. Click DASHBOARDS
  3. In the Default Dashboards section, expand IBM
  4. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list
