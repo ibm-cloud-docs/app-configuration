@@ -39,31 +39,31 @@ The following list of {{site.data.keyword.appconfig_short}} events are sent to {
 
 | Action             | Description      |
 | -------------------| -----------------|
-| `apprapp.segments.create` | Creates a segment or fails to create|
-| `apprapp.segments.update` | Updates a segment or fails to update |
-| `apprapp.segments.delete` | Deletes a segment or fails to delete|
-| `apprapp.segments.list` | Calls the list of segments or fails to list segments |
-| `apprapp.segments.read` | Retrieves segment details or fails to retrieve the segment details|
-| `apprapp.environments.create` | Creates an environment or fails to create  |
-| `apprapp.environments.update` | Updates an environment or fails to update |
-| `apprapp.environments.delete` | Deletes an environment  or fails to delete|
-| `apprapp.environments.list` | Calls the list of environments or fails to list environments |
-| `apprapp.environments.read`|Details of environment are retrieved or fails to retrieve environment details|
-| `apprapp.features.create`| Creates feature or fails to create|
-| `apprapp.features.update` | Updates feature or fails to update |
-| `apprapp.features.updatevalues` | Updates feature details or fails to update details|
-| `apprapp.features.delete` | Deletes feature or fails to delete |
-| `apprapp.features.list` | Calls the list of features or fails to list |
-| `apprapp.features.read` | Retrieves feature details or fails to retrieve the details|
-| `apprapp.features.evaluate` | Evaluates feature at the SDK or fails to evaluate|
-| `apprapp.features.toggle` | Toggles feature or fails to toggle|
-| `apprapp.properties.create` | Creates a property or fails to create|
-| `apprapp.properties.update`|Updates property or fails to update|
-| `apprapp.properties.updatevalues`| Property details are updated or failed to update|
-| `apprapp.properties.delete` | Deletes property or fails to delete|
-| `apprapp.properties.list` | Calls list of properties or fails to list|
-| `apprapp.properties.read`|Retrieves details of property or fails to retrieve|
-| `apprapp.properties.evaluate`| Evaluates property at the SDK or fails to evaluate |
+| `apprapp.segments.create` | Created a segment or failed to create|
+| `apprapp.segments.update` | Updated a segment or failed to update |
+| `apprapp.segments.delete` | Deleted a segment or failed to delete|
+| `apprapp.segments.list` | Called the list of segments or failed to list |
+| `apprapp.segments.read` | Retrieved segment details or failed to retrieve|
+| `apprapp.environments.create` | Created an environment or failed to create  |
+| `apprapp.environments.update` | Updated an environment or failed to update |
+| `apprapp.environments.delete` | Deleted an environment or failed to delete|
+| `apprapp.environments.list` | Called the list of environments or failed to list |
+| `apprapp.environments.read`|Retrieved environment details or failed to retrieve environment details|
+| `apprapp.features.create`| Created feature or failed to create|
+| `apprapp.features.update` | Updated feature or failed to update |
+| `apprapp.features.updatevalues` | Updated feature details or failed to update details|
+| `apprapp.features.delete` | Deleted feature or failed to delete |
+| `apprapp.features.list` | Called the list of features or failed to list |
+| `apprapp.features.read` | Retrieved feature details or failed to retrieve the details|
+| `apprapp.features.evaluate` | Evaluated feature at the SDK or failed to evaluate|
+| `apprapp.features.toggle` | Toggled feature or failed to toggle|
+| `apprapp.properties.create` | Created a property or failed to create|
+| `apprapp.properties.update`|Updated property or failed to update|
+| `apprapp.properties.updatevalues`| Updated property details or failed to update|
+| `apprapp.properties.delete` | Deleted property or failed to delete|
+| `apprapp.properties.list` | Called list of properties or failed to list|
+| `apprapp.properties.read`|Retrieved details of property or failed to retrieve property details|
+| `apprapp.properties.evaluate`| Evaluated property at the SDK or failed to evaluate |
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
 
