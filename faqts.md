@@ -30,7 +30,7 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common operat
 {: #faq-ac-eval}
 {: faq}
 Yes. Debugging can be enabled for {{site.data.keyword.appconfig_short}} SDK. As an example, use code `client.setDebug(true)`
-to enable more traces for Node.js SDK. Refer to [SDK] (/docs/app-configuration?topic=app-configuration-ac-sdks) documentation for specific SDKs.
+to enable more traces for Node.js SDK. Refer to [SDK](/docs/app-configuration?topic=app-configuration-ac-sdks) documentation for specific SDKs.
 
 ## How can I get real-time updates of feature flag or properties in my application?
 {: #faq-ac-updates}
