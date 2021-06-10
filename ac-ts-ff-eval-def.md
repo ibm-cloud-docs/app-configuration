@@ -58,12 +58,13 @@ Segments are applied for the entity_attributes defined in the SDK. If entity_att
 Segments are defined with attribute names, values to consider and an operator.  
 User can set a local JSON to be considered for evaluation:
 ```javascript
-var entity_attributes = {
-    "email":"tester1@us.ibm.com",
-    "country": "India"
-  }
-var feature = client.getFeature(<feature_id>);
-feature.getCurrentValue(<entity_id>,entity_attributes);
+const entityId = "john_doe";
+const entityAttributes = {
+    'city': 'Bangalore',
+    'country': 'India'
+}
+let feature = client.getFeature(<feature_id>);
+let featureValue = feature.getCurrentValue(entityId, entityAttributes);
 ```
 {:codeblock: .codeblock}
 Entity attributes are used to evaluate if the entity is valid for the segment, and the corresponding value of the segment is returned for the feature flag.
