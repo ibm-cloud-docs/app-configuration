@@ -48,4 +48,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 0.0.3 BETA | 9 April 2021     | Properties support.                       |
 | 1.0.0 BETA | 21 May 2021      | Environment support.                      |
 | 1.0.1      | 4 June 2021      | Import/Export Configuration support.      |
+| 1.0.2      | 16 June 2021     | Initializing using Instance GUID.         |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
