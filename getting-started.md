@@ -25,7 +25,7 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_full}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags or properties, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting. You can also manage the properties for distributed applications centrally.
 {: shortdesc}
 
-{{site.data.keyword.appconfig_short}} currently offers three pricing plans: **Lite**, **Standard**, and **Enterprise**. 
+{{site.data.keyword.appconfig_short}} currently offers three pricing [plans](/docs/app-configuration?topic=app-configuration-ac-faqs-usage#faq-ac-pricing): **Lite**, **Standard**, and **Enterprise**. 
 
 You need an {{site.data.keyword.cloud}} account. If you don't have an account, create one [here](https://cloud.ibm.com/registration/). Log in to your {{site.data.keyword.cloud}} account.
 {: note }
