@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2021-06-17"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, feature flag, evaluation
 
@@ -42,7 +42,7 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why is my feature flag or property evaluated with an unexpected segment rule?
+# The value returned for my targeted flag or property is not what I expected.
 {: #ac-troubleshooting-two}
 {: troubleshoot}
 {: support}
@@ -52,7 +52,7 @@ subcollection: app-configuration
 Feature flag is targeted with segment rules. Rule execution is not as expected.  
 
 {: tsCauses}
-Feature flag is targeted with segment rules. Segmented rules are executed in order of the rule definition.
+Targeting assigns flag or property values to segments by evaluating rules. Targeting rules are executed in the order listed in the 'Edit targeting' view. If a segment appears in more than one rule, only the value defined by the last rule is assigned.
 
 {: tsResolve}
-To fix the order of evaluation, move the rules that are defined in the ‘Edit targeting’ slider by using the direction arrows. Same fix is applicable for properties.
+Correct the order of evaluation by using the up- and down-arrows in the ‘Edit targeting’ view, or remove the segment causing the unexpected outcome from rules.
