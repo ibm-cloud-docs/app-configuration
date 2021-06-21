@@ -42,14 +42,14 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-#  I have used targeting to override flag and property values for a segment, but the default values are still being applied.  
+# I have used targeting to override flag and property values for a segment, but the default values are still being applied.  
 {: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Override values are not being assigned to segments. 
+Override values are not being assigned to segments.
 
 {: tsCauses}
 Attributes in your code may be missing or inconsistent with the attributes used in your segment rule. Segments are defined in the App Configuration service using attributes, and attributes are defined in your application code. If an attribute in a segment rule does not exist in your application, or has a value that is not part of the rule, then the app instance will not be recognized as part of a segment, and the default value will be assigned.
