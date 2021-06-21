@@ -42,21 +42,20 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Feature flag or property is evaluated with default values always and not according to segment rule definition?   
+#  I have used targeting to override flag and property values for a segment, but the default values are still being applied.  
 {: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
 {:shortdesc}
 
 {: tsSymptoms}
-Feature flags are evaluated with default values and segments are not getting applied.  
+Override values are not being assigned to segments. 
 
 {: tsCauses}
-Segments are applied for the entity_attributes defined in the SDK. If entity_attributes are not defined, then default values are considered.
+Attributes in your code may be missing or inconsistent with the attributes used in your segment rule. Segments are defined in the App Configuration service using attributes, and attributes are defined in your application code. If an attribute in a segment rule does not exist in your application, or has a value that is not part of the rule, then the app instance will not be recognized as part of a segment, and the default value will be assigned.
 
 {: tsResolve}
-Segments are defined with attribute names, values to consider and an operator.  
-User can set a local JSON to be considered for evaluation:
+In your app code, include a JSON object that contains the various attribute values you want to use in your segment rules. Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See example below.
 ```javascript
 const entityId = "john_doe";
 const entityAttributes = {
