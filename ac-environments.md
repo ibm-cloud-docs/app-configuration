@@ -22,7 +22,7 @@ subcollection: app-configuration
 # Environments
 {: #ac-environments}
 
-Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. Crete your environments based on your development requirements.
+Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. Create your environments based on your development requirements.
 {:shortdesc}
 
 When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.  
@@ -39,13 +39,13 @@ By default, the environemnt pane displays the list of environments that are crea
 
 To create an environment, complete these steps:
 
-1. In the {{site.data.keyword.appconfig_short}} console, click **Environments**. 
+1. In the {{site.data.keyword.appconfig_short}} console, click **Environments**.
 1. Click **Create**. The side-panel opens with fields for creating a new environment.
 
    ![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 4. Creating a new environment" caption-side="bottom"}
 
-1. Provide the environment details: 
-   - **Name** - name of the environment. 
+1. Provide the environment details:
+   - **Name** - name of the environment.
    - **Environment ID** - the environment ID value is auto suggested based on the entered environment name. You can modify the same, if needed. Use the **Environment ID** value as the identifier in your SDK or API code.
    - **Description** - add a description of the environment, which is optional.
    - Optionally, define **Tags** that are required to identify with the environment.
@@ -64,5 +64,3 @@ The overflow menu for each of the environment (three vertical dots) consists of 
 
 By default, atleast one environment must be present in an {{site.data.keyword.appconfig_short}} service instance.
 {: note}
-
-
