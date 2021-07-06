@@ -20,7 +20,7 @@ subcollection: app-configuration
 {:tip: .tip}
 
 # Managing access levels for {{site.data.keyword.appconfig_short}} environments
-{: #ac-service-level-management}
+{: #ac-service-access-level-management}
 
 You can enable different levels of access to an {{site.data.keyword.appconfig_short}} environment in your {{site.data.keyword.Bluemix_notm}}  account by creating and modifying {{site.data.keyword.iamlong}} (IAM)access policies.
 {: shortdesc}
