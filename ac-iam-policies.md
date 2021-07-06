@@ -44,7 +44,7 @@ On the {{site.data.keyword.Bluemix_notm}} console:
 
 ![Access to an environment across instances](images/rbac-env.png "Console screenshot"){: caption="Figure 1." caption-side="bottom"}
 
-To enable access to environments across instances, the user must atleast have Reader level privileges to the {{sitedata.keyword.appconfig_short}} instances in the account.
+To enable access to environments across instances, the user must atleast have Reader level privileges to the {{site.data.keyword.appconfig_short}} instances in the account.
 {: note}  
 
 ## Granting access to a specific environment in an instance
@@ -67,5 +67,5 @@ On the {{site.data.keyword.Bluemix_notm}} console:
 
 ![Access to a specific environment in an instance](images/rbac-inst.png "Console screenshot"){: caption="Figure 2." caption-side="bottom"}
 
-To enable access to a specific environment in an instance, the user must atleast have Reader level privileges to the particular {{sitedata.keyword.appconfig_short}} instance.
+To enable access to a specific environment in an instance, the user must atleast have Reader level privileges to the particular {{site.data.keyword.appconfig_short}} instance.
 {: note} 
