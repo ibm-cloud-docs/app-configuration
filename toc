@@ -48,8 +48,9 @@ App Configuration
         ac-tutorial.md
 
     {: .topicgroup}
-    Enhancing security
+    Enhance security
         ac-iam.md
+        ac-iam-policies.md
         ac-securing-data.md
     {: .navgroup-end}
 
