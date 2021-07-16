@@ -36,7 +36,7 @@ subcollection: app-configuration
 {:node: .ph data-hd-programlang='node'}
 
 
-# Enable offline mode to service an air-gapped environment
+# Enable offline mode 
 {: #ac-offline}
 
 ## Benefits of offline mode
