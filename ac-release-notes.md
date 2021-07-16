@@ -37,7 +37,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 ## June 2021
 {: #jun-2021}
 
-[Import and export configuration data for an air-gapped environment](/docs/app-configuration?topic=app-configuration-ac-offline)
+[Import and export of configuration data](/docs/app-configuration?topic=app-configuration-ac-offline)
 {: #added-exim-config}
 
 ## May 2021
