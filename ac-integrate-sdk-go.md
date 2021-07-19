@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-07-19"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -79,7 +79,7 @@ subcollection: app-configuration
    - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-golang-example).
+1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property operations](#ac-golang-example).
 
 After `appConfiguration.Init("region", "guid", "apikey")`, follow the below steps:
 

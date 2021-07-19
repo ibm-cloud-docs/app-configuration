@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-07-19"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -99,7 +99,7 @@ subcollection: app-configuration
       - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
       - environmentId : Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow the below step:
+1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow the below step:
 
    ```java
    String configurationFile = "custom/userJson.json";

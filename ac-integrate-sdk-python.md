@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-07-19"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -90,7 +90,7 @@ subcollection: app-configuration
    - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - environment_id : Id of the environment created in App Configuration service instance.
 
-1. *Optional*: You can work offline with local configuration file and perform [feature and property operations](#ac-python-example).
+1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property operations](#ac-python-example).
 
    ```py
    ## set the file or offline configurations
