@@ -37,7 +37,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 ## June 2021
 {: #jun-2021}
 
-[Import and export of configuration data](/docs/app-configuration?topic=app-configuration-ac-offline)
+[Import](/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli#ac-ibmcloud-ac-import) and [export](/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli#ac-ibmcloud-ac-export) of configuration data
 {: #added-exim-config}
 
 ## May 2021
