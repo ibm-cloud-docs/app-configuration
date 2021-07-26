@@ -32,7 +32,7 @@ App Configuration
     Logging and monitoring
         ac-monitor.md
         ac-audit.md
-  
+
     {: .topicgroup}
     SDKs
         ac-integrate-sdk-node.md
@@ -41,6 +41,7 @@ App Configuration
         ac-integrate-sdk-java.md
         ac-integrate-sdk-android.md
         [App Configuration admin SDK for Go](https://{DomainName}/apidocs/app-configuration?code=go)
+    ac-integrate-offline.md
     ac-razee.md
 
     {: .topicgroup}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-07-19"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -87,7 +87,7 @@ subcollection: app-configuration
    - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
    - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work offline with local feature file and perform [feature operations](#ac-integrate-ff-example).
+1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local feature file and perform [feature operations](#ac-integrate-ff-example).
    {: #ac-work-offline-ff}
 
    After `client.init(region, guid, apikey)`:
