@@ -41,6 +41,39 @@ subcollection: app-configuration
 Following are the list of {{site.data.keyword.appconfig_short}} client, server, and admin SDKs. The {{site.data.keyword.appconfig_short}} client SDK is available for Android, the server SDKs for Node, Python, Go, and Java, and the admin SDK for Go, to integrate with your web and mobile applications, microservices, and distributed environments.
 {:shortdesc}
 
+## Client-side and Server-side SDKs
+{: #ac-sdk-types}
+
+### Overview
+
+This topic explains the differences between various SDKs and helps you decide between SDK types for your particular use case.
+
+### Types of SDKs
+
+SDKs supported by {{site.data.keyword.appconfig_short}} include:
+
+- Server-side SDK
+- Client-side SDK
+- Admin SDK
+
+SDKs that help evaluate feature flag and property values are broadly classified as Server-side or Client-side - based on the deployment environment. These SDKs can be integrated into your application to assess the feature value by considering segment targeting rules, if any.
+
+Evaluation SDKs fetch the latest configuration data from the {{site.data.keyword.appconfig_short}} service and ensure that any change in the service configuration is made available to your application in real-time.
+
+Admin SDKs can be used to perform, create, and manage configurations for Environments, Collections, Feature flags, Properties and Segments. As an option to {{site.data.keyword.Bluemix_notm}} Dashboard or {{site.data.keyword.Bluemix_notm}} CLI, Admin SDKs can be used to programmatically manage your service configuration from within your application.
+
+The currently available Go language Admin SDK integrates with your Go application.
+
+Differences between client-side and server-side SDKs:
+|SDK type                         |Details                         |
+|---------------------------------|--------------------------------|
+|Server side|These SDKs are designed for multi-user systems and are intended to be used in a trusted environment, such as inside a corporate network or on a web server.|
+|Client side|These SDKs are designed for single-user desktop, mobile, and embedded applications.
+These SDKs are intended to be used in a potentially less secure environment, such as a personal computer or mobile device.
+Currently, {{site.data.keyword.appconfig_short}} Android SDK can be integrated with mobile applications.|
+|Admin SDK|Admin SDK is designed to perform the {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags and Properties. Refer to [App Configuration Admin SDK for Go ] (https://cloud.ibm.com/apidocs/app-configuration?code=go) for more details.|
+
+
 For more information about installation and technical concepts, see the 'readme file' document in the SDK.
 
 |Server SDKs                          |Client SDKs                          |Admin SDKs                          |
