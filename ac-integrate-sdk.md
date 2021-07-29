@@ -69,10 +69,8 @@ The currently available Go language Admin SDK integrates with your Go applicatio
 |SDK type                         |Details                         |
 |---------------------------------|--------------------------------|
 |Server side|These SDKs are designed for multi-user systems and are intended to be used in a trusted environment, such as inside a corporate network or on a web server.|
-|Client side|These SDKs are designed for single-user desktop, mobile, and embedded applications.
-These SDKs are intended to be used in a potentially less secure environment, such as a personal computer or mobile device.
-Currently, {{site.data.keyword.appconfig_short}} Android SDK can be integrated with mobile applications.|
-|Admin SDK|Admin SDK is designed to perform the {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags and Properties. Refer to [App Configuration Admin SDK for Go ](https://cloud.ibm.com/apidocs/app-configuration?code=go) for more details.|
+|Client side|These SDKs are designed for single-user desktop, mobile, and embedded applications. These SDKs are intended to be used in a potentially less secure environment, such as a personal computer or mobile device. Currently, {{site.data.keyword.appconfig_short}} Android SDK can be integrated with mobile applications.|
+|Admin SDK|Admin SDK is designed to perform {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags and Properties. Refer to [App Configuration Admin SDK for Go ](https://cloud.ibm.com/apidocs/app-configuration?code=go) for more details.|
 
 
 For more information about installation and technical concepts, see the 'readme file' document in the SDK.
