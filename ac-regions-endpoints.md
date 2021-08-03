@@ -24,13 +24,13 @@ subcollection: app-configuration
 # Regions and endpoints
 {: #ac-regions-endpoints}
 
-Review region and connectivity options for interacting with {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_notm}}.
+Review region and connectivity options for interacting with {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}}.
 {:shortdesc}
 
 ## Available regions
 {: #ac-regions}
 
-{{site.data.keyword.appconfig_notm}} is available in the following regions: 
+{{site.data.keyword.appconfig_notm}} is available in the following regions:
 
 - Dallas
 - London
