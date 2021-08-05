@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-del}
 {: troubleshoot}
 {: support}
-{: shortdesc}
+
 
 {: tsSymptoms}
 Deleting a feature flag or property in an environment deletes it for all environments.

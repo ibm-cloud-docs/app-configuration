@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
-{: shortdesc}
+
 
 {: tsSymptoms}
 Override values are not being assigned to segments.

@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-one}
 {: troubleshoot}
 {: support}
-{: shortdesc}
+
 
 {: tsSymptoms}
 Feature flag is disabled and cannot be toggled.  

@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-two}
 {: troubleshoot}
 {: support}
-{: shortdesc}
+
 
 {: tsSymptoms}
 Feature flag is targeted with segment rules. Rule execution is not as expected.  
