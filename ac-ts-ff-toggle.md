@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-toggle}
 {: troubleshoot}
 {: support}
-{: shortdesc}
+{:shortdesc}
 
 {: tsSymptoms}
 Toggling a feature flag fails with a `permission denied' error. 
