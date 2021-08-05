@@ -25,7 +25,7 @@ subcollection: app-configuration
 {: #ac-regions-endpoints}
 
 Review region and connectivity options for interacting with {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Available regions
 {: #ac-regions}
@@ -48,4 +48,4 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-{:caption="Table 3. Service endpoints" caption-side="top"}
+{: caption="Table 3. Service endpoints" caption-side="top"}

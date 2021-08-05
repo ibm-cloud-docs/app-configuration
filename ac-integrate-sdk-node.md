@@ -39,7 +39,7 @@ subcollection: app-configuration
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Node
 {: #ac-integrate-ff-sdk}

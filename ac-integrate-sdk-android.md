@@ -1,4 +1,4 @@
----
+ ---
 
 copyright:
   years: 2021
@@ -40,7 +40,7 @@ subcollection: app-configuration
 {: #ac-integrate-sdks-android}
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application written in Kotlin or Java programming language.
-{:shortdesc}
+{: shortdesc}
 
 ## Prerequisites
 {: #ac-integrate-ff-sdk-android-prereqs}
@@ -48,8 +48,8 @@ subcollection: app-configuration
 Following are the prerequisites for using the {{site.data.keyword.appconfig_short}} service SDK for Android:
 
 - Android API level 22 or later
-- [Android Studio](https://developer.android.com/studio/index.html){:external}
-- [Gradle](https://gradle.org/install){:external}
+- [Android Studio](https://developer.android.com/studio/index.html){: external}
+- [Gradle](https://gradle.org/install){: external}
 
 ## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
@@ -66,7 +66,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
              mavenCentral()
          }
          ```
-         {:codeblock}
+         {: codeblock}
 
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
 
@@ -76,14 +76,14 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
          }
          ```
-         {:codeblock}
+         {: codeblock}
 
 1. Configure the `AndroidManifest.xml` file for Internet permission.
 
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    ```
-   {:codeblock}
+   {: codeblock}
 
 1. Initialize the SDK.
 
@@ -98,7 +98,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    //To start the configuration fetching operation, set the collectionId and environmentId in the following way.
     appConfiguration.setContext("collectionId","environmentId")
    ```
-   {:codeblock}
+   {: codeblock}
 
    where,
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
@@ -117,7 +117,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
        }
    })
    ```
-   {:codeblock}
+   {: codeblock}
 
 ### Examples for using property and feature related APIs for Android app written in Kotlin
 {: #ac-integrate-ff-example-android-kotlin}
@@ -129,14 +129,14 @@ Refer to the below examples for using the property and feature related APIs.
    ```kotlin
    val feature: Feature? = appConfiguration.getFeature("featureId")
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get all features**
 
    ```kotlin
    val features: HashMap<String, Feature>? = appConfiguration.getFeatures();
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Feature evaluation**
 
@@ -162,21 +162,21 @@ Refer to the below examples for using the property and feature related APIs.
        val value = feature.getCurrentValue("entityId", entityAttributes)
    }
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get single property**
 
    ```kotlin
    val property: Property? = appConfiguration.getProperty("propertyId")
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get all properties**
 
    ```kotlin
    val properties: HashMap<String, Property>? = appConfiguration.getProperties();
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Property evaluation**
 
@@ -195,13 +195,13 @@ Refer to the below examples for using the property and feature related APIs.
    val property: Property? = appConfiguration.getProperty("propertyId")
    val value = property.getCurrentValue("entityId", entityAttributes)
    ```
-   {:codeblock}
+   {: codeblock}
 
 - Force fetch the configurations from server.
    ```kotlin
    appConfiguration.fetchConfigurations()
    ```
-   {:codeblock}
+   {: codeblock}
 
 ## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
@@ -218,7 +218,7 @@ Refer to the below examples for using the property and feature related APIs.
             mavenCentral()
          }
          ```
-         {:codeblock}
+         {: codeblock}
 
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Module level `build.gradle` file.
 
@@ -228,14 +228,14 @@ Refer to the below examples for using the property and feature related APIs.
 
          }
          ```
-         {:codeblock}
+         {: codeblock}
 
 1. Configure the `AndroidManifest.xml` file for Internet permission.
 
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    ```
-   {:codeblock}
+   {: codeblock}
 
 1. Integrate Kotlin to your Java project with these steps:
 
@@ -247,7 +247,7 @@ Refer to the below examples for using the property and feature related APIs.
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
       }
       ```
-      {:codeblock}
+      {: codeblock}
 
    - Add `kotlin-android` plugin to the App level `build.gradle`
 
@@ -257,7 +257,7 @@ Refer to the below examples for using the property and feature related APIs.
          id 'kotlin-android'
       }
       ```
-      {:codeblock}
+      {: codeblock}
 
 1. Initialize the SDK.
 
@@ -268,7 +268,7 @@ Refer to the below examples for using the property and feature related APIs.
    // To start the configuration fetching operation, set the collectionId in the following way.
    appConfiguration.setContext("collectionId", "environmentId");
    ```
-   {:codeblock}
+   {: codeblock}
 
    where,
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
@@ -287,7 +287,7 @@ Refer to the below examples for using the property and feature related APIs.
        }
    });
    ```
-   {:codeblock}
+   {: codeblock}
 
 ### Examples for using property and feature related APIs for Android app written in Java
 {: #ac-integrate-ff-example-android-java}
@@ -299,14 +299,14 @@ Refer to the below examples for using the property and feature related APIs.
    ```java
    Feature feature = appConfiguration.getFeature("featureId");
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get all features**
 
    ```java
    HashMap<String,Feature> features =  appConfiguration.getFeatures();
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Feature evaluation**
 
@@ -341,21 +341,21 @@ Refer to the below examples for using the property and feature related APIs.
        }
    }
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get single property**
 
    ```java
    Property property = appConfiguration.getProperty("propertyId");
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Get all properties**
 
    ```java
    HashMap<String,Property> properties =  appConfiguration.getProperties();
    ```
-   {:codeblock}
+   {: codeblock}
 
 - **Property evaluation**
 
@@ -375,10 +375,10 @@ Refer to the below examples for using the property and feature related APIs.
    Property property = appConfiguration.getProperty("propertyId");
    String value = (String) property.getCurrentValue(entityId, entityAttributes);
    ```
-   {:codeblock}
+   {: codeblock}
 
 - Force fetch the configurations from server.
    ```java
    appConfiguration.fetchConfigurations()
    ```
-   {:codeblock}
+   {: codeblock}

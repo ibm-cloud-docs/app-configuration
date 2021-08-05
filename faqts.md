@@ -13,7 +13,7 @@ subcollection: app-configuration
 {:codeblock: .codeblock}
 {:external: target="_blank" .external}
 {:important: .important}
-{:note .note}
+{: note .note}
 {:pre: .pre}
 {:screen: .screen}
 {:shortdesc: .shortdesc}

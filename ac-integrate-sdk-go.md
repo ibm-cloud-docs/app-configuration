@@ -40,7 +40,7 @@ subcollection: app-configuration
 {: #ac-golang}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Go
 {: #ac-integrate-golang-sdk}

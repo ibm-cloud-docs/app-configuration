@@ -13,7 +13,7 @@ subcollection: app-configuration
 {:codeblock: .codeblock}
 {:external: target="_blank" .external}
 {:important: .important}
-{:note .note}
+{: note .note}
 {:pre: .pre}
 {:screen: .screen}
 {:shortdesc: .shortdesc}
@@ -120,7 +120,7 @@ Net API Calls:  0 (all included)  = $0</br></br>
 TOTAL COST: $500 + $0 + $0 = $500 per month</br>
 
 You might use the same instance of {{site.data.keyword.appconfig_short}} for both scenarios for a total cost of just over $1600 per month.
-{:note .note}
+{: note .note}
 
 ## What are the capabilities, quotas, and limits for various aspects of the {{site.data.keyword.appconfig_short}} plans?
 {: #faq-ac-capabilities}

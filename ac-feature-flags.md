@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-feature-flags}
 
 You can create and manage feature flags, add them to collections and use them in your app by using SDKs. Using feature flags, you as an app owner, can control the applicability of a feature by enabling or disabling it at run time.
-{:shortdesc}
+{: shortdesc}
 
 A feature can be enabled or disabled to all the collection users or to a specific set of users and devices. 
 

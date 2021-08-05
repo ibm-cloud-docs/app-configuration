@@ -46,7 +46,7 @@ subcollection: app-configuration
 {: #ac-troubleshooting-def-value}
 {: troubleshoot}
 {: support}
-{:shortdesc}
+{: shortdesc}
 
 {: tsSymptoms}
 Default values are assigned to the feature flags or properties in certain environments.

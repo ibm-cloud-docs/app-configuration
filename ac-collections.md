@@ -1,4 +1,4 @@
----
+  ---
 
 copyright:
   years: 2020, 2021
@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-collections}
 
 Collections are a way to group feature flags and properties. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature will need to be in a collection, and it is often convenient to create your collection first.
-{:shortdesc}
+{: shortdesc}
 
 By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Tags** associated, the date of creation of the collection, and the collection **Content** (number of feature flags and number of properties).
 {: note}
@@ -41,8 +41,8 @@ To create a collection, complete these steps:
 
    ![Create a collection](images/ac-collections-create.png "Creating a collection"){: caption="Figure 7. {{site.data.keyword.appconfig_short}} service creating a new collection" caption-side="bottom"}
 
-1. Provide the collection details: 
-   - **Name** - name of the collection. 
+1. Provide the collection details:
+   - **Name** - name of the collection.
    - **Collection ID** - the collection identifier, the value is auto suggested based on the entered collection name. You can modify the same, if needed. Use the **Collection ID** value as the identifier in your SDK or API code.
    - **Tags** - specify the tags that need to be associated with the collection, which is optional.
    - **Description** - add a description of the collection, which is optional.

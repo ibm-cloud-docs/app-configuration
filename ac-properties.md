@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-properties}
 
 You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using Razee plugin or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally using {{site.data.keyword.appconfig_short}}.
-{:shortdesc}
+{: shortdesc}
 
 By default, the properties pane displays the list of properties in an environment that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Value**, **Type** (boolean, numeric, string), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 

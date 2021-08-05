@@ -23,12 +23,12 @@ subcollection: app-configuration
 {: #ac-environments}
 
 Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. Create your environments based on your development requirements.
-{:shortdesc}
+{: shortdesc}
 
-When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.  
+When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.
 {: note}
 
-Each feature flag or properties created has its own values, tags and segment rules for each environment.  You can also toggle the feature flag per environment.  This means that you can have different rules for flags per environment for the same feature flag or properties.  
+Each feature flag or properties created has its own values, tags and segment rules for each environment.  You can also toggle the feature flag per environment.  This means that you can have different rules for flags per environment for the same feature flag or properties.
 
 By default, the environemnt pane displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 

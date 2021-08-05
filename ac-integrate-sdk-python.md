@@ -39,7 +39,7 @@ subcollection: app-configuration
 {: #ac-python}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Python
 {: #ac-integrate-python}

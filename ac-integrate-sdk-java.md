@@ -40,7 +40,7 @@ subcollection: app-configuration
 {: #ac-java}
 
 {{site.data.keyword.appconfig_short}} service provides SDKs to integrate with your applications, microservices, and distributed environments.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Java
 {: #ac-integrate-java-sdk}
