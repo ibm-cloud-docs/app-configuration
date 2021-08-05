@@ -134,7 +134,7 @@ if (feature) {
 ```
 {: codeblock}
 
-#### Get all features
+ #### Get all features
 {: #ac-java-get-all-features}
 
 ```java
