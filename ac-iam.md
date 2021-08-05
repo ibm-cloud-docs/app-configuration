@@ -35,7 +35,7 @@ Policies help you to grant access at different levels. Some of the options are,
 ## Roles and permissions
 {: #ac-roles-permissions}
 
-With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for users and resources in your account. {{site.data.keyword.appconfig_short}} service aligns with {{site.data.keyword.cloud_notm}} IAM roles so that each user has a different view of the service, according to the role assigned. 
+With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for users and resources in your account. {{site.data.keyword.appconfig_short}} service aligns with {{site.data.keyword.cloud_notm}} IAM roles so that each user has a different view of the service, according to the role assigned.
 
 *Roles* define the actions that a user or service ID can run. There are different types of roles in the  {{site.data.keyword.cloud_notm}}:
 

@@ -27,7 +27,7 @@ You can create and manage properties, add them to collections and use them in yo
 
 By default, the properties pane displays the list of properties in an environment that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Value**, **Type** (boolean, numeric, string), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 
-An example usage of properties can be to decide the number of instances of your application in a specific region. To achieve this, create a property in {{site.data.keyword.appconfig_short}}, with type as numeric, and assign segments based on region value. 
+An example usage of properties can be to decide the number of instances of your application in a specific region. To achieve this, create a property in {{site.data.keyword.appconfig_short}}, with type as numeric, and assign segments based on region value.
 
 ![List of properties](images/ac-properties-default.png "List of properties"){: caption="Figure 17. List of properties" caption-side="bottom"}
 
@@ -36,7 +36,7 @@ An example usage of properties can be to decide the number of instances of your 
 
 To create a property, complete these steps:
 
-1. In the {{site.data.keyword.appconfig_short}} console, click **Properties**. 
+1. In the {{site.data.keyword.appconfig_short}} console, click **Properties**.
 1. Select the **Current Environment**. This displays the list of properties in that environment.
 1. Click **Create**. The side-panel opens with fields for creating a new property.
 
@@ -44,8 +44,8 @@ To create a property, complete these steps:
 
    ![Create peoperty with further details](images/ac-create-property1.png "Creating property further details"){: caption="Figure 19. Creating a property further details" caption-side="bottom"}
 
-1. Provide the property details: 
-   - **Name** - name of the property. 
+1. Provide the property details:
+   - **Name** - name of the property.
    - **Property ID** - the property ID value is auto suggested based on the entered property name. You can modify the same, if needed. Use the **Property ID** value as the identifier in your SDK or API code.
    - **Property type** - specify the type of the property. Supported type includes: Boolean, String, and Numeric. For more information about property type and default values, refer [here](#selecting-properties-type).
    - **Default value** - specify the default value for the property type selected. For more information about property type and default values, refer [here](#selecting-properties-type).
@@ -62,7 +62,7 @@ You can have one of the following property types that is associated to a propert
 - String
 - Numeric
 
-Each of the **Property type** is having a default value. 
+Each of the **Property type** is having a default value.
 {: #property-type-default-value}
 
 - The value for the **Property value** is required, which can be overridden while targeting to a segment.

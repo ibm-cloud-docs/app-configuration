@@ -56,4 +56,3 @@ Feature flag or property is available to all environments. Updates to values are
 
 {: tsResolve}
 Deletion of feature flag or property is across all environments. If a flag is not required in a particular environment, disable the flag or set the values default. If a flag is not required in any environment, it can be deleted.
-

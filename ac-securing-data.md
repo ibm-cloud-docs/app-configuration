@@ -25,7 +25,7 @@ subcollection: app-configuration
 To ensure that you can securely manage your data when you use {{site.data.keyword.appconfig_short}}, it is important to know exactly what data is stored and encrypted. It is also important to know how you can delete any stored data.
 {: shortdesc}
 
-## What information is stored in {{site.data.keyword.appconfig_short}}? 
+## What information is stored in {{site.data.keyword.appconfig_short}}?
 {: #ac-information-stored}
 
 The following information are stored when you use {{site.data.keyword.appconfig_short}} service dashboard or API or CLI:
@@ -56,4 +56,3 @@ The {{site.data.keyword.appconfig_short}} data retention policy describes how lo
 If you no longer need an instance of {{site.data.keyword.appconfig_short}}, you can delete the service instance and any data that is stored using `ibmcloud CLI`. You can also choose to delete your service instance by using the console.
 
 To restore a deleted instance or to delete the instance permanently you can use Resource Reclamations. Refer to [Using resource reclamations](https://cloud.ibm.com/docs/account?topic=account-resource-reclamation) to know more on the resource reclamation.
-

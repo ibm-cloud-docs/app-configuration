@@ -30,7 +30,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 ## Available regions
 {: #ac-regions}
 
-{{site.data.keyword.appconfig_notm}} is available in the following regions: 
+{{site.data.keyword.appconfig_notm}} is available in the following regions:
 
 - Dallas
 - London

@@ -25,7 +25,7 @@ subcollection: app-configuration
 
 ![Overview](images/ac-overview.png "Overview diagram"){: caption="Figure 1. App configuration overview" caption-side="bottom"}
 
-## Service instance 
+## Service instance
 {: #ac-service-instance}
 An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{site.data.keyword.appconfig_short}} application on the {{site.data.keyword.Bluemix_notm}}. You create an instance from the tile in the {{site.data.keyword.Bluemix_notm}} catalog. Now you have access to the {{site.data.keyword.appconfig_short}} dashboard and all the functionality that comes with the selected pricing plan.
 
@@ -33,7 +33,7 @@ An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{
 {: #ac-environment}
 {{site.data.keyword.appconfig_short}} environments are sets of configuration values that are applied to the environments you run and manage in your infrastructure. For example, your software development process might involve three environments: development, staging, and production. Configuration values for all three can be present in a single instance of {{site.data.keyword.appconfig_short}}. All configuration keys (names) automatically replicate across all environments inside {{site.data.keyword.appconfig_short}}, but the values for each key are specific to each environment.
 
-## Collection 
+## Collection
 {: #ac-environment}
 Use collections to group feature flags and properties in any way that is meaningful to you. Often a collection is used to represent all configuration values for a particular application. Feature flags and properties can belong to more than one collection for cases where you want to share a common configuration value across apps or sets of infrastructure.
 
@@ -57,6 +57,6 @@ An attribute is a parameter that is used to define a segment. Attributes are use
 {: #ac-targetdef}
 Feature flags and properties are targeted to segments based on a set of rules that are called the targeting definition. With targeting, you can override the default value for a flag or property, for any segment you have defined. 
 
-## {{site.data.keyword.appconfig_short}} SDK 
+## {{site.data.keyword.appconfig_short}} SDK
 {: #ac-SDK-concept}
 The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a websocket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground.  SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.

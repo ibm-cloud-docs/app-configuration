@@ -1,4 +1,4 @@
- ---
+---
 
 copyright:
   years: 2020
@@ -42,18 +42,17 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why am I denied permission to toggle a feature flag? 
+# Why am I denied permission to toggle a feature flag?
 {: #ac-troubleshooting-toggle}
 {: troubleshoot}
 {: support}
 {: shortdesc}
 
 {: tsSymptoms}
-Toggling a feature flag fails with a `permission denied' error. 
+Toggling a feature flag fails with a `permission denied' error.
 
 {: tsCauses}
 All actions in the {{site.data.keyword.appconfig_short}} service are governed by access. Toggling the feature flag needs a specific role to be assigned to the user.
 
 {: tsResolve}
 You can manage access for users and resources by using IAM roles that are defined by the service. To learn more, refer [here](/docs/app-configuration?topic=app-configuration-ac-service-access-management#ac-roles-permissions)
-

@@ -7,7 +7,6 @@ lastupdated: "2021-03-19"
 keywords: app-configuration, app configuration, data model, high availability, ha
 
 subcollection: app-configuration
-
 ---
 
 {:codeblock: .codeblock}

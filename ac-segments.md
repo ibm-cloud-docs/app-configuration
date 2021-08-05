@@ -34,13 +34,13 @@ By default, the Segments pane displays the list of segments that are created in 
 
 To create a segment, complete these steps:
 
-1. In the {{site.data.keyword.appconfig_short}} console, click **Segments**. 
+1. In the {{site.data.keyword.appconfig_short}} console, click **Segments**.
 1. Click **Create**. The side-panel opens with fields for creating a new segment.
 
    ![Create a segment](images/ac-segments-create.png "Creating a segment"){: caption="Figure 26. Creating a new segment" caption-side="bottom"}
 
-1. Provide the segment details: 
-   - **Name** - name of the segment. 
+1. Provide the segment details:
+   - **Name** - name of the segment.
    - **Description** - add a description of the segment, which is optional.
    - Optionally, define **Tags** that are required to identify with the segment.
    - Specify a rule for including users to a segment in the **Include user attributes in segment**. For further details about adding users to a segment, refer [here](#adding-users-to-segment).

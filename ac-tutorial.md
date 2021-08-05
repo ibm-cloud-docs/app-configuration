@@ -10,8 +10,8 @@ subcollection: app-configuration
 
 content-type: tutorial
 services:  
-account-plan: standard 
-completion-time: 90m 
+account-plan: standard
+completion-time: 90m
 
 ---
 

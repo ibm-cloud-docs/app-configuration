@@ -1,4 +1,4 @@
-   ---
+---
 
 copyright:
   years: 2021
@@ -35,7 +35,7 @@ subcollection: app-configuration
 {:curl: .ph data-hd-programlang='curl'}
 {:node: .ph data-hd-programlang='node'}
 
-# CLI version history 
+# CLI version history
 {: #cli_versions}
 
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
@@ -49,4 +49,4 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.0 BETA | 21 May 2021      | Environment support.                      |
 | 1.0.1      | 4 June 2021      | Import/Export Configuration support.      |
 | 1.0.2      | 16 June 2021     | Initializing using Instance GUID.         |
-{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"}

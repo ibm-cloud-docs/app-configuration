@@ -25,16 +25,16 @@ subcollection: app-configuration
 [Razee](https://razee.io/) is an opensource project developed by IBM to automate and manage the deployment of Kubernetes resources across clusters, environments, and cloud providers.
 {: shortdesc}
 
-{{site.data.keyword.appconfig_short}} uses Razee to release features across clusters and helps in templatizing the cluster resources. {{site.data.keyword.appconfig_short}} Razee plugin helps in the following: 
+{{site.data.keyword.appconfig_short}} uses Razee to release features across clusters and helps in templatizing the cluster resources. {{site.data.keyword.appconfig_short}} Razee plugin helps in the following:
 
 - Custom resource development using Razee
-- Fetches the feature flag values from {{site.data.keyword.appconfig_short}} service instance 
+- Fetches the feature flag values from {{site.data.keyword.appconfig_short}} service instance
 - Templatizes and controls the deployment of Kubernetes resources across clusters
 
-You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](https://github.com/IBM/appconfiguration-razee). 
+You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](https://github.com/IBM/appconfiguration-razee).
 
-## Common use-cases for {{site.data.keyword.appconfig_short}} Razee plugin 
+## Common use-cases for {{site.data.keyword.appconfig_short}} Razee plugin
 {: #ac-usecases-razee-plugin}
 
-- Controlling Kubernetes deployments to scale up or down for a segment of clusters 
-- For few privileged customers, roll-out a new feature to their clusters, without any code deployments 
+- Controlling Kubernetes deployments to scale up or down for a segment of clusters
+- For few privileged customers, roll-out a new feature to their clusters, without any code deployments

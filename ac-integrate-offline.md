@@ -36,7 +36,7 @@ subcollection: app-configuration
 {:node: .ph data-hd-programlang='node'}
 
 
-# Enable offline mode 
+# Enable offline mode
 {: #ac-offline}
 
 ## Benefits of offline mode

@@ -70,7 +70,7 @@ You are responsible for identity and access management to your application and a
 ## Security and regulation compliance
 {: #ac-sec-and-reg-compliance}
 
-{{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.appconfig_notm}}. 
+{{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.appconfig_notm}}.
 
 You are responsible for the security and compliance of your application and application data.
 
@@ -90,4 +90,3 @@ You are responsible for the recovery of the workloads that run {{site.data.keywo
 |-------------|-----------------------|-----------------------|
 |Availability |<ul><li>Provide high availability capabilities, such as {{site.data.keyword.IBM_notm}}-owned infrastructure in multizone regions, to meet local access and low latency requirements for each supported region. </li><li>Run {{site.data.keyword.appconfig_notm}} deployments with three replicas in the same region for high availability.</li><li>Continuously monitor {{site.data.keyword.appconfig_notm}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.</li><li>Maintain service availability across [worldwide regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) so that customers can deploy projects across zones and regions for higher DR tolerance.</li></ul> |<ul><li>Use the list of [available regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) to plan for and create new instances of the service to meet performance and availability requirements above and beyond the default provided by {{site.data.keyword.IBM_notm}}.</li><li>Set up additional {{site.data.keyword.appconfig_notm}} instances across zones and regions to increase disaster recovery tolerance above the default provided by {{site.data.keyword.IBM_notm}}.</li></ul>
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
-

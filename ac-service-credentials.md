@@ -30,4 +30,3 @@ Services that are managed by {{site.data.keyword.iamlong}} (IAM) can generate a 
 Click **Service credentials** to view the existing credentials with the **Key name** and **Date created** or create a new one.  
 
 For more information on adding and viewing a service credential, see [here](/docs/account?topic=account-service_credentials){: external}.
-

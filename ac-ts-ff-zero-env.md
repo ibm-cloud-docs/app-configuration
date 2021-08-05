@@ -56,4 +56,3 @@ A feature flag is always created under an environment. Though the flag is create
 
 {: tsResolve}
 Feature flag or Property values can be updated specifically to an environment.  
-
