@@ -48,14 +48,22 @@ subcollection: app-configuration
 {: support}
 
 
-{: tsSymptoms}
+
 Override values are not being assigned to segments.
+{: tsSymptoms}
 
+
+Attributes in your code may be missing or inconsistent with the attributes used in your segment rule.
 {: tsCauses}
-Attributes in your code may be missing or inconsistent with the attributes used in your segment rule. Segments are defined in the App Configuration service using attributes, and attributes are defined in your application code. If an attribute in a segment rule does not exist in your application, or has a value that is not part of the rule, then the app instance will not be recognized as part of a segment, and the default value will be assigned.
 
+Segments are defined in the App Configuration service using attributes, and attributes are defined in your application code. If an attribute in a segment rule does not exist in your application, or has a value that is not part of the rule, then the app instance will not be recognized as part of a segment, and the default value will be assigned.
+
+
+
+In your app code, include a JSON object that contains the various attribute values you want to use in your segment rules.
 {: tsResolve}
-In your app code, include a JSON object that contains the various attribute values you want to use in your segment rules. Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See example below.
+
+Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See example below.
 ```javascript
 const entityId = "john_doe";
 const entityAttributes = {

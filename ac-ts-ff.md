@@ -48,11 +48,16 @@ subcollection: app-configuration
 {: support}
 
 
-{: tsSymptoms}
-Feature flag is disabled and cannot be toggled.  
 
+Feature flag is disabled and cannot be toggled.
+{: tsSymptoms}  
+
+
+A Feature flag is linked to a collection and the flag is toggled per environment.
 {: tsCauses}
-A Feature flag is linked to a collection and the flag is toggled per environment. If a feature flag is not linked to any collection, it is disabled by default.
 
-{: tsResolve}
+If a feature flag is not linked to any collection, it is disabled by default.
+
+
 Link the feature flag with an existing collection. This allows you to toggle between on or off states.
+{: tsResolve}

@@ -48,11 +48,16 @@ subcollection: app-configuration
 {: support}
 
 
-{: tsSymptoms}
+
 Default values are assigned to the feature flags or properties in certain environments.
+{: tsSymptoms}
 
+
+A feature flag is always created under an environment.
 {: tsCauses}
-A feature flag is always created under an environment. Though the flag is created under an environment, it is made available to all environments with default values. Flag Values, tags, segment values are relevant only to the environment where the update is executed.
 
-{: tsResolve}
+Though the flag is created under an environment, it is made available to all environments with default values. Flag Values, tags, and segment values are relevant only to the environment where the update is executed.
+
+
 Feature flag or Property values can be updated specifically to an environment.  
+{: tsResolve}

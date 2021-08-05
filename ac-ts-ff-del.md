@@ -48,11 +48,15 @@ subcollection: app-configuration
 {: support}
 
 
-{: tsSymptoms}
 Deleting a feature flag or property in an environment deletes it for all environments.
+{: tsSymptoms}
 
-{: tsCauses}
+
 Feature flag or property is available to all environments. Updates to values are per environment. Create and delete action executes across all environments.
+{: tsCauses}
 
+
+Deletion of feature flag or property is across all environments.
 {: tsResolve}
-Deletion of feature flag or property is across all environments. If a flag is not required in a particular environment, disable the flag or set the values default. If a flag is not required in any environment, it can be deleted.
+
+If a flag is not required in a particular environment, disable the flag or set the values default. If a flag is not required in any environment, it can be deleted.
