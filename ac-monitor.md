@@ -139,7 +139,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the <wintitle>Observability</wintitle> page
  2. Click DASHBOARDS
  3. In the Default Dashboards section, expand IBM
- 4. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list
+ 4. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list.
  Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}}, it's in the sidebar, under IBM.
  Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service instance.
 
