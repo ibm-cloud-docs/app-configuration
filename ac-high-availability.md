@@ -58,7 +58,7 @@ Where
 - A _region_ is a defined geographic territory.
   - A region could be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
 
-A region contains [multiple availability zones](www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
+A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
 
 - `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
 
