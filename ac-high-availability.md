@@ -50,17 +50,17 @@ The following table lists the high-availability (HA) status for the regions (loc
 |----------|-------|-----------|
 | Asia-Pacific| Sydney (au-syd)|MZR|
 | Europe | London (eu-gb)|MZR|
-| North America| MZR|
+| North America| Dallas (us-south)|MZR|
 
 Where
 
 - A _geography_ is a geographic area or larger political body that contains one or more regions.
 - A _region_ is a defined geographic territory.
-- A region could be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
+  - A region could be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
 
-A region contains multiple availability zones to meet local access, low latency, and security requirements for the region.
+A region contains [multiple availability zones](www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
 
-- `MZR` means multi-zone region. Learn more.
+- `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
 
 # Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region
 {: #ac-dr}
