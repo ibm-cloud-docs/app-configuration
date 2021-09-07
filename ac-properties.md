@@ -27,6 +27,11 @@ You can create and manage properties, add them to collections and use them in yo
 
 By default, the properties pane displays the list of properties in an environment that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Value**, **Type** (boolean, numeric, string), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 
+To create a new property, select the type from Boolean, Numeric or String.
+- A **Boolean** type has two values and you can set the default value as 'true' or 'false'.
+- A **String** type property supports data in the form of text, and JSON or YAML files.
+- A **Numeric** property supports integer values.
+
 An example usage of properties can be to decide the number of instances of your application in a specific region. To achieve this, create a property in {{site.data.keyword.appconfig_short}}, with type as numeric, and assign segments based on region value.
 
 ![List of properties](images/ac-properties-default.png "List of properties"){: caption="Figure 17. List of properties" caption-side="bottom"}
