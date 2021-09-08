@@ -245,18 +245,9 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 | 'true' | BOOLEAN | not applicable | 'bool' | 'true' |
 | '25' |NUMERIC |not applicable |'float64' | '25' |
 | "a string text"| STRING | TEXT | 'string'| 'a string text'|
-| {
-  "firefox": {
-    "name": "Firefox",
-    "pref_url": "about:config"
-  }
-}|STRING|JSON |'map[string]interface{}'|'map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]'|
-| men:
-  - John Smith
-  - Bill Jones
-women:
-  - Mary Smith
-  - Susan Williams|STRING | YAML|'map[string]interface{}' | 'map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]'|
+| {  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }}|STRING|JSON |'map[string]interface{}'|'map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]'|
+| men:  \n - John Smith  \n - Bill Jones  \n women:  \n - Mary Smith  \n - Susan Williams|STRING | YAML|'map[string]interface{}' | 'map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]'|
+{: caption="Table 1. Example outputs" caption-side="top"}
 
 #### Feature flag
 
@@ -307,6 +298,8 @@ if err == nil {
 }
 ```
 {: codeblock}
+
+
 ## Listen to the feature or property changes
 {: #ac-integrate-ff-listen-feature-changes}
 
