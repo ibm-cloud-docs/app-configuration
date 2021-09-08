@@ -296,8 +296,8 @@ if err == nil {
 | `true` | BOOLEAN | not applicable | `bool` | `true` |
 | `25` |NUMERIC |not applicable |`float64` | `25` |
 | "a string text"| STRING | TEXT | `string`| `a string text`|
-| ```sh {  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }}```|STRING|JSON |`map[string]interface{}`|`map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]`|
-|  ```sh men:  \n - John Smith  \n - Bill Jones  \nwomen:  \n - Mary Smith  \n - Susan Williams  \n```|STRING | YAML|`map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]|
+| ```sh{  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }}``` {: pre}|STRING|JSON |`map[string]interface{}`|`map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]`|
+|  ```sh men:  \n - John Smith  \n - Bill Jones  \nwomen:  \n - Mary Smith  \n - Susan Williams  \n``` {: pre}|STRING | YAML|`map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]`|
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 ## Listen to the feature or property changes
