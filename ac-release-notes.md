@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-09-08"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -27,6 +27,11 @@ subcollection: app-configuration
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## September 2021
+{: #sep-2021}
+
+JSON and YAML file support to String type [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags) and [properties](/docs/app-configuration?topic=app-configuration-ac-properties).
 
 ## July 2021
 {: #jul-2021}
