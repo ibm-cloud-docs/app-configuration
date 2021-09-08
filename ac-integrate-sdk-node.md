@@ -291,13 +291,13 @@ if err == nil {
 
 {{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
 
-| Feature or Property value | Data Type| Data Format| Type of data returned by 'GetCurrentValue()'  | Example output    |
-|---------------------------|----------|------------|  ---------------------------------------------|  ---------------- |
-| `true` | BOOLEAN | not applicable | `bool` | `true` |
-| `25` |NUMERIC |not applicable |`float64` | `25` |
-| "a string text"| STRING | TEXT | `string`| `a string text`|
-| ```{  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }  \n }```{: screen}|STRING|JSON |`map[string]interface{}`|`map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]`|
-| ``` \n  men:  \n - John Smith  \n - Bill Jones  \n women:  \n - Mary Smith  \n - Susan Williams```{: screen}|STRING | YAML|`map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]`|
+| **Feature or Property value**                                                                                      | **DataType** | **DataFormat** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
+| `25`                                                                                                               | NUMERIC      | not applicable | `float64`                                             | `25`                                                                 |
+| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `map[string]interface{}`                              | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 ## Listen to the feature or property changes
