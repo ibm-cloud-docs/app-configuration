@@ -235,19 +235,6 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
    ```
    {: codeblock}
 
-## Supported data types
-{: #ac-integrate-ff-supported-data-types}
-
-{{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
-
-| Feature or Property value | Data Type| Data Format| Type of data returned by 'GetCurrentValue()'  | Example output    |
-|---------------------------|----------|------------|  ---------------------------------------------|  ---------------- |
-| `true` | BOOLEAN | not applicable | `bool` | `true` |
-| `25` |NUMERIC |not applicable |`float64` | `25` |
-| "a string text"| STRING | TEXT | 'string'| `a string text`|
-| {  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }}|STRING|JSON |`map[string]interface{}`|`map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]`|
-| `men:  \n - John Smith  \n - Bill Jones  \nwomen:  \n - Mary Smith  \n - Susan Williams`|STRING | YAML|`map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]`|
-{: caption="Table 1. Example outputs" caption-side="top"}
 
 #### Feature flag
 
@@ -299,6 +286,19 @@ if err == nil {
 ```
 {: codeblock}
 
+## Supported data types
+{: #ac-integrate-ff-supported-data-types}
+
+{{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
+
+| Feature or Property value | Data Type| Data Format| Type of data returned by 'GetCurrentValue()'  | Example output    |
+|---------------------------|----------|------------|  ---------------------------------------------|  ---------------- |
+| `true` | BOOLEAN | not applicable | `bool` | `true` |
+| `25` |NUMERIC |not applicable |`float64` | `25` |
+| "a string text"| STRING | TEXT | `string`| `a string text`|
+| ```javascript {  \n "firefox": {  \n "name": "Firefox",  \n "pref_url": "about:config"  \n }}```{: codeblock}|STRING|JSON |`map[string]interface{}`|`map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]`|
+| ```javascript men:  \n - John Smith  \n - Bill Jones  \nwomen:  \n - Mary Smith  \n - Susan Williams`|STRING | YAML|`map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]```{: codeblock}|
+{: caption="Table 1. Example outputs" caption-side="top"}
 
 ## Listen to the feature or property changes
 {: #ac-integrate-ff-listen-feature-changes}
