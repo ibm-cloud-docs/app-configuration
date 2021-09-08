@@ -53,6 +53,7 @@ App Configuration
         ac-iam.md
         ac-iam-policies.md
         ac-securing-data.md
+        architecture-workload-isolation.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
