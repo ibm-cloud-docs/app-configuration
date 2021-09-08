@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-08"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -235,7 +235,79 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
    ```
    {: codeblock}
 
-#### Listen to the feature or property changes
+## Supported data types
+{: #ac-integrate-ff-supported-data-types}
+
+{{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
+
+| Feature or Property value | Data Type| Data Format| Type of data returned by 'GetCurrentValue()'  | Example output    |
+|---------------------------|----------|------------|  ---------------------------------------------|  ---------------- |
+| 'true' | BOOLEAN | not applicable | 'bool' | 'true' |
+| '25' |NUMERIC |not applicable |'float64' | '25' |
+| "a string text"| STRING | TEXT | 'string'| 'a string text'|
+| {
+  "firefox": {
+    "name": "Firefox",
+    "pref_url": "about:config"
+  }
+}|STRING|JSON |'map[string]interface{}'|'map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]'|
+| men:
+  - John Smith
+  - Bill Jones
+women:
+  - Mary Smith
+  - Susan Williams|STRING | YAML|'map[string]interface{}' | 'map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]'|
+
+#### Feature flag
+
+```javascript
+feature, err := appConfiguration.GetFeature("json-feature")
+if err == nil {
+  feature.GetFeatureDataType() // STRING
+  feature.GetFeatureDataFormat() // JSON
+
+  // Example (traversing the returned map)
+  result := feature.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+  result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+feature, err := appConfiguration.GetFeature("yaml-feature")
+if err == nil {
+  feature.GetFeatureDataType() // STRING
+  feature.GetFeatureDataFormat() // YAML
+
+  // Example (traversing the returned map)
+  result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+  result.(map[string]interface{})["key"] // returns the value of the key
+}
+```
+{: codeblock}
+
+#### Property
+
+```javascript
+property, err := appConfiguration.GetProperty("json-property")
+if err == nil {
+  property.GetPropertyDataType() // STRING
+  property.GetPropertyDataFormat() // JSON
+
+  // Example (traversing the returned map)
+  result := property.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+  result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+property, err := appConfiguration.GetProperty("yaml-property")
+if err == nil {
+  property.GetPropertyDataType() // STRING
+  property.GetPropertyDataFormat() // YAML
+
+  // Example (traversing the returned map)
+  result := property.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+  result.(map[string]interface{})["key"] // returns the value of the key
+}
+```
+{: codeblock}
+## Listen to the feature or property changes
 {: #ac-integrate-ff-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
