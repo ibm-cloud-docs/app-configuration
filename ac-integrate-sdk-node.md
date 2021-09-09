@@ -100,9 +100,9 @@ subcollection: app-configuration
      persistentCacheDirectory: '/var/lib/docker/volumes/'
    })
    ```
-   * persistentCacheDirectory: Absolute path to a directory which has read & write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the App Configuration service information.
+   * persistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the App Configuration service information.
 
-   When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of App Configuration server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+   When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of App Configuration server being unreachable, the latest configurations in the persistent cache is loaded to the application to continue working.
 
    ### Offline options
    {: #ac-offline-node-sdk}
@@ -149,9 +149,9 @@ if(feature) {
 {: #ac-integrate-ff-get-all-features}
 
 ```javascript
-var features = client.getFeatures();
+const features = client.getFeatures();
 
-var feature = features["feature_id"];
+const feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()}`);
@@ -172,7 +172,7 @@ You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
-   const entityId = 'john_doe';
+    const entityId = 'john_doe';
     const entityAttributes = {
       city: 'Bangalore',
       country: 'India',
@@ -209,9 +209,9 @@ if(property) {
 {: #ac-integrate-ff-get-all-properties}
 
 ```javascript
-var properties = client.getProperties();
+const properties = client.getProperties();
 
-var property = properties["property_id"];
+const property = properties["property_id"];
 
 if(property) {
     console.log(`Property Name ${property.getPropertyName()}`);
@@ -231,7 +231,7 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 - If the property is configured with segments in the App Configuration service, provide a json object as `entityAttributes` parameter to this method.
 
    ```javascript
-   const entityId = 'john_doe';
+    const entityId = 'john_doe';
     const entityAttributes = {
       city: 'Bangalore',
       country: 'India',
@@ -268,7 +268,7 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 #### Feature flag
 
 ```javascript
-const feature = client.getFeature('json-feature');
+  const feature = client.getFeature('json-feature');
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // JSON
 
@@ -286,7 +286,7 @@ const feature = client.getFeature('json-feature');
 #### Property
 
 ```javascript
-const property = client.getProperty('json-property');
+  const property = client.getProperty('json-property');
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // JSON
 
