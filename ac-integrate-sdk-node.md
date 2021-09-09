@@ -46,7 +46,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK using the following code from the `npm` registry.
+1. Install the SDK. Use the following code from the `npm` registry.
 
    ```bash
    $ npm install ibm-appconfiguration-node-sdk
@@ -81,16 +81,16 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - region: Region where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
-   - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
+   - collectionId: ID of the collection created in App Configuration service instance under the Collections section.
+   - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
    ### Option to use a persistent cache for configuration
    {: #ac-init-cache-node-sdk}
 
-   In order for your application and SDK to continue its operations even during the unlikely scenario of App Configuration service going down, you can configure the SDK to work using a persistent cache. The SDK uses the persistent cache to store the App Configuration data that will be available across your application restarts.
+   In order for your application and SDK to continue its operations during the unlikely unavailability of the {{site.data.keyword.appconfig_short}} server, you can configure the SDK to use a persistent cache. The SDK uses the persistent cache to store {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
    ```javascript
    // 1. default (without persistent cache)
    client.setContext(collectionId, environmentId)
@@ -100,9 +100,9 @@ subcollection: app-configuration
      persistentCacheDirectory: '/var/lib/docker/volumes/'
    })
    ```
-   * persistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the App Configuration service information.
+   * persistentCacheDirectory: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the App Configuration service information.
 
-   When persistent cache is enabled, the SDK will keep the last known good configuration in the persistent cache. In the case of {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations in the persistent cache is loaded to the application to continue working.
+   When persistent cache is enabled, the SDK keeps the last known good configuration in the persistent cache. In  case the {{site.data.keyword.appconfig_short}} server is unreachable, the most recent configurations in the persistent cache are loaded to the application to continue working.
 
    ### Offline options
    {: #ac-offline-node-sdk}
@@ -114,14 +114,14 @@ subcollection: app-configuration
      liveConfigUpdateEnabled: false
    })
    ```
-   * bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
-   * liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values shouldn't be fetched from the server.
+   * bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+   * liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values are not to be fetched from the server.
 
 
-### Examples for using feature and property related APIs
+### Examples for using feature and property-related APIs
 {: #ac-integrate-ff-example}
 
-Refer to the below examples for using the feature related APIs.
+Refer to the below examples for using the feature-related APIs.
 
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature}
@@ -165,7 +165,7 @@ if(feature) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation.
+You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
 
 ##### Feature usage
 
@@ -224,11 +224,11 @@ if(property) {
 #### Evaluate a property
 {: #ac-integrate-ff-property-evaluation}
 
-You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.  Pass a unique `entityId` as the parameter to perform the property evaluation.
 
 ##### Property usage
 
-- If the property is configured with segments in the App Configuration service, provide a json object as `entityAttributes` parameter to this method.
+- If the property is configured with segments in the App Configuration service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
     const entityId = 'john_doe';
@@ -253,9 +253,9 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 ## Supported data types
 {: #ac-integrate-ff-supported-data-types}
 
-{{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
 
-| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
+| **Feature or Property value**                                                                          | **Data type** | **Data format** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
 | ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
 | `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                                | `true`                                                               |
 | `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |

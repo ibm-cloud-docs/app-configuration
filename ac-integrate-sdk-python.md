@@ -46,7 +46,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK using either one of the following method:
+1.Use either one of the following methods to install the SDK:
 
  Using `pip`
 
@@ -87,8 +87,8 @@ subcollection: app-configuration
    - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collection_id: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - environment_id : Id of the environment created in App Configuration service instance.
+   - collection_id: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - environment_id: ID of the environment created in App Configuration service instance.
 
 1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property operations](#ac-python-example).
 
@@ -102,14 +102,14 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - configuration_file: Path to the JSON file which contains configuration details.
-   - live_config_update_enabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
+   - configuration_file: Path to the JSON file, which contains configuration details.
+   - live_config_update_enabled: Set this value to `false` if new configuration values are not to be fetched from the server. Make sure to provide a proper JSON file in the `configuration_file` path. By default, this value is `enabled`.
 
 
-### Examples for using feature and property related APIs
+### Examples for using feature and property-related APIs
 {: #ac-python-example}
 
-Refer to the below examples for using the feature and property related APIs.
+Refer to the listed examples for using the feature and property-related APIs.
 
 #### Get single feature
 {: #ac-python-get-single-feature}
@@ -136,7 +136,7 @@ features_dictionary = app_config.get_features()
 #### Feature evaluation
 {: #ac-python-feature-evaluation}
 
-You can use the feature.get_current_value(entity_id, entity_attributes) method to evaluate the value of the feature flag. You should pass an unique entity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
+You can use the feature.get_current_value(entity_id, entity_attributes) method to evaluate the value of the feature flag. Pass a unique entity_id as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
 ```py
 entity_attributes = {
@@ -173,7 +173,7 @@ properties_dictionary = app_config.get_properties()
 
 You can use the `property.get_current_value(entity_id, entity_attributes)` method to evaluate the value of the property.
 
-You should pass an unique `entity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
+Pass a unique `entity_id` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a dictionary.
 
 ```py
 entity_attributes = {
@@ -184,14 +184,13 @@ property_value = property.get_current_value(entity_id='entity_id', entity_attrib
 ```
 {: codeblock}
 
-## Supported Data types
+## Supported data types
 {: #ac-integrate-pyth-supported-data-types}
 
-{{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types : Boolean,
-Numeric, String. The String data type can be of the format of a TEXT string , JSON or YAML. The SDK processes each
-format accordingly as shown in the below table.
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}} service, supporting the  following data types: Boolean, Numeric, and String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
+format as shown in the table.
 
-| **Feature or Property value**                                                                                      | **DataType** | **DataFormat** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
+| **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
 | ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
 | `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
 | `25`                                                                                                               | NUMERIC      | not applicable | `int`                                             | `25`                                                                 |
