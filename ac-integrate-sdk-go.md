@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-09"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -191,8 +191,72 @@ propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 ```
 {: codeblock}
 
+## Supported Data types
+{: #ac-integrate-go-supported-data-types}
+
+{{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types: Boolean,
+Numeric, String. The String data type can be a text string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
+
+| **Feature or Property value**                                                                                      | **DataType** | **DataFormat** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
+| `25`                                                                                                               | NUMERIC      | not applicable | `float64`                                             | `25`                                                                 |
+| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `map[string]interface{}`                              | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
+
+  #### Feature flag
+
+  ```go
+feature, err := appConfiguration.GetFeature("json-feature")
+if err == nil {
+    feature.GetFeatureDataType() // STRING
+    feature.GetFeatureDataFormat() // JSON
+
+    // Example (traversing the returned map)
+    result := feature.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+feature, err := appConfiguration.GetFeature("yaml-feature")
+if err == nil {
+    feature.GetFeatureDataType() // STRING
+    feature.GetFeatureDataFormat() // YAML
+
+    // Example (traversing the returned map)
+    result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+  ```
+  {: codeblock}
+
+  #### Property
+
+  ```go
+property, err := appConfiguration.GetProperty("json-property")
+if err == nil {
+    property.GetPropertyDataType() // STRING
+    property.GetPropertyDataFormat() // JSON
+
+    // Example (traversing the returned map)
+    result := property.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+property, err := appConfiguration.GetProperty("yaml-property")
+if err == nil {
+    property.GetPropertyDataType() // STRING
+    property.GetPropertyDataFormat() // YAML
+
+    // Example (traversing the returned map)
+    result := property.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+  ```
+
 #### Listen to the property and feature changes
-{: #ac-golang-listen-feature-changes}
+
 
 To listen to the data changes, add the following code in your application:
 

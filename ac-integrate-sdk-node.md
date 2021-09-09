@@ -102,12 +102,12 @@ subcollection: app-configuration
    ```
    * persistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the App Configuration service information.
 
-   When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of App Configuration server being unreachable, the latest configurations in the persistent cache is loaded to the application to continue working.
+   When persistent cache is enabled, the SDK will keep the last known good configuration in the persistent cache. In the case of {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations in the persistent cache is loaded to the application to continue working.
 
    ### Offline options
    {: #ac-offline-node-sdk}
 
-   The SDK is also designed to serve configurations, perform feature flag & property evaluations without being connected to App Configuration service.
+   The SDK is also designed to serve configurations, perform feature flag and property evaluations without being connected to App Configuration service.
    ```javascript
    client.setContext(collectionId, environmentId, {
      bootstrapFile: 'saflights/flights.json',
@@ -261,7 +261,7 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 | `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |
 | "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
 | <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"`  |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 
