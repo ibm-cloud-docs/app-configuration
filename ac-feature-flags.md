@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-18"
+lastupdated: "2021-09-07"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -23,13 +23,16 @@ subcollection: app-configuration
 {: #ac-feature-flags}
 
 You can create and manage feature flags, add them to collections and use them in your app by using SDKs. Using feature flags, you as an app owner, can control the applicability of a feature by enabling or disabling it at run time.
-{:shortdesc}
+{: shortdesc}
 
-A feature can be enabled or disabled to all the collection users or to a specific set of users and devices. 
+A feature can be enabled or disabled to all the collection users or to a specific set of users and devices.
 
 Feature roll outs can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled.
 
-By default, the Feature flags pane displays the list of feature flags that are created in the current environment of {{site.data.keyword.appconfig_short}} service instance along with **Name** of the feature flag, **Tags** associated, date of creation, last evaluated, segments that are targeted for the respective feature flag, and whether the feature is enabled or disabled (toggle switch).
+By default, the Feature flags pane displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record. Flag types are categorized as Boolean, Numeric or String.
+- A **Boolean** flag has two values and you can set the default value as 'true' or 'false'.
+- A **String** type flag supports data in the form of text, and JSON or YAML files.
+- A **Numeric** flag supports integers.
 
 ![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="Figure 9. List of feature flags" caption-side="bottom"}
 
@@ -38,7 +41,7 @@ By default, the Feature flags pane displays the list of feature flags that are c
 
 To create a feature flag, complete these steps:
 
-1. In the {{site.data.keyword.appconfig_short}} console, click **Features flags**. 
+1. In the {{site.data.keyword.appconfig_short}} console, click **Features flags**.
 1. Select the **Current Environment**. This displays the list of feature flags in that environment.
 1. Click **Create**. The side-panel opens with fields for creating a new feature flag.
 
@@ -46,8 +49,8 @@ To create a feature flag, complete these steps:
 
    ![Create feature flag with further details](images/ac-create-feature-flag1.png "Creating feature flag further details"){: caption="Figure 11. Creating a feature flag further details" caption-side="bottom"}
 
-1. Provide the feature flag details: 
-   - **Name** - name of the feature flag. 
+1. Provide the feature flag details:
+   - **Name** - name of the feature flag.
    - **Feature flag ID** - the feature flag ID value is auto suggested based on the entered feature name. You can modify the same, if needed. Use the **Feature flag ID** value as the identifier in your SDK or API code.
    - Optionally, define **Tags** that are required to identify with the feature flag.
    - **Description** - add a description of the feature flag, which is optional.
@@ -57,7 +60,7 @@ To create a feature flag, complete these steps:
 1. Click **Create**.
 
 By default, when creating a new feature flag, the **Enabled** toggle switch is set to OFF.
-{: note} 
+{: note}
 
 ## Selecting feature flag type
 {: #selecting-feature-flag-type}
@@ -67,7 +70,7 @@ You can have one of the following flag types that is associated to a feature fla
 - String
 - Numeric
 
-Each of the Flag type is having a default value. 
+Each of the Flag type is having a default value.
 {: #flag-type-default-value}
 
 - When you set the Toggle switch to *ON*, the value for the **Enabled value** is required, which can be overridden while targeting to a segment.
@@ -148,4 +151,3 @@ The overflow menu for each of the feature flag (three vertical dots) consists of
 * When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected feature flag. Deleting option will permanently delete the feature flag and the action cannot be undone.
 * In the list of feature flags, in a feature flag, when **Copy to clipboard** icon is clicked, the feature flag's **Feature flag ID** value is copied to the clipboard.
 * **Remove targeting** will remove the targetting of feature flags to a segment.
-
