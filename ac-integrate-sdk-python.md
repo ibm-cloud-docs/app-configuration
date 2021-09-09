@@ -184,6 +184,91 @@ property_value = property.get_current_value(entity_id='entity_id', entity_attrib
 ```
 {: codeblock}
 
+## Supported Data types
+{: #ac-integrate-pyth-supported-data-types}
+
+{{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a TEXT string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
+
+| **Feature or Property value**                                                                                      | **DataType** | **DataFormat** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
+| `25`                                                                                                               | NUMERIC      | not applicable | `int`                                             | `25`                                                                 |
+| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `Dictionary or List of Dictionary`                              | `{'firefox': {'name': 'Firefox', 'pref_url': 'about:config'}}` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `Dictionary`                              | `{'men': ['John Smith', 'Bill Jones'], 'women': ['Mary Smith', 'Susan Williams']}` |
+
+#### Feature flag
+
+```py
+  feature = client.get_feature('json-feature')
+  feature.get_feature_data_type() // STRING
+  feature.get_feature_data_format() // JSON
+  feature.get_current_value(entityId, entityAttributes) // returns single dictionary object or list of dictionary object
+
+  // Example Below
+  // input json :- [{"role": "developer", "description": "do coding"},{"role": "tester", "description": "do testing"}]
+  // expected output :- "do coding"
+
+  tar_val = feature.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val[0]['description']
+
+  // input json :- {"role": "tester", "description": "do testing"}
+  // expected output :- "tester"
+
+  tar_val = feature.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val['role']
+
+  feature = client.getFeature('yaml-feature')
+  feature.get_feature_data_type() // STRING
+  feature.get_feature_data_format() // YAML
+  feature.get_current_value(entityId, entityAttributes) // returns dictionary object
+
+  // Example Below
+  // input yaml string :- "---\nrole: tester\ndescription: do_testing"
+  // expected output :- "do_testing"
+
+  tar_val = feature.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val['description']
+  ```
+  {: codeblock}
+
+  #### Property
+
+  ```py
+  property = client.get_property('json-property')
+  property.get_property_data_type() // STRING
+  property.get_property_data_format() // JSON
+  property.get_current_value(entityId, entityAttributes) // returns single dictionary object or list of dictionary object
+
+  // Example Below
+  // input json :- [{"role": "developer", "description": "do coding"},{"role": "tester", "description": "do testing"}]
+  // expected output :- "do coding"
+
+  tar_val = property.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val[0]['description']
+
+  // input json :- {"role": "tester", "description": "do testing"}
+  // expected output :- "tester"
+
+  tar_val = property.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val['role']
+
+  property = client.get_property('yaml-property')
+  property.get_property_data_type() // STRING
+  property.get_property_data_format() // YAML
+  property.get_current_value(entityId, entityAttributes) // returns dictionary object
+
+  // Example Below
+  // input yaml string :- "---\nrole: tester\ndescription: do_testing"
+  // expected output :- "do_testing"
+
+  tar_val = property.get_current_value(entityId, entityAttributes)
+  expected_output = tar_val['description']
+  ```
+    {: codeblock}
+
 #### Listen to the feature and property data changes
 {: #ac-python-listen-feature-changes}
 
