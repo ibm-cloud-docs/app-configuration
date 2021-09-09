@@ -261,7 +261,7 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 | `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |
 | "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
 | <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"`  |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre>   |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 
