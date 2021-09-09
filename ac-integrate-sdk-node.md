@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -87,21 +87,31 @@ subcollection: app-configuration
    - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
    - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local feature file and perform [feature operations](#ac-integrate-ff-example).
-   {: #ac-work-offline-ff}
-
-   After `client.init(region, guid, apikey)`:
-
+   ### (Optional)
+   In order for your application and SDK to continue its operations even during the unlikely scenario of App Configuration service going down, you can configure the SDK to work using a persistent cache. The SDK uses the persistent cache to store the App Configuration data that will be available across your application restarts.
    ```javascript
-   let configurationFile = 'path/to/configuration/file.json';
-   let liveConfigUpdateEnabled = false;
-   client.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled)
-   ```
-   {: codeblock}
+   // 1. default (without persistent cache)
+   client.setContext(collectionId, environmentId)
 
-   where,
-   - configurationFile: Path to the JSON file, which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to false if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, liveConfigUpdateEnabled value is enabled.
+   // 2. with persistent cache
+   client.setContext(collectionId, environmentId, {
+     persistentCacheDirectory: '/var/lib/docker/volumes/'
+   })
+   ```
+   * persistentCacheDirectory: Absolute path to a directory which has read & write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the App Configuration service information.
+
+   When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of App Configuration server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+
+   ### (Optional)
+   The SDK is also designed to serve configurations, perform feature flag & property evaluations without being connected to App Configuration service.
+   ```javascript
+   client.setContext(collectionId, environmentId, {
+     bootstrapFile: 'saflights/flights.json',
+     liveConfigUpdateEnabled: false
+   })
+   ```
+   * bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+   * liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values shouldn't be fetched from the server.
 
 
 ### Examples for using feature and property related APIs
@@ -158,21 +168,21 @@ You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let entityId = 'entityId'
-   let entityAttributes = {
-       'city': 'Bangalore',
-       'country': 'India'
-   }
+   const entityId = 'john_doe';
+    const entityAttributes = {
+      city: 'Bangalore',
+      country: 'India',
+    };
 
-   feature.getCurrentValue(entityId, entityAttributes)
+    const featureValue = feature.getCurrentValue(entityId, entityAttributes);
    ```
    {: codeblock}
 
 * If the feature flag is not targeted to any segments and the feature flag is turned **ON** this method returns the feature **enabled value**. And when the feature flag is turned **OFF** this method returns the feature **disabled value**.
 
    ```javascript
-   let entityId = 'entityId'
-   feature.getCurrentValue(entityId)
+   const entityId = 'john_doe';
+   const featureValue = feature.getCurrentValue(entityId);
    ```
    {: codeblock}
 
@@ -217,91 +227,79 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 - If the property is configured with segments in the App Configuration service, provide a json object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let entityId = 'entityId'
-   let entityAttributes = {
-       'city': 'Bangalore',
-       'country': 'India'
-   }
+   const entityId = 'john_doe';
+    const entityAttributes = {
+      city: 'Bangalore',
+      country: 'India',
+    };
 
-   property.getCurrentValue(entityId, entityAttributes)    
+    const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
    ```
    {: codeblock}
 
 - If the property is not targeted to any segments, this method returns the property value.
 
    ```javascript
-   let entityId = 'entityId'
-   property.getCurrentValue(entityId)
+   const entityId = 'john_doe';
+   const propertyValue = property.getCurrentValue(entityId);
    ```
    {: codeblock}
 
-
-#### Feature flag
-
-```javascript
-feature, err := appConfiguration.GetFeature("json-feature")
-if err == nil {
-  feature.GetFeatureDataType() // STRING
-  feature.GetFeatureDataFormat() // JSON
-
-  // Example (traversing the returned map)
-  result := feature.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
-  result.(map[string]interface{})["key"] // returns the value of the key
-}
-
-feature, err := appConfiguration.GetFeature("yaml-feature")
-if err == nil {
-  feature.GetFeatureDataType() // STRING
-  feature.GetFeatureDataFormat() // YAML
-
-  // Example (traversing the returned map)
-  result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
-  result.(map[string]interface{})["key"] // returns the value of the key
-}
-```
-{: codeblock}
-
-#### Property
-
-```javascript
-property, err := appConfiguration.GetProperty("json-property")
-if err == nil {
-  property.GetPropertyDataType() // STRING
-  property.GetPropertyDataFormat() // JSON
-
-  // Example (traversing the returned map)
-  result := property.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
-  result.(map[string]interface{})["key"] // returns the value of the key
-}
-
-property, err := appConfiguration.GetProperty("yaml-property")
-if err == nil {
-  property.GetPropertyDataType() // STRING
-  property.GetPropertyDataFormat() // YAML
-
-  // Example (traversing the returned map)
-  result := property.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
-  result.(map[string]interface{})["key"] // returns the value of the key
-}
-```
-{: codeblock}
 
 ## Supported data types
 {: #ac-integrate-ff-supported-data-types}
 
 {{site.data.keyword.appconfig_short}} service allows you to configure feature flags and properties in the following data types: Boolean, Numeric, String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in the below table.
 
-| **Feature or Property value**                                                                                      | **DataType** | **DataFormat** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
-| `25`                                                                                                               | NUMERIC      | not applicable | `float64`                                             | `25`                                                                 |
-| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `map[string]interface{}`                              | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
+| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                                | `true`                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 ## Listen to the feature or property changes
 {: #ac-integrate-ff-listen-feature-changes}
+
+#### Feature flag
+
+```javascript
+const feature = client.getFeature('json-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = feature.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const feature = client.getFeature('yaml-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
+#### Property
+
+```javascript
+const property = client.getProperty('json-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = property.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const property = client.getProperty('yaml-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
+#### Listen to the feature or property changes
 
 To listen to the data changes, add the following code in your application:
 
