@@ -87,7 +87,9 @@ subcollection: app-configuration
    - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
    - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
 
-   ### (Optional)
+   ### Option to use a persistent cache for configuration
+   {: #ac-init-cache-node-sdk}
+
    In order for your application and SDK to continue its operations even during the unlikely scenario of App Configuration service going down, you can configure the SDK to work using a persistent cache. The SDK uses the persistent cache to store the App Configuration data that will be available across your application restarts.
    ```javascript
    // 1. default (without persistent cache)
@@ -102,7 +104,9 @@ subcollection: app-configuration
 
    When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of App Configuration server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
 
-   ### (Optional)
+   ### Offline options
+   {: #ac-offline-node-sdk}
+
    The SDK is also designed to serve configurations, perform feature flag & property evaluations without being connected to App Configuration service.
    ```javascript
    client.setContext(collectionId, environmentId, {
@@ -260,8 +264,6 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 | <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
-## Listen to the feature or property changes
-{: #ac-integrate-ff-listen-feature-changes}
 
 #### Feature flag
 
