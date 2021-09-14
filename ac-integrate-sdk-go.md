@@ -194,7 +194,7 @@ propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 ## Supported data types
 {: #ac-integrate-go-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}} supporting the following data types: Boolean,Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean,Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
 format as shown in the table.
 
 | **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
@@ -206,7 +206,8 @@ format as shown in the table.
 | <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
-  #### Feature flag
+
+#### Feature flag
 
   ```go
 feature, err := appConfiguration.GetFeature("json-feature")
@@ -231,7 +232,7 @@ if err == nil {
   ```
   {: codeblock}
 
-  #### Property
+#### Property
 
   ```go
 property, err := appConfiguration.GetProperty("json-property")

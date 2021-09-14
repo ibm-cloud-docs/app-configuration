@@ -233,7 +233,8 @@ format as shown in the table.
   ```
   {: codeblock}
 
-  #### Property
+
+#### Property
 
   ```py
   property = client.get_property('json-property')
