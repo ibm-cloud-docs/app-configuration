@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-09"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -39,14 +39,14 @@ subcollection: app-configuration
 {: #ac-integrate-sdks}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Node
 {: #ac-integrate-ff-sdk}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK using the following code from the `npm` registry.
+1. Install the SDK. Use the following code from the `npm` registry.
 
    ```bash
    $ npm install ibm-appconfiguration-node-sdk
@@ -81,33 +81,47 @@ subcollection: app-configuration
    {: codeblock}
 
    where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - region: Region where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: Id of the collection created in App Configuration service instance under the Collections section.
-   - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
+   - collectionId: ID of the collection created in App Configuration service instance under the Collections section.
+   - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local feature file and perform [feature operations](#ac-integrate-ff-example).
-   {: #ac-work-offline-ff}
+   ### Option to use a persistent cache for configuration
+   {: #ac-init-cache-node-sdk}
 
-   After `client.init(region, guid, apikey)`:
-
+   In order for your application and SDK to continue its operations during the unlikely unavailability of the {{site.data.keyword.appconfig_short}} server, you can configure the SDK to use a persistent cache. The SDK uses the persistent cache to store {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
    ```javascript
-   let configurationFile = 'path/to/configuration/file.json';
-   let liveConfigUpdateEnabled = false;
-   client.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled)
+   // 1. default (without persistent cache)
+   client.setContext(collectionId, environmentId)
+
+   // 2. with persistent cache
+   client.setContext(collectionId, environmentId, {
+     persistentCacheDirectory: '/var/lib/docker/volumes/'
+   })
    ```
-   {: codeblock}
+   * persistentCacheDirectory: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the App Configuration service information.
 
-   where,
-   - configurationFile: Path to the JSON file, which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to false if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the path. By default, liveConfigUpdateEnabled value is enabled.
+   When persistent cache is enabled, the SDK keeps the last known good configuration in the persistent cache. In  case the {{site.data.keyword.appconfig_short}} server is unreachable, the most recent configurations in the persistent cache are loaded to the application to continue working.
+
+   ### Offline options
+   {: #ac-offline-node-sdk}
+
+   The SDK is also designed to serve configurations, perform feature flag and property evaluations without being connected to App Configuration service.
+   ```javascript
+   client.setContext(collectionId, environmentId, {
+     bootstrapFile: 'saflights/flights.json',
+     liveConfigUpdateEnabled: false
+   })
+   ```
+   * bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+   * liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values are not to be fetched from the server.
 
 
-### Examples for using feature and property related APIs
+### Examples for using feature and property-related APIs
 {: #ac-integrate-ff-example}
 
-Refer to the below examples for using the feature related APIs.
+Refer to the below examples for using the feature-related APIs.
 
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature}
@@ -135,9 +149,9 @@ if(feature) {
 {: #ac-integrate-ff-get-all-features}
 
 ```javascript
-var features = client.getFeatures();
+const features = client.getFeatures();
 
-var feature = features["feature_id"];
+const feature = features["feature_id"];
 
 if(feature) {
     console.log(`Feature Name ${feature.getFeatureName()}`);
@@ -151,28 +165,28 @@ if(feature) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation.
+You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
 
 ##### Feature usage
 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let entityId = 'entityId'
-   let entityAttributes = {
-       'city': 'Bangalore',
-       'country': 'India'
-   }
+    const entityId = 'john_doe';
+    const entityAttributes = {
+      city: 'Bangalore',
+      country: 'India',
+    };
 
-   feature.getCurrentValue(entityId, entityAttributes)
+    const featureValue = feature.getCurrentValue(entityId, entityAttributes);
    ```
    {: codeblock}
 
 * If the feature flag is not targeted to any segments and the feature flag is turned **ON** this method returns the feature **enabled value**. And when the feature flag is turned **OFF** this method returns the feature **disabled value**.
 
    ```javascript
-   let entityId = 'entityId'
-   feature.getCurrentValue(entityId)
+   const entityId = 'john_doe';
+   const featureValue = feature.getCurrentValue(entityId);
    ```
    {: codeblock}
 
@@ -195,9 +209,9 @@ if(property) {
 {: #ac-integrate-ff-get-all-properties}
 
 ```javascript
-var properties = client.getProperties();
+const properties = client.getProperties();
 
-var property = properties["property_id"];
+const property = properties["property_id"];
 
 if(property) {
     console.log(`Property Name ${property.getPropertyName()}`);
@@ -210,33 +224,84 @@ if(property) {
 #### Evaluate a property
 {: #ac-integrate-ff-property-evaluation}
 
-You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.  Pass a unique `entityId` as the parameter to perform the property evaluation.
 
 ##### Property usage
 
-- If the property is configured with segments in the App Configuration service, provide a json object as `entityAttributes` parameter to this method.
+- If the property is configured with segments in the App Configuration service, provide a JSON object as `entityAttributes` parameter to this method.
 
    ```javascript
-   let entityId = 'entityId'
-   let entityAttributes = {
-       'city': 'Bangalore',
-       'country': 'India'
-   }
+    const entityId = 'john_doe';
+    const entityAttributes = {
+      city: 'Bangalore',
+      country: 'India',
+    };
 
-   property.getCurrentValue(entityId, entityAttributes)    
+    const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
    ```
    {: codeblock}
 
 - If the property is not targeted to any segments, this method returns the property value.
 
    ```javascript
-   let entityId = 'entityId'
-   property.getCurrentValue(entityId)
+   const entityId = 'john_doe';
+   const propertyValue = property.getCurrentValue(entityId);
    ```
    {: codeblock}
 
+
+## Supported data types
+{: #ac-integrate-ff-supported-data-types}
+
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
+
+| **Feature or Property value**                                                                          | **Data type** | **Data format** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                                | `true`                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre>   |
+{: caption="Table 1. Example outputs" caption-side="top"}
+
+
+#### Feature flag
+
+```javascript
+  const feature = client.getFeature('json-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = feature.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const feature = client.getFeature('yaml-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
+#### Property
+
+```javascript
+  const property = client.getProperty('json-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = property.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const property = client.getProperty('yaml-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
 #### Listen to the feature or property changes
-{: #ac-integrate-ff-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-09"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -40,14 +40,14 @@ subcollection: app-configuration
 {: #ac-golang}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments.
-{:shortdesc}
+{: shortdesc}
 
 ## Integrating server SDK for Go
 {: #ac-integrate-golang-sdk}
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Golang web and mobile applications, microservices, and distributed environments. You can evaluate the values of your property and feature flag by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK using the following code from the `git` repository.
+1. Install the SDK by using the following code from the `git` repository.
 
    ```sh
    go get -u github.com/IBM/appconfiguration-go-sdk
@@ -74,14 +74,14 @@ subcollection: app-configuration
 
    where,
    - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance Id of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - environmentId: Id of the environment created in App Configuration service instance under the Environments section.
+   - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
 1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property operations](#ac-golang-example).
 
-After `appConfiguration.Init("region", "guid", "apikey")`, follow the below steps:
+After `appConfiguration.Init("region", "guid", "apikey")`, follow the outlined steps:
 
    ```javascript
   appConfiguration.SetContext("collectionId", "environmentId", AppConfiguration.ContextOptions{
@@ -93,12 +93,12 @@ After `appConfiguration.Init("region", "guid", "apikey")`, follow the below step
 
    where,
    - ConfigurationFile: Path to the JSON file, which contains configuration details.
-   - LiveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `ConfigurationFile`. By default, this value is enabled.
+   - LiveConfigUpdateEnabled: Set this value to `false` if new configuration values are not to be fetched from the server. Make sure to provide a proper JSON file in the `ConfigurationFile`. By default, this value is enabled.
 
-### Examples for using property and feature related APIs
+### Examples for using property and feature-related APIs
 {: #ac-golang-example}
 
-Refer to the below examples for using the property and feature related APIs.
+Refer to the listed examples for using the property and feature-related APIs.
 
 #### Get single feature
 {: #ac-golang-get-single-feature}
@@ -137,7 +137,7 @@ fmt.Println("Feature is enabled %t ", feature.IsEnabled());
 #### Feature evaluation
 {: #ac-golang-feature-evaluation}
 
-You can use the `feature.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
+You can use the `feature.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
 
 ```javascript
 entityId := "entityId"
@@ -179,7 +179,7 @@ fmt.Println("Property Type %s", property.GetPropertyDataType());
 #### Property evaluation
 {: #ac-golang-property-evaluation}
 
-You can use the `property.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
+You can use the `property.GetCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. Pass a unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a map.
 
 ```javascript
 entityId := "entityId"
@@ -191,8 +191,73 @@ propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 ```
 {: codeblock}
 
+## Supported data types
+{: #ac-integrate-go-supported-data-types}
+
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean,Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
+format as shown in the table.
+
+| **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
+| `25`                                                                                                               | NUMERIC      | not applicable | `float64`                                             | `25`                                                                 |
+| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `map[string]interface{}`                              | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
+{: caption="Table 1. Example outputs" caption-side="top"}
+
+
+#### Feature flag
+
+  ```go
+feature, err := appConfiguration.GetFeature("json-feature")
+if err == nil {
+    feature.GetFeatureDataType() // STRING
+    feature.GetFeatureDataFormat() // JSON
+
+    // Example (traversing the returned map)
+    result := feature.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+feature, err := appConfiguration.GetFeature("yaml-feature")
+if err == nil {
+    feature.GetFeatureDataType() // STRING
+    feature.GetFeatureDataFormat() // YAML
+
+    // Example (traversing the returned map)
+    result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+  ```
+  {: codeblock}
+
+#### Property
+
+  ```go
+property, err := appConfiguration.GetProperty("json-property")
+if err == nil {
+    property.GetPropertyDataType() // STRING
+    property.GetPropertyDataFormat() // JSON
+
+    // Example (traversing the returned map)
+    result := property.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+
+property, err := appConfiguration.GetProperty("yaml-property")
+if err == nil {
+    property.GetPropertyDataType() // STRING
+    property.GetPropertyDataFormat() // YAML
+
+    // Example (traversing the returned map)
+    result := property.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
+    result.(map[string]interface{})["key"] // returns the value of the key
+}
+  ```
+
 #### Listen to the property and feature changes
-{: #ac-golang-listen-feature-changes}
+
 
 To listen to the data changes, add the following code in your application:
 
