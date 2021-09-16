@@ -195,7 +195,7 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 {: codeblock}
 
 ### Supported data types
-{: #ac-java-data-types}
+{: #ac-integrate-data-types}
 
 App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
 Numeric, String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each

@@ -54,6 +54,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 ## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
+
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
 1. Install the SDK using either one of the options:
@@ -195,8 +196,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    ```
    {: codeblock}
 
-## Supported Data types
-{: #ac-integrate-data-types-android-kotlin}
+### Supported Data types
+{: #ac-integrate-data-types-kotlin}
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
@@ -259,6 +260,7 @@ format accordingly as shown in the below table.
 
 ## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
+
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
@@ -431,8 +433,9 @@ Refer to the examples for using the property and feature-related APIs.
    ```
    {: codeblock}
 
-## Supported Data types
-{: #ac-integrate-data-types-android-java}
+### Supported Data types
+{: #ac-integrate-data-types-java}
+
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
