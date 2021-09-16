@@ -196,6 +196,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    {: codeblock}
 
 ## Supported Data types
+{: #ac-integrate-data-types-android-kotlin}
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
@@ -207,7 +208,7 @@ format accordingly as shown in the below table.
 | `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
 | "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
 | <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre> |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 #### Feature flag
@@ -222,7 +223,7 @@ format accordingly as shown in the below table.
     val result = feature.getCurrentValue(entityId, entityAttributes) as JSONObject
     result.get("key") // returns the value of the key
   }
-  
+
   val feature: Feature? = appConfiguration.getFeature("yaml-feature")
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // YAML
@@ -431,6 +432,7 @@ Refer to the examples for using the property and feature-related APIs.
    {: codeblock}
 
 ## Supported Data types
+{: #ac-integrate-data-types-android-java}
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
@@ -442,7 +444,7 @@ format accordingly as shown in the below table.
 | `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
 | "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
 | <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre> |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 #### Feature Flag
@@ -457,7 +459,7 @@ format accordingly as shown in the below table.
     JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
     result.get("key") // returns the value of the key
   }
-  
+
   Feature feature = appConfiguration.getFeature("yaml-feature");
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // YAML
@@ -477,7 +479,7 @@ format accordingly as shown in the below table.
     JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
     result.get("key") // returns the value of the key
   }
-  
+
   Property property = appConfiguration.getProperty("yaml-property");
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // YAML

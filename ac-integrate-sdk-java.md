@@ -195,6 +195,7 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 {: codeblock}
 
 ## Supported data types
+{: #ac-java-data-types}
 
 App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
 Numeric, String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
@@ -206,7 +207,7 @@ format as shown in the below table.
 | `25`                                                                                                               | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
 | "a string text"                                                                                                    | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
 | <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox": {"name": "Firefox", "pref_url": "about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | `"men:\n - John Smith\n - Bill Jones\nwomen:\n - Mary Smith\n - Susan Williams"` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n - John Smith\n - Bill Jones\nwomen:\n - Mary Smith\n - Susan Williams"</pre> |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
 #### Feature flag
@@ -249,7 +250,7 @@ if (property != null) {
     property.getPropertyDataType()     // STRING
     property.getPropertyDataFormat()   // JSON
     property.getCurrentValue(entityId, entityAttributes) // JSONObject or JSONArray is returned
-    
+
 }
 
 // Example Below
@@ -270,7 +271,7 @@ if (property != null) {
     property.getPropertyDataType()     // STRING
     property.getPropertyDataFormat()   // YAML
     property.getCurrentValue(entityId, entityAttributes) // Yaml String is returned
-    
+
 }
 ```
 {: codeblock}
