@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-09-16"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -39,7 +39,7 @@ subcollection: app-configuration
 # App Configuration client SDK for Android
 {: #ac-integrate-sdks-android}
 
-{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application written in Kotlin or Java programming language.
+{{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application that is written in Kotlin or Java programming language.
 {: shortdesc}
 
 ## Prerequisites
@@ -56,9 +56,9 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
-1. Install the SDK using either one of the following option:
+1. Install the SDK using either one of the options:
    - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
-   - Get the package through Gradle by adding the following:
+   - Get the package through Gradle by adding the:
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
 
          ```javascript
@@ -78,7 +78,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          ```
          {: codeblock}
 
-1. Configure the `AndroidManifest.xml` file for Internet permission.
+1. Configure the `AndroidManifest.xml` file for internet permission.
 
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
@@ -104,7 +104,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
-   - `collectionId` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
+   - `collectionId` - ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
    - `environmentId` -  Id of the environment created in App Configuration service instance under the Environments section.
 
 1. Set listener for feature or property data changes
@@ -119,10 +119,8 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    ```
    {: codeblock}
 
-### Examples for using property and feature related APIs for Android app written in Kotlin
+### Examples for using property and feature-related APIs for Android app that is written in Kotlin
 {: #ac-integrate-ff-example-android-kotlin}
-
-Refer to the below examples for using the property and feature related APIs.
 
 - **Get single feature**
 
@@ -140,7 +138,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Feature evaluation**
 
-   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```kotlin
    JSONObject entityAttributes = new JSONObject();
@@ -180,7 +178,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Property evaluation**
 
-   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `property.getCurrentValue()` method to evaluate the value of the property. Pass a unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```kotlin
    JSONObject entityAttributes = new JSONObject();
@@ -197,6 +195,61 @@ Refer to the below examples for using the property and feature related APIs.
    ```
    {: codeblock}
 
+## Supported Data types
+
+App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
+
+| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `java.lang.Boolean`                                                | `true`                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+{: caption="Table 1. Example outputs" caption-side="top"}
+
+#### Feature flag
+
+```kt
+  val feature: Feature? = appConfiguration.getFeature("json-feature")
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example below (traversing the returned JSONObject)
+  if (feature != null) {
+    val result = feature.getCurrentValue(entityId, entityAttributes) as JSONObject
+    result.get("key") // returns the value of the key
+  }
+  
+  val feature: Feature? = appConfiguration.getFeature("yaml-feature")
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+ {: codeblock}
+
+#### Property
+
+```javascript
+  val property: Property? = appConfiguration.getProperty("json-property")
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example below (traversing the returned JSONObject)
+  if (property != null) {
+    val result = property.getCurrentValue(entityId, entityAttributes) as JSONObject
+    result.get("key") // returns the value of the key
+  }
+
+  val property: Property? = appConfiguration.getProperty("yaml-property")
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+{: codeblock}  
+
 - Force fetch the configurations from server.
    ```kotlin
    appConfiguration.fetchConfigurations()
@@ -208,9 +261,9 @@ Refer to the below examples for using the property and feature related APIs.
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
-1. Install the SDK using either one of the following option:
+1. Install the SDK by using either one of the options:
    - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
-   - Get the package through Gradle by adding the following:
+   - Get the package through Gradle by adding:
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
 
          ```javascript
@@ -230,7 +283,7 @@ Refer to the below examples for using the property and feature related APIs.
          ```
          {: codeblock}
 
-1. Configure the `AndroidManifest.xml` file for Internet permission.
+1. Configure the `AndroidManifest.xml` file for internet permission.
 
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
@@ -239,7 +292,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 1. Integrate Kotlin to your Java project with these steps:
 
-   - Add the Kotlin gradle plugin to the Module level `build.gradle`
+   - Add the Kotlin Gradle plug-in to the Module level `build.gradle`
 
       ```javascript
       dependencies {
@@ -274,8 +327,8 @@ Refer to the below examples for using the property and feature related APIs.
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
-   - `collectionId` - Id of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - `environmentId`: Id of the environment created in App Configuration service instance under the Environments section.
+   - `collectionId` - ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `environmentId`- ID of the environment created in App Configuration service instance under the Environments section.
 
 1. Listen to the feature changes
 
@@ -289,10 +342,10 @@ Refer to the below examples for using the property and feature related APIs.
    ```
    {: codeblock}
 
-### Examples for using property and feature related APIs for Android app written in Java
+### Examples for using property and feature-related APIs for Android app written in Java
 {: #ac-integrate-ff-example-android-java}
 
-Refer to the below examples for using the property and feature related APIs.
+Refer to the examples for using the property and feature-related APIs.
 
 - **Get single feature**
 
@@ -310,7 +363,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Feature evaluation**
 
-   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. You should pass an unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `feature.getCurrentValue()` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```java
    JSONObject entityAttributes = new JSONObject();
@@ -359,7 +412,7 @@ Refer to the below examples for using the property and feature related APIs.
 
 - **Property evaluation**
 
-   You can use the `property.getCurrentValue()` method to evaluate the value of the property. You should pass an unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
+   You can use the `property.getCurrentValue()` method to evaluate the value of the property. Pass a unique `entityId` as the parameter to perform the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a *JSONObject*.
 
    ```java
    JSONObject entityAttributes = new JSONObject();
@@ -376,6 +429,62 @@ Refer to the below examples for using the property and feature related APIs.
    String value = (String) property.getCurrentValue(entityId, entityAttributes);
    ```
    {: codeblock}
+
+## Supported Data types
+
+App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
+
+| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `java.lang.Boolean`                                                | `true`                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+{: caption="Table 1. Example outputs" caption-side="top"}
+
+#### Feature Flag
+
+```java
+  Feature feature = appConfiguration.getFeature("json-feature");
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example below (traversing the returned JSONObject)
+  if (feature != null) {
+    JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
+    result.get("key") // returns the value of the key
+  }
+  
+  Feature feature = appConfiguration.getFeature("yaml-feature");
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+ {: codeblock}  
+
+#### Property
+
+```java
+  Property property = appConfiguration.getProperty("json-property");
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example below (traversing the returned JSONObject)
+  if (property != null) {
+    JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
+    result.get("key") // returns the value of the key
+  }
+  
+  Property property = appConfiguration.getProperty("yaml-property");
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+ {: codeblock}  
+
 
 - Force fetch the configurations from server.
    ```java
