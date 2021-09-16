@@ -194,7 +194,7 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
-## Supported data types
+### Supported data types
 {: #ac-java-data-types}
 
 App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
