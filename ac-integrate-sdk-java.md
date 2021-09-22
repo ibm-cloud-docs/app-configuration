@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>0.1.0</version>
+         <version>0.2.0</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,7 +63,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.1.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.2.0'
       ```
       {: codeblock}
 
@@ -77,7 +77,7 @@ subcollection: app-configuration
 1. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
    {: #ac-init-java-sdk}
 
-      ```java
+     ```java
       AppConfiguration appConfiguration = AppConfiguration.getInstance();
 
       String guid =  "guid"
@@ -107,14 +107,14 @@ subcollection: app-configuration
 
    // Set the collectionId and environmentId to start the configuration fetching operation.
   appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
-   ```
-   {: codeblock}
+  ```
+{: codeblock}
 
-   where,
-   - configurationFile: Path to the JSON file which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
+Where,
+- configurationFile: Path to the JSON file which contains configuration details.
+- liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
-### Examples for using feature and property related APIs
+## Examples for using feature and property related APIs
 {: #ac-java-example}
 
 Refer to the below examples for using the feature and property related APIs.
@@ -194,7 +194,7 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
-### Supported data types
+## Supported data types
 {: #ac-integrate-data-types}
 
 App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
