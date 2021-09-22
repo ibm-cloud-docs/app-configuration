@@ -99,7 +99,7 @@ subcollection: app-configuration
       - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
       - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow this step:
+ 1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow this step:
 
     ```java
     String configurationFile = "custom/userJson.json";
@@ -109,10 +109,9 @@ subcollection: app-configuration
     ```
     {: codeblock}
 
-Where,
-
-- configurationFile: Path to the JSON file which contains configuration details.
-- liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
+   Where,
+   - configurationFile: Path to the JSON file which contains configuration details.
+   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
 ## Examples for using feature and property related APIs
 {: #ac-use-java-example}
@@ -122,7 +121,7 @@ Refer to the below examples for using the feature and property related APIs.
 ### Get single feature
 {: #ac-java-get-single-feature}
 
-  ```java
+```java
   Feature feature = appConfiguration.getFeature("feature_id");
 
 if (feature) {
@@ -131,10 +130,10 @@ if (feature) {
     System.out.println("Feature Type : " + feature.getFeatureDataType());
     System.out.println("Feature is enabled : " + feature.isEnabled());
 }
- ```
- {: codeblock}
+```
+{: codeblock}
 
- #### Get all features
+#### Get all features
 {: #ac-java-get-all-features}
 
 ```java
@@ -170,7 +169,7 @@ if (property) {
 ```
 {: codeblock}
 
-#### Get all properties
+### Get all properties
 {: #ac-java-get-all-property}
 
 ```java
@@ -210,7 +209,7 @@ format as shown in the below table.
 | <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n - John Smith\n - Bill Jones\nwomen:\n - Mary Smith\n - Susan Williams"</pre> |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
-#### Feature flag
+### Feature flag
 
 ```java
 Feature feature = appConfiguration.getFeature("json-feature");
