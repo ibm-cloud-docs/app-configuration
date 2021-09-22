@@ -133,7 +133,7 @@ if (feature) {
 ```
 {: codeblock}
 
-#### Get all features
+### Get all features
 {: #ac-java-get-all-features}
 
 ```java
@@ -141,7 +141,7 @@ HashMap<String, Feature> features = appConfiguration.getFeatures();
 ```
 {: codeblock}
 
-#### Feature evaluation
+### Feature evaluation
 {: #ac-java-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You must pass a unique `entityId` as the parameter for the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
@@ -155,7 +155,7 @@ String value = (String) feature.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
-#### Get single property
+### Get single property
 {: #ac-java-get-single-property}
 
 ```java
@@ -241,7 +241,7 @@ if (feature != null) {
 ```
 {: codeblock}
 
-#### Property
+### Property
 
 ```java
 Property property = appConfiguration.getProperty("json-property");
@@ -276,7 +276,7 @@ if (property != null) {
 {: codeblock}
 
 
-#### Set listener for feature or property changes
+### Set listener for feature or property changes
 {: #ac-java-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
@@ -291,7 +291,7 @@ appConfiguration.registerConfigurationUpdateListener(new ConfigurationUpdateList
 ```
 {: codeblock}
 
-#### Fetch most recent data
+### Fetch most recent data
 {: #ac-java-fetch-latest-data}
 
 ```java
