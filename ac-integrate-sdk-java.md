@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-22"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -101,16 +101,16 @@ subcollection: app-configuration
 
 1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow this step:
 
-   ```java
-   String configurationFile = "custom/userJson.json";
-   Boolean liveConfigUpdateEnabled = true;
-
-   // Set the collectionId and environmentId to start the configuration fetching operation.
-  appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
+    ```java
+    String configurationFile = "custom/userJson.json";
+    Boolean liveConfigUpdateEnabled = true;
+    // Set the collectionId and environmentId to start the configuration fetching operation.
+   appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
   ```
 {: codeblock}
 
 Where,
+
 - configurationFile: Path to the JSON file which contains configuration details.
 - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
