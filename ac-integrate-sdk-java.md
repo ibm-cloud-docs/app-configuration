@@ -105,9 +105,9 @@ subcollection: app-configuration
     String configurationFile = "custom/userJson.json";
     Boolean liveConfigUpdateEnabled = true;
     // Set the collectionId and environmentId to start the configuration fetching operation.
-   appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
-  ```
-{: codeblock}
+    appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
+    ```
+    {: codeblock}
 
 Where,
 
@@ -115,15 +115,15 @@ Where,
 - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
 ## Examples for using feature and property related APIs
-{: #ac-java-example}
+{: #ac-use-java-example}
 
 Refer to the below examples for using the feature and property related APIs.
 
-#### Get single feature
+### Get single feature
 {: #ac-java-get-single-feature}
 
-```java
-Feature feature = appConfiguration.getFeature("feature_id");
+  ```java
+  Feature feature = appConfiguration.getFeature("feature_id");
 
 if (feature) {
     System.out.println("Feature Name : " + feature.getFeatureName());
@@ -131,8 +131,8 @@ if (feature) {
     System.out.println("Feature Type : " + feature.getFeatureDataType());
     System.out.println("Feature is enabled : " + feature.isEnabled());
 }
-```
-{: codeblock}
+ ```
+ {: codeblock}
 
  #### Get all features
 {: #ac-java-get-all-features}
