@@ -177,7 +177,7 @@ HashMap<String, Property> property = appConfiguration.getProperties();
 ```
 {: codeblock}
 
-#### Property evaluation
+### Property evaluation
 {: #ac-java-property-evaluation}
 
 You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.
