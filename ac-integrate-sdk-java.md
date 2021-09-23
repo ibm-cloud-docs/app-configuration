@@ -118,7 +118,7 @@ subcollection: app-configuration
 
 Refer to the below examples for using the feature and property related APIs.
 
-### Get single feature
+#### Get single feature
 {: #ac-java-get-single-feature}
 
 ```java
@@ -155,7 +155,7 @@ String value = (String) feature.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
-### Get single property
+#### Get single property
 {: #ac-java-get-single-property}
 
 ```java
