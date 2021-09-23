@@ -113,7 +113,7 @@ subcollection: app-configuration
    - configurationFile: Path to the JSON file which contains configuration details.
    - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
 
-## Examples for using feature and property related APIs
+### Examples for using feature and property related APIs
 {: #ac-use-java-example}
 
 Refer to the below examples for using the feature and property related APIs.
@@ -133,7 +133,7 @@ if (feature) {
 ```
 {: codeblock}
 
-### Get all features
+#### Get all features
 {: #ac-java-get-all-features}
 
 ```java
@@ -141,7 +141,7 @@ HashMap<String, Feature> features = appConfiguration.getFeatures();
 ```
 {: codeblock}
 
-### Feature evaluation
+#### Feature evaluation
 {: #ac-java-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You must pass a unique `entityId` as the parameter for the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
@@ -169,7 +169,7 @@ if (property) {
 ```
 {: codeblock}
 
-### Get all properties
+#### Get all properties
 {: #ac-java-get-all-property}
 
 ```java
@@ -177,7 +177,7 @@ HashMap<String, Property> property = appConfiguration.getProperties();
 ```
 {: codeblock}
 
-### Property evaluation
+#### Property evaluation
 {: #ac-java-property-evaluation}
 
 You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.
@@ -209,7 +209,8 @@ format as shown in the below table.
 | <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n - John Smith\n - Bill Jones\nwomen:\n - Mary Smith\n - Susan Williams"</pre> |
 {: caption="Table 1. Example outputs" caption-side="top"}
 
-### Feature flag
+#### Feature flag
+{: #ac-java-example-ff}
 
 ```java
 Feature feature = appConfiguration.getFeature("json-feature");
@@ -241,7 +242,8 @@ if (feature != null) {
 ```
 {: codeblock}
 
-### Property
+#### Property
+{: #ac-java-example-property}
 
 ```java
 Property property = appConfiguration.getProperty("json-property");
@@ -276,7 +278,7 @@ if (property != null) {
 {: codeblock}
 
 
-### Set listener for feature or property changes
+#### Set listener for feature or property changes
 {: #ac-java-listen-feature-changes}
 
 To listen to the data changes, add the following code in your application:
@@ -291,7 +293,7 @@ appConfiguration.registerConfigurationUpdateListener(new ConfigurationUpdateList
 ```
 {: codeblock}
 
-### Fetch most recent data
+#### Fetch most recent data
 {: #ac-java-fetch-latest-data}
 
 ```java
