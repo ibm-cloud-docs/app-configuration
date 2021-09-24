@@ -170,9 +170,9 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
  | Metric Name | Enterprise   | Standard    |  Lite   |
  | ------------|--------------| -------------|--------|
- | [ibm_apprapp_instance_api_request](#ibm-appconfig-instance-api-request)| Yes | Yes |Yes |
- | [ibm_apprapp_instance_evaluation](#ibm-appconfig-evaluation-count)| Yes | Yes |Yes |
- | [ibm_apprapp_instance_api_request](#ibm-appconfig-instance-unauth-request)| Yes | Yes |Yes |
+ | [IBM Appconfig Instance API request](#ibm-appconfig-instance-api-request)| Yes | Yes |Yes |
+ | [IBM Appconfig Evaluation Count](#ibm-appconfig-evaluation-count)| Yes | Yes |Yes |
+ | [IBM Appconfig Instance Unauth Request](#ibm-appconfig-instance-unauth-request)| Yes | Yes |Yes |
 
  ### IBM Appconfig Instance API request
  {: ibm_apprapp_instance_api}
