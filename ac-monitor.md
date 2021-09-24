@@ -132,6 +132,24 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where the {{site.data.keyword.Bluemix_notm}} instance is provisioned.
  {:note: .note}
 
+ ## Viewing metrics 
+{: #view-metrics}
+
+To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{site.data.keyword.mon_full_notm}} web UI instance that is enabled for platform metrics in the region where your {{site.data.keyword.appconfig_short}} instance is available.
+{:important: .important}
+
+
+### Launch {{site.data.keyword.mon_full_notm}} web UI from the {{site.data.keyword.appconfig_short}} dashboard
+,{: #access-metrics}
+
+-1.Log in to {{site.data.keyword.Bluemix_notm}}. The {{site.data.keyword.Bluemix_notm}} dashboard opens.
+-1.Click **View all** in the Resource summary section of the dashboard.
+-1.In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
+-1.Click the **Actions** menu, and select **Monitoring**.
+-1.A new tab in your browser opens and displays the default dashboard named {{{site.data.keyword.appconfig_notm}}  within the context of your {{site.data.keyword.appconfig_short}} instance.
+
+![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Figure 1. Set up monitoring" caption-side="bottom"}
+
 
  ## Access your {{site.data.keyword.mon_full_notm}} metrics
  {: #access-monitor}
@@ -143,21 +161,49 @@ You can configure only one instance of the {{site.data.keyword.mon_full_notm}} s
  Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}}, it's in the sidebar, under IBM.
  Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service instance.
 
+![IBM Monitoring UI](images/ac-monitoring-dash.png "Monitoring dashboard"){: caption="Figure 2. IBM Cloud Monitoring dasgboard" caption-side="bottom"}
+
 ## Metrics available by Service Plan
  {: metrics-by-plan}
 
- | Metric Name |
- | ------------|
- | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_evaluation)|
+ {{site.data.keyword.appconfig_short}} supports three metrics that you can use to configure in your dashboard for monitoring. The table provides the details about the metrics.
 
- ### ibm_apprapp_instance_evaluation
- {: ibm_apprapp_instance_evaluation}
+ | Metric Name | Enterprise   | Standard    |  Lite   |
+ | ------------|--------------| -------------|--------|
+ | [ibm_apprapp_instance_api_request](#ibm_apprapp_instance_api)| Yes | Yes |Yes |
+ | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_eval)| Yes | Yes |Yes |
+ | [ibm_apprapp_instance_api_request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes |
 
-Evaluation count per instance: Count of feature or property evaluations in the SDK.
+ ### IBM Appconfig Instance API request
+ {: ibm_apprapp_instance_api}
+
+API request count per instance: Count of config API requests made from the SDK.
 
 | Metadata   | Description |
 |-------------|-------------|
+| `Metric Name` | `ibm_apprapp_instance_api_request` |
+| `Metric Type` | `gauge`|
+| `Value Type` | `none`|
+| `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
+
+ ### IBM Appconfig Evaluation Count
+ {: ibm_apprapp_instance_eval}
+
+ Evaluation count per instance: Count of feature or property evaluations in the SDK.
+
+ | Metadata   | Description |
+|-------------|-------------|
 | `Metric Name` | `ibm_apprapp_instance_evaluation` |
+| `Metric Type` | `gauge`|
+| `Value Type` | `none`|
+| `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
+
+ ### IBM Appconfig Instance unauth request 
+ {: ibm_apprapp_instance_unauth}
+
+ | Metadata   | Description |
+|-------------|-------------|
+| `Metric Name` | `ibm_apprapp_instance_unauth_request` |
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
