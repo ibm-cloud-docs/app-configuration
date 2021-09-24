@@ -142,11 +142,11 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 ### Launch {{site.data.keyword.mon_full_notm}} web UI from the {{site.data.keyword.appconfig_short}} dashboard
 ,{: #access-metrics}
 
--1.Log in to {{site.data.keyword.Bluemix_notm}}. The {{site.data.keyword.Bluemix_notm}} dashboard opens.
--1.Click **View all** in the Resource summary section of the dashboard.
--1.In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
--1.Click the **Actions** menu, and select **Monitoring**.
--1.A new tab in your browser opens and displays the default dashboard named {{{site.data.keyword.appconfig_notm}}  within the context of your {{site.data.keyword.appconfig_short}} instance.
+1. Log in to {{site.data.keyword.Bluemix_notm}}. The {{site.data.keyword.Bluemix_notm}} dashboard opens.
+2. Click **View all** in the Resource summary section of the dashboard.
+3. In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
+4. Click the **Actions** menu, and select **Monitoring**.
+5. A new tab in your browser opens and displays the default dashboard named {{{site.data.keyword.appconfig_notm}}  within the context of your {{site.data.keyword.appconfig_short}} instance.
 
 ![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Figure 1. Set up monitoring" caption-side="bottom"}
 
@@ -170,9 +170,9 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
  | Metric Name | Enterprise   | Standard    |  Lite   |
  | ------------|--------------| -------------|--------|
- | [ibm_apprapp_instance_api_request](#ibm_apprapp_instance_api)| Yes | Yes |Yes |
- | [ibm_apprapp_instance_evaluation](#ibm_apprapp_instance_eval)| Yes | Yes |Yes |
- | [ibm_apprapp_instance_api_request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes |
+ | [ibm_apprapp_instance_api_request](#ibm-appconfig-instance-api-request)| Yes | Yes |Yes |
+ | [ibm_apprapp_instance_evaluation](#ibm-appconfig-evaluation-count)| Yes | Yes |Yes |
+ | [ibm_apprapp_instance_api_request](#ibm-appconfig-instance-unauth-request)| Yes | Yes |Yes |
 
  ### IBM Appconfig Instance API request
  {: ibm_apprapp_instance_api}
