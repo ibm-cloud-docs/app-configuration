@@ -61,10 +61,21 @@ The following list of {{site.data.keyword.appconfig_short}} events are sent to {
 | `apprapp.properties.update`|Updated property or failed to update|
 | `apprapp.properties.updatevalues`| Updated property details or failed to update|
 | `apprapp.properties.delete` | Deleted property or failed to delete|
-| `apprapp.properties.list` | Called list of properties or failed to list|
+| `apprapp.properties.list` | Called the list of properties or failed to list|
 | `apprapp.properties.read`|Retrieved details of property or failed to retrieve property details|
 | `apprapp.properties.evaluate`| Evaluated property at the SDK or failed to evaluate |
+| `apprapp.collections.create`| Created a collection or failed to create|
+| `apprapp.collections.update`| Updated a collection or failed to update|
+| `apprapp.collections.delete`| Deleted a collection or failed to update|
+| `apprapp.collections.list`| Called the list of collections or failed to list|
+| `apprapp.collections.read`| Retrieved collection details or failed to retrieve collection details|
+
+
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="top"}
+
+Any unauthorised request made for any of the above mentioned actions in the list, causes a management event to be emitted.
+{:note: .note}
+
 
 
 ## Viewing events
