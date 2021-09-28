@@ -72,28 +72,47 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-   where,
+   Where,
    - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property operations](#ac-golang-example).
+1. *Optional*: In order for your application and SDK to continue operations even during the unlikely scenario of {{site.data.keyword.appconfig_short}} service downtimes, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
-After `appConfiguration.Init("region", "guid", "apikey")`, follow the outlined steps:
 
-   ```javascript
-  appConfiguration.SetContext("collectionId", "environmentId", AppConfiguration.ContextOptions{
-  ConfigurationFile: "path/to/configuration/file.json",
-  LiveConfigUpdateEnabled: false,
+   ```go
+  // 1. default (without persistent cache)
+appConfiguration.SetContext(collectionId, environmentId)
+
+// 2. with persistent cache
+appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
+    PersistentCacheDirectory: "/var/lib/docker/volumes/",
 })
    ```
-   {: codeblock}
+{: codeblock}
 
    where,
-   - ConfigurationFile: Path to the JSON file, which contains configuration details.
-   - LiveConfigUpdateEnabled: Set this value to `false` if new configuration values are not to be fetched from the server. Make sure to provide a proper JSON file in the `ConfigurationFile`. By default, this value is enabled.
+   - PersistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+
+When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+
+1. *Optional*: The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
+
+ ```go
+  appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
+    BootstrapFile: "saflights/flights.json",
+    LiveConfigUpdateEnabled: false,
+})
+   ```
+{: codeblock}
+
+Where,
+
+- BootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+
+- LiveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
 
 ### Examples for using property and feature-related APIs
 {: #ac-golang-example}
@@ -194,7 +213,7 @@ propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 ## Supported data types
 {: #ac-integrate-go-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean,Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
 format as shown in the table.
 
 | **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
