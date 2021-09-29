@@ -98,7 +98,7 @@ appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.Contex
 When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
 
 
-1. *Optional*: The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
+5. *Optional*: The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
 
 ```go
   appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{

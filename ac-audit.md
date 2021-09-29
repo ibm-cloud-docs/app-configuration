@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-31"
+lastupdated: "2021-11-29"
 
 keywords: app-configuration activity tracker events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -73,7 +73,7 @@ The following list of {{site.data.keyword.appconfig_short}} events are sent to {
 
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
-Any unauthorised request made for any of the above mentioned actions in the list, causes a management event to be emitted.
+If an unauthorised request is made for any of the above mentioned actions in the list, a management event with reason code 403 is emitted.
 {:note: .note}
 
 
