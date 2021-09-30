@@ -79,7 +79,10 @@ subcollection: app-configuration
    - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-1. *Optional*: In order for your application and SDK to continue operations even during the unlikely scenario of {{site.data.keyword.appconfig_short}} service downtimes, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
+### Option to use a persistent cache for configuration
+{: #ac-go-persistent-cache}
+
+  In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
 
 ```go
@@ -97,8 +100,10 @@ appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.Contex
 
 When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
 
+### Offline options
+{: #ac-go-offline}
 
-5. *Optional*: The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
+The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
 
 ```go
   appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
