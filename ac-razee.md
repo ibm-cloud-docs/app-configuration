@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-razee-plugin}
 
 [Razee](https://razee.io/) is an opensource project developed by IBM to automate and manage the deployment of Kubernetes resources across clusters, environments, and cloud providers.
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.appconfig_short}} uses Razee to release features across clusters and helps in templatizing the cluster resources. {{site.data.keyword.appconfig_short}} Razee plugin helps in the following: 
 

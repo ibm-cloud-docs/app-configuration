@@ -39,8 +39,8 @@ With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for 
 
 *Roles* define the actions that a user or service ID can run. There are different types of roles in the  {{site.data.keyword.cloud_notm}}:
 
--	*Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications.
--	*Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
+- *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications.
+- *Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
 
 {{site.data.keyword.appconfig_short}} uses both the **Platform and Service management roles**. You can set policies about who can create a instance at the platform level, and then use the service roles to manage interaction with the instance itself. As the creator of a instance, you do not need to set any IAM policies to view or work with your {{site.data.keyword.appconfig_short}} entities.
 

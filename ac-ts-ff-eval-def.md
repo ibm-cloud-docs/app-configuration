@@ -73,7 +73,8 @@ const entityAttributes = {
 let feature = client.getFeature(<feature_id>);
 let featureValue = feature.getCurrentValue(entityId, entityAttributes);
 ```
-{:codeblock: .codeblock}
+{: codeblock}
+
 Entity attributes are used to evaluate if the entity is valid for the segment, and the corresponding value of the segment is returned for the feature flag.
 
 The same fix is applicable for properties.
