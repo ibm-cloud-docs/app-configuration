@@ -46,13 +46,19 @@ subcollection: app-configuration
 {: #ac-troubleshooting-two}
 {: troubleshoot}
 {: support}
-{:shortdesc}
 
+
+
+Feature flag is targeted with segment rules. Rule execution is not as expected.
 {: tsSymptoms}
-Feature flag is targeted with segment rules. Rule execution is not as expected.  
 
+
+Targeting assigns flag or property values to segments by evaluating rules.
 {: tsCauses}
-Targeting assigns flag or property values to segments by evaluating rules. Targeting rules are executed in the order listed in the 'Edit targeting' view. If a segment appears in more than one rule, only the value defined by the last rule is assigned.
 
-{: tsResolve}
+Targeting rules are executed in the order listed in the 'Edit targeting' view. If a segment appears in more than one rule, only the value defined by the last rule is assigned.
+
+
+
 Correct the order of evaluation by using the up- and down-arrows in the ‘Edit targeting’ view, or remove the segment causing the unexpected outcome from rules.
+{: tsResolve}
