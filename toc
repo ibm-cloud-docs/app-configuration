@@ -31,7 +31,7 @@ App Configuration
     {: .topicgroup}
     Logging and monitoring
         ac-monitor.md
-        ac-audit.md
+
 
     {: .topicgroup}
     SDKs
@@ -54,6 +54,7 @@ App Configuration
         ac-iam-policies.md
         ac-securing-data.md
         architecture-workload-isolation.md
+        ac-audit.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
