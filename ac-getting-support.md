@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-getting-help-and-support}
 
 {{site.data.keyword.appconfig_notm}} provides troubleshooting information to isolate and resolve problems. {{site.data.keyword.appconfig_short}} also provides several avenues for troubleshooting problems and getting support. Depending on the level of help you need, use the information below or open an IBM support case.
-{:shortdesc}
+{: shortdesc}
 
 When you have problems while you are working with {{site.data.keyword.appconfig_short}}, consider these options for getting help.
 

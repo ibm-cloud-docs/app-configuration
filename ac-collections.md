@@ -23,7 +23,7 @@ subcollection: app-configuration
 {: #ac-collections}
 
 Collections are a way to group feature flags and properties. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature will need to be in a collection, and it is often convenient to create your collection first.
-{:shortdesc}
+{: shortdesc}
 
 By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Tags** associated, the date of creation of the collection, and the collection **Content** (number of feature flags and number of properties).
 {: note}

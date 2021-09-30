@@ -63,14 +63,12 @@ ibmcloud ac config --collection_id COLLECTION_ID --environment_id ENVIRONMENT_ID
 ## Command options
 {: #ac-ibmcloud-ac-configure-command}
 
-<dl>
-<dt>--environment_id ENVIRONMENT_ID</dt>
-<dd>Environment Id</dd>
-<dt>--collection_id COLLECTION_ID</dt>
-<dd>Collection Id</dd>
-<dt>--file FILE</dt>
-<dd>Path to file where configuration is exported</dd>
-</dl>
+--environment_id ENVIRONMENT_ID
+:   Environment Id
+--collection_id COLLECTION_ID
+:   Collection Id
+--file FILE
+:   Path to file where configuration is exported
 
 ## Enabling offline mode
 {: #ac-offline-enable}

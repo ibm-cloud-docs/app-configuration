@@ -39,7 +39,7 @@ subcollection: app-configuration
 {: #cli_versions}
 
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
-{:shortdesc}
+{: shortdesc}
 
 | Version    | Release date     | Changes                                   |
 | ---------- | ---------------- | ------------------------------------------|
