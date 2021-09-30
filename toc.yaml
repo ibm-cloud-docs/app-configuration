@@ -1,0 +1,108 @@
+---
+toc:
+  properties:
+    subcollection: app-configuration
+    category: dev_ops
+    audience: service
+    href: /docs/app-configuration?topic=app-configuration-getting-started
+    console-page: /catalog/services/app-configuration#about
+    product-page: https://ibm.com/cloud/product-value
+    path: app-configuration
+    label: App Configuration
+    version: 2.0
+
+
+  entries:
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - ac-about.md
+      - ac-concepts.md
+      - ac-release-notes.md
+
+  - navgroup:
+      id: tutorial
+      topics:
+      - ac-tutorial.md
+      - ac-create-appconfig-instance.md
+      - ac-environments.md
+      - ac-collections.md
+      - ac-feature-flags.md
+      - ac-properties.md
+      - ac-segments.md
+      - ac-integrate-sdk.md
+
+
+  - navgroup:
+      id: howto
+      topics:
+      - ac-ff-prop-env.md
+      - ac-toolchain.md
+      - topicgroup:
+          label: Target feature flags and properties to segments
+          links:
+          - link:
+             label: Target feature flags to segments
+             href: /app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag
+          - link:   
+             label: Target properties to segments
+             href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
+      - ac-toolchain.md
+      - topicgroup:
+          label: Logging and Monitoring
+          topics:
+          - ac-monitor.md
+      - topicgroup:
+          label: Enhancing security
+          topics:
+          - ac-iam.md
+          - ac-iam-policies.md
+          - ac-securing-data.md
+          - architecture-workload-isolation.md
+          - ac-audit.md
+
+#  Links to your REST API docs should be included in the Reference navigation group. For details on publishing API docs, see https://test.cloud.ibm.com/docs/api-docs.
+#  Links to your command line reference docs should be included in the Reference navigation group.
+  - navgroup:
+      id: reference
+      topics:
+      - ac-cli-changelog.md
+      - topicgroup:
+          label: CLI reference
+          links:
+          - link:
+              label: App Configuration CLI
+              href: /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+          - link:   
+              label: API Explorer
+              href:  https://{DomainName}/apidocs/app-configuration
+      - ac-service-credentials.md
+      - ac-responsibilities.md
+      - ac-regions-endpoints.md
+      - ac-sample-apps.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+          - ac-high-availability.md
+
+
+  - navgroup:
+      id: help
+      topics:
+      - ac-videos.md
+      - topicgroup:
+          label: FAQs
+          topics:
+          - faq.md
+          - faqts.md
+      - topicgroup:
+          label: Troubleshooting
+          topics:
+          - ac-getting-support.md
+          - ac-ts-ff.md
+          - ac-ts-ff-eval.md
+          - ac-ts-ff-eval-def.md
+          - ac-ts-ff-toggle.md
+          - ac-ts-ff-zero-env.md
+          - ac-ts-ff-del.md
