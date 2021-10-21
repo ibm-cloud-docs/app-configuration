@@ -26,6 +26,7 @@ Explore the sample apps to understand the features of {{site.data.keyword.appcon
 {: shortdesc}
 
 - [Node.JS sample app](https://github.com/IBM/appconfiguration-samples/tree/master/nodejs){: external}
+- [Go sample app](https://github.com/IBM/appconfiguration-samples/tree/master/golang){: external}
 - [Android - Kotlin sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-kotlin){: external}
 - [Android - Java sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-java){: external}
-- [Go sample app](https://github.com/IBM/appconfiguration-samples/tree/master/golang){: external}
+
