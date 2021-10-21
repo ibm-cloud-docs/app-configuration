@@ -55,6 +55,7 @@ App Configuration
         ac-securing-data.md
         architecture-workload-isolation.md
         ac-audit.md
+        ac-cipher.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

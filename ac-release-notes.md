@@ -33,6 +33,11 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 
 JSON and YAML file support to String type [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags) and [properties](/docs/app-configuration?topic=app-configuration-ac-properties).
 
+## Aug 2021
+{: #aug-2021}
+
+In-memory based cache support for Node.js and Go SDK
+
 ## July 2021
 {: #jul-2021}
 
