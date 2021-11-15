@@ -19,6 +19,7 @@ subcollection: app-configuration
 {:shortdesc: .shortdesc}
 {:tip: .tip}
 
+
 # What is {{site.data.keyword.appconfig_short}}?
 {: #ac-about}
 
