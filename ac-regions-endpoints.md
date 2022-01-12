@@ -33,6 +33,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 {{site.data.keyword.appconfig_notm}} is available in the following regions:
 
 - Dallas
+- Washington DC
 - London
 - Sydney
 
@@ -46,6 +47,7 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Location     |Endpoint URL      |
 |-------------|------------------|
 |Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|Washington DC |`https://us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
 {: caption="Table 3. Service endpoints" caption-side="top"}
