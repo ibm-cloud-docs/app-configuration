@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2022-01-19"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -27,6 +27,11 @@ subcollection: app-configuration
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## January 2022
+{: #jan-2022}
+
+IBM Cloud App Configuration is now available in Washington DC region.
 
 ## September 2021
 {: #sep-2021}
