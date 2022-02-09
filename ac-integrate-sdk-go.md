@@ -233,7 +233,7 @@ format as shown in the table.
 
 #### Feature flag
 
-  ```go
+```go
 feature, err := appConfiguration.GetFeature("json-feature")
 if err == nil {
     feature.GetFeatureDataType() // STRING
@@ -253,12 +253,12 @@ if err == nil {
     result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
     result.(map[string]interface{})["key"] // returns the value of the key
 }
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 #### Property
 
-  ```go
+```go
 property, err := appConfiguration.GetProperty("json-property")
 if err == nil {
     property.GetPropertyDataType() // STRING
@@ -278,7 +278,8 @@ if err == nil {
     result := property.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
     result.(map[string]interface{})["key"] // returns the value of the key
 }
-  ```
+```
+{: codeblock}
 
 #### Listen to the property and feature changes
 
