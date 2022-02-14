@@ -50,17 +50,17 @@ subcollection: app-configuration
 
  Using `pip`
 
-      ```sh
-      pip install --upgrade ibm-appconfiguration-python-sdk
-      ```
-      {: codeblock}
+    ```sh
+    pip install --upgrade ibm-appconfiguration-python-sdk
+    ```
+    {: codeblock}
 
  Using `easy_install`
 
-      ```
-      easy_install --upgrade ibm-appconfiguration-python-sdk
-      ```
-      {: codeblock}
+    ```
+    easy_install --upgrade ibm-appconfiguration-python-sdk
+    ```
+    {: codeblock}
 
 1. In your Python application code, include the SDK module with:
 
@@ -230,13 +230,13 @@ format as shown in the table.
 
   tar_val = feature.get_current_value(entityId, entityAttributes)
   expected_output = tar_val['description']
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 
 #### Property
 
-  ```py
+```py
   property = client.get_property('json-property')
   property.get_property_data_type() // STRING
   property.get_property_data_format() // JSON
@@ -266,8 +266,8 @@ format as shown in the table.
 
   tar_val = property.get_current_value(entityId, entityAttributes)
   expected_output = tar_val['description']
-  ```
-    {: codeblock}
+```
+{: codeblock}
 
 #### Listen to the feature and property data changes
 {: #ac-python-listen-feature-changes}
