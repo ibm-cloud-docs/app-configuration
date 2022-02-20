@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-22"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -52,4 +52,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.3      | 7 October 2021   | Support for JSON and YAML datatypes for feature flags and properties. |
 | 1.0.4      | 12 November 2021 | Update dependencies.                                                  |
 | 1.0.5      | 4 January 2022   | Update dependencies.                                                  |
+| 1.0.6      | 22 February 2022 | Added custom header to all outgoing API requests.                     |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
