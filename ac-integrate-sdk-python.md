@@ -46,7 +46,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Use either one of the following methods to install the SDK:
+Use either one of the following methods to install the SDK:
 
  Using `pip`
 
@@ -69,7 +69,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+2. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
    ```py
    appconfig_client = AppConfiguration.get_instance()
