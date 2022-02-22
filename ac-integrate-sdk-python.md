@@ -46,7 +46,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Python application. You can evaluate the values of your feature flag or property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-Use either one of the following methods to install the SDK:
+1. Use either one of the following methods to install the SDK:
 
  Using `pip`
 
@@ -62,14 +62,14 @@ Use either one of the following methods to install the SDK:
    ```
    {: codeblock}
 
-1. In your Python application code, include the SDK module with:
+2. In your Python application code, include the SDK module with:
 
    ```py
    from ibm_appconfiguration import AppConfiguration, Feature, Property, ConfigurationType
    ```
    {: codeblock}
 
-2. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+3. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
    ```py
    appconfig_client = AppConfiguration.get_instance()
@@ -104,8 +104,9 @@ appconfig_client.set_context(collection_id='collection_id', environment_id='envi
 ```
 {: codeblock}
 
-  where,
-  - persistent_cache_dir: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `appconfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+where,
+
+- persistent_cache_dir: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `appconfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
   
 When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
 
