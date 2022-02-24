@@ -187,7 +187,7 @@ To see a list of {{site.data.keyword.Bluemix_notm}} regions where you can provis
 {: #faq-ac-available}
 {: faq}
 
-Yes. {{site.data.keyword.appconfig_short}}is designed as a high availability service designed for enterprise workloads, and conforming to the [{{site.data.keyword.appconfig_short}} Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8986#detail-documentand) and the [{{site.data.keyword.Bluemix_notm}} Service Level Agreement]( https://cloud.ibm.com/docs/overview?topic=overview-slas) for availability. Within a single region, {{site.data.keyword.appconfig_short}} is deployed across a multi-zone cluster. 
+Yes. {{site.data.keyword.appconfig_short}} is designed as a high availability service designed for enterprise workloads, and conforming to the [{{site.data.keyword.appconfig_short}} Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8986#detail-documentand) and the [{{site.data.keyword.Bluemix_notm}} Service Level Agreement]( https://cloud.ibm.com/docs/overview?topic=overview-slas) for availability. Within a single region, {{site.data.keyword.appconfig_short}} is deployed across a multi-zone cluster. 
 
 ## Is {{site.data.keyword.appconfig_short}} secure?
 {: #faq-ac-security}

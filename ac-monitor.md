@@ -146,7 +146,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 2. Click **View all** in the Resource summary section of the dashboard.
 3. In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
 4. Click the **Actions** menu, and select **Monitoring**.
-5. A new tab in your browser opens and displays the default dashboard named {{{site.data.keyword.appconfig_notm}}  within the context of your {{site.data.keyword.appconfig_short}} instance.
+5. A new tab in your browser opens and displays the default dashboard named {{site.data.keyword.appconfig_notm}} within the context of your {{site.data.keyword.appconfig_short}} instance.
 
 ![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Figure 1. Set up monitoring" caption-side="bottom"}
 
