@@ -21,7 +21,7 @@ subcollection: app-configuration
 
 # Toolchain Integration
 {: #ac-toolchain-integration}
-<!-- As discussed with Joyce, for now I'll be commenting the existing toolchain content -->
+<!-- The below content is about another usecase related to GitOps, for now it is decided to keep the content commented -->
 <!-- 
 Adopt a DevOps approach in your feature releases using {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service and {{site.data.keyword.cloud_notm}} {{site.data.keyword.contdelivery_short}}. {{site.data.keyword.contdelivery_short}} includes toolchains that automates the building of your applications.
 {: shortdesc}
