@@ -33,4 +33,5 @@ Integrate {{site.data.keyword.appconfig_short}} service to a [toolchain](https:/
 {: shortdesc}
 
 This feature supports centralized management of feature flags and properties directly from an {{site.data.keyword.appconfig_short}} service instance.
+
 [Learn more about configuring {{site.data.keyword.appconfig_short}} tool integration](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-app-configuration&interface=ui){:external}.
