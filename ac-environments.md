@@ -62,5 +62,5 @@ The overflow menu for each of the environment (three vertical dots) consists of 
 * When **Edit** option is selected, you can make changes to the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
 * When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected environment.
 
-By default, atleast one environment must be present in an {{site.data.keyword.appconfig_short}} service instance.
+By default, at least one environment must be present in an {{site.data.keyword.appconfig_short}} service instance.
 {: note}
