@@ -1,0 +1,112 @@
+toc:
+  properties:
+    subcollection: app-configuration
+    category: dev_ops
+    audience: service
+    href: /docs/app-configuration
+    console-page: /catalog/services/app-configuration
+    product-page: https://ibm.com/cloud/app-configuration
+    path: app-configuration
+    label: App Configuration
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+      - topicgroup: 
+          label: topic-group-label
+          topics:
+          - getting-started.md
+          - ac-about.md
+          - ac-concepts.md
+          - ac-release-notes.md
+
+  - navgroup: 
+      id: tutorial
+      topics: 
+      - ac-tutorial.md
+      - ac-create-appconfig-instance.md
+      - ac-environments.md
+      - ac-collections.md
+      - ac-feature-flags.md
+      - ac-properties.md
+      - ac-segments.md
+      - ac-integrate-sdk.md
+
+  - navgroup: 
+      id: howto
+      topics:
+      - ac-ff-prop-env.md
+      - link: 
+          label: Target feature flags to segments
+          href: /app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag
+      - link: 
+          label: Target properties to segments
+          href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
+      - ac-toolchain.md
+      - topicgroup: 
+          label: Logging and monitoring
+          topics:
+          - ac-monitor.md
+      - topicgroup:
+          label: SDKs
+          topics:
+          - ac-integrate-sdk-node.md
+          - ac-integrate-sdk-python.md
+          - ac-integrate-sdk-go.md
+          - ac-integrate-sdk-java.md
+          - ac-integrate-sdk-android.md
+      - link:
+            label: App Configuration admin SDK for Go
+            href: https://{DomainName}/apidocs/app-configuration?code=go
+      - ac-integrate-offline.md
+      - ac-razee.md
+          
+      - topicgroup:
+          label: Enhance security
+          topics:
+          - ac-iam.md
+          - ac-iam-policies.md
+          - ac-securing-data.md
+          - architecture-workload-isolation.md
+          - ac-audit.md
+          - ac-cipher.md
+
+  - navgroup:
+      id: reference
+      topics: 
+      - topicgroup:
+          label: CLI reference
+          topics:
+          - link:
+              label: App Configuration CLI
+              href: /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+      - ac-cli-changelog.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+          - ac-high-availability.md
+      - ac-service-credentials.md
+      - ac-responsibilities.md
+      - ac-regions-endpoints.md
+      - ac-sample-apps.md
+      - link:
+          label: API Explorer
+          href: https://{DomainName}/apidocs/app-configuration)
+
+  - navgroup:
+      id: help
+      topics: 
+      - faq.md
+      - faqts.md
+      - ac-videos.md
+      - topicgroup: 
+          label: Troubleshooting
+          topics: 
+          - ac-getting-support.md
+          - ac-ts-ff.md
+          - ac-ts-ff-eval.md
+          - ac-ts-ff-eval-def.md
+          - ac-ts-ff-toggle.md
+          - ac-ts-ff-zero-env.md
+          - ac-ts-ff-del.md
