@@ -13,13 +13,10 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - topicgroup: 
-          label: topic-group-label
-          topics:
-          - getting-started.md
-          - ac-about.md
-          - ac-concepts.md
-          - ac-release-notes.md
+      - getting-started.md
+      - ac-about.md
+      - ac-concepts.md
+      - ac-release-notes.md
 
   - navgroup: 
       id: tutorial
@@ -56,9 +53,9 @@ toc:
           - ac-integrate-sdk-go.md
           - ac-integrate-sdk-java.md
           - ac-integrate-sdk-android.md
-      - link:
-            label: App Configuration admin SDK for Go
-            href: https://{DomainName}/apidocs/app-configuration?code=go
+          - link:
+              label: App Configuration admin SDK for Go
+              href: https://{DomainName}/apidocs/app-configuration?code=go
       - ac-integrate-offline.md
       - ac-razee.md
           
@@ -81,7 +78,8 @@ toc:
           - link:
               label: App Configuration CLI
               href: /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
-      - ac-cli-changelog.md
+          - ac-cli-changelog.md
+          
       - topicgroup:
           label: High availability and disaster recovery
           topics:
