@@ -101,7 +101,7 @@ subcollection: app-configuration
       - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
       
 
-The **`init()`** and **`setContext()`** are the initialisation classes and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across modules using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appConfigClient-across-other-modules).
+The **`init()`** and **`setContext()`** are the initialisation classes and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across classes using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appConfigClient-across-other-classes).
 {: important}
 
 ### Option to use a persistent cache for configuration
@@ -229,12 +229,12 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
 
-### Fetching the appConfigClient across other modules
-{: #fetching-the-appConfigClient-across-other-modules}
-Once the SDK is initialized, the appConfigClient can be obtained across other modules as shown below:
+### Fetching the appConfigClient across other classes
+{: #fetching-the-appConfigClient-across-other-classes}
+Once the SDK is initialized, the appConfigClient can be obtained across other classes as shown below:
 
 ```java
-// **other modules**
+// **other classes**
 
 import com.ibm.cloud.appconfiguration.sdk.AppConfiguration;
 AppConfiguration appConfigClient = AppConfiguration.getInstance();
@@ -337,7 +337,7 @@ if (property != null) {
 The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appConfigClient.
 
 ```java
-.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
+appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
     @Override
     public void onConfigurationUpdate() {
        System.out.println("Got feature/property now");
