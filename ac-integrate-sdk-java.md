@@ -82,8 +82,9 @@ subcollection: app-configuration
 
       String guid =  "guid"
       String apikey = "apikey";
+      String region = AppConfiguration.REGION_US_SOUTH;
 
-      appConfigClient.init(AppConfiguration.REGION_US_SOUTH, guid, apikey);
+      appConfigClient.init(region, guid, apikey);
 
       String collectionId = "collectionId";
       String environmentId = "environmentId";
@@ -100,8 +101,7 @@ subcollection: app-configuration
       - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
       
 
-The **`init()`** and **`setContext()`** are the initialisation methods and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across modules using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appconfig_client-across-other-modules).
-   
+The **`init()`** and **`setContext()`** are the initialisation classes and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across modules using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appConfigClient-across-other-modules).
 {: important}
 
 ### Option to use a persistent cache for configuration
@@ -158,7 +158,7 @@ Refer to the below examples for using the feature and property related APIs.
 {: #ac-java-get-single-feature}
 
 ```java
-  Feature feature = appConfigClient.getFeature("feature_id");
+Feature feature = appConfigClient.getFeature("feature_id");
 
 if (feature) {
     System.out.println("Feature Name : " + feature.getFeatureName());
@@ -228,6 +228,23 @@ entityAttributes.put("country", "India");
 String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
+
+### Fetching the appConfigClient across other modules
+{: #fetching-the-appConfigClient-across-other-modules}
+Once the SDK is initialized, the appConfigClient can be obtained across other modules as shown below:
+
+```java
+// **other modules**
+
+import com.ibm.cloud.appconfiguration.sdk.AppConfiguration;
+AppConfiguration appConfigClient = AppConfiguration.getInstance();
+
+Feature feature = appConfigClient.getFeature("string-feature");
+boolean enabled = feature.isEnabled();
+String featureValue = (String) feature.getCurrentValue(entityId, entityAttributes);
+```
+{: codeblock}
+
 
 ## Supported data types
 {: #ac-integrate-data-types}
@@ -317,10 +334,10 @@ if (property != null) {
 #### Set listener for feature or property changes
 {: #ac-java-listen-feature-and-property-changes}
 
-The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appconfig_client.
+The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appConfigClient.
 
 ```java
-appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
+.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
     @Override
     public void onConfigurationUpdate() {
        System.out.println("Got feature/property now");
@@ -333,6 +350,6 @@ appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListe
 {: #ac-java-fetch-latest-data}
 
 ```java
-appConfigClient.fetchConfigurations()
+appConfigClient.fetchConfigurations();
 ```
 {: codeblock}
