@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-01-19"
+  years: 2022
+lastupdated: "2022-03-01"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -55,7 +55,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>0.2.0</version>
+         <version>0.2.3</version>
       </dependency>
       ```
       {: codeblock}
@@ -63,55 +63,92 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.2.0'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.2.3'
       ```
       {: codeblock}
 
-1. In your Java microservice or application, include the SDK with:
+2. In your Java microservice or application, include the SDK with:
 
    ```java
-   import com.ibm.cloud.appconfiguration.sdk.AppConfiguration
+   import com.ibm.cloud.appconfiguration.sdk.AppConfiguration;
    ```
    {: codeblock}
 
-1. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
+3. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
    {: #ac-init-java-sdk}
 
      ```java
-      AppConfiguration appConfiguration = AppConfiguration.getInstance();
+      AppConfiguration appConfigClient = AppConfiguration.getInstance();
 
-      String guid =  "guid"
+      String guid =  "guid";
       String apikey = "apikey";
+      String region = AppConfiguration.REGION_US_SOUTH;
 
-      appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey);
+      appConfigClient.init(region, guid, apikey);
 
       String collectionId = "collectionId";
       String environmentId = "environmentId";
       // Set the collectionId and environmentId to start the configuration fetching operation.
-      appConfiguration.setContext(collectionId, environmentId)
+      appConfigClient.setContext(collectionId, environmentId)
       ```
       {: codeblock}
 
       Where,
-      - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC,  `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+      - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney and `AppConfiguration.REGION_US_EAST` for Washington DC. 
       - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
       - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
       - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
       - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
+      
 
- 1. *Optional*: You can work [offline](/docs/app-configuration?topic=app-configuration-ac-offline) with local configuration file and perform [feature and property related operations](#ac-java-example). After setting the `appConfiguration.init(AppConfiguration.REGION_US_SOUTH, guid, apikey)`, follow this step:
+The **`init()`** and **`setContext()`** are the initialisation classes and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across classes using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appConfigClient-across-other-classes).
+{: important}
 
-    ```java
-    String configurationFile = "custom/userJson.json";
-    Boolean liveConfigUpdateEnabled = true;
-    // Set the collectionId and environmentId to start the configuration fetching operation.
-    appConfiguration.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled);
-    ```
-    {: codeblock}
+### Option to use a persistent cache for configuration
 
-   Where,
-   - configurationFile: Path to the JSON file which contains configuration details.
-   - liveConfigUpdateEnabled: Set this value to `false` if the new configuration values shouldn't be fetched from the server. Make sure to provide a proper JSON file in the `configurationFile` path. By default, this value is enabled.
+{: #ac-java-persistent-cache}
+
+In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
+
+```java
+// 1. default (without persistent cache)
+    appConfigClient.setContext(collectionId, environmentId);
+
+// 2. optional (with persistent cache)
+    ConfigurationOptions configOptions = new ConfigurationOptions();
+    configOptions.setPersistentCacheDirectory("/var/lib/docker/volumes/");
+    appConfigClient.setContext(collectionId, environmentId, configOptions);
+
+```
+
+{: codeblock}
+
+where,
+- persistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `appconfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+  
+   
+When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+
+### Offline options
+{: #ac-java-offline}
+
+The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
+
+```java
+ConfigurationOptions configOptions = new ConfigurationOptions();
+configOptions.setBootstrapFile("saflights/flights.json");
+configOptions.setLiveConfigUpdateEnabled(false);
+appConfigClient.setContext(collectionId, environmentId, configOptions);
+```
+
+{: codeblock}
+
+where,
+
+- bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+
+- liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is set to `true`.
+
 
 ### Examples for using feature and property related APIs
 {: #ac-use-java-example}
@@ -122,7 +159,7 @@ Refer to the below examples for using the feature and property related APIs.
 {: #ac-java-get-single-feature}
 
 ```java
-  Feature feature = appConfiguration.getFeature("feature_id");
+Feature feature = appConfigClient.getFeature("feature_id");
 
 if (feature) {
     System.out.println("Feature Name : " + feature.getFeatureName());
@@ -137,7 +174,7 @@ if (feature) {
 {: #ac-java-get-all-features}
 
 ```java
-HashMap<String, Feature> features = appConfiguration.getFeatures();
+HashMap<String, Feature> features = appConfigClient.getFeatures();
 ```
 {: codeblock}
 
@@ -159,7 +196,7 @@ String value = (String) feature.getCurrentValue("entityId", entityAttributes);
 {: #ac-java-get-single-property}
 
 ```java
-Property property = appConfiguration.getProperty("property_id");
+Property property = appConfigClient.getProperty("property_id");
 
 if (property) {
     System.out.println("Property Name : " + property.getPropertyName());
@@ -173,7 +210,7 @@ if (property) {
 {: #ac-java-get-all-property}
 
 ```java
-HashMap<String, Property> property = appConfiguration.getProperties();
+HashMap<String, Property> property = appConfigClient.getProperties();
 ```
 {: codeblock}
 
@@ -192,6 +229,23 @@ entityAttributes.put("country", "India");
 String value = (String) property.getCurrentValue("entityId", entityAttributes);
 ```
 {: codeblock}
+
+### Fetching the appConfigClient across other classes
+{: #fetching-the-appConfigClient-across-other-classes}
+Once the SDK is initialized, the appConfigClient can be obtained across other classes as shown below:
+
+```java
+// **other classes**
+
+import com.ibm.cloud.appconfiguration.sdk.AppConfiguration;
+AppConfiguration appConfigClient = AppConfiguration.getInstance();
+
+Feature feature = appConfigClient.getFeature("string-feature");
+boolean enabled = feature.isEnabled();
+String featureValue = (String) feature.getCurrentValue(entityId, entityAttributes);
+```
+{: codeblock}
+
 
 ## Supported data types
 {: #ac-integrate-data-types}
@@ -213,7 +267,7 @@ format as shown in the below table.
 {: #ac-java-example-ff}
 
 ```java
-Feature feature = appConfiguration.getFeature("json-feature");
+Feature feature = appConfigClient.getFeature("json-feature");
 if (feature != null) {
     feature.getFeatureDataType();       // STRING
     feature.getFeatureDataFormat();     // JSON
@@ -233,7 +287,7 @@ String expected_output = (String) ((JSONObject) tar_val.get(0)).get('description
 JSONObject tar_val = (JSONObject) feature.get_current_value(entityId, entityAttributes);
 String expected_output = (String) tar_val.get('role');
 
-Feature feature = appConfiguration.getFeature("yaml-feature");
+Feature feature = appConfigClient.getFeature("yaml-feature");
 if (feature != null) {
     feature.getFeatureDataType();       // STRING
     feature.getFeatureDataFormat();     // YAML
@@ -246,11 +300,11 @@ if (feature != null) {
 {: #ac-java-example-property}
 
 ```java
-Property property = appConfiguration.getProperty("json-property");
+Property property = appConfigClient.getProperty("json-property");
 if (property != null) {
-    property.getPropertyDataType()     // STRING
-    property.getPropertyDataFormat()   // JSON
-    property.getCurrentValue(entityId, entityAttributes) // JSONObject or JSONArray is returned
+    property.getPropertyDataType();     // STRING
+    property.getPropertyDataFormat();   // JSON
+    property.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
 
 }
 
@@ -267,11 +321,11 @@ String expected_output = (String) ((JSONObject) tar_val.get(0)).get('description
 JSONObject tar_val = (JSONObject) property.get_current_value(entityId, entityAttributes);
 String expected_output = (String) tar_val.get('role');
 
-Property property = appConfiguration.getProperty("yaml-property");
+Property property = appConfigClient.getProperty("yaml-property");
 if (property != null) {
-    property.getPropertyDataType()     // STRING
-    property.getPropertyDataFormat()   // YAML
-    property.getCurrentValue(entityId, entityAttributes) // Yaml String is returned
+    property.getPropertyDataType();     // STRING
+    property.getPropertyDataFormat();   // YAML
+    property.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
 
 }
 ```
@@ -279,12 +333,12 @@ if (property != null) {
 
 
 #### Set listener for feature or property changes
-{: #ac-java-listen-feature-changes}
+{: #ac-java-listen-feature-and-property-changes}
 
-To listen to the data changes, add the following code in your application:
+The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appConfigClient.
 
 ```java
-appConfiguration.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
+appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
     @Override
     public void onConfigurationUpdate() {
        System.out.println("Got feature/property now");
@@ -297,6 +351,6 @@ appConfiguration.registerConfigurationUpdateListener(new ConfigurationUpdateList
 {: #ac-java-fetch-latest-data}
 
 ```java
-appConfiguration.fetchConfigurations()
+appConfigClient.fetchConfigurations();
 ```
 {: codeblock}
