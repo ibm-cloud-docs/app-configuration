@@ -70,7 +70,7 @@ subcollection: app-configuration
 2. In your Java microservice or application, include the SDK with:
 
    ```java
-   import com.ibm.cloud.appconfiguration.sdk.AppConfiguration
+   import com.ibm.cloud.appconfiguration.sdk.AppConfiguration;
    ```
    {: codeblock}
 
@@ -80,7 +80,7 @@ subcollection: app-configuration
      ```java
       AppConfiguration appConfigClient = AppConfiguration.getInstance();
 
-      String guid =  "guid"
+      String guid =  "guid";
       String apikey = "apikey";
       String region = AppConfiguration.REGION_US_SOUTH;
 
@@ -138,6 +138,7 @@ The SDK is also designed to serve configurations, and perform feature flag and p
 ConfigurationOptions configOptions = new ConfigurationOptions();
 configOptions.setBootstrapFile("saflights/flights.json");
 configOptions.setLiveConfigUpdateEnabled(false);
+appConfigClient.setContext(collectionId, environmentId, configOptions);
 ```
 
 {: codeblock}
@@ -146,7 +147,7 @@ where,
 
 - bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
 
-- liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `False` if the new configuration values must not be fetched from the server. By default, this value is set to True.
+- liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is set to `true`.
 
 
 ### Examples for using feature and property related APIs
@@ -301,9 +302,9 @@ if (feature != null) {
 ```java
 Property property = appConfigClient.getProperty("json-property");
 if (property != null) {
-    property.getPropertyDataType()     // STRING
-    property.getPropertyDataFormat()   // JSON
-    property.getCurrentValue(entityId, entityAttributes) // JSONObject or JSONArray is returned
+    property.getPropertyDataType();     // STRING
+    property.getPropertyDataFormat();   // JSON
+    property.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
 
 }
 
@@ -322,9 +323,9 @@ String expected_output = (String) tar_val.get('role');
 
 Property property = appConfigClient.getProperty("yaml-property");
 if (property != null) {
-    property.getPropertyDataType()     // STRING
-    property.getPropertyDataFormat()   // YAML
-    property.getCurrentValue(entityId, entityAttributes) // Yaml String is returned
+    property.getPropertyDataType();     // STRING
+    property.getPropertyDataFormat();   // YAML
+    property.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
 
 }
 ```
