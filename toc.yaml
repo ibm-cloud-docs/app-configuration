@@ -91,6 +91,7 @@ toc:
       - link:
           label: API Explorer
           href: https://{DomainName}/apidocs/app-configuration)
+      - ac-notices.md
 
   - navgroup:
       id: help
