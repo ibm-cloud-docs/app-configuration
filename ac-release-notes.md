@@ -54,7 +54,6 @@ In-memory based cache support for Node.js and Go SDK
 {: #may-2021}
 
 {{site.data.keyword.appconfig_notm}} is made generally available (GA).
-{: #added-environments}
 
 ## April 2021
 {: #april-2021}
