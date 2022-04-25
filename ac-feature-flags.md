@@ -27,8 +27,6 @@ You can create and manage feature flags, add them to collections and use them in
 
 A feature can be enabled or disabled to all the collection users or to a specific set of users and devices.
 
-Feature roll outs can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled.
-
 By default, the Feature flags pane displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record. Flag types are categorized as Boolean, Numeric or String.
 - A **Boolean** flag has two values and you can set the default value as 'true' or 'false'.
 - A **String** type flag supports data in the form of text, and JSON or YAML files.
@@ -115,6 +113,11 @@ For adding collections to the feature flag, for the **Flag availability across c
 
 If you try to target a feature flag, that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}
+
+## Configure feature rollout percentage
+{: #configure-rollout-percentage}
+
+You can configure the feature flag with a rollout percentage in the range of 0 to 100, denoting the applicability of the feature to a partial set of users or devices. Phased rollout helps to perform incremental expansion of the feature, providing more control on the release cycle and achieve progressive delivery. 
 
 ## Targeting a segment with a feature flag
 {: #targeting-segment-with-feature-flag}
