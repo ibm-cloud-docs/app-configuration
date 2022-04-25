@@ -33,7 +33,7 @@ Environments in {{site.data.keyword.appconfig_short}} represents your applicatio
 ## Feature flags
 {: #ac-setup-ff}
 
-Separate code delivery from feature enablement. Dark launch feature code in the application at specified date or to a set of target users. For more information, see [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags).
+Separate code delivery from feature enablement. Dark launch feature code in the application to a set of target users. For more information, see [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags).
 
 ## Properties
 {: #ac-setup-prop}
