@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-09-22"
+  years: 2021, 2022
+lastupdated: "2022-04-26"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -10,31 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
-{:kotlin: .ph data-hd-programlang='Kotlin'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration client SDK for Android
 {: #ac-integrate-sdks-android}
@@ -57,7 +33,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
-1. Install the SDK using either one of the options:
+1. Install the SDK by using either one of the options:
    - [Download](https://github.com/IBM/appconfiguration-android-client-sdk) and import the package to your Android studio project.
    - Get the package through Gradle by adding the:
       - Add {{site.data.keyword.appconfig_short}} Android client SDK dependency to Project level `build.gradle` file.
@@ -101,7 +77,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    ```
    {: codeblock}
 
-   where,
+   Where:
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
@@ -196,23 +172,23 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
    ```
    {: codeblock}
 
-### Supported Data types
+### Supported data types
 {: #ac-integrate-data-types-kotlin}
 
-App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
-Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
-format accordingly as shown in the below table.
+App Configuration service configures the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. Accordingly, the SDK processes each format as shown in Table 1.
 
-| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                 | BOOLEAN      | not applicable | `java.lang.Boolean`                                                | `true`                                                               |
-| `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
-| "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre> |
-{: caption="Table 1. Example outputs" caption-side="top"}
+| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
+|  |  |  |  |  |
+| `true` | BOOLEAN | not applicable | `java.lang.Boolean` | `true` |
+| `25` | NUMERIC | not applicable | `java.lang.Integer` | `25` |
+| "a string text" | STRING | TEXT | `java.lang.String` | `a string text` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+|  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
+{: caption="Table 1. Example outputs" caption-side="bottom"}
 
 #### Feature flag
+{: #ac-feat-flag}
 
 ```kt
   val feature: Feature? = appConfiguration.getFeature("json-feature")
@@ -228,11 +204,12 @@ format accordingly as shown in the below table.
   val feature: Feature? = appConfiguration.getFeature("yaml-feature")
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
+```
  {: codeblock}
 
 #### Property
+{: #ac-property}
 
 ```javascript
   val property: Property? = appConfiguration.getProperty("json-property")
@@ -248,19 +225,19 @@ format accordingly as shown in the below table.
   val property: Property? = appConfiguration.getProperty("yaml-property")
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
+```
 {: codeblock}  
 
 - Force fetch the configurations from server.
-   ```kotlin
+
+```kotlin
    appConfiguration.fetchConfigurations()
-   ```
-   {: codeblock}
+```
+{: codeblock}
 
 ## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
-
 
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
@@ -326,7 +303,7 @@ format accordingly as shown in the below table.
    ```
    {: codeblock}
 
-   where,
+   Where:
    - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
@@ -345,7 +322,7 @@ format accordingly as shown in the below table.
    ```
    {: codeblock}
 
-### Examples for using property and feature-related APIs for Android app written in Java
+### Examples for using property and feature-related APIs for Android apps written in Java
 {: #ac-integrate-ff-example-android-java}
 
 Refer to the examples for using the property and feature-related APIs.
@@ -433,24 +410,14 @@ Refer to the examples for using the property and feature-related APIs.
    ```
    {: codeblock}
 
-### Supported Data types
+### Supported data types
 {: #ac-integrate-data-types-java}
 
 
-App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
-Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
-format accordingly as shown in the below table.
-
-| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                 | BOOLEAN      | not applicable | `java.lang.Boolean`                                                | `true`                                                               |
-| `25`                                                                                                   | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
-| "a string text"                                                                                        | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre> |
-{: caption="Table 1. Example outputs" caption-side="top"}
+App Configuration service configures the feature flag and properties in the following data types : Boolean, Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in Table 1.
 
 #### Feature Flag
+{: #ac-feat-flag1}
 
 ```java
   Feature feature = appConfiguration.getFeature("json-feature");
@@ -466,11 +433,12 @@ format accordingly as shown in the below table.
   Feature feature = appConfiguration.getFeature("yaml-feature");
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
+```
  {: codeblock}  
 
 #### Property
+{: #ac-prop1}
 
 ```java
   Property property = appConfiguration.getProperty("json-property");
@@ -486,13 +454,14 @@ format accordingly as shown in the below table.
   Property property = appConfiguration.getProperty("yaml-property");
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
+```
  {: codeblock}  
 
 
 - Force fetch the configurations from server.
-   ```java
+
+```java
    appConfiguration.fetchConfigurations()
-   ```
-   {: codeblock}
+```
+{: codeblock}

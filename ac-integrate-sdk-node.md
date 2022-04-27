@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-09-09"
+  years: 2020, 2023
+lastupdated: "2022-04-25"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -10,30 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration server SDK for Node
 {: #ac-integrate-sdks}
@@ -49,7 +26,7 @@ subcollection: app-configuration
 1. Install the SDK. Use the following code from the `npm` registry.
 
    ```bash
-   $ npm install ibm-appconfiguration-node-sdk
+    npm install ibm-appconfiguration-node-sdk
    ```
    {: codeblock}
 
@@ -80,15 +57,15 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-   where,
+   Where:
    - region: Region where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: ID of the collection created in App Configuration service instance under the Collections section.
    - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-   ### Option to use a persistent cache for configuration
-   {: #ac-init-cache-node-sdk}
+### Option to use a persistent cache for configuration
+{: #ac-init-cache-node-sdk}
 
    In order for your application and SDK to continue its operations during the unlikely unavailability of the {{site.data.keyword.appconfig_short}} server, you can configure the SDK to use a persistent cache. The SDK uses the persistent cache to store {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
    ```javascript
@@ -100,12 +77,13 @@ subcollection: app-configuration
      persistentCacheDirectory: '/var/lib/docker/volumes/'
    })
    ```
-   * persistentCacheDirectory: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the App Configuration service information.
 
-   When persistent cache is enabled, the SDK keeps the last known good configuration in the persistent cache. In  case the {{site.data.keyword.appconfig_short}} server is unreachable, the most recent configurations in the persistent cache are loaded to the application to continue working.
+* persistentCacheDirectory: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the App Configuration service information.
 
-   ### Offline options
-   {: #ac-offline-node-sdk}
+   When persistent cache is enabled, the SDK keeps the last known good configuration in the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the most recent configurations in the persistent cache are loaded to the application to continue working.
+
+### Offline options
+{: #ac-offline-node-sdk}
 
    The SDK is also designed to serve configurations, perform feature flag and property evaluations without being connected to App Configuration service.
    ```javascript
@@ -114,14 +92,15 @@ subcollection: app-configuration
      liveConfigUpdateEnabled: false
    })
    ```
-   * bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
-   * liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values are not to be fetched from the server.
+
+* bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+* liveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values are not to be fetched from the server.
 
 
 ### Examples for using feature and property-related APIs
 {: #ac-integrate-ff-example}
 
-Refer to the below examples for using the feature-related APIs.
+See the following examples for using the feature-related APIs.
 
 #### Get single feature
 {: #ac-integrate-ff-get-single-feature}
@@ -168,6 +147,7 @@ if(feature) {
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
 
 ##### Feature usage
+{: #ac-integrate-ff-feature-usage}
 
 * If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, provide a JSON object as `entityAttributes` parameter to this method.
 
@@ -227,6 +207,7 @@ if(property) {
 You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.  Pass a unique `entityId` as the parameter to perform the property evaluation.
 
 ##### Property usage
+{: #ac-integrate-ff-property-usage}
 
 - If the property is configured with segments in the App Configuration service, provide a JSON object as `entityAttributes` parameter to this method.
 
@@ -255,17 +236,17 @@ You can use the `property.getCurrentValue(entityId, entityAttributes)` method to
 
 You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
 
-| **Feature or Property value**                                                                          | **Data type** | **Data format** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                                | `true`                                                               |
-| `25`                                                                                                   | NUMERIC      | not applicable | `number`                                             | `25`                                                                 |
-| "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                              | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                              | <pre>"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"</pre>   |
-{: caption="Table 1. Example outputs" caption-side="top"}
+| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
+| -- | -- | -- | -- | -- |
+| `true` | BOOLEAN | not applicable | `boolean` | `true` |
+| `25` | NUMERIC | not applicable | `number` | `25` |
+| "a string text" | STRING | TEXT | `string` | `a string text` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+|  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
+{: caption="Table 1. Example outputs" caption-side="bottom"}
 
-
-#### Feature flag
+### Feature flag
+{: #ac-integrate-ff-feature-flag}
 
 ```javascript
   const feature = client.getFeature('json-feature');
@@ -283,7 +264,8 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 ```
 {: codeblock}
 
-#### Property
+### Property
+{: #ac-integrate-ff-property}
 
 ```javascript
   const property = client.getProperty('json-property');
@@ -301,7 +283,8 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 ```
 {: codeblock}
 
-#### Listen to the feature or property changes
+### Listen to the feature or property changes
+{: #ac-integrate-ff-feature-prop-change}
 
 To listen to the data changes, add the following code in your application:
 

@@ -1,20 +1,14 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2021-08-25"
+  years: 2020, 2022
+lastupdated: "2022-04-25"
 
 keywords: public isolation for app configuration, compute isolation for app configuration, app configuration architecture, workload isolation in app configuration
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:table: .aria-labeledby="caption"}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Learning about {{site.data.keyword.appconfig_short}} architecture and workload isolation
 {: #compute-isolation}
@@ -49,5 +43,5 @@ Analytics server component collects the usage metrics for configuration data and
 Each regional deployment of the {{site.data.keyword.appconfig_full}} serves multiple tenants that are identified by the {{site.data.keyword.IBM_notm}}service instance.
 
 - The {{site.data.keyword.appconfig_notm}} service in a region is a multi-tenant highly available service.
-- The configuration data that is collected and processed by the {{site.data.keyword.appconfig_notm}} service is associated with the service instance that is created by a tenant and not visible to the other service instances by virtue of this association.
-- Data for all tenants is colocated in the same datastore and segmented by the tenant-specific instance <i>guid</i>. Retrieval of tenant-specific data is enforced by access control policies.
+- The configuration data that is collected and processed by the {{site.data.keyword.appconfig_notm}} service is associated with the service instance that is created by a tenant. This configuration data is not visible to the other service instances by virtue of this association.
+- Data for all tenants is colocated in the same data store and segmented by the tenant-specific instance `guid`. Retrieval of tenant-specific data is enforced by access control policies.

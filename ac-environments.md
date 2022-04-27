@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-04-18"
+  years: 2021, 2022
+lastupdated: "2022-04-26"
 
 keywords: app-configuration, app configuration, environment, environments, create environment
 
@@ -10,27 +10,20 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Environments
 {: #ac-environments}
 
-Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. Create your environments based on your development requirements.
+Environments in {{site.data.keyword.appconfig_short}} represent your application environments. Typical environments might be dev, staging, or production. Environments manage your feature flags and properties into deployments from development to production. Create your environments based on your development requirements.
 {: shortdesc}
 
 When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.
 {: note}
 
-Each feature flag or properties created has its own values, tags and segment rules for each environment.  You can also toggle the feature flag per environment.  This means that you can have different rules for flags per environment for the same feature flag or properties.
+Each feature flag or properties that are created has its own values, tags, and segment rules for each environment. You can also toggle the feature flag per environment so that you can have different rules for flags per environment for the same feature flag or properties.
 
-By default, the environemnt pane displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
+By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 
 ![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 3. List of environments" caption-side="bottom"}
 
@@ -40,11 +33,11 @@ By default, the environemnt pane displays the list of environments that are crea
 To create an environment, complete these steps:
 
 1. In the {{site.data.keyword.appconfig_short}} console, click **Environments**.
-1. Click **Create**. The side-panel opens with fields for creating a new environment.
+1. Click **Create**. The side panel opens with fields for creating a new environment.
 
-   ![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 4. Creating a new environment" caption-side="bottom"}
+![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 4. Creating a new environment" caption-side="bottom"}
 
-1. Provide the environment details:
+1. Provide the following environment details:
    - **Name** - name of the environment.
    - **Environment ID** - the environment ID value is auto suggested based on the entered environment name. You can modify the same, if needed. Use the **Environment ID** value as the identifier in your SDK or API code.
    - **Description** - add a description of the environment, which is optional.
@@ -59,7 +52,7 @@ The overflow menu for each of the environment (three vertical dots) consists of 
 
 ![Overflow menu for an environment](images/ac-environments-overflow-menu.png "Overflow menu for an environment"){: caption="Figure 5. Overflow menu for an environment" caption-side="bottom"}
 
-* When **Edit** option is selected, you can make changes to the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
+* When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
 * When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected environment.
 
 By default, at least one environment must be present in an {{site.data.keyword.appconfig_short}} service instance.
