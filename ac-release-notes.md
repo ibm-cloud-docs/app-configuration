@@ -28,6 +28,11 @@ subcollection: app-configuration
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
+## April 2022
+{: #april-2022}
+
+Phased rollout support for feature flags. Upgrade the server SDKs to version 0.3.0 and above to use the phased rollout feature.
+
 ## September 2021
 {: #sep-2021}
 
@@ -54,7 +59,6 @@ In-memory based cache support for Node.js and Go SDK
 {: #may-2021}
 
 {{site.data.keyword.appconfig_notm}} is made generally available (GA).
-{: #added-environments}
 
 ## April 2021
 {: #april-2021}
