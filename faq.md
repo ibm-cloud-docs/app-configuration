@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-05-24"
+  years: 2020, 2022
+lastupdated: "2022-04-25"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -10,15 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{: note .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:faq: data-hd-content-type='faq'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs for {{site.data.keyword.appconfig_short}} - usage and billing
 {: #ac-faqs-usage}
@@ -32,16 +24,16 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 1. In the {{site.data.keyword.cloud_notm}} catalog, search *{{site.data.keyword.appconfig_short}}* and select **{{site.data.keyword.appconfig_short}}**. The service configuration screen opens.
-1. Select a <uicontrol>Region</uicontrol>.
-1. Select a <uicontrol>Pricing plan</uicontrol>.
-1. Configure your resource with <uicontrol>Service name</uicontrol>, or use the preset name.
-1. Select a <uicontrol>Resource group</uicontrol>.
-1. <step importance="optional"><cmd>Define </cmd> <uicontrol>Tags</uicontrol> that are needed to identify this service instance. If your tags are billing related, consider writing tags as key: value pairs to help group-related tags, such as costctr: 124.
-1. Click <uicontrol>Create</uicontrol>. A new service instance is created and the {{site.data.keyword.appconfig_short}} service console displayed.
+1. Select a **Region**.
+1. Select a **Pricing plan**.
+1. Configure your resource with **Service name**, or use the preset name.
+1. Select a **Resource group**.
+1. Define **Tags** that are needed to identify this service instance. If your tags are billing related, consider writing tags as key: value pairs to help group-related tags, such as costctr: 124.
+1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} service console displayed.
 
 ## What pricing plans are available with {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-pricing}
-{: faq}
+
  {{site.data.keyword.appconfig_short}} has three pricing plans:
 
 | Plan  | Inclusions| Capabilities|Price|
@@ -49,10 +41,11 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 | Lite   | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.| Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production.|Free|
 | Standard      | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities.|<ul><li>$250.00 USD/Application instance</li><li>$0.01 USD/Active Entity ID</li><li>$10.00 USD/Hundred Thousand API Calls</li></ul>|
 | Enterprise     | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes targeting to segments in addition to property management and feature flags that are found in the Standard plan. |<ul><li>$500.00 USD/Application instance</li><li>$0.01 USD/Active Entity ID</li><li>$10.00 USD/Hundred Thousand API Calls</li></ul>|
+{: caption="Table 1. Pricing plans" caption-side="bottom"}
 
 ## What are the charges to use {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-charges}
-{: faq}
+
 The fundamental pricing metrics for {{site.data.keyword.appconfig_short}} are Application Instance, Active Entity ID, and API Call.  
 
 **Application Instance**- An Application Instance is a uniquely named copy of {{site.data.keyword.appconfig_short}} created by you but managed by {{site.data.keyword.IBM_notm}}. Multiple instances of {{site.data.keyword.appconfig_short}} within a single environment are all considered separate application instances, as are individual {{site.data.keyword.appconfig_short}}instances in multiple environments (such as test, development, staging, or production). 
@@ -75,7 +68,6 @@ View basic historical {{site.data.keyword.appconfig_short}} usage metrics on the
 {: faq}
 The simplest way to estimate cost for any {{site.data.keyword.Bluemix_notm}} managed service is to use the [{{site.data.keyword.Bluemix_notm}} Cost Estimator tool](https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost).
 
-</br>
 
 Guidelines to help you predict cost in more detail: </br>
 
@@ -83,7 +75,8 @@ The **Application Instance** cost is a fixed monthly cost. If you delete an {{si
 See all your existing instances in the {{site.data.keyword.Bluemix_notm}} Console Resource List in the Services Section. Determine your plan either by clicking the Resource List row that contains your {{site.data.keyword.appconfig_short}}instance to reveal an information slide-out, or go to the instance dashboard and look in the Plan section.</br>  
 Some {{site.data.keyword.appconfig_short}} pricing plans have a monthly Application Instance price and others do not. If the plan you select has an instance price, the price for the instance includes a set number of entity IDs and API calls that are included in the instance price. If you exceed the included allotment, your instance continues to operate normally but you accumulate an overage charge based on the published rate for entity IDs and API calls.</br></br>
 
-The **Active Entity ID** cost is based on the number of unique entities that interact with your {{site.data.keyword.appconfig_short}} instance during the month. Entities self-identify when an API call is made, and each instance of your application provides a unique entity ID. You are not charged for entities that do not call {{site.data.keyword.appconfig_short}} during the month. If your pricing plan includes a free allotment of Active Entity IDs, then you are not charged until the allotment is exceeded.</br>
+The **Active Entity ID** cost is based on the number of unique entities that interact with your {{site.data.keyword.appconfig_short}} instance during the month. Entities self-identify when an API call is made, and each instance of your application provides a unique entity ID. You are not charged for entities that do not call {{site.data.keyword.appconfig_short}} during the month. If your pricing plan includes a free allotment of Active Entity IDs, then you are not charged until the allotment is exceeded.
+
 Active Entity ID cost can be difficult to predict so you need to closely monitor your historical activity. See [How to view usage metrics for {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-metrics) Rely on your own domain knowledge, business metrics, and usage forecasts to predict Active Entity ID cost. </br></br>
 
 The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined. Check section - [What are the charges to use {{site.data.keyword.appconfig_short}}?](/docs/app-configuration?topic=app-configuration-ac-faqs#faq-ac-charges) to determine what constitutes an API call.</br>
@@ -91,7 +84,7 @@ If your pricing plan includes a free allotment of API calls, then you are not ch
 
 ## Can you give some example pricing scenarios?
 {: #faq-ac-sample}
-{: faq}
+
 ### Pricing Scenario 1: Mobile App with Feature Flags
 Assume you have a mobile app and you want feature flags and targeted segments to roll out features incrementally to different sets of users. Your historical metrics show 200,000 users but only about 50% are active in a month. An average active user opens the app or brings it to the foreground once every day. You expect to roll out a new feature twice per month.</br></br>
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.</br> 
@@ -159,6 +152,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Audit| IBM Cloud Activity Tracker| IBM Cloud Activity Tracker|IBM Cloud Activity Tracker|
 | Support | per your IBM Cloud support plan| per your IBM Cloud support plan|per your IBM Cloud support plan|
 | Satellite integration and [Razee CRD](https://github.com/IBM/appconfiguration-razee)| - | -|Yes|
+{: caption="Table 2. capabilities, quotas, and limits" caption-side="bottom"}
 
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?
 {: #faq-ac-audit}
@@ -167,7 +161,7 @@ If you need strict governance and accountability within your {{site.data.keyword
 
 ## How do I archive {{site.data.keyword.appconfig_short}} activity data?
 {: #faq-ac-archive}
-{: faq}
+
 If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.Bluemix_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe) section of the {{site.data.keyword.Bluemix_notm}} console. Then archive events from an {{site.data.keyword.Bluemix_notm}} Activity Tracker instance into a bucket in an {{site.data.keyword.Bluemix_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving )
 
 ## In what regions is {{site.data.keyword.appconfig_short}} available?

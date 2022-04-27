@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-01-27"
+  years: 2021, 2022
+lastupdated: "2022-04-26"
 
 keywords: app-configuration, app configuration, razee plugin, razee
 
@@ -10,30 +10,23 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Release your features across clusters with {{site.data.keyword.appconfig_short}}
 {: #ac-razee-plugin}
 
-[Razee](https://razee.io/) is an opensource project developed by IBM to automate and manage the deployment of Kubernetes resources across clusters, environments, and cloud providers.
+[Razee](https://razee.io/) is an open source project that is developed by IBM to automate and manage the deployment of Kubernetes resources across clusters, environments, and cloud providers.
 {: shortdesc}
 
-{{site.data.keyword.appconfig_short}} uses Razee to release features across clusters and helps in templatizing the cluster resources. {{site.data.keyword.appconfig_short}} Razee plugin helps in the following:
+{{site.data.keyword.appconfig_short}} uses Razee to release features across clusters and helps in templatizing the cluster resources. {{site.data.keyword.appconfig_short}} Razee plug-in helps in the following areas:
 
-- Custom resource development using Razee
+- Custom resource development by using Razee
 - Fetches the feature flag values from {{site.data.keyword.appconfig_short}} service instance
 - Templatizes and controls the deployment of Kubernetes resources across clusters
 
-You can try the {{site.data.keyword.appconfig_short}} Razee plugin from [here](https://github.com/IBM/appconfiguration-razee).
+You can try the {{site.data.keyword.appconfig_short}} Razee plug-in from [here](https://github.com/IBM/appconfiguration-razee).
 
-## Common use-cases for {{site.data.keyword.appconfig_short}} Razee plugin
+## Common use cases for {{site.data.keyword.appconfig_short}} Razee plug-in
 {: #ac-usecases-razee-plugin}
 
 - Controlling Kubernetes deployments to scale up or down for a segment of clusters

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-25"
+  years: 2021, 2022
+lastupdated: "2022-04-26"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -10,94 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:new_window: target="_blank"}
-{: note .note}
-{:note: .note}
-{: objectc data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 # Monitor {{site.data.keyword.appconfig_short}} service metrics with {{site.data.keyword.mon_full_notm}}
 {: #ac-monitoring}
@@ -110,84 +23,84 @@ Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the 
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To get started, you need to [provision IBM Cloud Monitoring ](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information, see [here. ](https://cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
-
+To get started, you need to [provision IBM Cloud Monitoring](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information, see [Provisioning an instance](https://cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
 
 Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{site.data.keyword.appconfig_short}} service deployments in the following regions:
 
-| Deployment region    | Monitoring region |
-|-------------|-------------|
-| Dallas| Dallas |
-| London| London|
-| Sydney| Sydney|
+| Deployment region | Monitoring region |
+| -- | -- |
+| Dallas | Dallas |
+| London | London |
+| Sydney | Sydney |
+{: caption="Table 1. Deployment and monitoring regions" caption-side="bottom"}
 
 Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling)
 {: note .note}
 
 You can configure only one instance of the {{site.data.keyword.mon_full_notm}} service per region to collect platform metrics.
- - To configure the {{site.data.keyword.mon_full_notm}} instance, you must turn on the platform metrics configuration setting.
- - If a monitoring instance in a region is already enabled to collect platform metrics, metrics from enabled-monitoring services are collected automatically and available for monitoring through this instance. For more information about enabled-monitoring services, see {{site.data.keyword.Bluemix}} services.
+- To configure the {{site.data.keyword.mon_full_notm}} instance, you must turn on the platform metrics configuration setting.
+- If a monitoring instance in a region is already enabled to collect platform metrics, metrics from enabled-monitoring services are collected automatically and available for monitoring through this instance. For more information about enabled-monitoring services, see {{site.data.keyword.Bluemix}} services.
 
+To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where the {{site.data.keyword.Bluemix_notm}} instance is provisioned.
+{:note: .note}
 
- To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where the {{site.data.keyword.Bluemix_notm}} instance is provisioned.
- {:note: .note}
-
- ## Viewing metrics 
+## Viewing metrics 
 {: #view-metrics}
 
 To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{site.data.keyword.mon_full_notm}} web UI instance that is enabled for platform metrics in the region where your {{site.data.keyword.appconfig_short}} instance is available.
 {:important: .important}
 
-
 ### Launch {{site.data.keyword.mon_full_notm}} web UI from the {{site.data.keyword.appconfig_short}} dashboard
-,{: #access-metrics}
+{: #access-metrics}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}. The {{site.data.keyword.Bluemix_notm}} dashboard opens.
-2. Click **View all** in the Resource summary section of the dashboard.
-3. In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
-4. Click the **Actions** menu, and select **Monitoring**.
-5. A new tab in your browser opens and displays the default dashboard named {{site.data.keyword.appconfig_notm}} within the context of your {{site.data.keyword.appconfig_short}} instance.
+1. Click **View all** in the Resource summary section of the dashboard.
+1. In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
+1. Click the **Actions** menu, and select **Monitoring**.
+1. A new tab in your browser opens and displays the default dashboard that is named {{site.data.keyword.appconfig_notm}} within the context of your {{site.data.keyword.appconfig_short}} instance.
 
 ![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Figure 1. Set up monitoring" caption-side="bottom"}
 
+## Access your {{site.data.keyword.mon_full_notm}} metrics
+{: #access-monitor}
 
- ## Access your {{site.data.keyword.mon_full_notm}} metrics
- {: #access-monitor}
+1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the **Observability** page
+1. Click **DASHBOARDS**
+1. In the Default Dashboards section, expand IBM
+1. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list.
 
- 1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the <wintitle>Observability</wintitle> page
- 2. Click DASHBOARDS
- 3. In the Default Dashboards section, expand IBM
- 4. Choose the {{site.data.keyword.appconfig_short}} dashboard from the list.
- Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}}, it's in the sidebar, under IBM.
- Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service instance.
+Access your deployment's monitoring dashboard from {{site.data.keyword.mon_full_notm}}, it's in the sidebar, under IBM.
+Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service instance.
 
-![IBM Monitoring UI](images/ac-monitoring-dash.png "Monitoring dashboard"){: caption="Figure 2. IBM Cloud Monitoring dasgboard" caption-side="bottom"}
+![IBM Monitoring UI](images/ac-monitoring-dash.png "Monitoring dashboard"){: caption="Figure 2. IBM Cloud Monitoring dashboard" caption-side="bottom"}
 
 ## Metrics available by Service Plan
- {: metrics-by-plan}
+{: #metrics-by-plan}
 
- {{site.data.keyword.appconfig_short}} supports three metrics that you can use to configure in your dashboard for monitoring. The table provides the details about the metrics.
+{{site.data.keyword.appconfig_short}} supports three metrics that you can use to configure in your dashboard for monitoring. The table provides the details about the metrics.
 
  | Metric Name | Enterprise   | Standard    |  Lite   |
  | ------------|--------------| -------------|--------|
  | [IBM Appconfig Instance API request](#ibm-appconfig-instance-api-request)| Yes | Yes |Yes |
  | [IBM Appconfig Evaluation Count](#ibm-appconfig-evaluation-count)| Yes | Yes |Yes |
  | [IBM Appconfig Instance Unauth Request](#ibm-appconfig-instance-unauth-request)| Yes | Yes |Yes |
+{: caption="Table 2. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
- ### IBM Appconfig Instance API request
- {: ibm_apprapp_instance_api}
+### IBM Appconfig Instance API request
+{: #ibm_apprapp_instance_api}
 
 API request count per instance: Count of config API requests made from the SDK.
 
-| Metadata   | Description |
-|-------------|-------------|
+| Metadata | Description |
+| -- | -- |
 | `Metric Name` | `ibm_apprapp_instance_api_request` |
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
+{: caption="Table 3. API request metadata" caption-side="bottom"}
 
- ### IBM Appconfig Evaluation Count
- {: ibm_apprapp_instance_eval}
+### IBM Appconfig Evaluation Count
+{: #ibm_apprapp_instance_eval}
 
  Evaluation count per instance: Count of feature or property evaluations in the SDK.
 
@@ -197,9 +110,10 @@ API request count per instance: Count of config API requests made from the SDK.
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
+{: caption="Table 5. Evaluation metadata" caption-side="bottom"}
 
- ### IBM Appconfig Instance unauth request 
- {: ibm_apprapp_instance_unauth}
+### IBM Appconfig Instance unauth request 
+{: #ibm_apprapp_instance_unauth}
 
  | Metadata   | Description |
 |-------------|-------------|
@@ -207,3 +121,4 @@ API request count per instance: Count of config API requests made from the SDK.
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
+{: caption="Table 6. Instance metadata" caption-side="bottom"}
