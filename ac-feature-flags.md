@@ -116,6 +116,16 @@ For adding collections to the feature flag, for the **Flag availability across c
 If you try to target a feature flag, that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}
 
+## Configure feature rollout percentage
+{: #configure-rollout-percentage}
+
+You can configure the feature flag with a rollout percentage in the range of 0 to 100, denoting the applicability of the feature to a partial set of users or devices. 
+
+Phased rollout helps to enable a feature to a subset of entities, providing more control on the release cycle and achieve progressive delivery.
+
+Phased Rollout capability is available for Lite and Enterprise plans. 
+{: note}
+
 ## Targeting a segment with a feature flag
 {: #targeting-segment-with-feature-flag}
 
