@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-04-25"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -10,31 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration server SDK for Java
 {: #ac-java}
@@ -101,14 +77,13 @@ subcollection: app-configuration
       - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
       
 
-The **`init()`** and **`setContext()`** are the initialisation classes and should be invoked **only once** using appConfigClient. The appConfigClient, once initialised, can be obtained across classes using **`AppConfiguration.getInstance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-java#fetching-the-appConfigClient-across-other-classes).
+The **`init()`** and **`setContext()`** are the initialization classes and must be invoked **only once** by using appConfigClient. The appConfigClient, when initialized, can be obtained across classes by using **`AppConfiguration.getInstance()`**. For more information, see [Fetching the appConfigClient across other classes](#fetching-the-appConfigClient-across-other-classes).
 {: important}
 
 ### Option to use a persistent cache for configuration
-
 {: #ac-java-persistent-cache}
 
-In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
+For your application and SDK to continue operations during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
 ```java
 // 1. default (without persistent cache)
@@ -120,14 +95,13 @@ In order for your application and SDK to continue operations even during the unl
     appConfigClient.setContext(collectionId, environmentId, configOptions);
 
 ```
-
 {: codeblock}
 
-where,
-- persistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `appconfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+Where:
+- persistentCacheDirectory: Absolute path to a directory that has read and write permission for the user. The SDK creates a file - `appconfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
   
    
-When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
 
 ### Offline options
 {: #ac-java-offline}
@@ -140,10 +114,9 @@ configOptions.setBootstrapFile("saflights/flights.json");
 configOptions.setLiveConfigUpdateEnabled(false);
 appConfigClient.setContext(collectionId, environmentId, configOptions);
 ```
-
 {: codeblock}
 
-where,
+Where:
 
 - bootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
 
@@ -153,7 +126,7 @@ where,
 ### Examples for using feature and property related APIs
 {: #ac-use-java-example}
 
-Refer to the below examples for using the feature and property related APIs.
+See the following examples for using the feature and property related APIs.
 
 #### Get single feature
 {: #ac-java-get-single-feature}
@@ -232,7 +205,8 @@ String value = (String) property.getCurrentValue("entityId", entityAttributes);
 
 ### Fetching the appConfigClient across other classes
 {: #fetching-the-appConfigClient-across-other-classes}
-Once the SDK is initialized, the appConfigClient can be obtained across other classes as shown below:
+
+When the SDK is initialized, the appConfigClient can be obtained across other classes as shown:
 
 ```java
 // **other classes**
@@ -252,18 +226,17 @@ String featureValue = (String) feature.getCurrentValue(entityId, entityAttribute
 
 App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
 Numeric, String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
-format as shown in the below table.
+format as shown in the table 1.
 
-| **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                             | BOOLEAN      | not applicable | `java.lang.Boolean`                                                | `true`                                                               |
-| `25`                                                                                                               | NUMERIC      | not applicable | `java.lang.Integer`                                             | `25`                                                                 |
-| "a string text"                                                                                                    | STRING       | TEXT           | `java.lang.String`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `org.json.JSONObject`                              | `{"firefox": {"name": "Firefox", "pref_url": "about:config"}}` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `java.lang.String`                              | <pre>"men:\n - John Smith\n - Bill Jones\nwomen:\n - Mary Smith\n - Susan Williams"</pre> |
-{: caption="Table 1. Example outputs" caption-side="top"}
+| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `GetCurrentValue()`** | **Example output** |
+| `true` | BOOLEAN | not applicable | `bool` | `true` |
+| `25` | NUMERIC | not applicable | `float64` | `25` |
+| "a string text" | STRING | TEXT | `string` | `a string text` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `map[string]interface{}` | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
+|   `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams`  | STRING | YAML | `java.lang.String` | `"men:\n - John Smith\n - Bill Jones\women:\n - Mary Smith\n - Susan Williams"` |
+{: caption="Table 1. Example outputs" caption-side="bottom"}
 
-#### Feature flag
+### Feature flag
 {: #ac-java-example-ff}
 
 ```java
@@ -335,7 +308,7 @@ if (property != null) {
 #### Set listener for feature or property changes
 {: #ac-java-listen-feature-and-property-changes}
 
-The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appConfigClient.
+The SDK provides mechanism to notify you in real time when feature flag's or property's configuration changes. You can subscribe to configuration changes by using the same appConfigClient.
 
 ```java
 appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {

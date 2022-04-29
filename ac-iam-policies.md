@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-07-06"
+  years: 2020, 2022
+lastupdated: "2022-04-26"
 
 keywords: app-configuration, app configuration, managing service access, iam, account, environments
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing access levels for {{site.data.keyword.appconfig_short}} environments
 {: #ac-service-access-level-management}
@@ -28,7 +21,7 @@ You can enable different levels of access to an {{site.data.keyword.appconfig_sh
 ## Granting access to an environment across instances in the account
 {: #ac-access-management-env}
 
-Carry out the following steps on the {{site.data.keyword.Bluemix_notm}} console:
+Take the following steps on the {{site.data.keyword.Bluemix_notm}} console:
 
 1. From the menu bar, click **Manage > Access (IAM)**, and select **Users** to browse the existing users in your account.
 1. Select the name of the user to assign the access.
@@ -42,7 +35,7 @@ Carry out the following steps on the {{site.data.keyword.Bluemix_notm}} console:
 1. Click **Add**.
 1. Continue to add platform and service access roles as needed and when you are finished, click **Assign**.
 
-![Access to an environment across instances](images/rbac-env.png "Console screenshot"){: caption="Figure 1." caption-side="bottom"}
+![Access to an environment across instances](images/rbac-env.png "Console screen capture"){: caption="Figure 1." caption-side="bottom"}
 
 To enable access to environments across instances, the user must at least have Reader level privileges to the {{site.data.keyword.appconfig_short}} instances in the account.
 {: note}  
@@ -50,7 +43,7 @@ To enable access to environments across instances, the user must at least have R
 ## Granting access to a specific environment in an instance
 {: #ac-access-management-instance}
 
-Carry out the following steps on the {{site.data.keyword.Bluemix_notm}} console:
+Take the following steps on the {{site.data.keyword.Bluemix_notm}} console:
 
 1. From the menu bar, click **Manage > Access (IAM)**, and select **Users** to browse the existing users in your account.
 1. Select the name of the user to assign the access.

@@ -10,30 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration server SDK for Python
 {: #ac-python}
@@ -57,19 +34,19 @@ subcollection: app-configuration
 
  Using `easy_install`
 
-   ```
+   ```py
    easy_install --upgrade ibm-appconfiguration-python-sdk
    ```
    {: codeblock}
 
-2. In your Python application code, include the SDK module with:
+1. In your Python application code, include the SDK module with:
 
    ```py
    from ibm_appconfiguration import AppConfiguration, Feature, Property, ConfigurationType
    ```
    {: codeblock}
 
-3. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
+1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
    ```py
    appconfig_client = AppConfiguration.get_instance()
@@ -78,20 +55,20 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-   where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney and `AppConfiguration.REGION_US_EAST` for Washington DC.
-   - guid: GUID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collection_id: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - environment_id: ID of the environment created in App Configuration service instance.
+   Where:
+- region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney and `AppConfiguration.REGION_US_EAST` for Washington DC.
+- guid: GUID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+- apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+- collection_id: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+- environment_id: ID of the environment created in App Configuration service instance.
   
-   The **`init()`** and **`set_context()`** are the initialisation methods and should be invoked **only once** using appconfig_client. The appconfig_client, once initialised, can be obtained across modules using **`AppConfiguration.get_instance()`**.  [See this example below](/docs/app-configuration?topic=app-configuration-ac-python#fetching-the-appconfig_client-across-other-modules).
+   The **`init()`** and **`set_context()`** are the initialisation methods and should be invoked **only once** by using appconfig_client. The appconfig_client, when initialized, can be obtained across modules by using **`AppConfiguration.get_instance()`**. For more information, see [Fetching the appconfig_client across other modules](#fetching-the-appconfig_client-across-other-modules).
    {: important}
 
 ### Option to use a persistent cache for configuration
 {: #ac-python-persistent-cache}
 
-In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
+For your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
 ```python
 # 1. default (without persistent cache)
@@ -104,11 +81,11 @@ appconfig_client.set_context(collection_id='collection_id', environment_id='envi
 ```
 {: codeblock}
 
-where,
+Where,
 
-- persistent_cache_dir: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `appconfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+- persistent_cache_dir: Absolute path to a directory that has read and write permission for the user. The SDK creates a file - `appconfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
   
-When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
 
 ### Offline options
 {: #ac-python-offline}
@@ -123,7 +100,7 @@ appconfig_client.set_context(collection_id='collection_id', environment_id='envi
 ```
 {: codeblock}
 
-where,
+Where,
 
 - bootstrap_file: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
 
@@ -210,7 +187,7 @@ property_value = property.get_current_value(entity_id='entity_id', entity_attrib
 ### Fetching the appconfig_client across other modules
 {: #fetching-the-appconfig_client-across-other-modules}
 
-Once the SDK is initialized, the appconfig_client can be obtained across other modules as shown below:
+When the SDK is initialized, the appconfig_client can be obtained across other modules as shown:
 
 ```python
 # **other modules**
@@ -227,18 +204,20 @@ feature_value = feature.get_current_value(entity_id, entity_attributes)
 ## Supported data types
 {: #ac-integrate-pyth-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}} service, supporting the  following data types: Boolean, Numeric, and String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}} service, supporting the following data types: Boolean, Numeric, and String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
 format as shown in the table.
 
-| **Feature or Property value**                                                                          | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                                 |
+| **Feature or Property value**                                                                          | **Data type** | **Data format** | **Type of data returned by `GetCurrentValue()`** | **Example output**                                                                 |
 | ------------------------------------------------------------------------------------------------------ | ------------- | --------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `true`                                                                                                 | BOOLEAN       | not applicable  | `bool`                                                | `true`                                                                             |
-| `25`                                                                                                   | NUMERIC       | not applicable  | `int`                                                 | `25`                                                                               |
+| `true`                                                                                                 | BOOLEAN       | Not applicable  | `bool`                                                | `true`                                                                             |
+| `25`                                                                                                   | NUMERIC       | Not applicable  | `int`                                                 | `25`                                                                               |
 | "a string text"                                                                                        | STRING        | TEXT            | `string`                                              | `a string text`                                                                    |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING        | JSON            | `Dictionary or List of Dictionary`                    | `{'firefox': {'name': 'Firefox', 'pref_url': 'about:config'}}`                     |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING        | YAML            | `Dictionary`                                          | `{'men': ['John Smith', 'Bill Jones'], 'women': ['Mary Smith', 'Susan Williams']}` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `Dictionary or List of Dictionary` | `{'firefox': {'name': 'Firefox', 'pref_url': 'about:config'}}` |
+| `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `Dictionary` | `{'men': ['John Smith', 'Bill Jones'], 'women': ['Mary Smith', 'Susan Williams']}` |
+{: caption="Table 1. Example outputs" caption-side="bottom"}
 
-#### Feature flag
+### Feature flag
+{: #ac-integrate-pyth-feat-flag}
 
 ```py
   feature = appconfig_client.get_feature('json-feature')
@@ -270,11 +249,12 @@ format as shown in the table.
 
   tar_val = feature.get_current_value(entityId, entityAttributes)
   expected_output = tar_val['description']
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 
 #### Property
+{: #ac-integrate-pyth-prop}
 
 ```py
   property = appconfig_client.get_property('json-property')
@@ -306,13 +286,13 @@ format as shown in the table.
 
   tar_val = property.get_current_value(entityId, entityAttributes)
   expected_output = tar_val['description']
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 #### Set listener for the feature and property data changes
 {: #ac-python-listen-feature-and-property-changes}
 
-The SDK provides mechanism to notify you in real-time when feature flag's or property's configuration changes. You can subscribe to configuration changes using the same appconfig_client.
+The SDK provides mechanism to notify you in real time when feature flags' or properties' configuration changes. You can subscribe to configuration changes by using the same appconfig_client.
 
 ```py
 def configuration_update(self):
