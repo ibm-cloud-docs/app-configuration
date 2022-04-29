@@ -28,6 +28,13 @@ subcollection: app-configuration
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
+## April 2022
+{: #april-2022}
+
+Phased rollout support for feature flags is available for Lite and Enterprise plan. 
+
+Upgrade the server SDKs to version 0.3.0 and above for the phased rollout feature.
+
 ## January 2022
 {: #jan-2022}
 
