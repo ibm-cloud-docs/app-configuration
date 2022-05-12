@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-12"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -31,7 +31,7 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 ![Create an {{site.data.keyword.appconfig_short}} service instance](images/ac-create-instance.png "Creating an {{site.data.keyword.appconfig_short}} service instance"){: caption="Figure 1. {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
-1. **Select a region** - Currently, Dallas (us-south), London (eu-gb), and Sydney (au-syd) region is supported.
+1. **Select a region** - Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), and Sydney (au-syd) region is supported.
 1. **Select a pricing plan** - Currently, only Standard pricing plan is defined. The standard plan includes all the features that are enabled as on time. You can use simple and uniform REST APIs to configure, enable, segment, and monitor features to mobile devices and web applications.
 1. **Configure your resource** with a **Service name**, or use the preset name.
 1. **Select a resource group** - The resource group selection helps how you want resources to be organized in your account. The resource group that you select cannot be changed after the service instance is created.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-12"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -30,6 +30,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Deployment region | Monitoring region |
 | -- | -- |
 | Dallas | Dallas |
+| Washington DC | Washington DC|
 | London | London |
 | Sydney | Sydney |
 {: caption="Table 1. Deployment and monitoring regions" caption-side="bottom"}
