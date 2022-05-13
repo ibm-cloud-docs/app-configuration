@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-12"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -44,6 +44,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Asia-Pacific| Sydney (au-syd)|MZR|
 | Europe | London (eu-gb)|MZR|
 | North America| Dallas (us-south)|MZR|
+| North America| Washington DC (us-east)|MZR|
 {: caption="Table 1. HA status for the regions" caption-side="top"}
 
 Where:
