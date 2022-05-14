@@ -51,6 +51,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Asia-Pacific| Sydney (au-syd)|MZR|
 | Europe | London (eu-gb)|MZR|
 | North America| Dallas (us-south)|MZR|
+| North America| Washington DC (us-east)|MZR|
 
 Where
 

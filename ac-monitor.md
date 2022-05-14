@@ -118,6 +118,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Deployment region    | Monitoring region |
 |-------------|-------------|
 | Dallas| Dallas |
+| Washington DC| Washington DC |
 | London| London|
 | Sydney| Sydney|
 

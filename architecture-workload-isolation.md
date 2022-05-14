@@ -26,7 +26,7 @@ and how customer workloads are isolated from each other in {{site.data.keyword.a
 ## {{site.data.keyword.appconfig_short}} architecture
 {: #architecture}
 
-{{site.data.keyword.appconfig_notm}} service is offered in the regions: Dallas, London, and Sydney. Every region supported, has its own {{site.data.keyword.Bluemix_notm}} Kubernetes Service cluster with several worker nodes. Each worker node runs several instances of {{site.data.keyword.appconfig_short}} service components. Each region is fronted by a global load balancer and a web application firewall.
+{{site.data.keyword.appconfig_notm}} service is offered in the regions: Dallas, Washington DC, London, and Sydney. Every region supported, has its own {{site.data.keyword.Bluemix_notm}} Kubernetes Service cluster with several worker nodes. Each worker node runs several instances of {{site.data.keyword.appconfig_short}} service components. Each region is fronted by a global load balancer and a web application firewall.
 
 {{site.data.keyword.appconfig_short}} service persists tenant data in highly available database. A single regional database is used to store the data of all tenants in that particular region.
 
