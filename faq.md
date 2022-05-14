@@ -157,7 +157,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Targeting definition rules per feature| -| -|50|
 | Delivery mode | Websocket (server)pull or get (client)|Websocket (server) pull or get(client)|Websocket(server)pull or get (client)|
 | Role-based access| Env-level | Env-level|Env-level|
-| Locations| London, Dallas, Sydney |  London, Dallas, Sydney | London, Dallas, Sydney |
+| Locations| London, Dallas, Washington DC, Sydney |  London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney |
 | HA| Regional| Regional|Regional|
 | Security| End-to-end encryption RBAC| End-to-end encryption RBAC|End-to-end encryption RBAC|
 | Monitoring| IBM Cloud Monitoring| IBM Cloud Monitoring |IBM Cloud Monitoring|
