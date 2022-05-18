@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-18"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -147,6 +147,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Role-based access| Env-level | Env-level|Env-level|
 | Locations| London, Dallas, Washington DC, Sydney |  London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney |
 | HA| Regional| Regional|Regional|
+| Phased Rollout| Supported | Not Supported | Supported|
 | Security| End-to-end encryption RBAC| End-to-end encryption RBAC|End-to-end encryption RBAC|
 | Monitoring| IBM Cloud Monitoring| IBM Cloud Monitoring |IBM Cloud Monitoring|
 | Audit| IBM Cloud Activity Tracker| IBM Cloud Activity Tracker|IBM Cloud Activity Tracker|
