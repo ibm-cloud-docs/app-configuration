@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2022-05-18"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -42,7 +42,9 @@ These information can be deleted using the APIs mentioned [here](https://cloud.i
 ## How your data is stored and encrypted in {{site.data.keyword.appconfig_short}}
 {: #ac-data-encryption}
 
-{{site.data.keyword.appconfig_short}} stores and encrypts definitions of environments, collections, features, properties and segment rules. This data is encrypted at rest.  
+{{site.data.keyword.appconfig_short}} stores and encrypts definitions of environments, collections, features, properties and segment rules. This data is encrypted at rest.  As a multi-tenant service, any data stored is encrypted with the default IBM provided key for all tenants.
+
+IBM personnel have access to the configuration data. It is recommended to avoid storing sensitive information as part of the configuration. If sensitive data storage is required, consider using [IBM Cloud Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started)
 
 ## How can I delete my information?
 {: #ac-data-deletion}
