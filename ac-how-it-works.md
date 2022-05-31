@@ -12,10 +12,10 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How Does {{site.data.keyword.appconfig_short}} Work?
+# How Does {{site.data.keyword.appconfig_short}} work?
 {: #ac-how-it-works}
 
-Learn about how {{site.data.keyword.appconfig_short}} works under normal operation and when something goes wrong.
+Learn about how {{site.data.keyword.appconfig_short}} works both under normal operation and when something goes wrong.
 {: shortdesc}
 
 ## Normal operation
@@ -37,7 +37,7 @@ As with any application or cloud service, sometimes things go wrong, but {{site.
 ### Lost connection
 {: #ac-lost-connection}
 
-If the connection is lost between your application and the {{site.data.keyword.appconfig_notm}} service, the {{site.data.keyword.appconfig_notm}} SDK automatically falls back to a local cache file that contains the last known good configuration (#4 in Figure 1). In cache mode, changes to configurations that occur in the cloud do not reach the app, but the configuration that existed at the time of the lost connection continue to operate normally.  
+If the connection is lost between your application and the {{site.data.keyword.appconfig_notm}} service, the {{site.data.keyword.appconfig_notm}} SDK automatically falls back to a local cache file that contains the last known good configuration (#4 in Figure 1). In cache mode, changes to configurations that occur in the cloud do not reach the app, but the configuration that existed at the time of the lost connection continue to operate normally. 
 
 As an extension of this case, assume that you need to operate your app an air-gapped environment. For that case, you can use a bootstrap config file (#5 in Figure 1). For more information, see [Enable offline mode](/docs/app-configuration?topic=app-configuration-ac-offline).
 
