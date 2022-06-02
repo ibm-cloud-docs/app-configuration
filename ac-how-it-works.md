@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-02"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -12,8 +12,11 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How Does {{site.data.keyword.appconfig_short}} Work?
+# How does {{site.data.keyword.appconfig_short}} work?
 {: #ac-how-it-works}
+
+Learn how {{site.data.keyword.appconfig_short}} works under normal operation or when something goes wrong.
+{: shortdesc}
 
 ## Normal operation
 {: #ac-normal-operation}
@@ -29,12 +32,12 @@ During normal operation various metrics are sent back to the AC cloud service (#
 ## Operation when something goes wrong 
 {: #ac-something-goes-wrong}
 
-As with any application or cloud service, sometimes things go wrong, but {{site.data.keyword.appconfig_notm}} continues to provide configurations even if the  {{site.data.keyword.appconfig_notm}} service is unavailable to your app.
+As with any application or cloud service, sometimes things go wrong, but {{site.data.keyword.appconfig_notm}} continues to provide configurations even if the {{site.data.keyword.appconfig_notm}} service is unavailable to your app.
 
 ### Lost connection
 {: #ac-lost-connection}
 
-If the connection is lost between your application and the {{site.data.keyword.appconfig_notm}} service, the {{site.data.keyword.appconfig_notm}} SDK automatically falls back to a local cache file that contains the last known good configuration (#4 in Figure 1).  In cache mode, changes to configurations that occur in the cloud do not reach the app, but the configuration that existed at the time of the lost connection continue to operate normally.  
+If the connection is lost between your application and the {{site.data.keyword.appconfig_notm}} service, the {{site.data.keyword.appconfig_notm}} SDK automatically falls back to a local cache file that contains the last known good configuration (#4 in Figure 1). In cache mode, changes to configurations that occur in the cloud do not reach the app, but the configuration that existed at the time of the lost connection continue to operate normally. 
 
 As an extension of this case, assume that you need to operate your app an air-gapped environment.  For that case, you can use a bootstrap config file (#5 in Figure 1).  See [Enable offline mode](/docs/app-configuration?topic=app-configuration-ac-offline) for more information.
 
@@ -43,4 +46,4 @@ As an extension of this case, assume that you need to operate your app an air-ga
 
 The likelihood of the {{site.data.keyword.appconfig_notm}} service going down is small. {{site.data.keyword.short}} is deployed into multi-zone regions, meaning it runs across three geographically separate zones within a given region.   If any zone goes down, the {{site.data.keyword.appconfig_notm}} service continues to operate normally.  For more information on multi-zone regions, see [Region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
 
-In cases where you need extreme disaster recovery protection that spans regions, you can set up {{site.data.keyword.appconfig_notm}} instances in other regions and keep them in sync using the [{{site.data.keyword.appconfig_notm}} API](https://cloud.ibm.com/apidocs/app-configuration).
+In cases where you need extreme disaster recovery protection that spans regions, you can set up {{site.data.keyword.appconfig_notm}} instances in other regions and keep them in sync using the [{{site.data.keyword.appconfig_notm}} API](/apidocs/app-configuration).
