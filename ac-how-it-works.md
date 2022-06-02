@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-02"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How Does {{site.data.keyword.appconfig_short}} work?
+# How does {{site.data.keyword.appconfig_short}} work?
 {: #ac-how-it-works}
 
 Learn about how {{site.data.keyword.appconfig_short}} works both under normal operation and when something goes wrong.
