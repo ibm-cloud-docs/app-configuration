@@ -54,4 +54,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.5      | 4 January 2022   | Update dependencies.                                                  |
 | 1.0.6      | 22 February 2022 | Added custom header to all outgoing API requests.                     |
 | 1.0.7      | 29 April 2022    | Added phased rollout support.                                         |
+| 1.0.8      | 3 June 2022      | Update dependencies.                                                  |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="top"} 
