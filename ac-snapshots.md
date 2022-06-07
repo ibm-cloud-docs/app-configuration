@@ -16,8 +16,7 @@ subcollection: app-configuration
 {: #ac-snapshots}
 
 Snapshots are a way to capture the current configuration of my app or environment and sync the modified config set 
-back to my config git repo. This can help us in rollback. troubleshooting, or 
-audit. {{site.data.keyword.appconfig_short}}
+back to my config git repo. This can help us in versioning, application bootstrapping, rollback. troubleshooting, or  audit {{site.data.keyword.appconfig_short}}.
 Every snapshot configuration will have the collection and environment id associated with it, along with this user 
 can provide their github details where they would like to promote their configurations.  
 {: shortdesc}

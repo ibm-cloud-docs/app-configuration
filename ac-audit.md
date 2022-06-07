@@ -59,7 +59,7 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.collections.list`| Called the list of collections or failed to list|
 | `apprapp.collections.read`| Retrieved collection details or failed to retrieve collection details|
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
-| `apprapp.snapshots.create`| Created a snapshots or failed to create|
+| `apprapp.snapshots.create`| Created a snapshot configuration or failed to create|
 | `apprapp.snapshots.update`| Updated a snapshot or failed to update|
 | `apprapp.snapshots.delete`| Deleted a snapshot or failed to update|
 | `apprapp.snapshots.list`| Called the list of snapshots or failed to list|
