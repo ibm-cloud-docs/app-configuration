@@ -19,7 +19,7 @@ Snapshots are a way to capture the current configuration of my app or environmen
 back to my config git repo. This can help us in rollback. troubleshooting, or 
 audit. {{site.data.keyword.appconfig_short}}
 Every snapshot configuration will have the collection and environment id associated with it, along with this user 
-can provide their git hub details where they would like to promote their configurations.  
+can provide their github details where they would like to promote their configurations.  
 {: shortdesc}
 
 
@@ -29,29 +29,29 @@ instance along with **Name**, **Collection_id** associated, **Environment_id** a
 the snapshot, and the latest date it was updated.
 {: note}
 
-## Create a snapshot
+## Configure a snapshot
 {: #ac-create-a-snapshot}
 
 To create a snapshot, complete these steps:
 
-1. From the {{site.data.keyword.appconfig_short}} console, click on **Manage Snaphots** from the top menu bar.
+1. From the {{site.data.keyword.appconfig_short}} console, click on **Manage Snapshots** from the top menu bar.
 
-   ![List of snapshots]( "List of snapshots in the current {{site.data.keyword.
+   ![List of snapshots](images/ac-list-snapshots.png "List of snapshots in the current {{site.data.keyword.
    appconfig_short}} service instance"){: caption="Figure 6. List of snapshots in the current {{site.data.keyword.
    appconfig_short}} service instance." caption-side="bottom"}
 
-1. Click **Manage Snaphots**. The side panel opens with fields for creating a new snapshots.
+1. Click **Manage Snapshots**. The side panel opens with fields for creating a new snapshots.
 
-   ![Create a snapshot]( "Creating a snapshot"){: caption="Figure 7. {{site.data.
+   ![Configure a snapshot](images/ac-configure-snapshots.png "Configure a snapshot"){: caption="Figure 7. {{site.data.
    keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
 
 1. Provide the snapshot details:
     - **Name** - name of the snapshot.
     - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
     - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.   
-    - **Repository URL** - specify the Git hub URL, for example if you want the configuration to be written to 
-    organisation git hub account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{
-    {repo_name}}` or if you want to write to your personal git hub then the URL will be `https://api.github.
+    - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to 
+    organisation github account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{
+    {repo_name}}` or if you want to write to your personal github then the URL will be `https://api.github.
     com/repos/{{owner}}/{{repo_name}}` 
     - **Branch** - Add the branch name, to which you would like to write or update the config file.
     - **Folder path URL** - Provide the folder path to the file
@@ -61,6 +61,20 @@ To create a snapshot, complete these steps:
     [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 1. Click **Save**.
 
+
+## Create a GitHub snapshot
+{: #ac-promote-a-snapshot}
+
+To promote a snapshot, complete these steps:
+
+1. First create the snapshot as suggested in the above steps.
+2. Then you will see your configuration saved and displayed on the screen.
+3. Click on the **Create snapshot**, if your configuration is correct then you will see the json file will be either
+   updated if already exists, or it will be created if it does not exist.
+
+You can update the snapshot information using the API 'https://cloud.ibm.com/apidocs/app-configuration?
+code=go#update-gitconfig'.
+{: note}
 
 ## Snapshot - overflow menu
 {: #snapshot-overflow-menu}
@@ -75,12 +89,3 @@ snapshot. Delete option permanently deletes the snapshot, this action cannot be 
 
 {: note}
 
-## Promote a snapshot
-{: #ac-promote-a-snapshot}
-
-To promote a snapshot, complete these steps:
-
-1. First create the snapshot as suggested in the above steps.
-2. Then you will see your configuration saved and displayed on the screen.
-3. Click on the **Create snapshot**, if your configuration is correct then you will see the json file will be either 
-updated if already exists, or it will be created if it does not exist. 
