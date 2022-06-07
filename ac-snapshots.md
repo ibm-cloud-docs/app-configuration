@@ -35,16 +35,18 @@ To create a snapshot, complete these steps:
 
 1. From the {{site.data.keyword.appconfig_short}} console, click on **Manage Snapshots** from the top menu bar.
 
-   ![List of snapshots](images/ac-list-snapshots.png "List of snapshots in the current {{site.data.keyword.
+   ![Manage of snapshots](images/ac-manage-snapshots.png "List of snapshots in the current {{site.data.keyword.
    appconfig_short}} service instance"){: caption="Figure 6. List of snapshots in the current {{site.data.keyword.
    appconfig_short}} service instance." caption-side="bottom"}
 
-1. Click **Manage Snapshots**. The side panel opens with fields for creating a new snapshots.
+1. Click **Manage Snapshots**. The side panel opens up where you will be seeing the **New +** button.
 
    ![Configure a snapshot](images/ac-configure-snapshots.png "Configure a snapshot"){: caption="Figure 7. {{site.data.
    keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
 
-1. Provide the snapshot details:
+1. Upon clicking on the **New +** button, you will see the page where you will need to provide the snapshot details:
+   ![Configure a new snapshot](images/ac-create-snapshots.png "Configure a new snapshot"){: caption="Figure 8. {{site.data.
+   keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
     - **Name** - name of the snapshot.
     - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
     - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.   
@@ -60,6 +62,9 @@ To create a snapshot, complete these steps:
     [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 1. Click **Save**.
 
+1. Once the the snapshot is created, it will be listed in the window.
+![View configured snapshot](images/ac-list-snapshots.png "View configured snapshot"){: caption="Figure 9. {{site.data.
+   keyword.appconfig_short}} service view configured snapshot" caption-side="bottom"}
 
 ## Create a GitHub snapshot
 {: #ac-promote-a-snapshot}
