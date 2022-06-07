@@ -28,6 +28,15 @@ subcollection: app-configuration
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
+## June 2022
+{: #June-2022}
+
+New snapshot feature with Git integration is available for Enterprise plan.
+
+Release of 0.3.0 version of Admin SDK to support snapshots.
+
+[Snapshots]()
+
 ## April 2022
 {: #april-2022}
 

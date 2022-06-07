@@ -9,8 +9,8 @@ toc:
     path: app-configuration
     label: App Configuration
 
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - getting-started.md
@@ -19,9 +19,9 @@ toc:
       - ac-how-it-works.md
       - ac-release-notes.md
 
-  - navgroup: 
+  - navgroup:
       id: tutorial
-      topics: 
+      topics:
       - ac-tutorial.md
       - ac-create-appconfig-instance.md
       - ac-environments.md
@@ -29,20 +29,21 @@ toc:
       - ac-feature-flags.md
       - ac-properties.md
       - ac-segments.md
+      - ac-snapshots.md
       - ac-integrate-sdk.md
 
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - ac-ff-prop-env.md
-      - link: 
+      - link:
           label: Target feature flags to segments
           href: /app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag
-      - link: 
+      - link:
           label: Target properties to segments
           href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
       - ac-toolchain.md
-      - topicgroup: 
+      - topicgroup:
           label: Logging and monitoring
           topics:
           - ac-monitor.md
@@ -59,7 +60,7 @@ toc:
               href: https://{DomainName}/apidocs/app-configuration?code=go
       - ac-integrate-offline.md
       - ac-razee.md
-          
+
       - topicgroup:
           label: Enhance security
           topics:
@@ -72,7 +73,7 @@ toc:
 
   - navgroup:
       id: reference
-      topics: 
+      topics:
       - topicgroup:
           label: CLI reference
           topics:
@@ -80,7 +81,7 @@ toc:
               label: App Configuration CLI
               href: /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
           - ac-cli-changelog.md
-          
+
       - topicgroup:
           label: High availability and disaster recovery
           topics:
@@ -96,13 +97,13 @@ toc:
 
   - navgroup:
       id: help
-      topics: 
+      topics:
       - faq.md
       - faqts.md
       - ac-videos.md
-      - topicgroup: 
+      - topicgroup:
           label: Troubleshooting
-          topics: 
+          topics:
           - ac-getting-support.md
           - ac-ts-ff.md
           - ac-ts-ff-eval.md
