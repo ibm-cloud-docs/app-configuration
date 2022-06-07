@@ -31,7 +31,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 ## June 2022
 {: #June-2022}
 
-New Git snapshot feature is available for Enterprise plan.
+New snapshot feature with Git integration is available for Enterprise plan.
 
 Release of 0.3.0 version of Admin SDK to support snapshots.
 
