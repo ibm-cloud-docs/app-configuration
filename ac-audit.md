@@ -60,10 +60,10 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.collections.read`| Retrieved collection details or failed to retrieve collection details|
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 | `apprapp.snapshots.create`| Created a snapshot configuration or failed to create|
-| `apprapp.snapshots.update`| Updated a snapshot or failed to update|
-| `apprapp.snapshots.delete`| Deleted a snapshot or failed to update|
-| `apprapp.snapshots.list`| Called the list of snapshots or failed to list|
-| `apprapp.snapshots.read`| Retrieved snapshot details or failed to retrieve snapshot details|
+| `apprapp.snapshots.update`| Updated a snapshot configuration or failed to update|
+| `apprapp.snapshots.delete`| Deleted a snapshot configuration or failed to update|
+| `apprapp.snapshots.list`| Called the list of snapshot configuration or failed to list|
+| `apprapp.snapshots.read`| Retrieved snapshot configuration details or failed to retrieve snapshot configuration details|
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
