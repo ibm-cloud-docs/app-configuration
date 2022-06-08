@@ -35,7 +35,7 @@ New snapshot feature with Git integration is available for Enterprise plan.
 
 Release of 0.3.0 version of Admin SDK to support snapshots.
 
-[Snapshots]()
+[Snapshots](/docs/app-configuration?topic=app-configuration-ac-snapshots)
 
 ## April 2022
 {: #april-2022}
