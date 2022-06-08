@@ -45,26 +45,28 @@ To create a snapshot, complete these steps:
    keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
 
 1. Upon clicking on the **New +** button, you will see the page where you will need to provide the snapshot details:
-   ![Configure a new snapshot](images/ac-create-snapshots.png "Configure a new snapshot"){: caption="Figure 8. {{site.data.
-   keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
-    - **Name** - name of the snapshot.
-    - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
-    - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.   
-    - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to 
-    organisation github account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{
-    {repo_name}}` or if you want to write to your personal github then the URL will be `https://api.github.
-    com/repos/{{owner}}/{{repo_name}}` 
-    - **Branch** - Add the branch name, to which you would like to write or update the config file.
-    - **Folder path URL** - Provide the folder path to the file
-    - **File name** - provide the file name, we only allow `.json` or `.JSON` file extension
-    - **Git token** - provide the git token, this is the Personal access token this needs to be created with basic 
-    read, write and update permission.
-    [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+   ![Configure a new snapshot](images/ac-create-snapshots.png "Configure a new snapshot"){: caption="Figure 8. {{site.data.keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
+    
+   - **Name** - name of the snapshot.
+   - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
+   - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.   
+   - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to 
+   organisation github account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{
+   {repo_name}}` or if you want to write to your personal github then the URL will be `https://api.github.
+   com/repos/{{owner}}/{{repo_name}}` 
+   - **Branch** - Add the branch name, to which you would like to write or update the config file.
+   - **Folder path URL** - Provide the folder path to the file
+   - **File name** - provide the file name, we only allow `.json` or `.JSON` file extension
+   - **Git token** - provide the git token, this is the Personal access token this needs to be created with basic 
+   read, write and update permission.
+   [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
 1. Click **Save**.
 
 1. Once the the snapshot is created, it will be listed in the window.
-![View configured snapshot](images/ac-list-snapshots.png "View configured snapshot"){: caption="Figure 9. {{site.data.
-   keyword.appconfig_short}} service view configured snapshot" caption-side="bottom"}
+
+   ![View configured snapshot](images/ac-list-snapshots.png "View configured snapshot"){: caption="Figure 9. {{site.data.keyword.appconfig_short}} service view configured snapshot" caption-side="bottom"}
 
 ## Create a GitHub snapshot
 {: #ac-promote-a-snapshot}
@@ -84,9 +86,6 @@ code=go#update-gitconfig'.
 {: #snapshot-overflow-menu}
 
 The overflow menu for each of the snapshot (three vertical dots) consist of **Delete** operation.
-
-![Overflow menu for a snapshot]( "Overflow menu for a snapshot"){: 
-caption="Figure 8. Overflow menu for a snapshot" caption-side="bottom"}
 
 * When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected 
 snapshot. Delete option permanently deletes the snapshot, this action cannot be undone.
