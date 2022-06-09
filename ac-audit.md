@@ -68,7 +68,11 @@ The following list of {{site.data.keyword.appconfig_short}} events are sent to {
 | `apprapp.collections.delete`| Deleted a collection or failed to update|
 | `apprapp.collections.list`| Called the list of collections or failed to list|
 | `apprapp.collections.read`| Retrieved collection details or failed to retrieve collection details|
-
+| `apprapp.snapshots.create`| Created a snapshot configuration or failed to create|
+| `apprapp.snapshots.update`| Updated a snapshot configuration or failed to update|
+| `apprapp.snapshots.delete`| Deleted a snapshot configuration or failed to update|
+| `apprapp.snapshots.list`| Called the list of snapshot configuration or failed to list|
+| `apprapp.snapshots.read`| Retrieved snapshot configuration details or failed to retrieve snapshot configuration details|
 
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
