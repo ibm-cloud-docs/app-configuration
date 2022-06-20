@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-06-20"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -105,7 +105,6 @@ The **`init()`** and **`setContext()`** are the initialisation classes and shoul
 {: important}
 
 ### Option to use a persistent cache for configuration
-
 {: #ac-java-persistent-cache}
 
 In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
