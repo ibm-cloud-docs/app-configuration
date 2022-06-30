@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-06-27"
 
 keywords: app-configuration activity tracker events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -64,6 +64,7 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.snapshots.delete`| Deleted a snapshot configuration or failed to update|
 | `apprapp.snapshots.list`| Called the list of snapshot configuration or failed to list|
 | `apprapp.snapshots.read`| Retrieved snapshot configuration details or failed to retrieve snapshot configuration details|
+| `apprapp.snapshots.promote` | Created or updated the chosen configuration to GitHub based on the snapshots configuration. |
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
