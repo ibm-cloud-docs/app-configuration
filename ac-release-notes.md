@@ -31,7 +31,7 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 ## July 2022
 {: #July-2022}
 
-[JavaScript SDK](/docs/appconfiguration?topic=app-configuration-ac-javascript) available to integrate browser applications with App Configuration service.
+[JavaScript SDK](/docs/app-configuration?topic=app-configuration-ac-javascript) available to integrate browser applications with App Configuration service.
 
 ## June 2022
 {: #June-2022}
