@@ -59,11 +59,11 @@ subcollection: app-configuration
    - region: Region where the service instance is created. Use 
     `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apikey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - apikey: API key of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - collectionId: ID of the collection created in App Configuration service instance under the Collections section.
    - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
 
-Ensure to use create the Credentials of the role `Client SDK` for using with the JavaScript SDK. APIKey of the `Client SDK` has minimal access permissions that are suitable to use in browser based applications. 
+Ensure to create the service credentials of the role `Client SDK` for using with the JavaScript SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications. 
 {: note}
 
 
