@@ -23,14 +23,14 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} JavaScript client SDK can be used with all the major browsers. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK. Use the following code from the `npm` registry.
+1. Install the SDK.  Use the following code to install as a module from package manager.
 
    ```bash
     npm install ibm-appconfiguration-js-client-sdk
    ```
    {: codeblock}
 
-1. You can import the SDK into the `script` tag either by using by referencing it from a hosted site on your backend or from a CDN as follows: 
+1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows: 
 
    ```javascript
    <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk@latest/dist/appconfiguration.js"></script>
@@ -189,7 +189,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
 {: caption="Table 1. Example outputs" caption-side="bottom"}
 
-### Feature flag
+### Feature flag usage example
 {: #ac-js-feature-flag}
 
 ```javascript
@@ -208,7 +208,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 ```
 {: codeblock}
 
-### Property
+### Property usage example
 {: #ac-js-property}
 
 ```javascript
