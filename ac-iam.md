@@ -63,6 +63,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Reader | As a reader, you can perform read-only actions within a service such as viewing service-specific resources. |
 | Writer | As a writer, you have permissions beyond the reader role, including creating and editing service-specific resources. |
 | Config Operator | As a Config Operator, you can toggle the feature state. |
+| Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK.  |
 {: row-headers}
 {: caption="Table 2. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #service-roles-table1}
