@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, getting help and support
 
@@ -37,9 +37,11 @@ Collecting the following information can help a faster support case resolution f
 - Save the full URL of the console when the problem occurred, for example: https://cloud.ibm.com/appconfig/provision/ac
 - Include the steps to reproduce the issue, along with your inputs and expected outputs.
 - Note the approximate time that the error occurred.
+
 - Provide the code version and error details:
    1. Right-click on the console page and select the **Inspect** or **Inspect Element** option.
    1. Scroll to the end of the output and copy any errors or stack traces.
+
 - Provide the network response:
    1. While you inspect the page, click the **Network** tab.
    1. Refresh the page and reproduce the problem.

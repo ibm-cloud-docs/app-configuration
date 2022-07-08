@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-01-12"
+  years: 2020, 2022
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, service credentials, authentication
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Authenticating with service credentials
 {: #ac-service-credentials}

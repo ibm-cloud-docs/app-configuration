@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -24,5 +24,3 @@ subcollection: app-configuration
 - `ECDHE-RSA-AES128-GCM-SHA256`
 - `ECDHE-RSA-CHACHA20-POLY1305`
 - `ECDHE-RSA-AES256-GCM-SHA384`
-
-

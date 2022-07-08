@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-04"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # Integrating SDKs
 {: #ac-sdks}
 
- The {{site.data.keyword.appconfig_short}} client SDK is available for Android, the server SDKs for Node, Python, Go, and Java, and the admin SDK for Go, to integrate with your web and mobile applications, microservices, and distributed environments.
+The {{site.data.keyword.appconfig_short}} client SDK is available for Android, the server SDKs for Node, Python, Go, and Java, and the admin SDK for Go, to integrate with your web and mobile applications, microservices, and distributed environments.
 {: shortdesc}
 
 ## Client-side and Server-side SDKs
@@ -36,7 +36,7 @@ SDKs that help evaluate feature flag and property values are broadly classified 
 
 Evaluation SDKs fetch the latest configuration data from the {{site.data.keyword.appconfig_short}} service and ensure that any change in the service configuration is made available to your application in real time.
 
-Admin SDKs can be used to create and manage configurations for Environments, Collections, Feature flags, Properties, and Segments. As an option to {{site.data.keyword.Bluemix_notm}} Dashboard or {{site.data.keyword.Bluemix_notm}} CLI, Admin SDKs can be used to programmatically manage your service configuration from within your application.
+Admin SDKs can be used to create and manage configurations for Environments, Collections, Feature flags, Properties, and Segments. As an option to {{site.data.keyword.cloud_notm}} Dashboard or {{site.data.keyword.cloud_notm}} CLI, Admin SDKs can be used to programmatically manage your service configuration from within your application.
 
 The currently available Go language Admin SDK integrates with your Go application.
 

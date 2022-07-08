@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -50,7 +50,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
 | Editor | As an editor, you can perform all platform actions except for managing the account and assigning access policies. |
 {: row-headers}
-{: caption="Table 2. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
+{: caption="Table 1. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #platform-roles-table1}
 {: tab-title="Platform roles"}
 {: tab-group="app-rapp"}
@@ -65,7 +65,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Config Operator | As a Config Operator, you can toggle the feature state. |
 | Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK.  |
 {: row-headers}
-{: caption="Table 2. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}
@@ -98,7 +98,7 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.properties.create` | Manager, Administrator | Create a property. |
 | `apprapp.properties.delete` | Manager, Administrator | Delete a property. |
 | `apprapp.properties.patch` | Writer | Update a property. |
-{: caption="Table 2. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
 {: tab-title="Actions"}
 {: tab-group="app-rapp"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -23,7 +23,7 @@ Learn about {{site.data.keyword.appconfig_short}} concepts like service instance
 ## Service instance
 {: #ac-service-instance}
 
-An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{site.data.keyword.appconfig_short}} application on the {{site.data.keyword.Bluemix_notm}}. You create an instance from the tile in the {{site.data.keyword.Bluemix_notm}} catalog. Now you have access to the {{site.data.keyword.appconfig_short}} dashboard and all the functions that come with the selected pricing plan.
+An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{site.data.keyword.appconfig_short}} application on the {{site.data.keyword.cloud_notm}}. You create an instance from the tile in the {{site.data.keyword.cloud_notm}} catalog. Now you have access to the {{site.data.keyword.appconfig_short}} dashboard and all the functions that come with the selected pricing plan.
 
 ## Environment
 {: #ac-environment}
@@ -61,6 +61,6 @@ An attribute is a parameter that is used to define a segment. Attributes are use
 Feature flags and properties are targeted to segments based on a set of rules that are called the targeting definition. With targeting, you can override the default value for a flag or property, for any segment you define. 
 
 ## {{site.data.keyword.appconfig_short}} SDK
-{: #ac-SDK-concept}
+{: #ac-sdk-concept}
 
 The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.

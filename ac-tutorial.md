@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, tutorial
 
@@ -15,7 +15,6 @@ completion-time: 90m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Working with {{site.data.keyword.appconfig_short}}
 {: #ac-appconfig}

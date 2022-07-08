@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -57,7 +57,7 @@ For a Node.js SDK you can use the local configuration file as in the following e
 
 ```javascript
 const client = AppConfiguration.getInstance();
-let region = AppConfiguration.REGION_US_SOUTH;;
+let region = AppConfiguration.REGION_US_SOUTH;
 let guid = 'abc-def-xyz'; let apikey = 'j9qc-abc-z79';
 client.init(region, guid, apikey)
 let collectionId = '<collectionId>';

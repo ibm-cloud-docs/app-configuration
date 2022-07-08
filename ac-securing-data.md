@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-05-18"
+lastupdated: "2021-07-08"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.appconfig_short}}
 {: #ac-securing-your-data}
@@ -44,12 +37,13 @@ These information can be deleted using the APIs mentioned [here](https://cloud.i
 
 {{site.data.keyword.appconfig_short}} stores and encrypts definitions of environments, collections, features, properties and segment rules. This data is encrypted at rest.  As a multi-tenant service, any data stored is encrypted with the default IBM provided key for all tenants.  
 
-IBM personnel have access to the configuration data.  It is recommended to avoid storing sensitive information as part of the configuration. If sensitive data storage is required, consider using [IBM Cloud Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started)
+IBM personnel have access to the configuration data. It is recommended to avoid storing sensitive information as part of the configuration. If sensitive data storage is required, consider using [IBM Cloud Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started)
 
 ## How can I delete my information?
 {: #ac-data-deletion}
 
 When you delete an instance of {{site.data.keyword.appconfig_short}}, all of the associated data is also deleted. When the service instance is deleted, a 7-day reclamation period begins. During that time, you are able to restore the instance and all of the associated user data. However, if the instance and data are permanently deleted, it cannot be restored. {{site.data.keyword.appconfig_short}} does not store any data from permanently deleted instances.
+
 The {{site.data.keyword.appconfig_short}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.appconfig_short}} service description, which you can find in the [IBM Cloud Terms and Notices](https://cloud.ibm.com/docs/overview?topic=overview-terms).
 
 ### Deleting an instance

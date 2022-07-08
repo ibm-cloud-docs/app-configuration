@@ -2,25 +2,17 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-Feb"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, about app configuration
 
 subcollection: app-configuration
+
 content-type: release-note
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:release-note: data-hd-content-type='release-note'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Release notes for {{site.data.keyword.appconfig_short}}
 {: #release-notes}

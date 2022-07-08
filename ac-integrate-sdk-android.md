@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -30,7 +30,6 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 ## Integrating client SDK for Android app written in Kotlin
 {: #ac-integrate-ff-sdk-android-kotlin}
 
-
 {{site.data.keyword.appconfig_short}} service provides Android client SDK to integrate with your Android application. You can evaluate the values of your property and feature flag by integrating the SDK.
 
 1. Install the SDK by using either one of the options:
@@ -50,7 +49,6 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
          ```javascript
          dependencies {
             implementation "com.ibm.cloud:appconfiguration-android-sdk:0.2.0"
-
          }
          ```
          {: codeblock}
@@ -179,7 +177,7 @@ App Configuration service configures the feature flag and properties in the foll
 Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. Accordingly, the SDK processes each format as shown in Table 1.
 
 | **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
-|  |  |  |  |  |
+| -- | -- | -- | -- | -- |
 | `true` | BOOLEAN | not applicable | `java.lang.Boolean` | `true` |
 | `25` | NUMERIC | not applicable | `java.lang.Integer` | `25` |
 | "a string text" | STRING | TEXT | `java.lang.String` | `a string text` |
@@ -190,51 +188,51 @@ Numeric, String. The String data type can be of the format of a text string, JSO
 #### Feature flag
 {: #ac-feat-flag}
 
-```kt
-  val feature: Feature? = appConfiguration.getFeature("json-feature")
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // JSON
+```kotlin
+val feature: Feature? = appConfiguration.getFeature("json-feature")
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // JSON
 
-  // Example below (traversing the returned JSONObject)
-  if (feature != null) {
-    val result = feature.getCurrentValue(entityId, entityAttributes) as JSONObject
-    result.get("key") // returns the value of the key
-  }
+// Example below (traversing the returned JSONObject)
+if (feature != null) {
+   val result = feature.getCurrentValue(entityId, entityAttributes) as JSONObject
+   result.get("key") // returns the value of the key
+}
 
-  val feature: Feature? = appConfiguration.getFeature("yaml-feature")
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
+val feature: Feature? = appConfiguration.getFeature("yaml-feature")
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // YAML
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
 ```
- {: codeblock}
+{: codeblock}
 
 #### Property
 {: #ac-property}
 
 ```javascript
-  val property: Property? = appConfiguration.getProperty("json-property")
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // JSON
+val property: Property? = appConfiguration.getProperty("json-property")
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // JSON
 
-  // Example below (traversing the returned JSONObject)
-  if (property != null) {
-    val result = property.getCurrentValue(entityId, entityAttributes) as JSONObject
-    result.get("key") // returns the value of the key
-  }
+// Example below (traversing the returned JSONObject)
+if (property != null) {
+   val result = property.getCurrentValue(entityId, entityAttributes) as JSONObject
+   result.get("key") // returns the value of the key
+}
 
-  val property: Property? = appConfiguration.getProperty("yaml-property")
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
+val property: Property? = appConfiguration.getProperty("yaml-property")
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // YAML
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
 {: codeblock}  
 
 - Force fetch the configurations from server.
 
-```kotlin
+   ```kotlin
    appConfiguration.fetchConfigurations()
-```
-{: codeblock}
+   ```
+   {: codeblock}
 
 ## Integrating client SDK for Android app written in Java
 {: #ac-integrate-ff-sdk-android-java}
@@ -258,7 +256,6 @@ Numeric, String. The String data type can be of the format of a text string, JSO
          ```javascript
          dependencies {
             implementation "com.ibm.cloud:appconfiguration-android-sdk:0.2.0"
-
          }
          ```
          {: codeblock}
@@ -276,8 +273,8 @@ Numeric, String. The String data type can be of the format of a text string, JSO
 
       ```javascript
       dependencies {
-        classpath "com.android.tools.build:gradle:4.1.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+         classpath "com.android.tools.build:gradle:4.1.1"
+         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
       }
       ```
       {: codeblock}
@@ -413,55 +410,53 @@ Refer to the examples for using the property and feature-related APIs.
 ### Supported data types
 {: #ac-integrate-data-types-java}
 
-
-App Configuration service configures the feature flag and properties in the following data types : Boolean, Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in Table 1.
+App Configuration service configures the feature flag and properties in the following data types: Boolean, Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. The SDK processes each format accordingly as shown in Table 1.
 
 #### Feature Flag
 {: #ac-feat-flag1}
 
 ```java
-  Feature feature = appConfiguration.getFeature("json-feature");
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // JSON
+Feature feature = appConfiguration.getFeature("json-feature");
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // JSON
 
-  // Example below (traversing the returned JSONObject)
-  if (feature != null) {
-    JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
-    result.get("key") // returns the value of the key
-  }
+// Example below (traversing the returned JSONObject)
+if (feature != null) {
+   JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
+   result.get("key") // returns the value of the key
+}
 
-  Feature feature = appConfiguration.getFeature("yaml-feature");
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
+Feature feature = appConfiguration.getFeature("yaml-feature");
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // YAML
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
- {: codeblock}  
+{: codeblock}  
 
 #### Property
 {: #ac-prop1}
 
 ```java
-  Property property = appConfiguration.getProperty("json-property");
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // JSON
+Property property = appConfiguration.getProperty("json-property");
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // JSON
 
-  // Example below (traversing the returned JSONObject)
-  if (property != null) {
-    JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
-    result.get("key") // returns the value of the key
-  }
+// Example below (traversing the returned JSONObject)
+if (property != null) {
+   JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
+   result.get("key") // returns the value of the key
+}
 
-  Property property = appConfiguration.getProperty("yaml-property");
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
+Property property = appConfiguration.getProperty("yaml-property");
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // YAML
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
 ```
- {: codeblock}  
-
+{: codeblock}  
 
 - Force fetch the configurations from server.
 
-```java
+   ```java
    appConfiguration.fetchConfigurations()
-```
-{: codeblock}
+   ```
+   {: codeblock}
