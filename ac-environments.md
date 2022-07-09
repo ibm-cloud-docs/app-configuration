@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, environment, environments, create environment
 
@@ -25,7 +25,7 @@ Each feature flag or properties that are created has its own values, tags, and s
 
 By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
 
-![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 3. List of environments" caption-side="bottom"}
+![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 1. List of environments" caption-side="bottom"}
 
 ## Create an environment
 {: #ac-create-environment}
@@ -33,9 +33,10 @@ By default, the environment panel displays the list of environments that are cre
 To create an environment, complete these steps:
 
 1. In the {{site.data.keyword.appconfig_short}} console, click **Environments**.
+
 1. Click **Create**. The side panel opens with fields for creating a new environment.
 
-![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 4. Creating a new environment" caption-side="bottom"}
+   ![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 2. Creating a new environment" caption-side="bottom"}
 
 1. Provide the following environment details:
    - **Name** - name of the environment.
@@ -43,6 +44,7 @@ To create an environment, complete these steps:
    - **Description** - add a description of the environment, which is optional.
    - Optionally, define **Tags** that are required to identify with the environment.
    - Click the color image to change the **Color code** for this environment, which is optional.
+
 1. Click **Create**.
 
 ## Environments - overflow menu
@@ -50,10 +52,10 @@ To create an environment, complete these steps:
 
 The overflow menu for each of the environment (three vertical dots) consists of **Edit** and **Delete** operations.
 
-![Overflow menu for an environment](images/ac-environments-overflow-menu.png "Overflow menu for an environment"){: caption="Figure 5. Overflow menu for an environment" caption-side="bottom"}
+![Overflow menu for an environment](images/ac-environments-overflow-menu.png "Overflow menu for an environment"){: caption="Figure 3. Overflow menu for an environment" caption-side="bottom"}
 
-* When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
-* When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected environment.
+- When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
+- When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected environment.
 
 By default, at least one environment must be present in an {{site.data.keyword.appconfig_short}} service instance.
 {: note}

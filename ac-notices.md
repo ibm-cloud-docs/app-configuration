@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-07-08"
 
 keywords: notices for app configuration, app-configuration, app configuration, creative commons, notices, attributions, license
 
@@ -20,7 +20,6 @@ The following {{site.data.keyword.appconfig_short}} notices are included in this
 - [CC-BY-3.0](#CC-BY-3.0)
 - [CC-BY-SA-4.0](#CC-BY-SA-4.0)
 - [SIL OPEN FONT LICENSE 1.1](#sil-ofl-1.1)
-
 
 ## CREATIVE COMMONS ATTRIBUTION 3.0
 {: #CC-BY-3.0}

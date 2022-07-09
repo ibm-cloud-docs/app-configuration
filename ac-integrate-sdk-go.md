@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -49,29 +49,28 @@ subcollection: app-configuration
    {: codeblock}
 
    Where,
-   - Region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
+   - `Region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `apiKey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `collectionId`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
 ### Option to use a persistent cache for configuration
 {: #ac-go-persistent-cache}
 
 For your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
-
 ```go
-  // 1. default (without persistent cache)
+// 1. default (without persistent cache)
 appConfiguration.SetContext(collectionId, environmentId)
 // 2. with persistent cache
 appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
-    PersistentCacheDirectory: "/var/lib/docker/volumes/",
+   PersistentCacheDirectory: "/var/lib/docker/volumes/",
 })
 ```
 {: codeblock}
 
-Where persistentCacheDirectory: Absolute path to a directory that has read and write permission for the user. The SDK creates a file `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+Where `persistentCacheDirectory`: Absolute path to a directory that has read and write permission for the user. The SDK creates a file `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
 
 When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
 
@@ -81,18 +80,18 @@ When persistent cache is enabled, the SDK keeps the last known good configuratio
 The SDK is also designed to serve configurations, and perform feature flag and property evaluations without being connected to {{site.data.keyword.appconfig_short}} service.
 
 ```go
-  appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
-    BootstrapFile: "saflights/flights.json",
-    LiveConfigUpdateEnabled: false,
+appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.ContextOptions{
+   BootstrapFile: "saflights/flights.json",
+   LiveConfigUpdateEnabled: false,
 })
 ```
 {: codeblock}
 
 Where,
 
-- BootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+- `BootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
 
-- LiveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
+- `LiveConfigUpdateEnabled`: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
 
 ### Examples for using property and feature-related APIs
 {: #ac-golang-example}
@@ -197,13 +196,13 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 format as shown in the table.
 
 | **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `GetCurrentValue()`** | **Example output** |
+| -- | -- | -- | -- | -- |
 | `true` | BOOLEAN | not applicable | `bool` | `true` |
 | `25` | NUMERIC | not applicable | `float64` | `25` |
 | "a string text" | STRING | TEXT | `string` | `a string text` |
 | `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `map[string]interface{}` | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
-|   `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams`  | STRING | YAML | `map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
+| `men:`  \n   `- John Smith`  \n   `- Bill Jones`  \n `women:`  \n   `- Mary Smith`  \n   `- Susan Williams`  | STRING | YAML | `map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
 {: caption="Table 1. Example outputs" caption-side="bottom"}
-
 
 ### Feature flag
 {: #ac-android-feat-flag}

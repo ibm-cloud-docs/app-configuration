@@ -29,10 +29,10 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for the set-up and
 
 You are responsible for incident and operations management of your application and application data.
 
-|Task     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
+| Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Incidents |Provide notifications for planned maintenance, security bulletins, or unplanned outages. |Set preferences to receive emails about platform notifications, and monitor the {{site.data.keyword.cloud_notm}} status page for general announcements. |
-{: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
+| Incidents | Provide notifications for planned maintenance, security bulletins, or unplanned outages. | Set preferences to receive emails about platform notifications, and monitor the {{site.data.keyword.cloud_notm}} status page for general announcements. |
+{: caption="Table 1. Responsibilities for incident and operations" caption-side="bottom"}
 
 ## Change management
 {: #ac-change-management}
@@ -41,10 +41,10 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for keeping {{site
 
 You are responsible for change management of your application and application data.
 
-|Task     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
+| Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Applications |Provide infrastructure operating system (OS), version, and security updates. |Use the API, SDK, CLI, or console tools to apply the provided updates for the local entities (app code, CLI, and SDK). |
-{: caption="Table 2. Responsibilities for change management" caption-side="top"}
+| Applications | Provide infrastructure operating system (OS), version, and security updates. | Use the API, SDK, CLI, or console tools to apply the provided updates for the local entities (app code, CLI, and SDK). |
+{: caption="Table 2. Responsibilities for change management" caption-side="bottom"}
 
 ## Identity and access management
 {: #ac-identity-and-access-management}
@@ -53,9 +53,9 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for controlling ac
 
 You are responsible for identity and access management to your application and application data.
 
-|Task     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
+| Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Applications |Restrict access to resources.	|Depending on your needs, restrict access to resources and service functions by using Cloud IAM access policies. For more information, see [Managing user access](/docs/app-configuration?topic=app-configuration-ac-service-access-management). |
+| Applications | Restrict access to resources.	| Depending on your needs, restrict access to resources and service functions by using Cloud IAM access policies. For more information, see [Managing user access](/docs/app-configuration?topic=app-configuration-ac-service-access-management). |
 {: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
 
 ## Security and regulation compliance
@@ -65,9 +65,9 @@ You are responsible for identity and access management to your application and a
 
 You are responsible for the security and compliance of your application and application data.
 
-|Task     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
+| Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Encryption |- Automatically apply security patch updates for infrastructure. \n - Enable certain security settings, such as encrypted disks. \n - Disable certain insecure actions, such as allowing users to SSH into the host. \n - Encrypt communication with TLS. \n - Continuously monitor {{site.data.keyword.appconfig_notm}} entities to detect vulnerability and security compliance issues. \n - Integrate {{site.data.keyword.appconfig_notm}} with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM). |Manage {{site.data.keyword.cloud_notm}} credentials, and keep credentials secure. |
+| Encryption | - Automatically apply security patch updates for infrastructure.  \n - Enable certain security settings, such as encrypted disks.  \n - Disable certain insecure actions, such as allowing users to SSH into the host.  \n - Encrypt communication with TLS.  \n - Continuously monitor {{site.data.keyword.appconfig_notm}} entities to detect vulnerability and security compliance issues.  \n - Integrate {{site.data.keyword.appconfig_notm}} with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM). | Manage {{site.data.keyword.cloud_notm}} credentials, and keep credentials secure. |
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
 
 ## Disaster recovery
@@ -77,7 +77,7 @@ You are responsible for the security and compliance of your application and appl
 
 You are responsible for the recovery of the workloads that run {{site.data.keyword.appconfig_notm}} and your application and application data.
 
-|Task     |{{site.data.keyword.IBM_notm}} Responsibilities |Your Responsibilities |
+| Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
-|Availability | \n - Provide high availability capabilities, such as {{site.data.keyword.IBM_notm}}-owned infrastructure in multizone regions, to meet local access and, low latency requirements for each supported region. \n - Run {{site.data.keyword.appconfig_notm}} deployments with three replicas in the same region for high availability. \n - Continuously monitor {{site.data.keyword.appconfig_notm}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers. \n - Maintain service availability across [worldwide regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) so that customers can deploy projects across zones and regions for higher DR tolerance. | \n - Use the list of [available regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) to plan and create new instances of the service to meet performance and availability requirements beyond the default that is provided by {{site.data.keyword.IBM_notm}}. \n - Set up more {{site.data.keyword.appconfig_notm}} instances across zones and regions to increase disaster recovery tolerance above the default provided by {{site.data.keyword.IBM_notm}}.
+| Availability | \n - Provide high availability capabilities, such as {{site.data.keyword.IBM_notm}}-owned infrastructure in multizone regions, to meet local access and, low latency requirements for each supported region.  \n - Run {{site.data.keyword.appconfig_notm}} deployments with three replicas in the same region for high availability.  \n - Continuously monitor {{site.data.keyword.appconfig_notm}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.  \n - Maintain service availability across [worldwide regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) so that customers can deploy projects across zones and regions for higher DR tolerance. |  \n - Use the list of [available regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) to plan and create new instances of the service to meet performance and availability requirements beyond the default that is provided by {{site.data.keyword.IBM_notm}}.  \n - Set up more {{site.data.keyword.appconfig_notm}} instances across zones and regions to increase disaster recovery tolerance above the default provided by {{site.data.keyword.IBM_notm}}.
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}

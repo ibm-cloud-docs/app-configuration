@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-07-08"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -14,15 +14,13 @@ subcollection: app-configuration
 # Understanding High availability for {{site.data.keyword.appconfig_short}}
 {: #ac-ha}
 
-<!-- All IBM Cloud® general availability (GA) services have a Service Level Agreement of 99.99% availability.  -->
-
 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appconfig_short}} is a highly available, multi-tenant, regional service.  
 {: shortdesc}
 
 ## Service High Availability (HA)
 {: #ac-service-ha}
 
-An availability zone is a logically and physically isolated location within an {{site.data.keyword.Bluemix_notm}} region where your data is processed and hosted.
+An availability zone is a logically and physically isolated location within an {{site.data.keyword.cloud_notm}} region where your data is processed and hosted.
 
 - An availability zone has independent power, cooling, and network infrastructures that are isolated from other zones to strengthen fault tolerance by avoiding single points of failure between zones.
 - An availability zone offers high bandwidth and low inter-zone latency within a region.
@@ -45,19 +43,19 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Europe | London (eu-gb)|MZR|
 | North America| Dallas (us-south)|MZR|
 | North America| Washington DC (us-east)|MZR|
-{: caption="Table 1. HA status for the regions" caption-side="top"}
+{: caption="Table 1. HA status for the regions" caption-side="bottom"}
 
 Where:
 
-- A _geography_ is a geographic area or larger political body that contains one or more regions.
-- A _region_ is a defined geographic territory.
+- A *geography* is a geographic area or larger political body that contains one or more regions.
+- A *region* is a defined geographic territory.
 - A region might be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
 
 A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
 
 - `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
 
-# Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region
+## Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region
 {: #ac-dr}
 
 App Configuration is a regional service, and does not offer automatic cross-regional failover or cross-regional disaster recovery. If all of the availability zones in a region fail, App Configuration becomes unavailable in that region.

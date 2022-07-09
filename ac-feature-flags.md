@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-07-08"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -26,7 +26,7 @@ By default, the Feature flags pane displays the list of feature flags that are c
 - A **String** type flag supports data in the form of text, and JSON or YAML files.
 - A **Numeric** flag supports integers.
 
-![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="Figure 9. List of feature flags" caption-side="bottom"}
+![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="Figure 1. List of feature flags" caption-side="bottom"}
 
 ## Create a feature flag
 {: #ac-create-feature-flag}
@@ -34,12 +34,14 @@ By default, the Feature flags pane displays the list of feature flags that are c
 To create a feature flag, complete these steps:
 
 1. In the {{site.data.keyword.appconfig_short}} console, click **Features flags**.
+
 1. Select the **Current Environment** to display the list of feature flags in that environment.
+
 1. Click **Create**. The side panel opens with fields for creating a new feature flag.
 
-   ![Create feature flag](images/ac-create-feature-flag.png "Creating feature flag"){: caption="Figure 10. Creating a new feature flag" caption-side="bottom"}
+   ![Create feature flag](images/ac-create-feature-flag.png "Creating feature flag"){: caption="Figure 2. Creating a new feature flag" caption-side="bottom"}
 
-   ![Create feature flag with further details](images/ac-create-feature-flag1.png "Creating feature flag further details"){: caption="Figure 11. Creating a feature flag further details" caption-side="bottom"}
+   ![Create feature flag with further details](images/ac-create-feature-flag1.png "Creating feature flag further details"){: caption="Figure 3. Creating a feature flag further details" caption-side="bottom"}
 
 1. Provide the feature flag details:
    - **Name** - name of the feature flag.
@@ -49,6 +51,7 @@ To create a feature flag, complete these steps:
    - **Flag type** - specify the type of the feature flag. Supported type includes: Boolean, String, and Numeric. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - **Default value** - specify the default value for the feature flag type selected. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - Optionally, you can add the feature flag to one or more collections by selecting in the **Flag availability across collections** list.
+
 1. Click **Create**.
 
 By default, when you create a new feature flag, the **Enabled** toggle switch is set to OFF.
@@ -73,9 +76,10 @@ Each of the Flag type is having a default value.
 
 When you select the **Flag type** as *Boolean*, the **Default value** details are displayed:
 
-![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Figure 12. Feature flag type - Boolean" caption-side="bottom"}
+![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Figure 4. Feature flag type - Boolean" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. This value is returned by default when the toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
+
 1. Select the **Disabled value** from the list. This value is returned by default when toggle switch is set to *OFF* for the feature flag.
 
 ### String
@@ -83,9 +87,10 @@ When you select the **Flag type** as *Boolean*, the **Default value** details ar
 
 When you select the **Flag type** as *String*, the **Default value** details are displayed:
 
-![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Figure 13. Feature flag type - String" caption-side="bottom"}
+![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Figure 5. Feature flag type - String" caption-side="bottom"}
 
 1. Specify the **Enabled value**. This value is returned by default when toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
+
 1. Specify the **Disabled value**. This value is returned by default when toggle switch is set to *OFF* for the feature flag.
 
 ### Numeric
@@ -93,9 +98,10 @@ When you select the **Flag type** as *String*, the **Default value** details are
 
 When you select the **Flag type** as *Numeric*, the **Default value** details are displayed:
 
-![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Figure 14. Feature flag type - Numeric" caption-side="bottom"}
+![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Figure 6. Feature flag type - Numeric" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. Only integer values are supported. This value is returned by default when toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
+
 1. Select the **Disabled value** from the list. Only integer values are supported. This value is returned by default when toggle switch is set to *OFF* for the feature flag.
 
 ## Target collections to feature flags
@@ -124,13 +130,17 @@ Phased Rollout capability is available for Lite and Enterprise plans.
 You can roll out feature flags to one or more target segments. You can set different flag values for different segments, if needed.
 
 1. From the {{site.data.keyword.appconfig_short}} console, go to **Feature flags**. This pane displays the list of feature flags available in the current environment of the {{site.data.keyword.appconfig_short}} service instance.
+
 1. Click **Add targeting** in the required feature flag row to display the **Target flag to segments** side-panel.
 
-![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Figure 15. Target feature flag to segments" caption-side="bottom"}
+   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Figure 7. Target feature flag to segments" caption-side="bottom"}
 
 1. Select **Segments** from the list. If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
+
 1. Select the **Enabled value** (Inherit from flag or Override).
+
 1. Click **Save** to save the changes that are made to the **Add targeting**.
+
 1. Click **Add targeting**.
 
 If you try to target a feature flag, that is not linked to a collection, a window is displayed to add a feature flag to a collection.
@@ -146,10 +156,10 @@ After you target a feature flag to a segment, click the toggle (ON/OFF) to enabl
 
 The overflow menu for each of the feature flag (three vertical dots) consists of **Edit**, **Copy**, and **Delete** operations and **Remove targeting** for those feature flags that are already targeted.
 
-![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Figure 16. Overflow menu for a feature flag" caption-side="bottom"}
+![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Figure 8. Overflow menu for a feature flag" caption-side="bottom"}
 
-* When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, change the **Flag type** and **Default value**, and add or remove collections for the **Flag availability across collections** field information.
-* When **Copy** option is selected, the feature flag information is copied and you need to modify the **Name** of the feature flag. Optionally, modify the other details based on your need.
-* When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected feature flag. Deleting option permanently deletes the feature flag and the action cannot be undone.
-* In the list of feature flags, in a feature flag, when **Copy to clipboard** icon is clicked, the feature flag's **Feature flag ID** value is copied to the clipboard.
-* **Remove targeting** removes the targeting of feature flags to a segment.
+- When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, change the **Flag type** and **Default value**, and add or remove collections for the **Flag availability across collections** field information.
+- When **Copy** option is selected, the feature flag information is copied and you need to modify the **Name** of the feature flag. Optionally, modify the other details based on your need.
+- When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected feature flag. Deleting option permanently deletes the feature flag and the action cannot be undone.
+- In the list of feature flags, in a feature flag, when **Copy to clipboard** icon is clicked, the feature flag's **Feature flag ID** value is copied to the clipboard.
+- **Remove targeting** removes the targeting of feature flags to a segment.
