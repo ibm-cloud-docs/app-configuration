@@ -98,12 +98,12 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.properties.create` | Manager, Administrator | Create a property. |
 | `apprapp.properties.delete` | Manager, Administrator | Delete a property. |
 | `apprapp.properties.patch` | Writer | Update a property. |
-| `apprapp.snapshots.create` | Manager, Administrator | Create a snapshot. |
-| `apprapp.snapshots.update` | Manager, Administrator | Update a snapshot. |
-| `apprapp.snapshots.delete` | Manager, Administrator | Delete a snapshot. |
-| `apprapp.snapshots.list` | Manager, Reader, Writer, Config Operator | Get list of snapshots. |
-| `apprapp.snapshots.read` | Manager, Reader, Writer, Config Operator | Get individual snapshot. |
-| `apprapp.snapshots.promote` | Manager, Administrator | Promotes a snapshot to Git. |
+| `apprapp.snapshots.create` | Manager, Administrator | Create a Snapshots configuration. |
+| `apprapp.snapshots.update` | Manager, Administrator | Update a Snapshots configuration. |
+| `apprapp.snapshots.delete` | Manager, Administrator | Delete a Snapshots configuration. |
+| `apprapp.snapshots.list` | Manager, Reader, Writer, Config Operator | Get list of Snapshot configuration. |
+| `apprapp.snapshots.read` | Manager, Reader, Writer, Config Operator | Get individual Snapshots configuration. |
+| `apprapp.snapshots.promote` | Manager, Administrator | Promotes a Snapshots configuration to Git. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
 {: tab-title="Actions"}
