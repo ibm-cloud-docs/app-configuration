@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-11"
+lastupdated: "2022-07-12"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -82,7 +82,7 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.environments.create` | Manager, Administrator | Create an environment. |
 | `apprapp.environments.update` | Manager, Administrator | Update an environment. |
 | `apprapp.environments.delete` | Manager, Administrator | Delete an environment. |
-| `apprapp.environments.list` | Manager, Reader, Writer, Config Operator | Get list of environments. |
+| `apprapp.environments.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of environments. |
 | `apprapp.features.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of feature flags. |
 | `apprapp.features.create` | Manager, Administrator | Create a feature flag. |
 | `apprapp.features.update` | Manager, Administrator | Update a feature flag. |
@@ -93,7 +93,7 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.segments.delete` | Manager, Writer, Administrator | Delete a segment. |
 | `apprapp.features.patch` | Writer | Update a feature flag. |
 | `apprapp.features.toggle` | Manager, Writer, Administrator, Config Operator | Toggle a feature flag |
-| `apprapp.properties.list` | Manager, Reader, Writer, Config Operator | Get list of properties. |
+| `apprapp.properties.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of properties. |
 | `apprapp.properties.update` | Manager, Administrator | Update a property. |
 | `apprapp.properties.create` | Manager, Administrator | Create a property. |
 | `apprapp.properties.delete` | Manager, Administrator | Delete a property. |
@@ -101,8 +101,8 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.snapshots.create` | Manager, Administrator | Create a Snapshots configuration. |
 | `apprapp.snapshots.update` | Manager, Administrator | Update a Snapshots configuration. |
 | `apprapp.snapshots.delete` | Manager, Administrator | Delete a Snapshots configuration. |
-| `apprapp.snapshots.list` | Manager, Reader, Writer, Config Operator | Get list of Snapshot configuration. |
-| `apprapp.snapshots.read` | Manager, Reader, Writer, Config Operator | Get individual Snapshots configuration. |
+| `apprapp.snapshots.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
+| `apprapp.snapshots.read` | Manager, Reader, Writer, Administrator, Config Operator | Get individual Snapshots configuration. |
 | `apprapp.snapshots.promote` | Manager, Administrator | Promotes a Snapshots configuration to Git. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
