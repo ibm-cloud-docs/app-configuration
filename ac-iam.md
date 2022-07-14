@@ -101,7 +101,7 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.gitconfigs.create` | Manager, Administrator | Create a Snapshots configuration. |
 | `apprapp.gitconfigs.update` | Manager, Administrator | Update a Snapshots configuration. |
 | `apprapp.gitconfigs.delete` | Manager, Administrator | Delete a Snapshots configuration. |
-| `apprapp.gitconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
+| `apprapp.gitconfigs.view` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
 | `apprapp.gitconfigs.promote` | Manager, Administrator | Promotes a Snapshots configuration to Git. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
