@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-03-29"
+  years: 2020, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # What is {{site.data.keyword.appconfig_short}}?
 {: #ac-about}

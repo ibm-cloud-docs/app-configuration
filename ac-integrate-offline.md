@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-07-15"
+  years: 2020, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -10,31 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Enable offline mode 
 {: #ac-offline}
@@ -49,7 +25,7 @@ This method allows the application to use {{site.data.keyword.appconfig_short}} 
 ## Creating the configuration file to use in offline mode
 {: #ac-offline-configfile}
 
-To enable offline mode, use a local file with the configuration details. You can create this file using the {{site.data.keyword.appconfig_short}} CLI.
+To enable offline mode, use a local file with the configuration details. You can create this file by using the {{site.data.keyword.appconfig_short}} CLI.
 
 Refer to the [CLI reference document](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli) for steps to install and configure {{site.data.keyword.appconfig_short}} CLI.
 
@@ -63,12 +39,14 @@ ibmcloud ac config --collection_id COLLECTION_ID --environment_id ENVIRONMENT_ID
 ## Command options
 {: #ac-ibmcloud-ac-configure-command}
 
---environment_id ENVIRONMENT_ID
-:   Environment Id
---collection_id COLLECTION_ID
-:   Collection Id
---file FILE
-:   Path to file where configuration is exported
+`--environment_id ENVIRONMENT_ID`
+: Environment ID
+
+`--collection_id COLLECTION_ID`
+: Collection ID
+
+`--file FILE`
+: Path to file where configuration is exported
 
 ## Enabling offline mode
 {: #ac-offline-enable}
@@ -79,7 +57,7 @@ For a Node.js SDK you can use the local configuration file as in the following e
 
 ```javascript
 const client = AppConfiguration.getInstance();
-let region = AppConfiguration.REGION_US_SOUTH;;
+let region = AppConfiguration.REGION_US_SOUTH;
 let guid = 'abc-def-xyz'; let apikey = 'j9qc-abc-z79';
 client.init(region, guid, apikey)
 let collectionId = '<collectionId>';
@@ -90,5 +68,5 @@ client.setContext(collectionId, environmentId, configurationFile, liveConfigUpda
 ```
 {: codeblock}
 
-Refer to the respective SDK documentation for specific guidance.
+For more information, see the respective SDK documentation.
 {: note}

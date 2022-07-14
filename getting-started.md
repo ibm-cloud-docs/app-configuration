@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-04-18"
+  years: 2020, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with {{site.data.keyword.appconfig_short}}
 {: #getting-started}
@@ -28,15 +21,22 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_short}} currently offers three pricing [plans](/docs/app-configuration?topic=app-configuration-ac-faqs-usage#faq-ac-pricing): **Lite**, **Standard**, and **Enterprise**. 
 
 You need an {{site.data.keyword.cloud}} account. If you don't have an account, create one [here](https://cloud.ibm.com/registration/). Log in to your {{site.data.keyword.cloud}} account.
-{: note }
+{: note}
 
 The basic steps that get you started:
 
 1. [Create an {{site.data.keyword.appconfig_short}} service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance)
+
 1. [Create a collection](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection)
+
 1. [Set up environments, feature flags, and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
+
 1. [Integrate {{site.data.keyword.appconfig_short}} service SDKs](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
+
 1. [Create segments](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment)
+
 1. [Target feature flags to segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) or [Target properties to segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties)
+
 1. [Target collections to feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags) or [Target collections to properties](/docs//app-configuration?topic=app-configuration-ac-properties#collection-target-properties)
+
 1. [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).

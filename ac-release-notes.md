@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -10,17 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:preview: .preview}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # What's new
 {: #releases-notes}

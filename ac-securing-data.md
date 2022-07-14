@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Securing your data in {{site.data.keyword.appconfig_short}}
 {: #ac-securing-your-data}
@@ -50,6 +43,7 @@ IBM personnel have access to the configuration data. It is recommended to avoid 
 {: #ac-data-deletion}
 
 When you delete an instance of {{site.data.keyword.appconfig_short}}, all of the associated data is also deleted. When the service instance is deleted, a 7-day reclamation period begins. During that time, you are able to restore the instance and all of the associated user data. However, if the instance and data are permanently deleted, it cannot be restored. {{site.data.keyword.appconfig_short}} does not store any data from permanently deleted instances.
+
 The {{site.data.keyword.appconfig_short}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.appconfig_short}} service description, which you can find in the [IBM Cloud Terms and Notices](https://cloud.ibm.com/docs/overview?topic=overview-terms).
 
 ### Deleting an instance
@@ -58,4 +52,3 @@ The {{site.data.keyword.appconfig_short}} data retention policy describes how lo
 If you no longer need an instance of {{site.data.keyword.appconfig_short}}, you can delete the service instance and any data that is stored using `ibmcloud CLI`. You can also choose to delete your service instance by using the console.
 
 To restore a deleted instance or to delete the instance permanently you can use Resource Reclamations. Refer to [Using resource reclamations](https://cloud.ibm.com/docs/account?topic=account-resource-reclamation) to know more on the resource reclamation.
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing service access
 {: #ac-service-access-management}
@@ -25,9 +18,10 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_short}} uses {{site.data.keyword.iamlong}} (IAM) to perform authorization and authentication.
 {: shortdesc}
 
-Access to {{site.data.keyword.appconfig_short}} service instances for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM). Every user in your account, who needs access to {{site.data.keyword.appconfig_short}}, must be assigned with an IAM role with specific access policy. The access policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+Access to {{site.data.keyword.appconfig_short}} service instances for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM). Every user in your account who needs access to {{site.data.keyword.appconfig_short}}, must be assigned with an IAM role with specific access policy. The access policy determines what actions that a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 
-Policies help you to grant access at different levels. Some of the options are,
+Policies help you to grant access at different levels. Some of the options are:
+
 - Access across all instances of the service in your account.
 - Access to an individual service instance in your account.
 - Access to a specific resource within an instance.
@@ -37,12 +31,12 @@ Policies help you to grant access at different levels. Some of the options are,
 
 With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for users and resources in your account. {{site.data.keyword.appconfig_short}} service aligns with {{site.data.keyword.cloud_notm}} IAM roles so that each user has a different view of the service, according to the role assigned. 
 
-*Roles* define the actions that a user or service ID can run. There are different types of roles in the  {{site.data.keyword.cloud_notm}}:
+*Roles* define the actions that a user or service ID can run. The following types of roles are in {{site.data.keyword.cloud_notm}}:
 
-- *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications.
+- *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, or bind instances to applications.
 - *Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
 
-{{site.data.keyword.appconfig_short}} uses both the **Platform and Service management roles**. You can set policies about who can create a instance at the platform level, and then use the service roles to manage interaction with the instance itself. As the creator of a instance, you do not need to set any IAM policies to view or work with your {{site.data.keyword.appconfig_short}} entities.
+{{site.data.keyword.appconfig_short}} uses both the **Platform and Service management roles**. You can set policies about who can create an instance at the platform level, and then use the service roles to manage interaction with the instance itself. As the creator of an instance, you do not need to set any IAM policies to view or work with your {{site.data.keyword.appconfig_short}} entities.
 
 For complete IAM documentation, see [Managing access](/docs/account?topic=account-cloudaccess) in {{site.data.keyword.cloud_notm}}.
 {: note}
@@ -56,7 +50,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
 | Editor | As an editor, you can perform all platform actions except for managing the account and assigning access policies. |
 {: row-headers}
-{: caption="Table 2. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 1. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #platform-roles-table1}
 {: tab-title="Platform roles"}
 {: tab-group="app-rapp"}
@@ -65,13 +59,13 @@ Review the platform and service roles available and the actions that are mapped 
 
 | Role | Description |
 | ----- | :----- |
-| Manager | As a manager, you haver permissions beyond the writer role to complete privileged actions as defined by the service. In addition, you can create and edit service-specific resources. |
+| Manager | As a manager, you have permissions beyond the writer role to complete privileged actions as defined by the service. In addition, you can create and edit service-specific resources. |
 | Reader | As a reader, you can perform read-only actions within a service such as viewing service-specific resources. |
 | Writer | As a writer, you have permissions beyond the reader role, including creating and editing service-specific resources. |
 | Config Operator | As a Config Operator, you can toggle the feature state. |
-| Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your web or mobile application integrated with client SDK. |
+| Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK. |
 {: row-headers}
-{: caption="Table 2. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}
@@ -87,8 +81,8 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.collections.delete` | Manager, Administrator | Delete the collection. |
 | `apprapp.environments.create` | Manager, Administrator | Create an environment. |
 | `apprapp.environments.update` | Manager, Administrator | Update an environment. |
-| `apprapp.environements.delete` | Manager, Administrator | Delete an environment. |
-| `apprapp.environments.list` | Manager, Reader, Writer, Config Operator | Get list of environments. |
+| `apprapp.environments.delete` | Manager, Administrator | Delete an environment. |
+| `apprapp.environments.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of environments. |
 | `apprapp.features.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of feature flags. |
 | `apprapp.features.create` | Manager, Administrator | Create a feature flag. |
 | `apprapp.features.update` | Manager, Administrator | Update a feature flag. |
@@ -99,12 +93,17 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.segments.delete` | Manager, Writer, Administrator | Delete a segment. |
 | `apprapp.features.patch` | Writer | Update a feature flag. |
 | `apprapp.features.toggle` | Manager, Writer, Administrator, Config Operator | Toggle a feature flag |
-| `apprapp.properties.list` | Manager, Reader, Writer, Config Operator | Get list of properties. |
+| `apprapp.properties.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of properties. |
 | `apprapp.properties.update` | Manager, Administrator | Update a property. |
 | `apprapp.properties.create` | Manager, Administrator | Create a property. |
 | `apprapp.properties.delete` | Manager, Administrator | Delete a property. |
 | `apprapp.properties.patch` | Writer | Update a property. |
-{: caption="Table 2. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+| `apprapp.gitconfigs.create` | Manager, Administrator | Create a Snapshots configuration. |
+| `apprapp.gitconfigs.update` | Manager, Administrator | Update a Snapshots configuration. |
+| `apprapp.gitconfigs.delete` | Manager, Administrator | Delete a Snapshots configuration. |
+| `apprapp.gitconfigs.view` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
+| `apprapp.gitconfigs.promote` | Manager, Administrator | Promotes a Snapshots configuration to Git. |
+{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
 {: #actions-table1}
 {: tab-title="Actions"}
 {: tab-group="app-rapp"}

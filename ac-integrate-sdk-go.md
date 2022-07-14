@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-01-22"
+  years: 2021, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -10,31 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:java: .ph data-hd-programlang='java'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:c#: .ph data-hd-programlang='c#'}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:php: .ph data-hd-programlang='PHP'}
-{:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
-{:csharp: .ph data-hd-programlang='csharp'}
-{:ios: .ph data-hd-programlang='iOS'}
-{:android: .ph data-hd-programlang='Android'}
-{:cordova: .ph data-hd-programlang='Cordova'}
-{:xml: .ph data-hd-programlang='xml'}
-{:curl: .ph data-hd-programlang='curl'}
-{:node: .ph data-hd-programlang='node'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration server SDK for Go
 {: #ac-golang}
@@ -73,17 +49,16 @@ subcollection: app-configuration
    {: codeblock}
 
    Where,
-   - region: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
-   - guid: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - apiKey: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - collectionId: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
-   - environmentId: ID of the environment created in App Configuration service instance under the Environments section.
+   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `apiKey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `collectionId`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
+   - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
 ### Option to use a persistent cache for configuration
 {: #ac-go-persistent-cache}
 
-In order for your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
-
+For your application and SDK to continue operations even during the unlikely scenario of an {{site.data.keyword.appconfig_short}} service downtime, across your application restarts, you can configure the SDK to work by using a persistent cache. The SDK uses the persistent cache to store the {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
 ```go
   // 1. default (without persistent cache)
@@ -95,10 +70,9 @@ appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.Contex
 ```
 {: codeblock}
 
-   where,
-   - PersistentCacheDirectory: Absolute path to a directory which has read and write permission for the user. The SDK will create a file - `AppConfiguration.json` in the specified directory, and it will be used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+Where `PersistentCacheDirectory` is the absolute path to a directory that has read and write permission for the user. The SDK creates a file `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
 
-When persistent cache is enabled, the SDK will keep the last known good configuration at the persistent cache. In the case of the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache is loaded to the application to continue working.
+When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
 
 ### Offline options
 {: #ac-go-offline}
@@ -115,9 +89,9 @@ The SDK is also designed to serve configurations, and perform feature flag and p
 
 Where,
 
-- BootstrapFile: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+- `BootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
 
-- LiveConfigUpdateEnabled: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
+- `LiveConfigUpdateEnabled`: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
 
 ### Examples for using property and feature-related APIs
 {: #ac-golang-example}
@@ -221,17 +195,17 @@ propertyVal := property.GetCurrentValue(entityId, entityAttributes)
 You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be a text string, JSON, or YAML. The SDK processes each
 format as shown in the table.
 
-| **Feature or Property value**                                                                                      | **Data type** | **Data format** | **Type of data returned <br> by `GetCurrentValue()`** | **Example output**                                                   |
-| ------------------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `true`                                                                                                             | BOOLEAN      | not applicable | `bool`                                                | `true`                                                               |
-| `25`                                                                                                               | NUMERIC      | not applicable | `float64`                                             | `25`                                                                 |
-| "a string text"                                                                                                    | STRING       | TEXT           | `string`                                              | `a string text`                                                      |
-| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `map[string]interface{}`                              | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
-| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `map[string]interface{}`                              | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
-{: caption="Table 1. Example outputs" caption-side="top"}
+| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `GetCurrentValue()`** | **Example output** |
+| -- | -- | -- | -- | -- |
+| `true` | BOOLEAN | not applicable | `bool` | `true` |
+| `25` | NUMERIC | not applicable | `float64` | `25` |
+| "a string text" | STRING | TEXT | `string` | `a string text` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `map[string]interface{}` | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
+| `men:`  \n   `- John Smith`  \n   `- Bill Jones`  \n `women:`  \n   `- Mary Smith`  \n   `- Susan Williams`  | STRING | YAML | `map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
+{: caption="Table 1. Example outputs" caption-side="bottom"}
 
-
-#### Feature flag
+### Feature flag
+{: #ac-android-feat-flag}
 
 ```go
 feature, err := appConfiguration.GetFeature("json-feature")
@@ -257,6 +231,7 @@ if err == nil {
 {: codeblock}
 
 #### Property
+{: #ac-android-property}
 
 ```go
 property, err := appConfiguration.GetProperty("json-property")
@@ -282,7 +257,7 @@ if err == nil {
 {: codeblock}
 
 #### Listen to the property and feature changes
-
+{: #ac-android-listen-property}
 
 To listen to the data changes, add the following code in your application:
 

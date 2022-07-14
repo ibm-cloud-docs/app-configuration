@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-01-12"
+  years: 2020, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, service credentials, authentication
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Authenticating with service credentials
 {: #ac-service-credentials}
@@ -30,4 +23,3 @@ Services that are managed by {{site.data.keyword.iamlong}} (IAM) can generate a 
 Click **Service credentials** to view the existing credentials with the **Key name** and **Date created** or create a new one.  
 
 For more information on adding and viewing a service credential, see [here](/docs/account?topic=account-service_credentials){: external}.
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-04-18"
+  years: 2021, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, set up environments feature flags and properties, feature flags, properties, environments
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Set up environments, feature flags, and properties
 {: #ac-ff-prop-env}
@@ -28,14 +21,14 @@ Use feature flags to enable or disable a feature in your application code. You c
 ## Environments
 {: #ac-setup-environments}
 
-Environments in {{site.data.keyword.appconfig_short}} represents your application environments. Typical environments could be dev, staging, production and so on. Environments allow to manage your feature flags and properties to various deployments from development to production. For more information, see [environments](/docs/app-configuration?topic=app-configuration-ac-environments).
+Environments in {{site.data.keyword.appconfig_short}} represent your application environments. Typical environments might be dev, staging, or production. Environments manage your feature flags and properties to various deployments from development to production. For more information, see [Environments](/docs/app-configuration?topic=app-configuration-ac-environments).
 
 ## Feature flags
 {: #ac-setup-ff}
 
-Separate code delivery from feature enablement. Dark launch feature code in the application at specified date or to a set of target users. For more information, see [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags).
+Separate code delivery from feature enablement. Dark launch feature code in the application to a set of target users. For more information, see [feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags).
 
 ## Properties
 {: #ac-setup-prop}
 
-Configure and manage properties for distributed applications and environments centrally in one place. For more information, see [properties](/docs/app-configuration?topic=app-configuration-ac-properties).
+Configure and manage properties for distributed applications and environments centrally in one place. For more information, see [Properties](/docs/app-configuration?topic=app-configuration-ac-properties).
