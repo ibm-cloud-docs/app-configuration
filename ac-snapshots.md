@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-11"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -56,7 +56,6 @@ To create a snapshot, complete these steps:
       {: note}
 
       ![Permissions to be selected during Git token creation](images/ac-snapshots-git-token.png "Permissions to be selected during Git token creation"){: caption="Figure 4. Permissions to be selected during Git token creation" caption-side="bottom"}
-      {: note}
 
 1. Click **Save**.
 
