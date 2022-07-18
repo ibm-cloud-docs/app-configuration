@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-03-30"
+  years: 2021, 2022
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, sample apps
 
@@ -10,14 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Sample Apps
 {: #ac-sample-apps}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-06-16"
+lastupdated: "2022-07-14"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -10,15 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:screen: .screen}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.appconfig_short}} concepts
 {: #ac-overview}
@@ -31,7 +23,7 @@ Learn about {{site.data.keyword.appconfig_short}} concepts like service instance
 ## Service instance 
 {: #ac-service-instance}
 
-An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{site.data.keyword.appconfig_short}} application on the {{site.data.keyword.Bluemix_notm}}. You create an instance from the tile in the {{site.data.keyword.Bluemix_notm}} catalog. Now you have access to the {{site.data.keyword.appconfig_short}} dashboard and all the functions that comes with the selected pricing plan.
+An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{site.data.keyword.appconfig_short}} application on the {{site.data.keyword.cloud_notm}}. You create an instance from the tile in the {{site.data.keyword.cloud_notm}} catalog. Now you have access to the {{site.data.keyword.appconfig_short}} dashboard and all the functions that come with the selected pricing plan.
 
 ## Environment
 {: #ac-environment}
@@ -43,7 +35,7 @@ An {{site.data.keyword.appconfig_short}} service instance is your copy of the {{
 
 Use collections to group feature flags and properties in any way that is meaningful to you. Often a collection is used to represent all configuration values for a particular application. Feature flags and properties can belong to more than one collection for cases where you want to share a common configuration value across apps or sets of infrastructure.
 
-## Feature Flag
+## Feature flag
 {: #ac-fefl}
 
 Feature flags are configuration parameters that you want to turn on and off quickly or frequently. They can be used to set the state of your application. Within your application, the `isEnabled()` method of the {{site.data.keyword.appconfig_short}} SDK is used to activate conditional blocks of code to turn features on and off based on the state of a feature flag. Use feature flags to dark launch features into production and then switch them on only for selected users or roll them out to your users selectively and independently from deployments. Each feature flag must belong to a collection.
@@ -69,6 +61,6 @@ An attribute is a parameter that is used to define a segment. Attributes are use
 Feature flags and properties are targeted to segments based on a set of rules that are called the targeting definition. With targeting, you can override the default value for a flag or property, for any segment you define. 
 
 ## {{site.data.keyword.appconfig_short}} SDK 
-{: #ac-SDK-concept}
+{: #ac-sdk-concept}
 
 The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.
