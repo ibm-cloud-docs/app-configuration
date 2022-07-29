@@ -56,6 +56,7 @@ toc:
           - ac-integrate-sdk-java.md
           - ac-integrate-sdk-android.md
           - ac-integrate-sdk-javascript.md
+          - ac-integrate-sdk-react.md
           - link:
               label: App Configuration admin SDK for Go
               href: https://{DomainName}/apidocs/app-configuration?code=go
