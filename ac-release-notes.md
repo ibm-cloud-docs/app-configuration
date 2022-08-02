@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-29"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -22,6 +22,8 @@ Stay up-to-date with the new features that are available for {{site.data.keyword
 {: #July-2022}
 
 [JavaScript SDK](/docs/app-configuration?topic=app-configuration-ac-javascript) available to integrate browser applications with App Configuration service.
+
+[React SDK](/docs/app-configuration?topic=app-configuration-ac-react) available to integrate react applications with App Configuration service.
 
 ## June 2022
 {: #June-2022}
