@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-08-11"
 
 keywords: app-configuration, app configuration, about app configuration
 

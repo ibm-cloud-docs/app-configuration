@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-11"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -40,6 +40,11 @@ Release of 0.3.0 version of Admin SDK to support snapshots.
 Phased rollout support for feature flags is available for Lite and Enterprise plan. 
 
 Upgrade the server SDKs to version 0.3.0 and above for the phased rollout feature.
+
+## January 2022
+{: #jan-2022}
+
+IBM Cloud App Configuration is now available in Washington DC region.
 
 ## September 2021
 {: #sep-2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-08-11"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -23,7 +23,7 @@ Learn how {{site.data.keyword.appconfig_short}} works under normal operation or 
 
 During normal operation, the {{site.data.keyword.appconfig_short}} SDK (#2 in Figure 1) handles the automatic delivery of the appropriate flag state or property value into your application from the {{site.data.keyword.appconfig_notm}} instance (#1 in Figure 1). During intialization, the SDK connects to the {{site.data.keyword.appconfig_short}} API and fetches the specified collections, segment rules, and targeting rules (#3 in Figure 1), and then evaluates the rules against attribute values programmed into your application to select the correct [segment](/docs/app-configuration?topic=app-configuration-ac-segments) and target values. Attributes upon which the rules operate are stored locally, and not in the {{site.data.keyword.appconfig_notm}} service on the cloud. Therefore, if you need to evalutate against attributes that are confidential, for example a social security number, the values never leave the local application environment.
 
-After initialization, the application receives updated values in two ways depending on whether you are using server-side or client-side SDKs.  Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket, and modified values are delivered your application in real time. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground.
+After initialization, the application receives updated values in two ways depending on whether you are using server-side or client-side SDKs. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket, and modified values are delivered your application in real time. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground.
 
 During normal operation, various metrics are sent back to the AC cloud service (#6 in Figure 1) so that the service can operate properly and so that you can monitor its operation.
 
