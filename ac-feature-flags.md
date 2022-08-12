@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-11"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -18,7 +18,9 @@ subcollection: app-configuration
 As an app owner, create, and manage feature flags, add them to collections and use them in your app by using SDKs. You can also control the applicability of a feature by enabling or disabling it at run time.
 {: shortdesc}
 
-A feature can be enabled or disabled to all the collection users, or to a specific set of users and devices.
+A feature can be enabled or disabled to all the collection users or to a specific set of users and devices or to a certain percentage of specific set of users and devices.
+
+Feature roll outs can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled.
 
 By default, the Feature flags pane displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record. Flag types are categorized as Boolean, Numeric or String.
 
@@ -41,20 +43,19 @@ To create a feature flag, complete these steps:
 
    ![Create feature flag](images/ac-create-feature-flag.png "Creating feature flag"){: caption="Figure 2. Creating a new feature flag" caption-side="bottom"}
 
-   ![Create feature flag with further details](images/ac-create-feature-flag1.png "Creating feature flag further details"){: caption="Figure 3. Creating a feature flag further details" caption-side="bottom"}
-
 1. Provide the feature flag details:
    - **Name** - name of the feature flag.
    - **Feature flag ID** - the feature flag ID value is auto suggested based on the entered feature name. You can modify the same, if needed. Use the **Feature flag ID** value as the identifier in your SDK or API code.
-   - Optionally, define **Tags** that are required to identify with the feature flag.
-   - **Description** - add a description of the feature flag, which is optional.
    - **Flag type** - specify the type of the feature flag. Supported type includes: Boolean, String, and Numeric. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - **Default value** - specify the default value for the feature flag type selected. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - Optionally, you can add the feature flag to one or more collections by selecting in the **Flag availability across collections** list.
+   - **Feature rollout** - specify the `Rollout percentage` using the slider. For more information about percentage rollout, see [Configure feature rollout percentage](#configure-rollout-percentage).
+   - **Description** - add a description of the feature flag, which is optional.
+   - Optionally, define **Tags** that are required to identify with the feature flag.
 
 1. Click **Create**.
 
-By default, when you create a new feature flag, the **Enabled** toggle switch is set to OFF.
+By default, when you create a new feature flag, the **Enabled** toggle switch is set to `OFF`.
 {: note}
 
 ## Selecting feature flag type
@@ -76,7 +77,7 @@ Each of the Flag type is having a default value.
 
 When you select the **Flag type** as *Boolean*, the **Default value** details are displayed:
 
-![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Figure 4. Feature flag type - Boolean" caption-side="bottom"}
+![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Figure 3. Feature flag type - Boolean" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. This value is returned by default when the toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
 
@@ -87,7 +88,9 @@ When you select the **Flag type** as *Boolean*, the **Default value** details ar
 
 When you select the **Flag type** as *String*, the **Default value** details are displayed:
 
-![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Figure 5. Feature flag type - String" caption-side="bottom"}
+![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Figure 4. Feature flag type - String" caption-side="bottom"}
+
+1. Select the **Format** of the string flag type from the list. Supported format is Text, JSON, and YAML. When JSON or YAML format is selected, provide the **Enabled value** and **Disabled value** in the selcted format.
 
 1. Specify the **Enabled value**. This value is returned by default when toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
 
@@ -98,7 +101,7 @@ When you select the **Flag type** as *String*, the **Default value** details are
 
 When you select the **Flag type** as *Numeric*, the **Default value** details are displayed:
 
-![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Figure 6. Feature flag type - Numeric" caption-side="bottom"}
+![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Figure 5. Feature flag type - Numeric" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. Only integer values are supported. This value is returned by default when toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
 
@@ -119,10 +122,42 @@ If you try to target a feature flag, that is not linked to a collection, a windo
 
 You can configure the feature flag with a rollout percentage in the range of 0 to 100, denoting the applicability of the feature to a partial set of users or devices. 
 
-Phased rollout helps to enable a feature to a subset of entities, providing more control on the release cycle and achieve progressive delivery.
+Percentage rollout helps to enable a feature to a subset of entities, providing more control on the release cycle and achieve progressive delivery.
 
-Phased Rollout capability is available for Lite and Enterprise plans. 
+Percentage rollout capability is available for Lite and Enterprise plans. 
 {: note}
+
+Following are some of the percentage rollout scenarios:
+
+- If the feature flag is disabled, then SDK returns the default **Disabled value**.
+- If the feature flag is enabled without any segment rules and no percentage rollout is set, then the SDK returns default **Enabled value**.
+- If the feature flag is enabled without any segment rule and percentage rollout is set to 0%, then the SDK returns **Disabled value** for all users.
+- If the feature flag is enabled without any segment rule and percentage rollout is set to a percent, say 50%, then the SDK checks if the user belongs to the configured percentage rollout size, if the user belongs to the rollout criteria, then the SDK returns the **Enabled value**. If the user doesn't belong to the rollout criteria, then the SDK returns the **Disabled value**.
+- If the feature flag is enabled with segment rules, then SDK first evalutes the user against the configured rules. If user is part of the configured rule, then the SDK evaluates if the user is eligible for percentage rollout.
+   - If multiple rules are configured and the user is checked for rule match until the first match. If no match found, then the SDK evaluates against the default rollout.
+   - If the user is evaluated to be part of the segment and the segment percentage rollout is 0%, then even if the user is part of the segment, user will not receive the segment value. The SDK returns the default **Disabled value**.
+   - If the user is evaluated to be part of the segment and the segment percentage rollout is set to a percentage, say 50%, then the SDK checks if the user belongs to configured rollout size, if the user belongs to the rollout criteria, then the SDK returns the segment overriden value. If the user doesn't belongs to the rollout criteria, then the SDK returns **Disabled value**.
+
+### View as table
+{: #feature-flags-percentage-rollout-scenarios}
+{: notoc}
+
+| Feature Flag | Segment | Is user part of configured segment | Percentage rollout | Is user part of percentage rollout criteria | Value returned by SDK |
+| :---------- | :---------- | :---------- | :---------- | :---------- | :---------- |
+| Disabled | With/without rule | NA | Any % rollout set | NA | Disabled value |
+| Enabled | Without rule | NA | 100% | Yes | Enabled value |
+| Enabled | Without rule | NA | 0% | No | Disabled value |
+| Enabled | Without rule | NA | Between 0% to 100% | Yes | Enabled value |
+| Enabled | Without rule | NA | Between 0% to 100% | No | Disabled value |
+| Enabled | With rule | No | 100% | Yes | Enabled value |
+| Enabled | With rule | No | 0% | No | Disabled value |
+| Enabled | With rule | No | Between 0% to 100% | Yes | Enabled value |
+| Enabled | With rule | No | Between 0% to 100% | No | Disabled value |
+| Enabled | With rule | Yes | 100% | Yes | Overriden value |
+| Enabled | With rule | Yes | 0% | No | Disabled value |
+| Enabled | With rule | Yes | Betweeen 0% to 100% | Yes | Overriden value |
+| Enabled | With rule | Yes | Betweeen 0% to 100% | No | Disabled value |
+{: caption="Table 1. Percentage rollout scenarios" caption-side="bottom"}
 
 ## Targeting a segment with a feature flag
 {: #targeting-segment-with-feature-flag}
@@ -133,13 +168,18 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 1. Click **Add targeting** in the required feature flag row to display the **Target flag to segments** side-panel.
 
-   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Figure 7. Target feature flag to segments" caption-side="bottom"}
+   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Figure 6. Target feature flag to segments" caption-side="bottom"}
 
-1. Select **Segments** from the list. If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
+1. The **Feature rollout** displays the default **Rollout percentage** slider define when creating the feature flag. Modify the rollout percentage value, if required. 
 
-1. Select the **Enabled value** (Inherit from flag or Override).
+1. In the **Rules** section, define the rule by specifying the following:
 
-1. Click **Save** to save the changes that are made to the **Add targeting**.
+   - In the **Rollout percentage**, you can define the value as an **Override** or **Inherit from default**. If the **Override** option is selected, then specify the **Rollout percentage** override value using the slider.
+   - Select **Segments** from the list. If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
+   - For the **Enabled value**, you can select **Override** and modify the value or select **Inherit from flag**.
+   - Click to **Save rule**
+
+   You can define more rules by clicking **Add rule**.
 
 1. Click **Add targeting**.
 
@@ -156,7 +196,7 @@ After you target a feature flag to a segment, click the toggle (ON/OFF) to enabl
 
 The overflow menu for each of the feature flag (three vertical dots) consists of **Edit**, **Copy**, and **Delete** operations and **Remove targeting** for those feature flags that are already targeted.
 
-![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Figure 8. Overflow menu for a feature flag" caption-side="bottom"}
+![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Figure 7. Overflow menu for a feature flag" caption-side="bottom"}
 
 - When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, change the **Flag type** and **Default value**, and add or remove collections for the **Flag availability across collections** field information.
 - When **Copy** option is selected, the feature flag information is copied and you need to modify the **Name** of the feature flag. Optionally, modify the other details based on your need.

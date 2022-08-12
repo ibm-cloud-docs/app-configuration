@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-11"
 
 keywords: app-configuration, app configuration, environment, environments, create environment
 
@@ -23,7 +23,7 @@ When you create an {{site.data.keyword.appconfig_short}} instance, an environmen
 
 Each feature flag or properties that are created has its own values, tags, and segment rules for each environment. You can also toggle the feature flag per environment so that you can have different rules for flags per environment for the same feature flag or properties.
 
-By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
+By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, date of creation, and **labels**.
 
 ![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 1. List of environments" caption-side="bottom"}
 
