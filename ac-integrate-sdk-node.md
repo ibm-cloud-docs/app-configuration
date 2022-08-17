@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-17"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -10,26 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:external: target="_blank" .external}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:tip: .tip}
-{:preview: .preview}
-{:deprecated: .deprecated}
-{:shortdesc: .shortdesc}
-{:ver3: .ph data-hd-interface='v0.3.1 and below'}
-{:ver4: .ph data-hd-interface='v0.4.0 and above'}
-{:curl: .ph data-hd-programlang='curl'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:swift: .ph data-hd-programlang='swift'}
-{:curl: .ph data-hd-programlang='curl'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # App Configuration server SDK for Node
 {: #ac-integrate-sdks}
@@ -173,7 +154,6 @@ if (feature != null) {
 {: #ac-integrate-ff-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns an JSON object containing evaluated value, feature flag enabled status and evaluation details.
-{: ver4}
 
 ```javascript
 const entityId = '<entityId>';
@@ -195,34 +175,10 @@ console.log(result.details.rolloutPercentageApplied); // (only if applicable, el
 console.log(result.details.errorType); // (only if applicable, else it is undefined) contains the error.message if any error was occured during the evaluation.
 ```
 {: codeblock}
-{: ver4}
 
 - `entityId`: Id of the entity. This will be a string identifier related to the entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
-{: ver4}
 
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
-{: ver4}
-
-You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns one of the *Enabled/Disabled/Overridden* value based on the evaluation. The data type of returned value matches that of feature flag.
-{: ver3}
-
-```javascript
-const entityId = 'john_doe';
-const entityAttributes = {
-  city: 'Bangalore',
-  country: 'India',
-};
-
-const featureValue = feature.getCurrentValue(entityId, entityAttributes);
-```
-{: codeblock}
-{: ver3}
-
-- `entityId`: Id of the entity. This will be a string identifier related to the entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
-{: ver3}
-
-- `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
-{: ver3}
 
 #### Get single property
 {: #ac-integrate-ff-get-single-property}
@@ -257,7 +213,6 @@ if (property != null) {
 {: #ac-integrate-ff-property-evaluation}
 
 You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns an JSON object containing evaluated value and evaluation details.
-{: ver4}
 
 ```javascript
 const entityId = '<entityId>';
@@ -277,34 +232,10 @@ console.log(result.details.segmentName); // (only if applicable, else it is unde
 console.log(result.details.errorType); // (only if applicable, else it is undefined) contains the error.message if any error was occured during the evaluation.
 ```
 {: codeblock}
-{: ver4}
 
 - `entityId`: Id of the entity. This will be a string identifier related to the entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
-{: ver4}
 
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
-{: ver4}
-
-You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns the default property value or its overridden value based on the evaluation. The data type of returned value matches that of property.
-{: ver3}
-
-```javascript
-const entityId = 'entityId';
-const entityAttributes = {
-  city: 'Bangalore',
-  country: 'India',
-};
-
-const propertyValue = property.getCurrentValue(entityId, entityAttributes);
-```
-{: codeblock}
-{: ver3}
-
-- `entityId`: Id of the entity. This will be a string identifier related to the entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
-{: ver3}
-
-- `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
-{: ver3}
 
 ## Fetching the appConfigClient across other modules
 {: #ac-fetch-appconfigclient-across-modules}
@@ -355,24 +286,6 @@ feature.getFeatureDataFormat(); // YAML
 feature.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
-{: ver4}
-
-```javascript
-const feature = appConfigClient.getFeature('json-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = feature.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const feature = appConfigClient.getFeature('yaml-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // YAML
-feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
-{: ver3}
 
 ### Property
 {: #ac-integrate-ff-property}
@@ -392,24 +305,6 @@ property.getPropertyDataFormat(); // YAML
 property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
-{: ver4}
-
-```javascript
-const property = appConfigClient.getProperty('json-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = property.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const property = appConfigClient.getProperty('yaml-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // YAML
-property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
-{: ver3}
 
 ### Listen to the feature or property changes
 {: #ac-integrate-ff-feature-prop-change}
