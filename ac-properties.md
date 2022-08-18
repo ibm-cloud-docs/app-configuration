@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-17"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -26,6 +26,9 @@ Property types:
 - A **Numeric** property supports integer values.
 - A **Secret reference** property supports {{site.data.keyword.secrets-manager_short}} integration.
 
+   For selecting **Secret reference** property, you need have a {{site.data.keyword.secrets-manager_short}} instance with Viewer access to the resource group where Secret Manager instance is created or exists. Also, you need to have Reader access to the {{site.data.keyword.secrets-manager_short}} instance.
+   {: note}
+
 An example use case of properties can be to decide the number of instances of your application in a specific region. Create a property in {{site.data.keyword.appconfig_short}}, with type as numeric, and assign segments based on region value.
 
 ![List of properties](images/ac-properties-default.png "List of properties"){: caption="Figure 1. List of properties" caption-side="bottom"}
@@ -42,8 +45,6 @@ To create a property, complete these steps:
 1. Click **Create**. The side panel opens with fields for creating a new property.
 
    ![Create property](images/ac-create-property.png "Creating property"){: caption="Figure 2. Creating a new property" caption-side="bottom"}
-
-   ![Create property with further details](images/ac-create-property1.png "Creating property further details"){: caption="Figure 3. Creating a property further details" caption-side="bottom"}
 
 1. Provide the property details:
    - **Name** - name of the property.
@@ -75,7 +76,7 @@ Each of the **Property type** is having a default value.
 
 When you select the **Property type** as *Boolean*, the **Default value** details are displayed:
 
-![Property type - Boolean](images/ac-property-boolean.png "Selecting property type as Boolean"){: caption="Figure 4. Property type - Boolean" caption-side="bottom"}
+![Property type - Boolean](images/ac-property-boolean.png "Selecting property type as Boolean"){: caption="Figure 3. Property type - Boolean" caption-side="bottom"}
 
 1. Select the **Property value** from the list (*True* or *False*). This value is returned by default and can be overridden when targeting to a segment.
 
@@ -84,7 +85,7 @@ When you select the **Property type** as *Boolean*, the **Default value** detail
 
 When you select the **Property type** as *String*, the **Default value** details are displayed:
 
-![Property type - String](images/ac-property-string.png "Selecting property type as string"){: caption="Figure 5. Property type - String" caption-side="bottom"}
+![Property type - String](images/ac-property-string.png "Selecting property type as string"){: caption="Figure 4. Property type - String" caption-side="bottom"}
 
 1. Specify the **Default value**. This value is returned by default and be overridden while targeting to a segment.
 
@@ -96,26 +97,26 @@ When you select the **Property type** as *String*, the **Default value** details
 
 When you select the **Property type** as *Numeric*, the **Default value** details are displayed:
 
-![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Figure 6. Property type - Numeric" caption-side="bottom"}
+![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Figure 5. Property type - Numeric" caption-side="bottom"}
 
 1. Specify the **Property value**. This value is returned by default and can be overridden while targeting to a segment.
 
 ### Secret reference
 {: #property-type-secret-reference}
 
-When you select the **Property type** as *Secret reference*, the **Vault Instance**, and **Default value** details are displayed:
+When you select the **Property type** as *Secret reference*, the **{{site.data.keyword.secrets-manager_short}} instance**, and **Default value** details are displayed:
 
-![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Figure 7. Property type - Numeric" caption-side="bottom"}
+![Property type - Secret reference](images/ac-property-numeric.png "Selecting Property type as Secret reference"){: caption="Figure 6. Property type - Secret reference" caption-side="bottom"}
 
-1. Specify the **Vault instance** information from where the values need to be pulled. 
+1. Specify the **{{site.data.keyword.secrets-manager_short}} instance** information from where the values need to be pulled. 
 
    - **Resource group**: select the resource group from where the {{site.data.keyword.secrets-manager_short}} instance to be used.
    - **{{site.data.keyword.secrets-manager_short}} instance**: select the {{site.data.keyword.secrets-manager_short}} instance to be used for the specified property.
 
-1. Specify the **Default value**. This value is returned by default.
+1. Specify the **Default value**. This value is returned by default and can be overridden while targeting to a segment.
 
-   - **Format**: select the format of the secret type from the dropdown.
-   - **Secret ID**: specify the value of the secret ID. 
+   - **Secret type**: select the secret type from the dropdown.
+   - **Secret name**: specify the secret name. 
 
 ## Target collections to properties
 {: #collection-target-properties}
