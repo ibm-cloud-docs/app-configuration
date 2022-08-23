@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-23"
 
 keywords: app-configuration, app configuration, environment, environments, create environment
 
@@ -18,12 +18,12 @@ subcollection: app-configuration
 Environments in {{site.data.keyword.appconfig_short}} represent your application environments. Typical environments might be dev, staging, or production. Environments manage your feature flags and properties into deployments from development to production. Create your environments based on your development requirements.
 {: shortdesc}
 
-When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.  
+When you create an {{site.data.keyword.appconfig_short}} instance, an environment is created in the name `dev` by default.
 {: note}
 
-Each feature flag or properties that are created has its own values, tags, and segment rules for each environment. You can also toggle the feature flag per environment so that you can have different rules for flags per environment for the same feature flag or properties.  
+Each feature flag or properties that are created has its own values, tags, and segment rules for each environment. You can also toggle the feature flag per environment so that you can have different rules for flags per environment for the same feature flag or properties.
 
-By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, **Color code** (hexadecimal color value), date of creation, **Last evaluated**, **segments** that are targeted for the respective property.
+By default, the environment panel displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, date of creation, and **labels**.
 
 ![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 1. List of environments" caption-side="bottom"}
 

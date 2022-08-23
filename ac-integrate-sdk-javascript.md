@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-23"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -26,7 +26,7 @@ subcollection: app-configuration
 1. Install the SDK. Use the following code to install the SDK as a module from package manager.
 
    ```bash
-    npm install ibm-appconfiguration-js-client-sdk
+   npm install ibm-appconfiguration-js-client-sdk
    ```
    {: codeblock}
 
@@ -41,15 +41,15 @@ subcollection: app-configuration
    {: #ac-init-js-sdk}
 
    ```javascript
-    const region = AppConfiguration.REGION_US_SOUTH;
-    const guid = '<guid>';
-    const apikey = '<apikey>';
-    const collectionId = '<collectionId>';
-    const environmentId = '<environmentId>';
+   const region = AppConfiguration.REGION_US_SOUTH;
+   const guid = '<guid>';
+   const apikey = '<apikey>';
+   const collectionId = '<collectionId>';
+   const environmentId = '<environmentId>';
 
-    const client = AppConfiguration.getInstance();
-    client.init(region, guid, apikey);
-    await client.setContext(collectionId, environmentId);
+   const client = AppConfiguration.getInstance();
+   client.init(region, guid, apikey);
+   await client.setContext(collectionId, environmentId);
    ```
    {: codeblock}
 
@@ -62,7 +62,7 @@ subcollection: app-configuration
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
    - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
-Ensure to create the service credentials of the role `Client SDK` for using with the JavaScript SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications. 
+Ensure to create the service credentials of the role `Client SDK` for using with the JavaScript SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications.
 {: note}
 
 ### Examples for using feature and property-related APIs
@@ -78,11 +78,11 @@ const feature = client.getFeature('feature_id')
 
 if(feature) {
 
-    console.log('data', feature);
-    console.log(`Feature Name ${feature.getFeatureName()} `);
-    console.log(`Feature Id ${feature.getFeatureId()} `);
-    console.log(`Feature Type ${feature.getFeatureDataType()} `);
-    console.log(`Feature is enabled ${feature.isEnabled()} `);
+   console.log('data', feature);
+   console.log(`Feature Name ${feature.getFeatureName()} `);
+   console.log(`Feature Id ${feature.getFeatureId()} `);
+   console.log(`Feature Type ${feature.getFeatureDataType()} `);
+   console.log(`Feature is enabled ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
@@ -96,10 +96,10 @@ const features = client.getFeatures();
 const feature = features["feature_id"];
 
 if(feature) {
-    console.log(`Feature Name ${feature.getFeatureName()}`);
-    console.log(`Feature Id ${feature.getFeatureId()}`);
-    console.log(`Feature Type ${feature.getFeatureDataType()}`);
-    console.log(`Feature is enabled ${feature.isEnabled()}`);
+   console.log(`Feature Name ${feature.getFeatureName()}`);
+   console.log(`Feature Id ${feature.getFeatureId()}`);
+   console.log(`Feature Type ${feature.getFeatureDataType()}`);
+   console.log(`Feature is enabled ${feature.isEnabled()}`);
 }
 ```
 {: codeblock}
@@ -112,8 +112,8 @@ You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to 
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
-    city: 'Bangalore',
-    country: 'India',
+   city: 'Bangalore',
+   country: 'India',
 };
 
 const featureValue = feature.getCurrentValue(entityId, entityAttributes);
@@ -131,10 +131,10 @@ Where:
 const property = client.getProperty('property_id')
 
 if(property) {
-    console.log('data', property);
-    console.log(`Property Name ${property.getPropertyName()}`);
-    console.log(`Property Id ${property.getPropertyId()}`);
-    console.log(`Property Type ${property.getPropertyDataType()}`);
+   console.log('data', property);
+   console.log(`Property Name ${property.getPropertyName()}`);
+   console.log(`Property Id ${property.getPropertyId()}`);
+   console.log(`Property Type ${property.getPropertyDataType()}`);
 }
 ```
 {: codeblock}
@@ -148,9 +148,9 @@ const properties = client.getProperties();
 const property = properties["property_id"];
 
 if(property) {
-    console.log(`Property Name ${property.getPropertyName()}`);
-    console.log(`Property Id ${property.getPropertyId()}`);
-    console.log(`Property Type ${property.getPropertyDataType()}`);
+   console.log(`Property Name ${property.getPropertyName()}`);
+   console.log(`Property Id ${property.getPropertyId()}`);
+   console.log(`Property Type ${property.getPropertyDataType()}`);
 }
 ```
 {: codeblock}
@@ -160,16 +160,16 @@ if(property) {
 
 Use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns the default property value or its overridden value based on the evaluation. The data type of returned value matches that of property.
 
-   ```javascript
-    const entityId = 'john_doe';
-    const entityAttributes = {
-      city: 'Bangalore',
-      country: 'India',
-    };
+```javascript
+const entityId = 'john_doe';
+const entityAttributes = {
+   city: 'Bangalore',
+   country: 'India',
+   };
 
-    const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
-   ```
-   {: codeblock}
+const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
+```
+{: codeblock}
 
 Where:
 - `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the property is evaluated. For any entity to interact with App Configuration, it must provide a unique entity ID.
@@ -193,18 +193,18 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 {: #ac-js-feature-flag}
 
 ```javascript
-  const feature = client.getFeature('json-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // JSON
+const feature = client.getFeature('json-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = feature.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = feature.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const feature = client.getFeature('yaml-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+const feature = client.getFeature('yaml-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // YAML
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
 ```
 {: codeblock}
 
@@ -212,18 +212,18 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 {: #ac-js-property}
 
 ```javascript
-  const property = client.getProperty('json-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // JSON
+const property = client.getProperty('json-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = property.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = property.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const property = client.getProperty('yaml-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+const property = client.getProperty('yaml-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // YAML
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
 ```
 {: codeblock}
 
