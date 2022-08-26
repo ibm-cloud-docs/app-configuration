@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-23"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -114,10 +114,10 @@ Refer to the listed examples for using the feature and property-related APIs.
 ```python
 feature = appconfig_client.get_feature('feature_id')
 if (feature) {
-    print('Feature Name : {0}'.format(feature.get_feature_name()));
-    print('Feature Id : {0}'.format(feature.get_feature_id()));
-    print('Feature Type : {0}'.format(feature.get_feature_data_type()));
-    print('Feature is enabled : {0}'.format(feature.is_enabled()));
+   print('Feature Name : {0}'.format(feature.get_feature_name()));
+   print('Feature Id : {0}'.format(feature.get_feature_id()));
+   print('Feature Type : {0}'.format(feature.get_feature_data_type()));
+   print('Feature is enabled : {0}'.format(feature.is_enabled()));
 }
 ```
 {: codeblock}
@@ -137,8 +137,8 @@ You can use the feature.get_current_value(entity_id, entity_attributes) method t
 
 ```python
 entity_attributes = {
-    'city': 'Bangalore',
-    'country': 'India'
+   'city': 'Bangalore',
+   'country': 'India'
 }
 feature_value = feature.get_current_value(entity_id='entity_id', entity_attributes=entity_attributes)
 ```
@@ -150,9 +150,9 @@ feature_value = feature.get_current_value(entity_id='entity_id', entity_attribut
 ```python
 property = appconfig_client.get_property('property_id')
 if (property) {
-    print('Property Name : {0}'.format(property.get_property_name()));
-    print('Property Id : {0}'.format(property.get_property_id()));
-    print('Property Type : {0}'.format(property.get_property_data_type()));
+   print('Property Name : {0}'.format(property.get_property_name()));
+   print('Property Id : {0}'.format(property.get_property_id()));
+   print('Property Type : {0}'.format(property.get_property_data_type()));
 }
 ```
 {: codeblock}
@@ -174,8 +174,8 @@ Pass a unique `entity_id` as the parameter to perform the property evaluation. I
 
 ```python
 entity_attributes = {
-    'city': 'Bangalore',
-    'country': 'India'
+   'city': 'Bangalore',
+   'country': 'India'
 }
 property_value = property.get_current_value(entity_id='entity_id', entity_attributes=entity_attributes)
 ```
@@ -291,12 +291,12 @@ The SDK provides mechanism to notify you in real time when feature flags' or pro
 
 ```python
 def configuration_update(self):
-    print('Received updates on configurations')
-    # **add your code**
-    # To find the effect of any configuration changes, you can call the feature or property related methods
+   print('Received updates on configurations')
+   # **add your code**
+   # To find the effect of any configuration changes, you can call the feature or property related methods
 
-    # feature = appconfig_client.getFeature('feature_id')
-    # new_value = feature.get_current_value(entity_id, entity_attributes)
+   # feature = appconfig_client.getFeature('feature_id')
+   # new_value = feature.get_current_value(entity_id, entity_attributes)
 
 appconfig_client.register_configuration_update_listener(configuration_update)
 ```
