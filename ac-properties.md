@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-08-17"
+lastupdated: "2022-08-26"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -106,7 +106,7 @@ When you select the **Property type** as *Numeric*, the **Default value** detail
 
 When you select the **Property type** as *Secret reference*, the **{{site.data.keyword.secrets-manager_short}} instance**, and **Default value** details are displayed:
 
-![Property type - Secret reference](images/ac-property-numeric.png "Selecting Property type as Secret reference"){: caption="Figure 6. Property type - Secret reference" caption-side="bottom"}
+![Property type - Secret reference](images/ac-property-secret-reference.png "Selecting Property type as Secret reference"){: caption="Figure 6. Property type - Secret reference" caption-side="bottom"}
 
 1. Specify the **{{site.data.keyword.secrets-manager_short}} instance** information from where the values need to be pulled. 
 
@@ -115,8 +115,8 @@ When you select the **Property type** as *Secret reference*, the **{{site.data.k
 
 1. Specify the **Default value**. This value is returned by default and can be overridden while targeting to a segment.
 
-   - **Secret type**: select the secret type from the dropdown.
-   - **Secret name**: specify the secret name. 
+   - **Secret type**: select the secret type from the dropdown. For more information about secret types, see [Working with secrets of different types](https://{DomainName}/docs/secrets-manager?topic=secrets-manager-what-is-secret&interface=ui#secret-types).
+   - **Secret name**: select the secret name from the dropdown. 
 
 ## Target collections to properties
 {: #collection-target-properties}
