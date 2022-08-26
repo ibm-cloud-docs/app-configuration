@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-26"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# CLI version history 
+# CLI version history
 {: #cli_versions}
 
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Keep your CLI up to date so that you can use all of the available commands and their options.
@@ -33,4 +33,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.7      | 29 April 2022    | Added phased rollout support.                                          |
 | 1.0.8      | 3 June 2022      | Update dependencies.                                                   |
 | 1.0.9      | 9 June 2022      | Support for snapshot APIs.                                             |
+| 1.0.10     | 26 August 2022   | Support for Secret reference in Property type.                         |
 {: caption="Table 1. Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"} 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-26"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,11 @@ subcollection: app-configuration
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## August 2022
+{: #August-2022}
+
+**Secret reference** property to support {{site.data.keyword.secrets-manager_short}} integration. For more information, see [Secret reference](/docs/app-configuration?topic=app-configuration-ac-properties#property-type-secret-reference).
 
 ## July 2022
 {: #July-2022}
