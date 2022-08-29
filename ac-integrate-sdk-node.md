@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-26"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -119,17 +119,17 @@ See the following examples for using the feature-related APIs.
 {: #ac-integrate-ff-get-single-feature}
 
 ```javascript
-const feature = appConfigClient.getFeature('online-check-in'); // feature can be null incase of an invalid feature id
+const feature = appConfigClient.getFeature('feature_id'); // feature can be null incase of an invalid feature id
 
-if (feature != null) {
-  console.log(`Feature Name ${feature.getFeatureName()} `);
-  console.log(`Feature Id ${feature.getFeatureId()} `);
-  console.log(`Feature Type ${feature.getFeatureDataType()} `);
-  if (feature.isEnabled()) {
-    // feature flag is enabled
-  } else {
-    // feature flag is disabled
-  }
+if (feature !== null) {
+   console.log(`Feature Name ${feature.getFeatureName()} `);
+   console.log(`Feature Id ${feature.getFeatureId()} `);
+   console.log(`Feature Type ${feature.getFeatureDataType()} `);
+   if (feature.isEnabled()) {
+      // feature flag is enabled
+   } else {
+      // feature flag is disabled
+   }
 }
 ```
 {: codeblock}
@@ -141,11 +141,11 @@ if (feature != null) {
 const features = appConfigClient.getFeatures();
 const feature = features['online-check-in'];
 
-if (feature != null) {
-  console.log(`Feature Name ${feature.getFeatureName()} `);
-  console.log(`Feature Id ${feature.getFeatureId()} `);
-  console.log(`Feature Type ${feature.getFeatureDataType()} `);
-  console.log(`Is feature enabled? ${feature.isEnabled()} `);
+if (feature !== null) {
+   console.log(`Feature Name ${feature.getFeatureName()} `);
+   console.log(`Feature Id ${feature.getFeatureId()} `);
+   console.log(`Feature Type ${feature.getFeatureDataType()} `);
+   console.log(`Is feature enabled? ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
@@ -237,6 +237,49 @@ console.log(result.details.errorType); // (only if applicable, else it is undefi
 
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
 
+#### Get secret property
+{: #ac-integrate-ff-get-secret-property}
+
+Explicit method for getting the secret references stored in {{site.data.keyword.appconfig_short}}.
+
+```javascript
+const secretPropertyObject = appConfigClient.getSecret(propertyId, secretsManagerObject);
+```
+{: codeblock}
+
+Where,
+
+- `propertyID`: `propertyID` is the unique string identifier, using this you will be able to fetch the property that will provide the necessary data to fetch the secret.
+
+- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node).
+
+#### Evaluate a secret property
+{: #ac-integrate-go-evaluate-secret-property}
+
+Use the `secretPropertyObject.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the secret property. The output of this method call is different from `getCurrentValue` invoked using feature and property objects. This method returns a Promise that either resolves with the response from the {{site.data.keyword.secrets-manager_short}} or rejects with an Error. The resolved value is the actual secret value of the evaluated secret reference. The response contains the body, the headers, the status code, and the status text. If using async or await, use try or catch for handling errors.
+
+```javascript
+const entityId = 'john_doe';
+const entityAttributes = {
+   city: 'Bangalore',
+   country: 'India',
+};
+try {
+   const res = await secretPropertyObject.getCurrentValue(entityId, entityAttributes);
+   console.log(JSON.stringify(res, null, 2)); // view entire response.
+   console.log('Resulting secret:\n', res.result.resources[0].secret_data.payload); // the actual secret value.
+} catch (err) {
+   // handle the error
+}
+```
+{: codeblock}
+
+Where,
+
+- `entityId`: `entityId` is a string identifier related to the Entity against which the property will be evaluated. For example, an entity might be an instance of an application that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+
+- `entityAttributes`: `entityAttributes` is a map of type `map[string]interface{}` consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate value.
+
 ## Fetching the appConfigClient across other modules
 {: #ac-fetch-appconfigclient-across-modules}
 
@@ -257,16 +300,18 @@ const featureValue = feature.getCurrentValue(entityId, entityAttributes)
 ## Supported data types
 {: #ac-integrate-ff-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, String, and SecretRef. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
 
 | **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
 | -- | -- | -- | -- | -- |
 | `true` | BOOLEAN | not applicable | `boolean` | `true` |
 | `25` | NUMERIC | not applicable | `number` | `25` |
 | "a string text" | STRING | TEXT | `string` | `a string text` |
-| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
+| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | JSONObject | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
 {: caption="Table 1. Example outputs" caption-side="bottom"}
+
+For property of type secret reference, refer to readme section [evaluate-a-secret-property](#ac-integrate-go-evaluate-secret-property)
 
 ### Feature flag
 {: #ac-integrate-ff-feature-flag}
@@ -317,7 +362,7 @@ appConfigClient.emitter.on('configurationUpdate', () => {
   // To find the effect of any configuration changes, you can call the feature or property related methods
 
   // feature = appConfigClient.getFeature('online-check-in');
-  // newValue = feature.getCurrentValue(entityId, entityAttributes);
+  // newResult = feature.getCurrentValue(entityId, entityAttributes);
 });
 ```
 {: codeblock}

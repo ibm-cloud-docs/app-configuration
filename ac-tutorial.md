@@ -9,7 +9,6 @@ keywords: app-configuration, app configuration, tutorial
 subcollection: app-configuration
 
 content-type: tutorial
-services:  
 account-plan: standard 
 completion-time: 90m 
 
