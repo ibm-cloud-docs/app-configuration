@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-09-19"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application.
 {: shortdesc}
 
-Version v0.4.0 has changes to the return value of `getCurrentValue` method. Hence, if you are already using a version below v0.4.0, read the [migration guide](https://github.ibm.com/devx-app-services/appconfiguration-node-sdk/blob/development/docs/v0.3-v0.4.md) before you upgrade the SDK to latest.
+Version v0.4.0 has changes to the return value of `getCurrentValue` method. Hence, if you are already using a version lesser than v0.4.0, read the [migration guide](https://github.ibm.com/devx-app-services/appconfiguration-node-sdk/blob/development/docs/v0.3-v0.4.md) before you upgrade the SDK to latest.
 {: important}
 
 ## Integrating server SDK for Node
@@ -60,37 +60,50 @@ Version v0.4.0 has changes to the return value of `getCurrentValue` method. Henc
    {: codeblock}
 
    Where:
-   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney, and `AppConfiguration.REGION_US_EAST` for Washington DC.
+   - `region`: Region name where the {{site.data.keyword.appconfig_short}} service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney, and `AppConfiguration.REGION_US_EAST` for Washington DC.
    - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
    - `apikey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
    - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
-   The `init()` and `setContext()` are the initialization methods and should be invoked only once using `appConfigClient`. The `appConfigClient`, once initialized, can be obtained across modules using `AppConfiguration.getInstance()`.
+   The `init()` and `setContext()` are the initialization methods and need to be started **only once** by using `appConfigClient`. The `appConfigClient`, after initialized, can be obtained across modules by using `AppConfiguration.getInstance()`.
    {: note}
+
+### Using private endpoints
+{: #ac-using-private-endpoints}
+
+Optionally, set the SDK to connect to {{site.data.keyword.appconfig_short}} service by using a private endpoint that is accessible only through the {{site.data.keyword.cloud_notm}} private network.
+
+```javascript
+appConfigClient.usePrivateEndpoint(true);
+```
+{: codeblock}
+
+This must be done before calling the `init` function on the SDK.
+{: note}
 
 ### Option to use a persistent cache for configuration
 {: #ac-init-cache-node-sdk}
 
-In order for your application and SDK to continue its operations during the unlikely unavailability of the {{site.data.keyword.appconfig_short}} server, you can configure the SDK to use a persistent cache. The SDK uses the persistent cache to store {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
+In order for your application and SDK to continue its operations during the unlikely unavailability of the {{site.data.keyword.appconfig_short}} service across your application restarts, you can configure the SDK to use a persistent cache. The SDK uses the persistent cache to store {{site.data.keyword.appconfig_short}} data that is available across your application restarts.
 
 ```javascript
 // 1. default (without persistent cache)
 appConfigClient.setContext(collectionId, environmentId)
 
-// 2. with persistent cache
+// 2. optional (with persistent cache)
 appConfigClient.setContext(collectionId, environmentId, {
-   persistentCacheDirectory: '/var/lib/docker/volumes/'
+  persistentCacheDirectory: '/var/lib/docker/volumes/'
 })
 ```
 {: codeblock}
 
 Where:
-- `persistentCacheDirectory`: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `AppConfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
+- `persistentCacheDirectory`: Absolute path to a directory, which has read and write permission for the user. The SDK creates a file - `appconfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
 
    When persistent cache is enabled, the SDK keeps the last known good configuration in the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the most recent configurations in the persistent cache are loaded to the application to continue working.
 
-Make sure that the cache file is not lost or deleted in any case. For example, consider the case when a kubernetes pod is restarted and the cache file (appconfiguration.json) was stored in ephemeral volume of the pod. As pod gets restarted, kubernetes destroys the ephermal volume in the pod, as a result the cache file gets deleted. So, make sure that the cache file created by the SDK is always stored in persistent volume by providing the correct absolute path of the persistent directory.
+Make sure that the cache file is not lost or deleted in any case. For example, consider the case when a Kubernetes pod is restarted and the cache file (`appconfiguration.json`) was stored in ephemeral volume of the pod. As pod gets restarted, Kubernetes destroys the ephermal volume in the pod, as a result the cache file gets deleted. So, make sure that the cache file created by the SDK is always stored in persistent volume by providing the correct absolute path of the persistent directory.
 {: important}
 
 ### Offline options
@@ -153,7 +166,7 @@ if (feature !== null) {
 #### Feature evaluation
 {: #ac-integrate-ff-feature-evaluation}
 
-You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns an JSON object containing evaluated value, feature flag enabled status and evaluation details.
+You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns a JSON object containing evaluated value, feature flag enabled status and evaluation details.
 
 ```javascript
 const entityId = '<entityId>';
@@ -176,9 +189,9 @@ console.log(result.details.errorType); // (only if applicable, else it is undefi
 ```
 {: codeblock}
 
-- `entityId`: Id of the entity. This will be a string identifier related to the entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+- `entityId`: Id of the entity. This is a string identifier related to the entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 
-- `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
+- `entityAttributes`: A JSON object consisting of the attribute name and their values that define the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine whether the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
 
 #### Get single property
 {: #ac-integrate-ff-get-single-property}
@@ -212,7 +225,7 @@ if (property != null) {
 #### Evaluate a property
 {: #ac-integrate-ff-property-evaluation}
 
-You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns an JSON object containing evaluated value and evaluation details.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns a JSON object containing evaluated value and evaluation details.
 
 ```javascript
 const entityId = '<entityId>';
@@ -233,9 +246,9 @@ console.log(result.details.errorType); // (only if applicable, else it is undefi
 ```
 {: codeblock}
 
-- `entityId`: Id of the entity. This will be a string identifier related to the entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+- `entityId`: Id of the entity. This is a string identifier related to the entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 
-- `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
+- `entityAttributes`: A JSON object consisting of the attribute name and their values that define the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine whether the specified entity satisfies the targeting rules, and returns the appropriate property value.
 
 #### Get secret property
 {: #ac-integrate-ff-get-secret-property}
@@ -249,14 +262,14 @@ const secretPropertyObject = appConfigClient.getSecret(propertyId, secretsManage
 
 Where,
 
-- `propertyID`: `propertyID` is the unique string identifier, using this you will be able to fetch the property that will provide the necessary data to fetch the secret.
+- `propertyID`: `propertyID` is the unique string identifier, by using this you are able to fetch the property that will provide the necessary data to fetch the secret.
 
-- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node).
+- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object that is used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node).
 
 #### Evaluate a secret property
 {: #ac-integrate-go-evaluate-secret-property}
 
-Use the `secretPropertyObject.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the secret property. The output of this method call is different from `getCurrentValue` invoked using feature and property objects. This method returns a Promise that either resolves with the response from the {{site.data.keyword.secrets-manager_short}} or rejects with an Error. The resolved value is the actual secret value of the evaluated secret reference. The response contains the body, the headers, the status code, and the status text. If using async or await, use try or catch for handling errors.
+Use the `secretPropertyObject.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the secret property. The output of this method call is different from `getCurrentValue` started by using feature and property objects. This method returns a Promise that either resolves with the response from the {{site.data.keyword.secrets-manager_short}} or rejects with an Error. The resolved value is the actual secret value of the evaluated secret reference. The response contains the body, the headers, the status code, and the status text. If using async or await, use try or catch for handling errors.
 
 ```javascript
 const entityId = 'john_doe';
@@ -276,11 +289,11 @@ try {
 
 Where,
 
-- `entityId`: `entityId` is a string identifier related to the Entity against which the property will be evaluated. For example, an entity might be an instance of an application that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+- `entityId`: `entityId` is a string identifier that is related to the Entity against which the property is evaluated. For example, an entity might be an instance of an application that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 
-- `entityAttributes`: `entityAttributes` is a map of type `map[string]interface{}` consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate value.
+- `entityAttributes`: `entityAttributes` is a map of type `map[string]interface{}` consisting of the attribute name and their values that define the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine whether the specified entity satisfies the targeting rules, and returns the appropriate value.
 
-## Fetching the appConfigClient across other modules
+## Fetching the `appConfigClient` across other modules
 {: #ac-fetch-appconfigclient-across-modules}
 
 Once the SDK is initialized, the `appConfigClient` can be obtained across other modules as shown below:
@@ -300,9 +313,9 @@ const featureValue = feature.getCurrentValue(entityId, entityAttributes)
 ## Supported data types
 {: #ac-integrate-ff-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, String, and SecretRef. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
+You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, SecretRef, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
 
-| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
+| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue().value`** | **Example output** |
 | -- | -- | -- | -- | -- |
 | `true` | BOOLEAN | not applicable | `boolean` | `true` |
 | `25` | NUMERIC | not applicable | `number` | `25` |
@@ -311,7 +324,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
 {: caption="Table 1. Example outputs" caption-side="bottom"}
 
-For property of type secret reference, refer to readme section [evaluate-a-secret-property](#ac-integrate-go-evaluate-secret-property)
+For property of type secret reference, refer to readme section [evaluate a secret property](#evaluate-a-secret-property).
 
 ### Feature flag
 {: #ac-integrate-ff-feature-flag}
@@ -354,7 +367,7 @@ property.getCurrentValue(entityId, entityAttributes);
 ### Listen to the feature or property changes
 {: #ac-integrate-ff-feature-prop-change}
 
-The SDK provides an event-based mechanism to notify you in real-time when feature flag's or property's configuration changes. You can listen to `configurationUpdate` event using the same `appConfigClient`.
+The SDK provides an event-based mechanism to notify you in real-time when feature flag's or property's configuration changes. You can listen to `configurationUpdate` event by using the same `appConfigClient`.
 
 ```javascript
 appConfigClient.emitter.on('configurationUpdate', () => {

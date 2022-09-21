@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-09-19"
 
-keywords: app-configuration, app configuration, regions, endpoints
+keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 
 subcollection: app-configuration
 
@@ -33,12 +33,36 @@ You can create {{site.data.keyword.appconfig_notm}} resources in one of the supp
 ## Service endpoints
 {: #ac-endpoints}
 
+{{site.data.keyword.appconfig_notm}} offers two connectivity options for interacting with its service APIs.
+
+Public endpoints
+:   By default, you can connect to resources in your account over the {{site.data.keyword.cloud_notm}} public network. Your data is encrypted in transit by using the Transport Security Layer (TLS) 1.2 protocol.
+
+Private endpoints
+:   To further secure your connection, you can also enable [virtual routing and forwarding (VRF) and service endpoints](/docs/account?topic=account-vrf-service-endpoint) for your infrastructure account. When you enable VRF for your account, you can connect to {{site.data.keyword.appconfig_notm}} by using a private IP that is accessible only through the {{site.data.keyword.cloud_notm}} private network.
+
+### Public endpoints
+{: #ac-public-endpoints}
+
 The following table contains the base URLs for the {{site.data.keyword.appconfig_notm}} API endpoints. When you call the API, use the URL that corresponds to the region where your service instance is deployed. Add the path for each method to form the complete API endpoint for your requests.
 
-| Location     | Endpoint URL     |
-|--------------|------------------|
-| Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-| Washington DC |`https://us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-| London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-| Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
-{: caption="Table 1. Service endpoints" caption-side="top"}
+|Location     |Endpoint URL      |
+|-------------|------------------|
+|Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|Washington DC |`https://us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+{: caption="Table 1. Public endpoints" caption-side="top"}
+
+### Private endpoints
+{: #ac-private-endpoints}
+
+If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a private network, see the following table to determine the API endpoints to use when you connect to the {{site.data.keyword.appconfig_notm}} API.
+
+|Location     |Endpoint URL      |
+|-------------|------------------|
+|Dallas |`https://private.us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|Washington DC |`https://private.us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|London |`https://private.eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+|Sydney |`https://private.au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{instanceid}` |
+{: caption="Table 2. Private endpoints" caption-side="top"}

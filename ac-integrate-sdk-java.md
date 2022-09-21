@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-09-19"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -31,7 +31,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>0.2.3</version>
+         <version>0.3.1</version>
       </dependency>
       ```
       {: codeblock}
@@ -39,7 +39,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.2.3'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.3.1'
       ```
       {: codeblock}
 
@@ -53,31 +53,42 @@ subcollection: app-configuration
 1. Initialize the SDK to connect with your {{site.data.keyword.appconfig_short}} service instance.
    {: #ac-init-java-sdk}
 
-     ```java
-      AppConfiguration appConfigClient = AppConfiguration.getInstance();
+   ```java
+   String region = AppConfiguration.REGION_US_SOUTH;
+   String guid = "guid";
+   String apikey = "apikey";
 
-      String guid =  "guid";
-      String apikey = "apikey";
-      String region = AppConfiguration.REGION_US_SOUTH;
+   String collectionId = "airlines-webapp";
+   String environmentId = "dev";
 
-      appConfigClient.init(region, guid, apikey);
+   AppConfiguration appConfigClient = AppConfiguration.getInstance();
+   appConfigClient.init(region, guid, apikey);
+   appConfigClient.setContext(collectionId, environmentId);
+   ```
+   {: codeblock}
 
-      String collectionId = "collectionId";
-      String environmentId = "environmentId";
-      // Set the collectionId and environmentId to start the configuration fetching operation.
-      appConfigClient.setContext(collectionId, environmentId)
-      ```
-      {: codeblock}
+   Where,
+   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney. 
+   - `guid`: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `apiKey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
+   - `collectionId`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
+   - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
-      Where,
-      - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney. 
-      - `guid`: GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-      - `apiKey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-      - `collectionId`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.
-      - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
-
-The **`init()`** and **`setContext()`** are the initialization classes and must be invoked **only once** by using appConfigClient. The appConfigClient, when initialized, can be obtained across classes by using **`AppConfiguration.getInstance()`**. For more information, see [Fetching the appConfigClient across other classes](#fetching-the-appConfigClient-across-other-classes).
+The **`init()`** and **`setContext()`** are the initialization classes and must be invoked **only once** by using `appConfigClient`. The appConfigClient, when initialized, can be obtained across classes by using **`AppConfiguration.getInstance()`**. For more information, see [Fetching the appConfigClient across other classes](#fetching-the-appConfigClient-across-other-classes).
 {: important}
+
+### Using private endpoints
+{: #ac-java-private-endpoints}
+
+Set the SDK to connect to {{site.data.keyword.appconfig_short}} service by using a private endpoint that is accessible only through the {{site.data.keyword.cloud_notm}} private network.
+
+```java
+appConfigClient.usePrivateEndpoint(true);
+```
+{: codeblock}
+
+This must be done before calling the `init` function on the SDK.
+{: note}
 
 ### Option to use a persistent cache for configuration
 {: #ac-java-persistent-cache}
@@ -97,8 +108,11 @@ For your application and SDK to continue operations during the unlikely scenario
 
 Where:
 - `persistentCacheDirectory`: Absolute path to a directory that has read and write permission for the user. The SDK creates a file - `appconfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
-
+  
 When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server being unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
+
+Ensure that the cache file is not lost or deleted in any case. For example, consider the case when a kubernetes pod is restarted and the cache file (`appconfiguration.json`) was stored in ephemeral volume of the pod. As pod gets restarted, kubernetes destroys the ephermal volume in the pod, as a result the cache file gets deleted. So, make sure that the cache file created by the SDK is always stored in persistent volume by providing the correct absolute path of the persistent directory.
+{: important}
 
 ### Offline options
 {: #ac-java-offline}
@@ -114,7 +128,7 @@ appConfigClient.setContext(collectionId, environmentId, configOptions);
 {: codeblock}
 
 Where:
-- `bootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+- `bootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
 - `liveConfigUpdateEnabled`: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is set to `true`.
 
 ### Examples for using feature and property related APIs
@@ -126,13 +140,13 @@ See the following examples for using the feature and property related APIs.
 {: #ac-java-get-single-feature}
 
 ```java
-Feature feature = appConfigClient.getFeature("feature_id");
+Feature feature = appConfigClient.getFeature("online-check-in");
 
-if (feature) {
+if (feature != null) {
     System.out.println("Feature Name : " + feature.getFeatureName());
     System.out.println("Feature Id : " + feature.getFeatureId());
     System.out.println("Feature Type : " + feature.getFeatureDataType());
-    System.out.println("Feature is enabled : " + feature.isEnabled());
+    System.out.println("Is feature enabled? : " + feature.isEnabled());
 }
 ```
 {: codeblock}
@@ -151,21 +165,26 @@ HashMap<String, Feature> features = appConfigClient.getFeatures();
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. You must pass a unique `entityId` as the parameter for the feature flag evaluation. If the feature flag is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
 
 ```java
+String entityId = "john_doe";
 JSONObject entityAttributes = new JSONObject();
 entityAttributes.put("city", "Bangalore");
 entityAttributes.put("country", "India");
 
-String value = (String) feature.getCurrentValue("entityId", entityAttributes);
+String value = (String) feature.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
+
+- `entityId`: Id of the entity. This is a string identifier related to the entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+
+- `entityAttributes`: A JSON object consisting of the attribute name and their values that define the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine whether the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
 
 #### Get single property
 {: #ac-java-get-single-property}
 
 ```java
-Property property = appConfigClient.getProperty("property_id");
+Property property = appConfigClient.getProperty("check-in-charges");
 
-if (property) {
+if (property != null) {
     System.out.println("Property Name : " + property.getPropertyName());
     System.out.println("Property Id : " + property.getPropertyId());
     System.out.println("Property Type : " + property.getPropertyDataType());
@@ -184,23 +203,26 @@ HashMap<String, Property> property = appConfigClient.getProperties();
 #### Property evaluation
 {: #ac-java-property-evaluation}
 
-You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.
-
-You must pass a unique `entityId` as the parameter for the property evaluation. If the property is configured with segments in the {{site.data.keyword.appconfig_short}} service, you can set the attributes values as a JSONObject.
+You can use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns the default property value or its overridden value based on the evaluation.
 
 ```java
+String entityId = "john_doe";
 JSONObject entityAttributes = new JSONObject();
 entityAttributes.put("city", "Bangalore");
 entityAttributes.put("country", "India");
 
-String value = (String) property.getCurrentValue("entityId", entityAttributes);
+String value = (String) property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 
-### Fetching the appConfigClient across other classes
+- `entityId`: Id of the entity. This is a string identifier related to the entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+
+- `entityAttributes`: A JSON object consisting of the attribute name and their values that define the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then `entityAttributes` should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine whether the specified entity satisfies the targeting rules, and returns the appropriate property value.
+
+### Fetching the `appConfigClient` across other classes
 {: #fetching-the-appConfigClient-across-other-classes}
 
-When the SDK is initialized, the appConfigClient can be obtained across other classes as shown:
+When the SDK is initialized, the `appConfigClient` can be obtained across other classes as shown:
 
 ```java
 // **other classes**
@@ -217,7 +239,9 @@ String featureValue = (String) feature.getCurrentValue(entityId, entityAttribute
 ## Supported data types
 {: #ac-integrate-data-types}
 
-App Configuration service allows you to configure feature flags and properties with the following data types: Boolean, Numeric, String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each format as shown in the table 1.
+App Configuration service allows you to configure feature flags and properties with the following data types: Boolean,
+Numeric, String. The String data type can be of the format of a TEXT string, JSON, or YAML. The SDK processes each
+format as shown in the table 1.
 
 | **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `GetCurrentValue()`** | **Example output** |
 | -- | -- | -- | -- | -- |
@@ -234,9 +258,9 @@ App Configuration service allows you to configure feature flags and properties w
 ```java
 Feature feature = appConfigClient.getFeature("json-feature");
 if (feature != null) {
-    feature.getFeatureDataType();       // STRING
-    feature.getFeatureDataFormat();     // JSON
-    feature.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
+   feature.getFeatureDataType();       // STRING
+   feature.getFeatureDataFormat();     // JSON
+   feature.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
 }
 
 // Example Below
@@ -254,9 +278,9 @@ String expected_output = (String) tar_val.get('role');
 
 Feature feature = appConfigClient.getFeature("yaml-feature");
 if (feature != null) {
-    feature.getFeatureDataType();       // STRING
-    feature.getFeatureDataFormat();     // YAML
-    feature.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
+   feature.getFeatureDataType();       // STRING
+   feature.getFeatureDataFormat();     // YAML
+   feature.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
 }
 ```
 {: codeblock}
@@ -267,9 +291,9 @@ if (feature != null) {
 ```java
 Property property = appConfigClient.getProperty("json-property");
 if (property != null) {
-    property.getPropertyDataType();     // STRING
-    property.getPropertyDataFormat();   // JSON
-    property.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
+   property.getPropertyDataType();     // STRING
+   property.getPropertyDataFormat();   // JSON
+   property.getCurrentValue(entityId, entityAttributes); // JSONObject or JSONArray is returned
 }
 
 // Example Below
@@ -287,9 +311,9 @@ String expected_output = (String) tar_val.get('role');
 
 Property property = appConfigClient.getProperty("yaml-property");
 if (property != null) {
-    property.getPropertyDataType();     // STRING
-    property.getPropertyDataFormat();   // YAML
-    property.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
+   property.getPropertyDataType();     // STRING
+   property.getPropertyDataFormat();   // YAML
+   property.getCurrentValue(entityId, entityAttributes); // Yaml String is returned
 }
 ```
 {: codeblock}
@@ -301,10 +325,15 @@ The SDK provides mechanism to notify you in real time when feature flag's or pro
 
 ```java
 appConfigClient.registerConfigurationUpdateListener(new ConfigurationUpdateListener() {
-    @Override
-    public void onConfigurationUpdate() {
-       System.out.println("Got feature/property now");
-    }
+   @Override
+   public void onConfigurationUpdate() {
+      System.out.println("Received updated configurations");
+      // **add your code**
+      // To find the effect of any configuration changes, you can call the feature or property related methods
+
+      // Feature feature = appConfigClient.getFeature("numeric-feature");
+      // Integer newValue = (Integer) feature.getCurrentValue(entityId, entityAttributes);
+   }
 });
 ```
 {: codeblock}

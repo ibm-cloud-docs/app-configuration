@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-09-19"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -10,7 +10,7 @@ subcollection: app-configuration
 
 ---
 
-{{site.data.keyword.appconfig_short}} concepts
+{{site.data.keyword.attribute-definition-list}}
 
 # Create an {{site.data.keyword.appconfig_short}} service instance
 {: #ac-create-an-instance}
@@ -39,7 +39,7 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
    
    - `Standard` - The standard plan includes feature flags and property management capabilities. You can use simple and uniform REST APIs to configure, enable, segment, and monitor features to mobile devices and web applications.
 
-   - `Enterprise` - The enterprise plan includes segment targeting in addition to the property management and feature flags found in the Standard plan.
+   - `Enterprise` - The enterprise plan includes segment targeting in addition to the property management and feature flags found in the Standard plan. The enterprise plan now supports using private endpoints.
 
    For more information about {{site.data.keyword.appconfig_short}} usage and billing, see [Usage and billing](/docs/app-configuration?topic=app-configuration-ac-faqs-usage).
    {: note}
@@ -52,8 +52,15 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. Optionally, define **Access management tags** that are required to apply flexible access policies on specific resources. For example, `access:dev, proj:version-1`.
 
+1. If you have selected the Enterprise plan, then specify the **Service endpoints**. The following options are available:
+   - _Public network_ - The public network service endpoints are accessible from anywhere on the internet.
+   - _Private network_ - The private network service endpoints are accessible only within the {{site.data.keyword.cloud_notm}} backbone network.
+   - _Both Public & Private network_ - use of both public and private service endpoint network access.
+
 1. Accept the licensing agreements and terms by clicking the checkbox.
 
 1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} console displayed.
 
    ![{{site.data.keyword.appconfig_short}} console](images/ac-console.png "{{site.data.keyword.appconfig_short}} console"){: caption="Figure 2. {{site.data.keyword.appconfig_short}} console" caption-side="bottom"}
+
+
