@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-09-19"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,11 @@ subcollection: app-configuration
 
 Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## September 2022
+{: #September-2022}
+
+Support for Private endpoints. For more information, see [Regions and endpoints](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints)
 
 ## August 2022
 {: #August-2022}
