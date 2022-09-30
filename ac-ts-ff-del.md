@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-11"
+  years: 2020, 2022
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question,
 
@@ -47,14 +47,11 @@ subcollection: app-configuration
 {: troubleshoot}
 {: support}
 
-
 Deleting a feature flag or property in an environment deletes it for all environments.
 {: tsSymptoms}
 
-
 Feature flag or property is available to all environments. Updates to values are per environment. Create and delete action executes across all environments.
 {: tsCauses}
-
 
 Deletion of feature flag or property is across all environments.
 {: tsResolve}

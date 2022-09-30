@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -27,19 +27,19 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
-1. In the [IBM Cloud catalog](https://cloud.ibm.com/catalog#services), search **App Configuration** and select [App Configuration](https://cloud.ibm.com/catalog/services/apprapp). The service configuration screen opens.
+1. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog#services){: external}, search **{{site.data.keyword.appconfig_short}}** and select [{{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/catalog/services/apprapp){: external}. The service configuration screen opens.
 
    ![Create an {{site.data.keyword.appconfig_short}} service instance](images/ac-create-instance.png "Creating an {{site.data.keyword.appconfig_short}} service instance"){: caption="Figure 1. {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
-1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), and Sydney (au-syd) region is supported.
+1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), and Sydney (au-syd) regions are supported.
 
 1. **Select a pricing plan** - Based on your business requirements, select a pricing plan: Lite, Standard, and Enterprise.
 
    - `Lite` - Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. Lite plan services are deleted after 30 days of inactivity.
-   
+
    - `Standard` - The standard plan includes feature flags and property management capabilities. You can use simple and uniform REST APIs to configure, enable, segment, and monitor features to mobile devices and web applications.
 
-   - `Enterprise` - The enterprise plan includes segment targeting in addition to the property management and feature flags found in the Standard plan. The enterprise plan now supports using private endpoints.
+   - `Enterprise` - The enterprise plan includes targeting segment in addition to the property management and feature flags that are found in the Standard plan. The enterprise plan now supports by using private endpoints.
 
    For more information about {{site.data.keyword.appconfig_short}} usage and billing, see [Usage and billing](/docs/app-configuration?topic=app-configuration-ac-faqs-usage).
    {: note}
@@ -50,12 +50,12 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. Optionally, define **Tags** to help you to identify and organize the instance in your account. If your tags are billing related, consider writing tags as *key:value* pairs to help group-related tags, such as `costctr:124`.
 
-1. Optionally, define **Access management tags** that are required to apply flexible access policies on specific resources. For example, `access:dev, proj:version-1`.
+1. Optionally, define **Access management tags** that are needed to apply flexible access policies on specific resources. For example, `access:dev, proj:version-1`.
 
-1. If you have selected the Enterprise plan, then specify the **Service endpoints**. The following options are available:
-   - _Public network_ - The public network service endpoints are accessible from anywhere on the internet.
-   - _Private network_ - The private network service endpoints are accessible only within the {{site.data.keyword.cloud_notm}} backbone network.
-   - _Both Public & Private network_ - use of both public and private service endpoint network access.
+1. If you selected the Enterprise plan, then specify the **Service endpoints**. The following options are available:
+   - *Public network* - The public network service endpoints are accessible from anywhere on the internet.
+   - *Private network* - The private network service endpoints are accessible only within the {{site.data.keyword.cloud_notm}} backbone network.
+   - *Both Public & Private network* - use of both public and private service endpoint network access.
 
 1. Accept the licensing agreements and terms by clicking the checkbox.
 

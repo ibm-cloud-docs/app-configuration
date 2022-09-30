@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-11"
+  years: 2020, 2022
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question,
 
@@ -47,17 +47,13 @@ subcollection: app-configuration
 {: troubleshoot}
 {: support}
 
-
-
 Feature flag is disabled and cannot be toggled.
-{: tsSymptoms}  
-
+{: tsSymptoms}
 
 A Feature flag is linked to a collection and the flag is toggled per environment.
 {: tsCauses}
 
 If a feature flag is not linked to any collection, it is disabled by default.
 
-
-Link the feature flag with an existing collection. This allows you to toggle between on or off states.
+Link the feature flag with an existing collection. This allows you to toggle between `ON` or `OFF` state.
 {: tsResolve}

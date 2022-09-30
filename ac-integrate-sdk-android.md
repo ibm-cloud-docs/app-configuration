@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -173,8 +173,7 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 ### Supported data types
 {: #ac-integrate-data-types-kotlin}
 
-App Configuration service configures the feature flag and properties in the following data types : Boolean,
-Numeric, String. The String data type can be of the format of a text string, JSON, or YAML. Accordingly, the SDK processes each format as shown in Table 1.
+App Configuration service configures the feature flag and properties in the following data types: Boolean, Numeric, String. The String data type can be of the format of a text string, JSON or YAML. Accordingly, the SDK processes each format as shown in Table 1.
 
 | **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
 | -- | -- | -- | -- | -- |
@@ -216,8 +215,8 @@ property.getPropertyDataFormat(); // JSON
 
 // Example below (traversing the returned JSONObject)
 if (property != null) {
-   val result = property.getCurrentValue(entityId, entityAttributes) as JSONObject
-   result.get("key") // returns the value of the key
+  val result = property.getCurrentValue(entityId, entityAttributes) as JSONObject
+  result.get("key") // returns the value of the key
 }
 
 val property: Property? = appConfiguration.getProperty("yaml-property")
@@ -225,7 +224,7 @@ property.getPropertyDataType(); // STRING
 property.getPropertyDataFormat(); // YAML
 property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 - Force fetch the configurations from server.
 
@@ -273,8 +272,8 @@ property.getCurrentValue(entityId, entityAttributes); // returns the stringified
 
       ```javascript
       dependencies {
-         classpath "com.android.tools.build:gradle:4.1.1"
-         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
       }
       ```
       {: codeblock}
@@ -422,8 +421,8 @@ feature.getFeatureDataFormat(); // JSON
 
 // Example below (traversing the returned JSONObject)
 if (feature != null) {
-   JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
-   result.get("key") // returns the value of the key
+  JSONObject result = (JSONObject) feature.getCurrentValue(entityId, entityAttributes);
+  result.get("key") // returns the value of the key
 }
 
 Feature feature = appConfiguration.getFeature("yaml-feature");
@@ -431,7 +430,7 @@ feature.getFeatureDataType(); // STRING
 feature.getFeatureDataFormat(); // YAML
 feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 #### Property
 {: #ac-prop1}
@@ -443,8 +442,8 @@ property.getPropertyDataFormat(); // JSON
 
 // Example below (traversing the returned JSONObject)
 if (property != null) {
-   JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
-   result.get("key") // returns the value of the key
+  JSONObject result = (JSONObject) property.getCurrentValue(entityId, entityAttributes);
+  result.get("key") // returns the value of the key
 }
 
 Property property = appConfiguration.getProperty("yaml-property");
@@ -452,7 +451,7 @@ property.getPropertyDataType(); // STRING
 property.getPropertyDataFormat(); // YAML
 property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 - Force fetch the configurations from server.
 

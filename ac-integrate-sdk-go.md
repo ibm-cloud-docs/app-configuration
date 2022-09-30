@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -159,7 +159,7 @@ if err == nil {
 features, err := appConfigClient.GetFeatures()
 if err == nil {
    feature := features["online-check-in"]
-    
+
    fmt.Println("Feature Name", feature.GetFeatureName())
    fmt.Println("Feature Id", feature.GetFeatureID())
    fmt.Println("Feature Type", feature.GetFeatureDataType())
@@ -207,7 +207,7 @@ if err == nil {
 properties, err := appConfigClient.GetProperties()
 if err == nil {
    property := properties["check-in-charges"]
-    
+
    fmt.Println("Property Name", property.GetPropertyName())
    fmt.Println("Property Id", property.GetPropertyID())
    fmt.Println("Property Type", property.GetPropertyDataType())
@@ -244,7 +244,7 @@ secretPropertyObject, err := appConfiguration.GetSecret(propertyID, secretsManag
 
 - `propertyID`: `propertyID` is the unique string identifier, using this you will be able to fetch the property which provides the necessary data to fetch the secret.
 
-- `secretsManagerObject`: `secretsManagerObject` is an {{site.data.keyword.secrets-manager_short}} variable or object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=go).
+- `secretsManagerObject`: `secretsManagerObject` is an {{site.data.keyword.secrets-manager_short}} variable or object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=go){: external}.
 
 #### Evaluate a secret property
 {: #ac-go-evaluate-a-secret-property}
@@ -318,7 +318,7 @@ format as shown in the table.
 | -- | -- | -- | -- | -- |
 | `true` | BOOLEAN | not applicable | `bool` | `true` |
 | `25` | NUMERIC | not applicable | `float64` | `25` |
-| `{`   \n  `"secret_type": "kv",`   \n  `"id": "secret_id_data_here",`   \n  `"sm_instance_crn": "crn_data_added-here"`   \n  `}` | SECRETREF (this type is applicable only for Property) | not applicable | `map[string]interface{}` | `{`   \n  `"metadata": {`   \n  `"collection_type":"application/vnd.ibm.secrets-manager.secret+json",`   \n  `"collection_total": 1`   \n  `},`   `"resources": [{"created_by": "iam-ServiceId-e4a2f0a4-3c76-4bef-b1f2-fbeae11c0f21",`   \n  `"creation_date": "2020-10-05T21:33:11Z",`   \n  `"crn": "crn:v1:bluemix:public:secrets-manager:us-south:a/a5ebf2570dcaedf18d7ed78e216c263a:f1bc94a6-64aa-4c55-b00f-f6cd70e4b2ce:secret:cb7a2502-8ede-47d6-b5b6-1b7af6b6f563",`   \n  `"description": "Extended description for this secret.",`   \n  `"expiration_date": "2021-01-01T00:00:00Z",`   \n  `"id": "cb7a2502-8ede-47d6-b5b6-1b7af6b6f563",`   \n  `"labels": ["dev","us-south"],`   \n  `"last_update_date": "2020-10-05T21:33:11Z",`   \n  `"name": "example-arbitrary-secret",`   \n  `"secret_data": {"payload": "secret-data"},`   \n  `"secret_type": "arbitrary",`   \n `"state": 1,`   \n  `"state_description": "Active",`   \n  `"versions_total": 1,`   \n  `"versions": [{"created_by": "iam-ServiceId-222b47ab-b08e-4619-b68f-8014a2c3acb8","creation_date": "2020-11-23T20:15:01Z","id": "50277266-d706-4b3e-badb-f07257f8f581","payload_available": true,"downloaded": true}],"locks_total": 2}]`   \n  `}`   \n  `**Note**: Along with the above data you will also provide the detailedResponse and error data.` |
+| `{`   \n  `"secret_type": "kv",`   \n  `"id": "secret_id_data_here",`   \n  `"sm_instance_crn": "crn_data_added-here"`   \n  `}` | SECRETREF (this type is applicable only for Property) | not applicable | `map[string]interface{}` | `{`   \n  `"metadata": {`   \n  `"collection_type":"application/vnd.ibm.secrets-manager.secret+json",`   \n  `"collection_total": 1`   \n  `},`   `"resources": [{"created_by": "iam-ServiceId-e4a2f0a4-3c76-4bef-b1f2-fbeae11c0f21",`   \n  `"creation_date": "2020-10-05T21:33:11Z",`   \n  `"crn": "crn:v1:bluemix:public:secrets-manager:us-south:a/a5ebf2570dcaedf18d7ed78e216c263a:f1bc94a6-64aa-4c55-b00f-f6cd70e4b2ce:secret:cb7a2502-8ede-47d6-b5b6-1b7af6b6f563",`   \n  `"description": "Extended description for this secret.",`   \n  `"expiration_date": "2021-01-01T00:00:00Z",`   \n  `"id": "cb7a2502-8ede-47d6-b5b6-1b7af6b6f563",`   \n  `"labels": ["dev","us-south"],`   \n  `"last_update_date": "2020-10-05T21:33:11Z",`   \n  `"name": "example-arbitrary-secret",`   \n  `"secret_data": {"payload": "secret-data"},`   \n  `"secret_type": "arbitrary",`   \n `"state": 1,`   \n  `"state_description": "Active",`   \n  `"versions_total": 1,`   \n  `"versions": [{"created_by": "iam-ServiceId-222b47ab-b08e-4619-b68f-8014a2c3acb8","creation_date": "2020-11-23T20:15:01Z","id": "50277266-d706-4b3e-badb-f07257f8f581","payload_available": true,"downloaded": true}],"locks_total": 2}]`   \n  `}`   \n  `Note: Along with the above data you will also provide the detailedResponse and error data.` |
 | "a string text" | STRING | TEXT | `string` | `a string text` |
 | `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `map[string]interface{}` | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
 | `men:`  \n   `- John Smith`  \n   `- Bill Jones`  \n `women:`  \n   `- Mary Smith`  \n   `- Susan Williams`  | STRING | YAML | `map[string]interface{}` | `map[men:[John Smith Bill Jones] women:[Mary Smith Susan Williams]]` |
@@ -332,7 +332,7 @@ feature, err := appConfigClient.GetFeature("json-feature")
 if err == nil {
    feature.GetFeatureDataType() // STRING
    feature.GetFeatureDataFormat() // JSON
-  
+
    // Example (traversing the returned map)
    result := feature.GetCurrentValue(entityID, entityAttributes) // JSON value is returned as a Map
    result.(map[string]interface{})["key"] // returns the value of the key
@@ -342,7 +342,7 @@ feature, err := appConfigClient.GetFeature("yaml-feature")
 if err == nil {
    feature.GetFeatureDataType() // STRING
    feature.GetFeatureDataFormat() // YAML
-  
+
    // Example (traversing the returned map)
    result := feature.GetCurrentValue(entityID, entityAttributes) // YAML value is returned as a Map
    result.(map[string]interface{})["key"] // returns the value of the key

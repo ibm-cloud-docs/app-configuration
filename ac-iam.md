@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-12"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -33,8 +33,8 @@ With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for 
 
 *Roles* define the actions that a user or service ID can run. The following types of roles are in {{site.data.keyword.cloud_notm}}:
 
--	*Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, or bind instances to applications.
--	*Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
+- *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, or bind instances to applications.
+- *Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
 
 {{site.data.keyword.appconfig_short}} uses both the **Platform and Service management roles**. You can set policies about who can create an instance at the platform level, and then use the service roles to manage interaction with the instance itself. As the creator of an instance, you do not need to set any IAM policies to view or work with your {{site.data.keyword.appconfig_short}} entities.
 
@@ -63,9 +63,9 @@ Review the platform and service roles available and the actions that are mapped 
 | Reader | As a reader, you can perform read-only actions within a service such as viewing service-specific resources. |
 | Writer | As a writer, you have permissions beyond the reader role, including creating and editing service-specific resources. |
 | Config Operator | As a Config Operator, you can toggle the feature state. |
-| Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK.  |
+| Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK. |
 {: row-headers}
-{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-30"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -14,7 +14,7 @@ subcollection: app-configuration
 # Understanding High availability for {{site.data.keyword.appconfig_short}}
 {: #ac-ha}
 
-{{site.data.keyword.IBM_notm}} {{site.data.keyword.appconfig_short}} is a highly available, multi-tenant, regional service.  
+{{site.data.keyword.IBM_notm}} {{site.data.keyword.appconfig_short}} is a highly available, multi-tenant, regional service.
 {: shortdesc}
 
 ## Service High Availability (HA)
@@ -49,10 +49,8 @@ Where:
 
 - A *geography* is a geographic area or larger political body that contains one or more regions.
 - A *region* is a defined geographic territory.
-- A region might be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
-
-A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
-
+   - A region might be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
+   - A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
 - `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
 
 ## Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region

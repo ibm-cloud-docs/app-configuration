@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-07-08"
+  years: 2020, 2022
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, segments
 
@@ -44,11 +44,11 @@ To create a segment, complete these steps:
 ## Adding user in a segment
 {: #adding-users-to-segment}
 
-You can add user attributes in a segment by defining rules. You can define more than one rule.
+Attributes specify the context of a request that you want to be evaluated as part of a decision. For more information, see [here](/docs/app-configuration?topic=app-configuration-ac-overview#ac-attribute). You can add user attributes in a segment by defining rules. You can define more than one rule.
 
 To define a rule, at the time of creating or editing a segment, in **Include user attributes in segment**, add the following details:
 
-1. Add an **Attribute name**.
+1. Add an **Attribute name**. For example, the attribute may be email or part of user name.
 
 1. Select an operator to be used for the evaluation from the list.
    - starts with

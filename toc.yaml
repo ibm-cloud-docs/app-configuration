@@ -81,7 +81,7 @@ toc:
           topics:
           - link:
               label: App Configuration CLI
-              href: /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+              href: https://{DomainName}/docs/app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
           - ac-cli-changelog.md
 
       - topicgroup:
@@ -94,7 +94,7 @@ toc:
       - ac-sample-apps.md
       - link:
           label: API Explorer
-          href: https://{DomainName}/apidocs/app-configuration)
+          href: https://{DomainName}/apidocs/app-configuration
       - ac-notices.md
 
   - navgroup:

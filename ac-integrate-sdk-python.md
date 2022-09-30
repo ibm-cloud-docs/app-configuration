@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -56,13 +56,13 @@ subcollection: app-configuration
    {: codeblock}
 
    Where:
-   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration. REGION_AU_SYD` for Sydney.
+   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, and `AppConfiguration.REGION_AU_SYD` for Sydney.
    - `guid`: GUID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `apikey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `collection_id`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
    - `environment_id`: ID of the environment created in App Configuration service instance.
-  
-   The **`init()`** and **`set_context()`** are the initialisation methods and should be invoked **only once** by using appconfig_client. The appconfig_client, when initialized, can be obtained across modules by using **`AppConfiguration. get_instance()`**. For more information, see [Fetching the appconfig_client across other modules](#fetching-the-appconfig_client-across-other-modules).
+
+   The **`init()`** and **`set_context()`** are the initialisation methods and should be invoked **only once** by using appconfig_client. The appconfig_client, when initialized, can be obtained across modules by using **`AppConfiguration.get_instance()`**. For more information, see [Fetching the appconfig_client across other modules](#fetching-the-appconfig_client-across-other-modules).
    {: important}
 
 ### Using private endpoints
@@ -96,7 +96,7 @@ appconfig_client.set_context(collection_id='airlines-webapp', environment_id='de
 
 Where:
 - `persistent_cache_dir`: Absolute path to a directory that has read and write permission for the user. The SDK creates a file - `appconfiguration.json` in the specified directory, and it is used as the persistent cache to store the {{site.data.keyword.appconfig_short}} service information.
-  
+
    When persistent cache is enabled, the SDK keeps the last known good configuration at the persistent cache. If the {{site.data.keyword.appconfig_short}} server is unreachable, the latest configurations at the persistent cache are loaded to the application to continue working.
 
 Ensure that the cache file created in the given directory is not lost or deleted in any case. For example, consider the case when a kubernetes pod is restarted and the cache file (`appconfiguration.json`) was stored in ephemeral volume of the pod. As pod gets restarted, kubernetes destroys the ephermal volume in the pod, as a result the cache file gets deleted. So, make sure that the cache file created by the SDK is always stored in persistent volume by providing the correct absolute path of the persistent directory.

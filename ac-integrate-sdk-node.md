@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -264,10 +264,10 @@ Where,
 
 - `propertyID`: `propertyID` is the unique string identifier, by using this you are able to fetch the property that will provide the necessary data to fetch the secret.
 
-- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object that is used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node).
+- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object that is used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node){: external}.
 
 #### Evaluate a secret property
-{: #ac-integrate-go-evaluate-secret-property}
+{: #ac-integrate-node-evaluate-secret-property}
 
 Use the `secretPropertyObject.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the secret property. The output of this method call is different from `getCurrentValue` started by using feature and property objects. This method returns a Promise that either resolves with the response from the {{site.data.keyword.secrets-manager_short}} or rejects with an Error. The resolved value is the actual secret value of the evaluated secret reference. The response contains the body, the headers, the status code, and the status text. If using async or await, use try or catch for handling errors.
 
@@ -324,7 +324,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
 {: caption="Table 1. Example outputs" caption-side="bottom"}
 
-For property of type secret reference, refer to readme section [evaluate a secret property](#evaluate-a-secret-property).
+For property of type secret reference, refer to readme section [evaluate a secret property](#ac-integrate-node-evaluate-secret-property).
 
 ### Feature flag
 {: #ac-integrate-ff-feature-flag}
