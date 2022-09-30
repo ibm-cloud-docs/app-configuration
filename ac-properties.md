@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using Razee plug-in or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally by using {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
-By default, the properties pane lists all properties in an environment in the current {{site.data.keyword.appconfig_short}} service instance. Attributes for each property like **Name**, **Value**, Date of creation, **Last evaluated**, **Segments** targeted, and **Type** are displayed.
+By default, the properties window lists all properties in an environment in the current {{site.data.keyword.appconfig_short}} service instance. Attributes for each property like **Name**, **Value**, Date of creation, **Last evaluated**, **Segments** that are targeted, and **Type** are displayed.
 
 Property types:
 - A **Boolean** type has two values and you can set the default value as 'true' or 'false'.
@@ -53,7 +53,7 @@ To create a property, complete these steps:
    - **Default value** - specify the default value for the property type selected. For more information, see [Selecting property type](#selecting-properties-type).
    - Optionally, you can add the property to one or more collections by selecting in the **Add to collection** list.
    - **Description** - add a description of the property, which is optional.
-   - Optionally, define **Tags** that are required to identify with the property.
+   - Optionally, define **Tags** that can help you to identify the property.
 
 1. Click **Create**.
 
@@ -89,7 +89,7 @@ When you select the **Property type** as *String*, the **Default value** details
 
 1. Specify the **Default value**. This value is returned by default and be overridden while targeting to a segment.
 
-   - **Format**: select the format of the string type from the dropdown. Options are: Text, JSON, and YAML.
+   - **Format**: select the format of the string type from the list. Options are: Text, JSON, and YAML.
    - **Property value**: specify the property value based on the format selected.
 
 ### Numeric
@@ -108,15 +108,15 @@ When you select the **Property type** as *Secret reference*, the **{{site.data.k
 
 ![Property type - Secret reference](images/ac-property-secret-reference.png "Selecting Property type as Secret reference"){: caption="Figure 6. Property type - Secret reference" caption-side="bottom"}
 
-1. Specify the **{{site.data.keyword.secrets-manager_short}} instance** information from where the values need to be pulled. 
+1. Specify the **{{site.data.keyword.secrets-manager_short}} instance** information from where the values need to be pulled.
 
    - **Resource group**: select the resource group from where the {{site.data.keyword.secrets-manager_short}} instance to be used.
    - **{{site.data.keyword.secrets-manager_short}} instance**: select the {{site.data.keyword.secrets-manager_short}} instance to be used for the specified property.
 
 1. Specify the **Default value**. This value is returned by default and can be overridden while targeting to a segment.
 
-   - **Secret type**: select the secret type from the dropdown. For more information about secret types, see [Working with secrets of different types](https://{DomainName}/docs/secrets-manager?topic=secrets-manager-what-is-secret&interface=ui#secret-types).
-   - **Secret name**: select the secret name from the dropdown. 
+   - **Secret type**: select the secret type from the list. For more information about secret types, see [Working with secrets of different types](https://{DomainName}/docs/secrets-manager?topic=secrets-manager-what-is-secret&interface=ui#secret-types){: external}.
+   - **Secret name**: select the secret name from the dropdown.
 
 ## Target collections to properties
 {: #collection-target-properties}
@@ -125,7 +125,7 @@ You can add properties to one or more collections either during the creation of 
 
 For adding collections to the properties, for the **Availability across collections** field, select the collection from the list.
 
-If you try to target a property, that is not linked to a collection, a window is displayed to add a property to a collection.
+If you try to target a property that is not linked to a collection, a window is displayed to add a property to a collection.
 {: note}
 
 ## Targeting a segment with properties
@@ -147,7 +147,7 @@ You can roll out property to one or more target segments. You can set different 
 
 1. Click **Add targeting**.
 
-If you try to target a property, that is not linked to a collection, a window is displayed to add a property to a collection.
+If you try to target a property that is not linked to a collection, a window is displayed to add a property to a collection.
 {: note}
 
 ## Properties - overflow menu
@@ -158,7 +158,7 @@ The overflow menu for each of the property (three vertical dots) consists of **E
 ![Overflow menu for a property](images/ac-property-overflow-menu.png "Overflow menu for a property"){: caption="Figure 8. Overflow menu for a property" caption-side="bottom"}
 
 - When **Edit** is selected, you can change the **Name**, and **Description**, add or delete **Tags**, change the **Property type** and **Default value**, and add or remove collections for the **Availability across collections** field information.
-- When **Copy** is selected, the property information is copied and you need to modify the **Name** of the property. Optionally, modify the other details based on your need.
+- When **Copy** is selected, the property information is copied, and you need to modify the **Name** of the property. Optionally, modify the other details based on your need.
 - When **Delete** is selected, a confirmation window is displayed to seek confirmation to delete the selected property. Deleting option permanently deletes the property and the action cannot be undone.
 - In the list of property, in a property, when **Copy to clipboard** icon is clicked, the property's **Property ID** value is copied to the clipboard.
 - **Remove targeting** removes the targeting of properties to a segment.

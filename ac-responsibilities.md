@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, customer responsibilities, IBM responsibilities, terms and conditions, disaster recovery, toolchain backup
 
@@ -56,7 +56,7 @@ You are responsible for identity and access management to your application and a
 | Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
 | Applications | Restrict access to resources.	| Depending on your needs, restrict access to resources and service functions by using Cloud IAM access policies. For more information, see [Managing user access](/docs/app-configuration?topic=app-configuration-ac-service-access-management). |
-{: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
+{: caption="Table 3. Responsibilities for identity and access management" caption-side="bottom"}
 
 ## Security and regulation compliance
 {: #ac-sec-and-reg-compliance}
@@ -68,7 +68,7 @@ You are responsible for the security and compliance of your application and appl
 | Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
 | Encryption | - Automatically apply security patch updates for infrastructure.  \n - Enable certain security settings, such as encrypted disks.  \n - Disable certain insecure actions, such as allowing users to SSH into the host.  \n - Encrypt communication with TLS.  \n - Continuously monitor {{site.data.keyword.appconfig_notm}} entities to detect vulnerability and security compliance issues.  \n - Integrate {{site.data.keyword.appconfig_notm}} with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM). | Manage {{site.data.keyword.cloud_notm}} credentials, and keep credentials secure. |
-{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
+{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="bottom"}
 
 ## Disaster recovery
 {: #ac-disaster-recovery}
@@ -80,4 +80,4 @@ You are responsible for the recovery of the workloads that run {{site.data.keywo
 | Task     | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------|-----------------------|-----------------------|
 | Availability | \n - Provide high availability capabilities, such as {{site.data.keyword.IBM_notm}}-owned infrastructure in multizone regions, to meet local access and, low latency requirements for each supported region.  \n - Run {{site.data.keyword.appconfig_notm}} deployments with three replicas in the same region for high availability.  \n - Continuously monitor {{site.data.keyword.appconfig_notm}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.  \n - Maintain service availability across [worldwide regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) so that customers can deploy projects across zones and regions for higher DR tolerance. |  \n - Use the list of [available regions](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-regions) to plan and create new instances of the service to meet performance and availability requirements beyond the default that is provided by {{site.data.keyword.IBM_notm}}.  \n - Set up more {{site.data.keyword.appconfig_notm}} instances across zones and regions to increase disaster recovery tolerance above the default provided by {{site.data.keyword.IBM_notm}}.
-{: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
+{: caption="Table 5. Responsibilities for disaster recovery" caption-side="bottom"}

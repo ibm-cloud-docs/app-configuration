@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, create a collection, collections, properties, property
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -30,7 +30,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows: 
+1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows:
 
    ```javascript
    <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk@latest/dist/appconfiguration.js"></script>
@@ -62,7 +62,7 @@ subcollection: app-configuration
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
    - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
-Ensure to create the service credentials of the role `Client SDK` for using with the JavaScript SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications. 
+Ensure to create the service credentials of the role `Client SDK` for using with the JavaScript SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications.
 {: note}
 
 ### Examples for using feature and property-related APIs
@@ -108,7 +108,7 @@ if(feature) {
 {: #ac-js-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns one of the Enabled/Disabled/Overridden value based on the evaluation. The data type of returned value matches that of feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
-  
+
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
@@ -167,7 +167,7 @@ const entityAttributes = {
    country: 'India',
    };
 
-const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
+const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 

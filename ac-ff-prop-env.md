@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, set up environments feature flags and properties, feature flags, properties, environments
 

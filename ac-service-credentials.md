@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, service credentials, authentication
 
@@ -20,6 +20,6 @@ You can generate a new set of credentials for cases where you want to manually c
 
 Services that are managed by {{site.data.keyword.iamlong}} (IAM) can generate a resource key, also known as a credential. Credentials are service-specific and vary based on how each service defines the credentials they need to generate. A credential might contain a user name, password, host name, port, and a URL.
 
-Click **Service credentials** to view the existing credentials with the **Key name** and **Date created** or create a new one.  
+Click **Service credentials** to view the existing credentials with the **Key name** and **Date created** or create a new one.
 
 For more information on adding and viewing a service credential, see [here](/docs/account?topic=account-service_credentials){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, toolchain integration, toolchain, devops, continuous delivery, tekton, otc
 

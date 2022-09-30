@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-01-27"
+  years: 2021, 2022
+lastupdated: "2022-09-30"
 
 keywords: app-configuration, app configuration, learning videos, concept videos, videos
 
@@ -65,7 +65,7 @@ Okay, so now let's go back to our example we've got our open banner feature and 
 And so here's an example, kind of pseudo code, that you can use if store open is enabled.
 
 [Writing] if (storeopen is Enabled()){
-Then we're going to show open banner    
+Then we're going to show open banner
 [Writing] show Open Banner();}
 
 so this pseudocode represents our feature code and the flag that potentially could encompass it.
