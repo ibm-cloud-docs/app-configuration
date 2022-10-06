@@ -43,6 +43,7 @@ toc:
           label: Target properties to segments
           href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
       - ac-toolchain.md
+      - ac-sm-integration.md
       - topicgroup:
           label: Logging and monitoring
           topics:
@@ -68,10 +69,11 @@ toc:
           topics:
           - ac-iam.md
           - ac-iam-policies.md
+          - ac-data-security-compliance.md
           - ac-securing-data.md
+          - ac-cipher.md
           - architecture-workload-isolation.md
           - ac-audit.md
-          - ac-cipher.md
 
   - navgroup:
       id: reference
