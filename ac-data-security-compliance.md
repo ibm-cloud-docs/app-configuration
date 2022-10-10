@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-10"
 
 keywords: app-configuration, app configuration, data security, compliance, data security and compliance
 
@@ -18,13 +18,6 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_short}} service has data security strategies in place to meet your compliance needs and ensure that your data remains secure and protected in the cloud.
 {: shortdesc}
 
-## Secrets management
-{: #ac-secrets-management}
-
-Secrets required for deployment are managed with automation using a HashiCorp Vault and are not stored in charts, GitHub, or deployment scripts. For more information, see [Authenticating with service credentials](/docs/app-configuration?topic=app-configuration-ac-service-credentials).
-
-Also, by integrating {{site.data.keyword.appconfig_short}} with {{site.data.keyword.secrets-manager_short}}, instead of storing secrets, {{site.data.keyword.appconfig_short}} stores metadata of {{site.data.keyword.secrets-manager_short}} instance. This metadata is called as a secret reference as part of the **Properties** type in {{site.data.keyword.appconfig_short}}.
-
 ## Security readiness
 {: #ac-security-readiness}
 
@@ -33,7 +26,7 @@ Also, by integrating {{site.data.keyword.appconfig_short}} with {{site.data.keyw
 To learn more about security controls across {{site.data.keyword.cloud_notm}}, see [How do I know that my data is safe?](/docs/overview?topic=overview-security#security){: external}.
 {: tip}
 
-To learn more about how your data is secured in {{site.data.keyword.appconfig_short}}, see [seuring your data in {{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-securing-your-data).
+To learn more about how your data is secured in {{site.data.keyword.appconfig_short}}, see [securing your data in {{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-securing-your-data).
 
 ### Data encryption
 {: #ac-data-encryption}
@@ -58,3 +51,8 @@ For a complete listing of {{site.data.keyword.cloud_notm}} compliance certificat
 {: #ac-iso}
 
 {{site.data.keyword.appconfig_short}} is ISO 27001, 27017, 27018, and 27701 certified. You can view compliance certifications by visiting [Compliance on the {{site.data.keyword.cloud_notm}}](https://ibm.com/cloud/compliance){: external}.
+
+## Secrets management
+{: #ac-secrets-management}
+
+By integrating {{site.data.keyword.appconfig_short}} with {{site.data.keyword.secrets-manager_short}}, you can store your secrets securely in {{site.data.keyword.secrets-manager_short}} and use the secrets in your application through {{site.data.keyword.appconfig_short}}. {{site.data.keyword.appconfig_short}} stores metadata of {{site.data.keyword.secrets-manager_short}} instance instead of storing the secrets. This metadata is called as a secret reference as part of the **Properties** type in {{site.data.keyword.appconfig_short}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-10"
 
 keywords: app-configuration, app configuration, secrets manager, secrets manager integration
 
@@ -24,7 +24,7 @@ Take these steps to get {{site.data.keyword.secrets-manager_short}} integrated w
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
-1. Create a {{site.data.keyword.secrets-manager_short}} instance.
+1. Create a {{site.data.keyword.secrets-manager_short}} instance and create your secrets.
 
    If you already have a {{site.data.keyword.secrets-manager_short}} instance, go to next step else create a {{site.data.keyword.secrets-manager_short}} instance. For more information, see [creating a {{site.data.keyword.secrets-manager_short}} instance](https://{DomainName}/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
 
@@ -36,5 +36,5 @@ Take these steps to get {{site.data.keyword.secrets-manager_short}} integrated w
 
 1. Create a property of type *Secret reference*. For more information, see [Properties](/docs/app-configuration?topic=app-configuration-ac-properties).
 
-1. Use the {{site.data.keyword.appconfig_short}} SDKs to connect your application to retrieve and use secrets from {{site.data.keyword.secrets-manager_short}}.
+1. Use the {{site.data.keyword.appconfig_short}} SDKs to connect your application to retrieve and use secrets from {{site.data.keyword.secrets-manager_short}}. For more information on how to access secrets with {{site.data.keyword.appconfig_short}} Node sdk, see [here](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks#ac-integrate-node-evaluate-secret-property).
 

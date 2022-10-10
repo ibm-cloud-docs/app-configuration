@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-10"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -125,7 +125,7 @@ You can configure the feature flag with a rollout percentage in the range of 0 t
 
 Percentage rollout helps to enable a feature to a small percentage of random users or subset of entities, providing more control on the release cycle and achieve progressive delivery. When you are confident on the feature that you want to roll out is working as intended, increase the percentage over time.
 
-Percentage rollout uses a [hashing algorithm](https://en.wikipedia.org/wiki/MurmurHash) that generates a hash based on the rule set. This hash is used by the SKD to generate a percentage value for that user. The percentage value generated for that user is compared to the value set for the percentage rollout value, determines whether the user is eligible to receive that feature or not.
+Percentage rollout uses a hashing algorithm that generates a hash based on the rule set. This hash is used by the SDK to generate a percentage value for that user. The percentage value generated for that user is compared to the value set for the percentage rollout value, determines whether the user is eligible to receive that feature or not.
 
 For example, the hash has partitions from 1 to 100,000. When you assign a feature flag, the hash assigns values from 1 to 100,000 to users in each partition. For example, when you assign 25% to a feature flag, {{site.data.keyword.appconfig_short}} SDK delivers that feature to hash partitions from 1 to 25,000. If you change the percentage of users receiving that feature from 25% to 50%, partitions 25,001 to 50,000 would be added to the set of partitions already receiving that feature.
 
@@ -147,21 +147,21 @@ Following are some of the percentage rollout scenarios:
 {: #feature-flags-percentage-rollout-scenarios}
 {: notoc}
 
-| Feature Flag | Segment | Percentage  \n rollout | Is user  \n part of  \n configured segment | Is user  \n part of  \n percentage rollout \n criteria | Value  \n returned  \n by SDK |
+| Feature Flag | Is targeting configured? | Percentage  \n rollout | Is user  \n part of  \n configured segment | Is user  \n part of  \n percentage rollout \n criteria | Value  \n returned  \n by SDK |
 | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- |
-| Disabled | With or without rule | Any % rollout set | NA | NA | Disabled value |
-| Enabled  | Without rule | 100% | NA | Yes | Enabled value |
-| Enabled  | With rule | 100% | Yes | Yes | Overriden value |
-| Enabled  | With rule | 100% | No | Yes | Enabled value |
-| Enabled  | Without rule | Between 0% to 100% | NA | Yes | Enabled value |
-| Enabled  | Without rule | Between 0% to 100% | NA | No | Disabled value |
-| Enabled  | With rule | Betweeen 0% to 100% | Yes | Yes | Overriden value |
-| Enabled  | With rule | Betweeen 0% to 100% | Yes | No | Disabled value |
-| Enabled  | With rule | Between 0% to 100% | No | Yes | Enabled value |
-| Enabled  | With rule | Between 0% to 100% | No | No | Disabled value |
-| Enabled  | Without rule | 0% | NA | No | Disabled value |
-| Enabled  | With rule | 0% | Yes | No | Disabled value |
-| Enabled  | With rule | 0% | No | No | Disabled value |
+| Disabled | NA | Any % rollout set | NA | NA | Disabled value |
+| Enabled  | No | 0% | NA | No | Disabled value |
+| Enabled  | Yes | 0% | Yes | No | Disabled value |
+| Enabled  | Yes | 0% | No | No | Disabled value |
+| Enabled  | No | Between 0% to 100% | NA | Yes | Enabled value |
+| Enabled  | No | Between 0% to 100% | NA | No | Disabled value |
+| Enabled  | Yes | Betweeen 0% to 100% | Yes | Yes | Overriden value |
+| Enabled  | Yes | Betweeen 0% to 100% | Yes | No | Disabled value |
+| Enabled  | Yes | Between 0% to 100% | No | Yes | Enabled value |
+| Enabled  | Yes | Between 0% to 100% | No | No | Disabled value |
+| Enabled  | No | 100% | NA | Yes | Enabled value |
+| Enabled  | Yes | 100% | Yes | Yes | Overriden value |
+| Enabled  | Yes | 100% | No | Yes | Enabled value |
 {: caption="Table 1. Percentage rollout scenarios" caption-side="bottom"}
 
 ## Targeting a segment with a feature flag
