@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -30,7 +30,7 @@ subcollection: app-configuration
    ```
    {: codeblock}
 
-1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows: 
+1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows:
 
    ```javascript
    <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk@latest/dist/appconfiguration.js"></script>
@@ -108,7 +108,7 @@ if(feature) {
 {: #ac-js-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns one of the Enabled/Disabled/Overridden value based on the evaluation. The data type of returned value matches that of feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
-  
+
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
@@ -167,7 +167,7 @@ const entityAttributes = {
    country: 'India',
    };
 
-const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
+const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 

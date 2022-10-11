@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -29,7 +29,7 @@ Policies help you to grant access at different levels. Some of the options are:
 ## Roles and permissions
 {: #ac-roles-permissions}
 
-With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for users and resources in your account. {{site.data.keyword.appconfig_short}} service aligns with {{site.data.keyword.cloud_notm}} IAM roles so that each user has a different view of the service, according to the role assigned. 
+With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for users and resources in your account. {{site.data.keyword.appconfig_short}} service aligns with {{site.data.keyword.cloud_notm}} IAM roles so that each user has a different view of the service, according to the role assigned.
 
 *Roles* define the actions that a user or service ID can run. The following types of roles are in {{site.data.keyword.cloud_notm}}:
 

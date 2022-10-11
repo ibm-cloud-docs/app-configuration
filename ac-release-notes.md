@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # What's new
 {: #releases-notes}
 
-Stay up-to-date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
+Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
 ## September 2022
@@ -33,23 +33,23 @@ Support for Private endpoints. For more information, see [Regions and endpoints]
 
 [JavaScript SDK](/docs/app-configuration?topic=app-configuration-ac-javascript) available to integrate browser applications with App Configuration service.
 
-[React SDK](/docs/app-configuration?topic=app-configuration-ac-react) available to integrate react applications with App Configuration service.
+[React SDK](/docs/app-configuration?topic=app-configuration-ac-react) available to integrate React applications with App Configuration service.
 
 ## June 2022
 {: #June-2022}
 
 New snapshot feature with GitHub integration is available for Enterprise plan.
 
-Release of 0.3.0 version of Admin SDK to support snapshots.
+Release of version 0.3.0 of Admin SDK to support snapshots.
 
 [Snapshots](/docs/app-configuration?topic=app-configuration-ac-snapshots)
 
 ## April 2022
 {: #april-2022}
 
-Phased rollout support for feature flags is available for Lite and Enterprise plan. 
+Phased rollout support for feature flags is available for Lite and Enterprise plan.
 
-Upgrade the server SDKs to version 0.3.0 and above for the phased rollout feature.
+Upgrade the server SDKs to version 0.3.0 or higher version for the phased rollout feature.
 
 ## January 2022
 {: #jan-2022}
@@ -69,7 +69,7 @@ In-memory based cache support for Node.js and Go SDK
 ## July 2021
 {: #jul-2021}
 
-[Environment based access control](/docs/app-configuration?topic=app-configuration-ac-service-access-level-management)
+[Environment-based access control](/docs/app-configuration?topic=app-configuration-ac-service-access-level-management)
 {: #added-environment-control}
 
 ## June 2021

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -21,7 +21,7 @@ Use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the 
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To get started, you need to [provision IBM Cloud Monitoring](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create) instance on your {{site.data.keyword.IBM}} account. For more information, see [Provisioning an instance](https://cloud.ibm.com/docs/monitoring?topic=monitoring-provision)
+To get started, you need to [provision IBM Cloud Monitoring](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring?callback=/observe/monitoring/create){: external} instance on your {{site.data.keyword.IBM}} account. For more information, see [Provisioning an instance](https://cloud.ibm.com/docs/monitoring?topic=monitoring-provision){: external}.
 
 Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{site.data.keyword.appconfig_short}} service deployments in the following regions:
 
@@ -33,17 +33,17 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Sydney | Sydney |
 {: caption="Table 1. Deployment and monitoring regions" caption-side="bottom"}
 
-Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling)
+Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
 {: note}
 
 You can configure only one instance of the {{site.data.keyword.mon_full_notm}} service per region to collect platform metrics.
- - To configure the {{site.data.keyword.mon_full_notm}} instance, you must turn on the platform metrics configuration setting.
- - If a monitoring instance in a region is already enabled to collect platform metrics, metrics from enabled-monitoring services are collected automatically and available for monitoring through this instance. For more information about enabled-monitoring services, see {{site.data.keyword.cloud}} services.
+- To configure the {{site.data.keyword.mon_full_notm}} instance, you must turn on the platform metrics configuration setting.
+- If a monitoring instance in a region is already enabled to collect platform metrics, metrics from enabled-monitoring services are collected automatically and available for monitoring through this instance. For more information about enabled-monitoring services, see {{site.data.keyword.cloud}} services.
 
 To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where the {{site.data.keyword.cloud_notm}} instance is provisioned.
 {: note}
 
-## Viewing metrics 
+## Viewing metrics
 {: #view-metrics}
 
 To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{site.data.keyword.mon_full_notm}} web UI instance that is enabled for platform metrics in the region where your {{site.data.keyword.appconfig_short}} instance is available.
@@ -56,7 +56,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
 1. Click **View all** in the Resource summary section of the dashboard.
 
-1. In the _Services_ section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI _Getting Started_ page opens.
+1. In the *Services* section, click the {{site.data.keyword.appconfig_short}} instance that you plan to monitor. The {{site.data.keyword.appconfig_short}} UI *Getting Started* page opens.
 
 1. Click the **Actions** menu, and select **Monitoring**.
 
@@ -67,7 +67,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 ## Access your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
 
-1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch) from the **Observability** page.
+1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch){: external} from the **Observability** page.
 
 1. Click **DASHBOARDS**.
 
@@ -88,9 +88,9 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
 | Metric Name | Enterprise   | Standard    |  Lite   |
 | ------------|--------------| -------------|--------|
-| [IBM Appconfig Instance API request](#ibm-appconfig-instance-api-request)| Yes | Yes |Yes |
-| [IBM Appconfig Evaluation Count](#ibm-appconfig-evaluation-count)| Yes | Yes |Yes |
-| [IBM Appconfig Instance Unauth Request](#ibm-appconfig-instance-unauth-request)| Yes | Yes |Yes |
+| [IBM Appconfig Instance API request](#ibm_apprapp_instance_api)| Yes | Yes |Yes |
+| [IBM Appconfig Evaluation Count](#ibm_apprapp_instance_eval)| Yes | Yes |Yes |
+| [IBM Appconfig Instance Unauth Request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes |
 {: caption="Table 2. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
 ### IBM Appconfig Instance API request
@@ -119,7 +119,7 @@ Evaluation count per instance: Count of feature or property evaluations in the S
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
 {: caption="Table 4. Evaluation metadata" caption-side="bottom"}
 
-### IBM Appconfig Instance unauth request 
+### IBM Appconfig Instance unauth request
 {: #ibm_apprapp_instance_unauth}
 
 | Metadata   | Description |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -224,7 +224,7 @@ property.getPropertyDataType(); // STRING
 property.getPropertyDataFormat(); // YAML
 property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 - Force fetch the configurations from server.
 
@@ -430,7 +430,7 @@ feature.getFeatureDataType(); // STRING
 feature.getFeatureDataFormat(); // YAML
 feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 #### Property
 {: #ac-prop1}
@@ -451,7 +451,7 @@ property.getPropertyDataType(); // STRING
 property.getPropertyDataFormat(); // YAML
 property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check Table 1)
 ```
-{: codeblock}  
+{: codeblock}
 
 - Force fetch the configurations from server.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 Snapshots are a way to capture the current configuration of your app or environment and sync the modified config set back to your config git repo. This can help you in versioning, application bootstrapping, rollback, troubleshooting, or audit {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
-Every snapshot configuration will have the collection and environment id associated with it, along with this user 
+Every snapshot configuration will have the collection and environment id associated with it, along with this user
 can provide their GitHub details where they would like to promote their configurations.
 
 By default, **Snapshots** displays the list of snapshot in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Collection_id** associated, **Environment_id** associated, **Git_branch**, **Git_url**, **Git_file_path**, **Git_token**, **last_sync_time** and the date of creation of the snapshot, and the latest date it was updated.
@@ -43,8 +43,8 @@ To create a snapshot, complete these steps:
 
    - **Name** - name of the snapshot.
    - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
-   - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.   
-   - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to organisation GitHub account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{{repo_name}}` or if you want to write to your personal GitHub then the URL will be `https://api.github.com/repos/{{owner}}/{{repo_name}}`. 
+   - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.
+   - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to organisation GitHub account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{{repo_name}}` or if you want to write to your personal GitHub then the URL will be `https://api.github.com/repos/{{owner}}/{{repo_name}}`.
    - **Branch** - Add the branch name, to which you would like to write or update the config file.
    - **Folder path URL** - Provide the folder path to the file.
    - **File name** - provide the file name, we only allow `.json` or `.JSON` file extension.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, managing service access, iam, account, environments
 
@@ -48,7 +48,7 @@ Take the following steps on the {{site.data.keyword.cloud_notm}} console:
 ![Access to an environment across instances](images/rbac-env.png "Access to an environment across instances"){: caption="Figure 1. Access to an environment across instances" caption-side="bottom"}
 
 To enable access to environments across instances, the user must at least have Reader level privileges to the {{site.data.keyword.appconfig_short}} instances in the account.
-{: note}  
+{: note}
 
 ## Granting access to a specific environment in an instance
 {: #ac-access-management-instance}

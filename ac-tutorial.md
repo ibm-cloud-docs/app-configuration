@@ -2,15 +2,15 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, tutorial
 
 subcollection: app-configuration
 
 content-type: tutorial
-account-plan: standard 
-completion-time: 90m 
+account-plan: standard
+completion-time: 90m
 
 ---
 
@@ -22,13 +22,13 @@ completion-time: 90m
 {: toc-services=""}
 {: toc-completion-time="90m"}
 
-{{site.data.keyword.appconfig_short}} enables app developers to quickly build mobile and web apps. With feature management of {{site.data.keyword.appconfig_short}}, you can embark on a truly agile development methodology by separating feature roll outs from release cycles. Reduce risk by controlling the release of features and rolling back as required. Create user groups (segments) and target features to selected user groups based on different criteria.
+{{site.data.keyword.appconfig_short}} enables app developers to quickly build mobile and web apps. With feature management of {{site.data.keyword.appconfig_short}}, you can embark on a truly agile development methodology by separating feature roll outs from release cycles. Reduce risk by controlling the release of features and rolling back as needed. Create user groups (segments) and target features to selected user groups based on different criteria.
 {: shortdesc}
 
 ## Before you begin
 {: #ac-prereqs}
 
-You need an {{site.data.keyword.cloud}} account. If you don't have an account, [create one](https://cloud.ibm.com/registration/). Log in to your {{site.data.keyword.cloud}} account.
+You need an {{site.data.keyword.cloud}} account. If you don't have an account, [create one](https://cloud.ibm.com/registration/){: external}. Log in to your {{site.data.keyword.cloud}} account.
 
 ## Create an {{site.data.keyword.appconfig_short}} service instance
 {: #ac-create-an-apprapp-instance}
@@ -60,7 +60,7 @@ Create and manage environments, feature flags, and properties for collections ac
 {: #ac-integrate-sdk}
 {: step}
 
-{{site.data.keyword.appconfig_short}} provides SDKs to integrate with your application. For more information about SDK installation and technical concepts, see [App Configuration server SDK for Node](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks).
+{{site.data.keyword.appconfig_short}} provides SDKs to integrate with your application. For more information about SDK installation and technical concepts, see [Integrating SDKs](/docs/app-configuration?topic=app-configuration-ac-sdks).
 
 ## Create segments
 {: #ac-create-segments}
@@ -74,5 +74,5 @@ To create a segment, see [Create a segment](/docs/app-configuration?topic=app-co
 {: #ac-gs-next-steps}
 
 - [How to target Feature flags to Segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag)
-- [How to target Froperties to Segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties)
+- [How to target Properties to Segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties)
 - [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).

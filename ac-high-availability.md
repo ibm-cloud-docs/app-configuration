@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-10-11"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -14,7 +14,7 @@ subcollection: app-configuration
 # Understanding High availability for {{site.data.keyword.appconfig_short}}
 {: #ac-ha}
 
-{{site.data.keyword.IBM_notm}} {{site.data.keyword.appconfig_short}} is a highly available, multi-tenant, regional service.  
+{{site.data.keyword.IBM_notm}} {{site.data.keyword.appconfig_short}} is a highly available, multi-tenant, regional service.
 {: shortdesc}
 
 ## Service High Availability (HA)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -46,7 +46,7 @@ The currently available Go language Admin SDK integrates with your Go applicatio
 | -- | -- | -- |
 |Server side|These SDKs are designed for multi-user systems and are intended to be used in a trusted environment, such as inside a corporate network or on a web server.|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)</br>[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-python)</br>[Go SDK](https://github.com/IBM/appconfiguration-go-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-golang)</br>[Java SDK](https://github.com/IBM/appconfiguration-java-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-java) |
 |Client side|These SDKs are designed for web and mobile applications.|[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)</br>[JavaScript SDK](https://github.com/IBM/appconfiguration-js-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-javascript)</br>[React SDK](https://github.com/IBM/appconfiguration-react-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-react)|
-|Admin SDK|Admin SDK is designed to perform {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags, and Properties.|[App Configuration Admin SDK for Go](https://cloud.ibm.com/apidocs/app-configuration?code=go)|
+|Admin SDK|Admin SDK is designed to perform {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags, and Properties.|[App Configuration Admin SDK for Go](https://cloud.ibm.com/apidocs/app-configuration?code=go){: external}|
 {: caption="Table 1. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
 For more information about installation and technical concepts, see the 'readme file' document in the SDK.

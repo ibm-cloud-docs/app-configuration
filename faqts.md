@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-07-14"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -33,7 +33,7 @@ Any update is pushed to the application in real time by the {{site.data.keyword.
 
 ```javascript
 client.emitter.on('configurationUpdate', () => {
-      // add your code
-  })
+   // add your code
+   })
 ```
 {: codeblock}

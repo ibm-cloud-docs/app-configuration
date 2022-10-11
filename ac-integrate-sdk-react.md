@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -23,7 +23,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.appconfig_short}} React client SDK can be used with all the major browsers. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
 
-1. Install the SDK. 
+1. Install the SDK.
 
    ```bash
    npm install ibm-appconfiguration-react-client-sdk@latest
@@ -63,7 +63,7 @@ subcollection: app-configuration
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
    - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
 
-Ensure to create the service credentials of the role `Client SDK` for using with the React client SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications. 
+Ensure to create the service credentials of the role `Client SDK` for using with the React client SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications.
 {: note}
 
 ### Examples for using feature and property-related APIs
@@ -109,7 +109,7 @@ if(feature) {
 {: #ac-react-feature-evaluation}
 
 You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns one of the Enabled/Disabled/Overridden value based on the evaluation. The data type of returned value matches that of feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
-  
+
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
@@ -171,7 +171,7 @@ const entityAttributes = {
    country: 'India',
    };
 
-const propertyValue = property.getCurrentValue(entityId, entityAttributes);    
+const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 
@@ -234,4 +234,4 @@ property.getCurrentValue(entityId, entityAttributes); // returns the stringified
 ### Listen to the feature or property changes
 {: #ac-react-feature-prop-change}
 
-The SDK automatically subscribes to event-based mechanism and re-renders the enclosed components when feature flag's or property's configuration changes. 
+The SDK automatically subscribes to event-based mechanism and re-renders the enclosed components when feature flag's or property's configuration changes.

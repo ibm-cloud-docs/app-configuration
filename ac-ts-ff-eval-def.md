@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-11"
+  years: 2020, 2022
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question,
 
@@ -42,28 +42,24 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-#  I have used targeting to override flag and property values for a segment, but the default values are still being applied.  
+#  I have used targeting to override flag and property values for a segment, but the default values are still being applied.
 {: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
 
-
-
 Override values are not being assigned to segments.
 {: tsSymptoms}
-
 
 Attributes in your code may be missing or inconsistent with the attributes used in your segment rule.
 {: tsCauses}
 
 Segments are defined in the App Configuration service using attributes, and attributes are defined in your application code. If an attribute in a segment rule does not exist in your application, or has a value that is not part of the rule, then the app instance will not be recognized as part of a segment, and the default value will be assigned.
 
-
-
 In your app code, include a JSON object that contains the various attribute values you want to use in your segment rules.
 {: tsResolve}
 
 Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See example below.
+
 ```javascript
 const entityId = "john_doe";
 const entityAttributes = {

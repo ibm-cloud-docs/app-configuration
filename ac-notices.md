@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-10-11"
 
 keywords: notices for app configuration, app-configuration, app configuration, creative commons, notices, attributions, license
 
