@@ -29,6 +29,7 @@ toc:
       - ac-feature-flags.md
       - ac-properties.md
       - ac-segments.md
+      - ac-integrations.md
       - ac-snapshots.md
       - ac-integrate-sdk.md
 
