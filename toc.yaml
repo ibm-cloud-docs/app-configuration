@@ -72,6 +72,7 @@ toc:
           - ac-iam-policies.md
           - ac-data-security-compliance.md
           - ac-securing-data.md
+          - ac-managing-encryption.md
           - ac-cipher.md
           - architecture-workload-isolation.md
           - ac-audit.md
