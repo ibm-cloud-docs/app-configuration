@@ -29,6 +29,7 @@ toc:
       - ac-feature-flags.md
       - ac-properties.md
       - ac-segments.md
+      - ac-integrations.md
       - ac-snapshots.md
       - ac-integrate-sdk.md
 
@@ -71,6 +72,7 @@ toc:
           - ac-iam-policies.md
           - ac-data-security-compliance.md
           - ac-securing-data.md
+          - ac-managing-encryption.md
           - ac-cipher.md
           - architecture-workload-isolation.md
           - ac-audit.md
