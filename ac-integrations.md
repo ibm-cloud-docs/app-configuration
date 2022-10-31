@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-28"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 
@@ -39,10 +39,10 @@ You can create and bring keys that are created by using {{site.data.keyword.keym
 1. Select **Key Protect** or **Hyper Protect Crypto Services** from the **Service** drop-down list, as per your requirement.
 
 1. For the **Instance**, select one of these options:
-   - **Create a new instance** - to create a new instance of the selected service. This will take you to the respecting provisioning page of the service selected.
+   - **Create a new instance** - to create a new instance of the selected service. This will take you to the respective provisioning page of the service selected.
    - **Choose existing instance** - select this option if you already have a {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}} instance. Select the **Service** instance and **Root key** from the drop-down list.
 
-1. Click **Create** to apply the use your {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}} instance's root key to encrypt the segment data stored by your {{site.data.keyword.appconfig_short}} instance.
+1. Click **Create** to apply the use of your {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}} instance's root key to encrypt the segment data stored by your {{site.data.keyword.appconfig_short}} instance.
 
 The newly created **Key Management** information is listed in the **Integrations** dashboard.
 
