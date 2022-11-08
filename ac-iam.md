@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -44,7 +44,7 @@ For complete IAM documentation, see [Managing access](/docs/account?topic=accoun
 Review the platform and service roles available and the actions that are mapped to each to help you assign access. If you're using the API to assign access, use `apprapp` for the service name.
 
 | Role | Description |
-| ----- | :----- |
+| :----- | :----- |
 | Viewer | As a viewer, you can view service instances, but you can't modify them. |
 | Administrator | As an administrator, you can perform all platform actions based on the resource this role is being assigned, including assigning access policies to other users. |
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
@@ -58,7 +58,7 @@ Review the platform and service roles available and the actions that are mapped 
 {: summary="Use the tab buttons to change the context of the table. This table has row and column headers. The row headers provide the platform role name and the column headers identify the specific information available about each role."}
 
 | Role | Description |
-| ----- | :----- |
+| :----- | :----- |
 | Manager | As a manager, you have permissions beyond the writer role to complete privileged actions as defined by the service. In addition, you can create and edit service-specific resources. |
 | Reader | As a reader, you can perform read-only actions within a service such as viewing service-specific resources. |
 | Writer | As a writer, you have permissions beyond the reader role, including creating and editing service-specific resources. |
@@ -73,7 +73,7 @@ Review the platform and service roles available and the actions that are mapped 
 {: summary="Use the tab buttons to change the context of the table. This table has row and column headers. The row headers provide the service role name and the column headers identify the specific information available about each role."}
 
 | ID | Roles | Description |
-| ----- | :----- | :----- |
+| :----- | :----- | :----- |
 | `apprapp.dashboard.view` | Manager, Reader, Writer, Operator, Administrator, Editor, Config Operator | View {{site.data.keyword.appconfig_short}} dashboard |
 | `apprapp.collections.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of collection. |
 | `apprapp.collections.create` | Manager, Administrator | Create a collection. |
@@ -103,7 +103,9 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.gitconfigs.delete` | Manager, Administrator | Delete a Snapshots configuration. |
 | `apprapp.gitconfigs.view` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
 | `apprapp.gitconfigs.promote` | Manager, Administrator | Promotes a Snapshots configuration to Git. |
-{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="top"}
+| `apprapp.encryptionconfigs.create` | Manager, Administrator | Create an Encryption configuration. |
+| `apprapp.encryptionconfigs.list` | Manager, Reader, Writer, Administrator, Editor, Viewer, Config Operator | Get list of Encryption configuration. |
+{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #actions-table1}
 {: tab-title="Actions"}
 {: tab-group="app-rapp"}

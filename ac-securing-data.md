@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-10-11"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -38,6 +38,10 @@ These information can be deleted using the APIs mentioned [here](https://cloud.i
 {{site.data.keyword.appconfig_short}} stores and encrypts definitions of environments, collections, features, properties and segment rules. This data is encrypted at rest.  As a multi-tenant service, any data stored is encrypted with the default IBM provided key for all tenants.
 
 IBM personnel have access to the configuration data. It is recommended to avoid storing sensitive information as part of the configuration. If sensitive data storage is required, consider using [IBM Cloud Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started){: external}.
+
+You can add a higher level of encryption control to your data at rest (when it is stored) by enabling integration with a Key Management Service (KMS). The data that you store in {{site.data.keyword.cloud_notm}} is encrypted at rest by using envelope encryption. If you need to control the encryption keys, you can integrate Key Protect or Hyper Protect Crypto Services. This process is commonly referred to as Bring Your Own Key (BYOK). With Key Protect and Hyper Protect Crypto Services, you can create, import, and manage encryption keys. You can assign access policies to the keys, assign users or service IDs to the keys, or give the key access only to a specific service.
+
+For more information, see [Managing encryption](/docs/app-configuration?topic=app-configuration-ac-managing-encryption).
 
 ## How can I delete my information?
 {: #ac-data-deletion}

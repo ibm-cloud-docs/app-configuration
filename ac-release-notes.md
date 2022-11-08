@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -18,10 +18,15 @@ subcollection: app-configuration
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
+## October 2022
+{: #October-2022}
+
+Support for high level encryption using {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) and {{site.data.keyword.hscrypto}} (Keep Your Own Key - KYOK). For more information, see [Integrations](/docs/app-configuration?topic=app-configuration-ac-integrations).
+
 ## September 2022
 {: #September-2022}
 
-Support for Private endpoints. For more information, see [Regions and endpoints](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints)
+Support for Private endpoints. For more information, see [Regions and endpoints](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints).
 
 ## August 2022
 {: #August-2022}
