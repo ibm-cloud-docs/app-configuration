@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration, app configuration, settings, cors, cross-origin resource sharing
 
@@ -30,9 +30,13 @@ To add domains to allowlist, complete these steps:
 
 1. In the {{site.data.keyword.appconfig_short}} console, click **Settings**.
 
+   ![List of additional settings](images/ac-settings-default.png "List of settings"){: caption="Figure 1. List of additional settings" caption-side="bottom"}
+
 1. Click **Edit**. The side panel opens with fields for adding URLs to be allowlisted.
 
 1. Enter the **URL** of the domain that needs to be added to **Allowlisted Domains** and click **Add +**. Repeat this step to add more URLs.
+
+   ![Allowlisted domains](images/ac-settings-allowlist.png "Allowlisted domains"){: caption="Figure 2. List of allowlisted domains" caption-side="bottom"}
 
 1. Click **Save**.
 

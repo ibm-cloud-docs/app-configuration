@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -74,6 +74,22 @@ To promote a snapshot, complete these steps:
 
    You can update the snapshot information using the API 'https://cloud.ibm.com/apidocs/app-configuration?code=go#update-gitconfig'.
    {: note}
+
+## Restore a GitHub snapshot
+{: #ac-restore-a-snapshot}
+
+To restore a snapshot from GitHub, complete these steps:
+
+1. From the {{site.data.keyword.appconfig_short}} console, click **Manage Snapshots** from the top menu bar.
+
+   ![Manage snapshots](images/ac-restore-snapshots.png "Manage snapshots"){: caption="Figure 6. Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
+
+1. Click **Manage Snapshots**. The side panel opens up with existing snapshots.
+
+1. Click **Restore Snapshot** to restore the required configuration to your {{site.data.keyword.appconfig_short}} instance.
+
+Only the lastest snapshot stored in GitHub will be restored. Commit based snapshot restore not supported.
+{: note}
 
 ## Snapshot - overflow menu
 {: #snapshot-overflow-menu}

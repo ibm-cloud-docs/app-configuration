@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -182,6 +182,10 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Audit | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker |
 | Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |
 | Satellite integration and [Razee CRD](https://github.com/IBM/appconfiguration-razee) | - | - | Yes |
+| Percentage rollout | Supported | Not Supported | Supported |
+| Snapshots | Supported | Not Supported | Supported |
+| Secrets property | Not Supported | Not Supported | Supported |
+| KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
 {: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?

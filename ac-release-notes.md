@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -21,7 +21,9 @@ Stay up to date with the new features that are available for {{site.data.keyword
 ## November 2022
 {: #November-2022}
 
-Allowlisting of domains for Cross-Origin Resource Sharing (CORS) requests from client SDK. For more information, see [Settings](/docs/app-configuration?topic=app-configuration-ac-settings).
+- Allowlisting of domains for Cross-Origin Resource Sharing (CORS) requests from client SDK. For more information, see [Settings](/docs/app-configuration?topic=app-configuration-ac-settings).
+
+- Restoring a Snapshot configuration from GitHub. For more information, see [Restore a GitHub snapshot](/docs/app-configuration?topic=app-configuration-ac-snapshots#ac-restore-a-snapshot).
 
 ## October 2022
 {: #October-2022}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration activity tracker events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -64,6 +64,7 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.snapshots.list` | Called the list of snapshot configuration or failed to list |
 | `apprapp.snapshots.read` | Retrieved snapshot configuration details or failed to retrieve snapshot configuration details |
 | `apprapp.snapshots.promote` | Created or updated the chosen configuration to GitHub based on the snapshots configuration. |
+| `apprapp.snapshots.restore` | Writes or updates the chosen snapshot configuration from the GitHub to {{site.data.keyword.appconfig_short}} instance. |
 | `apprapp.encryptionconfigs.create` | Created an encryption configuration or failed to create. |
 | `apprapp.encryptionconfigs.list` | Called the list of encryption configuration or failed to list. |
 | `apprapp.originconfigs.update` | Updated the allowlist of origins or failed to update |
