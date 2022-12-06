@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-06"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question, rate limiting
 
@@ -43,7 +43,7 @@ subcollection: app-configuration
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Why am I receiving the Status Code - "429 Too Many Requests" as response to the API Calls?
-{: #ac-troubleshooting-one}
+{: #ac-troubleshooting-rate-limiting}
 {: troubleshoot}
 {: support}
 

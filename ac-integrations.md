@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-06"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 
@@ -88,7 +88,6 @@ Use {{site.data.keyword.Bluemix}} Identity and Access Management (IAM) to create
 
 ### Creating an authorization by using the CLI
 {: #ac-create-auth-cli}
-{: cli}
 
 To authorize a source service access a target service, run the `ibmcloud iam authorization-policy-create` command.
 
