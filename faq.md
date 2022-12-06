@@ -176,14 +176,12 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Role-based access | Env-level | Env-level | Env-level |
 | Locations | London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney |
 | HA | Regional | Regional | Regional |
-| Phased Rollout | Supported | Not Supported | Supported |
 | Security | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC |
 | Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
 | Audit | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker |
 | Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |
 | Satellite integration and [Razee CRD](https://github.com/IBM/appconfiguration-razee) | - | - | Yes |
 | Percentage rollout | Supported | Not Supported | Supported |
-| Secrets property | Supported | Supported | Supported |
 | Snapshots | Not Supported | Not Supported | Supported |
 | KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
 {: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
