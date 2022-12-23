@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-23"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 Integrations in {{site.data.keyword.appconfig_short}} represent list of other {{site.data.keyword.cloud_notm}} services that are connected to your {{site.data.keyword.appconfig_short}} instance. You can encrypt the data that you store in {{site.data.keyword.cloud_notm}} databases by using encryption keys that you can control.
 {: shortdesc}
 
-By default, the **Integrations** pane displays the existing integrations in the current {{site.data.keyword.appconfig_short}} service instance along with Name, type, location, and status.
+The **Integrations** pane displays the integrations in the current {{site.data.keyword.appconfig_short}} service instance along with Name, type, location, and status of the integration.
 
 ![List of integrations](images/ac-integrations-default.png "List of integrations"){: caption="Figure 1. List of integrations" caption-side="bottom"}
 
@@ -34,7 +34,7 @@ For more information, see [Managing encryption](/docs/app-configuration?topic=ap
 ## Integrating with a Key management service
 {: #ac-int-key-management}
 
-If you are using {{site.data.keyword.appconfig_short}} CLI or API to integrate with a key management service (KMS), ensure that you have enabled authorization to grant access between services before integrating with a KMS service. For more information, see [Using authorizations to grant access between services](#ac-using-auth-access-between-services).
+If you are using {{site.data.keyword.appconfig_short}} CLI or API to create integration with a key management service (KMS), ensure that you have enabled authorization to grant access between services before integrating with a KMS service. For more information, see [Using authorizations to grant access between services](#ac-using-auth-access-between-services).
 {: important}
 
 You can create and bring keys that are created by using {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}}. To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://cloud.ibm.com/catalog/key-protect){: external} or [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services) provisioned on your {{site.data.keyword.cloud_notm}} account. For more information, see [provisioning a key protect instance](https://cloud.ibm.com/docs/key-protect?topic=key-protect-provision){: external} or see [provisioning a {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started){: external}.
