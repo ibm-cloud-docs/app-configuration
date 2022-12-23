@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-11-30"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -54,7 +54,6 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. If you selected the Enterprise plan, then specify the **Service endpoints**. The following options are available:
    - *Public network* - The public network service endpoints are accessible from anywhere on the internet.
-   - *Private network* - The private network service endpoints are accessible only within the {{site.data.keyword.cloud_notm}} backbone network.
    - *Both Public & Private network* - use of both public and private service endpoint network access.
 
 1. Accept the licensing agreements and terms by clicking the checkbox.
