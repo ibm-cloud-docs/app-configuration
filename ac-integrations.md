@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-12-23"
+lastupdated: "2023-01-03"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 Integrations in {{site.data.keyword.appconfig_short}} represent list of other {{site.data.keyword.cloud_notm}} services that are connected to your {{site.data.keyword.appconfig_short}} instance. You can encrypt the data that you store in {{site.data.keyword.cloud_notm}} databases by using encryption keys that you can control.
 {: shortdesc}
 
-The **Integrations** pane displays the integrations in the current {{site.data.keyword.appconfig_short}} service instance along with Name, type, location, and status of the integration.
+The **Integrations** page displays the integrations in the current {{site.data.keyword.appconfig_short}} service instance along with Name, type, location, and status of the integration.
 
 ![List of integrations](images/ac-integrations-default.png "List of integrations"){: caption="Figure 1. List of integrations" caption-side="bottom"}
 
@@ -48,7 +48,7 @@ You can create and bring keys that are created by using {{site.data.keyword.keym
 1. Select **Key Protect** or **Hyper Protect Crypto Services** from the **Service** drop-down list, as per your requirement.
 
 1. For the **Instance**, select one of these options:
-   - **Create a new instance** - to create a new instance of the selected service. This will take you to the respective provisioning page of the service selected.
+   - **Create a new instance** - to create a new instance of the selected service. Selecting this option takes you to the respective provisioning page of the service selected.
    - **Choose existing instance** - select this option if you already have a {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}} instance. Select the **Service** instance and **Root key** from the drop-down list.
 
 1. Click **Create** to apply the use of your {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.hscrypto}} instance's root key to encrypt the segment data stored by your {{site.data.keyword.appconfig_short}} instance.
@@ -57,6 +57,9 @@ The newly created **Key Management** information is listed in the **Integrations
 
 The overflow menu consists of:
 - `View` - helps you to view the details of the selected encryption service.
+
+When an {{site.data.keyword.appconfig_short}} instance is deleted, unregistration of the resource with key management services automatically happens. If any error, you can manually unregister {{site.data.keyword.appconfig_short}} instance from key management service by using the {{site.data.keyword.cloud_notm}} console dashboard.
+{: note}
 
 ## Using authorizations to grant access between services
 {: #ac-using-auth-access-between-services}
@@ -76,7 +79,7 @@ Use {{site.data.keyword.Bluemix}} Identity and Access Management (IAM) to create
 
 1. Select a **Source service** as **App Configuration**.
 
-1. Specify whether you want the authorization to be for all resources or Resources based on selected attributes, If you selected Resources based on selected attributes, then specify the *Add attributes**: only source resource group or only source service instance.
+1. Specify whether you want the authorization to be for all resources or Resources based on selected attributes. If you selected Resources based on selected attributes, then specify the *Add attributes**: only source resource group or only source service instance.
 
 1. Select a **Target service** as per your requirement (Key Protect or Hyper Protect Crypto Services).
 
