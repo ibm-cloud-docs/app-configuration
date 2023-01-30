@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-01-19"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,11 @@ subcollection: app-configuration
 
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## January 2023
+{: #January-2023}
+
+- Support for integration with {{site.data.keyword.en_short}} to enable lifecycle event notifications for your {{site.data.keyword.appconfig_short}} service instance. For more information, see [Integrating with {{site.data.keyword.en_short}} service](/docs/app-configuration?topic=app-configuration-ac-int-en).
 
 ## November 2022
 {: #November-2022}

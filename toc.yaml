@@ -44,6 +44,11 @@ toc:
       - link:
           label: Target properties to segments
           href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
+      - topicgroup:
+          label: Integrations
+          topics:
+          - ac-kms-integration.md
+          - ac-en-integration.md
       - ac-toolchain.md
       - ac-sm-integration.md
       - topicgroup:
