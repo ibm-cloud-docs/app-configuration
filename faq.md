@@ -48,11 +48,11 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 
  {{site.data.keyword.appconfig_short}} has three pricing plans:
 
-| Plan | Inclusions | Capabilities | Price |
-| :-------------: | :-------------| :-----|:-----|
-| Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.  \n Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. | Free |
-| Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. | - $250.00 USD/Application instance  \n - $0.01 USD/Active Entity ID \n - $10.00 USD/Hundred Thousand API Calls |
-| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes percentage rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. | - $500.00 USD/Application instance  \n - $0.01 USD/Active Entity ID  \n $10.00 USD/Hundred Thousand API Calls |
+| Plan | Inclusions | Capabilities |
+| :-------------: | :-------------| :-----|
+| Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.  \n Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. |
+| Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. |
+| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes percentage rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
 {: caption="Table 1. Pricing plans" caption-side="bottom"}
 
 ## What are the charges to use {{site.data.keyword.appconfig_short}}?
@@ -113,6 +113,8 @@ Assume you have a mobile app and you want feature flags and targeted segments to
 
 You need the {{site.data.keyword.appconfig_short}} Enterprise plan to support both feature flags and segmentation.
 
+For this example, assume an Enterprise plan instance is $500 per month, active entity IDs are $0.01 each, and API calls are $10 per 100,000. NOTE:  These prices are assumed for this example only.  Current pricing may be different from the amounts shown in the example.  See the App Configuration catalog page for current pricing.
+
 {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month
 Active Entity IDs: 200,000 total app instances (users) * 50% active = 100,000
 Included Active Entity IDs: 10,000
@@ -131,6 +133,8 @@ Assume you have five backend microservices that support your mobile app. To full
 You are moving toward continuous delivery so on average you dark launch a new feature every 3 days (10 dark launches per month), and the feature undergoes a day or two of testing before being released (for example, targeting removed). This results in 2 toggles per feature, one to activate the feature for testers, and one to remove targeting and activate for the general user population.
 
 You will need the {{site.data.keyword.appconfig_short}} Enterprise plan since both feature flags and segmentation are required.
+
+For this example, assume an Enterprise plan instance is $500 per month, active entity IDs are $0.01 each, and API calls are $10 per 100,000. NOTE:  These prices are assumed for this example only.  Current pricing may be different from the amounts shown in the example.  See the App Configuration catalog page for current pricing.
 
 {{site.data.keyword.appconfig_short}} Enterprise instances: 1 @ $500 per month
 Active Entity IDs: 5 entity IDs per region \* 3 regions = 15
@@ -153,12 +157,12 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Number of collaborators (team members) | No restriction | No restriction | No restriction |
 | Max number of instances | 1 | No restriction|No restriction |
 | Instance life | 30 days of inactivity | No restriction | No restriction |
-| Base price for instance (monthly) | Free | $250 | $500 |
+| Base price for instance (monthly) | Free | Charge (see catalog page) | Charge (see catalog page)|
 | Monthly active entity IDs included with instance | 10 | 1000 | 10,000 |
-| Monthly active entity ID overage price | Overage not allowed | $.01/MAE | $.01/MAE |
+| Monthly active entity ID overage | Overage not allowed | overage allowed | overage allowed |
 | Max monthly active entity IDs per instance | 10 | Unlimited | Unlimited |
 | API calls included with instance | 5,000 | 100,000|1,000,000|
-| API call overage price | Overage not allowed | $.0001/API call | $.0001/API call |
+| API call overage price | Overage not allowed | Overage allowed | Overage allowed |
 | Max monthly API calls per instance | 5,000 | Unlimited | Unlimited |
 | Environments | 1 | 15 | 15 |
 | Collections | 1 | 20 | Unlimited |
@@ -185,6 +189,8 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Snapshots | Not Supported | Not Supported | Supported |
 | KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
 {: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
+
+Note: See the App Configuration catalog page for current pricing. 
 
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?
 {: #faq-ac-audit}
