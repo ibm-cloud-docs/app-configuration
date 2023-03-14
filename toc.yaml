@@ -69,7 +69,6 @@ toc:
               label: App Configuration admin SDK for Go
               href: https://{DomainName}/apidocs/app-configuration?code=go
       - ac-integrate-offline.md
-      - ac-razee.md
 
       - topicgroup:
           label: Enhance security

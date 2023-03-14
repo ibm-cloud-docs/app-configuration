@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-14"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -184,7 +184,6 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
 | Audit | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker |
 | Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |
-| Satellite integration and [Razee CRD](https://github.com/IBM/appconfiguration-razee) | - | - | Yes |
 | Percentage rollout | Supported | Not Supported | Supported |
 | Snapshots | Not Supported | Not Supported | Supported |
 | KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
