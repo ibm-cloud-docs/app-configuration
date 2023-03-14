@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-09-30"
+  years: 2021, 2023
+lastupdated: "2023-03-14"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # Properties
 {: #ac-properties}
 
-You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using Razee plug-in or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally by using {{site.data.keyword.appconfig_short}}.
+You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using [terraform plug-in](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/app_config_collection){: external} or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally by using {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
 By default, the properties window lists all properties in an environment in the current {{site.data.keyword.appconfig_short}} service instance. Attributes for each property like **Name**, **Value**, Date of creation, **Last evaluated**, **Segments** that are targeted, and **Type** are displayed.
