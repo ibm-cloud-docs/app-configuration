@@ -75,6 +75,7 @@ toc:
           topics:
           - ac-iam.md
           - ac-iam-policies.md
+          - ac-cbr.md
           - ac-data-security-compliance.md
           - ac-securing-data.md
           - ac-managing-encryption.md
@@ -123,3 +124,4 @@ toc:
           - ac-ts-ff-zero-env.md
           - ac-ts-ff-del.md
           - ac-ts-rate-limiting.md
+          - ac-ts-ip-address-cbr.md
