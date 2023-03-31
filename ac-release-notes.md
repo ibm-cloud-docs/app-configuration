@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-03-31"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,13 @@ subcollection: app-configuration
 
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## March 2023
+{: #March-2023}
+
+- Support for context-based restrictions (CBR)
+
+   Manage user and service access to your {{site.data.keyword.appconfig_notm}} resources by using context-based restrictions, based on defined criteria. For more information, see [Managing access with context-based restrictions](/docs/app-configuration?topic=app-configuration-ac-access-control-cbr).
 
 ## January 2023
 {: #January-2023}

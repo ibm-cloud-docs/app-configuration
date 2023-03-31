@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-11"
+  years: 2021, 2023
+lastupdated: "2023-03-31"
 
 keywords: app-configuration, app configuration, toolchain integration, toolchain, devops, continuous delivery, tekton, otc
 
@@ -19,6 +19,9 @@ Adopt a DevOps approach in your feature releases by using {{site.data.keyword.cl
 {: shortdesc}
 
 {{site.data.keyword.appconfig_short}} toolchain is based on Tekton and is available as a template at [https://github.com/ibm-cloud-appconfiguration/appconfiguration-toolchain](https://github.com/ibm-cloud-appconfiguration/appconfiguration-toolchain){: external} for automating the deployment of your applications.
+
+Make sure you allowlist the traffic from Pipeline & toolchain services.
+{: note}
 
 Integrate {{site.data.keyword.appconfig_short}} service to a [toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started&interface=ui){: external} and apply feature flags and properties from the service instance to the environment or trigger properties of the associated pipeline.
 
