@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-04-10"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -104,8 +104,6 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.gitconfigs.view` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
 | `apprapp.gitconfigs.promote` | Manager, Administrator | Promotes a Snapshot configuration to GitHub. |
 | `apprapp.gitconfigs.restore` | Manager, Administrator | Restores a Snapshot configuration from GitHub. |
-| `apprapp.encryptionconfigs.create` | Manager, Administrator | Create an Encryption configuration. |
-| `apprapp.encryptionconfigs.list` | Manager, Reader, Writer, Administrator, Editor, Viewer, Config Operator | Get list of Encryption configuration. |
 | `apprapp.originconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the allowlist of origin configurations. |
 | `apprapp.originconfigs.update` | Manager, Administrator | Update the allowlist of origin configurations. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
