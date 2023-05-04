@@ -89,9 +89,7 @@ toc:
       - topicgroup:
           label: CLI reference
           topics:
-          - link:
-              label: App Configuration CLI
-              href: https://{DomainName}/docs/app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+          - /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
           - ac-cli-changelog.md
 
       - topicgroup:
