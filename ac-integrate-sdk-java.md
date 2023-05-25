@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-09-30"
+  years: 2022, 2023
+lastupdated: "2023-05-22"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -31,7 +31,7 @@ subcollection: app-configuration
       <dependency>
          <groupId>com.ibm.cloud</groupId>
          <artifactId>appconfiguration-java-sdk</artifactId>
-         <version>0.3.1</version>
+         <version>0.3.3</version>
       </dependency>
       ```
       {: codeblock}
@@ -39,7 +39,7 @@ subcollection: app-configuration
    Get the package through **Gradle** by adding:
 
       ```sh
-      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.3.1'
+      implementation group: 'com.ibm.cloud', name: 'appconfiguration-java-sdk', version: '0.3.3'
       ```
       {: codeblock}
 
