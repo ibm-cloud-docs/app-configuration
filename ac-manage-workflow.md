@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-05-26"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 As an app owner, you can manage feature flags enablement by adding additional workflow with ServiceNow&reg; integration with {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
-You can associate the approval process flow for any configuration changes to {{site.data.keyword.appconfig_short}} at the environment level. When you enable the approval workflow, the change request workflow will be initiated and the changes are reflected only after the approval is done.
+You can associate the approval process flow for any configuration changes to {{site.data.keyword.appconfig_short}} at the environment level. When you enable the approval workflow, the changes are reflected only after the approval and moving the change request state to implement. Once, the change request is in implement state the changes will be automatically reflected.
 
 Make sure you have an ServiceNow instance with admin privileges to update the configuration.
 {: note}
@@ -52,9 +52,9 @@ To integrate with ServiceNow workflow, perform the following steps:
 
 1. Click **Create** to create and apply the workflow.
 
-When you create a workflow in an environment, any changes to the feature flags in that environment will initiate a change request and need to go through the workflow approval process.
+When you create a workflow in an environment, toggling the feature flags to *On* state or *OFF* state in that environment will initiate a change request and need to go through the workflow approval process.
 
-If you have already enabled some feature flags before applying the workflow approval process, those feature flags will function as usual without an approval process.
+If you have already enabled some feature flags before applying the workflow approval process, those feature flags will function as usual but further toggling will go through an approval process.
 
 If you disable an existing feature flag and apply the workflow, and then enable the feature flag, its status changes to *Workflow initiated* and a change request workflow will be initiated.
 
@@ -126,14 +126,15 @@ Follow these steps to register or add webhook script to your ServiceNow instance
          //creating the glider Encrypt object
          var glideEncrypt = new GlideEncrypter();
          //fetching the sys_property that contains the IAM key
-         var encryptedKey = gs.getProperty('<Add System property name which holds the key (Case Sensitive)>');
+         var encryptedIbmIAMKey = gs.getProperty('<Add System property name which holds the IBM IAM key (Case Sensitive)>');
+         //example: var encryptedKey = gs.getProperty('WorkflowAppConfigIamKey');
          //Decrypting the key
-         var decryptedKey = glideEncrypt.decrypt(encryptedKey);
+         var decryptedIAMKey = glideEncrypt.decrypt(encryptedIbmIAMKey);
 
-         if (!decryptedKey && decryptedKey.length !== 0 ) {
+         if (Object.keys(decryptedIAMKey).length !== 0) {
 
              //Adding the decrypted key to the IAM token generation body
-             var bodyContent = "grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=" + decryptedKey;
+             var bodyContent = "grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=" + decryptedIAMKey;
              //Making POST call to IBM IAM to generate token
              var ibmIamTokenRequest = new sn_ws.RESTMessageV2();
              ibmIamTokenRequest.setHttpMethod('POST');
@@ -148,10 +149,20 @@ Follow these steps to register or add webhook script to your ServiceNow instance
 
                  //extracting the access_token
                  var access_token = ibmIamTokenResponseData.access_token;
+                 var encryptedInstanceId = gs.getProperty('<Add System property name which holds the AppConfig InstanceId (Case Sensitive)>');
+                 //example: var encryptedInstanceId = gs.getProperty('WorkflowIbmAppConfigInstanceId');
+                 var decryptedInstanceId = glideEncrypt.decrypt(encryptedInstanceId);
 
                  //preparing webhook request to forward
                  var webHookRequest = new sn_ws.RESTMessageV2();
-                 webHookRequest.setEndpoint('http://159.122.175.86:31142/apprapp/workflow/v1/instances/{{instance_id}}/crevents');
+                 //Refer link https://cloud.ibm.com/apidocs/app-configuration#endpoints-urls for more info on base URL
+                 //Choose the base url from below based on your AppConfig instance region
+                 //Dallas: https://us-south.apprapp.cloud.ibm.com
+                 //Washington DC: https://us-east.apprapp.cloud.ibm.com
+                 //London: https://eu-gb.apprapp.cloud.ibm.com
+                 //Sydney: https://au-syd.apprapp.cloud.ibm.com
+
+                 webHookRequest.setEndpoint('{{AppConfigRegionBaseURL}}/apprapp/workflow/v1/instances/'+decryptedInstanceId+'/crevents');
                  webHookRequest.setRequestHeader('Authorization', 'Bearer ' + access_token);
                  webHookRequest.setHttpMethod('POST');
                  webHookRequest.setRequestHeader("Accept", "application/json");
@@ -159,6 +170,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
 
                  //preparing the data for the webhook request
                  var webHookReqDataObject = new Object();
+                 //BELOW ARE THE DATA THAT IS NEEDED TO PROCESS THE REQUEST, MODIFYING OR ALTERING THE DATA OR THE ATTRIBUTE WILL RESULT IN WEBHOOK REQUEST FAILURE.
                  webHookReqDataObject.operation = String(current.operation());
                  webHookReqDataObject.short_description = String(current.short_description);
                  webHookReqDataObject.change_request_id = String(current.number);
@@ -166,41 +178,45 @@ Follow these steps to register or add webhook script to your ServiceNow instance
                  webHookReqDataObject.cr_state = String(current.state);
                  webHookReqDataObject.cr_approval_assignment_group = String(current.assignment_group);
                  webHookReqDataObject.appconfiguration_tag = String(current.u_appconfiguration_tag);
+                 webHookReqDataObject.implementation_time = String(current.work_start);
                  var webHookJsonStringData = JSON.stringify(webHookReqDataObject);
                  gs.addInfoMessage(webHookJsonStringData);
                  webHookRequest.setRequestBody(webHookJsonStringData);
 
-                 //checking the change request has the tag, we only accept the CR with the below mentioned tag id
-                 if (current.u_appconfiguration_tag == "ac-workflow-meraki") {
-                     gs.addInfoMessage("Sending request to Webhook Micro Service");
-                     var webHookResponse = webHookRequest.execute();
-                     httpResponseStatus = webHookResponse.getStatusCode();
-                     gs.info(" http response status_code:  " + httpResponseStatus);
-                     gs.log(webHookResponse.getBody());
-                     if (httpResponseStatus == 200) {
-                         gs.info("Success");
-                     } else {
-                         //try once more
-                         webHookResponse = webHookRequest.execute();
-                         httpResponseStatus = webHookResponse.getStatusCode();
-                         gs.info(" http response status_code:  " + httpResponseStatus);
-                         gs.log(webHookResponse.getBody());
-                     }
-                 } else {
-                     gs.info("CHANGE REQUEST DOES NOT BELONG TO WORKFLOW INTEGRATION")
-                 }
-             } else {
-                 gs.info('IBM IAM TOKEN GENERATION FAILED');
-             }
-         } else {
-             gs.info('DECRYPTED KEY IS EMPTY');
-         }
-      }
-     catch(ex) {
-         var message  = ex.getMessage();
-         gs.info(message);
+                //checking the change request has the tag, we only accept the CR with the below mentioned tag id
+                if (current.u_appconfiguration_tag == "appconfig-workflow" && (current.state == -1 || current.state == -5 || current.state == 4)) {
+                   gs.addInfoMessage("Sending request to Webhook Micro Service");
+                   var webHookResponse = webHookRequest.execute();
+                   httpResponseStatus = webHookResponse.getStatusCode();
+                   gs.addInfoMessage(" webhook api call response status_code:  " + httpResponseStatus);
+                   if (httpResponseStatus == 200) {
+                       gs.info("SUCCESSFULLY EXECUTED THE WEBHOOK CALL");
+                   } else {
+                       //try once more
+                       webHookResponse = webHookRequest.execute();
+                       httpResponseStatus = webHookResponse.getStatusCode();
+                       gs.info(" http response status_code:  " + httpResponseStatus);
+                       gs.log(webHookResponse.getBody());
+                   }
+               } else {
+                   gs.info("CHANGE REQUEST DOES NOT BELONG TO WORKFLOW INTEGRATION");
+               }
+           } else {
+               gs.info('IBM IAM TOKEN GENERATION FAILED');
+           }
+       } else {
+           gs.info('DECRYPTED IAM KEY IS EMPTY OR NOT FOUND');
+       }
+    }
+   catch(ex) {
+       var message  = ex.getMessage();
+       gs.info(message);
    }
    })(current, previous);
+   ```
+   {: codeblock}
+
+1. Modify the copied script with your IBM IAM token and {{site.data.keyword.appconfig_short}} instance ID.
 
 1. Click **Submit** to save the details.
 
@@ -231,4 +247,28 @@ Follow these steps:
 
 1. Click **Submit** to save the key in ServiceNow instance. Once saved, you can see that the data is encrypted.
 
+## How to add the {{site.data.keyword.appconfig_short}} instance ID to ServiceNow system property for the webhook script?
+{: #ac-sn-add-ac-instance-id}
+
+Follow these steps:
+
+1. Login to your ServiceNow instance as an administrator.
+
+1. Click the **All** tab and search for *sys_properties.LIST* and press **Enter**. Alternately, you can go to https://{{instanceid}}.service-now.com/sys_properties_list.do, where **instanceid** is your ServiceNow instance ID.
+
+   ![ServiceNow All tab](images/ac-sn-04.png "ServiceNow All tab"){: caption="Figure 15. ServiceNow - All tab" caption-side="bottom"}
+
+1. The **System properties** details gets displayed.
+
+   ![System properties](images/ac-sn-05.png "System properties"){: caption="Figure 16. ServiceNow - System properties" caption-side="bottom"}
+
+1. Click **New** to create a new system property.
+
+   ![New system property](images/ac-sn-06.png "New system property"){: caption="Figure 17. ServiceNow - New system property" caption-side="bottom"}
+
+1. Add the {{site.data.keyword.appconfig_short}} instance ID. Use the password2 type to store the key. This type will encrypt the data and can only be decrypted with the ServiceNow instance.
+
+   ![System property](images/ac-sn-15.png "System property"){: caption="Figure 18. ServiceNow - System property" caption-side="bottom"}
+
+1. Click **Submit** to save the key in ServiceNow instance. Once saved, you can see that the data is encrypted.
 
