@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2023
+lastupdated: "2023-05-26"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -152,7 +152,7 @@ if (feature !== null) {
 
 ```javascript
 const features = appConfigClient.getFeatures();
-const feature = features['online-check-in'];
+const feature = features['feature_id'];
 
 if (feature !== null) {
    console.log(`Feature Name ${feature.getFeatureName()} `);
