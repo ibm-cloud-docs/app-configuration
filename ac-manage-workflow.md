@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-05-29"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -34,6 +34,8 @@ To integrate with ServiceNow workflow, perform the following steps:
 
 1. Click **Manage Workflow**. The **Manage workflow** side-panel displays.
 
+   ![Manage workflow](images/ac-sn-16.png "Manage workflow"){: caption="Figure 1. Manage workflow" caption-side="bottom"}
+
 1. Enter the **URL** of the ServiceNow instance.
 
 1. Enter the **Username** to be used for connecting to the ServiceNow instance.
@@ -42,11 +44,14 @@ To integrate with ServiceNow workflow, perform the following steps:
 
 1. Enter the **Client ID** needed to retrieve the OAuth access token.
 
+   **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://docs.servicenow.com/csh?context=CSHelp:OAuthSetup){: external}.
+   {: important}
+
 1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.
 
 1. Enter the approval **Group ID** defined in ServiceNow. The approval Group ID will contain set of people who are authorized to approve the Change Requests created in the ServiceNow workflow.
 
-1. Use the slider to set the Change request expiration time (in hours).
+1. Set the Change request expiration time (in hours). Minimum 1 to maximum 999 hours.
 
 1. Set the **Enabled** toggle switch to **ON** to enable the workflow for selected environment.
 
