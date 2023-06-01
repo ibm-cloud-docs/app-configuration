@@ -49,6 +49,7 @@ toc:
           topics:
           - ac-kms-integration.md
           - ac-en-integration.md
+          - ac-manage-workflow.md
       - ac-toolchain.md
       - ac-sm-integration.md
       - topicgroup:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-05-29"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,13 @@ subcollection: app-configuration
 
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## May 2023
+{: #May-2023}
+
+- Support for ServiceNow integration
+
+   Manage feature flags enablement by adding additional workflow with ServiceNow&reg; integration. For more information, see [Managing access with context-based restrictions](/docs/app-configuration?topic=app-configuration-ac-manage-workflow).
 
 ## March 2023
 {: #March-2023}

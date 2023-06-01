@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2023
+lastupdated: "2023-05-12"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -17,6 +17,8 @@ subcollection: app-configuration
 
 As an app owner, create, and manage feature flags, add them to collections and use them in your app by using SDKs. You can also control the applicability of a feature by enabling or disabling it at run time.
 {: shortdesc}
+
+You can add an approval process flow for any configuration changes initiated through an {{site.data.keyword.appconfig_short}} environment by using the ServiceNow integration. The approval process flow is applicable to an {{site.data.keyword.appconfig_short}} environment like dev, stage, and production. For more information, see [Manage workflow](/docs/app-configuration?topic=app-configuration-ac-manage-workflow).
 
 A feature can be enabled or disabled to all the collection users or to a specific set of users and devices or to a certain percentage of specific set of users and devices.
 
