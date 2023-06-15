@@ -67,6 +67,12 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.snapshots.restore` | Writes or updates the chosen snapshot configuration from the GitHub to {{site.data.keyword.appconfig_short}} instance. |
 | `apprapp.originconfigs.update` | Updated the allowlist of origins or failed to update |
 | `apprapp.originconfigs.list` | Called the allowlist of origins or failed to list |
+| `apprapp.workflowconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the workflow configurations. |
+| `apprapp.workflowconfigs.create` | Manager, Administrator | Create a workflow configuration. |
+| `apprapp.workflowconfigs.update` | Manager, Administrator | Update a workflow configuration. |
+| `apprapp.workflowconfigs.delete` | Manager, Administrator | Delete a workflow configuration. |
+| `apprapp.changerequest.create` |  Manager, Administrator | Creates the Change Request for workflow integration. |
+| `apprapp.changerequest.update` |  Manager, Administrator | Captures the change of events in the Change Request of Service Now for workflow. |
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.

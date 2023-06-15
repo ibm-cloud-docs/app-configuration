@@ -273,7 +273,7 @@ Follow these steps:
 
 1. Click **New** to create a new system property.
 
-   ![New system property](images/ac-sn-06.png "New system property"){: caption="Figure 19. ServiceNow - New system property" caption-side="bottom"}
+   ![New system property](images/ac-sn-18.png "New system property"){: caption="Figure 19. ServiceNow - New system property" caption-side="bottom"}
 
 1. Add the {{site.data.keyword.appconfig_short}} instance ID. Use the password2 type to store the key. This type will encrypt the data and can only be decrypted with the ServiceNow instance.
 

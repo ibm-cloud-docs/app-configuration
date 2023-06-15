@@ -106,6 +106,11 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.gitconfigs.restore` | Manager, Administrator | Restores a Snapshot configuration from GitHub. |
 | `apprapp.originconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the allowlist of origin configurations. |
 | `apprapp.originconfigs.update` | Manager, Administrator | Update the allowlist of origin configurations. |
+| `apprapp.workflowconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the workflow configurations. |
+| `apprapp.workflowconfigs.create` | Manager, Administrator | Create a workflow configuration. |
+| `apprapp.workflowconfigs.update` | Manager, Administrator | Update a workflow configuration. |
+| `apprapp.workflowconfigs.delete` | Manager, Administrator | Delete a workflow configuration. |
+| `apprapp.changerequest.create` |  Manager, Administrator | Creates the Change Request for workflow integration. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #actions-table1}
 {: tab-title="Actions"}
