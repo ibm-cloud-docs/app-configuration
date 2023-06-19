@@ -60,19 +60,19 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.collections.read` | Retrieved collection details or failed to retrieve collection details |
 | `apprapp.snapshots.create` | Created a snapshot configuration or failed to create |
 | `apprapp.snapshots.update` | Updated a snapshot configuration or failed to update |
-| `apprapp.snapshots.delete` | Deleted a snapshot configuration or failed to update |
+| `apprapp.snapshots.delete` | Deleted a snapshot configuration or failed to delete |
 | `apprapp.snapshots.list` | Called the list of snapshot configuration or failed to list |
 | `apprapp.snapshots.read` | Retrieved snapshot configuration details or failed to retrieve snapshot configuration details |
 | `apprapp.snapshots.promote` | Created or updated the chosen configuration to GitHub based on the snapshots configuration. |
 | `apprapp.snapshots.restore` | Writes or updates the chosen snapshot configuration from the GitHub to {{site.data.keyword.appconfig_short}} instance. |
 | `apprapp.originconfigs.update` | Updated the allowlist of origins or failed to update |
 | `apprapp.originconfigs.list` | Called the allowlist of origins or failed to list |
-| `apprapp.workflowconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the workflow configurations. |
-| `apprapp.workflowconfigs.create` | Manager, Administrator | Create a workflow configuration. |
-| `apprapp.workflowconfigs.update` | Manager, Administrator | Update a workflow configuration. |
-| `apprapp.workflowconfigs.delete` | Manager, Administrator | Delete a workflow configuration. |
-| `apprapp.changerequest.create` |  Manager, Administrator | Creates the Change Request for workflow integration. |
-| `apprapp.changerequest.update` |  Manager, Administrator | Captures the change of events in the Change Request of Service Now for workflow. |
+| `apprapp.workflowconfigs.list` | Get the workflow configurations or failed to list |
+| `apprapp.workflowconfigs.create` | Create a workflow configuration or failed to create  |
+| `apprapp.workflowconfigs.update` | Update a workflow configuration or failed to update |
+| `apprapp.workflowconfigs.delete` | Delete a workflow configuration or failed to delete |
+| `apprapp.changerequest.create` | Creates the Change Request for workflow integration or failed to create |
+| `apprapp.changerequest.update` | Captures the change of events in the Change Request of Service Now for workflow or failed to update |
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
