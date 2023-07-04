@@ -49,7 +49,7 @@ To integrate with ServiceNow workflow, perform the following steps:
 
 1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.
 
-1. Enter the approval **Group ID** defined in ServiceNow. The approval Group ID will contain set of people who are authorized to approve the Change Requests created in the ServiceNow workflow.
+1. Enter the approval **Group Name** defined in ServiceNow. The approval Group Name will contain set of people who are authorized to approve the Change Requests created in the ServiceNow workflow.
 
 1. Set the Change request expiration time (in hours). Minimum 1 to maximum 999 hours.
 
@@ -126,97 +126,97 @@ Follow these steps to register or add webhook script to your ServiceNow instance
 1. In the **Advanced** option tab, add the webhook script.
 
    ```javascript
-   (function executeRule(current, previous /*null when async*/ ) {
+   (function executeRule(current, previous /*null when async*/) {
       try {
-         //creating the glider Encrypt object
-         var glideEncrypt = new GlideEncrypter();
-         //fetching the sys_property that contains the IAM key
-         var encryptedIbmIAMKey = gs.getProperty('<Add System property name which holds the IBM IAM key (Case Sensitive)>');
-         //example: var encryptedKey = gs.getProperty('WorkflowAppConfigIamKey');
-         //Decrypting the key
-         var decryptedIAMKey = glideEncrypt.decrypt(encryptedIbmIAMKey);
+         if (current.u_appconfiguration_tag == "appconfig-workflow" && (current.state == -1 || current.state == -5 || current.state == 4)) {
+               //creating the glider Encrypt object
+               var glideEncrypt = new GlideEncrypter();
+               //fetching the sys_property that contains the IAM key
+               var encryptedIbmIAMKey = gs.getProperty('<Add System property name which holds the IBM IAM key (Case Sensitive)>');
+               //example: var encryptedKey = gs.getProperty('WorkflowAppConfigIamKey'); 
+               //Decrypting the key
+               var decryptedIAMKey = glideEncrypt.decrypt(encryptedIbmIAMKey);
+               gs.addInfoMessage("IBM KEY DECRYPTION COMPLETED");
+               if (Object.keys(decryptedIAMKey).length !== 0) {
+                  gs.addInfoMessage("CHANGE REQUEST IDENTIFIED AS WORKFLOW RELATED");
+                  //Adding the decrypted key to the IAM token generation body
+                  var bodyContent = "grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=" + decryptedIAMKey;
+                  //Making POST call to IBM IAM to generate token
+                  var ibmIamTokenRequest = new sn_ws.RESTMessageV2();
+                  ibmIamTokenRequest.setHttpMethod('POST');
+                  ibmIamTokenRequest.setEndpoint('https://iam.cloud.ibm.com/identity/token');
+                  ibmIamTokenRequest.setRequestBody(bodyContent);
+                  ibmIamTokenResponse = ibmIamTokenRequest.execute();
+                  var ibmIamTokenResponseCode = ibmIamTokenResponse.getStatusCode();
+                  gs.addInfoMessage("IBM IAM TOKEN CREATION HTTP RESPONSE CODE: " + ibmIamTokenResponseCode);
+                  if (ibmIamTokenResponseCode == 200) {
+                     //parsing json response to extract the access_token
+                     var ibmIamTokenResponseData = JSON.parse(ibmIamTokenResponse.getBody());
 
-         if (Object.keys(decryptedIAMKey).length !== 0) {
+                     //extracting the access_token
+                     var access_token = ibmIamTokenResponseData.access_token;
+                     var encryptedInstanceId = gs.getProperty('<Add System property name which holds the AppConfig InstanceId (Case Sensitive)>');
+                     //example: var encryptedInstanceId = gs.getProperty('WorkflowIbmAppConfigInstanceId');
+                     var decryptedInstanceId = glideEncrypt.decrypt(encryptedInstanceId);
+                     gs.addInfoMessage("IBM APP CONFIG INSTANCE ID DECRYPTION COMPLETED");
+                     //preparing webhook request to forward
+                     var webHookRequest = new sn_ws.RESTMessageV2();
+                     //Refer link https://cloud.ibm.com/apidocs/app-configuration#endpoints-urls for more info on base URL
+                     //Choose the base url from below based on your AppConfig instance region
+                     //Dallas: https://us-south.apprapp.cloud.ibm.com
+                     //Washington DC: https://us-east.apprapp.cloud.ibm.com
+                     //London: https://eu-gb.apprapp.cloud.ibm.com
+                     //Sydney: https://au-syd.apprapp.cloud.ibm.com
 
-             //Adding the decrypted key to the IAM token generation body
-             var bodyContent = "grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=" + decryptedIAMKey;
-             //Making POST call to IBM IAM to generate token
-             var ibmIamTokenRequest = new sn_ws.RESTMessageV2();
-             ibmIamTokenRequest.setHttpMethod('POST');
-             ibmIamTokenRequest.setEndpoint('https://iam.cloud.ibm.com/identity/token');
-             ibmIamTokenRequest.setRequestBody(bodyContent);
-             ibmIamTokenResponse = ibmIamTokenRequest.execute();
-             var ibmIamTokenResponseCode = ibmIamTokenResponse.getStatusCode();
-             gs.info("IBM IAM Token generation http code: " + ibmIamTokenResponseCode);
-             if (ibmIamTokenResponseCode == 200) {
-                 //parsing json response to extract the access_token
-                 var ibmIamTokenResponseData = JSON.parse(ibmIamTokenResponse.getBody());
+                     webHookRequest.setEndpoint('{{AppConfigRegionBaseURL}}/apprapp/workflow/v1/instances/' + decryptedInstanceId + '/crevents');
+                     webHookRequest.setRequestHeader('Authorization', 'Bearer ' + access_token);
+                     webHookRequest.setHttpMethod('POST');
+                     webHookRequest.setRequestHeader("Accept", "application/json");
+                     webHookRequest.setRequestHeader("Content-Type", "application/json");
 
-                 //extracting the access_token
-                 var access_token = ibmIamTokenResponseData.access_token;
-                 var encryptedInstanceId = gs.getProperty('<Add System property name which holds the AppConfig InstanceId (Case Sensitive)>');
-                 //example: var encryptedInstanceId = gs.getProperty('WorkflowIbmAppConfigInstanceId');
-                 var decryptedInstanceId = glideEncrypt.decrypt(encryptedInstanceId);
+                     //preparing the data for the webhook request
+                     var webHookReqDataObject = new Object();
+                     //BELOW ARE THE DATA THAT IS NEEDED TO PROCESS THE REQUEST, MODIFYING OR ALTERING THE DATA OR THE ATTRIBUTE WILL RESULT IN WEBHOOK REQUEST FAILURE.
+                     webHookReqDataObject.operation = String(current.operation());
+                     webHookReqDataObject.short_description = String(current.short_description);
+                     webHookReqDataObject.change_request_id = String(current.number);
+                     webHookReqDataObject.description = String(current.description);
+                     webHookReqDataObject.cr_state = String(current.state);
+                     webHookReqDataObject.cr_approval_assignment_group = String(current.assignment_group);
+                     webHookReqDataObject.appconfiguration_tag = String(current.u_appconfiguration_tag);
+                     webHookReqDataObject.implementation_time = String(current.work_start);
+                     var webHookJsonStringData = JSON.stringify(webHookReqDataObject);
+                     gs.addInfoMessage(webHookJsonStringData);
+                     webHookRequest.setRequestBody(webHookJsonStringData);
 
-                 //preparing webhook request to forward
-                 var webHookRequest = new sn_ws.RESTMessageV2();
-                 //Refer link https://cloud.ibm.com/apidocs/app-configuration#endpoints-urls for more info on base URL
-                 //Choose the base url from below based on your AppConfig instance region
-                 //Dallas: https://us-south.apprapp.cloud.ibm.com
-                 //Washington DC: https://us-east.apprapp.cloud.ibm.com
-                 //London: https://eu-gb.apprapp.cloud.ibm.com
-                 //Sydney: https://au-syd.apprapp.cloud.ibm.com
-
-                 webHookRequest.setEndpoint('{{AppConfigRegionBaseURL}}/apprapp/workflow/v1/instances/'+decryptedInstanceId+'/crevents');
-                 webHookRequest.setRequestHeader('Authorization', 'Bearer ' + access_token);
-                 webHookRequest.setHttpMethod('POST');
-                 webHookRequest.setRequestHeader("Accept", "application/json");
-                 webHookRequest.setRequestHeader("Content-Type", "application/json");
-
-                 //preparing the data for the webhook request
-                 var webHookReqDataObject = new Object();
-                 //BELOW ARE THE DATA THAT IS NEEDED TO PROCESS THE REQUEST, MODIFYING OR ALTERING THE DATA OR THE ATTRIBUTE WILL RESULT IN WEBHOOK REQUEST FAILURE.
-                 webHookReqDataObject.operation = String(current.operation());
-                 webHookReqDataObject.short_description = String(current.short_description);
-                 webHookReqDataObject.change_request_id = String(current.number);
-                 webHookReqDataObject.description = String(current.description);
-                 webHookReqDataObject.cr_state = String(current.state);
-                 webHookReqDataObject.cr_approval_assignment_group = String(current.assignment_group);
-                 webHookReqDataObject.appconfiguration_tag = String(current.u_appconfiguration_tag);
-                 webHookReqDataObject.implementation_time = String(current.work_start);
-                 var webHookJsonStringData = JSON.stringify(webHookReqDataObject);
-                 gs.addInfoMessage(webHookJsonStringData);
-                 webHookRequest.setRequestBody(webHookJsonStringData);
-
-                //checking the change request has the tag, we only accept the CR with the below mentioned tag id
-                if (current.u_appconfiguration_tag == "appconfig-workflow" && (current.state == -1 || current.state == -5 || current.state == 4)) {
-                   gs.addInfoMessage("Sending request to Webhook Micro Service");
-                   var webHookResponse = webHookRequest.execute();
-                   httpResponseStatus = webHookResponse.getStatusCode();
-                   gs.addInfoMessage(" webhook api call response status_code:  " + httpResponseStatus);
-                   if (httpResponseStatus == 200) {
-                       gs.info("SUCCESSFULLY EXECUTED THE WEBHOOK CALL");
-                   } else {
-                       //try once more
-                       webHookResponse = webHookRequest.execute();
-                       httpResponseStatus = webHookResponse.getStatusCode();
-                       gs.info(" http response status_code:  " + httpResponseStatus);
-                       gs.log(webHookResponse.getBody());
-                   }
+                     //checking the change request has the tag, we only accept the CR with the below mentioned tag id 
+                     gs.addInfoMessage("SENDING REQUEST TO APP CONFIGURATION WEBHOOK HANDLER");
+                     var webHookResponse = webHookRequest.execute();
+                     httpResponseStatus = webHookResponse.getStatusCode();
+                     gs.addInfoMessage("APP CONFIGURATION WEBHOOK HANDLER RESPONSE CODE:  " + httpResponseStatus);
+                     if (httpResponseStatus == 200) {
+                           gs.addInfoMessage("SUCCESSFULLY EXECUTED THE WEBHOOK CALL");
+                     } else {
+                           //try once more
+                           webHookResponse = webHookRequest.execute();
+                           httpResponseStatus = webHookResponse.getStatusCode();
+                           gs.addInfoMessage("WEBHOOK CALL RETRY STATUS CODE:  " + httpResponseStatus);
+                           gs.addInfoMessage(webHookResponse.getBody());
+                     }
+                  } else {
+                     gs.addInfoMessage("IBM IAM TOKEN GENERATION FAILED");
+                  }
                } else {
-                   gs.info("CHANGE REQUEST DOES NOT BELONG TO WORKFLOW INTEGRATION");
+                  gs.addInfoMessage("DECRYPTED IAM KEY IS EMPTY OR NOT FOUND");
                }
-           } else {
-               gs.info('IBM IAM TOKEN GENERATION FAILED');
-           }
-       } else {
-           gs.info('DECRYPTED IAM KEY IS EMPTY OR NOT FOUND');
-       }
-    }
-   catch(ex) {
-       var message  = ex.getMessage();
-       gs.info(message);
-   }
+         } else {
+               gs.addInfoMessage("CR STATE : " + current.state + " CR APPCONFIGURATION TAG VALUE : " + current.u_appconfiguration_tag);
+               gs.addInfoMessage("CHANGE REQUEST DOES NOT BELONG TO WORKFLOW INTEGRATION OR STATE OF THE CR IS NOT VALID");
+         }
+      } catch (ex) {
+         var message = ex.getMessage();
+         gs.info(message);
+      }
    })(current, previous);
    ```
    {: codeblock}
