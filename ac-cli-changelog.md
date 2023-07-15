@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-09-30"
+  years: 2021, 2023
+lastupdated: "2023-07-13"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -35,4 +35,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.9      | 9 June 2022       | Support for snapshot APIs.                                             |
 | 1.0.10     | 26 August 2022    | Support for Secret reference in Property type.                         |
 | 1.0.11     | 16 September 2022 | Support for private endpoints.                                         |
+| 1.0.12     | 13 July 2023      | Added plugin installer for arm64 architecture.                         |
 {: caption="Table 1. Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}
