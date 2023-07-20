@@ -90,7 +90,7 @@ toc:
       - topicgroup:
           label: CLI reference
           topics:
-          - /app-configuration-cli-plugin/app-configuration-cli-plugin-app-configuration-cli
+          - include: ../app-configuration-cli-plugin/app-configuration-cli.md
           - ac-cli-changelog.md
 
       - topicgroup:
