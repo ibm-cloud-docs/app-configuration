@@ -33,6 +33,7 @@ toc:
       - ac-snapshots.md
       - ac-settings.md
       - ac-integrate-sdk.md
+      - ac-terraform-tutorial.md
 
   - navgroup:
       id: howto
