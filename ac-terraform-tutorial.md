@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-20"
 
-keywords: app-configuration, app configuration, tutorials, terraform
+keywords: app-configuration, app configuration, tutorials, terraform, infrastructure as code, iac, terraform provider
 
 subcollection: app-configuration
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # Working with Terraform in {{site.data.keyword.appconfig_short}}
 {: #ac-terraform}
 
-This tutorial shows you how to use Terraform to configure files like `provider.tf` to declare {{site.data.keyword.appconfig_short}}resources for deployment.
+This tutorial shows you how to use Terraform to configure files like `provider.tf` to declare {{site.data.keyword.appconfig_short}} resources for deployment.
 {: shortdesc}
 
 ## Before you begin
@@ -35,40 +35,9 @@ Ensure that the following prerequisites are in place:
 
 * You need an {{site.data.keyword.cloud_notm}} account. If you don't have an account, then [Create an IBM Cloud account](https://cloud.ibm.com/registration/){: external}.
 * Log in to your {{site.data.keyword.cloud_notm}} account.
-
-## Working with Terraform in {{site.data.keyword.cloud_notm}}
-{: #ac-work-terraform-cloud}
-{: step}
-
-Take the following steps:
-
-1. To work with Terraform and the {{site.data.keyword.cloud_notm}}, a plug-in is required to extend the current functionality. For more information on how to install and configure the {{site.data.keyword.cloud_notm}} plug-in, see [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm){: external}. This tutorial uses {{site.data.keyword.cloud_notm}} Provider 1.38.2. For more information, see [{{site.data.keyword.cloud_notm}} Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}.
-
-1. Create a hidden directory from the home directory:
-
-   ```bash
-   mkdir $HOME/.terraform.d/plugins
-   ```
-   {: codeblock}
-
-1. Download and move the plug-in to the directory that you created. For more information, see [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
-
-   ```bash
-   mv $HOME/Downloads/terraform-provider-ibm_v1.38.2 $HOME/.terraform.d/plugins/
-   ```
-   {: codeblock}
-
-1. Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key.
-
-1. Login to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/login){: external} and go to the **Manage** tile and select **Access(IAM)**, and then select **{{site.data.keyword.cloud_notm}} API Keys**.
-
-1. Create an {{site.data.keyword.cloud_notm}} API Key and save the password.
-
-## Deploying resources
-{: #ac-resources-deploy}
-{: step}
-
-Create an {{site.data.keyword.appconfig_short}} resource. For more information, see [Getting started with {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-getting-started).
+* Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key.
+* Login to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/login){: external} and go to the **Manage** tile and select **Access(IAM)**, and then select **{{site.data.keyword.cloud_notm}} API Keys**.
+* Create an {{site.data.keyword.cloud_notm}} API Key and save the password.
 
 ## Building Infrastructure-as-Code
 {: #ac-infrastructure-as-code}
