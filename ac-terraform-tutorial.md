@@ -8,12 +8,18 @@ keywords: app-configuration, app configuration, tutorials, terraform, infrastruc
 
 subcollection: app-configuration
 
+content-type: tutorial
+account-plan: standard
+completion-time: 30m
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Working with Terraform in {{site.data.keyword.appconfig_short}}
-{: #ac-terraform}
+{: #ac-tera-workwith}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="30m"}
 
 This tutorial shows you how to use Terraform to configure files like `provider.tf` to declare {{site.data.keyword.appconfig_short}} resources for deployment.
 {: shortdesc}
@@ -48,14 +54,14 @@ Create a `tf-template` directory that contains the following Terraform configura
 ### `provider.tf`
 {: #ac-provider-tf}
 
-`provider.tf` creates the required providers.
+`provider.tf` creates the required providers. For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider){: external}
 
 ```hcl
 terraform {
    required_providers {
       ibm        = {
          source  = "IBM-Cloud/ibm"
-         version = "1.38.2"
+         version = "1.57.0"
       }
    }
 }
@@ -254,27 +260,13 @@ commands will detect it and remind you to do so if necessary.
 ### Terraform **plan**
 {: #ac-plan-tf}
 
-The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the `main.tf` file.
+The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the `featureFlags.tf` file.
 
 ```bash
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
-
-  # ibm_app_config_collection.app_config_collection will be created
-  + resource "ibm_app_config_collection" "app_config_collection" {
-      + collection_id    = "collection123"
-      + created_time     = (known after apply)
-      + description      = "Description for the collection"
-      + features_count   = (known after apply)
-      + guid             = (known after apply)
-      + href             = (known after apply)
-      + id               = (known after apply)
-      + name             = "terraform_collection"
-      + properties_count = (known after apply)
-      + updated_time     = (known after apply)
-    }
 
   # ibm_app_config_feature.app_config_feature will be created
   + resource "ibm_app_config_feature" "app_config_feature" {
@@ -283,87 +275,18 @@ Terraform will perform the following actions:
       + enabled            = (known after apply)
       + enabled_value      = "true"
       + environment_id     = "dev"
-      + feature_id         = "featureFlag123"
+      + feature_id         = "bluecharge"
       + guid               = (known after apply)
       + href               = (known after apply)
       + id                 = (known after apply)
-      + name               = "terraform_featureFlag"
+      + name               = "bluecharge"
       + rollout_percentage = 50
       + segment_exists     = (known after apply)
       + type               = "BOOLEAN"
       + updated_time       = (known after apply)
     }
 
-  # ibm_app_config_segment.app_config_create_segment will be created
-  + resource "ibm_app_config_segment" "app_config_create_segment" {
-      + created_time = (known after apply)
-      + description  = "testing segment create"
-      + guid         = (known after apply)
-      + href         = (known after apply)
-      + id           = (known after apply)
-      + name         = "terraform_segment"
-      + segment_id   = "s6"
-      + tags         = "testing"
-      + updated_time = (known after apply)
-
-      + rules {
-          + attribute_name = "country"
-          + operator       = "contains"
-          + values         = [
-              + "India",
-              + "UK",
-            ]
-        }
-    }
-
-  # ibm_resource_instance.terraform_demo will be created
-  + resource "ibm_resource_instance" "terraform_demo" {
-      + account_id              = (known after apply)
-      + allow_cleanup           = (known after apply)
-      + created_at              = (known after apply)
-      + created_by              = (known after apply)
-      + crn                     = (known after apply)
-      + dashboard_url           = (known after apply)
-      + deleted_at              = (known after apply)
-      + deleted_by              = (known after apply)
-      + extensions              = (known after apply)
-      + guid                    = (known after apply)
-      + id                      = (known after apply)
-      + last_operation          = (known after apply)
-      + location                = "us-south"
-      + locked                  = (known after apply)
-      + name                    = "terraform_demo"
-      + plan                    = "lite"
-      + plan_history            = (known after apply)
-      + resource_aliases_url    = (known after apply)
-      + resource_bindings_url   = (known after apply)
-      + resource_controller_url = (known after apply)
-      + resource_crn            = (known after apply)
-      + resource_group_crn      = (known after apply)
-      + resource_group_id       = (known after apply)
-      + resource_group_name     = (known after apply)
-      + resource_id             = (known after apply)
-      + resource_keys_url       = (known after apply)
-      + resource_name           = (known after apply)
-      + resource_plan_id        = (known after apply)
-      + resource_status         = (known after apply)
-      + restored_at             = (known after apply)
-      + restored_by             = (known after apply)
-      + scheduled_reclaim_at    = (known after apply)
-      + scheduled_reclaim_by    = (known after apply)
-      + service                 = "apprapp"
-      + service_endpoints       = (known after apply)
-      + state                   = (known after apply)
-      + status                  = (known after apply)
-      + sub_type                = (known after apply)
-      + tags                    = (known after apply)
-      + target_crn              = (known after apply)
-      + type                    = (known after apply)
-      + update_at               = (known after apply)
-      + update_by               = (known after apply)
-    }
-
-Plan: 4 to add, 0 to change, 0 to destroy.
+Plan: 1 to add, 0 to change, 0 to destroy.
 
 ```
 {: codeblock}
