@@ -44,6 +44,7 @@ Ensure that the following prerequisites are in place:
 * Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key.
 * Login to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/login){: external} and go to the **Manage** tile and select **Access(IAM)**, and then select **{{site.data.keyword.cloud_notm}} API Keys**.
 * Create an {{site.data.keyword.cloud_notm}} API Key and save the password.
+* For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider){: external}
 
 ## Building Infrastructure-as-Code
 {: #ac-infrastructure-as-code}
@@ -54,7 +55,7 @@ Create a `tf-template` directory that contains the following Terraform configura
 ### `provider.tf`
 {: #ac-provider-tf}
 
-`provider.tf` creates the required providers. For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider){: external}
+`provider.tf` creates the required providers.
 
 ```hcl
 terraform {
