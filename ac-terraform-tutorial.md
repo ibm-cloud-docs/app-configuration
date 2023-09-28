@@ -260,13 +260,29 @@ commands will detect it and remind you to do so if necessary.
 ### Terraform **plan**
 {: #ac-plan-tf}
 
-The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the `featureFlags.tf` file.
+The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the resource files.
 
 ```bash
+bash-5.1# terraform plan
+
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
+
+  # ibm_app_config_collection.app_config_collection will be created
+  + resource "ibm_app_config_collection" "app_config_collection" {
+      + collection_id    = "collection123"
+      + created_time     = (known after apply)
+      + description      = "Description for the collection"
+      + features_count   = (known after apply)
+      + guid             = (known after apply)
+      + href             = (known after apply)
+      + id               = (known after apply)
+      + name             = "terraform_collection"
+      + properties_count = (known after apply)
+      + updated_time     = (known after apply)
+    }
 
   # ibm_app_config_feature.app_config_feature will be created
   + resource "ibm_app_config_feature" "app_config_feature" {
@@ -275,18 +291,89 @@ Terraform will perform the following actions:
       + enabled            = (known after apply)
       + enabled_value      = "true"
       + environment_id     = "dev"
-      + feature_id         = "bluecharge"
+      + feature_id         = "featureFlag123"
       + guid               = (known after apply)
       + href               = (known after apply)
       + id                 = (known after apply)
-      + name               = "bluecharge"
+      + name               = "terraform_featureFlag"
       + rollout_percentage = 50
       + segment_exists     = (known after apply)
       + type               = "BOOLEAN"
       + updated_time       = (known after apply)
     }
 
-Plan: 1 to add, 0 to change, 0 to destroy.
+  # ibm_app_config_segment.app_config_create_segment will be created
+  + resource "ibm_app_config_segment" "app_config_create_segment" {
+      + created_time = (known after apply)
+      + description  = "testing segment create"
+      + guid         = (known after apply)
+      + href         = (known after apply)
+      + id           = (known after apply)
+      + name         = "terraform_segment"
+      + segment_id   = "s6"
+      + tags         = "testing"
+      + updated_time = (known after apply)
+
+      + rules {
+          + attribute_name = "country"
+          + operator       = "contains"
+          + values         = [
+              + "India",
+              + "UK",
+            ]
+        }
+    }
+
+  # ibm_resource_instance.terraform_demo will be created
+  + resource "ibm_resource_instance" "terraform_demo" {
+      + account_id              = (known after apply)
+      + allow_cleanup           = (known after apply)
+      + created_at              = (known after apply)
+      + created_by              = (known after apply)
+      + crn                     = (known after apply)
+      + dashboard_url           = (known after apply)
+      + deleted_at              = (known after apply)
+      + deleted_by              = (known after apply)
+      + extensions              = (known after apply)
+      + guid                    = (known after apply)
+      + id                      = (known after apply)
+      + last_operation          = (known after apply)
+      + location                = "us-south"
+      + locked                  = (known after apply)
+      + name                    = "terraform_demo"
+      + plan                    = "lite"
+      + plan_history            = (known after apply)
+      + resource_aliases_url    = (known after apply)
+      + resource_bindings_url   = (known after apply)
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group_crn      = (known after apply)
+      + resource_group_id       = (known after apply)
+      + resource_group_name     = (known after apply)
+      + resource_id             = (known after apply)
+      + resource_keys_url       = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_plan_id        = (known after apply)
+      + resource_status         = (known after apply)
+      + restored_at             = (known after apply)
+      + restored_by             = (known after apply)
+      + scheduled_reclaim_at    = (known after apply)
+      + scheduled_reclaim_by    = (known after apply)
+      + service                 = "apprapp"
+      + service_endpoints       = (known after apply)
+      + state                   = (known after apply)
+      + status                  = (known after apply)
+      + sub_type                = (known after apply)
+      + tags                    = [
+          + "terraform-learning-19aug",
+        ]
+      + target_crn              = (known after apply)
+      + type                    = (known after apply)
+      + update_at               = (known after apply)
+      + update_by               = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
 
 ```
 {: codeblock}
@@ -410,7 +497,9 @@ Terraform will perform the following actions:
       + state                   = (known after apply)
       + status                  = (known after apply)
       + sub_type                = (known after apply)
-      + tags                    = (known after apply)
+      + tags                    = [
+          + "terraform-learning-19aug",
+        ]
       + target_crn              = (known after apply)
       + type                    = (known after apply)
       + update_at               = (known after apply)
@@ -427,13 +516,15 @@ Do you want to perform these actions?
 
 ibm_resource_instance.terraform_demo: Creating...
 ibm_resource_instance.terraform_demo: Still creating... [10s elapsed]
-ibm_resource_instance.terraform_demo: Creation complete after 19s [id=crn:v1:bluemix:public:apprapp:us-south:a/75174cd74d164646b5a0fe4e822302a3:787c55c5-6a48-46b4-bc61-e9f5b6879201::]
+ibm_resource_instance.terraform_demo: Still creating... [20s elapsed]
+ibm_resource_instance.terraform_demo: Still creating... [30s elapsed]
+ibm_resource_instance.terraform_demo: Creation complete after 31s 
 ibm_app_config_collection.app_config_collection: Creating...
 ibm_app_config_segment.app_config_create_segment: Creating...
 ibm_app_config_feature.app_config_feature: Creating...
-ibm_app_config_collection.app_config_collection: Creation complete after 2s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/collection123]
-ibm_app_config_segment.app_config_create_segment: Creation complete after 2s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/s6]
-ibm_app_config_feature.app_config_feature: Creation complete after 3s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/dev/featureFlag123]
+ibm_app_config_collection.app_config_collection: Creation complete after 2s
+ibm_app_config_segment.app_config_create_segment: Creation complete after 2s
+ibm_app_config_feature.app_config_feature: Creation complete after 2s
 
 Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
