@@ -8,12 +8,18 @@ keywords: app-configuration, app configuration, tutorials, terraform, infrastruc
 
 subcollection: app-configuration
 
+content-type: tutorial
+account-plan: standard
+completion-time: 30m
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Working with Terraform in {{site.data.keyword.appconfig_short}}
-{: #ac-terraform}
+{: #ac-tera-workwith}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="30m"}
 
 This tutorial shows you how to use Terraform to configure files like `provider.tf` to declare {{site.data.keyword.appconfig_short}} resources for deployment.
 {: shortdesc}
@@ -48,14 +54,14 @@ Create a `tf-template` directory that contains the following Terraform configura
 ### `provider.tf`
 {: #ac-provider-tf}
 
-`provider.tf` creates the required providers.
+`provider.tf` creates the required providers. For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider){: external}
 
 ```hcl
 terraform {
    required_providers {
       ibm        = {
          source  = "IBM-Cloud/ibm"
-         version = "1.38.2"
+         version = "1.57.0"
       }
    }
 }
@@ -254,9 +260,11 @@ commands will detect it and remind you to do so if necessary.
 ### Terraform **plan**
 {: #ac-plan-tf}
 
-The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the `main.tf` file.
+The Terraform **plan** command compares the declared resources with the state file to print the resources to be created, altered, or destroyed. This step shows you the impact of the resource files.
 
 ```bash
+bash-5.1# terraform plan
+
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
@@ -356,7 +364,9 @@ Terraform will perform the following actions:
       + state                   = (known after apply)
       + status                  = (known after apply)
       + sub_type                = (known after apply)
-      + tags                    = (known after apply)
+      + tags                    = [
+          + "terraform-learning-19aug",
+        ]
       + target_crn              = (known after apply)
       + type                    = (known after apply)
       + update_at               = (known after apply)
@@ -487,7 +497,9 @@ Terraform will perform the following actions:
       + state                   = (known after apply)
       + status                  = (known after apply)
       + sub_type                = (known after apply)
-      + tags                    = (known after apply)
+      + tags                    = [
+          + "terraform-learning-19aug",
+        ]
       + target_crn              = (known after apply)
       + type                    = (known after apply)
       + update_at               = (known after apply)
@@ -504,13 +516,15 @@ Do you want to perform these actions?
 
 ibm_resource_instance.terraform_demo: Creating...
 ibm_resource_instance.terraform_demo: Still creating... [10s elapsed]
-ibm_resource_instance.terraform_demo: Creation complete after 19s [id=crn:v1:bluemix:public:apprapp:us-south:a/75174cd74d164646b5a0fe4e822302a3:787c55c5-6a48-46b4-bc61-e9f5b6879201::]
+ibm_resource_instance.terraform_demo: Still creating... [20s elapsed]
+ibm_resource_instance.terraform_demo: Still creating... [30s elapsed]
+ibm_resource_instance.terraform_demo: Creation complete after 31s 
 ibm_app_config_collection.app_config_collection: Creating...
 ibm_app_config_segment.app_config_create_segment: Creating...
 ibm_app_config_feature.app_config_feature: Creating...
-ibm_app_config_collection.app_config_collection: Creation complete after 2s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/collection123]
-ibm_app_config_segment.app_config_create_segment: Creation complete after 2s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/s6]
-ibm_app_config_feature.app_config_feature: Creation complete after 3s [id=787c55c5-6a48-46b4-bc61-e9f5b6879201/dev/featureFlag123]
+ibm_app_config_collection.app_config_collection: Creation complete after 2s
+ibm_app_config_segment.app_config_create_segment: Creation complete after 2s
+ibm_app_config_feature.app_config_feature: Creation complete after 2s
 
 Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
