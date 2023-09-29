@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-29"
+lastupdated: "2023-09-28"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,13 @@ subcollection: app-configuration
 
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## Sep 2023
+{: #Sep-2023}
+
+- Support for export and import instance configuration
+
+   Utilize the config api to control the app configuration instance's backup and restore capabilities. For more information, see [Backup and Restore configuration](/docs/app-configuration?topic=app-configuration-ac-backup-restore-configuration)
 
 ## May 2023
 {: #May-2023}
