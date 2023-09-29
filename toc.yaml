@@ -84,6 +84,7 @@ toc:
           - ac-cipher.md
           - architecture-workload-isolation.md
           - ac-audit.md
+      - ac-backup-restore-configuration.md
 
   - navgroup:
       id: reference
