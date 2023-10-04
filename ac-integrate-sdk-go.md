@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-09-30"
+  years: 2021, 2023
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 

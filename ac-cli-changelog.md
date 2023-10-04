@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
