@@ -116,7 +116,7 @@ appconfig_client.set_context(collection_id='collection_id', environment_id='envi
 {: codeblock}
 
 Where:
-- `bootstrap_file`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+- `bootstrap_file`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac export` command of the IBM Cloud App Configuration CLI.
 - `live_config_update_enabled`: Live configuration update from the server. Set this value to `False` if the new configuration values must not be fetched from the server. By default, this value is set to True.
 
 ### Examples for using feature and property-related APIs
