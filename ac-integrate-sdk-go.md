@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-09-30"
+  years: 2021, 2023
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -124,7 +124,7 @@ appConfiguration.SetContext(collectionId, environmentId, AppConfiguration.Contex
 
 Where,
 
-- `BootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
+- `BootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac export` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
 
 - `LiveConfigUpdateEnabled`: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is enabled.
 
