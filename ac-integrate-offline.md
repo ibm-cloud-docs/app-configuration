@@ -27,7 +27,7 @@ This method allows the application to use {{site.data.keyword.appconfig_short}} 
 
 To enable offline mode, use a local file with the configuration details. You can create this file by using the {{site.data.keyword.appconfig_short}} CLI.
 
-Refer to the [CLI reference document](https://{DomainName}/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli){: external} for steps to install and configure {{site.data.keyword.appconfig_short}} CLI.
+Refer to the [CLI reference document](https://{DomainName}/docs/app-configuration?topic=app-configuration-app-configuration-cli){: external} for steps to install and configure {{site.data.keyword.appconfig_short}} CLI.
 
 Retrieve the configuration in a file by using the command:
 
