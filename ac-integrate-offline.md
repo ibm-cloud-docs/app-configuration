@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2023
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -27,23 +27,17 @@ This method allows the application to use {{site.data.keyword.appconfig_short}} 
 
 To enable offline mode, use a local file with the configuration details. You can create this file by using the {{site.data.keyword.appconfig_short}} CLI.
 
-Refer to the [CLI reference document](https://{DomainName}/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli){: external} for steps to install and configure {{site.data.keyword.appconfig_short}} CLI.
+Refer to the [CLI reference document](https://{DomainName}/docs/app-configuration?topic=app-configuration-app-configuration-cli){: external} for steps to install and configure {{site.data.keyword.appconfig_short}} CLI.
 
 Retrieve the configuration in a file by using the command:
 
 ```sh
-ibmcloud ac config --collection_id COLLECTION_ID --environment_id ENVIRONMENT_ID [--file FILE]
+ibmcloud ac export [--file FILE]
 ```
 {: pre}
 
 ## Command options
 {: #ac-ibmcloud-ac-configure-command}
-
-`--environment_id ENVIRONMENT_ID`
-: Environment ID
-
-`--collection_id COLLECTION_ID`
-: Collection ID
 
 `--file FILE`
 : Path to file where configuration is exported
@@ -58,13 +52,16 @@ For a Node.js SDK you can use the local configuration file as in the following e
 ```javascript
 const client = AppConfiguration.getInstance();
 let region = AppConfiguration.REGION_US_SOUTH;
-let guid = 'abc-def-xyz'; let apikey = 'j9qc-abc-z79';
-client.init(region, guid, apikey)
+let guid = 'abc-def-xyz';
+let apikey = 'j9qc-abc-z79';
 let collectionId = '<collectionId>';
 let environmentId = '<environmentId>';
-let configurationFile = 'path/to/configuration/file.json';
-let liveConfigUpdateEnabled = false;
-client.setContext(collectionId, environmentId, configurationFile, liveConfigUpdateEnabled)
+
+client.init(region, guid, apikey)
+client.setContext(collectionId, environmentId, {
+    bootstrapFile: "path/to/configuration/file.json",
+    liveConfigUpdateEnabled: false
+})
 ```
 {: codeblock}
 
