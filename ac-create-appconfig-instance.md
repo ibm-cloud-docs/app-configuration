@@ -61,5 +61,3 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} console displayed.
 
    ![{{site.data.keyword.appconfig_short}} console](images/ac-console.png "{{site.data.keyword.appconfig_short}} console"){: caption="Figure 2. {{site.data.keyword.appconfig_short}} console" caption-side="bottom"}
-
-

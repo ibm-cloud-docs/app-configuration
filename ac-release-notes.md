@@ -23,7 +23,7 @@ Stay up to date with the new features that are available for {{site.data.keyword
 
 - Support for export and import instance configuration
 
-  Utilize the config api to control the app configuration instance's backup and restore capabilities. For more information, see [Backup and Restore configuration](/docs/app-configuration?topic=app-configuration-ac-backup-restore-configuration)
+   Utilize the config api to control the app configuration instance's backup and restore capabilities. For more information, see [Backup and Restore configuration](/docs/app-configuration?topic=app-configuration-ac-backup-restore-configuration)
 
 ## May 2023
 {: #May-2023}
