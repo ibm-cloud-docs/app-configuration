@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, secrets manager, secrets manager integration
 

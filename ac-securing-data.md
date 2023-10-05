@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-28"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, securing your data
 

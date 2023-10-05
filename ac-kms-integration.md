@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-31"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 

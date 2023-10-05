@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, learning videos, concept videos, videos
 
