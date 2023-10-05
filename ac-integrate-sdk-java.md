@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java
 
@@ -128,7 +128,7 @@ appConfigClient.setContext(collectionId, environmentId, configOptions);
 {: codeblock}
 
 Where:
-- `bootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
+- `bootstrapFile`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac export` command of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI.
 - `liveConfigUpdateEnabled`: Live configuration update from the server. Set this value to `false` if the new configuration values must not be fetched from the server. By default, this value is set to `true`.
 
 ### Examples for using feature and property related APIs
