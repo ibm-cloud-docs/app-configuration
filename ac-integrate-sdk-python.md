@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-09-30"
+  years: 2020, 2023
+lastupdated: "2023-10-04"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -116,7 +116,7 @@ appconfig_client.set_context(collection_id='collection_id', environment_id='envi
 {: codeblock}
 
 Where:
-- `bootstrap_file`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac config` command of the IBM Cloud App Configuration CLI.
+- `bootstrap_file`: Absolute path of the JSON file, which contains configuration details. Make sure to provide a proper JSON file. You can generate this file by using `ibmcloud ac export` command of the IBM Cloud App Configuration CLI.
 - `live_config_update_enabled`: Live configuration update from the server. Set this value to `False` if the new configuration values must not be fetched from the server. By default, this value is set to True.
 
 ### Examples for using feature and property-related APIs
