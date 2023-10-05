@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-28"
+lastupdated: "2022-10-31"
 
 keywords: app-configuration, app configuration, managing encryption, byok, kyok, integrations
 

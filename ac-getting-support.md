@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, getting help and support
 
@@ -57,7 +57,7 @@ Collecting the following information can help a faster support case resolution f
 - collection_id
 - Region of the instance
 - environment_id
-- property_id ((if the issue is related to property or evaluation)
+- property_id (if the issue is related to property or evaluation)
 - feature_id (if the issue is related to feature or evaluation)
 - segment_id (if the issue is related to segment or evaluation)
 - Error message received

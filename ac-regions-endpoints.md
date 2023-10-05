@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-11"
 
 keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 

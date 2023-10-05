@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-06"
+lastupdated: "2023-04-10"
 
 keywords: app-configuration activity tracker events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-05-26"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
