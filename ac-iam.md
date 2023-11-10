@@ -111,6 +111,9 @@ Review the platform and service roles available and the actions that are mapped 
 | `apprapp.workflowconfigs.update` | Manager, Administrator | Update a workflow configuration. |
 | `apprapp.workflowconfigs.delete` | Manager, Administrator | Delete a workflow configuration. |
 | `apprapp.changerequest.create` |  Manager, Administrator | Creates or captures the change of events in the Change Request of Service Now for workflow. |
+| `apprapp.config.import` | Manager, Administrator | Import a instance configuration. |
+| `apprapp.config.export` | Manager, Reader, Writer, Administrator, Config Operator, Editor, Viewer, ClientSDK | Export instance configuration. | 
+| `apprapp.config.action` | Manager, Administrator | Promotes or Restores a Snapshot configuration to or from GitHub respectively. |
 {: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
 {: #actions-table1}
 {: tab-title="Actions"}
