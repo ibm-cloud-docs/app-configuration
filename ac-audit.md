@@ -73,6 +73,9 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.workflowconfigs.delete` | Delete a workflow configuration or failed to delete |
 | `apprapp.changerequest.create` | Creates the Change Request for workflow integration or failed to create |
 | `apprapp.changerequest.update` | Captures the change of events in the Change Request of Service Now for workflow or failed to update |
+| `apprapp.config.import` | Import a instance configuration. |
+| `apprapp.config.export` | Export instance configuration. | 
+| `apprapp.config.action` | Promotes or Restores a Snapshot configuration to or from GitHub respectively. |
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
