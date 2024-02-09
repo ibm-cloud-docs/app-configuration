@@ -36,7 +36,7 @@ For this tutorial, you need:
 - A Environment to which a user should be constrained
 - To complete the steps to manage access to the service, you should be the owner of the {{site.data.keyword.appconfig_short}} instance. In other words, your user ID needs **administrator platform permissions** to use the IAM service. You may have to contact or work with an account administrator.
 
-## Step 1: Grant Reader access to App Configuration instance
+## Grant Reader access to App Configuration instance
 {: #environment-access-step-1}
 {: step}
 
@@ -55,7 +55,7 @@ To enable access to a specific environment in an instance, the user must at leas
 
 5. Click **Add**.
 
-## Step 2: Grant Manager access to specific Environment
+## Grant Manager access to specific Environment
 {: #environment-access-step-2}
 {: step}
 
@@ -73,7 +73,7 @@ We'll repeat the step 1, but this time we'll use **Environment ID** resource att
 
 5. Click **Add**.
 
-## Step 3: Review access policies
+## Review access policies
 {: #environment-access-step-3}
 {: step}
 
@@ -81,7 +81,7 @@ At this stage, you should have two access policies created as shown below. One a
 
   ![Create a new policy](images/tut-iam-env-5.png){: caption="Figure 5: Review access policies created."}
 
-## Step 4: Verify that it works
+## Verify that it works
 {: #environment-access-step-4}
 {: step}
 
@@ -104,6 +104,5 @@ When shared user tries to perform any action such as toggle a feature flag, upda
 
 ## Next steps
 {: #environment-access-next-steps}
-{: step}
 
 Congratulations, you've just set up policies that limit access to a single environment.

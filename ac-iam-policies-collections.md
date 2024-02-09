@@ -36,7 +36,7 @@ For this tutorial, you need:
 - A Collection to which a user should be constrained
 - To complete the steps to manage access to the service, you should be the owner of the {{site.data.keyword.appconfig_short}} instance. In other words, your user ID needs **administrator platform permissions** to use the IAM service. You may have to contact or work with an account administrator.
 
-## Step 1: Grant Reader access to App Configuration instance
+## Grant Reader access to App Configuration instance
 {: #collection-access-step-1}
 {: step}
 
@@ -55,7 +55,7 @@ To enable access to a specific collection in an instance, the user must at least
 
 5. Click **Add**.
 
-## Step 2: Grant Manager access to specific Collection
+## Grant Manager access to specific Collection
 {: #collection-access-step-2}
 {: step}
 
@@ -73,7 +73,7 @@ We'll repeat the step 1, but this time we'll use **Collection ID** resource attr
 
 5. Click **Add**.
 
-## Step 3: Review access policies
+## Review access policies
 {: #collection-access-step-3}
 {: step}
 
@@ -81,7 +81,7 @@ At this stage, you should have two access policies created as shown below. One a
 
   ![Create a new policy](images/tut-iam-col-5.png){: caption="Figure 5: Review access policies created."}
 
-## Step 4: Verify that it works
+## Verify that it works
 {: #collection-access-step-4}
 {: step}
 
@@ -104,6 +104,5 @@ When shared user tries to perform any action such as toggle or update on feature
 
 ## Next steps
 {: #collection-access-next-steps}
-{: step}
 
 Congratulations, you've just set up policies that limit access to a single collection.
