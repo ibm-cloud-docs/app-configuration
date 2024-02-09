@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-28"
+  years: 2020, 2024
+lastupdated: "2024-02-06"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -17,6 +17,13 @@ subcollection: app-configuration
 
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
+
+## Jan 2024
+{: #Jan-2024}
+
+**New feature!**
+
+   You can now create IAM policies that control access to individual resources such as Feature flags & Properties using [fine-grained access control](/docs/app-configuration?topic=app-configuration-ac-service-access-management).
 
 ## Sep 2023
 {: #Sep-2023}
@@ -37,7 +44,7 @@ Stay up to date with the new features that are available for {{site.data.keyword
 
 - Support for context-based restrictions (CBR)
 
-   Manage user and service access to your {{site.data.keyword.appconfig_notm}} resources by using context-based restrictions, based on defined criteria. For more information, see [Managing access with context-based restrictions](/docs/app-configuration?topic=app-configuration-ac-access-control-cbr).
+   Restrict access to your {{site.data.keyword.appconfig_notm}} resources by using context-based restrictions, based on defined criteria. For more information, see [Restricting access by network context](/docs/app-configuration?topic=app-configuration-ac-restrict-access-cbr).
 
 ## January 2023
 {: #January-2023}
