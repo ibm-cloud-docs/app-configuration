@@ -44,7 +44,7 @@ To enable access to a specific environment in an instance, the user must at leas
 {: note}
 
 1. Navigate to IAM by following the **Manage** drop-down menu, and selecting **Access (IAM)**. Follow the **Users** link in the navigation menu, and select the user requiring limited access.
-2. Click on the **Assign access** button. Select the **Access policy** tile and select **App Configuration**.
+2. Click on **Access** tab. Click on the **Assign access** button. Select the **Access policy** tile and select **App Configuration**.
 3. Select the radio toggle next to **Specific resources**. Select **Service Instance** from the _Attribute type_ drop-down menu. Select the {{site.data.keyword.appconfig_short}} instance which you want to assign access.
 
 ![Create a new policy](images/tut-iam-env-1.png){: caption="Figure 1: Selecting App Configuration instance."}
@@ -53,7 +53,8 @@ To enable access to a specific environment in an instance, the user must at leas
 
 ![Create a new policy](images/tut-iam-env-2.png){: caption="Figure 2: Selecting Roles for App Configuration instance."}
 
-5. Click **Add**.
+5. Click **Next** and include conditions if needed which is optional.
+6. Click** **Add**.
 
 ## Grant Manager access to specific Environment
 {: #environment-access-step-2}
@@ -71,7 +72,8 @@ We'll repeat the step 1, but this time we'll use **Environment ID** resource att
 
 ![Create a new policy](images/tut-iam-env-4.png){: caption="Figure 4: Selecting Roles for resource attribute."}
 
-5. Click **Add**.
+5. Click **Next** and include conditions if needed which is optional.
+6. Click** **Add**.
 
 ## Review access policies
 {: #environment-access-step-3}

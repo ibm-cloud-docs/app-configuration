@@ -21,7 +21,7 @@ Stay up to date with the new features that are available for {{site.data.keyword
 ## Jan 2024
 {: #Jan-2024}
 
-**New feature!**
+- Support for Resource Based Access Control.
 
    You can now create IAM policies that control access to individual resources such as Feature flags & Properties using [fine-grained access control](/docs/app-configuration?topic=app-configuration-ac-service-access-management).
 
