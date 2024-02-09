@@ -89,9 +89,9 @@ At this stage, you should have two access policies created as shown below. One a
 
 When this {{site.data.keyword.appconfig_short}} instance is accessed by shared user, only those **Feature flags** & **Properties** which belong to Collection that is given Manager access are **editable** irrespective of the current Environment. In other words, these Feature flags & Properties are editable under any environment. Rest of the Feature flags & Properties which belong to different Collections are **non-editable**.
 
-![Create a new policy](images/tut-iam-col-6.png){: caption="Figure 6: Only those Feature flags which are part of collection `devops` are allowed to edit under environment dev."}
+![Create a new policy](images/tut-iam-col-6.png){: caption="Figure 6: Only those Feature flags which are part of collection devops are allowed to edit under environment dev."}
 
-![Create a new policy](images/tut-iam-col-7.png){: caption="Figure 7: Only those Feature flags which are part of collection `devops` are allowed to edit under environment production too."}
+![Create a new policy](images/tut-iam-col-7.png){: caption="Figure 7: Only those Feature flags which are part of collection devops are allowed to edit under environment production too."}
 
 When shared user tries to perform any action such as toggle or update on feature flags that belong to different collection using API/CLI/Terrform, the action is denied with **401** status code as shown below.
 {: note}
