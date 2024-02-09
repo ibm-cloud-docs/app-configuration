@@ -78,49 +78,49 @@ Review the platform and service roles available and the actions that are mapped 
 
 The following table details actions that are mapped to service access roles. Service access roles enable users access to App Configuration as well as the ability to call the App Configuration API.
 
-| Action ID | Roles | Description |
-| :----- | :----- | :----- |
-| `apprapp.dashboard.view` | Manager, Writer, Config Operator, Reader | View {{site.data.keyword.appconfig_short}} dashboard |
-| `apprapp.collections.list` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to view collections. |
-| `apprapp.collections.create` | Manager | The ability to create collections. |
-| `apprapp.collections.update` | Manager | The ability to edit or update existing collections. |
-| `apprapp.collections.delete` | Manager | The ability to delete existing collections. |
-| `apprapp.environments.list` | Manager, Writer, Config Operator, Reader | The ability to view environments. |
-| `apprapp.environments.create` | Manager | The ability to create environments. |
-| `apprapp.environments.update` | Manager | The ability to update or edit existing environments. |
-| `apprapp.environments.delete` | Manager | The ability to delete existing environments. |
-| `apprapp.features.list` | Manager, Writer, Config Operator, Reader | The ability to view feature flags. |
-| `apprapp.features.create` | Manager | The ability to create feature flags. |
-| `apprapp.features.update` | Manager | The ability to update or edit existing feature flags. |
-| `apprapp.features.delete` | Manager | The ability to delete existing feature flags. |
-| `apprapp.features.patch` | Writer | The ability to partially update or edit existing feature flags. |
-| `apprapp.features.toggle` | Manager, Writer, Config Operator | The ability to enable or disable existing feature flags. |
-| `apprapp.properties.list` | Manager, Writer, Config Operator, Reader | The ability to view properties. |
-| `apprapp.properties.create` | Manager | The ability to create properties. |
-| `apprapp.properties.update` | Manager | The ability to update or edit existing properties. |
-| `apprapp.properties.delete` | Manager | The ability to delete existing properties. |
-| `apprapp.properties.patch` | Writer | The ability to partially update or edit existing properties. |
-| `apprapp.segments.list` | Manager, Writer, Config Operator, Reader | The ability to view segments. |
-| `apprapp.segments.create` | Manager, Writer | The ability to create segments. |
-| `apprapp.segments.update` | Manager, Writer | The ability to update or edit existing segments. |
-| `apprapp.segments.delete` | Manager, Writer | The ability to delete existing segments. |
-| `apprapp.gitconfigs.view` | Manager, Writer, Config Operator, Reader | The ability to view Git configurations. |
-| `apprapp.gitconfigs.create` | Manager | The ability to create Git configurations. |
-| `apprapp.gitconfigs.update` | Manager | The ability to update or edit existing Git configurations. |
-| `apprapp.gitconfigs.delete` | Manager | The ability to delete existing Git configurations. |
-| `apprapp.integrations.list` | Manager, Writer, Config Operator, Reader | The ability to view integrations existing between App Configuration service and external services such as Key Protect, HPCS & Event Notifications. |
-| `apprapp.integrations.create` | Manager | The ability to create integrations between App Configuration service and external services such as Key Protect, HPCS and Event Notifications. |
-| `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect, HPCS & Event Notifications. |
-| `apprapp.originconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view allowlisted origin URLs. |
-| `apprapp.originconfigs.update` | Manager | The ability to add or update origin URLs to the allowlist. |
-| `apprapp.workflowconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view workflow configurations. |
-| `apprapp.workflowconfigs.create` | Manager | The ability to create workflow configurations. |
-| `apprapp.workflowconfigs.update` | Manager | The ability to update or edit existing workflow configurations. |
-| `apprapp.workflowconfigs.delete` | Manager | The ability to delete existing workflow configurations. |
-| `apprapp.changerequest.create` |  Manager | The ability to send ServiceNow change request events to App Configuration instance. |
-| `apprapp.config.export` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to get the JSON export of entire App Configuration instance resources such as collections, environments, feature flags, properties & segments. |
-| `apprapp.config.import` | Manager | The ability to import resources such as collections, environments, feature flags, properties & segments into App Configuration instance. |
-| `apprapp.config.action` | Manager | The ability to promote or restore the existing Git configurations. |
-| `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
-| `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
+| No. | Action ID | Roles | Description |
+| :---- | :----- | :----- | :----- |
+| 1. | `apprapp.dashboard.view` | Manager, Writer, Config Operator, Reader | View {{site.data.keyword.appconfig_short}} dashboard |
+| 2. | `apprapp.collections.list` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to view collections. |
+| 3. | `apprapp.collections.create` | Manager | The ability to create collections. |
+| 4. | `apprapp.collections.update` | Manager | The ability to edit or update existing collections. |
+| 5. | `apprapp.collections.delete` | Manager | The ability to delete existing collections. |
+| 6. | `apprapp.environments.list` | Manager, Writer, Config Operator, Reader | The ability to view environments. |
+| 7. | `apprapp.environments.create` | Manager | The ability to create environments. |
+| 8. | `apprapp.environments.update` | Manager | The ability to update or edit existing environments. |
+| 9. | `apprapp.environments.delete` | Manager | The ability to delete existing environments. |
+| 10. | `apprapp.features.list` | Manager, Writer, Config Operator, Reader | The ability to view feature flags. |
+| 11. | `apprapp.features.create` | Manager | The ability to create feature flags. |
+| 12. | `apprapp.features.update` | Manager | The ability to update or edit existing feature flags. |
+| 13. | `apprapp.features.delete` | Manager | The ability to delete existing feature flags. |
+| 14. | `apprapp.features.patch` | Writer | The ability to partially update or edit existing feature flags. |
+| 15. | `apprapp.features.toggle` | Manager, Writer, Config Operator | The ability to enable or disable existing feature flags. |
+| 16. | `apprapp.properties.list` | Manager, Writer, Config Operator, Reader | The ability to view properties. |
+| 17. | `apprapp.properties.create` | Manager | The ability to create properties. |
+| 18. | `apprapp.properties.update` | Manager | The ability to update or edit existing properties. |
+| 19. | `apprapp.properties.delete` | Manager | The ability to delete existing properties. |
+| 20. | `apprapp.properties.patch` | Writer | The ability to partially update or edit existing properties. |
+| 21. | `apprapp.segments.list` | Manager, Writer, Config Operator, Reader | The ability to view segments. |
+| 22. | `apprapp.segments.create` | Manager, Writer | The ability to create segments. |
+| 23. | `apprapp.segments.update` | Manager, Writer | The ability to update or edit existing segments. |
+| 24. | `apprapp.segments.delete` | Manager, Writer | The ability to delete existing segments. |
+| 25. | `apprapp.gitconfigs.view` | Manager, Writer, Config Operator, Reader | The ability to view Git configurations. |
+| 26. | `apprapp.gitconfigs.create` | Manager | The ability to create Git configurations. |
+| 27. | `apprapp.gitconfigs.update` | Manager | The ability to update or edit existing Git configurations. |
+| 28. | `apprapp.gitconfigs.delete` | Manager | The ability to delete existing Git configurations. |
+| 29. | `apprapp.integrations.list` | Manager, Writer, Config Operator, Reader | The ability to view integrations existing between App Configuration service and external services such as Key Protect, HPCS & Event Notifications. |
+| 30. | `apprapp.integrations.create` | Manager | The ability to create integrations between App Configuration service and external services such as Key Protect, HPCS and Event Notifications. |
+| 31. | `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect, HPCS & Event Notifications. |
+| 32. | `apprapp.originconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view allowlisted origin URLs. |
+| 32. | `apprapp.originconfigs.update` | Manager | The ability to add or update origin URLs to the allowlist. |
+| 34. | `apprapp.workflowconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view workflow configurations. |
+| 35. | `apprapp.workflowconfigs.create` | Manager | The ability to create workflow configurations. |
+| 36. | `apprapp.workflowconfigs.update` | Manager | The ability to update or edit existing workflow configurations. |
+| 37. | `apprapp.workflowconfigs.delete` | Manager | The ability to delete existing workflow configurations. |
+| 38. | `apprapp.changerequest.create` |  Manager | The ability to send ServiceNow change request events to App Configuration instance. |
+| 39. | `apprapp.config.export` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to get the JSON export of entire App Configuration instance resources such as collections, environments, feature flags, properties & segments. |
+| 40. | `apprapp.config.import` | Manager | The ability to import resources such as collections, environments, feature flags, properties & segments into App Configuration instance. |
+| 41. | `apprapp.config.action` | Manager | The ability to promote or restore the existing Git configurations. |
+| 42. | `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
+| 43. | `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
 {: caption="Table 3. Granular IAM action descriptions." caption-side="bottom"}
