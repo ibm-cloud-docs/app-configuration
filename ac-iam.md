@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-04-10"
+  years: 2020, 2024
+lastupdated: "2024-02-06"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -24,7 +24,8 @@ Policies help you to grant access at different levels. Some of the options are:
 
 - Access across all instances of the service in your account.
 - Access to an individual service instance in your account.
-- Access to a specific resource within an instance.
+- Access to specific Feature flags & Properties only within a Collection. [See tutorial](/docs/app-configuration?topic=app-configuration-ac-assign-access-to-collections).
+- Access to all Feature flags & Properties within a specific Environment. [See tutorial](/docs/app-configuration?topic=app-configuration-ac-assign-access-to-environments).
 
 ## Roles and permissions
 {: #ac-roles-permissions}
@@ -50,7 +51,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
 | Editor | As an editor, you can perform all platform actions except for managing the account and assigning access policies. |
 {: row-headers}
-{: caption="Table 1. Platform roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
+{: caption="Table 1. IAM user roles" caption-side="bottom"}
 {: #platform-roles-table1}
 {: tab-title="Platform roles"}
 {: tab-group="app-rapp"}
@@ -65,58 +66,61 @@ Review the platform and service roles available and the actions that are mapped 
 | Config Operator | As a Config Operator, you can toggle the feature state. |
 | Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK. |
 {: row-headers}
-{: caption="Table 1. Service roles - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
+{: caption="Table 2. IAM service access roles" caption-side="bottom"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}
 {: class="simple-tab-table"}
 {: summary="Use the tab buttons to change the context of the table. This table has row and column headers. The row headers provide the service role name and the column headers identify the specific information available about each role."}
 
-| ID | Roles | Description |
+## Actions
+{: #ac-iam-actions}
+
+The following table details actions that are mapped to service access roles. Service access roles enable users access to App Configuration as well as the ability to call the App Configuration API.
+
+| Action ID | Roles | Description |
 | :----- | :----- | :----- |
-| `apprapp.dashboard.view` | Manager, Reader, Writer, Operator, Administrator, Editor, Config Operator | View {{site.data.keyword.appconfig_short}} dashboard |
-| `apprapp.collections.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of collection. |
-| `apprapp.collections.create` | Manager, Administrator | Create a collection. |
-| `apprapp.collections.update` | Manager, Administrator | Update the collection name, tags, and description. |
-| `apprapp.collections.delete` | Manager, Administrator | Delete the collection. |
-| `apprapp.environments.create` | Manager, Administrator | Create an environment. |
-| `apprapp.environments.update` | Manager, Administrator | Update an environment. |
-| `apprapp.environments.delete` | Manager, Administrator | Delete an environment. |
-| `apprapp.environments.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of environments. |
-| `apprapp.features.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of feature flags. |
-| `apprapp.features.create` | Manager, Administrator | Create a feature flag. |
-| `apprapp.features.update` | Manager, Administrator | Update a feature flag. |
-| `apprapp.features.delete` | Manager, Administrator | Delete a feature flag. |
-| `apprapp.segments.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of segments. |
-| `apprapp.segments.update` | Manager, Writer, Administrator | Update the segments. |
-| `apprapp.segments.create` | Manager, Writer, Administrator | Create a segment of users. |
-| `apprapp.segments.delete` | Manager, Writer, Administrator | Delete a segment. |
-| `apprapp.features.patch` | Writer | Update a feature flag. |
-| `apprapp.features.toggle` | Manager, Writer, Administrator, Config Operator | Toggle a feature flag |
-| `apprapp.properties.list` | Manager, Reader, Writer, Administrator, Config Operator | Get list of properties. |
-| `apprapp.properties.update` | Manager, Administrator | Update a property. |
-| `apprapp.properties.create` | Manager, Administrator | Create a property. |
-| `apprapp.properties.delete` | Manager, Administrator | Delete a property. |
-| `apprapp.properties.patch` | Writer | Update a property. |
-| `apprapp.gitconfigs.create` | Manager, Administrator | Create a Snapshots configuration. |
-| `apprapp.gitconfigs.update` | Manager, Administrator | Update a Snapshots configuration. |
-| `apprapp.gitconfigs.delete` | Manager, Administrator | Delete a Snapshots configuration. |
-| `apprapp.gitconfigs.view` | Manager, Reader, Writer, Administrator, Config Operator | Get list of Snapshot configuration. |
-| `apprapp.gitconfigs.promote` | Manager, Administrator | Promotes a Snapshot configuration to GitHub. |
-| `apprapp.gitconfigs.restore` | Manager, Administrator | Restores a Snapshot configuration from GitHub. |
-| `apprapp.originconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the allowlist of origin configurations. |
-| `apprapp.originconfigs.update` | Manager, Administrator | Update the allowlist of origin configurations. |
-| `apprapp.workflowconfigs.list` | Manager, Reader, Writer, Administrator, Config Operator | Get the workflow configurations. |
-| `apprapp.workflowconfigs.create` | Manager, Administrator | Create a workflow configuration. |
-| `apprapp.workflowconfigs.update` | Manager, Administrator | Update a workflow configuration. |
-| `apprapp.workflowconfigs.delete` | Manager, Administrator | Delete a workflow configuration. |
-| `apprapp.changerequest.create` |  Manager, Administrator | Creates or captures the change of events in the Change Request of Service Now for workflow. |
-| `apprapp.config.import` | Manager, Administrator | Import a instance configuration. |
-| `apprapp.config.export` | Manager, Reader, Writer, Administrator, Config Operator, Editor, Viewer, ClientSDK | Export instance configuration. | 
-| `apprapp.config.action` | Manager, Administrator | Promotes or Restores a Snapshot configuration to or from GitHub respectively. |
-{: caption="Table 1. Service actions - {{site.data.keyword.appconfig_short}}" caption-side="bottom"}
-{: #actions-table1}
-{: tab-title="Actions"}
-{: tab-group="app-rapp"}
-{: class="simple-tab-table"}
-{: summary="Use the tab buttons to change the context of the table. This table provides the available actions for the service, descriptions of each, and the roles that each action is mapped to."}
+| `apprapp.dashboard.view` | Manager, Writer, Config Operator, Reader | View {{site.data.keyword.appconfig_short}} dashboard |
+| `apprapp.collections.list` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to view collections. |
+| `apprapp.collections.create` | Manager | The ability to create collections. |
+| `apprapp.collections.update` | Manager | The ability to edit or update existing collections. |
+| `apprapp.collections.delete` | Manager | The ability to delete existing collections. |
+| `apprapp.environments.list` | Manager, Writer, Config Operator, Reader | The ability to view environments. |
+| `apprapp.environments.create` | Manager | The ability to create environments. |
+| `apprapp.environments.update` | Manager | The ability to update or edit existing environments. |
+| `apprapp.environments.delete` | Manager | The ability to delete existing environments. |
+| `apprapp.features.list` | Manager, Writer, Config Operator, Reader | The ability to view feature flags. |
+| `apprapp.features.create` | Manager | The ability to create feature flags. |
+| `apprapp.features.update` | Manager | The ability to update or edit existing feature flags. |
+| `apprapp.features.delete` | Manager | The ability to delete existing feature flags. |
+| `apprapp.features.patch` | Writer | The ability to partially update or edit existing feature flags. |
+| `apprapp.features.toggle` | Manager, Writer, Config Operator | The ability to enable or disable existing feature flags. |
+| `apprapp.properties.list` | Manager, Writer, Config Operator, Reader | The ability to view properties. |
+| `apprapp.properties.create` | Manager | The ability to create properties. |
+| `apprapp.properties.update` | Manager | The ability to update or edit existing properties. |
+| `apprapp.properties.delete` | Manager | The ability to delete existing properties. |
+| `apprapp.properties.patch` | Writer | The ability to partially update or edit existing properties. |
+| `apprapp.segments.list` | Manager, Writer, Config Operator, Reader | The ability to view segments. |
+| `apprapp.segments.create` | Manager, Writer | The ability to create segments. |
+| `apprapp.segments.update` | Manager, Writer | The ability to update or edit existing segments. |
+| `apprapp.segments.delete` | Manager, Writer | The ability to delete existing segments. |
+| `apprapp.gitconfigs.view` | Manager, Writer, Config Operator, Reader | The ability to view Git configurations. |
+| `apprapp.gitconfigs.create` | Manager | The ability to create Git configurations. |
+| `apprapp.gitconfigs.update` | Manager | The ability to update or edit existing Git configurations. |
+| `apprapp.gitconfigs.delete` | Manager | The ability to delete existing Git configurations. |
+| `apprapp.integrations.list` | Manager, Writer, Config Operator, Reader | The ability to view integrations existing between App Configuration service and external services such as Key Protect, HPCS & Event Notifications. |
+| `apprapp.integrations.create` | Manager | The ability to create integrations between App Configuration service and external services such as Key Protect, HPCS and Event Notifications. |
+| `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect, HPCS & Event Notifications. |
+| `apprapp.originconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view allowlisted origin URLs. |
+| `apprapp.originconfigs.update` | Manager | The ability to add or update origin URLs to the allowlist. |
+| `apprapp.workflowconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view workflow configurations. |
+| `apprapp.workflowconfigs.create` | Manager | The ability to create workflow configurations. |
+| `apprapp.workflowconfigs.update` | Manager | The ability to update or edit existing workflow configurations. |
+| `apprapp.workflowconfigs.delete` | Manager | The ability to delete existing workflow configurations. |
+| `apprapp.changerequest.create` |  Manager | The ability to send ServiceNow change request events to App Configuration instance. |
+| `apprapp.config.export` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to get the JSON export of entire App Configuration instance resources such as collections, environments, feature flags, properties & segments. |
+| `apprapp.config.import` | Manager | The ability to import resources such as collections, environments, feature flags, properties & segments into App Configuration instance. |
+| `apprapp.config.action` | Manager | The ability to promote or restore the existing Git configurations. |
+| `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
+| `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
+{: caption="Table 3. Granular IAM action descriptions." caption-side="bottom"}

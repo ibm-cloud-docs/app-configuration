@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-03-31"
+  years: 2020, 2024
+lastupdated: "2024-02-06"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
 
@@ -12,16 +12,10 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing access with context-based restrictions
-{: #ac-access-control-cbr}
+# Restricting access by network context
+{: #ac-restrict-access-cbr}
 
-After you set up your {{site.data.keyword.appconfig_short}} service instance, you can manage access by using [context-based restrictions (CBR)](https://cloud.ibm.com/context-based-restrictions/overview){: external}.
-{: shortdesc}
-
-## Managing CBR settings
-{: #ac-manage-cbr-settings}
-
-With [context-based restrictions](/docs/account?topic=account-context-restrictions-whatis), you can define and enforce user and service access restrictions to {{site.data.keyword.appconfig_short}} resources based on specified criteria. These resources include Internet Protocol (IP) addresses that are linked to your {{site.data.keyword.appconfig_short}} instance.
+[Context-based restrictions](/docs/account?topic=account-context-restrictions-whatis&interface=ui) provide a way for administrators to limit access to resources. What if certain data must be accessed from trusted networks only? A properly configured policy restricts all access to data unless the request originates from an approved [network zone](/docs/account?topic=account-context-restrictions-whatis&interface=ui#network-zones-whatis) and endpoint type (public, private, or direct).
 
 To restrict access, you must be the account owner or have an access policy with the administrator role on all account management services.
 {: note}
