@@ -81,7 +81,6 @@ At this stage, you should have two access policies created as shown below. One a
 
   ![Create a new policy](images/tut-iam-env-5.png){: caption="Figure 5: Review access policies created."}
 
-
 ## Verify that it works
 {: #environment-access-step-4}
 {: step}
@@ -90,9 +89,7 @@ When this {{site.data.keyword.appconfig_short}} instance is accessed by shared u
 
   ![Create a new policy](images/tut-iam-env-6.png){: caption="Figure 6: Feature flags allowed to edit under environment `dev`."}
 
-
   ![Create a new policy](images/tut-iam-env-7.png){: caption="Figure 7: Feature flags are view-only or non-editable under environment `production`."}
-
 
 When shared user tries to perform any action such as toggle a feature flag, update a feature flag on other environment using API/CLI/Terrform the action is denied with **401** status code as shown below.
 
