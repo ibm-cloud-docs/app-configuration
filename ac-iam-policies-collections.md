@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2024
+  years: 2024
 lastupdated: "2024-02-06"
 
 keywords: app-configuration, app configuration, managing service access, iam, account, collections

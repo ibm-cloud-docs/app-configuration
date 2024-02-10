@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2024
+  years: 2023, 2024
 lastupdated: "2024-02-06"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
