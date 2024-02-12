@@ -44,7 +44,7 @@ To create a snapshot, complete these steps:
    - **Name** - name of the snapshot.
    - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
    - **Environment ID** - the environment identifier, you can select the value from the dropdown menu.
-   - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to organisation GitHub account then here is the URL `https://api.github.{{org_name}}.com/repos/{{owner}}/{{repo_name}}` or if you want to write to your personal GitHub then the URL will be `https://api.github.com/repos/{{owner}}/{{repo_name}}`.
+   - **Repository URL** - specify the GitHub URL, for example if you want the configuration to be written to organisation GitHub account then here is the URL `https://github.{{org_name}}.com/api/v3/repos/{{owner}}/{{repo_name}}` or if you want to write to your personal GitHub then the URL will be `https://api.github.com/repos/{{owner}}/{{repo_name}}`.
    - **Branch** - Add the branch name, to which you would like to write or update the config file.
    - **Folder path URL** - Provide the folder path to the file.
    - **File name** - provide the file name, we only allow `.json` or `.JSON` file extension.
