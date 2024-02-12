@@ -45,16 +45,10 @@ To enable access to a specific collection in an instance, the user must at least
 
 1. Navigate to IAM by following the **Manage** drop-down menu, and selecting **Access (IAM)**. Follow the **Users** link in the navigation menu, and select the user requiring limited access.
 2. Click on **Access** tab. Click on the **Assign access** button. Select the **Access policy** tile and select **App Configuration**. Click **Next**.
-3. Select the radio toggle next to **Specific resources**. Select **Service Instance** from the _Attribute type_ drop-down menu. Select the {{site.data.keyword.appconfig_short}} instance which you want to assign access.
-
-![Create a new policy](images/tut-iam-col-1.png){: caption="Figure 1: Selecting App Configuration instance."}
-
-4. In the _Roles and access_ section, select the role **Reader**. You'll also need the Platform **Viewer** role, if you don't already have it, in order to view the UI.
-
-![Create a new policy](images/tut-iam-col-2.png){: caption="Figure 2: Selecting Roles for App Configuration instance."}
-
+3. Select the radio toggle next to **Specific resources**. Select **Service Instance** from the _Attribute type_ drop-down menu. Select the {{site.data.keyword.appconfig_short}} instance which you want to assign access. ![Create a new policy](images/tut-iam-col-1.png){: caption="Figure 1: Selecting App Configuration instance."}
+4. In the _Roles and access_ section, select the role **Reader**. You'll also need the Platform **Viewer** role, if you don't already have it, in order to view the UI. ![Create a new policy](images/tut-iam-col-2.png){: caption="Figure 2: Selecting Roles for App Configuration instance."}
 5. Click **Next** and include conditions if needed which is optional.
-6. Click** **Add**.
+6. Click **Add**.
 
 ## Grant Manager access to specific Collection
 {: #collection-access-step-2}
@@ -64,16 +58,10 @@ We'll repeat the step 1, but this time we'll use **Collection ID** resource attr
 
 1. Click on the **Assign access** button. Select the **Access policy** tile and select **App Configuration**.
 2. Select the radio toggle next to **Specific resources**. Select **Service Instance** from the _Attribute type_ drop-down menu. Select the {{site.data.keyword.appconfig_short}} instance which you want to assign access.
-3. Add another _Attribute type_ by clicking on **Add a condition** button. Select **Collection ID** from the drop-down menu. Type in the ID of the collection that the user should be able to access in the _Value_ field.  In this case, it's a collection called `devops`.
-
-![Create a new policy](images/tut-iam-col-3.png){: caption="Figure 3: Adding resource attribute."}
-
-4. In the _Roles and access_ section, select the role **Manager**.
-
-![Create a new policy](images/tut-iam-col-4.png){: caption="Figure 4: Selecting Roles for resource attribute."}
-
+3. Add another _Attribute type_ by clicking on **Add a condition** button. Select **Collection ID** from the drop-down menu. Type in the ID of the collection that the user should be able to access in the _Value_ field.  In this case, it's a collection called `devops`. ![Create a new policy](images/tut-iam-col-3.png){: caption="Figure 3: Adding resource attribute."}
+4. In the _Roles and access_ section, select the role **Manager**. ![Create a new policy](images/tut-iam-col-4.png){: caption="Figure 4: Selecting Roles for resource attribute."}
 5. Click **Next** and include conditions if needed which is optional.
-6. Click** **Add**.
+6. Click **Add**.
 
 ## Review access policies
 {: #collection-access-step-3}
