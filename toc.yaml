@@ -76,7 +76,8 @@ toc:
           label: Enhance security
           topics:
           - ac-iam.md
-          - ac-iam-policies.md
+          - ac-iam-policies-environments.md
+          - ac-iam-policies-collections.md
           - ac-cbr.md
           - ac-data-security-compliance.md
           - ac-securing-data.md
