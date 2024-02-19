@@ -33,7 +33,7 @@ Refer: [here](https://cloud.ibm.com/apidocs/app-configuration#list-instance-conf
 Refer: [CLI docs here](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export){: external}.
 
 ## Promote snapshot
-{: #promote-restore-config}
+{: #promote-restore-config-snap}
 
 Users can promote a specific configuration, which is based on the environment and collection id, to Git. For more information, see [Promote Snapshot](/docs/app-configuration?topic=app-configuration-ac-snapshots#ac-promote-a-snapshot)
 Refer: [here](https://cloud.ibm.com/apidocs/app-configuration#promote-restore-config){: external}.

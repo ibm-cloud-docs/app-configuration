@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-30"
+  years: 2022, 2024
+lastupdated: "2024-02-19"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -48,7 +48,7 @@ To create a snapshot, complete these steps:
    - **Branch** - Add the branch name, to which you would like to write or update the config file.
    - **Folder path URL** - Provide the folder path to the file.
    - **File name** - provide the file name, we only allow `.json` or `.JSON` file extension.
-   - **Git token** - provide the git token, this is the Personal access token this needs to be created with basic read, write and update permission. [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+   - **Git token** - provide the git token, this is the Personal access token this needs to be created with basic read, write and update permission. [How to create personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
       Make sure you have selected the permissions as in Figure 4 when creating the **Git token**.
       {: note}

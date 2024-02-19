@@ -114,13 +114,13 @@ In-memory based cache support for Node.js and Go SDK
 ## July 2021
 {: #jul-2021}
 
-[Environment-based access control](/docs/app-configuration?topic=app-configuration-ac-service-access-level-management)
+[Environment-based access control](/docs/app-configuration?topic=app-configuration-ac-assign-access-to-environments)
 {: #added-environment-control}
 
 ## June 2021
 {: #jun-2021}
 
-[Import](/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli#ac-ibmcloud-ac-import) and [export](/docs/app-configuration?topic=app-configuration-cli-plugin-app-configuration-cli#ac-ibmcloud-ac-export) of configuration data
+[Import](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import) and [export](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export) of configuration data
 {: #added-exim-config}
 
 ## May 2021

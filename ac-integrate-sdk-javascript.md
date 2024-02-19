@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-10-11"
+  years: 2022, 2024
+lastupdated: "2024-02-19"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -33,7 +33,7 @@ subcollection: app-configuration
 1. You can import the SDK into the `script` tag either by referencing it from a hosted site on your backend or from a CDN as follows:
 
    ```javascript
-   <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk@latest/dist/appconfiguration.js"></script>
+   <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk@0.1.0/dist/appconfiguration.js"></script>
    ```
    {: codeblock}
 
