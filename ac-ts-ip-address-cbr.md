@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-04-11"
+  years: 2023, 2024
+lastupdated: "2024-02-19"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question, can't create IAM credentials, can't regenerate IAM credentials, IAM credentials not working, IP address restrictions enabled, IP address not allowed
 
@@ -51,4 +51,4 @@ As an administrator of your {{site.data.keyword.appconfig_short}} service instan
 1. In the **Allowed IP addresses**, include the required IP addresses that you want to enable access to the {{site.data.keyword.appconfig_short}} service instance.
 1. Click **Update**.
 
-For more information, see [Managing access with context-based restrictions](/docs/app-configuration?topic=app-configuration-ac-access-control-cbr).
+For more information, see [Managing access with context-based restrictions](/docs/app-configuration?topic=app-configuration-ac-restrict-access-cbr).
