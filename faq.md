@@ -196,13 +196,13 @@ See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
 {: #faq-ac-audit}
 {: faq}
 
-If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.cloud_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
+If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.cloud_notm}} Activity Tracker from the [Observability](https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
 
 ## How do I archive {{site.data.keyword.appconfig_short}} activity data?
 {: #faq-ac-archive}
 {: faq}
 
-If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.cloud_notm}} Activity Tracker from the [Observability]( https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Then archive events from an {{site.data.keyword.cloud_notm}} Activity Tracker instance into a bucket in an {{site.data.keyword.cloud_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving){: external}.
+If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.cloud_notm}} Activity Tracker from the [Observability](https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Then archive events from an {{site.data.keyword.cloud_notm}} Activity Tracker instance into a bucket in an {{site.data.keyword.cloud_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-archiving){: external}.
 
 ## In what regions is {{site.data.keyword.appconfig_short}} available?
 {: #faq-ac-regions}

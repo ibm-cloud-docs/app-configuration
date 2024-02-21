@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2024
+lastupdated: "2024-02-19"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -37,6 +37,6 @@ The basic steps that get you started:
 
 1. [Target feature flags to segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags#targeting-segment-with-feature-flag) or [Target properties to segments](/docs/app-configuration?topic=app-configuration-ac-properties#targeting-segment-with-properties)
 
-1. [Target collections to feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags) or [Target collections to properties](/docs//app-configuration?topic=app-configuration-ac-properties#collection-target-properties)
+1. [Target collections to feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags) or [Target collections to properties](/docs/app-configuration?topic=app-configuration-ac-properties#collection-target-properties)
 
 1. [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).

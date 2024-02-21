@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-10-04"
+  years: 2021, 2024
+lastupdated: "2024-02-19"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -244,7 +244,7 @@ secretPropertyObject, err := appConfiguration.GetSecret(propertyID, secretsManag
 
 - `propertyID`: `propertyID` is the unique string identifier, using this you will be able to fetch the property which provides the necessary data to fetch the secret.
 
-- `secretsManagerObject`: `secretsManagerObject` is an {{site.data.keyword.secrets-manager_short}} variable or object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=go){: external}.
+- `secretsManagerObject`: `secretsManagerObject` is an {{site.data.keyword.secrets-manager_short}} variable or object which will be used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} object, see [here](https://cloud.ibm.com/apidocs/secrets-manager/secrets-manager-v2?code=go){: external}.
 
 #### Evaluate a secret property
 {: #ac-go-evaluate-a-secret-property}
