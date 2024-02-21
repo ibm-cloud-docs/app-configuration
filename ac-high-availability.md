@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-11"
+  years: 2021, 2024
+lastupdated: "2024-02-19"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
