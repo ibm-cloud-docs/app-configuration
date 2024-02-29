@@ -47,7 +47,7 @@ If you attempt to use a cipher that is not on this list, you may experience conn
 For a complete listing of {{site.data.keyword.cloud_notm}} compliance certifications, see [Compliance on the {{site.data.keyword.cloud_notm}}](https://ibm.com/cloud/compliance){: external}.
 {: tip}
 
-### ISO 27001, 27017, 27018, 27701
+### ISO 27001, 27017, 27018, 27701, SOC 2, FS Cloud Internal Validated, C5
 {: #ac-iso}
 
 {{site.data.keyword.appconfig_short}} is ISO 27001, 27017, 27018, and 27701 certified. You can view compliance certifications by visiting [Compliance on the {{site.data.keyword.cloud_notm}}](https://ibm.com/cloud/compliance){: external}.
