@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2023
+  years: 2020, 2024
 lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service

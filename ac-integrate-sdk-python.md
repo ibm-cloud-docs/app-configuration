@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2025-04-25"
+  years: 2020, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2021, 2022, 2024
+  years: 2021, 2024
 lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps

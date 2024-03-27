@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2022, 2024
+  years: 2020, 2024
 lastupdated: "2024-03-25"
 
 keywords: public isolation for app configuration, compute isolation for app configuration, app configuration architecture, workload isolation in app configuration

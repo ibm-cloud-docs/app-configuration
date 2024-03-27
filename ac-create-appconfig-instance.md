@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, create an instance
 
