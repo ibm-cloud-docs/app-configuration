@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-11"
+  years: 2021, 2022, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 
@@ -26,6 +26,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 - Dallas
 - Washington DC
 - London
+- Frankfurt
 - Sydney
 
 You can create {{site.data.keyword.appconfig_notm}} resources in one of the supported {{site.data.keyword.cloud_notm}} regions.
@@ -51,6 +52,7 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Dallas |`https://us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Washington DC |`https://us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Frankfurt |`https://eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Table 1. Public endpoints" caption-side="top"}
 
@@ -64,5 +66,6 @@ If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a
 |Dallas |`https://private.us-south.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Washington DC |`https://private.us-east.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |London |`https://private.eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Frankfurt |`https://private.eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://private.au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Table 2. Private endpoints" caption-side="top"}

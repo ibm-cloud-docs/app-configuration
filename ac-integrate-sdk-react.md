@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-10-11"
+  years: 2022, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -57,7 +57,7 @@ subcollection: app-configuration
    {: codeblock}
 
    Where:
-   - `region`: Region where the service instance is created. Use `us-south` for Dallas, `us-east` for Washington DC, `eu-gb` for London, and `au-syd` for Sydney.
+   - `region`: Region where the service instance is created. Use `us-south` for Dallas, `us-east` for Washington DC, `eu-gb` for London, `eu-de` for Frankfurt and `au-syd` for Sydney.
    - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `apikey`: API key of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
