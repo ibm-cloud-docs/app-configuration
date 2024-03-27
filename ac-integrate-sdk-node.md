@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-04"
+  years: 2020, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -60,7 +60,7 @@ Version v0.4.0 has changes to the return value of `getCurrentValue` method. Henc
    {: codeblock}
 
    Where:
-   - `region`: Region name where the {{site.data.keyword.appconfig_short}} service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney, and `AppConfiguration.REGION_US_EAST` for Washington DC.
+   - `region`: Region name where the {{site.data.keyword.appconfig_short}} service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_AU_SYD` for Sydney, `AppConfiguration.REGION_EU_DE` for Frankfurt and `AppConfiguration.REGION_US_EAST` for Washington DC.
    - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
    - `apikey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
    - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.

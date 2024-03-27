@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-03-14"
+  years: 2020, 2024
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -178,7 +178,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Targeting definition rules per feature | - | - | 50 |
 | Delivery mode | Websocket (server)pull or get (client)|Websocket (server) pull or get(client) | Websocket(server)pull or get (client) |
 | Role-based access | Env-level | Env-level | Env-level |
-| Locations | London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney | London, Dallas, Washington DC, Sydney |
+| Locations | London, Dallas, Washington DC, Frankfurt, Sydney | London, Dallas, Washington DC, Frankfurt, Sydney | London, Dallas, Washington DC, Frankfurt, Sydney |
 | HA | Regional | Regional | Regional |
 | Security | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC |
 | Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
