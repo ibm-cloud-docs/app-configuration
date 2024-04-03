@@ -124,3 +124,4 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
 | `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
 {: caption="Table 3. Granular IAM action descriptions." caption-side="bottom"}
+
