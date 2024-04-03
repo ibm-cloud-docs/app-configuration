@@ -21,7 +21,7 @@ Stay up to date with the new features that are available for {{site.data.keyword
 ## March 2024
 {: #Mar-2024}
 
-IBM Cloud App Configuration is now available in Frankfurt (eu-de) region.
+IBM Cloud App Configuration is now available in Frankfurt region.
 
 ## Jan 2024
 {: #Jan-2024}
@@ -33,21 +33,21 @@ IBM Cloud App Configuration is now available in Frankfurt (eu-de) region.
 ## Sep 2023
 {: #Sep-2023}
 
-- Support for export and import instance configuration
+- Support for export and import instance configuration.
 
    Utilize the config api to control the app configuration instance's backup and restore capabilities. For more information, see [Backup and Restore configuration](/docs/app-configuration?topic=app-configuration-ac-backup-restore-configuration)
 
 ## May 2023
 {: #May-2023}
 
-- Support for ServiceNow integration
+- Support for ServiceNow integration.
 
    Manage feature flags enablement by adding additional workflow with ServiceNow&reg; integration. For more information, see [Workflow Integration](/docs/app-configuration?topic=app-configuration-ac-manage-workflow).
 
 ## March 2023
 {: #March-2023}
 
-- Support for context-based restrictions (CBR)
+- Support for context-based restrictions (CBR).
 
    Restrict access to your {{site.data.keyword.appconfig_notm}} resources by using context-based restrictions, based on defined criteria. For more information, see [Restricting access by network context](/docs/app-configuration?topic=app-configuration-ac-restrict-access-cbr).
 
@@ -125,7 +125,7 @@ In-memory based cache support for Node.js and Go SDK
 ## June 2021
 {: #jun-2021}
 
-[Import](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import) and [export](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export) of configuration data
+[Import](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import) and [export](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export) of configuration data.
 {: #added-exim-config}
 
 ## May 2021

@@ -22,15 +22,15 @@ The ability to import and export data is essential for managing and maintaining 
 {: #import-config}
 
 Users can import whole configuration data into a App configuration instance to ensure accuracy and consistency when configuring complicated systems.
-Refer: [API docs here](https://cloud.ibm.com/apidocs/app-configuration#import-config){: external}.
-Refer: [CLI docs here](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import){: external}.
+Refer: [API docs here](/apidocs/app-configuration#import-config){: external}.
+Refer: [CLI docs here](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import){: external}.
 
 ## Export
 {: #list-instance-config}
 
 In contrast, export functionality gives users the ability to extract current whole configurations for a variety of reasons, including sharing settings with team members, making backups, or moving settings to a new instances. 
-Refer: [here](https://cloud.ibm.com/apidocs/app-configuration#list-instance-config){: external}.
-Refer: [CLI docs here](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export){: external}.
+Refer: [here](/apidocs/app-configuration#list-instance-config){: external}.
+Refer: [CLI docs here](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export){: external}.
 
 ## Promote snapshot
 {: #promote-restore-config-snap}

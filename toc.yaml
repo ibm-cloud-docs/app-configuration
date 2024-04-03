@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: app-configuration
+    service-name: apprapp
     category: dev_ops
     audience: service
     href: /docs/app-configuration
@@ -8,7 +9,6 @@ toc:
     product-page: https://www.ibm.com/products/app-configuration
     path: app-configuration
     label: App Configuration
-
   entries:
   - navgroup:
       id: learn
@@ -18,7 +18,6 @@ toc:
       - ac-concepts.md
       - ac-how-it-works.md
       - ac-release-notes.md
-
   - navgroup:
       id: tutorial
       topics:
@@ -34,7 +33,6 @@ toc:
       - ac-settings.md
       - ac-integrate-sdk.md
       - ac-terraform-tutorial.md
-
   - navgroup:
       id: howto
       topics:
@@ -71,7 +69,6 @@ toc:
               label: App Configuration admin SDK for Go
               href: https://{DomainName}/apidocs/app-configuration?code=go
       - ac-integrate-offline.md
-
       - topicgroup:
           label: Enhance security
           topics:
@@ -86,16 +83,28 @@ toc:
           - architecture-workload-isolation.md
           - ac-audit.md
       - ac-backup-restore-configuration.md
-
   - navgroup:
       id: reference
       topics:
       - topicgroup:
+          label: API & SDK reference
+          topics:
+          - link:
+              label: App Configuration API
+              href: https://{DomainName}/apidocs/app-configuration
+      - topicgroup:
           label: CLI reference
           topics:
           - include: ../app-configuration-cli-plugin/app-configuration-cli.md
-          - ac-cli-changelog.md
-
+            navtitle: CLI commands
+          - topic: ac-cli-changelog.md
+            navtitle: CLI change log
+      - topicgroup:
+          label: Terraform reference
+          topics:
+           - link:
+              label: App Configuration Terraform
+              href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_collection
       - topicgroup:
           label: High availability and disaster recovery
           topics:
@@ -104,11 +113,7 @@ toc:
       - ac-responsibilities.md
       - ac-regions-endpoints.md
       - ac-sample-apps.md
-      - link:
-          label: API Explorer
-          href: https://{DomainName}/apidocs/app-configuration
       - ac-notices.md
-
   - navgroup:
       id: help
       topics:
