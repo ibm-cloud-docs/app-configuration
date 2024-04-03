@@ -67,4 +67,3 @@ client.setContext(collectionId, environmentId, {
 
 For more information, see the respective SDK documentation.
 {: note}
-
