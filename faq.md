@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-25"
+lastupdated: "2024-04-05"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -177,8 +177,8 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Max targeting definition rules per instance | 3 | - | 100 |
 | Targeting definition rules per feature | - | - | 50 |
 | Delivery mode | Websocket (server)pull or get (client)|Websocket (server) pull or get(client) | Websocket(server)pull or get (client) |
-| Role-based access | Env-level | Env-level | Env-level |
-| Locations | London, Dallas, Washington DC, Frankfurt, Sydney | London, Dallas, Washington DC, Frankfurt, Sydney | London, Dallas, Washington DC, Frankfurt, Sydney |
+| Role-based access | Env-level, Collection-level | Env-level, Collection-level | Env-level, Collection-level |
+| Locations | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt |
 | HA | Regional | Regional | Regional |
 | Security | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC |
 | Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
@@ -187,6 +187,8 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Percentage rollout | Supported | Not Supported | Supported |
 | Snapshots | Not Supported | Not Supported | Supported |
 | KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
+| Event Notifications integration | Not Supported | Not Supported | Supported |
+| Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Supported |
 {: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
