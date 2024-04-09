@@ -198,6 +198,8 @@ If you try to target a feature flag that is not linked to a collection, a window
 
 After you target a feature flag to a segment, click the toggle (ON/OFF) to enable or disable a feature flag.
 
+
+
 ## Feature flags - overflow menu
 {: #feature-flags-overflow-menu}
 
