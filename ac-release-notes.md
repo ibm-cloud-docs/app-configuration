@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-12"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -18,11 +18,7 @@ subcollection: app-configuration
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
-## April 2024
-{: #April-2024}
-- Support for IBM ServiceNow integration.
 
-   Manage feature flags enablement by adding additional workflow with IBM ServiceNow&reg; integration. For more information, see [Workflow Integration](/docs/app-configuration?topic=app-configuration-ac-manage-workflow).
 
 ## March 2024
 {: #Mar-2024}
