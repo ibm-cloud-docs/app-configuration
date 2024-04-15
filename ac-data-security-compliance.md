@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-29"
+lastupdated: "2024-04-15"
 
 keywords: app-configuration, app configuration, data security, compliance, data security and compliance
 
@@ -29,7 +29,7 @@ To learn more about security controls across {{site.data.keyword.cloud_notm}}, s
 To learn more about how your data is secured in {{site.data.keyword.appconfig_short}}, see [securing your data in {{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-securing-your-data).
 
 ### Data encryption
-{: #ac-data-encryption}
+{: #ac-data-encryption-security-compliance}
 
 Access to {{site.data.keyword.appconfig_short}} takes place over HTTPS and uses Transport Layer Security (TLS) to encrypt data in transit.
 
