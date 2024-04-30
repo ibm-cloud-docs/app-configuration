@@ -178,8 +178,8 @@ Review following table for more information about event notification properties.
 | Property | Description |
 | ---- | ---- |
 | `subject` | The subject of the event. It can be the ID of the feature flag being toggled. |
-| `type` | Describes the type of event. [See table.](/docs-draft/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events)| 
-| `severity` | The level of severity of the event. [See table.](/docs-draft/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events) |
+| `type` | Describes the type of event. [See table.](/docs/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events)| 
+| `severity` | The level of severity of the event. [See table.](/docs/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events) |
 | `datacontenttype` | The MIME type of the data content. |
 | `data` | An object containing the metadata about the event. |
 | `ibmendefaultshort` | The default short text of the event. |
