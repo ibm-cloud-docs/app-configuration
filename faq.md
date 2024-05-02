@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-05-02"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -51,6 +51,7 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 | Plan | Inclusions | Capabilities |
 | :-------------: | :-------------| :-----|
 | Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.  \n Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. |
+| Basic | There is no monthly instance cost. Pay only for what you use. | This plan includes property management capabilities only. |
 | Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. |
 | Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes percentage rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
 {: caption="Table 1. Pricing plans" caption-side="bottom"}
@@ -152,43 +153,43 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 {: #faq-ac-capabilities}
 {: faq}
 
-|  | Lite | Standard | Enterprise |
-| :-------------: |:-------------| :-----|:-----|
-| Number of collaborators (team members) | No restriction | No restriction | No restriction |
-| Max number of instances | 1 | No restriction|No restriction |
-| Instance life | 30 days of inactivity | No restriction | No restriction |
-| Base price for instance (monthly) | Free | Charge (see catalog page) | Charge (see catalog page)|
-| Monthly active entity IDs included with instance | 10 | 1000 | 10,000 |
-| Monthly active entity ID overage | Overage not allowed | overage allowed | overage allowed |
-| Max monthly active entity IDs per instance | 10 | Unlimited | Unlimited |
-| API calls included with instance | 5,000 | 100,000|1,000,000|
-| API call overage price | Overage not allowed | Overage allowed | Overage allowed |
-| Max monthly API calls per instance | 5,000 | Unlimited | Unlimited |
-| Environments | 1 | 15 | 15 |
-| Collections | 1 | 20 | Unlimited |
-| Properties | 10 (properties + flags) | 1000 | Unlimited |
-| Property types | All | All | All |
-| Max property size | 10 kB | 10 kB | 10 kB |
-| Max storage size (all properties) | 0.1 MB | 10 MB | 10 MB |
-| Flags | 10 (properties + flags) | 100 | Unlimited |
-| Attributes | Glean from response and custom attributes | Glean from response and custom attributes | Glean from response and custom attributes |
-| Segments | 3 | - | Unlimited |
-| Segment definition rules per segment | 3 | - | 25 |
-| Max targeting definition rules per instance | 3 | - | 100 |
-| Targeting definition rules per feature | - | - | 50 |
-| Delivery mode | Websocket (server)pull or get (client)|Websocket (server) pull or get(client) | Websocket(server)pull or get (client) |
-| Role-based access | Env-level, Collection-level | Env-level, Collection-level | Env-level, Collection-level |
-| Locations | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt |
-| HA | Regional | Regional | Regional |
-| Security | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC |
-| Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
-| Audit | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker |
-| Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |
-| Percentage rollout | Supported | Not Supported | Supported |
-| Snapshots | Not Supported | Not Supported | Supported |
-| KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Supported |
-| Event Notifications integration | Not Supported | Not Supported | Supported |
-| Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Supported |
+|  | Lite | Basic | Standard | Enterprise |
+| :-------------: |:-------------|:-------------| :-----|:-----|
+| Number of collaborators (team members) | No restriction | No restriction | No restriction | No restriction |
+| Max number of instances | 1 | No restriction| No restriction| No restriction |
+| Instance life | 30 days of inactivity | No restriction | No restriction | No restriction |
+| Base price for instance (monthly) | Free | Free | Charge (see catalog page) | Charge (see catalog page)|
+| Monthly active entity IDs included with instance | 10 | 0 | 1000 | 10,000 |
+| Monthly active entity ID overage | Overage not allowed | Overage allowed | Overage allowed | Overage allowed |
+| Max monthly active entity IDs per instance | 10 | Unlimited | Unlimited | Unlimited |
+| API calls included with instance | 5,000 | 0 | 100,000|1,000,000|
+| API call overage price | Overage not allowed | Overage allowed | Overage allowed | Overage allowed |
+| Max monthly API calls per instance | 5,000 | Unlimited | Unlimited | Unlimited |
+| Environments | 1 | 15 | 15 | 15 |
+| Collections | 1 | 20 | 20 | Unlimited |
+| Properties | 10 (properties + flags) | 1000 | 1000 | Unlimited |
+| Property types | All | All | All | All |
+| Max property size | 10 kB | 10 kB | 10 kB | 10 kB |
+| Max storage size (all properties) | 0.1 MB | 10 MB | 10 MB | 10 MB |
+| Flags | 10 (properties + flags) |- |  100 | Unlimited | 
+| Attributes | Glean from response and custom attributes | - | - | Glean from response and custom attributes |
+| Segments | 3 | - | - | Unlimited |
+| Segment definition rules per segment | 3 | - | - | 25 |
+| Max targeting definition rules per instance | 3 | - | - | 100 |
+| Targeting definition rules per feature | - | - | - | 50 |
+| Delivery mode | Websocket (server)pull or get (client)|Websocket (server) pull or get(client) | Websocket(server)pull or get (client) | Websocket(server)pull or get (client) |
+| Role-based access | Env-level, Collection-level | Env-level, Collection-level | Env-level, Collection-level | Env-level, Collection-level |
+| Locations | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt | London, Dallas, Washington DC, Sydney, Frankfurt |
+| HA | Regional | Regional | Regional | Regional |
+| Security | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC | End-to-end encryption RBAC |
+| Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring | IBM Cloud Monitoring |
+| Audit | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker |  IBM Cloud Activity Tracker |
+| Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |  per your IBM Cloud support plan |
+| Percentage rollout | Supported | Not Supported | Not Supported | Supported |
+| Snapshots | Not Supported | Not Supported | Not Supported | Supported |
+| KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Not Supported | Supported |
+| Event Notifications integration | Not Supported | Not Supported | Not Supported | Supported |
+| Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Not Supported | Supported |
 {: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
