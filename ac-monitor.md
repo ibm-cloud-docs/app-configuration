@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-03-25"
+lastupdated: "2024-05-02"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -30,8 +30,8 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Dallas | Dallas |
 | Washington DC | Washington DC|
 | London | London |
-| Frankfurt | Frankfurt |
 | Sydney | Sydney |
+| Frankfurt | Frankfurt |
 {: caption="Table 1. Deployment and monitoring regions" caption-side="bottom"}
 
 Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
@@ -87,11 +87,11 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
 {{site.data.keyword.appconfig_short}} supports three metrics that you can use to configure in your dashboard for monitoring. The table provides the details about the metrics.
 
-| Metric Name | Enterprise   | Standard    |  Lite   |
-| ------------|--------------| -------------|--------|
-| [IBM Appconfig Instance API request](#ibm_apprapp_instance_api)| Yes | Yes |Yes |
-| [IBM Appconfig Evaluation Count](#ibm_apprapp_instance_eval)| Yes | Yes |Yes |
-| [IBM Appconfig Instance Unauth Request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes |
+| Metric Name | Enterprise   | Standard    | Basic | Lite   |
+| ------------|--------------| -------------|--------| --------|
+| [IBM Appconfig Instance API request](#ibm_apprapp_instance_api)| Yes | Yes |Yes | Yes |
+| [IBM Appconfig Evaluation Count](#ibm_apprapp_instance_eval)| Yes | Yes |Yes | Yes |
+| [IBM Appconfig Instance Unauth Request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes | Yes |
 {: caption="Table 2. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
 ### IBM Appconfig Instance API request

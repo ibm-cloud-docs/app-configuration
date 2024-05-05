@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-25"
+lastupdated: "2024-05-02"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -33,9 +33,11 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), Frankfurt (eu-de) and Sydney (au-syd) regions are supported.
 
-1. **Select a pricing plan** - Based on your business requirements, select a pricing plan: Lite, Standard, and Enterprise.
+1. **Select a pricing plan** - Based on your business requirements, select a pricing plan: Lite, Basic, Standard, and Enterprise.
 
    - `Lite` - Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. Lite plan services are deleted after 30 days of inactivity.
+
+   - `Basic` - The Basic plan includes support for property management capabilities only. There is no monthly instance cost. Pay only for what you use.
 
    - `Standard` - The standard plan includes feature flags and property management capabilities. You can use simple and uniform REST APIs to configure, enable, segment, and monitor features to mobile devices and web applications.
 
