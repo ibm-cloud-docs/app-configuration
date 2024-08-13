@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-08-13"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
@@ -18,17 +18,23 @@ subcollection: app-configuration
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
+## August 2024
+{: #August-2024}
+
+- Configuration Aggregator available now
+{{site.data.keyword.appconfig_full}} has added a new capability to enable or disable and query the resources metadata for meeting goverance and compliance initiatives. 
+
 ## May 2024
 {: #May-2024}
 
-IBM Cloud App Configuration now has a Basic plan that provides support for Property management capabilities. There is no monthly instance cost. 
+{{site.data.keyword.appconfig_full}} now has a Basic plan that provides support for Property management capabilities. There is no monthly instance cost. 
 
 
 
 ## March 2024
 {: #Mar-2024}
 
-IBM Cloud App Configuration is now available in Frankfurt region.
+{{site.data.keyword.appconfig_full}} is now available in Frankfurt region.
 
 ## Jan 2024
 {: #Jan-2024}
