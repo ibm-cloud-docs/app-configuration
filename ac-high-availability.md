@@ -41,7 +41,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 |----------|-------|-----------|
 | Asia-Pacific| Sydney (au-syd)|MZR|
 | Europe | London (eu-gb)|MZR|
-| Europe | Frankfurt (eu-gb)|MZR|
+| Europe | Frankfurt (eu-de)|MZR|
 | North America| Dallas (us-south)|MZR|
 | North America| Washington DC (us-east)|MZR|
 {: caption="Table 1. HA status for the regions" caption-side="bottom"}
@@ -52,7 +52,7 @@ Where:
 - A *region* is a defined geographic territory.
    - A region might be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
    - A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
-- `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
+- `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#table-mzr).
 
 ## Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region
 {: #ac-dr}

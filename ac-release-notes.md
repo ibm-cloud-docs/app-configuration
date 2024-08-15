@@ -22,7 +22,8 @@ Stay up to date with the new features that are available for {{site.data.keyword
 {: #August-2024}
 
 - Configuration Aggregator available now
-{{site.data.keyword.appconfig_full}} has added a new capability to enable or disable and query the resources metadata for meeting goverance and compliance initiatives. 
+
+{{site.data.keyword.appconfig_full}} has added a new capability to collect and query the metadata of IBM Cloud resources for meeting governance and compliance initiatives.
 
 ## May 2024
 {: #May-2024}

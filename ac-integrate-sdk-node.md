@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2024
+  years: 2020, 2023
 lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
@@ -264,7 +264,7 @@ Where,
 
 - `propertyID`: `propertyID` is the unique string identifier, by using this you are able to fetch the property that will provide the necessary data to fetch the secret.
 
-- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object that is used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](https://cloud.ibm.com/apidocs/secrets-manager?code=node){: external}.
+- `secretsManagerObject`: `secretsManagerObject` is a {{site.data.keyword.secrets-manager_short}} client object that is used for getting the secrets during the secret property evaluation. For more information on how to create a {{site.data.keyword.secrets-manager_short}} client object, see [here](/apidocs/secrets-manager/secrets-manager-v2?code=node){: external}.
 
 #### Evaluate a secret property
 {: #ac-integrate-node-evaluate-secret-property}

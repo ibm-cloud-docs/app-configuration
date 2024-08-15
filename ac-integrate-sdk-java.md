@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2022, 2024
+  years: 2022, 2023
 lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, java sdk, java server sdk, java

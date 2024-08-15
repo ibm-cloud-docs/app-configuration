@@ -33,6 +33,7 @@ toc:
       - ac-settings.md
       - ac-integrate-sdk.md
       - ac-terraform-tutorial.md
+      - ac-configuration-aggregator.md
   - navgroup:
       id: howto
       topics:
