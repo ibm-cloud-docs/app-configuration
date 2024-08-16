@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-20"
+  years: 2023, 2024
+lastupdated: "2024-04-15"
 
 keywords: app-configuration, app configuration, tutorials, terraform, infrastructure as code, iac, terraform provider
 
@@ -25,7 +25,7 @@ This tutorial shows you how to use Terraform to configure files like `provider.t
 {: shortdesc}
 
 ## Before you begin
-{: #ac-prereqs}
+{: #ac-terraform-prereqs}
 
 Ensure that the following prerequisites are in place:
 
@@ -175,7 +175,7 @@ variable "attribute_values" {
 
 `collections.tf` uses {{site.data.keyword.appconfig_short}} to create collections.
 
-```hcl 
+```hcl
 resource "ibm_app_config_collection" "app_config_collection" {
   guid          = ibm_resource_instance.terraform_demo.guid
   name          = var.collection_name
@@ -190,9 +190,9 @@ resource "ibm_app_config_collection" "app_config_collection" {
 
 `featureFlags.tf` uses {{site.data.keyword.appconfig_short}} to create feature flag.
 
-```hcl 
+```hcl
 resource "ibm_app_config_feature" "app_config_feature" {
-  guid               = ibm_resource_instance.terraform_demo.guid  
+  guid               = ibm_resource_instance.terraform_demo.guid
   name               = var.featureFlag_name
   type               = var.featureFlag_type
   feature_id         = var.featureFlag_id
@@ -519,7 +519,7 @@ ibm_resource_instance.terraform_demo: Creating...
 ibm_resource_instance.terraform_demo: Still creating... [10s elapsed]
 ibm_resource_instance.terraform_demo: Still creating... [20s elapsed]
 ibm_resource_instance.terraform_demo: Still creating... [30s elapsed]
-ibm_resource_instance.terraform_demo: Creation complete after 31s 
+ibm_resource_instance.terraform_demo: Creation complete after 31s
 ibm_app_config_collection.app_config_collection: Creating...
 ibm_app_config_segment.app_config_create_segment: Creating...
 ibm_app_config_feature.app_config_feature: Creating...
