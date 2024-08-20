@@ -31,9 +31,9 @@ toc:
       - ac-integrations.md
       - ac-snapshots.md
       - ac-settings.md
+      - ac-configuration-aggregator.md      
       - ac-integrate-sdk.md
       - ac-terraform-tutorial.md
-      - ac-configuration-aggregator.md
   - navgroup:
       id: howto
       topics:
