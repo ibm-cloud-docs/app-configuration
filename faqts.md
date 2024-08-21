@@ -50,6 +50,3 @@ When new resources are added to or removed from IBM Cloud for onboarded accounts
 - Check your internet connection: Ensure that your internet connection is stable and not experiencing  any disruptions.
 - Verify server status: Confirm that App Configuration Service is available and no incidents have been reported.
 - Adjust timeout settings: Some applications allow users to adjust timeout settings. If possible, consider extending the timeout duration to accommodate potential delays.
-
-
-{: codeblock}
