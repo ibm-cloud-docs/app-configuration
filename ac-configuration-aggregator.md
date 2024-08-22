@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-22"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -44,7 +44,7 @@ To enable configuration aggregator, complete these steps:
 ## Enable Configuration aggregator - Enterprise Account
 {: #ac-enable-configuration-aggregator-enterprise-account}
 
-**Pre-requisities**
+In order to enable configuration aggregator feature for enterprise account, user must complete following **Pre-requisities**:
 
 1. Create an {{site.data.keyword.appconfig_short}} instance at the top-level of the enterprise i.e enterprise account.
 
@@ -56,7 +56,8 @@ To enable configuration aggregator, complete these steps:
 
 1. Assign the Trusted profile template to the required accounts and account groups in the Enterprise.
 
-{: note} The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. For more details, refer [here](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in&interface=api#existing-acct-opt-in-api)
+The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. For more details, refer [here](/docs/secure-enterprise?topic=secure-enterprise-enterprise-managed-opt-in&interface=api#existing-acct-opt-in-api)
+{: note}
 
 To enable configuration aggregator for an enterprise account, complete above pre-requisites and following steps:
 
@@ -79,6 +80,7 @@ To enable configuration aggregator for an enterprise account, complete above pre
    ![Enable Configuration Aggregator - Enable Recording - Enterprise Account](images/config-aggr-ent-enable.png "Enable Recording - Enterprise Account"){: caption="Figure 6. Enable Recording - Enterprise Account" caption-side="bottom"}
 
 ## Retrieveing Resource Metadata
+
 {: #ac-enable-configuration-aggregator-query-configs}
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.

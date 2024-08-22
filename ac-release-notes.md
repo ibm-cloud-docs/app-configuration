@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-22"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin,
 
