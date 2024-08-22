@@ -38,14 +38,20 @@ client.emitter.on('configurationUpdate', () => {
 ```
 
 ## What happens if resource collection is not enabled for the account as part of the Configuration aggregator and the user attempts to access configurations via the /configs query API?
+{: #faq-ac-resource}
+{: faq}
 
 If resource collection is not enabled for the account and the user tries to access configurations using the /configs API, a 403 Forbidden error will be returned. The user needs to enable resource collection for the account to resolve this issue.
 
 ## How is the resource collection updated as part of the Configuration aggregator when new resources are added to or removed from IBM Cloud for onboard accounts?
+{: #faq-ac-updated}
+{: faq}
 
 When new resources are added to or removed from IBM Cloud for onboarded accounts, the resource configuration will be updated automatically. If the changes are not updated within 24 hours, you can contact the IBM support.
 
 ## How can I troubleshoot client timeouts?
+{: #faq-ac-troubleshoot}
+{: faq}
 
 - Check your internet connection: Ensure that your internet connection is stable and not experiencing  any disruptions.
 - Verify server status: Confirm that App Configuration Service is available and no incidents have been reported.

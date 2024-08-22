@@ -80,7 +80,6 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.configaggregatorsettings.list` | Called to view the settings configuration or failed to list |
 | `apprapp.configaggregatorstatus.list` | Called to view status and time when the last configuration got updated or failed to list. |
 | `apprapp.configaggregator.query` | Called to list the resource configurations. |
-
 {: caption="Table 1. Overview of {{site.data.keyword.appconfig_short}} actions that generate {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
