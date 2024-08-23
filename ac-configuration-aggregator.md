@@ -44,15 +44,16 @@ To enable configuration aggregator, complete these steps:
 ## Enable Configuration aggregator - Enterprise Account
 {: #ac-enable-configuration-aggregator-enterprise-account}
 
-In order to enable configuration aggregator feature for enterprise account, user must complete following **Pre-requisities**:
+**In order to enable configuration aggregator feature for enterprise account, user must complete following Pre-requisities**:
 
 1. Create an {{site.data.keyword.appconfig_short}} instance at the top-level of the enterprise i.e enterprise account.
 
 1. Create a Trusted Profile Template providing access for the {{site.data.keyword.appconfig_short}} service instance to the IAM enabled services and Account Management services. Refer [here](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api)
 
    ![Enable Configuration Aggregator - Trusted Profile Template](images/tp-template.png "Trusted Profile Template - Enterprise Account"){: caption="Figure 4. Trusted Profile Template - Enterprise Account" caption-side="bottom"}
-   The trusted profile template cannot be assigned to the enterprise account i.e the top level account of the enterprise. If you choose to collect metadata of resources in the enterprise account, you should create a separate trusted profile that should be applied at the top level account additionally.
-   {: note}
+
+The trusted profile template cannot be assigned to the enterprise account i.e the top level account of the enterprise. If you choose to collect metadata of resources in the enterprise account, you should create a separate trusted profile that should be applied at the top level account additionally.
+{: note}
 
 1. Assign the Trusted profile template to the required accounts and account groups in the Enterprise.
 
@@ -79,7 +80,7 @@ To enable configuration aggregator for an enterprise account, complete above pre
 
    ![Enable Configuration Aggregator - Enable Recording - Enterprise Account](images/config-aggr-ent-enable.png "Enable Recording - Enterprise Account"){: caption="Figure 6. Enable Recording - Enterprise Account" caption-side="bottom"}
 
-## Retrieveing Resource Metadata
+## Retrieve Resource Metadata
 
 {: #ac-enable-configuration-aggregator-query-configs}
 
