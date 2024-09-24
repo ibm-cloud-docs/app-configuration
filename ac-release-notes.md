@@ -18,8 +18,8 @@ subcollection: app-configuration
 Stay up to date with the new features that are available for {{site.data.keyword.appconfig_short}} service.
 {: shortdesc}
 
-## August 2024
-{: #August-2024}
+## September 2024
+{: #September-2024}
 
 - Configuration Aggregator available now
 
@@ -28,7 +28,7 @@ Stay up to date with the new features that are available for {{site.data.keyword
 ## May 2024
 {: #May-2024}
 
-{{site.data.keyword.appconfig_full}} now has a Basic plan that provides support for Property management capabilities. There is no monthly instance cost. 
+{{site.data.keyword.appconfig_full}} now has a Basic plan that provides support for Property management capabilities. There is no monthly instance cost.
 
 
 
