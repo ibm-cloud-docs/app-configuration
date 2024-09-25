@@ -31,7 +31,7 @@ Review the release notes for September 2024.
 {: release-note}
 
 Configuration Aggregator available now
-:   {{site.data.keyword. appconfig_notm}}'s new capability to collect and query the metadata of {{site.data.keyword.cloud_notm}} resources for meeting governance and compliance initiatives.
+:   {{site.data.keyword.appconfig_notm}}'s collects and queries the metadata of {{site.data.keyword.cloud_notm}} resources for meeting governance and compliance initiatives.
 
 ## May 2024
 {: #May-2024}
@@ -60,7 +60,7 @@ Review the release notes for March 2024.
 
 {{site.data.keyword.appconfig_full}} is now available in the Frankfurt region.
 
-## Jan 2024
+## January 2024
 {: #Jan-2024}
 
 Review the release notes for January 2024.
