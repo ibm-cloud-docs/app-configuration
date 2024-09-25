@@ -115,6 +115,7 @@ toc:
       - ac-regions-endpoints.md
       - ac-sample-apps.md
       - ac-notices.md
+      - ac-release-notes_old.md
   - navgroup:
       id: help
       topics:
