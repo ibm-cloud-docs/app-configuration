@@ -1,0 +1,70 @@
+{
+    "version": 2,
+    "title": "App Configuration",
+    "introduction": "App Configuration is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments.",
+    "product_page": "https://www.ibm.com/products/app-configuration",
+    "console_page": "/catalog/services/app-configuration",
+    "section_topics": {
+      "links": [
+        {
+          "title": "Getting started with App Configuration",
+          "href": "/docs/app-configuration?topic=app-configuration-getting-started"
+        },
+        {
+          "title": "What is App Configuration?",
+          "href": "/docs/app-configuration?topic=app-configuration-ac-about"
+        },
+        {
+          "title": "App Configuration concepts",
+          "href": "/docs/app-configuration?topic=app-configuration-ac-overview"
+        },
+        {
+          "title": "How does App Configuration work?",
+          "href": "/docs/app-configuration?topic=app-configuration-ac-how-it-works"
+        },
+        {
+          "title": "Working with App Configuration",
+          "href": "/docs/app-configuration?topic=app-configuration-ac-appconfig"
+        }
+      ]
+    },
+    "section_highlights": [
+      {
+        "title": "Best Practices for Managing Your Feature Flags and Properties Using IBM Cloud App Configuration",
+        "description": "This blog post discusses the best practices to be followed while using App Configuration on IBM Cloud.",
+        "href": "https://www.ibm.com/blog/best-practices-for-managing-your-feature-flags-and-properties-using-ibm-cloud-app-configuration/",
+        "type": "blog"
+      },
+      {
+        "title": "IBM Cloud App Configuration: A Deep Dive on Use Cases",
+        "description": "Exploring some of the most common use cases for IBM Cloud App Configuration.",
+        "href": "https://www.ibm.com/blog/ibm-cloud-app-configuration-a-deep-dive-on-use-cases/",
+        "type": "blog"
+      }
+    ],
+    "section_devtools": {
+      "api": "/apidocs/app-configuration",
+      "cli": "/docs/app-configuration?topic=app-configuration-app-configuration-cli"
+    },
+    "section_updates": {
+      "view_more": "/docs/app-configuration?topic=app-configuration-ac-relnotes",
+      "tiles": [
+        {
+          "date": "20 September 2024",
+          "title": "Configuration Aggregator available. IBM Cloud App Configuration's collects and queries the metadata of IBM Cloud resources for meeting governance and compliance initiatives."
+        },
+        {
+          "date": "15 May 2024",
+          "title": "IBM Cloud App Configuration now has a basic plan to support the property management capabilities that do not have monthly instance cost."
+        },
+        {
+          "date": "15 April 2024",
+          "title": "Manage feature flags enablement by adding more workflow with IBM ServiceNow integration."
+        },
+        {
+          "date": "15 March 2024",
+          "title": "IBM Cloud App Configuration is now available in the Frankfurt region."
+        }
+      ]
+    }
+  }
