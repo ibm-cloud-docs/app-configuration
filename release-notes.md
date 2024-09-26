@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-09-25"
+  years: 2021, 2024
+lastupdated: "2024-09-26"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -27,7 +27,7 @@ Review the release notes for September 2024.
 {: shortdesc}
 
 ### 20 September 2024
-{: #ac-Sept2024}
+{: #ac-Sept202024}
 {: release-note}
 
 Configuration Aggregator available now
@@ -70,7 +70,7 @@ Review the release notes for January 2024.
 {: #ac-jan152024}
 {: release-note}
 
-Support for Resource Based Access Control.
+Support for Resource Based Access Control
 :   You can now create IAM policies that control individual resources access such as feature flags and properties by using [fine-grained access control](/docs/app-configuration?topic=app-configuration-ac-service-access-management).
 
 ### 1 January 2024
