@@ -26,12 +26,12 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 Review the release notes for September 2024.
 {: shortdesc}
 
-### 20 September 2024
+### 30 September 2024
 {: #ac-Sept2024}
 {: release-note}
 
 Configuration Aggregator available now
-:   {{site.data.keyword.appconfig_notm}}'s collects and queries the metadata of {{site.data.keyword.cloud_notm}} resources for meeting governance and compliance initiatives.
+:   {{site.data.keyword.appconfig_full}} collects and queries the metadata of {{site.data.keyword.cloud_notm}} resources for meeting governance and compliance initiatives.
 
 ## May 2024
 {: #May-2024}
