@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-09-24"
 
 keywords: app-configuration, app configuration, ac, integrations, event notifications, en
 
@@ -23,7 +23,7 @@ To send information to {{site.data.keyword.en_short}}, you must connect your {{s
 ## How events are collected and sent by {{site.data.keyword.appconfig_short}}?
 {: #ac-events-collected-and-sent-en}
 
-When an event of interest takes place in your {{site.data.keyword.appconfig_short}} instance, {{site.data.keyword.appconfig_short}} communicates with a connected {{site.data.keyword.en_short}} instance to forward a notification to a [supported destination](https://{DomainName}/docs/event-notifications?topic=event-notifications-en-destination).
+When an event of interest takes place in your {{site.data.keyword.appconfig_short}} instance, {{site.data.keyword.appconfig_short}} communicates with a connected {{site.data.keyword.en_short}} instance to forward a notification to a [supported destination](/docs/event-notifications?topic=event-notifications-supported-destinations).
 
 ## Events for {{site.data.keyword.appconfig_short}}
 {: #ac-en-int-events}
@@ -178,7 +178,7 @@ Review following table for more information about event notification properties.
 | Property | Description |
 | ---- | ---- |
 | `subject` | The subject of the event. It can be the ID of the feature flag being toggled. |
-| `type` | Describes the type of event. [See table.](/docs/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events)| 
+| `type` | Describes the type of event. [See table.](/docs/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events)|
 | `severity` | The level of severity of the event. [See table.](/docs/app-configuration?topic=app-configuration-ac-int-en#ac-en-int-events) |
 | `datacontenttype` | The MIME type of the data content. |
 | `data` | An object containing the metadata about the event. |

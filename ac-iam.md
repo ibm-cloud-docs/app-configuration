@@ -123,4 +123,8 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.config.action` | Manager | The ability to promote or restore the existing Git configurations. |
 | `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
 | `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
+| `apprapp.configaggregatorsettings.update` | Manager | The ability to enable configuration aggregator. |
+| `apprapp.configaggregatorsettings.list` | Manager, Writer, Config Operator, Reader | The ability to verify configuration aggregator is enabled or not. |
+| `apprapp.configaggregatorstatus.list` | Manager, Writer, Config Operator, Reader | The ability to view last configuration collection operation status and time. |
+| `apprapp.configaggregator.query` | Configuration Aggregator Reader | The ability to list the IBM cloud resources with their configurations. |
 {: caption="Table 3. Granular IAM action descriptions." caption-side="bottom"}

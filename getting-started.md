@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-08-13"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -16,6 +16,7 @@ subcollection: app-configuration
 {: #getting-started}
 
 {{site.data.keyword.appconfig_full}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments. Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags or properties, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting. You can also manage the properties for distributed applications centrally.
+{{site.data.keyword.appconfig_short}} also provides the option to enable or disable configuration aggregation. It facilitates a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for governance and compliance initiatives.
 {: shortdesc}
 
 {{site.data.keyword.appconfig_short}} currently offers four pricing [plans](/docs/app-configuration?topic=app-configuration-ac-faqs-usage#faq-ac-pricing): **Lite**, **Basic**, **Standard**, and **Enterprise**.
@@ -40,3 +41,5 @@ The basic steps that get you started:
 1. [Target collections to feature flags](/docs/app-configuration?topic=app-configuration-ac-feature-flags#collection-target-feature-flags) or [Target collections to properties](/docs/app-configuration?topic=app-configuration-ac-properties#collection-target-properties)
 
 1. [Enable feature flag](/docs/app-configuration?topic=app-configuration-ac-feature-flags#enabling-feature-flag) (ON/OFF).
+
+1. [Enable Configuration Aggregator](/docs/app-configuration?topic=app-configuration-ac-configuration-aggregator#ac-enable-configuration-aggregator-single-account) (ON/OFF).

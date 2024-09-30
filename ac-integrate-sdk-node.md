@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2024-04-15"
+lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_short}} service provides SDK to integrate with your Node.js microservice or application.
 {: shortdesc}
 
-Version v0.4.0 has changes to the return value of `getCurrentValue` method. Hence, if you are already using a version lesser than v0.4.0, read the [migration guide](https://github.com/IBM/appconfiguration-node-sdk/blob/master/docs/v0.3-v0.4.md){: external} before you upgrade the SDK to latest.
+Version v0.4.0 has changes to the return value of `getCurrentValue` method. Hence, if you are already using a version lesser than v0.4.0, read the [migration guide](https://github.ibm.com/devx-app-services/appconfiguration-node-sdk/blob/development/docs/v0.3-v0.4.md) before you upgrade the SDK to latest.
 {: important}
 
 ## Integrating server SDK for Node

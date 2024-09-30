@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2022, 2024
+  years: 2022
 lastupdated: "2024-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
