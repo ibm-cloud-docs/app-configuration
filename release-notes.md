@@ -24,7 +24,6 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #September-2024}
 
 Review the release notes for September 2024.
-{: shortdesc}
 
 ### 20 September 2024
 {: #app-configuration-Sept2024}
@@ -37,7 +36,6 @@ Configuration Aggregator available now
 {: #May-2024}
 
 Review the release notes for May 2024.
-{: shortdesc}
 
 ### 15 May 2024
 {: #app-configuration-may1524}
@@ -52,19 +50,18 @@ Change in {{site.data.keyword.appconfig_full}} basic plan
 {: #Mar-2024}
 
 Review the release notes for March 2024.
-{: shortdesc}
 
 ### 15 March 2024
 {: #app-configuration-mar1524}
 {: release-note}
 
-{{site.data.keyword.appconfig_full}} is now available in the Frankfurt region.
+Availability in Frankfurt region
+:   {{site.data.keyword.appconfig_full}} is now available in the Frankfurt region.
 
 ## January 2024
 {: #Jan-2024}
 
 Review the release notes for January 2024.
-{: shortdesc}
 
 ### 15 January 2024
 {: #app-configuration-jan1524}
