@@ -42,7 +42,7 @@ subcollection: app-configuration
 {:term: .term}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-#  I have used targeting to override flag and property values for a segment, but the default values are still being applied.
+# I have used targeting to override flag and property values for a segment, but the default values are still being applied.
 {: #ac-troubleshooting-segment}
 {: troubleshoot}
 {: support}
