@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-02"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -15,7 +15,7 @@ content-type: release-note
 {{site.data.keyword.attribute-definition-list}}
 
 # Release notes
-{: #app-configuration-relnotes}
+{: #ac-relnotes}
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
