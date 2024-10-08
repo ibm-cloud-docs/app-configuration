@@ -30,8 +30,6 @@ The basic steps that get you started:
 
 1. [Create a collection](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection)
 
-1. [Set up environments, feature flags, and properties](/docs/app-configuration?topic=app-configuration-ac-ff-prop-env)
-
 1. [Integrate {{site.data.keyword.appconfig_short}} service SDKs](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)
 
 1. [Create segments](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment)

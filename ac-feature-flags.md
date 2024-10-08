@@ -32,6 +32,8 @@ By default, the **Feature flags** page displays the list of feature flags that a
 
 ![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="Figure 1. List of feature flags" caption-side="bottom"}
 
+
+
 ## Create a feature flag
 {: #ac-create-feature-flag}
 
