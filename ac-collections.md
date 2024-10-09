@@ -28,11 +28,11 @@ To create a collection, complete these steps:
 
 1. From the {{site.data.keyword.appconfig_short}} console, click **Collections** from the navigation menu or from **Getting Started** > **Create a collection**.
 
-   ![List of collections](images/ac-collections-default.png "List of collections in the current {{site.data.keyword.appconfig_short}} service instance"){: caption="Figure 1. List of collections in the current {{site.data.keyword.appconfig_short}} service instance." caption-side="bottom"}
+   ![List of collections](images/ac-collections-default.png "List of collections in the current {{site.data.keyword.appconfig_short}} service instance"){: caption="List of collections in the current {{site.data.keyword.appconfig_short}} service instance." caption-side="bottom"}
 
 1. Click **Create**. The side panel opens with fields for creating a new collection.
 
-   ![Create a collection](images/ac-collections-create.png "Creating a collection"){: caption="Figure 2. {{site.data.keyword.appconfig_short}} service creating a new collection" caption-side="bottom"}
+   ![Create a collection](images/ac-collections-create.png "Creating a collection"){: caption="{{site.data.keyword.appconfig_short}} service creating a new collection" caption-side="bottom"}
 
 1. Provide the collection details:
    - **Name** - name of the collection.
@@ -47,7 +47,7 @@ To create a collection, complete these steps:
 
 The overflow menu for each of the collection (three vertical dots) consists of **Edit**, **View features**, and **Delete** operations.
 
-![Overflow menu for a collection](images/ac-collections-overflow-menu.png "Overflow menu for a collection"){: caption="Figure 3. Overflow menu for a collection" caption-side="bottom"}
+![Overflow menu for a collection](images/ac-collections-overflow-menu.png "Overflow menu for a collection"){: caption="Overflow menu for a collection" caption-side="bottom"}
 
 - When **Edit** option is selected, you can change the values for **Name**, **Tags**, and **Description** fields.
 - When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected collection. Delete option permanently deletes the collection, this action cannot be undone.

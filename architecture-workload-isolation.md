@@ -27,7 +27,7 @@ Learn about the {{site.data.keyword.appconfig_full}} service architecture, the s
 
 The data is stored across multiple zones in each region for high availability. Data that is stored is encrypted and persisted in a database cluster that is spread across availability zones. All databases connections use TLS/SSL encryption for data in transit.
 
-![Architecture](images/arch.png "Architecture diagram"){: caption="Figure 1. {{site.data.keyword.appconfig_notm}} architecture" caption-side="bottom"}
+![Architecture](images/arch.png "Architecture diagram"){: caption="{{site.data.keyword.appconfig_notm}} architecture" caption-side="bottom"}
 
 The Feature server component provides the API interface to the {{site.data.keyword.appconfig_short}} service.
 

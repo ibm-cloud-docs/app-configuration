@@ -27,7 +27,7 @@ After initialization, the application receives updated values in two ways depend
 
 During normal operation, various metrics are sent back to the AC cloud service (#6 in Figure 1) so that the service can operate properly and so that you can monitor its operation.
 
-![Overview](images/ac-how-it-works.png "How it works diagram"){: caption="Figure 1. How App Configuration works" caption-side="bottom"}
+![Overview](images/ac-how-it-works.png "How it works diagram"){: caption="How App Configuration works" caption-side="bottom"}
 
 ## Operation when something goes wrong
 {: #ac-something-goes-wrong}

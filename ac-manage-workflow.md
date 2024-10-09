@@ -35,7 +35,7 @@ To integrate with ServiceNow workflow, perform the following steps:
 1. Click **Manage Workflow**. The **Manage workflow** side-panel displays. 
   
 
-   ![Manage external workflow](images/ac-sn-19.png "Manage external workflow"){: caption="Figure 2. Manage external workflow" caption-side="bottom"}
+   ![Manage external workflow](images/ac-sn-19.png "Manage external workflow"){: caption="Manage external workflow" caption-side="bottom"}
 
 1. For External workflow, below are the steps to follow.
 
@@ -80,34 +80,34 @@ Follow these steps to add a mandatory tag to the change request for the External
 
 1. Open an existing Change Request.
 
-   ![ServiceNow change request](images/ac-sn-08.png "ServiceNow change request"){: caption="Figure 3. ServiceNow change request" caption-side="bottom"}
+   ![ServiceNow change request](images/ac-sn-08.png "ServiceNow change request"){: caption="ServiceNow change request" caption-side="bottom"}
 
 1. Click the additional actions icon to open up the additional options.
 
-   ![ServiceNow additional actions](images/ac-sn-09.png "ServiceNow additional actions"){: caption="Figure 4. ServiceNow additional actions" caption-side="bottom"}
+   ![ServiceNow additional actions](images/ac-sn-09.png "ServiceNow additional actions"){: caption="ServiceNow additional actions" caption-side="bottom"}
 
 1. Click **Configure** and select the **Form Layout**.
 
-   ![Form Layout](images/ac-sn-10.png "Form Layout"){: caption="Figure 5. ServiceNow additional configure option - Form Layout" caption-side="bottom"}
+   ![Form Layout](images/ac-sn-10.png "Form Layout"){: caption="ServiceNow additional configure option - Form Layout" caption-side="bottom"}
 
 1. In the **Form Layout** under **Form view and section**, select **Change Request** and create a new field with **Name** exactly as *Appconfiguration tag*, **Type** as *String*, and **Field length** as *Medium (100)*.
 
    Make sure to enter the field Name exactly as **Appconfiguration tag** (case sensitive).
    {: note}
 
-   ![Create new field](images/ac-sn-11.png "Create new field"){: caption="Figure 6. ServiceNow additional configure option - Form Layout - Create new field" caption-side="bottom"}
+   ![Create new field](images/ac-sn-11.png "Create new field"){: caption="ServiceNow additional configure option - Form Layout - Create new field" caption-side="bottom"}
 
 1. Click **Add**. Once added, the new field will be shown in the **Available** section.
 
-   ![Created new field displayed in Available section](images/ac-sn-12.png "Created new field displayed in Available section"){: caption="Figure 7. ServiceNow additional configure option - Form Layout - new field displayed in Available section" caption-side="bottom"}
+   ![Created new field displayed in Available section](images/ac-sn-12.png "Created new field displayed in Available section"){: caption="ServiceNow additional configure option - Form Layout - new field displayed in Available section" caption-side="bottom"}
 
 1. Select *Appconfiguration tag* from the **Available** section and add it to **Selected** section.
 
-   ![Selecting new field from Available section to Selected section](images/ac-sn-13.png "Selecting new field from Available section to Selected section"){: caption="Figure 8. ServiceNow additional configure option - Form Layout - selecting new field from Available section to Selected section" caption-side="bottom"}
+   ![Selecting new field from Available section to Selected section](images/ac-sn-13.png "Selecting new field from Available section to Selected section"){: caption="ServiceNow additional configure option - Form Layout - selecting new field from Available section to Selected section" caption-side="bottom"}
 
 1. You can see the new field appearing in the change request.
 
-   ![New field displayed in the change request](images/ac-sn-14.png "New field displayed in the change request"){: caption="Figure 9. New field displayed in the change request" caption-side="bottom"}
+   ![New field displayed in the change request](images/ac-sn-14.png "New field displayed in the change request"){: caption="New field displayed in the change request" caption-side="bottom"}
 
    Field value is added by {{site.data.keyword.appconfig_short}} service while creating new change requests. Hence, do not modify the value or add any other value to **Appconfiguration tag** field. Modifying or adding any other value to the field can lead to ignoring the change request events.
    {: important}
@@ -123,15 +123,15 @@ Follow these steps to register or add webhook script to your ServiceNow instance
 
 1. Click the **All** tab and search for *Business Rules listed under System Definitions*.
 
-   ![ServiceNow All tab](images/ac-sn-01.png "ServiceNow All tab"){: caption="Figure 10. ServiceNow - Business Rules listed under System Definitions" caption-side="bottom"}
+   ![ServiceNow All tab](images/ac-sn-01.png "ServiceNow All tab"){: caption="ServiceNow - Business Rules listed under System Definitions" caption-side="bottom"}
 
 1. In the **Business Rules** page, click the **New** button.
 
-   ![New Business Rule](images/ac-sn-02.png "Create new Business Rule"){: caption="Figure 11. ServiceNow - Create new business rule" caption-side="bottom"}
+   ![New Business Rule](images/ac-sn-02.png "Create new Business Rule"){: caption="ServiceNow - Create new business rule" caption-side="bottom"}
 
 1. In the new record, add the **Name**, select the table to be *Change Request*. Select the **Advanced** check box to see the advanced option tab.
 
-   ![Advanced option to add webhook script](images/ac-sn-03.png "Advanced option to add webhook script"){: caption="Figure 12. Advanced option to add webhook script" caption-side="bottom"}
+   ![Advanced option to add webhook script](images/ac-sn-03.png "Advanced option to add webhook script"){: caption="Advanced option to add webhook script" caption-side="bottom"}
 
 1. In the **Advanced** option tab, add the webhook script.
 
@@ -236,7 +236,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
 
 1. Navigate to **When to run** tab and select the **Update** checkbox.
 
-   ![ServiceNow - When to run tab](images/ac-sn-17.png "ServiceNow - When to run tab"){: caption="Figure 13. ServiceNow - When to run tab" caption-side="bottom"}
+   ![ServiceNow - When to run tab](images/ac-sn-17.png "ServiceNow - When to run tab"){: caption="ServiceNow - When to run tab" caption-side="bottom"}
 
 1. Click **Submit** to save the details.
 
@@ -254,19 +254,19 @@ Follow these steps:
 
 1. Click the **All** tab and search for *sys_properties.LIST* and press **Enter**. Alternately, you can go to https://{{instanceid}}.service-now.com/sys_properties_list.do, where **instanceid** is your ServiceNow instance ID.
 
-   ![ServiceNow All tab](images/ac-sn-04.png "ServiceNow All tab"){: caption="Figure 14. ServiceNow - All tab" caption-side="bottom"}
+   ![ServiceNow All tab](images/ac-sn-04.png "ServiceNow All tab"){: caption="ServiceNow - All tab" caption-side="bottom"}
 
 1. The **System properties** details gets displayed.
 
-   ![System properties](images/ac-sn-05.png "System properties"){: caption="Figure 15. ServiceNow - System properties" caption-side="bottom"}
+   ![System properties](images/ac-sn-05.png "System properties"){: caption="ServiceNow - System properties" caption-side="bottom"}
 
 1. Click **New** to create a new system property.
 
-   ![New system property](images/ac-sn-06.png "New system property"){: caption="Figure 16. ServiceNow - New system property" caption-side="bottom"}
+   ![New system property](images/ac-sn-06.png "New system property"){: caption="ServiceNow - New system property" caption-side="bottom"}
 
 1. Add the following details to add the token. Use the password2 type to store the key. This type will encrypt the data and can only be decrypted with the ServiceNow instance.
 
-   ![System property](images/ac-sn-07.png "System property"){: caption="Figure 17. ServiceNow - System property" caption-side="bottom"}
+   ![System property](images/ac-sn-07.png "System property"){: caption="ServiceNow - System property" caption-side="bottom"}
 
 1. Click **Submit** to save the key in ServiceNow instance. Once saved, you can see that the data is encrypted.
 
@@ -281,19 +281,18 @@ Follow these steps:
 
 1. Click the **All** tab and search for *sys_properties.LIST* and press **Enter**. Alternately, you can go to https://{{instanceid}}.service-now.com/sys_properties_list.do, where **instanceid** is your ServiceNow instance ID.
 
-   ![ServiceNow All tab](images/ac-sn-04.png "ServiceNow All tab"){: caption="Figure 18. ServiceNow - All tab" caption-side="bottom"}
+   ![ServiceNow All tab](images/ac-sn-04.png "ServiceNow All tab"){: caption="ServiceNow - All tab" caption-side="bottom"}
 
 1. The **System properties** details gets displayed.
 
-   ![System properties](images/ac-sn-05.png "System properties"){: caption="Figure 19. ServiceNow - System properties" caption-side="bottom"}
+   ![System properties](images/ac-sn-05.png "System properties"){: caption="ServiceNow - System properties" caption-side="bottom"}
 
 1. Click **New** to create a new system property.
 
-   ![New system property](images/ac-sn-18.png "New system property"){: caption="Figure 20. ServiceNow - New system property" caption-side="bottom"}
+   ![New system property](images/ac-sn-18.png "New system property"){: caption="ServiceNow - New system property" caption-side="bottom"}
 
 1. Add the {{site.data.keyword.appconfig_short}} instance ID. Use the password2 type to store the key. This type will encrypt the data and can only be decrypted with the ServiceNow instance.
 
-   ![System property](images/ac-sn-15.png "System property"){: caption="Figure 21. ServiceNow - System property" caption-side="bottom"}
+   ![System property](images/ac-sn-15.png "System property"){: caption="ServiceNow - System property" caption-side="bottom"}
 
 1. Click **Submit** to save the key in ServiceNow instance. Once saved, you can see that the data is encrypted.
-

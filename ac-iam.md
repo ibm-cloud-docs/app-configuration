@@ -51,7 +51,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Operator | As an operator, you can perform platform actions that are required to configure and operate service instances, such as viewing a service's dashboard. |
 | Editor | As an editor, you can perform all platform actions except for managing the account and assigning access policies. |
 {: row-headers}
-{: caption="Table 1. IAM user roles" caption-side="bottom"}
+{: caption="IAM user roles" caption-side="bottom"}
 {: #platform-roles-table1}
 {: tab-title="Platform roles"}
 {: tab-group="app-rapp"}
@@ -66,7 +66,7 @@ Review the platform and service roles available and the actions that are mapped 
 | Config Operator | As a Config Operator, you can toggle the feature state. |
 | Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK. |
 {: row-headers}
-{: caption="Table 2. IAM service access roles" caption-side="bottom"}
+{: caption="IAM service access roles" caption-side="bottom"}
 {: #service-roles-table1}
 {: tab-title="Service roles"}
 {: tab-group="app-rapp"}
@@ -127,4 +127,4 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.configaggregatorsettings.list` | Manager, Writer, Config Operator, Reader | The ability to verify configuration aggregator is enabled or not. |
 | `apprapp.configaggregatorstatus.list` | Manager, Writer, Config Operator, Reader | The ability to view last configuration collection operation status and time. |
 | `apprapp.configaggregator.query` | Configuration Aggregator Reader | The ability to list the IBM cloud resources with their configurations. |
-{: caption="Table 3. Granular IAM action descriptions." caption-side="bottom"}
+{: caption="Granular IAM action descriptions." caption-side="bottom"}

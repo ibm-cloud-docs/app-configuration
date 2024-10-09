@@ -54,7 +54,7 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Frankfurt |`https://eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
-{: caption="Table 1. Public endpoints" caption-side="top"}
+{: caption="Public endpoints" caption-side="top"}
 
 ### Private endpoints
 {: #ac-private-endpoints}
@@ -68,4 +68,4 @@ If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a
 |London |`https://private.eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://private.au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Frankfurt |`https://private.eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
-{: caption="Table 2. Private endpoints" caption-side="top"}
+{: caption="Private endpoints" caption-side="top"}

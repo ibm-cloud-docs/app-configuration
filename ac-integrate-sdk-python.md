@@ -236,7 +236,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 | "a string text" | STRING | TEXT | `string` | `a string text` |
 | `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `Dictionary or List of Dictionary` | `{'firefox': {'name': 'Firefox', 'pref_url': 'about:config'}}` |
 | `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `Dictionary` | `{'men': ['John Smith', 'Bill Jones'], 'women': ['Mary Smith', 'Susan Williams']}` |
-{: caption="Table 1. Example outputs" caption-side="bottom"}
+{: caption="Example outputs" caption-side="bottom"}
 
 ### Feature flag
 {: #ac-integrate-pyth-feat-flag}

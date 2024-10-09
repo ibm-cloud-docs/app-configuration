@@ -25,7 +25,7 @@ Each feature flag or properties that are created has its own values, tags, and s
 
 By default, the environment page displays the list of environments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Environment ID**, date of creation, and **labels**.
 
-![List of environments](images/ac-environments-default.png "List of environments"){: caption="Figure 1. List of environments" caption-side="bottom"}
+![List of environments](images/ac-environments-default.png "List of environments"){: caption="List of environments" caption-side="bottom"}
 
 ## Create an environment
 {: #ac-create-environment}
@@ -36,7 +36,7 @@ To create an environment, complete these steps:
 
 1. Click **Create**. The side panel opens with fields for creating a new environment.
 
-   ![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Figure 2. Creating a new environment" caption-side="bottom"}
+   ![Create environment](images/ac-environments-create.png "Creating environment"){: caption="Creating a new environment" caption-side="bottom"}
 
 1. Provide the following environment details:
    - **Name** - name of the environment.
@@ -52,7 +52,7 @@ To create an environment, complete these steps:
 
 The overflow menu for each of the environment (three vertical dots) consists of **Edit** and **Delete** operations.
 
-![Overflow menu for an environment](images/ac-environments-overflow-menu.png "Overflow menu for an environment"){: caption="Figure 3. Overflow menu for an environment" caption-side="bottom"}
+![Overflow menu for an environment](images/ac-environments-overflow-menu.png "Overflow menu for an environment"){: caption="Overflow menu for an environment" caption-side="bottom"}
 
 - When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, and modify the **Color code**.
 - When **Delete** option is selected, a confirmation window is displayed to seek confirmation to delete the selected environment.

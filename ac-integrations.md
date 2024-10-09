@@ -20,9 +20,8 @@ Integrations in {{site.data.keyword.appconfig_short}} represent list of other {{
 
 The **Integrations** page displays the services supported along with integrations in the current {{site.data.keyword.appconfig_short}} service. Following service integrations are supported:
 
-![List of integrations](images/ac-integrations-default.png "List of integrations"){: caption="Figure 1. List of integrations" caption-side="bottom"}
+![List of integrations](images/ac-integrations-default.png "List of integrations"){: caption="List of integrations" caption-side="bottom"}
 
 1. **Key Management** - You can encrypt the data that you store in {{site.data.keyword.cloud_notm}} databases by using encryption keys that you can control. Manage the lifecycle of your encryption keys that are used for your {{site.data.keyword.cloud_notm}} resources, services and applications. For more information, see [Integrating with a Key management service](/docs/app-configuration?topic=app-configuration-ac-int-key-management).
 
 1. **{{site.data.keyword.en_short}}** - Enable lifecycle notifications for your {{site.data.keyword.appconfig_short}} instance by connecting an {{site.data.keyword.en_short}} service instance. For more information, see [Integrating with {{site.data.keyword.en_short}} service](/docs/app-configuration?topic=app-configuration-ac-int-en).
-

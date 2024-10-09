@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-09"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -32,7 +32,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | London | London |
 | Sydney | Sydney |
 | Frankfurt | Frankfurt |
-{: caption="Table 1. Deployment and monitoring regions" caption-side="bottom"}
+{: caption="Deployment and monitoring regions" caption-side="bottom"}
 
 Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
 {: note}
@@ -63,7 +63,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
 1. A new tab in your browser opens and displays the default dashboard that is named {{site.data.keyword.appconfig_notm}} within the context of your {{site.data.keyword.appconfig_short}} instance.
 
-   ![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Figure 1. Set up monitoring" caption-side="bottom"}
+   ![UI for Getting Started](images/ac-monitor-dashboard.png "Setting up monitoring"){: caption="Set up monitoring" caption-side="bottom"}
 
 ## Access your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
@@ -80,7 +80,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 
    Next, change the scope or make a copy of the default dashboard to monitor an {{site.data.keyword.appconfig_short}} service instance.
 
-   ![IBM Monitoring UI](images/ac-monitoring-dash.png "Monitoring dashboard"){: caption="Figure 2. IBM Cloud Monitoring dashboard" caption-side="bottom"}
+   ![IBM Monitoring UI](images/ac-monitoring-dash.png "Monitoring dashboard"){: caption="IBM Cloud Monitoring dashboard" caption-side="bottom"}
 
 ## Metrics available by Service Plan
 {: #metrics-by-plan}
@@ -92,7 +92,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 | [IBM Appconfig Instance API request](#ibm_apprapp_instance_api)| Yes | Yes |Yes | Yes |
 | [IBM Appconfig Evaluation Count](#ibm_apprapp_instance_eval)| Yes | Yes |Yes | Yes |
 | [IBM Appconfig Instance Unauth Request](#ibm_apprapp_instance_unauth)| Yes | Yes |Yes | Yes |
-{: caption="Table 2. List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
+{: caption="List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
 ### IBM Appconfig Instance API request
 {: #ibm_apprapp_instance_api}
@@ -105,7 +105,7 @@ API request count per instance: Count of config API requests made from the SDK.
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
-{: caption="Table 3. API request metadata" caption-side="bottom"}
+{: caption="API request metadata" caption-side="bottom"}
 
 ### IBM Appconfig Evaluation Count
 {: #ibm_apprapp_instance_eval}
@@ -118,7 +118,7 @@ Evaluation count per instance: Count of feature or property evaluations in the S
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
-{: caption="Table 4. Evaluation metadata" caption-side="bottom"}
+{: caption="Evaluation metadata" caption-side="bottom"}
 
 ### IBM Appconfig Instance unauth request
 {: #ibm_apprapp_instance_unauth}
@@ -129,4 +129,4 @@ Evaluation count per instance: Count of feature or property evaluations in the S
 | `Metric Type` | `gauge`|
 | `Value Type` | `none`|
 | `Segment By` | `ibm_ctype`, `ibm_service_name`, `ibm_location`, `ibm_scope`, `ibm_service_instance`, `ibm_apprapp_instance_id` |
-{: caption="Table 5. Instance metadata" caption-side="bottom"}
+{: caption="Instance metadata" caption-side="bottom"}
