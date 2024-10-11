@@ -30,7 +30,7 @@ By default, the **Feature flags** page displays the list of feature flags that a
 - A **String** type flag supports data in the form of text, and JSON or YAML files.
 - A **Numeric** flag supports integers.
 
-![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="Figure 1. List of feature flags" caption-side="bottom"}
+![List of feature flags](images/ac-list-feature-flag.png "List of feature flags"){: caption="List of feature flags" caption-side="bottom"}
 
 
 
@@ -45,7 +45,7 @@ To create a feature flag, complete these steps:
 
 1. Click **Create**. The side panel opens with fields for creating a new feature flag.
 
-   ![Create feature flag](images/ac-create-feature-flag.png "Creating feature flag"){: caption="Figure 2. Creating a new feature flag" caption-side="bottom"}
+   ![Create feature flag](images/ac-create-feature-flag.png "Creating feature flag"){: caption="Creating a new feature flag" caption-side="bottom"}
 
 1. Provide the feature flag details:
    - **Name** - name of the feature flag.
@@ -81,7 +81,7 @@ Each of the Flag type is having a default value.
 
 When you select the **Flag type** as *Boolean*, the **Default value** details are displayed:
 
-![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Figure 3. Feature flag type - Boolean" caption-side="bottom"}
+![Feature flag type - Boolean](images/ac-feature-flag-boolean.png "Selecting feature flag type as Boolean"){: caption="Feature flag type - Boolean" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. This value is returned by default when the toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
 
@@ -92,7 +92,7 @@ When you select the **Flag type** as *Boolean*, the **Default value** details ar
 
 When you select the **Flag type** as *String*, the **Default value** details are displayed:
 
-![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Figure 4. Feature flag type - String" caption-side="bottom"}
+![Feature flag type - String](images/ac-feature-flag-string.png "Selecting feature flag type as string"){: caption="Feature flag type - String" caption-side="bottom"}
 
 1. Select the **Format** of the string flag type from the list. Supported format is Text, JSON, and YAML. When JSON or YAML format is selected, provide the **Enabled value** and **Disabled value** in the selected format.
 
@@ -105,7 +105,7 @@ When you select the **Flag type** as *String*, the **Default value** details are
 
 When you select the **Flag type** as *Numeric*, the **Default value** details are displayed:
 
-![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Figure 5. Feature flag type - Numeric" caption-side="bottom"}
+![Feature flag type - Numeric](images/ac-feature-flag-numeric.png "Selecting feature flag type as numeric"){: caption="Feature flag type - Numeric" caption-side="bottom"}
 
 1. Select the **Enabled value** from the list. Only integer values are supported. This value is returned by default when toggle switch is set to *ON* for the feature flag. This value can be overridden when targeting to a segment.
 
@@ -166,7 +166,7 @@ Following are some of the percentage rollout scenarios:
 | Enabled  | No | 100% | NA | Yes | Enabled value |
 | Enabled  | Yes | 100% | Yes | Yes | Overriden value |
 | Enabled  | Yes | 100% | No | Yes | Enabled value |
-{: caption="Table 1. Percentage rollout scenarios" caption-side="bottom"}
+{: caption="Percentage rollout scenarios" caption-side="bottom"}
 
 ## Targeting a segment with a feature flag
 {: #targeting-segment-with-feature-flag}
@@ -177,7 +177,7 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 1. Click **Add targeting** in the required feature flag row to display the **Target flag to segments** side-panel.
 
-   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Figure 6. Target feature flag to segments" caption-side="bottom"}
+   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Target feature flag to segments" caption-side="bottom"}
 
 1. The **Feature rollout** displays the default **Rollout percentage** slider define when creating the feature flag. Modify the rollout percentage value, if required.
 
@@ -207,7 +207,7 @@ After you target a feature flag to a segment, click the toggle (ON/OFF) to enabl
 
 The overflow menu for each of the feature flag (three vertical dots) consists of **Edit**, **Copy**, and **Delete** operations and **Remove targeting** for those feature flags that are already targeted.
 
-![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Figure 7. Overflow menu for a feature flag" caption-side="bottom"}
+![Overflow menu for a feature flag](images/ac-feature-flag-overflow-menu.png "Overflow menu for a feature flag"){: caption="Overflow menu for a feature flag" caption-side="bottom"}
 
 - When **Edit** option is selected, you can change the **Name**, **Description**, add or delete **Tags**, change the **Flag type** and **Default value**, and add or remove collections for the **Flag availability across collections** field information.
 - When **Copy** option is selected, the feature flag information is copied, and you need to modify the **Name** of the feature flag. Optionally, modify the other details based on your need.

@@ -44,7 +44,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Europe | Frankfurt (eu-de)|MZR|
 | North America| Dallas (us-south)|MZR|
 | North America| Washington DC (us-east)|MZR|
-{: caption="Table 1. HA status for the regions" caption-side="bottom"}
+{: caption="HA status for the regions" caption-side="bottom"}
 
 Where:
 

@@ -31,15 +31,15 @@ To create a snapshot, complete these steps:
 
 1. From the {{site.data.keyword.appconfig_short}} console, click **Manage Snapshots** from the top menu bar.
 
-   ![Manage snapshots](images/ac-manage-snapshots.png "Manage snapshots"){: caption="Figure 1. Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
+   ![Manage snapshots](images/ac-manage-snapshots.png "Manage snapshots"){: caption="Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
 1. Click **Manage Snapshots**. The side panel opens up where you will be seeing the **New +** button.
 
-   ![Configure a snapshot](images/ac-configure-snapshots.png "Configure a snapshot"){: caption="Figure 2. {{site.data.keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
+   ![Configure a snapshot](images/ac-configure-snapshots.png "Configure a snapshot"){: caption="{{site.data.keyword.appconfig_short}} service creating a new snapshot" caption-side="bottom"}
 
 1. Click the **New +** button. You will see the page where you need to provide the snapshot details.
 
-   ![Configure a new snapshot](images/ac-create-snapshots.png "Configure a new snapshot"){: caption="Figure 3. {{site.data.keyword.appconfig_short}} service configuring a new snapshot" caption-side="bottom"}
+   ![Configure a new snapshot](images/ac-create-snapshots.png "Configure a new snapshot"){: caption="{{site.data.keyword.appconfig_short}} service configuring a new snapshot" caption-side="bottom"}
 
    - **Name** - name of the snapshot.
    - **Collection ID** - the collection identifier, you can select the value from the dropdown menu.
@@ -53,13 +53,13 @@ To create a snapshot, complete these steps:
       Make sure you have selected the permissions as in Figure 4 when creating the **Git token**.
       {: note}
 
-      ![Permissions to be selected during Git token creation](images/ac-snapshots-git-token.png "Permissions to be selected during Git token creation"){: caption="Figure 4. Permissions to be selected during Git token creation" caption-side="bottom"}
+      ![Permissions to be selected during Git token creation](images/ac-snapshots-git-token.png "Permissions to be selected during Git token creation"){: caption="Permissions to be selected during Git token creation" caption-side="bottom"}
 
 1. Click **Save**.
 
 1. Once the snapshot is created, it will be listed in the **Manage snapshots** window.
 
-   ![View configured snapshot](images/ac-list-snapshots.png "View configured snapshot"){: caption="Figure 5. {{site.data.keyword.appconfig_short}} service view configured snapshots" caption-side="bottom"}
+   ![View configured snapshot](images/ac-list-snapshots.png "View configured snapshot"){: caption="{{site.data.keyword.appconfig_short}} service view configured snapshots" caption-side="bottom"}
 
 ## Create a GitHub snapshot
 {: #ac-promote-a-snapshot}
@@ -82,7 +82,7 @@ To restore a snapshot from GitHub, complete these steps:
 
 1. From the {{site.data.keyword.appconfig_short}} console, click **Manage Snapshots** from the top menu bar.
 
-   ![Manage snapshots](images/ac-restore-snapshots.png "Manage snapshots"){: caption="Figure 6. Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
+   ![Manage snapshots](images/ac-restore-snapshots.png "Manage snapshots"){: caption="Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
 1. Click **Manage Snapshots**. The side panel opens up with existing snapshots.
 

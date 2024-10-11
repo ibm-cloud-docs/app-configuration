@@ -18,7 +18,7 @@ subcollection: app-configuration
 Learn about {{site.data.keyword.appconfig_short}} concepts like service instance, targeting definition, and feature flag.
 {: shortdesc}
 
-![{{site.data.keyword.appconfig_short}} Overview](images/ac-overview.png "{{site.data.keyword.appconfig_short}} Overview diagram"){: caption="Figure 1. {{site.data.keyword.appconfig_short}} overview" caption-side="bottom"}
+![{{site.data.keyword.appconfig_short}} Overview](images/ac-overview.png "{{site.data.keyword.appconfig_short}} Overview diagram"){: caption="{{site.data.keyword.appconfig_short}} overview" caption-side="bottom"}
 
 ## Service instance
 {: #ac-service-instance}

@@ -250,7 +250,7 @@ format as shown in the table 1.
 | "a string text" | STRING | TEXT | `string` | `a string text` |
 | `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `map[string]interface{}` | `map[browsers:map[firefox:map[name:Firefox pref_url:about:config]]]` |
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams`  | STRING | YAML | `java.lang.String` | `"men:\n - John Smith\n - Bill Jones\women:\n - Mary Smith\n - Susan Williams"` |
-{: caption="Table 1. Example outputs" caption-side="bottom"}
+{: caption="Example outputs" caption-side="bottom"}
 
 ### Feature flag
 {: #ac-java-example-ff}

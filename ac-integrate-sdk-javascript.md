@@ -187,7 +187,7 @@ You can configure feature flags and properties with {{site.data.keyword.appconfi
 | "a string text" | STRING | TEXT | `string` | `a string text` |
 | `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
 |  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
-{: caption="Table 1. Example outputs" caption-side="bottom"}
+{: caption="Example outputs" caption-side="bottom"}
 
 ### Feature flag usage example
 {: #ac-js-feature-flag}

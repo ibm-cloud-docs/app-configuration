@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-09"
 
 keywords: app-configuration, app configuration, ac, integrations, event notifications, en
 
@@ -34,7 +34,7 @@ The following table lists the {{site.data.keyword.appconfig_short}} actions that
 | :--------- | :--------- | :------ | :------------- |
 | Test event | `com.ibm.cloud.apprapp.test_event` |   | Low |
 | Feature flag toggle | `com.ibm.cloud.apprapp.feature_flag_toggle` | enabled  \n disabled | High |
-{: caption="Table 1. Actions that generate event notifications" caption-side="bottom"}
+{: caption="Actions that generate event notifications" caption-side="bottom"}
 
 ## Enabling notifications with {{site.data.keyword.en_short}}
 {: #ac-int-en-enable-notifications}
@@ -59,7 +59,7 @@ To integrate with a {{site.data.keyword.en_short}} service, perform the followin
 
 1. From **Event Notifications** tile, click **Connect +**. This displays the **Connect to {{site.data.keyword.en_short}}** side panel.
 
-   ![Create {{site.data.keyword.en_short}} integration](images/ac-integrations-en-create.png "Create {{site.data.keyword.en_short}} integration"){: caption="Figure 1. Create {{site.data.keyword.en_short}} integration" caption-side="bottom"}
+   ![Create {{site.data.keyword.en_short}} integration](images/ac-integrations-en-create.png "Create {{site.data.keyword.en_short}} integration"){: caption="Create {{site.data.keyword.en_short}} integration" caption-side="bottom"}
 
 1. Enter the **Source Details**. The source details provided will be referenced in {{site.data.keyword.en_short}}.
    - **Name** - Enter the name for your {{site.data.keyword.appconfig_short}} instance to be referenced in {{site.data.keyword.en_short}}.
@@ -192,4 +192,4 @@ Review following table for more information about event notification properties.
 | `id` | Event identifier. |
 | `specversion` | The version of CloudEvents specification that Event Notifications supports. |
 | `time` | UTC timestamp of when the event occurred.|
-{: caption="Table 2. Properties in an event notifications payload" caption-side="bottom"}
+{: caption="Properties in an event notifications payload" caption-side="bottom"}

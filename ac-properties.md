@@ -31,7 +31,7 @@ Property types:
 
 An example use case of properties can be to decide the number of instances of your application in a specific region. Create a property in {{site.data.keyword.appconfig_short}}, with type as numeric, and assign segments based on region value.
 
-![List of properties](images/ac-properties-default.png "List of properties"){: caption="Figure 1. List of properties" caption-side="bottom"}
+![List of properties](images/ac-properties-default.png "List of properties"){: caption="List of properties" caption-side="bottom"}
 
 ## Create a property
 {: #ac-create-properties}
@@ -44,7 +44,7 @@ To create a property, complete these steps:
 
 1. Click **Create**. The side panel opens with fields for creating a new property.
 
-   ![Create property](images/ac-create-property.png "Creating property"){: caption="Figure 2. Creating a new property" caption-side="bottom"}
+   ![Create property](images/ac-create-property.png "Creating property"){: caption="Creating a new property" caption-side="bottom"}
 
 1. Provide the property details:
    - **Name** - name of the property.
@@ -76,7 +76,7 @@ Each of the **Property type** is having a default value.
 
 When you select the **Property type** as *Boolean*, the **Default value** details are displayed:
 
-![Property type - Boolean](images/ac-property-boolean.png "Selecting property type as Boolean"){: caption="Figure 3. Property type - Boolean" caption-side="bottom"}
+![Property type - Boolean](images/ac-property-boolean.png "Selecting property type as Boolean"){: caption="Property type - Boolean" caption-side="bottom"}
 
 1. Select the **Property value** from the list (*True* or *False*). This value is returned by default and can be overridden when targeting to a segment.
 
@@ -85,7 +85,7 @@ When you select the **Property type** as *Boolean*, the **Default value** detail
 
 When you select the **Property type** as *String*, the **Default value** details are displayed:
 
-![Property type - String](images/ac-property-string.png "Selecting property type as string"){: caption="Figure 4. Property type - String" caption-side="bottom"}
+![Property type - String](images/ac-property-string.png "Selecting property type as string"){: caption="Property type - String" caption-side="bottom"}
 
 1. Specify the **Default value**. This value is returned by default and be overridden while targeting to a segment.
 
@@ -97,7 +97,7 @@ When you select the **Property type** as *String*, the **Default value** details
 
 When you select the **Property type** as *Numeric*, the **Default value** details are displayed:
 
-![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Figure 5. Property type - Numeric" caption-side="bottom"}
+![Property type - Numeric](images/ac-property-numeric.png "Selecting Property type as numeric"){: caption="Property type - Numeric" caption-side="bottom"}
 
 1. Specify the **Property value**. This value is returned by default and can be overridden while targeting to a segment.
 
@@ -106,7 +106,7 @@ When you select the **Property type** as *Numeric*, the **Default value** detail
 
 When you select the **Property type** as *Secret reference*, the **{{site.data.keyword.secrets-manager_short}} instance**, and **Default value** details are displayed:
 
-![Property type - Secret reference](images/ac-property-secret-reference.png "Selecting Property type as Secret reference"){: caption="Figure 6. Property type - Secret reference" caption-side="bottom"}
+![Property type - Secret reference](images/ac-property-secret-reference.png "Selecting Property type as Secret reference"){: caption="Property type - Secret reference" caption-side="bottom"}
 
 1. Specify the **{{site.data.keyword.secrets-manager_short}} instance** information from where the values need to be pulled.
 
@@ -137,7 +137,7 @@ You can roll out property to one or more target segments. You can set different 
 
 1. Click **Add targeting** in the required property row to display the **Target property to segments** side panel.
 
-   ![Target property to segments](images/ac-property-to-segments.png "Target property to segments"){: caption="Figure 7. Target property to segments" caption-side="bottom"}
+   ![Target property to segments](images/ac-property-to-segments.png "Target property to segments"){: caption="Target property to segments" caption-side="bottom"}
 
 1. Select **Segments** from the list. If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
 
@@ -155,7 +155,7 @@ If you try to target a property that is not linked to a collection, a window is 
 
 The overflow menu for each of the property (three vertical dots) consists of **Edit**, **Copy**, and **Delete** operations and **Remove targeting** for already targeted property.
 
-![Overflow menu for a property](images/ac-property-overflow-menu.png "Overflow menu for a property"){: caption="Figure 8. Overflow menu for a property" caption-side="bottom"}
+![Overflow menu for a property](images/ac-property-overflow-menu.png "Overflow menu for a property"){: caption="Overflow menu for a property" caption-side="bottom"}
 
 - When **Edit** is selected, you can change the **Name**, and **Description**, add or delete **Tags**, change the **Property type** and **Default value**, and add or remove collections for the **Availability across collections** field information.
 - When **Copy** is selected, the property information is copied, and you need to modify the **Name** of the property. Optionally, modify the other details based on your need.

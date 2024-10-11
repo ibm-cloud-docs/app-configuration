@@ -38,7 +38,7 @@ To integrate with a key management service, perform the following steps:
 
 1. From **Key Management** tile, click **Connect +**. This displays the **Key Management** side panel.
 
-   ![Create KMS integration](images/ac-integrations-kms-create.png "Create KMS integration"){: caption="Figure 1. Create KMS integration" caption-side="bottom"}
+   ![Create KMS integration](images/ac-integrations-kms-create.png "Create KMS integration"){: caption="Create KMS integration" caption-side="bottom"}
 
 1. Select **Key Protect** or **Hyper Protect Crypto Services** from the **Service** drop-down list, as per your requirement.
 

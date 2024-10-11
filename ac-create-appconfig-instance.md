@@ -29,7 +29,7 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog#services){: external}, search **{{site.data.keyword.appconfig_short}}** and select [{{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/catalog/services/apprapp){: external}. The service configuration screen opens.
 
-   ![Create an {{site.data.keyword.appconfig_short}} service instance](images/ac-create-instance.png "Creating an {{site.data.keyword.appconfig_short}} service instance"){: caption="Figure 1. {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
+   ![Create an {{site.data.keyword.appconfig_short}} service instance](images/ac-create-instance.png "Creating an {{site.data.keyword.appconfig_short}} service instance"){: caption="{{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
 1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), Frankfurt (eu-de) and Sydney (au-syd) regions are supported.
 
@@ -62,4 +62,4 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
 1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} console displayed.
 
-   ![{{site.data.keyword.appconfig_short}} console](images/ac-console.png "{{site.data.keyword.appconfig_short}} console"){: caption="Figure 2. {{site.data.keyword.appconfig_short}} console" caption-side="bottom"}
+   ![{{site.data.keyword.appconfig_short}} console](images/ac-console.png "{{site.data.keyword.appconfig_short}} console"){: caption="{{site.data.keyword.appconfig_short}} console" caption-side="bottom"}

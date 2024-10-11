@@ -54,7 +54,7 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 | Basic | There is no monthly instance cost. Pay only for what you use. | This plan includes property management capabilities only. |
 | Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. |
 | Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes percentage rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
-{: caption="Table 1. Pricing plans" caption-side="bottom"}
+{: caption="Pricing plans" caption-side="bottom"}
 
 ## What are the charges to use {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-charges}
@@ -190,7 +190,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Not Supported | Supported |
 | Event Notifications integration | Not Supported | Not Supported | Not Supported | Supported |
 | Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Not Supported | Supported |
-{: caption="Table 2. Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
+{: caption="Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
 {: note}
