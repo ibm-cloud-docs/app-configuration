@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-31"
+  years: 2021, 2024
+lastupdated: "2024-10-11"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -33,7 +33,7 @@ The following information are stored when you use {{site.data.keyword.appconfig_
 These information can be deleted using the APIs mentioned [here](https://cloud.ibm.com/apidocs/app-configuration){: external}. Deletion of above information is deleted permanently from the service.
 
 ## How your data is stored and encrypted in {{site.data.keyword.appconfig_short}}
-{: #ac-data-encryption}
+{: #ac-data-store-encryption}
 
 {{site.data.keyword.appconfig_short}} stores and encrypts definitions of environments, collections, features, properties and segment rules. This data is encrypted at rest.  As a multi-tenant service, any data stored is encrypted with the default IBM provided key for all tenants.
 
