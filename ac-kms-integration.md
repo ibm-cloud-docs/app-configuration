@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-01-31"
+  years: 2022, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating with a Key management service
+# Integrating with Key Management
 {: #ac-int-key-management}
 
 You can encrypt the data that you store in {{site.data.keyword.cloud_notm}} databases by using encryption keys that you can control. Manage the lifecycle of your encryption keys that are used for your {{site.data.keyword.cloud_notm}} resources, services and applications.

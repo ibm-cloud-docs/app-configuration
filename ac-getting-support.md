@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, getting help and support
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting help and support
+# Getting help and support for {{site.data.keyword.appconfig_short}}
 {: #ac-getting-help-and-support}
 
 {{site.data.keyword.appconfig_notm}} provides troubleshooting information to identify and resolve problems. {{site.data.keyword.appconfig_short}} also provides several avenues for troubleshooting problems and getting support. Depending on the level of help you need, use the information that is supplied or open an IBM support case.

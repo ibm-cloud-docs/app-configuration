@@ -15,64 +15,41 @@ toc:
       id: learn
       topics:
       - getting-started.md
-      - ac-about.md
-      - ac-concepts.md
-      - ac-how-it-works.md
-      - release-notes.md
+      - ac-about1.md
+      - ac-create-appconfig-instance.md
+      - ac-responsibilities.md
+      - topic: release-notes.md
+        navtitle: Release notes
   - navgroup:
       id: tutorial
       topics:
       - ac-tutorial.md
-      - ac-create-appconfig-instance.md
-      - ac-environments.md
-      - ac-collections.md
-      - ac-feature-flags.md
-      - ac-properties.md
-      - ac-segments.md
-      - ac-integrations.md
-      - ac-snapshots.md
-      - ac-settings.md
-      - ac-configuration-aggregator.md      
-      - ac-integrate-sdk.md
       - ac-terraform-tutorial.md
   - navgroup:
       id: howto
       topics:
-      - ac-ff-prop-env.md
-      - link:
-          label: Target feature flags to segments
-          href: /app-configuration/app-configuration-ac-feature-flags#targeting-segment-with-feature-flag
-      - link:
-          label: Target properties to segments
-          href: /app-configuration/app-configuration-ac-properties#targeting-segment-with-properties
+      - topicgroup:
+          label: Working with App Configuration
+          topics:
+          - ac-environments.md
+          - ac-collections.md
+          - ac-segments.md
+          - ac-feature-flags.md
+          - ac-properties.md
+          - ac-snapshots.md
+          - ac-settings.md
+          - ac-configuration-aggregator.md
       - topicgroup:
           label: Integrations
           topics:
+          - ac-integrations.md
           - ac-kms-integration.md
           - ac-en-integration.md
+          - ac-sm-integration.md
+          - ac-toolchain.md
           - ac-manage-workflow.md
-      - ac-toolchain.md
-      - ac-sm-integration.md
       - topicgroup:
-          label: Logging and monitoring
-          topics:
-          - ac-monitor.md
-      - topicgroup:
-          label: SDKs
-          topics:
-          - ac-integrate-sdk-node.md
-          - ac-integrate-sdk-python.md
-          - ac-integrate-sdk-go.md
-          - ac-integrate-sdk-java.md
-          - ac-integrate-sdk-android.md
-          - ac-integrate-sdk-javascript.md
-          - ac-integrate-sdk-react.md
-          - link:
-              label: App Configuration admin SDK for Go
-              href: https://{DomainName}/apidocs/app-configuration?code=go
-      - ac-integrate-offline.md
-      - topicgroup:
-          label: Enhance security
+          label: Enhancing security
           topics:
           - ac-iam.md
           - ac-iam-policies-environments.md
@@ -84,12 +61,18 @@ toc:
           - ac-cipher.md
           - architecture-workload-isolation.md
           - ac-audit.md
+      - ac-integrate-offline.md
       - ac-backup-restore-configuration.md
+      - ac-monitor.md
   - navgroup:
       id: reference
       topics:
       - topicgroup:
-          label: API & SDK reference
+          label: High availability and disaster recovery
+          topics:
+          - ac-high-availability.md
+      - topicgroup:
+          label: API reference
           topics:
           - link:
               label: App Configuration API
@@ -102,31 +85,41 @@ toc:
           - topic: ac-cli-changelog.md
             navtitle: CLI change log
       - topicgroup:
+          label: SDK reference
+          topics:
+          - ac-integrate-sdk.md
+          - ac-integrate-sdk-node.md
+          - ac-integrate-sdk-python.md
+          - ac-integrate-sdk-go.md
+          - ac-integrate-sdk-java.md
+          - ac-integrate-sdk-android.md
+          - ac-integrate-sdk-javascript.md
+          - ac-integrate-sdk-react.md
+          - link:
+              label: App Configuration admin SDK for Go
+              href: https://{DomainName}/apidocs/app-configuration?code=go
+      - topicgroup:
           label: Terraform reference
           topics:
            - link:
               label: App Configuration Terraform
               href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_collection
-      - topicgroup:
-          label: High availability and disaster recovery
-          topics:
-          - ac-high-availability.md
       - ac-service-credentials.md
-      - ac-responsibilities.md
       - ac-regions-endpoints.md
       - ac-sample-apps.md
       - ac-notices.md
-      - ac-whats-new.md
   - navgroup:
       id: help
       topics:
-      - faq.md
-      - faqts.md
-      - ac-videos.md
+      - ac-getting-support.md
       - topicgroup:
-          label: Troubleshooting
+          label: FAQs for App Configuration
           topics:
-          - ac-getting-support.md
+          - faq.md
+          - faqts.md
+      - topicgroup:
+          label: Troubleshooting for App Configuration
+          topics:
           - ac-ts-ff.md
           - ac-ts-ff-eval.md
           - ac-ts-ff-eval-def.md

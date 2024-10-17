@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-02-19"
+  years: 2023, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question, can't create IAM credentials, can't regenerate IAM credentials, IAM credentials not working, IP address restrictions enabled, IP address not allowed
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get the message "You do not have permission to perform this action." when trying to use the {{site.data.keyword.appconfig_short}} service instance?
+# Why do I get the "You do not have permission to perform this action." message when trying to use the {{site.data.keyword.appconfig_short}} service instance?
 {: #ac-ip-address-not-allowed}
 {: troubleshoot}
 {: support}

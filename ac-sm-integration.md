@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-10-11"
+  years: 2022, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, secrets manager, secrets manager integration
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.secrets-manager_short}} integration
+# Integrating with {{site.data.keyword.secrets-manager_short}}
 {: #ac-sm-integration}
 
 {{site.data.keyword.secrets-manager_full_notm}} helps you to create secrets dynamically and lease them to applications while you control access from a single location. With {{site.data.keyword.secrets-manager_short}}, you can create, lease, and centrally manage secrets that are used in {{site.data.keyword.appconfig_short}} service or your custom-built applications.
@@ -37,4 +37,3 @@ Take these steps to get {{site.data.keyword.secrets-manager_short}} integrated w
 1. Create a property of type *Secret reference*. For more information, see [Properties](/docs/app-configuration?topic=app-configuration-ac-properties).
 
 1. Use the {{site.data.keyword.appconfig_short}} SDKs to connect your application to retrieve and use secrets from {{site.data.keyword.secrets-manager_short}}. For more information on how to access secrets with {{site.data.keyword.appconfig_short}} Node sdk, see [here](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks#ac-integrate-node-evaluate-secret-property).
-

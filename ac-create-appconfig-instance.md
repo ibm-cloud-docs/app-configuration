@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-05-02"
+  years: 2020, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Create an {{site.data.keyword.appconfig_short}} service instance
+# Creating an {{site.data.keyword.appconfig_short}} service instance
 {: #ac-create-an-instance}
 
 {{site.data.keyword.appconfig_short}} provides capabilities to deliver an agile development methodology by separating feature rollouts from regular release cycles. {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments.

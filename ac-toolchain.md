@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-03-31"
+  years: 2022, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, toolchain integration, toolchain, devops, continuous delivery, tekton, otc
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Toolchain Integration
+# Integrating with Toolchains
 {: #ac-toolchain-integration}
 
 Adopt a DevOps approach in your feature releases by using {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service and {{site.data.keyword.cloud_notm}} {{site.data.keyword.contdelivery_short}}. {{site.data.keyword.contdelivery_short}} includes toolchains that automate the building of your applications.

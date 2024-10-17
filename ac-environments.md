@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-11"
+  years: 2021, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, environment, environments, create environment
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Environments
+# Creating an environment
 {: #ac-environments}
 
 Environments in {{site.data.keyword.appconfig_short}} represent your application environments. Typical environments might be dev, staging, or production. Environments manage your feature flags and properties into deployments from development to production. Create your environments based on your development requirements.

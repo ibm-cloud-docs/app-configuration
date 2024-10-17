@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-11"
+  years: 2021, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 keywords: app-configuration, app configuration, sample apps
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Sample Apps
+# Sample apps
 {: #ac-sample-apps}
 
 Explore the sample apps to understand the features of {{site.data.keyword.appconfig_short}}.
@@ -23,4 +23,3 @@ Explore the sample apps to understand the features of {{site.data.keyword.appcon
 - [Python sample app](https://github.com/IBM/appconfiguration-samples/tree/master/python){: external}
 - [Android - Kotlin sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-kotlin){: external}
 - [Android - Java sample app](https://github.com/IBM/appconfiguration-samples/tree/master/android-java){: external}
-
