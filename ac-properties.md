@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-03-14"
+  years: 2021, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Properties
+# Targeting properties to segments
 {: #ac-properties}
 
 You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using [terraform plug-in](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/app_config_collection){: external} or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally by using {{site.data.keyword.appconfig_short}}.

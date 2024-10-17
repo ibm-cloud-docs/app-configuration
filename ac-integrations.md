@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-01-31"
+  years: 2022, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs, event notifications, en
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrations
+# Working with integrations
 {: #ac-integrations}
 
 Integrations in {{site.data.keyword.appconfig_short}} represent list of other {{site.data.keyword.cloud_notm}} services that are connected to your {{site.data.keyword.appconfig_short}} instance.

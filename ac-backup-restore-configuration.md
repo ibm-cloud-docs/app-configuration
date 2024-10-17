@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-09-28"
+  years: 2021, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, set up environments feature flags and properties, feature flags, properties, environments, backup, restore
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Backup and Restore instance configuration
+# Backing up and restoring instance configurations
 {: #ac-backup-restore-configuration}
 
 The ability to import and export data is essential for managing and maintaining instance setups. The usage of these functionalities makes it easier to perform procedures like system replication, backup, and version control by allowing users to smoothly move configuration settings between instances. Additionally, this config api offers to integrate seamlessly with version control systems like Git, allowing users to capture configuration snapshots and commit them to a repository. This integration not only provides a historical record of configuration changes but also facilitates easy rollback to previous configurations when needed. Users can confidently experiment with different configurations, knowing they can always revert to a known working state by restoring configurations from their Git repository, ensuring robust configuration management and system stability.

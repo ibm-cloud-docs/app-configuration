@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Manage workflow
+# Integrating with ServiceNow
 {: #ac-manage-workflow}
 
 As an app owner, you can manage feature flags enablement by adding additional workflow with ServiceNow&reg; integration with {{site.data.keyword.appconfig_short}}.

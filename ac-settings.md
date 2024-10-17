@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-30"
+  years: 2022, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, settings, cors, cross-origin resource sharing
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Settings
+# Adding domains to the allowlist
 {: #ac-settings}
 
 Use settings to add more configurations required by external applications to access {{site.data.keyword.appconfig_short}} resources. By default, the **Settings** page displays **Allowlist Domains**.

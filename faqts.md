@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -12,7 +12,7 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Operations FAQs for {{site.data.keyword.appconfig_short}}
+# FAQs for operations
 {: #ac-faqs-operations}
 
 FAQs for {{site.data.keyword.appconfig_short}} provides answers to common operations issues for {{site.data.keyword.appconfig_short}}.
