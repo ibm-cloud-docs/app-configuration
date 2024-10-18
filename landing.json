@@ -15,14 +15,6 @@
           "href": "/docs/app-configuration?topic=app-configuration-ac-about"
         },
         {
-          "title": "App Configuration concepts",
-          "href": "/docs/app-configuration?topic=app-configuration-ac-overview"
-        },
-        {
-          "title": "How does App Configuration work?",
-          "href": "/docs/app-configuration?topic=app-configuration-ac-how-it-works"
-        },
-        {
           "title": "Working with App Configuration",
           "href": "/docs/app-configuration?topic=app-configuration-ac-appconfig"
         }

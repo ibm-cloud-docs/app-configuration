@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-18"
 
 keywords: app-configuration, app configuration, ac, integrations, event notifications, en
 
@@ -23,7 +23,7 @@ To send information to {{site.data.keyword.en_short}}, you must connect your {{s
 ## How events are collected and sent by {{site.data.keyword.appconfig_short}}?
 {: #ac-events-collected-and-sent-en}
 
-When an event of interest takes place in your {{site.data.keyword.appconfig_short}} instance, {{site.data.keyword.appconfig_short}} communicates with a connected {{site.data.keyword.en_short}} instance to forward a notification to a [supported destination](/docs/event-notifications?topic=event-notifications-supported-destinations).
+When an event of interest takes place in your {{site.data.keyword.appconfig_short}} instance, {{site.data.keyword.appconfig_short}} communicates with a connected {{site.data.keyword.en_short}} instance to forward a notification to a [supported destination](/docs/event-notifications?topic=event-notifications-en-destination).
 
 ## Events for {{site.data.keyword.appconfig_short}}
 {: #ac-en-int-events}
