@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-10-18"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
 
@@ -47,7 +47,7 @@ Use `GET /v1/zones` to list the zones. By using `POST /v1/zones`, you can create
 You can determine which services are available by checking for [reference targets](/apidocs/context-based-restrictions#list-available-serviceref-targets).
 {: note}
 
-After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [delete](/docs/account?topic=account-context-restrictions-remove&interface=ui) them.
+After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/account?topic=account-context-restrictions-update#network-zones-remove) them. 
 
 ### Creating network zones by using the CBR UI
 {: #ac-cbr-create-zone-ui}
@@ -57,7 +57,7 @@ After you set the prerequisites and requirements, you can create zones in the UI
 Instead of creating a zone by using UI inputs, you can use the JSON code form to create a zone by clicking **Enter as JSON code**.
 {: note}
 
-After you create zones, you can also [update](/apidocs/context-based-restrictions#replace-zone) and [delete](/docs/account?topic=account-context-restrictions-remove&interface=ui) them.
+After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/account?topic=account-context-restrictions-update#network-zones-remove) them.
 
 ## Understanding network rules
 {: #ac-cbr-network-rules}
