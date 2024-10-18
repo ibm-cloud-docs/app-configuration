@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2021, 2024
+lastupdated: "2024-10-18"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -69,10 +69,3 @@ Review the release notes for January 2024.
 
 Support for Resource Based Access Control
 :   You can now create IAM policies that control individual resources access such as feature flags and properties by using [fine-grained access control](/docs/app-configuration?topic=app-configuration-ac-service-access-management).
-
-### 1 January 2024
-{: #app-configuration-jan0124}
-{: release-note}
-
-Releases from 2021-2023
-:   For more information about the releases from 2021-2023, see [What's new?](/docs/app-configuration?topic=app-configuration-releases-notes#Sep-2023)
