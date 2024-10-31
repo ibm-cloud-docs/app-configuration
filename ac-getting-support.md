@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2020, 2024
+lastupdated: "2024-10-31"
 
 keywords: app-configuration, app configuration, getting help and support
 
@@ -20,13 +20,13 @@ subcollection: app-configuration
 
 When you have problems while you are working with {{site.data.keyword.appconfig_short}}, consider these options for getting help.
 
-By default, account users don't have access to create, update, search, or view cases. The account owner must provide users access by assigning an {{site.data.keyword.iamlong}} (IAM) access policy. For more information, see [Assigning user access for working with support cases](/docs/get-support?topic=get-support-access#access){: external}.
+By default, account users don't have access to create, update, search, or view cases. The account owner must provide users access by assigning an {{site.data.keyword.iamlong}} (IAM) access policy. For more information, see [Assigning user access for working with support cases](/docs/account?topic=account-access-cases){: external}.
 {: tip}
 
 ## Creating a cloud support case
 {: #ac-cloud-support-case}
 
-For information on how to create a cloud support case, see [Using the Support Center](/docs/get-support?topic=get-support-using-avatar){: external}.
+For information on how to create a cloud support case, see [Using the Support Center](/docs/account?topic=account-using-avatar){: external}.
 
 ### Creating a support case for UI issue
 {: #ac-ui-support-case}
