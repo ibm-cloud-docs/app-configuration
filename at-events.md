@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2024
+  years: 2018, 2024
 lastupdated: "2024-11-05"
 
-keywords: app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
+keywords: activity tracking, app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
 subcollection: app-configuration
 
@@ -13,9 +13,10 @@ subcollection: app-configuration
 {{site.data.keyword.attribute-definition-list}}
 
 # Activity tracking events for {{site.data.keyword.appconfig_short}}
-{: #ac-at_events}
+{: #at_events}
 
-{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.appconfig_short}}, generate activity tracking events. 
+
+{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.appconfig_short}}, generate activity tracking events.
 {: shortdesc}
 
 Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
@@ -24,20 +25,24 @@ You can use {{site.data.keyword.atracker_full_notm}}, a platform service, to rou
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
-As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro). 
+
+
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: important}
 
 ## Locations where activity tracking events are generated
 {: #at-locations}
 
-### Locations where activity tracking events are sent to {{site.data.keyword.appconfig_short}} hosted event search
+
+### Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search
 {: #at-legacy-locations}
 
-{{site.data.keyword.appconfig_notm}} sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following table.
+
+{{site.data.keyword.appconfig_short}} sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green}  | [Yes]{: tag-green}| [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #at-table-1}
 {: tab-title="Americas"}
@@ -57,7 +62,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green}| [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
 {: #at-table-3}
 {: tab-title="Europe"}
@@ -65,8 +70,11 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 {: class="simple-tab-table"}
 {: row-headers}
 
-### Locations where activity tracking events are sent by {{site.data.keyword.appconfig_short}}
+### Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}
 {: #atracker-locations}
+
+
+{{site.data.keyword.appconfig_short}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
@@ -90,7 +98,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green}| [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
 {: #atracker-table-3}
 {: tab-title="Europe"}
@@ -98,8 +106,9 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 {: class="simple-tab-table"}
 {: row-headers}
 
+
 ## Viewing activity tracking events for {{site.data.keyword.appconfig_short}}
-{: #at_ui}
+{: #at-viewing}
 
 Events that are generated by {{site.data.keyword.appconfig_short}} are automatically forwarded to the {{site.data.keyword.at_full_notm}} service instance available in the same location.
 
@@ -109,17 +118,20 @@ Events that are generated by {{site.data.keyword.appconfig_short}} are automatic
 
 1. [Start the {{site.data.keyword.at_full_notm}} web console](/docs/activity-tracker?topic=activity-tracker-launch) to access your events.
 
+
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #log-launch-standalone}
 
-For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation.](/docs/cloud-logs?topic=cloud-logs-instance-launch)
 
 
-## List of Data Events
-{: #ac-events}
+For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation.](/docs/cloud-logs?topic=cloud-logs-instance-launch).
+
+
+
+## List of data events
+{: #at_actions_data}
 
 The following list of {{site.data.keyword.appconfig_short}} events is sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 | Action             | Description      |
 | -------------------| -----------------|
