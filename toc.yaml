@@ -60,10 +60,13 @@ toc:
           - ac-managing-encryption.md
           - ac-cipher.md
           - architecture-workload-isolation.md
-          - ac-audit.md
       - ac-integrate-offline.md
       - ac-backup-restore-configuration.md
       - ac-monitor.md
+      - topicgroup:
+          label: Observability
+          topics:
+          - at-events.md
   - navgroup:
       id: reference
       topics:
