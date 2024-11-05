@@ -72,9 +72,9 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 |---------------------|-------------------------|-------------------|----------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
-{: #at-table-1}
+{: #atracker-table-1}
 {: tab-title="Americas"}
-{: tab-group="at"}
+{: tab-group="atracker"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -82,9 +82,9 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 |---------------------|------------------|------------------|--------------------|
 | [No]{: tag-red} | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
-{: #at-table-2}
+{: #atracker-table-2}
 {: tab-title="Asia Pacific"}
-{: tab-group="at"}
+{: tab-group="atracker"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -92,9 +92,9 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 |---------------------------------------------------------------|---------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
-{: #at-table-3}
+{: #atracker-table-3}
 {: tab-title="Europe"}
-{: tab-group="at"}
+{: tab-group="atracker"}
 {: class="simple-tab-table"}
 {: row-headers}
 
