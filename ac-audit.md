@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2024
 lastupdated: "2024-11-05"
 
-keywords: app-configuration activity tracker events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
+keywords: app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
 subcollection: app-configuration
 
