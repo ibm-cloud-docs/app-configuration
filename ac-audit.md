@@ -177,5 +177,5 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.config-aggregator.query` | Called to list the resource configurations. |
 {: caption="Actions that generate data events" caption-side="bottom"}
 
-If an unauthorized request is made for any of the actions in table 1, a management event with reason code 403 is emitted.
+If an unauthorized request is made for any of the actions in table 3, a management event with reason code 403 is emitted.
 {: note}
