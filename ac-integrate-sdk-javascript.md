@@ -15,7 +15,6 @@ subcollection: app-configuration
 # App Configuration JavaScript client SDK
 {: #ac-javascript}
 
-**Important Security Notice**
 To enhance the security of your applications using the `ibm-appconfiguration-js-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
 {: attention}
 
@@ -79,7 +78,8 @@ try {
 
 In the above snippet, the async function `initialiseAppConfig()` will return an `Promise<void>` that resolves when the configurations are successfully fetched. Else, throws error if unsuccessful.
 
-> :warning: It is expected that initialisation to be done **only once**.
+ It is expected that initialisation to be done **only once**.
+ {: important}
 
 After the SDK is initialised successfully the feature flag & properties can be retrieved using the `appConfigClient` as shown in the below code snippet.
 <details><summary>Expand to view the example snippet</summary>
@@ -110,10 +110,9 @@ where,
 - **collectionId**: ID of the collection created in App Configuration service instance under the **Collections** section.
 - **environmentId**: ID of the environment created in App Configuration service instance under the **Environments** section.
 
-:red_circle: **Important** :red_circle:
-
 Always use the encrypted APIKey to avoid exposing sensitive information.<br>
 Ensure that you create the service credentials with the **`Client SDK`** role, as it has the minimal access permissions that are suitable to use in browser-based applications.
+{: important}
 
 ### Examples for using feature and property-related APIs
 {: #ac-js-example}

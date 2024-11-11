@@ -15,8 +15,7 @@ subcollection: app-configuration
 # {{site.data.keyword.appconfig_short}} React client SDK
 {: #ac-react}
 
-**Important Security Notice**
-To enhance the security of your applications using the `ibm-appconfiguration-js-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
+To enhance the security of your applications using the `ibm-appconfiguration-react-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
 {: attention}
 
 ## Overview
@@ -79,10 +78,9 @@ import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
 - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the **Collections** section.
 - environmentId: Id of the environment created in {{site.data.keyword.appconfig_short}} service instance under the **Environments** section.
 
-:red_circle: **Important** :red_circle:
-
 Always use the encrypted APIKey to avoid exposing sensitive information.<br>
 Ensure that you create the service credentials with the **`Client SDK`** role, as it has the minimal access permissions that are suitable to use in browser-based applications.
+{: important}
 
 ### Examples for using feature and property-related APIs
 {: #ac-react-example}
@@ -94,13 +92,14 @@ See the following examples for using the feature-related APIs.
 
 ```javascript
 import { useFeature } from 'ibm-appconfiguration-react-client-sdk';
-const feature = useFeature('feature_id')
 
-if(feature) {
-   console.log(`Feature Name ${feature.getFeatureName()} `);
-   console.log(`Feature Id ${feature.getFeatureId()} `);
-   console.log(`Feature Type ${feature.getFeatureDataType()} `);
-   console.log(`Feature is enabled ${feature.isEnabled()} `);
+const feature = useFeature('featureId'); // returns undefined incase the featureId is invalid or doesn't exist
+
+if (feature !== undefined) {
+  console.log(`Feature Name ${feature.getFeatureName()} `);
+  console.log(`Feature Id ${feature.getFeatureId()} `);
+  console.log(`Feature Type ${feature.getFeatureDataType()} `);
+  console.log(`Is feature enabled? ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
@@ -112,13 +111,13 @@ if(feature) {
 import { useFeatures } from 'ibm-appconfiguration-react-client-sdk';
 
 const features = useFeatures();
-const feature = features["feature_id"];
+const feature = features['featureId'];
 
-if(feature) {
-   console.log(`Feature Name ${feature.getFeatureName()}`);
-   console.log(`Feature Id ${feature.getFeatureId()}`);
-   console.log(`Feature Type ${feature.getFeatureDataType()}`);
-   console.log(`Feature is enabled ${feature.isEnabled()}`);
+if (feature !== undefined) {
+  console.log(`Feature Name ${feature.getFeatureName()} `);
+  console.log(`Feature Id ${feature.getFeatureId()} `);
+  console.log(`Feature Type ${feature.getFeatureDataType()} `);
+  console.log(`Is feature enabled? ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
@@ -131,16 +130,17 @@ You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to 
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
-   city: 'Bangalore',
-   country: 'India',
+  city: 'Bangalore',
+  country: 'India',
 };
 
+const feature = useFeature('featureId');
 const featureValue = feature.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 
 Where:
-- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
+- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, or a user accessing the web application. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
 
 #### Send custom metrics
@@ -164,12 +164,12 @@ export default MyComponent = function () {
 ```javascript
 import { useProperty } from 'ibm-appconfiguration-react-client-sdk';
 
-const property = useProperty('check-in-charges');
+const property = useProperty('propertyId'); // returns undefined incase the propertyId is invalid or doesn't exist
 
-if(property) {
-   console.log(`Property Name ${property.getPropertyName()}`);
-   console.log(`Property Id ${property.getPropertyId()}`);
-   console.log(`Property Type ${property.getPropertyDataType()}`);
+if (property !== undefined) {
+  console.log(`Property Name ${property.getPropertyName()} `);
+  console.log(`Property Id ${property.getPropertyId()} `);
+  console.log(`Property Type ${property.getPropertyDataType()} `);
 }
 ```
 {: codeblock}
@@ -181,13 +181,12 @@ if(property) {
 import { useProperties } from 'ibm-appconfiguration-react-client-sdk';
 
 const properties = useProperties();
+const property = properties['propertyId'];
 
-const property = properties["property_id"];
-
-if(property) {
-   console.log(`Property Name ${property.getPropertyName()}`);
-   console.log(`Property Id ${property.getPropertyId()}`);
-   console.log(`Property Type ${property.getPropertyDataType()}`);
+if (property !== undefined) {
+  console.log(`Property Name ${property.getPropertyName()} `);
+  console.log(`Property Id ${property.getPropertyId()} `);
+  console.log(`Property Type ${property.getPropertyDataType()} `);
 }
 ```
 {: codeblock}
@@ -200,10 +199,11 @@ Use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluat
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
-   city: 'Bangalore',
-   country: 'India',
-   };
+  city: 'Bangalore',
+  country: 'India',
+};
 
+const property = useProperty('propertyId');
 const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
