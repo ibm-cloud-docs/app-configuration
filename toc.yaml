@@ -18,6 +18,7 @@ toc:
       - ac-about1.md
       - ac-create-appconfig-instance.md
       - ac-responsibilities.md
+      - ac-api-key-encryption.md
       - topic: release-notes.md
         navtitle: Release notes
   - navgroup:
@@ -25,6 +26,7 @@ toc:
       topics:
       - ac-tutorial.md
       - ac-terraform-tutorial.md
+      - ac-configagg-tutorial.md
   - navgroup:
       id: howto
       topics:
@@ -107,6 +109,7 @@ toc:
            - link:
               label: App Configuration Terraform
               href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_collection
+      - data-portability.md
       - ac-service-credentials.md
       - ac-regions-endpoints.md
       - ac-sample-apps.md

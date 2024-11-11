@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2024-03-25"
+  years: 2024
+lastupdated: "2024-11-11"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -12,59 +12,77 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# App Configuration React client SDK
+# {{site.data.keyword.appconfig_short}} React client SDK
 {: #ac-react}
 
-{{site.data.keyword.appconfig_short}} service provides SDK to integrate with your React applications.
-{: shortdesc}
+**Important Security Notice**
+To enhance the security of your applications using the `ibm-appconfiguration-js-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
+{: attention}
+
+## Overview
+{: #ac-js-sdk-overview}
+
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} React Client SDK is used to perform feature flag and property evaluation in web applications and track custom metrics for Experimentation based on the configuration on {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service.
+
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service
+on [{{site.data.keyword.cloud_notm}}](https://www.cloud.ibm.com) for use with web and mobile applications, microservices, and distributed
+environments.
+
+Instrument your web applications with {{site.data.keyword.appconfig_short}} React Client SDK, and use the {{site.data.keyword.appconfig_short}} dashboard, CLI or API to define feature flags or properties, organized into collections and targeted to segments. Toggle feature flag states in the cloud to activate or deactivate features in your application or environment, when required. Run experiments and measure the effect of feature flags on end users by tracking custom metrics. You can also manage the properties for distributed applications centrally.
+
+**Compatibility:**The SDK is compatible with React version 16.8.0 and higher. This SDK builds on {{site.data.keyword.appconfig_short}} JavaScript Client SDK to provide a better integration for use in React applications. As a result, much of the {{site.data.keyword.appconfig_short}} JavaScript Client SDK functionality is also available for the React Client SDK to use. Read more about {{site.data.keyword.appconfig_short}} JavaScript Client SDK [from here](https://github.com/IBM/appconfiguration-js-client-sdk#readme).
+{: note}
 
 ## Integrating client SDK for React
 {: #ac-integrate-react-sdk}
 
-{{site.data.keyword.appconfig_short}} React client SDK can be used with all the major browsers. You can evaluate the values of your feature flag and property by integrating the {{site.data.keyword.appconfig_short}} SDK.
+### Installation
 
-1. Install the SDK.
+Install the SDK.
+```sh
+npm install ibm-appconfiguration-react-client-sdk
+```
 
-   ```bash
-   npm install ibm-appconfiguration-react-client-sdk@latest
-   ```
-   {: codeblock}
+### Initialize SDK
 
+Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance as shown below. Wrapping your app component with `AppConfigProvider` lets you access features & properties from any level of your component hierarchy.
 
-1. Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance. Wrapping your app component with `AppConfigProvider` lets you access features & properties from any level of your component hierarchy.
-   {: #ac-init-react-sdk}
+```JS
+import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
 
-   ```javascript
-   import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
+(async () => {
+  const AppConfigProvider = await withAppConfigProvider({
+    region: 'us-south',
+    guid: '<guid>',
+    apikey: '<encrypted_apikey>',
+    collectionId: 'airlines-webapp',
+    environmentId: 'dev'
+  })
 
-   (async () => {
-   const AppConfigProvider = await withAppConfigProvider({
-      region: 'us-south',
-      guid: '<guid>',
-      apikey: '<apikey>',
-      collectionId: 'airlines-webapp',
-      environmentId: 'dev'
-   })
+  ReactDOM.render(
+    <AppConfigProvider>
+        <YourApp />
+    </AppConfigProvider>,
+    document.getElementById('root')
+  );
+})();
+```
 
-   ReactDOM.render(
-      <AppConfigProvider>
-         <YourApp />
-      </AppConfigProvider>,
-      document.getElementById('root')
-   );
-   })();
-   ```
-   {: codeblock}
+- region : Region name where the {{site.data.keyword.appconfig_short}} service instance is created. Use
+    - `us-south` for Dallas
+    - `eu-gb` for London
+    - `au-syd` for Sydney
+    - `us-east` for Washington DC
+    - `eu-de` for Frankfurt
+- guid : Instance Id of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
+- apikey : The encrypted APIKey generated as described [here](./README_APIKEY_ENCRYPTION.md).
+- collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the **Collections** section.
+- environmentId: Id of the environment created in {{site.data.keyword.appconfig_short}} service instance under the **Environments** section.
 
-   Where:
-   - `region`: Region where the service instance is created. Use `us-south` for Dallas, `us-east` for Washington DC, `eu-gb` for London, `eu-de` for Frankfurt and `au-syd` for Sydney.
-   - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - `apikey`: API key of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
-   - `collectionId`: ID of the collection created in App Configuration service instance under the Collections section.
-   - `environmentId`: ID of the environment created in App Configuration service instance under the Environments section.
+:red_circle: **Important** :red_circle:
 
-Ensure to create the service credentials of the role `Client SDK` for using with the React client SDK. API key of the `Client SDK` role has minimal access permissions that are suitable to use in browser based applications.
-{: note}
+Always use the encrypted APIKey to avoid exposing sensitive information.<br>
+Ensure that you create the service credentials with the **`Client SDK`** role, as it has the minimal access permissions that are suitable to use in browser-based applications.
 
 ### Examples for using feature and property-related APIs
 {: #ac-react-example}
@@ -122,8 +140,23 @@ const featureValue = feature.getCurrentValue(entityId, entityAttributes);
 {: codeblock}
 
 Where:
-- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For any entity to interact with App Configuration, it must provide a unique entity ID.
+- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
+
+#### Send custom metrics
+
+Record custom metrics using the `useTrack` hook in experimentation.
+
+```javascript
+import { useTrack } from 'ibm-appconfiguration-react-client-sdk';
+
+export default MyComponent = function () {
+    const trackEvent = useTrack();
+    return (
+        <button onClick={() => trackEvent('clicked', 'user123')}>Buy</button>
+    )
+}
+```
 
 #### Get single property
 {: #ac-react-get-single-property}
@@ -176,22 +209,103 @@ const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 {: codeblock}
 
 Where:
-- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the property is evaluated. For any entity to interact with App Configuration, it must provide a unique entity ID.
+- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the property is evaluated. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID.
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
 
-## Supported data types
+#### Using fallback values with the React Client SDK
+
+In case of a connection error with the {{site.data.keyword.appconfig_short}}, the SDK relies on the most recently assessed flag values retained in memory. However, if no prior values exist in memory, it's advisable for users to establish fallback values within their code, ensuring smooth operation. An example showcasing this fallback approach is provided below.
+
+```javascript
+
+import { useFeatures } from 'ibm-appconfiguration-react-client-sdk';
+
+export default function App {
+  const features = useFeatures();
+  const defaultFlagValues = {
+    'flight-booking': false
+  }
+  const entityId = 'john_doe';
+  const entityAttributes = {
+    city: 'Bangalore',
+    country: 'India',
+  };
+
+  const getAppConfigurationFlags = (featureID, features) => {
+    if (Object.keys(features).length === 0 && features.constructor === Object) {
+      return defaultFlagValues[featureID];
+    }
+    
+    return feature[featureID]
+      ? feature[featureID].getCurrentValue(entityId, entityAttributes)
+      : defaultFlagValues[featureID];
+  };
+
+  return getAppConfigurationFlags('flight-booking', features) ? <div>Flight Booking</div> : '';
+}
+```
+
+#### Supported Data types
 {: #ac-react-supported-data-types}
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
+{{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
 
-| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
-| -- | -- | -- | -- | -- |
-| `true` | BOOLEAN | not applicable | `boolean` | `true` |
-| `25` | NUMERIC | not applicable | `number` | `25` |
-| "a string text" | STRING | TEXT | `string` | `a string text` |
-| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-|  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
-{: caption="Example outputs" caption-side="bottom"}
+<details><summary>View Table</summary>
+
+| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                             | `true`                                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `number`                                              | `25`                                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                                         | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}`                           |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+</details>
+
+<details><summary>Feature flag usage Example</summary>
+
+  ```javascript
+  const feature = useFeature('json-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = feature.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const feature = useFeature('yaml-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+</details>
+<details><summary>Property usage example</summary>
+
+  ```javascript
+  const property = useProperty('json-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = property.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const property = useProperty('yaml-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+</details>
+
+### Listen to configuration data changes
+
+The SDK automatically subscribes to event-based mechanism and re-renders the enclosed components when feature flag's or property's configuration changes. 
+
+### License
+
+This project is released under the Apache 2.0 license. The license's full text can be found
+in [LICENSE](https://github.com/IBM/appconfiguration-react-client-sdk/blob/main/LICENSE)
 
 ### Feature flag usage example
 {: #ac-react-feature-flag}
