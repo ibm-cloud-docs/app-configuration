@@ -30,7 +30,7 @@ The customer is responsible for the use of the exported data and configuration f
 - The planning and execution for the porting of the required application code on the alternative infrastructure, including the adaptation of customer's application code, deployment automation.
 - The conversion of the exported data and configuration to the format that is required by the alternative infrastructure and adapted applications.
 
-For more information about your responsibilities for {{site.data.keyword.appconfig}}, see [Shared responsibilities for {{site.data.keyword.appconfig_notm}}](/docs/app-configuration?topic=app-configuration-ac-responsibilities).
+For more information about your responsibilities for {{site.data.keyword.appconfig_full}}, see [Shared responsibilities for {{site.data.keyword.appconfig_notm}}](/docs/app-configuration?topic=app-configuration-ac-responsibilities).
 
 ## Data export procedures
 {: #data-portability-procedures}
