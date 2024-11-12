@@ -15,7 +15,7 @@ subcollection: app-configuration
 # {{site.data.keyword.appconfig_short}} React client SDK
 {: #ac-react}
 
-To enhance the security of your applications using the `ibm-appconfiguration-react-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
+To enhance the security of your applications using the `ibm-appconfiguration-react-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 {: attention}
 
 ## Overview
@@ -74,7 +74,7 @@ import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
     - `us-east` for Washington DC
     - `eu-de` for Frankfurt
 - guid : Instance Id of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
-- apikey : The encrypted APIKey generated as described [here](./README_APIKEY_ENCRYPTION.md).
+- apikey : The encrypted APIKey generated as described [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the **Collections** section.
 - environmentId: Id of the environment created in {{site.data.keyword.appconfig_short}} service instance under the **Environments** section.
 

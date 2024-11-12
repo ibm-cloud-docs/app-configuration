@@ -38,8 +38,8 @@ To provide maximum security, we utilize a random nonce during the encryption pro
     - The response will contain your AES-256 encrypted APIKey.
 3. Updating your code:
 
-   ### Javascript SDK:
-     **Update Your Initialization Code:
+  **Javascript SDK:**
+     Update Your Initialization Code:
     - Replace the use of the plain APIKey in your application with the encrypted APIKey. Below is an updated example of how to initialize the SDK using the encrypted APIKey:
         ```js
         const region = AppConfiguration.REGION_US_SOUTH; // Specify your region
@@ -64,8 +64,8 @@ To provide maximum security, we utilize a random nonce during the encryption pro
         }
         ```
 
-   ### React SDK:
-   **Update Your AppConfigProvider Code:**
+   **React SDK:**
+     Update Your AppConfigProvider Code:
     - Replace the use of the plain APIKey in your application with the encrypted APIKey. Below is an updated example of how to initialize the SDK using the encrypted APIKey:
         ```js
         import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';

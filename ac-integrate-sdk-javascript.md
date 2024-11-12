@@ -15,7 +15,7 @@ subcollection: app-configuration
 # App Configuration JavaScript client SDK
 {: #ac-javascript}
 
-To enhance the security of your applications using the `ibm-appconfiguration-js-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](./README_APIKEY_ENCRYPTION.md).
+To enhance the security of your applications using the `ibm-appconfiguration-js-client-sdk`, it is strongly recommended to use an **encrypted APIKey** instead of the plain APIKey in the init method. This change is vital to prevent exposure of sensitive credentials when users inspect your web application. If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps mentioned [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 {: attention}
 
 ## Overview
@@ -106,7 +106,7 @@ where,
     - `us-east` for Washington DC
     - `eu-de` for Frankfurt
 - **guid** : Instance ID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
-- **apikey** : The encrypted APIKey generated as described [here](./README_APIKEY_ENCRYPTION.md).
+- **apikey** : The encrypted APIKey generated as described [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 - **collectionId**: ID of the collection created in App Configuration service instance under the **Collections** section.
 - **environmentId**: ID of the environment created in App Configuration service instance under the **Environments** section.
 
