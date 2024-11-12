@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-11-12"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -30,7 +30,7 @@ environments.
 Instrument your web applications with {{site.data.keyword.appconfig_short}} JavaScript Client SDK, and use the {{site.data.keyword.appconfig_short}} dashboard, CLI or API to define feature flags or properties, organized into collections and targeted to segments. Toggle feature flag states in
 the cloud to activate or deactivate features in your application or environment, when required. Run experiments and measure the effect of feature flags on end users by tracking custom metrics. You can also manage the properties for distributed applications centrally.
 
-**Browser Compatibility**: The SDK is supported on all major browsers. The Browser should have `fetch()` API support.
+Browser Compatibility: The SDK is supported on all major browsers. The Browser should have `fetch()` API support.
 {: note}
 
 ## Integrating client SDK for JavaScript
@@ -47,7 +47,7 @@ You can import the SDK into the script tag either by referencing it from a hoste
   
 Example:
 ```html
-    <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk/dist/appconfiguration.js"></script>
+<script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk/dist/appconfiguration.js"></script>
 ```
 ### Initialize SDK
 
@@ -123,16 +123,10 @@ See the following examples for using the feature-related APIs.
 {: #ac-js-get-single-feature}
 
 ```javascript
-const feature = client.getFeature('feature_id')
-
-if(feature) {
-
-   console.log('data', feature);
-   console.log(`Feature Name ${feature.getFeatureName()} `);
-   console.log(`Feature Id ${feature.getFeatureId()} `);
-   console.log(`Feature Type ${feature.getFeatureDataType()} `);
-   console.log(`Feature is enabled ${feature.isEnabled()} `);
-}
+const feature = appConfigClient.getFeature('featureId'); // throws error incase the featureId is invalid or doesn't exist
+console.log(`Feature Name ${feature.getFeatureName()} `);
+console.log(`Feature Id ${feature.getFeatureId()} `);
+console.log(`Feature Type ${feature.getFeatureDataType()} `);
 ```
 {: codeblock}
 
@@ -140,15 +134,14 @@ if(feature) {
 {: #ac-js-get-all-features}
 
 ```javascript
-const features = client.getFeatures();
+const features = appConfigClient.getFeatures();
+const feature = features['featureId'];
 
-const feature = features["feature_id"];
-
-if(feature) {
-   console.log(`Feature Name ${feature.getFeatureName()}`);
-   console.log(`Feature Id ${feature.getFeatureId()}`);
-   console.log(`Feature Type ${feature.getFeatureDataType()}`);
-   console.log(`Feature is enabled ${feature.isEnabled()}`);
+if (feature !== undefined) {
+  console.log(`Feature Name ${feature.getFeatureName()} `);
+  console.log(`Feature Id ${feature.getFeatureId()} `);
+  console.log(`Feature Type ${feature.getFeatureDataType()} `);
+  console.log(`Is feature enabled? ${feature.isEnabled()} `);
 }
 ```
 {: codeblock}
@@ -156,21 +149,22 @@ if(feature) {
 #### Evaluate a feature
 {: #ac-js-feature-evaluation}
 
-You can use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag. This method returns one of the Enabled/Disabled/Overridden value based on the evaluation. The data type of returned value matches that of feature flag. Pass a unique `entityId` as the parameter to perform the feature flag evaluation.
+Use the `feature.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the feature flag.
+This method returns one of the Enabled/Disabled/Overridden value based on the evaluation. The data type of returned value matches that of feature flag.
 
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
-   city: 'Bangalore',
-   country: 'India',
+  city: 'Bangalore',
+  country: 'India',
 };
 
+const feature = appConfigClient.getFeature('featureId');
 const featureValue = feature.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 
-Where:
-- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For any entity to interact with App Configuration, it must provide a unique entity ID.
+- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the feature is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, or a user accessing the web application. For any entity to interact with App Configuration, it must provide a unique entity ID.
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
 
 #### Send custom metrics
@@ -181,20 +175,16 @@ Record custom metrics to use in experimentation using the track function.
 appConfigClient.track(eventKey, entityId)
 ```
 where
-- eventKey: The event key for the metric associated with the running experiment. The event key in your metric and the event key in your code must match exactly.
+- `eventKey`: The event key for the metric associated with the running experiment. The event key in your metric and the event key in your code must match exactly.
 
 #### Get single property
 {: #ac-js-get-single-property}
 
 ```javascript
-const property = client.getProperty('property_id')
-
-if(property) {
-   console.log('data', property);
-   console.log(`Property Name ${property.getPropertyName()}`);
-   console.log(`Property Id ${property.getPropertyId()}`);
-   console.log(`Property Type ${property.getPropertyDataType()}`);
-}
+const property = appConfigClient.getProperty('propertyId'); // throws error incase the propertyId is invalid or doesn't exist
+console.log(`Property Name ${property.getPropertyName()} `);
+console.log(`Property Id ${property.getPropertyId()} `);
+console.log(`Property Type ${property.getPropertyDataType()} `);
 ```
 {: codeblock}
 
@@ -202,14 +192,13 @@ if(property) {
 {: #ac-js-get-all-properties}
 
 ```javascript
-const properties = client.getProperties();
+const properties = appConfigClient.getProperties();
+const property = properties['propertyId'];
 
-const property = properties["property_id"];
-
-if(property) {
-   console.log(`Property Name ${property.getPropertyName()}`);
-   console.log(`Property Id ${property.getPropertyId()}`);
-   console.log(`Property Type ${property.getPropertyDataType()}`);
+if (property !== undefined) {
+  console.log(`Property Name ${property.getPropertyName()} `);
+  console.log(`Property Id ${property.getPropertyId()} `);
+  console.log(`Property Type ${property.getPropertyDataType()} `);
 }
 ```
 {: codeblock}
@@ -217,21 +206,22 @@ if(property) {
 #### Evaluate a property
 {: #ac-js-property-evaluation}
 
-Use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property. This method returns the default property value or its overridden value based on the evaluation. The data type of returned value matches that of property.
+Use the `property.getCurrentValue(entityId, entityAttributes)` method to evaluate the value of the property.
+This method returns the default property value or its overridden value based on the evaluation. The data type of returned value matches that of property.
 
 ```javascript
 const entityId = 'john_doe';
 const entityAttributes = {
-   city: 'Bangalore',
-   country: 'India',
-   };
+  city: 'Bangalore',
+  country: 'India',
+};
 
+const property = appConfigClient.getProperty('propertyId');
 const propertyValue = property.getCurrentValue(entityId, entityAttributes);
 ```
 {: codeblock}
 
-Where:
-- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the property is evaluated. For any entity to interact with App Configuration, it must provide a unique entity ID.
+- `entityId`: Id of the Entity. This will be a string identifier related to the Entity against which the property is evaluated. For example, an entity might be an instance of an app that runs on a mobile device, or a user accessing the web application. For any entity to interact with App Configuration, it must provide a unique entity ID.
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the property is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate property value.
 
 ### Logging
@@ -243,19 +233,57 @@ Set the logging level to one of 'debug' | 'info' | 'warning' | 'error'. The defa
 appConfigClient.setLogLevel('debug');
 ```
 
-### Supported data types
-{: #ac-js-supported-data-types}
+### Supported Data types
 
-You can configure feature flags and properties with {{site.data.keyword.appconfig_short}}, supporting the following data types: Boolean, Numeric, and String. The String data type can be in the format of a text string, JSON, or YAML. The SDK processes each format as shown in the table.
+App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
+Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
+format accordingly as shown in the below table.
 
-| **Feature or Property value** | **Data type** | **Data format** | **Type of data returned by `getCurrentValue()`** | **Example output** |
-| -- | -- | -- | -- | -- |
-| `true` | BOOLEAN | not applicable | `boolean` | `true` |
-| `25` | NUMERIC | not applicable | `number` | `25` |
-| "a string text" | STRING | TEXT | `string` | `a string text` |
-| `{"firefox": {`  \n `"name": "Firefox",`  \n  `"pref_url": "about:config"`  \n }} | STRING | JSON | `org.json.JSONObject` | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}` |
-|  `men:`  \n   `- John Smith`   \n`- Bill Jones`\n `women:`  \n   `- Mary Smith`   \n`- Susan Williams` | STRING | YAML | `java.lang.String` | `"men:\n  - John Smith\n  - Bill Jones\women:\n  - Mary Smith\n  - Susan Williams"`  |
-{: caption="Example outputs" caption-side="bottom"}
+<details><summary>View Table</summary>
+
+| **Feature or Property value**                                                                          | **DataType** | **DataFormat** | **Type of data returned <br> by `getCurrentValue()`** | **Example output**                                                                   |
+| ------------------------------------------------------------------------------------------------------ | ------------ | -------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `true`                                                                                                 | BOOLEAN      | not applicable | `boolean`                                             | `true`                                                                               |
+| `25`                                                                                                   | NUMERIC      | not applicable | `number`                                              | `25`                                                                                 |
+| "a string text"                                                                                        | STRING       | TEXT           | `string`                                              | `a string text`                                                                      |
+| <pre>{<br>  "firefox": {<br>    "name": "Firefox",<br>    "pref_url": "about:config"<br>  }<br>}</pre> | STRING       | JSON           | `JSON object`                                         | `{"firefox":{"name":"Firefox","pref_url":"about:config"}}`                           |
+| <pre>men:<br>  - John Smith<br>  - Bill Jones<br>women:<br>  - Mary Smith<br>  - Susan Williams</pre>  | STRING       | YAML           | `string`                                              | `"men:\n  - John Smith\n  - Bill Jones\nwomen:\n  - Mary Smith\n  - Susan Williams"` |
+</details>
+
+<details><summary>Feature flag usage Example</summary>
+
+  ```javascript
+  const feature = appConfigClient.getFeature('json-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = feature.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const feature = appConfigClient.getFeature('yaml-feature');
+  feature.getFeatureDataType(); // STRING
+  feature.getFeatureDataFormat(); // YAML
+  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+</details>
+<details><summary>Property usage example</summary>
+
+  ```javascript
+  const property = appConfigClient.getProperty('json-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // JSON
+
+  // Example (traversing the returned JSON)
+  let result = property.getCurrentValue(entityId, entityAttributes);
+  console.log(result.key) // prints the value of the key
+
+  const property = appConfigClient.getProperty('yaml-property');
+  property.getPropertyDataType(); // STRING
+  property.getPropertyDataFormat(); // YAML
+  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+  ```
+</details>
 
 ### Set listener for feature and property data changes
 
@@ -280,54 +308,3 @@ folder to learn more about feature and property evaluation.
 
 This project is released under the Apache 2.0 license. The license's full text can be found
 in [LICENSE](https://github.com/IBM/appconfiguration-js-client-sdk/blob/main/LICENSE)
-
-
-### Feature flag usage example
-{: #ac-js-feature-flag}
-
-```javascript
-const feature = client.getFeature('json-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = feature.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const feature = client.getFeature('yaml-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // YAML
-feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
-
-### Property usage example
-{: #ac-js-property}
-
-```javascript
-const property = client.getProperty('json-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = property.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const property = client.getProperty('yaml-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // YAML
-property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
-
-### Listen to the feature or property changes
-{: #ac-js-feature-prop-change}
-
-To listen to the data changes, add the following code in your application:
-
-```javascript
-client.emitter.on('configurationUpdate', () => {
-    // add your code
-})
-```
-{: codeblock}

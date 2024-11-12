@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-11-12"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -29,7 +29,7 @@ environments.
 
 Instrument your web applications with {{site.data.keyword.appconfig_short}} React Client SDK, and use the {{site.data.keyword.appconfig_short}} dashboard, CLI or API to define feature flags or properties, organized into collections and targeted to segments. Toggle feature flag states in the cloud to activate or deactivate features in your application or environment, when required. Run experiments and measure the effect of feature flags on end users by tracking custom metrics. You can also manage the properties for distributed applications centrally.
 
-**Compatibility:**The SDK is compatible with React version 16.8.0 and higher. This SDK builds on {{site.data.keyword.appconfig_short}} JavaScript Client SDK to provide a better integration for use in React applications. As a result, much of the {{site.data.keyword.appconfig_short}} JavaScript Client SDK functionality is also available for the React Client SDK to use. Read more about {{site.data.keyword.appconfig_short}} JavaScript Client SDK [from here](https://github.com/IBM/appconfiguration-js-client-sdk#readme).
+Compatibility : The SDK is compatible with React version 16.8.0 and higher. This SDK builds on {{site.data.keyword.appconfig_short}} JavaScript Client SDK to provide a better integration for use in React applications. As a result, much of the {{site.data.keyword.appconfig_short}} JavaScript Client SDK functionality is also available for the React Client SDK to use. Read more about {{site.data.keyword.appconfig_short}} JavaScript Client SDK [from here](https://github.com/IBM/appconfiguration-js-client-sdk#readme).
 {: note}
 
 ## Integrating client SDK for React
@@ -245,7 +245,7 @@ export default function App {
 }
 ```
 
-#### Supported Data types
+### Supported Data types
 {: #ac-react-supported-data-types}
 
 {{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types : Boolean,
@@ -278,11 +278,13 @@ format accordingly as shown in the below table.
   feature.getFeatureDataType(); // STRING
   feature.getFeatureDataFormat(); // YAML
   feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+```
+{: codeblock}
+
 </details>
 <details><summary>Property usage example</summary>
 
-  ```javascript
+```javascript
   const property = useProperty('json-property');
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // JSON
@@ -295,7 +297,9 @@ format accordingly as shown in the below table.
   property.getPropertyDataType(); // STRING
   property.getPropertyDataFormat(); // YAML
   property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+```
+{: codeblock}
+
 </details>
 
 ### Listen to configuration data changes
@@ -306,44 +310,6 @@ The SDK automatically subscribes to event-based mechanism and re-renders the enc
 
 This project is released under the Apache 2.0 license. The license's full text can be found
 in [LICENSE](https://github.com/IBM/appconfiguration-react-client-sdk/blob/main/LICENSE)
-
-### Feature flag usage example
-{: #ac-react-feature-flag}
-
-```javascript
-const feature = useFeature('json-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = feature.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const feature = useFeature('yaml-feature');
-feature.getFeatureDataType(); // STRING
-feature.getFeatureDataFormat(); // YAML
-feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
-
-### Property usage example
-{: #ac-react-property}
-
-```javascript
-const property = useProperty('json-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // JSON
-
-// Example (traversing the returned JSON)
-let result = property.getCurrentValue(entityId, entityAttributes);
-console.log(result.key) // prints the value of the key
-
-const property = useProperty('yaml-property');
-property.getPropertyDataType(); // STRING
-property.getPropertyDataFormat(); // YAML
-property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-```
-{: codeblock}
 
 ### Listen to the feature or property changes
 {: #ac-react-feature-prop-change}
