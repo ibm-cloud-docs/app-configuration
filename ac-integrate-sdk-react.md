@@ -265,19 +265,19 @@ format accordingly as shown in the below table.
 
 <details><summary>Feature flag usage Example</summary>
 
-  ```javascript
-  const feature = useFeature('json-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // JSON
+```javascript
+const feature = useFeature('json-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = feature.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = feature.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const feature = useFeature('yaml-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+const feature = useFeature('yaml-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // YAML
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
 ```
 {: codeblock}
 
@@ -285,26 +285,22 @@ format accordingly as shown in the below table.
 <details><summary>Property usage example</summary>
 
 ```javascript
-  const property = useProperty('json-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // JSON
+const property = useProperty('json-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = property.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = property.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const property = useProperty('yaml-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+const property = useProperty('yaml-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // YAML
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
 ```
 {: codeblock}
 
 </details>
-
-### Listen to configuration data changes
-
-The SDK automatically subscribes to event-based mechanism and re-renders the enclosed components when feature flag's or property's configuration changes. 
 
 ### License
 

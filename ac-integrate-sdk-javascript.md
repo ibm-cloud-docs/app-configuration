@@ -252,37 +252,41 @@ format accordingly as shown in the below table.
 
 <details><summary>Feature flag usage Example</summary>
 
-  ```javascript
-  const feature = appConfigClient.getFeature('json-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // JSON
+```javascript
+const feature = appConfigClient.getFeature('json-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = feature.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = feature.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const feature = appConfigClient.getFeature('yaml-feature');
-  feature.getFeatureDataType(); // STRING
-  feature.getFeatureDataFormat(); // YAML
-  feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+const feature = appConfigClient.getFeature('yaml-feature');
+feature.getFeatureDataType(); // STRING
+feature.getFeatureDataFormat(); // YAML
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
 </details>
 <details><summary>Property usage example</summary>
 
-  ```javascript
-  const property = appConfigClient.getProperty('json-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // JSON
+```javascript
+const property = appConfigClient.getProperty('json-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // JSON
 
-  // Example (traversing the returned JSON)
-  let result = property.getCurrentValue(entityId, entityAttributes);
-  console.log(result.key) // prints the value of the key
+// Example (traversing the returned JSON)
+let result = property.getCurrentValue(entityId, entityAttributes);
+console.log(result.key) // prints the value of the key
 
-  const property = appConfigClient.getProperty('yaml-property');
-  property.getPropertyDataType(); // STRING
-  property.getPropertyDataFormat(); // YAML
-  property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
-  ```
+const property = appConfigClient.getProperty('yaml-property');
+property.getPropertyDataType(); // STRING
+property.getPropertyDataFormat(); // YAML
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+```
+{: codeblock}
+
 </details>
 
 ### Set listener for feature and property data changes
