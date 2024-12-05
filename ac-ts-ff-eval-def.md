@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2020, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question,
 
