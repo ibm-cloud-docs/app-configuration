@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2023, 2024
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2021, 2024
+lastupdated: "2024-10-07"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 

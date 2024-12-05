@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "[{LAST_UPDATED_DATE}]"
+lastupdated: "2024-10-07"
 
 keywords: app-configuration, app configuration, about app configuration
 
