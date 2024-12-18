@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-12-18"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## December 2024
+{: #app-configuration-Dec2024}
+{: release-note}
+
+Collection of configurations of WatsonX Projects
+:   Configuration aggregator can now collect configurations of {{site.data.keyword.IBM_notm}} watsonx resources.
 
 ## September 2024
 {: #September-2024}

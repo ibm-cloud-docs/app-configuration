@@ -80,6 +80,7 @@ To enable configuration aggregator for an enterprise account, complete above pre
 
    ![Enable Configuration Aggregator - Enable Recording - Enterprise Account](images/config-aggr-ent-enable.png "Enable Recording - Enterprise Account"){: caption="Enable Recording - Enterprise Account" caption-side="bottom"}
 
+
 ## Retrieve Resource Metadata
 {: #ac-enable-configuration-aggregator-query-configs}
 
