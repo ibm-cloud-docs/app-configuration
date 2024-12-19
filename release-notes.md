@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-12-18"
+lastupdated: "2024-12-19"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,8 +20,15 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
-## December 2024
-{: #app-configuration-Dec2024}
+## 19 December 2024
+{: #app-configuration-Dec192024}
+{: release-note}
+
+Availability in Toronto, Tokyo and Osaka regions
+:   {{site.data.keyword.appconfig_full}} is now available in the Toronto,Tokyo and Osaka regions.
+
+## 18 December 2024
+{: #app-configuration-Dec182024}
 {: release-note}
 
 Collection of configurations of WatsonX Projects
