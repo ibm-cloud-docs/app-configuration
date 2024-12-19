@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-31"
+lastupdated: "2024-12-18"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -80,9 +80,74 @@ To enable configuration aggregator for an enterprise account, complete above pre
 
    ![Enable Configuration Aggregator - Enable Recording - Enterprise Account](images/config-aggr-ent-enable.png "Enable Recording - Enterprise Account"){: caption="Enable Recording - Enterprise Account" caption-side="bottom"}
 
-## Retrieve Resource Metadata
 
+## Retrieve Resource Metadata
 {: #ac-enable-configuration-aggregator-query-configs}
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.
 For more details, refer [here](/apidocs/app-configuration#list-configs){: external}.
+
+## List of Services Supported by Configuration Aggregator
+{: #ac-list-of-services-configaggregator}
+
+Configuration Aggregator supports the following services:
+
+| Name of service |
+|-----------------|
+| [Cloud Object Storage](/docs/cloud-object-storage) |
+| [Kubernetes Service](/docs/containers) |
+| [Red Hat OpenShift](/docs/openshift) |
+| [Virtual server for VPC](/docs/vpc?topic=vpc-creating-virtual-servers) |
+| [Virtual Private Cloud](/docs/vpc) |
+| [Block storage volume for VPC](/docs/vpc?topic=vpc-creating-block-storage) |
+| [Block storage snapshots for VPC](/docs/vpc?topic=vpc-snapshots-vpc-create) |
+| [Secrets Manager](/docs/secrets-manager) |
+| [Databases for PostgreSQL](/docs/databases-for-postgresql) |
+| [Databases for Redis](/docs/databases-for-redis) |
+| [Databases for ElasticSearch](/docs/databases-for-elasticsearch) |
+| [Databases for EnterpriseDB](/docs/databases-for-enterprisedb) |
+| [Databases for ETCD](/docs/databases-for-etcd) |
+| [Databases for MongoDB](/docs/databases-for-mongodb) |
+| [Databases for MySQL](/docs/databases-for-mysql) |
+| [Identity and Access Management](/docs/account?topic=account-cloudaccess) |
+| [Key Protect](/docs/key-protect) |
+| [Container Registry](/docs/Registry?topic=Registry-getting-started) |
+| [Load Balancer for VPC](/docs/loadbalancer-service) |
+| [Security Group for VPC](/docs/vpc?topic=vpc-using-security-groups) |
+| [SSH Keys for VPC](/docs/vpc?topic=vpc-ssh-keys) |
+| [Subnet for VPC](/docs/vpc?topic=vpc-about-subnets-vpc) |
+| [Virtual Private Endpoint (VPE) for VPC](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui) |
+| [Auto Scale (Instance Group) for VPC](/docs/vpc?topic=vpc-creating-auto-scale-instance-group) |
+| [Bare Metal servers for VPC](/docs/vpc?topic=vpc-planning-for-bare-metal-servers) |
+| [Client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) |
+| [Dedicated Host for VPC](/docs/vpc?topic=vpc-creating-dedicated-hosts-instances) |
+| [Floating IP for VPC](/docs/vpc?topic=vpc-fip-about) |
+| [Flow Logs](/docs/vpc?topic=vpc-flow-logs) - VPC |
+| [Custom image for VPC](/docs/vpc?topic=vpc-planning-custom-images) |
+| [Placement Groups for VPC](/docs/vpc?topic=vpc-about-placement-groups-for-vpc) |
+| [Code Engine](/docs/codeengine) |
+| [Network ACL - VPC](/docs/vpc?topic=vpc-using-acls) |
+| [DNS Service - VPC](/docs/dns-svcs) |
+| [VPN for VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#external-connectivity) |
+| [IBM Cloud Backup - VPC](/docs/vpc?topic=vpc-backup-service-about) |
+| [Public Gateway](/docs/vpc?topic=vpc-vpn-create-gateway) |
+| [Event Streams (messagehub)](/docs/EventStreams) |
+| [IBM Cloud Direct Link](/docs/dl) |
+| [Transit Gateway](/docs/transit-gateway) |
+| [Toolchain](/docs/ContinuousDelivery) |
+| [IBM Cloudant CLI](/docs/Cloudant-cli-plugin) |
+| [IBM Cloud Internet Services (CIS)](/docs/cis) |
+| [Schematics](/docs/schematics) |
+| [Cloud Monitoring](/docs/monitoring?topic=monitoring-getting-started#getting-started)|
+| [Security and Compliance Center (SCC)](/docs/security-compliance) |
+| [Hyper Protect Crypto Services (HPCS)](/docs/hs-crypto) |
+| [App ID](/docs/appid) |
+| [App Configuration](/docs/app-configuration) |
+| [Catalog Management](/docs/account?topic=account-restrict-by-user&interface=ui) |
+| [Event Notifications](/docs/event-notifications) |
+| [Messages for RabbitMQ](/docs/messages-for-rabbitmq) |
+| [IBM Cloud Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) |
+| [IBM Cloud Activity Tracker](/docs/activity-tracker)|
+| [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
+| [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
+{: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
