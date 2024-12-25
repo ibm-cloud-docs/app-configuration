@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024
-lastupdated: "2024-12-19"
+lastupdated: "2024-12-25"
 
 keywords: app-configuration, app configuration,enable configuration aggregation,tutorial
 
@@ -228,6 +228,10 @@ Once the template is created it will show up in draft mode.
    
    The configuration for the template looks like below. The steps below guide you on how to create it. 
   ![Templates](images/ac-templates.png "Trusted Profile template configured and committed"){: caption="Trusted Profile template configured and committed" caption-side="bottom"}
+
+  ![Configuration Aggregator Access](images/ac-configagg-access.png "Assigned access policies"){: caption="Assigned access policies" caption-side="bottom"}
+
+  ![Configuration Aggregator Assignments](images/ac-configagg-assignments.png "Accounts Assignments"){: caption="Accounts assignments" caption-side="bottom"}
    
    
 </details>
@@ -244,7 +248,9 @@ Once the template is created it will show up in draft mode.
    {: note}
 
    **Step 3: Create Trusted Profile template to provide access to App Configuration service instance**
-   Create a trusted profile that provides the App Configuration service instance access to get the list of TP assignments of the profile template. The trusted profile configuration should be as shown below. This will be used by the service to fetch the trusted profile id and generate authorization required to fetch resource metadata from the accounts selected in the Enterprise.  
+   Create a trusted profile that provides the App Configuration service instance access to get the list of TP assignments of the profile template. The trusted profile configuration should be as shown below. This will be used by the service to fetch the trusted profile id and generate authorization required to fetch resource metadata from the accounts selected in the Enterprise. 
+
+   ![Trusted Profile Template Access](images/ac-trusted-profile-access.png "Creating a trusted profile template for AC service instance access"){: caption="Creating a trusted profile template for AC service instance access" caption-side="bottom"} 
 
    **Step 4: Configure the Configuration Aggregator**
    Configure the Configuration aggregator using the [Settings API](/apidocs/app-configuration#replace-settings). See the API documentation for more details. 
