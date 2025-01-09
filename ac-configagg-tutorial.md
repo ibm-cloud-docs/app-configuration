@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2024
-lastupdated: "2024-12-25"
+   years: 2025
+lastupdated: "2025-01-09"
 
 keywords: app-configuration, app configuration,enable configuration aggregation,tutorial
 
@@ -31,7 +31,7 @@ Ensure that the following prerequisites are in place:
 
 * Create an {{site.data.keyword.appconfig_short}} instance at the top-level of the enterprise i.e enterprise account.
 * Create a Trusted Profile Template providing access for the App Configuration service instance to the IAM enabled services and Account Management services. See section below on the Steps to create the Trusted profile template.
-* Assign the Trusted profile template to the required accounts and account groups in the Enterprise. This will create the trusted properties in all the selected accounts.
+* Assign the Trusted profile template to the required accounts and account groups in the Enterprise. This will create the trusted profiles in all the selected accounts.
 * App Configuration needs access to read the trusted profile templates. Create a trusted profile with access for Template Administrator, Assignment Administrator, viewer on All IAM Account Management services.
    ![Policy on IAM](images/ac-policy-IAM.png "Creating a trusted profile on IAM"){: caption="Creating a trusted profile on IAM" caption-side="bottom"}
 
@@ -54,104 +54,30 @@ If the trusted profile template is applied to an account group, then all the acc
 
    **Step 1: Create policy templates** 
    
-   Create template policies so that it can be used in a TP template. For the Configuration Aggregator functionality, the trusted policy would need access to `All IAM enabled services` with `Reader, Viewer and ConfigReader` roles & `All Account Management services` with `Viewer and Config Reader` role. 
+   Create policy templates so that it can be used in a Trusted Profile Template. For the Configuration Aggregator functionality, the policy would need access to `All IAM enabled services` with `Reader, Viewer and ConfigReader` roles & `All Account Management services` with `Viewer and Config Reader` role. 
    
-   The policy template can be created using API only. Refer - API: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-policy-template-create&interface=api 
+   The policy template can be created using API or UI. 
    
-   Payload for creating the policy templates 
+   Refer - 
    
-   **Policy template 1 : IAM Enabled services**
-   ```
-   POST https://iam.test.cloud.ibm.com/v1/policy_templates 
-   ```
-   
-   ```json
-   {
-     "name": "All IAM enabled services",
-     "description": "Reader Access for all the IAM enabled services",
-     "account_id": "c1d20fee2fe24c42b8ef6583283d2dcf",
-     "policy": {
-        "type": "access",
-        "description": "Reader Access for all the IAM enabled services",
-        "control": {
-           "grant": {
-           "roles": [
-             {
-                  "role_id": "crn:v1:bluemix:public:iam::::serviceRole:Reader"
-               },
-               {
-                  "role_id": "crn:v1:bluemix:public:iam::::role:Viewer"
-               },
-               {
-                  "role_id": "crn:v1:bluemix:public:iam::::role:ConfigReader"
-               }
-           ]
-         }
-       },
-       "resource": 
-         {
-           "attributes": [
-               {
-                  "key": "serviceType",
-               "operator": "stringEquals",
-               "value": "service"
-               }
-           ]
-         }
+   API: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-policy-template-create&interface=api 
 
-     }
-   }
-   ```
+   UI: 
    
-   **Policy Template 2: Account Management services**
-   
-   ```
-   POST https://iam.test.cloud.ibm.com/v1/policy_templates
-   ```
-   
-   ```json
-   {
-     "name": "Account Management Services",
-     "description": "Reader Access for all Account Management Services",
-     "account_id": "c1d20fee2fe24c42b8ef6583283d2dcf",
-     "policy": {
-        "type": "access",
-        "description": "Reader Access for all Account Management Services",
-        "control": {
-           "grant": {
-           "roles": [
-               {
-                  "role_id": "crn:v1:bluemix:public:iam::::role:Viewer"
-               },
-               {
-                  "role_id": "crn:v1:bluemix:public:iam::::role:ConfigReader"
-               }
-           ]
-         }
-       },
-       "resource": 
-         {
-           "attributes": [
-               {
-                  "key": "serviceType",
-               "operator": "stringEquals",
-               "value": "platform_service"
-               }
-           ]
-         }
+   Navigate to the Access tab in your template and click on Add -> Create. Define the name and description. Select the service you want assign access to and assign the level of access.
 
-     }
-   }
-   ```
-   
+   ![Policy Templates](images/ac-creating-policy.png "Creating Policy Templates"){: caption="Creating Policy Templates" caption-side="bottom"}
+
+   Once the policy has been created, select all the policies you want and click on add. 
+
    The policy templates created are as below : 
    
-   ![Policy Templates](images/ac-policy-templates.png "Creating Policy Templates"){: caption="Creating Policy Templates" caption-side="bottom"}
+   ![Policy Templates](images/ac-review-policies.png "Reviewing Policy Templates"){: caption="Reviewing Policy Templates" caption-side="bottom"}
 
 ---
    **Step 2: Create Trusted Profile Template with IBM Cloud service instance as a trusted identity**
    
-   In order to create a TP template with IBM Cloud service instance as a trusted identity, you need to use the APIs. Also ensure to use `type: crn` for the identities. Refer for more details : https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api.
+   In order to create a Trusted Profile template with IBM Cloud service instance as a trusted identity, you need to use the APIs. Also ensure to use `type: crn` for the identities. Refer for more details : https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api.
    
    **Payload for creating trusted profile template:** 
    
@@ -196,17 +122,14 @@ Once the template is created it will show up in draft mode.
    
    **Step 3: Commit the template**
    
-   Once we have all the details such as policy and identities in place then you can make an update and mark it as committed using https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#update-trusted-profile-template-api
+   Once we have all the details such as policy and identities in place then you can make an update, review it and mark it as committed.
+
+   ![Policy Templates](images/ac-review-policy-for-template.png "Reviewing Policies for the Template"){: caption="Reviewing Policies for the Template" caption-side="bottom"}
+
+   ![Policy Templates](images/ac-commit-template.png "Committing the policies"){: caption="Committing the policies" caption-side="bottom"}
 
 
-   ```
-   POST https://iam.test.cloud.ibm.com/v1/profile_templates/{{template_id_from_previous__step}}/versions/1/commit
-   ```
-   
-   No payload body is required
-   {: note}
-
-   
+  
    **Step 4: Assign accounts to the templates**
    
    Once the template is committed, it can be used for assignments. You can use the UI or API for this. You can do assignments only to the accounts that have `enterprise_iam_managed` enabled. 
@@ -224,42 +147,6 @@ Once the template is created it will show up in draft mode.
    ![Template Assignment Trusted Profile](images/ac-trusted-profile.png "Trusted Profile template visible in all accounts"){: caption="Trusted Profile template visible in all accounts" caption-side="bottom"}
 
 
-   **Step 5: Create a trusted profile template that can be used to apply to all the child accounts in the Enterprise account**
+   **Step 5: Configure the Configuration Aggregator**
    
-   The configuration for the template looks like below. The steps below guide you on how to create it. 
-  ![Templates](images/ac-templates.png "Trusted Profile template configured and committed"){: caption="Trusted Profile template configured and committed" caption-side="bottom"}
-
-  ![Configuration Aggregator Access](images/ac-configagg-access.png "Assigned access policies"){: caption="Assigned access policies" caption-side="bottom"}
-
-  ![Configuration Aggregator Assignments](images/ac-configagg-assignments.png "Accounts Assignments"){: caption="Accounts assignments" caption-side="bottom"}
-   
-   
-</details>
-
-#### Steps to configure App Configuration for an Enterprise account
-
-   **Step 1: Create a trusted profile template**
-   Create a trusted profile template as mentioned in the above section and assign it to all the required sub-accounts.
-
-   **Step 2:Collecting Resource Metadata**
-   If you choose to collect resource metadata of the top-level enterprise account, then a separate trusted file should be created in the enterprise account. 
-
-   The trusted profile template cannot be assigned to an enterprise account.
-   {: note}
-
-   **Step 3: Create Trusted Profile template to provide access to App Configuration service instance**
-   Create a trusted profile that provides the App Configuration service instance access to get the list of TP assignments of the profile template. The trusted profile configuration should be as shown below. This will be used by the service to fetch the trusted profile id and generate authorization required to fetch resource metadata from the accounts selected in the Enterprise. 
-
-   ![Trusted Profile Template Access](images/ac-trusted-profile-access.png "Creating a trusted profile template for AC service instance access"){: caption="Creating a trusted profile template for AC service instance access" caption-side="bottom"} 
-
-   **Step 4: Configure the Configuration Aggregator**
    Configure the Configuration aggregator using the [Settings API](/apidocs/app-configuration#replace-settings). See the API documentation for more details. 
-
-
-#### Resource collection for an Enterprise account
-- When an Enterprise is configured for resource collection, the config manager will fetch the resources from each of the configured accounts during the reconciliation process. 
-- During the reconciliation, the config manager retrieves the template assignments for the template. Using the template assignment API, retrieve the list of accounts and the corresponding trusted profile ID for the account. 
-- It fetches the resources for each of the configured accounts using the trusted profile token generated from the trusted profile obtained from the template assignment APIs. See [here](https://github.ibm.com/devx-app-services/architecture/blob/development/tri_docs/config-aggregator/aggregator.md#steps-for-fetching-account-and-trusted-profile-details-for-a-enterprise-account) for the details on how to fetch the trusted profile details from the template assignments. 
-- Also, during reconciliation, the Config Manager calls the Hyperwarp Listener to ensure that the required accounts are registered with Hyperwarp for the resource lifecycle events. 
-- For each deep config of resources stored for an account in an Enterprise, the enterprise ID is also added as part of the resource metadata. 
-- The Query API should allow querying by a filter of account_id for an Enterprise. The filter will not be allowed for a normal account. 
