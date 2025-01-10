@@ -2,7 +2,7 @@
 
 copyright:
    years: 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-01-10"
 
 keywords: app-configuration, app configuration,enable configuration aggregation,tutorial
 
@@ -82,7 +82,7 @@ If the trusted profile template is applied to an account group, then all the acc
    **Payload for creating trusted profile template:** 
    
    ```
-   POST https://iam.test.cloud.ibm.com/v1/profile_templates
+   POST https://iam.cloud.ibm.com/v1/profile_templates
    ```
    
    ```json
@@ -96,7 +96,7 @@ If the trusted profile template is applied to an account group, then all the acc
            "identities": [
              {
                "type": "crn",
-               "identifier": "crn:v1:staging:public:apprapp-dev:us-south:a/c1d20fee2fe24c42b8ef6583283d2dcf:8abc9e31-5e7e-4154-b2d1-e963ee8a85a2::",
+               "identifier": "crn:v1:bluemix:public:apprapp:us-south:a/c1d20fee2fe24c42b8ef6583283d2dcf:8abc9e31-5e7e-4154-b2d1-e963ee8a85a2::",
                "description": "App Configuration Dev instance in Enterprise account"
              }
            ]
