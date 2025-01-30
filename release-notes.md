@@ -25,12 +25,20 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 
 Review the release notes for January 2025.
 
+### 29 January 2025
+{: #app-configuration-Jan292025}
+{: release-note}
+
+Collection of configurations of IBM Power Virtual Server
+:   Configuration aggregator can now collect configurations of {{site.data.keyword.IBM_notm}} Power Virtual Server resources.
+
 ### 23 January 2025
 {: #app-configuration-Jan232025}
 {: release-note}
 
 Platform Logs enabled
 :   {{site.data.keyword.appconfig_full}} now supports platform logs to investigate abnormal and critical activities in your resource, see [Logging for {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-logging)
+
 
 ## December 2024
 {: #December-2024}
