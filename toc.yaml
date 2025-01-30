@@ -69,6 +69,7 @@ toc:
           label: Observability
           topics:
           - at-events.md
+          - ac-logging.md
   - navgroup:
       id: reference
       topics:
