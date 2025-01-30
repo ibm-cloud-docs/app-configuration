@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-12-19"
+lastupdated: "2025-01-30"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,14 +20,31 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
-## 19 December 2024
+## January 2025
+{: #January-2025}
+
+Review the release notes for January 2025.
+
+### 23 January 2025
+{: #app-configuration-Jan232025}
+{: release-note}
+
+Platform Logs enabled
+:   {{site.data.keyword.appconfig_full}} now supports platform logs to investigate abnormal and critical activities in your resource, see [Logging for {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-logging)
+
+## December 2024
+{: #December-2024}
+
+Review the release notes for December 2024.
+
+### 19 December 2024
 {: #app-configuration-Dec192024}
 {: release-note}
 
 Availability in Toronto, Tokyo and Osaka regions
 :   {{site.data.keyword.appconfig_full}} is now available in the Toronto,Tokyo and Osaka regions.
 
-## 18 December 2024
+### 18 December 2024
 {: #app-configuration-Dec182024}
 {: release-note}
 
