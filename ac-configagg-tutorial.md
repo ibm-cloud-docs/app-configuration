@@ -2,7 +2,7 @@
 
 copyright:
    years: 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-31"
 
 keywords: app-configuration, app configuration,enable configuration aggregation,tutorial
 
@@ -38,9 +38,9 @@ Ensure that the following prerequisites are in place:
 The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. Ensure that this option is enabled, or you can modify it using the below API.
 
 ```curl
-curl -s -L -X PATCH "https://accounts.test.cloud.ibm.com/v1/accounts/$ACCOUNT/traits" 
--H "Content-Type: application/json" 
--H "Authorization: Bearer $TOKEN" 
+curl -s -L -X PATCH "https://accounts.test.cloud.ibm.com/v1/accounts/$ACCOUNT/traits"
+-H "Content-Type: application/json"
+-H "Authorization: Bearer $TOKEN"
 -d "{
     \"enterprise_iam_managed\": true
 }"
@@ -52,43 +52,43 @@ If the trusted profile template is applied to an account group, then all the acc
 
 ## Steps for Creating a Trusted Profile Template
 
-   **Step 1: Create policy templates** 
-   
-   Create policy templates so that it can be used in a Trusted Profile Template. For the Configuration Aggregator functionality, the policy would need access to `All IAM enabled services` with `Reader, Viewer and ConfigReader` roles & `All Account Management services` with `Viewer and Config Reader` role. 
-   
-   The policy template can be created using API or UI. 
-   
-   Refer - 
-   
-   API: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-policy-template-create&interface=api 
+   **Step 1: Create policy templates**
 
-   UI: 
-   
+   Create policy templates so that it can be used in a Trusted Profile Template. For the Configuration Aggregator functionality, the policy would need access to `All IAM enabled services` with `Reader, Viewer and ConfigReader` roles & `All Account Management services` with `Viewer and Config Reader` role.
+
+   The policy template can be created using API or UI.
+
+   Refer -
+
+   API: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-policy-template-create&interface=api
+
+   UI:
+
    Navigate to the Access tab in your template and click on Add -> Create. Define the name and description. Select the service you want assign access to and assign the level of access.
 
    ![Policy Templates](images/ac-creating-policy.png "Creating Policy Templates"){: caption="Creating Policy Templates" caption-side="bottom"}
 
-   Once the policy has been created, select all the policies you want and click on add. 
+   Once the policy has been created, select all the policies you want and click on add.
 
-   The policy templates created are as below : 
-   
+   The policy templates created are as below :
+
    ![Policy Templates](images/ac-review-policies.png "Reviewing Policy Templates"){: caption="Reviewing Policy Templates" caption-side="bottom"}
 
 ---
    **Step 2: Create Trusted Profile Template with IBM Cloud service instance as a trusted identity**
-   
+
    In order to create a Trusted Profile template with IBM Cloud service instance as a trusted identity, you need to use the APIs. Also ensure to use `type: crn` for the identities. Refer for more details : https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api.
-   
-   **Payload for creating trusted profile template:** 
-   
+
+   **Payload for creating trusted profile template:**
+
    ```
    POST https://iam.cloud.ibm.com/v1/profile_templates
    ```
-   
+
    ```json
    {
      "account_id": "c1d20fee2fe24c42b8ef6583283d2dcf",
-     "name": "Configuration Aggregator Template", 
+     "name": "Configuration Aggregator Template",
      "description": "Trusted profile template for Config Aggregator to collect resources from services",
       "profile": {
            "name": "Configuration Aggregator",
@@ -113,15 +113,15 @@ If the trusted profile template is applied to an account group, then all the acc
        ]
    }
    ```
-   `identities.identifier` refers to the App Configuration instance CRN that is being configured for Configuration Aggregator. 
-   `policy_template_references.id` refers to the id of the policy templates created in previous step. 
-   
+   `identities.identifier` refers to the App Configuration instance CRN that is being configured for Configuration Aggregator.
+   `policy_template_references.id` refers to the id of the policy templates created in previous step.
+
 Once the template is created it will show up in draft mode.
-   
+
 ---
-   
+
    **Step 3: Commit the template**
-   
+
    Once we have all the details such as policy and identities in place then you can make an update, review it and mark it as committed.
 
    ![Policy Templates](images/ac-review-policy-for-template.png "Reviewing Policies for the Template"){: caption="Reviewing Policies for the Template" caption-side="bottom"}
@@ -129,24 +129,24 @@ Once the template is created it will show up in draft mode.
    ![Policy Templates](images/ac-commit-template.png "Committing the policies"){: caption="Committing the policies" caption-side="bottom"}
 
 
-  
+
    **Step 4: Assign accounts to the templates**
-   
-   Once the template is committed, it can be used for assignments. You can use the UI or API for this. You can do assignments only to the accounts that have `enterprise_iam_managed` enabled. 
-   
+
+   Once the template is committed, it can be used for assignments. You can use the UI or API for this. You can do assignments only to the accounts that have `enterprise_iam_managed` enabled.
+
    - API: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#assign-trusted-profile-template-api
    - UI: https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=ui#assign-trusted-profile-template-api
-   
+
    ![Template assignment step 1](images/ac-template-assignments-1.png "Selecting Accounts you want to assign"){: caption="Selecting Accounts you want to assign" caption-side="bottom"}
-   
-   
+
+
    ![Template assignment step 2](images/ac-template-assignments-2.png "Assigning the accounts"){: caption="Assigning the accounts" caption-side="bottom"}
 
    Once the assignment is complete, the trusted profile will be created in all the sub-accounts. It can be validated by checking the accounts that shows that the trusted profile is enterprise-managed.
-   
+
    ![Template Assignment Trusted Profile](images/ac-trusted-profile.png "Trusted Profile template visible in all accounts"){: caption="Trusted Profile template visible in all accounts" caption-side="bottom"}
 
 
    **Step 5: Configure the Configuration Aggregator**
-   
-   Configure the Configuration aggregator using the [Settings API](/apidocs/app-configuration#replace-settings). See the API documentation for more details. 
+
+   Configure the Configuration aggregator using the [Settings API](/apidocs/app-configuration). See the API documentation for more details.

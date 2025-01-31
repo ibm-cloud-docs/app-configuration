@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-05"
+  years: 2020, 2025
+lastupdated: "2025-01-31"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -85,7 +85,7 @@ View basic historical {{site.data.keyword.appconfig_short}} usage metrics on the
 {: #faq-ac-cost}
 {: faq}
 
-The simplest way to estimate cost for any {{site.data.keyword.cloud_notm}} managed service is to use the [{{site.data.keyword.cloud_notm}} Cost Estimator tool](https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost){: external}.
+The simplest way to estimate cost for any {{site.data.keyword.cloud_notm}} managed service is to use the [{{site.data.keyword.cloud_notm}} Cost Estimator tool](/docs/account?topic=account-cost){: external}.
 
 Guidelines to help you predict cost in more detail:
 
@@ -171,7 +171,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Property types | All | All | All | All |
 | Max property size | 10 kB | 10 kB | 10 kB | 10 kB |
 | Max storage size (all properties) | 0.1 MB | 10 MB | 10 MB | 10 MB |
-| Flags | 10 (properties + flags) |- |  100 | Unlimited | 
+| Flags | 10 (properties + flags) |- |  100 | Unlimited |
 | Attributes | Glean from response and custom attributes | - | - | Glean from response and custom attributes |
 | Segments | 3 | - | - | Unlimited |
 | Segment definition rules per segment | 3 | - | - | 25 |
