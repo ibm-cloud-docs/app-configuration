@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-12"
+  years: 2025
+lastupdated: "2025-01-31"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -24,7 +24,7 @@ To enhance the security of your applications using the `ibm-appconfiguration-rea
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} React Client SDK is used to perform feature flag and property evaluation in web applications and track custom metrics for Experimentation based on the configuration on {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service.
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service
-on [{{site.data.keyword.cloud_notm}}](https://www.cloud.ibm.com) for use with web and mobile applications, microservices, and distributed
+on [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/) for use with web and mobile applications, microservices, and distributed
 environments.
 
 Instrument your web applications with {{site.data.keyword.appconfig_short}} React Client SDK, and use the {{site.data.keyword.appconfig_short}} dashboard, CLI or API to define feature flags or properties, organized into collections and targeted to segments. Toggle feature flag states in the cloud to activate or deactivate features in your application or environment, when required. Run experiments and measure the effect of feature flags on end users by tracking custom metrics. You can also manage the properties for distributed applications centrally.
@@ -235,7 +235,7 @@ export default function App {
     if (Object.keys(features).length === 0 && features.constructor === Object) {
       return defaultFlagValues[featureID];
     }
-    
+
     return feature[featureID]
       ? feature[featureID].getCurrentValue(entityId, entityAttributes)
       : defaultFlagValues[featureID];

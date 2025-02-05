@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-31"
+  years: 2023, 2025
+lastupdated: "2025-01-31"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
 
@@ -57,7 +57,7 @@ After you set the prerequisites and requirements, you can create zones in the UI
 Instead of creating a zone by using UI inputs, you can use the JSON code form to create a zone by clicking **Enter as JSON code**.
 {: note}
 
-After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/account?topic=account-context-restrictions-update#network-zones-remove) them.
+After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/account?topic=account-context-restrictions-update&interface=ui#network-zones-remove) them.
 
 ## Understanding network rules
 {: #ac-cbr-network-rules}

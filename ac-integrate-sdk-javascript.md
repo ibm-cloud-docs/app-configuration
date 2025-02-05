@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-12"
+  years: 2022, 2025
+lastupdated: "2025-01-31"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -24,7 +24,7 @@ To enhance the security of your applications using the `ibm-appconfiguration-js-
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} JavaScript Client SDK is used to perform feature flag and property evaluation in web applications and track custom metrics for Experimentation based on the configuration on {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service.
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} is a centralized feature management and configuration service
-on [{{site.data.keyword.cloud_notm}}](https://www.cloud.ibm.com) for use with web and mobile applications, microservices, and distributed
+on [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/) for use with web and mobile applications, microservices, and distributed
 environments.
 
 Instrument your web applications with {{site.data.keyword.appconfig_short}} JavaScript Client SDK, and use the {{site.data.keyword.appconfig_short}} dashboard, CLI or API to define feature flags or properties, organized into collections and targeted to segments. Toggle feature flag states in
@@ -44,7 +44,7 @@ Install the SDK. Use the following code to install as a module from package mana
 npm install ibm-appconfiguration-js-client-sdk
 ```
 You can import the SDK into the script tag either by referencing it from a hosted site on your backend or from a CDN as follows:
-  
+
 Example:
 ```html
 <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk/dist/appconfiguration.js"></script>
@@ -98,7 +98,7 @@ console.log(result);
 ```
 </details>
 
-where, 
+where,
 - **region** : Region name where the {{site.data.keyword.appconfig_short}} service instance is created.
     - `us-south` for Dallas
     - `eu-gb` for London
