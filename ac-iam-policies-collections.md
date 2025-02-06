@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-02-06"
+  years: 2025
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, managing service access, iam, account, collections
 
@@ -67,7 +67,7 @@ We'll repeat the step 1, but this time we'll use **Collection ID** resource attr
 {: #collection-access-step-3}
 {: step}
 
-At this stage, you should have two access policies created as shown below. One access policy with **Reader & Viewer**, another with **Manager** role.
+At this stage, you should have two access policies created as the following image shows. One access policy with **Reader & Viewer**, another with **Manager** role.
 
 ![Create a new policy](images/tut-iam-col-5.png){: caption="Figure 5: Review access policies created."}
 
@@ -77,7 +77,7 @@ At this stage, you should have two access policies created as shown below. One a
 
 When this {{site.data.keyword.appconfig_short}} instance is accessed by shared user, only those **Feature flags** & **Properties** which belong to Collection that is given Manager access are **editable** irrespective of the current Environment. In other words, these Feature flags & Properties are editable under any environment. Rest of the Feature flags & Properties which belong to different Collections are **non-editable**. ![Create a new policy](images/tut-iam-col-6.png){: caption="Figure 6: Only those Feature flags which are part of collection devops are allowed to edit under environment dev."} ![Create a new policy](images/tut-iam-col-7.png){: caption="Figure 7: Only those Feature flags which are part of collection devops are allowed to edit under environment production too."}
 
-When shared user tries to perform any action such as toggle or update on feature flags that belong to different collection using API/CLI/Terrform, the action is denied with **401** status code as shown below.
+When shared user tries to perform any action such as toggle or update on feature flags that belong to different collection using API/CLI/Terrform, the action is denied with **401** status code as the following shows.
 {: note}
 
 ```javascript
