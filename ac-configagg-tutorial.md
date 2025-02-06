@@ -77,6 +77,7 @@ The policy templates created are the following:
 
 ## Create Trusted Profile Template with IBM Cloud service instance as a trusted identity
 {: #tutorial-create-trusted-profile-template}
+{: step}
 
 In order to create a Trusted Profile template with IBM Cloud service instance as a trusted identity, you need to use the APIs. Also ensure to use `type: crn` for the identities. Refer for more details : https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api.
 
