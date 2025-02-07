@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, troubleshooting, faqs, Frequently Asked Questions, question,
 
@@ -28,7 +28,7 @@ Segments are defined in the App Configuration service using attributes, and attr
 In your app code, include a JSON object that contains the various attribute values you want to use in your segment rules.
 {: tsResolve}
 
-Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See example below.
+Also, be sure the keys and values found in your app match the keys and values used in your App Configuration segment rule. See the following example.
 
 ```javascript
 const entityId = "john_doe";

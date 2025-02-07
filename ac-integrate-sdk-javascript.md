@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -76,12 +76,12 @@ try {
 }
 ```
 
-In the above snippet, the async function `initialiseAppConfig()` will return an `Promise<void>` that resolves when the configurations are successfully fetched. Else, throws error if unsuccessful.
+In the previous snippet, the async function `initialiseAppConfig()` will return an `Promise<void>` that resolves when the configurations are successfully fetched. Else, throws error if unsuccessful.
 
  It is expected that initialisation to be done **only once**.
  {: important}
 
-After the SDK is initialised successfully the feature flag & properties can be retrieved using the `appConfigClient` as shown in the below code snippet.
+After the SDK is initialised successfully the feature flag & properties can be retrieved using the `appConfigClient` as shown in the following code snippet.
 <details><summary>Expand to view the example snippet</summary>
 
 ```js
@@ -237,7 +237,7 @@ appConfigClient.setLogLevel('debug');
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
-format accordingly as shown in the below table.
+format accordingly as shown in the following table.
 
 <details><summary>View Table</summary>
 
@@ -264,7 +264,7 @@ console.log(result.key) // prints the value of the key
 const feature = appConfigClient.getFeature('yaml-feature');
 feature.getFeatureDataType(); // STRING
 feature.getFeatureDataFormat(); // YAML
-feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+feature.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check the table)
 ```
 {: codeblock}
 
@@ -283,7 +283,7 @@ console.log(result.key) // prints the value of the key
 const property = appConfigClient.getProperty('yaml-property');
 property.getPropertyDataType(); // STRING
 property.getPropertyDataFormat(); // YAML
-property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check above table)
+property.getCurrentValue(entityId, entityAttributes); // returns the stringified yaml (check the table)
 ```
 {: codeblock}
 

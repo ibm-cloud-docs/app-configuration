@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-03-25"
+  years: 2021, 2025
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -290,7 +290,7 @@ The `GetCurrentValue` will be sending the three objects as part of response.
 #### Fetching the `appConfigClient` across other modules
 {: #ac-go-fetching-appconfigclient}
 
-Once the SDK is initialized, the `appConfigClient` can be obtained across other modules as shown below:
+Once the SDK is initialized, the `appConfigClient` can be obtained across other modules as the following shows:
 
 ```go
 // **other modules**

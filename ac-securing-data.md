@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-11"
+  years: 2021, 2025
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, securing your data
 
@@ -30,7 +30,7 @@ The following information are stored when you use {{site.data.keyword.appconfig_
 - Features
 - Segment rules
 
-These information can be deleted using the APIs mentioned [here](https://cloud.ibm.com/apidocs/app-configuration){: external}. Deletion of above information is deleted permanently from the service.
+These information can be deleted using the APIs mentioned [here](https://cloud.ibm.com/apidocs/app-configuration){: external}. Deletion of information is deleted permanently from the service.
 
 ## How your data is stored and encrypted in {{site.data.keyword.appconfig_short}}
 {: #ac-data-store-encryption}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -44,7 +44,7 @@ npm install ibm-appconfiguration-react-client-sdk
 
 ### Initialize SDK
 
-Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance as shown below. Wrapping your app component with `AppConfigProvider` lets you access features & properties from any level of your component hierarchy.
+Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance as shown in the following example. Wrapping your app component with `AppConfigProvider` lets you access features & properties from any level of your component hierarchy.
 
 ```JS
 import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
@@ -214,7 +214,7 @@ Where:
 
 #### Using fallback values with the React Client SDK
 
-In case of a connection error with the {{site.data.keyword.appconfig_short}}, the SDK relies on the most recently assessed flag values retained in memory. However, if no prior values exist in memory, it's advisable for users to establish fallback values within their code, ensuring smooth operation. An example showcasing this fallback approach is provided below.
+In case of a connection error with the {{site.data.keyword.appconfig_short}}, the SDK relies on the most recently assessed flag values retained in memory. However, if no prior values exist in memory, it's advisable for users to establish fallback values within their code, ensuring smooth operation. An example showcasing this fallback approach is provided by the following example.
 
 ```javascript
 
@@ -250,7 +250,7 @@ export default function App {
 
 {{site.data.keyword.appconfig_short}} service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
-format accordingly as shown in the below table.
+format accordingly as shown in the following table.
 
 <details><summary>View Table</summary>
 
