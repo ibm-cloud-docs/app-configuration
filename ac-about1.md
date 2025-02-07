@@ -2,8 +2,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-07"
+  years: 2025
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -68,7 +68,7 @@ As an extension of this case, assume that you need to operate your app an air-ga
 #### Service down
 {: #ac-service-down}
 
-The likelihood of the {{site.data.keyword.appconfig_notm}} service goes down is small. {{site.data.keyword.appconfig_short}} is deployed into multi-zone regions, meaning it runs across three geographically separate zones within a region. If any zone goes down, the {{site.data.keyword.appconfig_notm}} service continues to operate normally. For more information, see [Region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
+The likelihood of the {{site.data.keyword.appconfig_notm}} service goes down is low. {{site.data.keyword.appconfig_short}} is deployed into multi-zone regions, meaning it runs across three geographically separate zones within a region. If any zone goes down, the {{site.data.keyword.appconfig_notm}} service continues to operate normally. For more information, see [Region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
 
 In cases where you need extreme disaster recovery protection that spans regions, you can set up {{site.data.keyword.appconfig_notm}} instances in other regions and keep them in sync by using the [{{site.data.keyword.appconfig_notm}} API](/apidocs/app-configuration).
 

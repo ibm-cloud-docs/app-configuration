@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-07"
+  years: 2023, 2025
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -47,7 +47,7 @@ To integrate with ServiceNow workflow, perform the following steps:
 
    1. Enter the **Client ID** needed to retrieve the OAuth access token.
 
-      **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://docs.servicenow.com/csh?context=CSHelp%3AOAuthSetup){: external}.
+      **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/csh?context=CSHelp%3AOAuthSetup){: external}.
    {: important}
 
    1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.
@@ -69,7 +69,7 @@ If you have already enabled some feature flags before applying the workflow appr
 
 If you disable an existing feature flag and apply the workflow, and then enable the feature flag, its status changes to *Workflow initiated* and a change request workflow will be initiated.
 
-## How to add a mandatory tag to the External ServiceNow workflow change request? 
+## How to add a mandatory tag to the External ServiceNow workflow change request?
 {: #ac-sn-mandatory-tag}
 
 
@@ -112,7 +112,7 @@ Follow these steps to add a mandatory tag to the change request for the External
    Field value is added by {{site.data.keyword.appconfig_short}} service while creating new change requests. Hence, do not modify the value or add any other value to **Appconfiguration tag** field. Modifying or adding any other value to the field can lead to ignoring the change request events.
    {: important}
 
-## How to register or add webhook script to your External ServiceNow instance? 
+## How to register or add webhook script to your External ServiceNow instance?
 {: #ac-sn-add-webhook-script}
 
 
@@ -143,7 +143,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
                var glideEncrypt = new GlideEncrypter();
                //fetching the sys_property that contains the IAM key
                var encryptedIbmIAMKey = gs.getProperty('<Add System property name which holds the IBM IAM key (Case Sensitive)>');
-               //example: var encryptedKey = gs.getProperty('WorkflowAppConfigIamKey'); 
+               //example: var encryptedKey = gs.getProperty('WorkflowAppConfigIamKey');
                //Decrypting the key
                var decryptedIAMKey = glideEncrypt.decrypt(encryptedIbmIAMKey);
                gs.addInfoMessage("IBM KEY DECRYPTION COMPLETED");
@@ -200,7 +200,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
                      gs.addInfoMessage(webHookJsonStringData);
                      webHookRequest.setRequestBody(webHookJsonStringData);
 
-                     //checking the change request has the tag, we only accept the CR with the below mentioned tag id 
+                     //checking the change request has the tag, we only accept the CR with the below mentioned tag id
                      gs.addInfoMessage("SENDING REQUEST TO APP CONFIGURATION WEBHOOK HANDLER");
                      var webHookResponse = webHookRequest.execute();
                      httpResponseStatus = webHookResponse.getStatusCode();

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -19,7 +19,7 @@ To enhance the security of your applications using the `ibm-appconfiguration-rea
 {: attention}
 
 ## Overview
-{: #ac-js-sdk-overview}
+{: #ac-react-js-sdk-overview}
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} React Client SDK is used to perform feature flag and property evaluation in web applications and track custom metrics for Experimentation based on the configuration on {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} service.
 

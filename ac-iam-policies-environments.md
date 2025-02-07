@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-02-06"
+  years: 2021, 2025
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, managing service access, iam, account, environments
 
@@ -67,7 +67,7 @@ We'll repeat the step 1, but this time we'll use **Environment ID** resource att
 {: #environment-access-step-3}
 {: step}
 
-At this stage, you should have two access policies created as shown below. One access policy with **Reader & Viewer**, another with **Manager** role.
+At this stage, you should have two access policies created as the following image shows. One access policy with **Reader & Viewer**, another with **Manager** role.
 
 ![Create a new policy](images/tut-iam-env-5.png){: caption="Figure 5: Review access policies created."}
 

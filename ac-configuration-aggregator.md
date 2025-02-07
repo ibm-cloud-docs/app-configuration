@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -60,7 +60,7 @@ The trusted profile template cannot be assigned to the enterprise account i.e th
 The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. For more details, refer [here](/docs/enterprise-management?topic=enterprise-management-enterprise-managed-opt-in)
 {: note}
 
-To enable configuration aggregator for an enterprise account, complete above pre-requisites and following steps:
+To enable configuration aggregator for an enterprise account, complete the pre-requisites and following steps:
 
 1. In the {{site.data.keyword.appconfig_short}} console, click **Configuration aggregator**.
 

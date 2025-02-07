@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-12"
+  years: 2025
+lastupdated: "2025-02-06"
 
 keywords: app-configuration, app configuration, encrypt api key
 subcollection: app-configuration
@@ -11,6 +11,7 @@ subcollection: app-configuration
 {{site.data.keyword.attribute-definition-list}}
 
 # Encrypted APIKey Requirement
+{: #encrypted-apikey-requirement}
 
 The `ibm-appconfiguration-js-client-sdk` and `ibm-appconfiguration-react-client-sdk` now requires users to provide an **Encrypted Client SDK APIKey** instead of the plain text APIKey to enhance security. This helps prevent exposure of the APIKey when inspecting the webpage through browsers.
 
@@ -86,8 +87,8 @@ To provide maximum security, we utilize a random nonce during the encryption pro
             document.getElementById('root')
         );
         })();
-        ```       
+        ```
 
 ## Existing Users: Update Required
 
-If you are already using a plain APIKey, please update your application to generate and use the encrypted APIKey as per the steps above.
+If you are already using a plain APIKey, update your application to generate and use the encrypted APIKey as per the previous steps.
