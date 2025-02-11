@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm
 
@@ -178,7 +178,7 @@ const entityAttributes = {
 const result = feature.getCurrentValue(entityId, entityAttributes);
 console.log(result.value); // Evaluated value of the feature flag. The type of evaluated value will match the type of feature flag (Boolean, String, Numeric).
 console.log(result.isEnabled); // enabled status.
-console.log(result.details); // a JSON object containing detailed information of the evaluation. See below
+console.log(result.details); // a JSON object containing detailed information of the evaluation.
 
 // the `result.details` will have the following
 console.log(result.details.valueType); // a string value. Example: DISABLED_VALUE

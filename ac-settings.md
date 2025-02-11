@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-07"
+  years: 2022, 2025
+lastupdated: "2025-02-07"
 
 keywords: app-configuration, app configuration, settings, cors, cross-origin resource sharing
 
@@ -42,5 +42,5 @@ To add domains to allowlist, complete these steps:
 
 You can also modify the **URL** of the domains by using the **Edit** option.
 
-If you are using JavaScript or React SDK, you need to allowlist your domains using the above steps or using {{site.data.keyword.appconfig_short}} API. For more information, see [here](https://{DomainName}/apidocs/app-configuration#update-originconfigs){: external}.
+If you are using JavaScript or React SDK, you need to allowlist your domains using the previously mentioned steps or by using {{site.data.keyword.appconfig_short}} API. For more information, see [here](https://{DomainName}/apidocs/app-configuration#update-originconfigs){: external}.
 {: note}
