@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-18"
+  years: 2020, 2025
+lastupdated: "2025-02-19"
 
 keywords: app-configuration, app configuration, segments
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 Use segments to define a group of users or resources based on rules. Feature flags can target segments to deliver variants of a feature based on the needs like beta launches and experiments.
 {: shortdesc}
 
-By default, the Segments pane displays the list of segments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with Name of the segment, tags, and date of creation.
+By default, the Segments pane displays the list of segments that are created in the current {{site.data.keyword.appconfig_short}} service instance along with **Name of the segment**, **labels** , and **Last Updated**.
 
 ![List of segments](images/ac-segments-default.png "List of segments"){: caption="List of segments" caption-side="bottom"}
 

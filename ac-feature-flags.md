@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-02-19"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -24,7 +24,7 @@ A feature can be enabled or disabled to all the collection users or to a specifi
 
 Feature roll outs can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled.
 
-By default, the **Feature flags** page displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record. Flag types are categorized as Boolean, Numeric, or String.
+By default, the **Feature flags** page displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record like **Name**, **Type**, **Last Updated**, **Last Evaluated**, **Segments** that are targeted. Flag types are categorized as Boolean, Numeric, or String.
 
 - A **Boolean** flag has two values and you can set the default value as 'true' or 'false'.
 - A **String** type flag supports data in the form of text, and JSON or YAML files.
