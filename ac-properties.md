@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-07"
+  years: 2021, 2025
+lastupdated: "2025-02-19"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 You can create and manage properties, add them to collections and use them in your app by using SDKs. You can use them in your infrastructure by using [terraform plug-in](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/app_config_collection){: external} or CLI. Using properties, you can manage the configuration properties of your infrastructure or applications centrally by using {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
-By default, the properties window lists all properties in an environment in the current {{site.data.keyword.appconfig_short}} service instance. Attributes for each property like **Name**, **Value**, Date of creation, **Last evaluated**, **Segments** that are targeted, and **Type** are displayed.
+By default, the properties window lists all properties in an environment in the current {{site.data.keyword.appconfig_short}} service instance. Attributes for each property like **Name**, **Last Updated**, **Last Evaluated**, **Segments** that are targeted, and **Type** are displayed.
 
 Property types:
 - A **Boolean** type has two values and you can set the default value as 'true' or 'false'.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-02-19"
 
 keywords: app-configuration, app configuration, create a collection, collections, properties, property
 
@@ -18,7 +18,7 @@ subcollection: app-configuration
 Collections are a way to group feature flags and properties. These collections can be consumed in your apps with the help of a collection ID and {{site.data.keyword.appconfig_short}} SDKs. Every feature must be in a collection, so create your collection first.
 {: shortdesc}
 
-By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Labels** associated, the date of creation of the collection, and the collection **Content** (number of feature flags and number of properties).
+By default, **Collections** displays the list of collections in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, the **Labels** associated, **Last Updated**, and the collection **Content** (number of feature flags and number of properties).
 {: note}
 
 ## Create a collection
