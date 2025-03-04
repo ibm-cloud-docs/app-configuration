@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-03-04"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -56,3 +56,9 @@ When new resources are added to or removed from IBM Cloud for onboarded accounts
 - Check your internet connection: Ensure that your internet connection is stable and not experiencing  any disruptions.
 - Verify server status: Confirm that App Configuration Service is available and no incidents have been reported.
 - Adjust timeout settings: Some applications allow users to adjust timeout settings. If possible, consider extending the timeout duration to accommodate potential delays.
+
+## What is the limitation on the size of the data that can be imported into {{site.data.keyword.appconfig_short}} instance using Config API?
+{: #faq-ac-data-size}
+{: faq}
+
+The permissible limit on the content length is 200kb. Beyond this limit, the user might experience 413 HTTP status code in the response. This restriction is also applicable to CLI.
