@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-06"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## February 2025
+{: #February-2025}
+
+Review the release notes for February 2025.
+
+### 28 February 2025
+{: #app-configuration-Feb282025}
+{: release-note}
+
+Collection of configurations of {{site.data.keyword.logs_full_notm}} :
+:   Configuration aggregator can now collect configurations of {{site.data.keyword.logs_full_notm}}.
 
 ## January 2025
 {: #January-2025}
