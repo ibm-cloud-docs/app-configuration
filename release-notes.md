@@ -29,7 +29,7 @@ Review the release notes for February 2025.
 {: #app-configuration-Feb282025}
 {: release-note}
 
-Collection of configurations of {{site.data.keyword.logs_full_notm}} :
+Collection of configurations of {{site.data.keyword.logs_full_notm}}
 :   Configuration aggregator can now collect configurations of {{site.data.keyword.logs_full_notm}}.
 
 ## January 2025
