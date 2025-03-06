@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-03-06"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -151,4 +151,5 @@ Configuration Aggregator supports the following services:
 | [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
 | [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 | [IBM Power Virtual Server](/docs/power-iaas) |
+| [IBM Cloud Logs](/docs/cloud-logs) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
