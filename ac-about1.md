@@ -3,7 +3,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-03-10"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -19,7 +19,7 @@ subcollection: app-configuration
 {{site.data.keyword.appconfig_notm}} is a centralized feature management and configuration service for use with web and mobile applications, microservices, and distributed environments.
 {: shortdesc}
 
-Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define features flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting. You can also manage the properties for distributed applications centrally. It can facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives. This can be controlled with the ability to enable or disable the congiguration aggregation.
+Instrument your applications with {{site.data.keyword.appconfig_short}} SDKs, and use the {{site.data.keyword.appconfig_short}} dashboard or {{site.data.keyword.appconfig_short}} administrator API to define feature flags, which are organized into collections and targeted to segments. Change feature flag states in the cloud to activate or deactivate features in your application or environment, often without restarting. You can also manage the properties for distributed applications centrally. It can facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for governance and compliance initiatives. This can be controlled with the ability to enable or disable the configuration aggregation.
 
 - **App Owners** - Roll out features by segment and independent from code deployments.
 - **Developers** - Reduce source code branch complexity and troublesome merges by including untested or unfinished features behind a feature flag in your main branch.
@@ -47,7 +47,7 @@ Learn how {{site.data.keyword.appconfig_short}} works under normal operation or 
 
 During normal operation, the {{site.data.keyword.appconfig_short}} SDK (#2 in Figure 1) handles the automatic delivery of the appropriate flag state or property value into your application from the {{site.data.keyword.appconfig_notm}} instance (#1 in Figure 1). During initialization, the SDK connects to the {{site.data.keyword.appconfig_short}} API and fetches the specified collections, segment rules, and targeting rules (#3 in Figure 1), and then evaluates the rules against attribute values that are programmed into your application to select the correct [segment](/docs/app-configuration?topic=app-configuration-ac-segments) and target values. Attributes upon which the rules operate are stored locally, and not in the {{site.data.keyword.appconfig_notm}} service on the cloud. Therefore, if you need to evaluate against attributes that are confidential, for example a social security number, the values never leave the local application environment.
 
-After initialization, the application receives updated values in two ways depending on whether you are using server-side or client-side SDKs. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket, and modified values are delivered your application in real time. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground.
+After initialization, the application receives updated values in two ways depending on whether you are using server-side or client-side SDKs. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket, and modified values are delivered to your application in real time. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such as being opened or brought to the foreground.
 
 During normal operation, various metrics are sent back to the AC cloud service (#6 in Figure 1) so that the service can operate properly and so that you can monitor its operation.
 
@@ -63,7 +63,7 @@ As with any application or cloud service, sometimes things go wrong, but {{site.
 
 If the connection is lost between your application and the {{site.data.keyword.appconfig_notm}} service, the {{site.data.keyword.appconfig_notm}} SDK automatically falls back to a local cache file that contains the last known good configuration (#4 in Figure 1). In cache mode, changes to configurations that occur in the cloud do not reach the app, but the configuration that existed at the time of the lost connection continue to operate normally.
 
-As an extension of this case, assume that you need to operate your app an air-gapped environment. For that case, you can use a bootstrap config file (#5 in Figure 1). For more information, see [Enable offline mode](/docs/app-configuration?topic=app-configuration-ac-offline).
+As an extension of this case, assume that you need to operate your app in an air-gapped environment. For that case, you can use a bootstrap config file (#5 in Figure 1). For more information, see [Enable offline mode](/docs/app-configuration?topic=app-configuration-ac-offline).
 
 #### Service down
 {: #ac-service-down}
@@ -122,4 +122,4 @@ Feature flags and properties are targeted to segments based on a set of rules th
 ### {{site.data.keyword.appconfig_short}} SDK
 {: #ac-sdk-concept}
 
-The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. It also provides option to enable or disable the configuraton aggregator and query for the resource metadata. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.
+The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. It also provides option to enable or disable the configuration aggregator and query for the resource metadata. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such as being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.

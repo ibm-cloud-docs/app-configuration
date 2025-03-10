@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-11"
+  years: 2023, 2025
+lastupdated: "2025-03-10"
 
 keywords: app-configuration, app configuration, tutorials, terraform, infrastructure as code, iac, terraform provider
 
@@ -41,10 +41,10 @@ Ensure that the following prerequisites are in place:
 
 * You need an {{site.data.keyword.cloud_notm}} account. If you don't have an account, then [Create an IBM Cloud account](https://cloud.ibm.com/registration/){: external}.
 * Log in to your {{site.data.keyword.cloud_notm}} account.
-* Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key.
-* Login to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/login){: external} and go to the **Manage** tile and select **Access(IAM)**, and then select **{{site.data.keyword.cloud_notm}} API Keys**.
-* Create an {{site.data.keyword.cloud_notm}} API Key and save the password.
-* For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider){: external}
+* Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key. From the {{site.data.keyword.cloud_notm}} console, go to **Manage** > **Access(IAM)**, and then select **API keys**. Create an {{site.data.keyword.cloud_notm}} API Key and save the password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui).
+
+For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider).
+{: tip}
 
 ## Building Infrastructure-as-Code
 {: #ac-infrastructure-as-code}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-07"
+  years: 2021, 2025
+lastupdated: "2025-03-10"
 
 keywords: app-configuration, app configuration, customer responsibilities, IBM responsibilities, terms and conditions, disaster recovery, toolchain backup
 
@@ -20,12 +20,12 @@ subcollection: app-configuration
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.appconfig_notm}}. For a high-level view of the service types in {{site.data.keyword.cloud_notm}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
-Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview?topic=overview-terms).
+Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.appconfig_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview?topic=overview-terms).
 
 ## Incident and operations management
 {: #ac-incident-and-ops}
 
-You and {{site.data.keyword.IBM_notm}} share responsibilities for the set-up and maintenance of your {{site.data.keyword.appconfig_notm}} instance.
+You and {{site.data.keyword.IBM_notm}} share responsibilities for the setup and maintenance of your {{site.data.keyword.appconfig_notm}} instance.
 
 You are responsible for incident and operations management of your application and application data.
 
