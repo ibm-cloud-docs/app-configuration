@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2025
+lastupdated: "2025-03-10"
 
 keywords: app-configuration, app configuration, tutorial
 
@@ -42,7 +42,7 @@ To create an {{site.data.keyword.appconfig_short}} service instance, see [Create
 {: #ac-create-collections}
 {: step}
 
-You can create a collection and enable App Service capabilities like feature flags, and segmentation.
+You can create a collection and enable App Service capabilities like feature flags and segmentation.
 
 To create a collection, see [Create a collection](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection).
 
