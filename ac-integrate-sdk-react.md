@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-07"
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -67,12 +67,7 @@ import { withAppConfigProvider } from 'ibm-appconfiguration-react-client-sdk';
 })();
 ```
 
-- region : Region name where the {{site.data.keyword.appconfig_short}} service instance is created. Use
-    - `us-south` for Dallas
-    - `eu-gb` for London
-    - `au-syd` for Sydney
-    - `us-east` for Washington DC
-    - `eu-de` for Frankfurt
+- region : Region name where the App Configuration service instance is created. See list of supported locations [here](https://cloud.ibm.com/catalog/services/app-configuration). Eg:- `us-south`, `au-syd` etc.
 - guid : Instance Id of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
 - apikey : The encrypted APIKey generated as described [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 - collectionId: Id of the collection created in {{site.data.keyword.appconfig_short}} service instance under the **Collections** section.

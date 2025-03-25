@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-02-07"
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -99,12 +99,7 @@ console.log(result);
 </details>
 
 where,
-- **region** : Region name where the {{site.data.keyword.appconfig_short}} service instance is created.
-    - `us-south` for Dallas
-    - `eu-gb` for London
-    - `au-syd` for Sydney
-    - `us-east` for Washington DC
-    - `eu-de` for Frankfurt
+- **region** : Region name where the App Configuration service instance is created. See list of supported locations [here](https://cloud.ibm.com/catalog/services/app-configuration). Eg:- `us-south`, `au-syd` etc.
 - **guid** : Instance ID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} dashboard.
 - **apikey** : The encrypted APIKey generated as described [here](/docs/app-configuration?topic=app-configuration-encrypted-apikey-requirement).
 - **collectionId**: ID of the collection created in App Configuration service instance under the **Collections** section.

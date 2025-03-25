@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2024-03-25"
+  years: 2020, 2025
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, python sdk, python
 
@@ -50,13 +50,13 @@ subcollection: app-configuration
 
    ```python
    appconfig_client = AppConfiguration.get_instance()
-   appconfig_client.init(region=AppConfiguration.REGION_US_SOUTH, guid='GUID', apikey='APIKEY')
-   appconfig_client.set_context(collection_id='collection_id', environment_id='environment_id')
+   appconfig_client.init(region='region', guid='guid', apikey='apikey')
+   appconfig_client.set_context(collection_id='airlines-webapp', environment_id='dev')
    ```
    {: codeblock}
 
    Where:
-   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_EU_DE` for Frankfurt and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - `region`: Region name where the App Configuration service instance is created. See list of supported locations [here](https://cloud.ibm.com/catalog/services/app-configuration). Eg:- `us-south`, `au-syd` etc.
    - `guid`: GUID of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `apikey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Obtain it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `collection_id`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.

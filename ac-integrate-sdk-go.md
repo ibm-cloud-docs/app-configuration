@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-07"
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, go sdk, go language, go
 
@@ -58,14 +58,14 @@ The v1.x.x versions of the {{site.data.keyword.appconfig_short}} Go SDK have bee
    collectionId := "airlines-webapp"
    environmentId := "dev"
 
-   appConfiguration = AppConfiguration.GetInstance()
-   appConfiguration.Init("region", "guid", "apikey")
-   appConfiguration.SetContext("collectionId", "environmentId")
+   appConfigClient := AppConfiguration.GetInstance()
+   appConfigClient.Init("region", "guid", "apikey")
+   appConfigClient.SetContext(collectionId, environmentId)
    ```
    {: codeblock}
 
    Where,
-   - `region`: Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_EU_DE` for Frankfurt and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - `region`: Region name where the App Configuration service instance is created. See list of supported locations [here](https://cloud.ibm.com/catalog/services/app-configuration). Eg:- `us-south`, `au-syd` etc.
    - `guid`: Instance ID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `apiKey`: ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the {{site.data.keyword.appconfig_short}} service dashboard.
    - `collectionId`: ID of the collection created in {{site.data.keyword.appconfig_short}} service instance.
