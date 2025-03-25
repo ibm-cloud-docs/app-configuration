@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2024-03-25"
+  years: 2021, 2025
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, integrate sdk, android sdk, android, kotlin, java
 
@@ -63,20 +63,24 @@ Following are the prerequisites for using the {{site.data.keyword.appconfig_shor
 1. Initialize the SDK.
 
    ```kotlin
-   val appConfiguration = AppConfiguration.getInstance()
+   import com.ibm.cloud.appconfiguration.android.sdk.AppConfiguration
 
-   appConfiguration.init( application,
+   val collectionId = "airlines-webapp"
+   val environmentId = "dev"
+
+   val appConfigClient = AppConfiguration.getInstance()
+   //application is a member of the AppCompatActivity() class, if you have inherited the 
+   //AppCompatActivity() class then you can call the application variable.
+   appConfigClient.init(application,
                         "region",
                         "guid",
                         "apikey")
-
-   //To start the configuration fetching operation, set the collectionId and environmentId in the following way.
-    appConfiguration.setContext("collectionId","environmentId")
+   appConfigClient.setContext(collectionId, environmentId)
    ```
    {: codeblock}
 
    Where:
-   - `region` - Region name where the service instance is created. Use `AppConfiguration.REGION_US_SOUTH` for Dallas, `AppConfiguration.REGION_US_EAST` for Washington DC, `AppConfiguration.REGION_EU_GB` for London, `AppConfiguration.REGION_EU_DE` for Frankfurt and `AppConfiguration.REGION_AU_SYD` for Sydney.
+   - `region` - Region name where the App Configuration service instance is created. See list of supported locations [here](https://cloud.ibm.com/catalog/services/app-configuration). Eg:- `us-south`, `au-syd` etc.
    - `guid` - GUID of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `apikey` - ApiKey of the {{site.data.keyword.appconfig_short}} service. Get it from the service credentials section of the dashboard.
    - `collectionId` - ID of the collection created in {{site.data.keyword.appconfig_short}} service instance under the Collections section.

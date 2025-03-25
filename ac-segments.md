@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-03-25"
 
 keywords: app-configuration, app configuration, segments
 
@@ -51,14 +51,18 @@ To define a rule, at the time of creating or editing a segment, in **Include use
 1. Add an **Attribute name**. For example, the attribute may be email or part of user name.
 
 1. Select an operator to be used for the evaluation from the list.
-   - starts with
-   - ends with
+   - startsWith
+   - notStartsWith
+   - endsWith
+   - notEndsWith
    - is
+   - isNot
    - contains
-   - greater than
-   - greater than and equals
-   - less than
-   - less than and equals
+   - notContains
+   - greaterThan
+   - greaterThanEquals
+   - lesserThan
+   - lesserThanEquals
 
 1. **Enter values** for the operator selected.
 
