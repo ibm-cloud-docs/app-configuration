@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-04-01"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -178,6 +178,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
                      //London: https://eu-gb.apprapp.cloud.ibm.com
                      //Sydney: https://au-syd.apprapp.cloud.ibm.com
                      //Frankfurt: https://eu-de.apprapp.cloud.ibm.com
+                     //Madrid: https://eu-es.apprapp.cloud.ibm.com
 
                      webHookRequest.setEndpoint('{{AppConfigRegionBaseURL}}/apprapp/workflow/v1/instances/' + decryptedInstanceId + '/crevents');
                      webHookRequest.setRequestHeader('Authorization', 'Bearer ' + access_token);
