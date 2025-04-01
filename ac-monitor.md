@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-12-19"
+  years: 2021, 2025
+lastupdated: "2025-04-01"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -32,6 +32,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | London | London |
 | Sydney | Sydney |
 | Frankfurt | Frankfurt |
+| Madrid | Madrid |
 | Toronto | Toronto |
 | Tokyo | Tokyo |
 | Osaka | Osaka |
