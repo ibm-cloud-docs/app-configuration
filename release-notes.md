@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-01"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## April 2025
+{: #April-2025}
+
+Review the release notes for April 2025.
+
+### 1 April 2025
+{: #app-configuration-Apr012025}
+{: release-note}
+
+Availability in Madrid region
+:   {{site.data.keyword.appconfig_full}} is now available in the Madrid region.
 
 ## February 2025
 {: #February-2025}
