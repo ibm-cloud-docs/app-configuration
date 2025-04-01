@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-12-19"
+  years: 2021, 2025
+lastupdated: "2025-04-01"
 
 keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 
@@ -28,6 +28,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 - London
 - Sydney
 - Frankfurt
+- Madrid
 - Toronto
 - Tokyo
 - Osaka
@@ -57,6 +58,7 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |London |`https://eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Frankfurt |`https://eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Madrid |`https://eu-es.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Toronto |`https://ca-tor.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Tokyo |`https://jp-tok.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Osaka |`https://jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
@@ -74,6 +76,7 @@ If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a
 |London |`https://private.eu-gb.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sydney |`https://private.au-syd.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Frankfurt |`https://private.eu-de.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Madrid |`https://private.eu-es.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Toronto |`https://private.ca-tor.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Tokyo |`https://private.jp-tok.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Osaka |`https://private.jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |

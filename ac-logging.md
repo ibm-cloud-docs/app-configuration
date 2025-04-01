@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-04-01"
 
 keywords: app configuration cloud logs, app configuration logging, app configuration external logs
 
@@ -36,6 +36,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | Sydney (`au-syd`) | [Yes]{: tag-green} |
 | Frankfurt (`eu-de`) | [Yes]{: tag-green} |
 | London (`eu-gb`) | [Yes]{: tag-green} |
+| Madrid (`eu-es`) | [Yes]{: tag-green} |
 | Toronto (`ca-tor`) | [Yes]{: tag-green} |
 | Tokyo (`jp-tok`) | [Yes]{: tag-green} |
 | Osaka (`jp-osa`) | [Yes]{: tag-green} |

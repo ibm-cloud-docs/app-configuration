@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-12-19"
+  years: 2021, 2025
+lastupdated: "2025-04-01"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -44,6 +44,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Asia-Pacific| Osaka (jp-osa)|MZR|
 | Europe | London (eu-gb)|MZR|
 | Europe | Frankfurt (eu-de)|MZR|
+| Europe | Madrid (eu-es)|MZR|
 | North America | Dallas (us-south)| MZR |
 | North America | Washington DC (us-east)| MZR |
 | North America | Toronto (ca-tor)| MZR |
