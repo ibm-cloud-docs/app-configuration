@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-02"
 
 keywords: activity tracking, app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -62,7 +62,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green}| [No]{: tag-green} |
+| [Yes]{: tag-green} | [Yes]{: tag-green}| [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
 {: #at-table-3}
 {: tab-title="Europe"}
@@ -98,7 +98,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green}| [No]{: tag-green} |
+| [Yes]{: tag-green} | [Yes]{: tag-green}| [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
 {: #atracker-table-3}
 {: tab-title="Europe"}
