@@ -33,7 +33,8 @@ Ensure that the following prerequisites are in place:
 * Create a Trusted Profile Template providing access for the App Configuration service instance to the IAM enabled services and Account Management services. See the following section on the Steps to create the Trusted profile template.
 * Assign the Trusted profile template to the required accounts and account groups in the Enterprise. This will create the trusted profiles in all the selected accounts.
 * App Configuration needs access to read the trusted profile templates. Create a trusted profile with access for Assignment Administrator on All IAM Account Management services and Viewer on the Enterprise services.
-   ![Policy on IAM](images/ac-policy-IAM.png "Creating a trusted profile on IAM"){: caption="Creating a trusted profile on IAM" caption-side="bottom"}
+
+![Policy on IAM](images/ac-policy-IAM.png "Creating a trusted profile on IAM"){: caption="Creating a trusted profile on IAM" caption-side="bottom"}
 
 The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. Ensure that this option is enabled, or you can modify it using the following API.
 
