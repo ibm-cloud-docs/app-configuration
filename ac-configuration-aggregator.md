@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-14"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -147,7 +147,6 @@ Configuration Aggregator supports the following services:
 | [Event Notifications](/docs/event-notifications) |
 | [Messages for RabbitMQ](/docs/messages-for-rabbitmq) |
 | [IBM Cloud Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) |
-| [IBM Cloud Activity Tracker](/docs/activity-tracker)|
 | [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
 | [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 | [IBM Power Virtual Server](/docs/power-iaas) |
