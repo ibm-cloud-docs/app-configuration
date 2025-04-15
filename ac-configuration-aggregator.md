@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-14"
+lastupdated: "2025-04-15"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -85,6 +85,7 @@ To enable configuration aggregator for an enterprise account, complete the pre-r
 {: #ac-enable-configuration-aggregator-query-configs}
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.
+
 For more details, refer [here](/apidocs/app-configuration){: external}.
 
 ## List of Services Supported by Configuration Aggregator
