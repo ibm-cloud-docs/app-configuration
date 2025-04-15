@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-15"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -85,6 +85,7 @@ To enable configuration aggregator for an enterprise account, complete the pre-r
 {: #ac-enable-configuration-aggregator-query-configs}
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.
+
 For more details, refer [here](/apidocs/app-configuration){: external}.
 
 ## List of Services Supported by Configuration Aggregator
@@ -147,7 +148,6 @@ Configuration Aggregator supports the following services:
 | [Event Notifications](/docs/event-notifications) |
 | [Messages for RabbitMQ](/docs/messages-for-rabbitmq) |
 | [IBM Cloud Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) |
-| [IBM Cloud Activity Tracker](/docs/activity-tracker)|
 | [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
 | [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 | [IBM Power Virtual Server](/docs/power-iaas) |
