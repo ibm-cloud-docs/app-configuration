@@ -86,7 +86,7 @@ toc:
       - topicgroup:
           label: CLI reference
           topics:
-          - include: ../app-configuration-cli-plugin/app-configuration-cli.md
+          - topic: ac-cli.md
             navtitle: CLI commands
           - topic: ac-cli-changelog.md
             navtitle: CLI change log
