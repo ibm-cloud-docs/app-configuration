@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-04-22"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # Configuration Aggregator
 {: #ac-configuration-aggregator}
 
-Configuration Aggregator can be used to facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives. All the plans of the {{site.data.keyword.appconfig_short}} service will have the Configuration Aggregator feature available. As an app owner, the user has to explicitly enable the Configuration Aggregator. It can be done on the {{site.data.keyword.appconfig_short}} instance either via API, SDK or Dashboard. The {{site.data.keyword.appconfig_short}} service will start the resource collection and periodically to keep the metadata current via reconciliation. User can use the query API to get the updated metadata of the service instances in the account.
+Configuration Aggregator can be used to facilitate a Cloud Governance SME with up-to-date configuration data of IBM Cloud resources in one place so that comprehensive information is available for goverance and compliance initiatives. All the plans of the {{site.data.keyword.appconfig_short}} service except the Lite Plan will have the Configuration Aggregator feature available. As an app owner, the user has to explicitly enable the Configuration Aggregator. It can be done on the {{site.data.keyword.appconfig_short}} instance either via API, SDK or Dashboard. The {{site.data.keyword.appconfig_short}} service will start the resource collection and periodically to keep the metadata current via reconciliation. User can use the query API to get the updated metadata of the service instances in the account.
 
 Configuration Aggregator feature can be configured on an {{site.data.keyword.appconfig_short}} instance at Enterprise account level to collect resource metadata from all the sub-accounts of the enterprise. A trusted profile template should be created providing access to {{site.data.keyword.appconfig_short}} service instance to all the IAM enabled services. The trusted profile template should then be assigned to the required accounts in the Enterprise, which in turn creates the trusted profile in the respective sub-accounts providing access to App Configuration service instance to collect resource metadata.
 
@@ -23,6 +23,11 @@ By default, recording is always set to be OFF.
 {: shortdesc}
 
 ![Default Configuration Aggregator](images/config-aggr-default.png "Default Configuration Aggregator"){: caption="Default Configuration Aggregator" caption-side="bottom"}
+
+## Configuration aggregator used with Security and Compliance Center Workload Protection
+{: #ac-configuration-aggregator-with-workload-protection}
+
+The Configuration aggregator is the data source used by Security and Compliance Center Workload Protection to perform cloud security posture management (CSPM) of IBM Cloud resources.  When configuring IBM Cloud CSPM within Workload Protection, an instance of App Configuration with aggregation enabled is automatically connected to Workload Protection.  You do need to explicitly enable recording as mentioned above.  New instances of App Configuration created through workload protection are provisioned into the Basic Plan by default.  Aggregation within the Basic plan is free and will not add to the cost of Workload Protection.
 
 ## Enable Configuration aggregator - Single Account
 {: #ac-enable-configuration-aggregator-single-account}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-04-22"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -49,7 +49,7 @@ Before you begin playing the video: In this video, the narrator draws representa
 What if you could release a feature to different groups of users without deployment?
 Is there a way to effectively test features in production, and immediately roll them back if needed?
 
-Hi, my name is Dilan Orrino with IBM Cloud. I'll be answering those questions by discussing feature flags, or sometimes referred to as feature toggle, or switches.
+I'll be answering those questions by discussing feature flags, or sometimes referred to as feature toggle, or switches.
 
 Feature flags are conditions that encompass feature code that allow you to flip them on and off at will.
 Okay, let's use an example.
