@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-28"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #April-2025}
 
 Review the release notes for April 2025.
+
+### 28 April 2025
+{: #app-configuration-Apr282025}
+{: release-note}
+
+Collection of configurations of {{site.data.keyword.cloud-shell_notm}}
+:   Configuration aggregator can now collect configurations of {{site.data.keyword.cloud-shell_notm}}.
 
 ### 1 April 2025
 {: #app-configuration-Apr012025}
