@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-22"
+lastupdated: "2025-04-28"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -157,4 +157,5 @@ Configuration Aggregator supports the following services:
 | [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 | [IBM Power Virtual Server](/docs/power-iaas) |
 | [IBM Cloud Logs](/docs/cloud-logs) |
+| [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
