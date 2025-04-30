@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-04-28"
+lastupdated: "2025-04-30"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #April-2025}
 
 Review the release notes for April 2025.
+
+### 29 April 2025
+{: #app-configuration-Apr292025}
+{: release-note}
+
+Availability in Sao Paulo region
+:   {{site.data.keyword.appconfig_full}} is now available in the Sao Paulo region.
 
 ### 28 April 2025
 {: #app-configuration-Apr282025}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-30"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -36,6 +36,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Toronto | Toronto |
 | Tokyo | Tokyo |
 | Osaka | Osaka |
+| Sao Paulo | Sao Paulo |
 {: caption="Deployment and monitoring regions" caption-side="bottom"}
 
 Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.

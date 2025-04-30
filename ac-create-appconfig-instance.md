@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-30"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -31,7 +31,7 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 
    ![Create an {{site.data.keyword.appconfig_short}} service instance](images/ac-create-instance.png "Creating an {{site.data.keyword.appconfig_short}} service instance"){: caption="{{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
-1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), Frankfurt (eu-de), Madrid (eu-es), Tokyo (jp-tok), Osaka (jp-osa), Toronto(ca-tor) and Sydney (au-syd) regions are supported.
+1. In the **Create** tab, select the location that represents the geographic area (**Region**) where you want to provision your instance. Currently, Dallas (us-south), Washington DC (us-east), London (eu-gb), Frankfurt (eu-de), Madrid (eu-es), Tokyo (jp-tok), Osaka (jp-osa), Toronto(ca-tor), Sydney (au-syd) and Sao Paulo (br-sao) regions are supported.
 
 1. **Select a pricing plan** - Based on your business requirements, select a pricing plan: Lite, Basic, Standard, and Enterprise.
 

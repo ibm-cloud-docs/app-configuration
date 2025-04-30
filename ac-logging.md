@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-30"
 
 keywords: app configuration cloud logs, app configuration logging, app configuration external logs
 
@@ -40,6 +40,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | Toronto (`ca-tor`) | [Yes]{: tag-green} |
 | Tokyo (`jp-tok`) | [Yes]{: tag-green} |
 | Osaka (`jp-osa`) | [Yes]{: tag-green} |
+| Sao Paulo (`br-sao`) | [Yes]{: tag-green} |
 {: caption="Locations where platform logs are generated" caption-side="top"}
 
 
@@ -50,7 +51,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logs-table-1}
 {: tab-title="Americas"}
@@ -85,7 +86,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #lr-table-1}
 {: tab-title="Americas"}
