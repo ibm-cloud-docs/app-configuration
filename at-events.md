@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-04-30"
 
 keywords: activity tracking, app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -41,7 +41,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green}  | [Yes]{: tag-green}| [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green}  | [Yes]{: tag-green}| [No]{: tag-red} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #at-table-1}
 {: tab-title="Americas"}
@@ -77,7 +77,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #atracker-table-1}
 {: tab-title="Americas"}
