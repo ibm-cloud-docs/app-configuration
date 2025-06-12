@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-06-12"
 
 keywords: app-configuration, app configuration, integrate sdk, javascript sdk, browser, front-end
 
@@ -37,6 +37,7 @@ Browser Compatibility: The SDK is supported on all major browsers. The Browser s
 {: #ac-integrate-js-sdk}
 
 ### Installation
+{: #install-js-sdk}
 
 Install the SDK. Use the following code to install as a module from package manager.
 
@@ -49,7 +50,9 @@ Example:
 ```html
 <script type="text/javascript" src="https://unpkg.com/ibm-appconfiguration-js-client-sdk/dist/appconfiguration.js"></script>
 ```
+
 ### Initialize SDK
+{: #initialize-js-sdk}
 
 Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance.
 
@@ -163,6 +166,7 @@ const featureValue = feature.getCurrentValue(entityId, entityAttributes);
 - `entityAttributes`: A JSON object consisting of the attribute name and their values that defines the specified entity. This is an optional parameter if the feature flag is not configured with any targeting definition. If the targeting is configured, then entityAttributes should be provided for the rule evaluation. An attribute is a parameter that is used to define a segment. The SDK uses the attribute values to determine if the specified entity satisfies the targeting rules, and returns the appropriate feature flag value.
 
 #### Send custom metrics
+{: #send-custom-metrics-js}
 
 Record custom metrics to use in experimentation using the track function.
 
@@ -229,6 +233,7 @@ appConfigClient.setLogLevel('debug');
 ```
 
 ### Supported Data types
+{: #supported-data-types}
 
 App Configuration service allows to configure the feature flag and properties in the following data types : Boolean,
 Numeric, String. The String data type can be of the format of a text string , JSON or YAML. The SDK processes each
@@ -299,11 +304,13 @@ appConfigClient.emitter.on('configurationUpdate', () => {
 ```
 
 ### Examples
+{: #evaluation-examples}
 
 Try [this](https://github.com/IBM/appconfiguration-js-client-sdk/tree/main/example) sample application in the examples
 folder to learn more about feature and property evaluation.
 
 ### License
+{: #apache-js-license}
 
 This project is released under the Apache 2.0 license. The license's full text can be found
 in [LICENSE](https://github.com/IBM/appconfiguration-js-client-sdk/blob/main/LICENSE)
