@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-07-01"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -158,4 +158,5 @@ Configuration Aggregator supports the following services:
 | [IBM Power Virtual Server](/docs/power-iaas) |
 | [IBM Cloud Logs](/docs/cloud-logs) |
 | [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
+| [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}

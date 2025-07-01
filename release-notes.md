@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-04-30"
+lastupdated: "2025-07-01"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+
+## June 2025
+{: #June-2025}
+
+Review the release notes for June 2025.
+
+### 30 June 2025
+{: #app-configuration-Jun302025}
+{: release-note}
+
+Collection of configurations of Virtual Network Interfaces
+:   Configuration aggregator can now collect configurations of Virtual Network Interfaces for Virtual Private Cloud.
 
 ## April 2025
 {: #April-2025}
