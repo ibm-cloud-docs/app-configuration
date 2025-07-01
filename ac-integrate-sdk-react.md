@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-06-12"
 
 keywords: app-configuration, app configuration, integrate sdk, react sdk, browser, front-end
 
@@ -36,6 +36,7 @@ Compatibility : The SDK is compatible with React version 16.8.0 and higher. This
 {: #ac-integrate-react-sdk}
 
 ### Installation
+{: #install-react-sdk}
 
 Install the SDK.
 ```sh
@@ -43,6 +44,7 @@ npm install ibm-appconfiguration-react-client-sdk
 ```
 
 ### Initialize SDK
+{: #initialize-react-sdk}
 
 Initialize the sdk to connect with your {{site.data.keyword.appconfig_short}} service instance as shown in the following example. Wrapping your app component with `AppConfigProvider` lets you access features & properties from any level of your component hierarchy.
 
@@ -298,6 +300,7 @@ property.getCurrentValue(entityId, entityAttributes); // returns the stringified
 </details>
 
 ### License
+{: #apache-react-license}
 
 This project is released under the Apache 2.0 license. The license's full text can be found
 in [LICENSE](https://github.com/IBM/appconfiguration-react-client-sdk/blob/main/LICENSE)

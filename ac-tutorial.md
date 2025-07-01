@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-06-12"
 
 keywords: app-configuration, app configuration, tutorial
 
@@ -26,7 +26,7 @@ completion-time: 90m
 {: shortdesc}
 
 ## Before you begin
-{: #ac-prereqs}
+{: #ac-prerequisite}
 
 You need an {{site.data.keyword.cloud}} account. If you don't have an account, [create one](https://cloud.ibm.com/registration/){: external}. Log in to your {{site.data.keyword.cloud}} account.
 
