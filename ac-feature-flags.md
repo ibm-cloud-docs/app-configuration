@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-22"
+lastupdated: "2025-07-18"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -272,6 +272,27 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 If you try to target a feature flag that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}
+
+## Creating Variations for Experimentation
+{: #ac-create-variations-feature-flag}
+
+Add variations to your feature flag to support experimentation. The variants added to a feature flag help you track how different variations of your application are performing when an experiment is conducted using the feature flag. This helps you identify which variation performs the best.
+
+To create a variation:
+
+1. Navigate to your {{site.data.keyword.appconfig_short}} instance. To learn the process to create an {{site.data.keyword.appconfig_short}} instance, see [Creating an App Configuration service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance).
+
+1. In the {{site.data.keyword.appconfig_short}} console, click **Features flags**.
+
+1. Select the **Current Environment** to display the list of feature flags in that environment.
+
+1. Click **View Variations** on the feature you intend to use for experimentation.
+
+1. Click **Create**.
+
+1. Provide the name,value and description for your variation.
+
+1. Click **Create**.
 
 ## Enabling a feature flag
 {: #enabling-feature-flag}
