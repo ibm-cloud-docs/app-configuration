@@ -38,7 +38,6 @@ toc:
           - ac-feature-flags.md
           - ac-properties.md
           - ac-snapshots.md
-          - ac-experimentation.md
           - ac-settings.md
           - ac-configuration-aggregator.md
           - ac-api-key-encryption.md
