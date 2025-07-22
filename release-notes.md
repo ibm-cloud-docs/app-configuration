@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-22"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,17 +20,7 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
-## July 2025
-{: #July-2025}
 
-Review the release notes for July 2025.
-
-### 15 July 2025
-{: #app-configuration-Jul152025}
-{: release-note}
-
-Availability of Experimentation Functionality
-:   {{site.data.keyword.appconfig_full}} now supports Experimentation. You can create and run experiments on your application, see [Experimentation](/docs/app-configuration?topic=app-configuration-ac-experimentation).
 
 ## June 2025
 {: #June-2025}
