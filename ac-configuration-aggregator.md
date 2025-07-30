@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-30"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -24,10 +24,17 @@ By default, recording is always set to be OFF.
 
 ![Default Configuration Aggregator](images/config-aggr-default.png "Default Configuration Aggregator"){: caption="Default Configuration Aggregator" caption-side="bottom"}
 
+
 ## Configuration aggregator used with Security and Compliance Center Workload Protection
 {: #ac-configuration-aggregator-with-workload-protection}
 
 The Configuration aggregator is the data source used by Security and Compliance Center Workload Protection to perform cloud security posture management (CSPM) of IBM Cloud resources.  When configuring IBM Cloud CSPM within Workload Protection, an instance of App Configuration with aggregation enabled is automatically connected to Workload Protection.  You do need to explicitly enable recording as mentioned above.  New instances of App Configuration created through workload protection are provisioned into the Basic Plan by default.  Aggregation within the Basic plan is free and will not add to the cost of Workload Protection.
+
+
+When Context Based Restrictions are enabled for any resource in your IBM Cloud account, configuration cannot be collected unless access to that resource is provided. To provide access, you need to create a rule. When asked to add a context, create a network zone and select App Configuration as the reference service. 
+   ![CBR](images/ac-cbr.png "CBR"){: caption="CBR for Configuration Aggregator" caption-side="bottom"}
+{: note}
+
 
 ## Enable Configuration aggregator - Single Account
 {: #ac-enable-configuration-aggregator-single-account}
