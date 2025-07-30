@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-07-30"
 
 keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 
@@ -63,8 +63,8 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Toronto |`https://ca-tor.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Tokyo |`https://jp-tok.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Osaka |`https://jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
-|Madrid | `https://eu-es.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sao Paulo |`https://br-sao.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Montreal | `https://ca-mon.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Public endpoints" caption-side="top"}
 
 ### Private endpoints
@@ -83,6 +83,6 @@ If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a
 |Toronto |`https://private.ca-tor.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Tokyo |`https://private.jp-tok.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Osaka |`https://private.jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
-|Madrid |`https://private.eu-es.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sao Paulo |`https://private.br-sao.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Montreal | `https://ca-mon.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Private endpoints" caption-side="top"}
