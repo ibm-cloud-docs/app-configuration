@@ -33,6 +33,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 - Tokyo
 - Osaka
 - Sao Paulo
+- Montreal
 
 You can create {{site.data.keyword.appconfig_notm}} resources in one of the supported {{site.data.keyword.cloud_notm}} regions.
 

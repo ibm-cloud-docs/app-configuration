@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-07-30"
 
 keywords: public isolation for app configuration, compute isolation for app configuration, app configuration architecture, workload isolation in app configuration
 
@@ -21,7 +21,7 @@ Learn about the {{site.data.keyword.appconfig_full}} service architecture, the s
 ## {{site.data.keyword.appconfig_short}} architecture
 {: #architecture}
 
-{{site.data.keyword.appconfig_notm}} service is offered in the regions: Dallas, Washington DC, London, Frankfurt, Toronto, Tokyo, Osaka, Sydney and Sao Paulo. Every region supported, has its own {{site.data.keyword.cloud_notm}} Kubernetes Service cluster with several worker nodes. Each worker node runs several instances of {{site.data.keyword.appconfig_short}} service components. Each region is fronted by a global load balancer and a web application firewall.
+{{site.data.keyword.appconfig_notm}} service is offered in the regions: Dallas, Washington DC, London, Frankfurt, Toronto, Tokyo, Osaka, Sydney,Sao Paulo and Montreal. Every region supported, has its own {{site.data.keyword.cloud_notm}} Kubernetes Service cluster with several worker nodes. Each worker node runs several instances of {{site.data.keyword.appconfig_short}} service components. Each region is fronted by a global load balancer and a web application firewall.
 
 {{site.data.keyword.appconfig_short}} service persists tenant data in highly available database. A single regional database is used to store the data of all tenants in that particular region.
 
