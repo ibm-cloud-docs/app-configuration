@@ -10,6 +10,8 @@ subcollection: app-configuration
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
 # Virtual Private Endpoint
 {: #ac-vpe}
 
@@ -34,7 +36,7 @@ Before creating an endpoint gateway, ensure that you review [Planning for virtua
 
 1. Login to your {{site.data.keyword.cloud_notm}} account.
 
-1. On the [IBM Cloud Console](https://cloud.ibm.com), click the **Menu** icon ![Menu](images/icon_hamburger.svg) and navigate to **Infrastructure** > **Network** > **Virtual Private Endpoint Gateways**.
+1. On the [IBM Cloud Console](https://cloud.ibm.com), click the **Menu** icon ![Menu](/images/icon_hamburger.svg) and navigate to **Infrastructure** > **Network** > **Virtual Private Endpoint Gateways**.
 
 1. On the console, click **Create**.
 
@@ -75,13 +77,13 @@ To learn more about the different fields, see [Create Endpoint Gateways](/docs/v
    ```
    {: codeblock}
 
-Where:
+   Where:
 
--   `--vpc`
-   :   Indicates the ID of the VPC.
+   -   `--vpc`
+      :   Indicates the ID of the VPC.
 
--   `--target`
-   :   Indicates the name, or CRN, of a provider cloud service instance.
+   -   `--target`
+      :   Indicates the name, or CRN, of a provider cloud service instance.
 
 1. Create an endpoint gateway by attaching the target type for a Private Path service:
 
@@ -235,11 +237,3 @@ resource "ibm_is_virtual_endpoint_gateway" "ac_vpe_dal" {
 ```
 
 To find the {{site.data.keyword.appconfig_short}} endpoints, see [Endpoints](/docs/app-configuration?topic=app-configuration-ac-regions-endpoints#ac-private-endpoints). Find the VPC ID in your VPC instance, see [Creating and Configuring a VPC](/docs/vpc?topic=vpc-getting-started&interface=terraform#create-and-configure-vpc) to learn the process of creating a VPC.
-
-## After creating a VPE gateway
-{: #ac-vpe-post-creation}
-
-If you return to the Virtual private endpoint gateways for VPC page, your endpoint gateway shows in the table.
-
-* For IBM Cloud services like {{site.data.keyword.appconfig_short}}, the status of your endpoint gateway changes from `Updating` to `Stable`. You can click the Actions menu ![Actions menu](images/overflow.png) to rename, reserve or bind an IP, unbind an IP, or delete an endpoint gateway.
-* Optionally, there is a DNS resolution binding switch in the table row of the VPE gateway that allows you to enable or disable DNS sharing for this endpoint gateway. For more information, see [About DNS sharing for VPE gateways](/docs/vpc?topic=vpc-vpe-dns-sharing).
