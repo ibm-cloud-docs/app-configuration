@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2025
-lastupdated: "2025-06-12"
+lastupdated: "2025-07-30"
 
 keywords: app configuration cloud logs, app configuration logging, app configuration external logs
 
@@ -38,6 +38,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 | Tokyo (`jp-tok`) | [Yes]{: tag-green} |
 | Osaka (`jp-osa`) | [Yes]{: tag-green} |
 | Sao Paulo (`br-sao`) | [Yes]{: tag-green} |
+| Montreal (`ca-mon`) | [Yes]{: tag-green} |
 {: caption="Locations where platform logs are generated" caption-side="top"}
 
 
@@ -46,9 +47,9 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 
 {{site.data.keyword.appconfig_short}} sends platform logs to {{site.data.keyword.logs_full_notm}} in the regions indicated in the following table.
 
-| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) | Montreal (`ca-mon`) |
+|---------------------|-------------------------|-------------------|----------------------|----------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logs-table-1}
 {: tab-title="Americas"}
@@ -68,7 +69,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #logs-table-3}
 {: tab-title="Europe"}
@@ -76,14 +77,15 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: class="simple-tab-table"}
 {: row-headers}
 
+
 ## Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
 {: #lr-locations}
 
 {{site.data.keyword.appconfig_short}} sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
 
-| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) | Montreal (`ca-mon`) |
+|---------------------|-------------------------|-------------------|----------------------|----------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #lr-table-1}
 {: tab-title="Americas"}
@@ -103,13 +105,14 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #lr-table-3}
 {: tab-title="Europe"}
 {: tab-group="lr"}
 {: class="simple-tab-table"}
 {: row-headers}
+
 
 ## Enabling logging
 {: #log-enable}

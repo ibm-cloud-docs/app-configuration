@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-22"
+lastupdated: "2025-07-21"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -272,6 +272,8 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 If you try to target a feature flag that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}
+
+
 
 ## Enabling a feature flag
 {: #enabling-feature-flag}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2025-07-01"
+  years: 2021, 2025
+lastupdated: "2025-07-30"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -21,6 +21,20 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: shortdesc}
 
 
+## July 2025
+{: #July-2025}
+
+Review the release notes for July 2025.
+  
+### 30 July 2025
+{: #app-configuration-Jul302025}
+{: release-note}
+
+Availability in Montreal region
+:   {{site.data.keyword.appconfig_full}} is now available in the Montreal region.
+
+
+
 ## June 2025
 {: #June-2025}
 
@@ -32,6 +46,7 @@ Review the release notes for June 2025.
 
 Collection of configurations of Virtual Network Interfaces
 :   Configuration aggregator can now collect configurations of Virtual Network Interfaces for Virtual Private Cloud.
+
 
 ## April 2025
 {: #April-2025}
