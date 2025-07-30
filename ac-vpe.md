@@ -44,6 +44,8 @@ Before creating an endpoint gateway, ensure that you review [Planning for virtua
  
 1. Select the {{site.data.keyword.appconfig_short}} under the **Request connection to a service** section.
 
+1. Select the region and choose an endpoint.
+
 1. In the **Reserved IP** section, select the option **Select one for me**.
 
 1. Review the Order summary, then click Create a virtual private endpoint gateway. The endpoint gateway is requested for use.
@@ -241,4 +243,3 @@ If you return to the Virtual private endpoint gateways for VPC page, your endpoi
 
 * For IBM Cloud services like {{site.data.keyword.appconfig_short}}, the status of your endpoint gateway changes from `Updating` to `Stable`. You can click the Actions menu ![Actions menu](images/overflow.png) to rename, reserve or bind an IP, unbind an IP, or delete an endpoint gateway.
 * Optionally, there is a DNS resolution binding switch in the table row of the VPE gateway that allows you to enable or disable DNS sharing for this endpoint gateway. For more information, see [About DNS sharing for VPE gateways](/docs/vpc?topic=vpc-vpe-dns-sharing).
-
