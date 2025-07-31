@@ -1,9 +1,8 @@
-
 ---
 
 copyright:
   years: 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-07-31"
 
 keywords: app-configuration, app configuration, about app configuration
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-07-31"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -57,7 +57,7 @@ Where:
 - A *geography* is a geographic area or larger political body that contains one or more regions.
 - A *region* is a defined geographic territory.
    - A region might be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
-   - A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region.
+   - A region contains [multiple availability zones](https://www.ibm.com/solutions/cloud-data-centers) to meet local access, low latency, and security requirements for the region.
 - `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#table-mzr).
 
 ## Disaster recovery (DR) for {{site.data.keyword.appconfig_short}} service in a region
@@ -70,4 +70,4 @@ If an entire MZR becomes inoperative (usually due to a catastrophic disaster or 
 
 When the primary MZR is restored, the secondary deployment is migrated back to the primary site. After the migration is complete, the DNS is restored to its original routing.
 
-If you need zero downtime during a regional disaster recovery, create and maintain backup instances in other regions. To synchronize a service instance in one region with an instance in a different region, you can use the APIs mentioned [here](/apidocs/app-configuration).
+If you need zero downtime during a regional disaster recovery, create and maintain backup instances in other regions. To synchronize a service instance in one region with an instance in a different region, you can use the APIs mentioned [API Docs](/apidocs/app-configuration).
