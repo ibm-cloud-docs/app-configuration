@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-07-31"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -60,7 +60,7 @@ To enable configuration aggregator, complete these steps:
 
 1. Create an {{site.data.keyword.appconfig_short}} instance at the top-level of the enterprise i.e enterprise account.
 
-1. Create a Trusted Profile Template providing access for the {{site.data.keyword.appconfig_short}} service instance to the IAM enabled services and Account Management services. Refer [here](/docs/enterprise-management?topic=enterprise-management-tp-template-create)
+1. Create a Trusted Profile Template providing access for the {{site.data.keyword.appconfig_short}} service instance to the IAM enabled services and Account Management services. Refer [Creating Trusted Profile](/docs/enterprise-management?topic=enterprise-management-tp-template-create)
 
    ![Enable Configuration Aggregator - Trusted Profile Template](images/tp-template.png "Trusted Profile Template - Enterprise Account"){: caption="Trusted Profile Template - Enterprise Account" caption-side="bottom"}
 
@@ -69,7 +69,7 @@ The trusted profile template cannot be assigned to the enterprise account i.e th
 
 1. Assign the Trusted profile template to the required accounts and account groups in the Enterprise.
 
-The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. For more details, refer [here](/docs/enterprise-management?topic=enterprise-management-enterprise-managed-opt-in)
+The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. For more details, refer [Opting in to enterprise-managed IAM](/docs/enterprise-management?topic=enterprise-management-enterprise-managed-opt-in)
 {: note}
 
 To enable configuration aggregator for an enterprise account, complete the pre-requisites and following steps:
@@ -98,7 +98,7 @@ To enable configuration aggregator for an enterprise account, complete the pre-r
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.
 
-For more details, refer [here](/apidocs/app-configuration){: external}.
+For more details, refer [API Docs](/apidocs/app-configuration){: external}.
 
 ## List of Services Supported by Configuration Aggregator
 {: #ac-list-of-services-configaggregator}

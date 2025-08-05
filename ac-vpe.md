@@ -2,7 +2,7 @@
 
 copyright:
   years:  2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-07-31"
 
 keywords: app-configuration, app configuration, about app configuration, vpe, virtual private endpoints, virtual private endpoint gateways
 
@@ -40,7 +40,7 @@ Before creating an endpoint gateway, ensure that you review [Planning for virtua
 
 1. On the console, click **Create**.
 
-1. In the details page, provide the **Geography**, **Region**, **Name** for your gateway, **Resource Group**, select the **VPC** where you need the VPE IP, address. To learn more about the fields, see [Viewing details of an endpoint gateway](docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui).
+1. In the details page, provide the **Geography**, **Region**, **Name** for your gateway, **Resource Group**, select the **VPC** where you need the VPE IP, address. To learn more about the fields, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui).
 
 1. The security groups are used to tighten the security rules for inbound traffic toward your endpoint gateways. Select the checkbox for the security groups you want to attach to your gateway.
  
