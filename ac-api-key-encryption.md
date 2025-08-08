@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-08-08"
 
 keywords: app-configuration, app configuration, encrypt api key
 subcollection: app-configuration
@@ -18,6 +18,7 @@ The `ibm-appconfiguration-js-client-sdk` and `ibm-appconfiguration-react-client-
 To provide maximum security, we utilize a random nonce during the encryption process. As a result, each time you encrypt your APIKey, the encrypted value will be different, but the underlying plain text remains the same when it is decrypted during authentication.
 
 ## Steps to Generate and Use Encrypted Client SDK APIKey
+{: #ac-generation-apikey}
 
 1. Obtain Your Plain APIKey:
     - Navigate to the **Service Credentials** section of your {{site.data.keyword.appconfig_short}} instance on the IBM Cloud dashboard.
@@ -90,5 +91,6 @@ To provide maximum security, we utilize a random nonce during the encryption pro
         ```
 
 ## Existing Users: Update Required
+{: #ac-existing-users-update}
 
 If you are already using a plain APIKey, update your application to generate and use the encrypted APIKey as per the previous steps.
