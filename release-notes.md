@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-12"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,6 +20,17 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
+## August 2025
+{: #August-2025}
+
+Review the release notes for August 2025.
+
+### 12 August 2025
+{: #app-configuration-Aug122025}
+{: release-note}
+
+Revised Design for Backing up and restoring instance configurations.
+:   {{site.data.keyword.appconfig_full}} now has a revised design for backing up and restoring instance configurations, see [FAQ](/docs/app-configuration?topic=app-configuration-ac-faqs-operations#faq-ac-data-size)
 
 ## July 2025
 {: #July-2025}
