@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-08-12"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -61,4 +61,4 @@ When new resources are added to or removed from IBM Cloud for onboarded accounts
 {: #faq-ac-data-size}
 {: faq}
 
-The permissible limit on the content length is 200kb. Beyond this limit, the user might experience 413 HTTP status code in the response. This restriction is also applicable to CLI.
+The permissible limit on the content length is 10Mb. Beyond this limit, the user might experience 413 HTTP status code in the response. This restriction is also applicable to CLI.
