@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-09-15"
 
 keywords: activity tracking, app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -188,6 +188,7 @@ The following list of {{site.data.keyword.appconfig_short}} events is sent to {{
 | `apprapp.config-aggregator-settings.list` | Called to view the settings configuration or failed to list |
 | `apprapp.config-aggregator-status.list` | Called to view status and time when the last configuration got updated or failed to list. |
 | `apprapp.config-aggregator.query` | Called to list the resource configurations. |
+| `apprapp.config.status` | Get the status of import or export instance configuration operation. |
 {: caption="Actions that generate data events" caption-side="bottom"}
 
 If an unauthorized request is made for any of the actions in table 3, a management event with reason code 403 is emitted.
