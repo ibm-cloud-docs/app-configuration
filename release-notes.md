@@ -30,7 +30,7 @@ Review the release notes for September 2025.
 {: release-note}
 
 Support for scheduled flags
-:   {{site.data.keyword.appconfig_full_notm}} now supports scheduling of feature flags, see [Scheduled Flags](/docs/app-configuration?topic=app-configuration-ac-scheduled-flags)
+:   {{site.data.keyword.appconfig_full}} now supports scheduling of feature flags, see [Scheduled Flags](/docs/app-configuration?topic=app-configuration-ac-scheduled-flags)
 
 
 ## August 2025
