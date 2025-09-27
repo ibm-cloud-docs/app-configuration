@@ -70,6 +70,10 @@ toc:
           topics:
           - at-events.md
           - ac-logging.md
+      - topicgroup:
+          label: Scheduling Feature Flags
+          topics:
+          - ac-scheduling-feature-flags.md
   - navgroup:
       id: reference
       topics:
