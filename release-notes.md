@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-09-27"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## September 2025
+{: #September-2025}
+
+Review the release notes for September 2025.
+
+### 25 September 2025
+{: #app-configuration-Sep252025}
+{: release-note}
+
+Support for scheduled flags
+:   {{site.data.keyword.appconfig_full_notm}} now supports scheduling of feature flags, see [Scheduled Flags](/docs/app-configuration?topic=app-configuration-ac-scheduled-flags)
+
 
 ## August 2025
 {: #August-2025}
