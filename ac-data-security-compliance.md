@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-02-29"
+  years: 2022, 2025
+lastupdated: "2025-10-08"
 
 keywords: app-configuration, app configuration, data security, compliance, data security and compliance
 
@@ -26,7 +26,7 @@ subcollection: app-configuration
 To learn more about security controls across {{site.data.keyword.cloud_notm}}, see [How do I know that my data is safe?](/docs/overview?topic=overview-security#security){: external}.
 {: tip}
 
-To learn more about how your data is secured in {{site.data.keyword.appconfig_short}}, see [securing your data in {{site.data.keyword.appconfig_short}}](https://cloud.ibm.com/docs/app-configuration?topic=app-configuration-ac-securing-your-data).
+To learn more about how your data is secured in {{site.data.keyword.appconfig_short}}, see [securing your data in {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-ac-securing-your-data).
 
 ### Data encryption
 {: #ac-data-encryption}
@@ -44,13 +44,13 @@ If you attempt to use a cipher that is not on this list, you may experience conn
 {{site.data.keyword.appconfig_short}} meets controls for global, industry, and regional compliance standards, including ISO
 27001/27017/27018/27701, FS Cloud internal validated, C5 and others.
 
-For a complete listing of {{site.data.keyword.cloud_notm}} compliance certifications, see [Compliance on the {{site.data.keyword.cloud_notm}}](https://ibm.com/cloud/compliance){: external}.
+For a complete listing of {{site.data.keyword.cloud_notm}} compliance certifications, see [Compliance on the {{site.data.keyword.cloud_notm}}](https://www.ibm.com/products/cloud/compliance){: external}.
 {: tip}
 
 ### ISO 27001, 27017, 27018, 27701, SOC 2, FS Cloud internal validated and C5
 {: #ac-iso}
 
-{{site.data.keyword.appconfig_short}} is ISO 27001, 27017, 27018, 27701, FS Cloud internal validated and C5 certified. You can view compliance certifications by visiting [Compliance on the {{site.data.keyword.cloud_notm}}](https://ibm.com/cloud/compliance){: external}.
+{{site.data.keyword.appconfig_short}} is ISO 27001, 27017, 27018, 27701, FS Cloud internal validated and C5 certified. You can view compliance certifications by visiting [Compliance on the {{site.data.keyword.cloud_notm}}](https://www.ibm.com/products/cloud/compliance){: external}.
 
 ## Secrets management
 {: #ac-secrets-management}

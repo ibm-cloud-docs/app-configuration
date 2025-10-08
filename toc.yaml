@@ -1,4 +1,3 @@
----
 toc:
   properties:
     subcollection: app-configuration
@@ -111,7 +110,7 @@ toc:
       - topicgroup:
           label: Terraform reference
           topics:
-           - link:
+          - link:
               label: App Configuration Terraform
               href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_collection
       - data-portability.md

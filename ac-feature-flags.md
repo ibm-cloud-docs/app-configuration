@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-08"
+lastupdated: "2025-10-08"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -22,7 +22,7 @@ You can add an approval process flow for any configuration changes initiated thr
 
 A feature can be enabled or disabled to all the collection users or to a specific set of users and devices or to a certain percentage of specific set of users and devices.
 
-Feature roll outs can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled.
+Enabling or disabling features can be coordinated by defining a start and end time and date. Also, choose a specific day on which a defined feature can be enabled or disabled. See [Scheduled Flags](/docs/app-configuration?topic=app-configuration-ac-scheduled-flags) for more information on how to set start and end time, date and choosing a specific day for toggling of your feature flag.
 
 By default, the **Feature flags** page displays the list of feature flags that are created in the current environment of the {{site.data.keyword.appconfig_short}} service instance along with details of the record like **Name**, **Type**, **Last Updated**, **Last Evaluated**, **Segments** that are targeted. Flag types are categorized as Boolean, Numeric, or String.
 
