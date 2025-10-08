@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-10-08"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -79,7 +79,7 @@ An API call also occurs on startup to the retrieve the initial configuration sta
 {: #faq-ac-metrics}
 {: faq}
 
-View basic historical {{site.data.keyword.appconfig_short}} usage metrics on the {{site.data.keyword.IBM_notm}} platform [Billing and Usage dashboard](https://cloud.ibm.com/billing/usage){: external}. If you need more sophisticated monitoring, create an {{site.data.keyword.monitoringlong_notm}} instance from the [Observability](https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console.
+View basic historical {{site.data.keyword.appconfig_short}} usage metrics on the {{site.data.keyword.IBM_notm}} platform [Billing and Usage dashboard](https://cloud.ibm.com/billing/usage){: external}. If you need more sophisticated monitoring, create an {{site.data.keyword.monitoringlong_notm}} instance from the [Observability](https://cloud.ibm.com/observability/overview){: external} section of the {{site.data.keyword.cloud_notm}} console.
 
 ## How to predict {{site.data.keyword.appconfig_short}} cost?
 {: #faq-ac-cost}
@@ -199,13 +199,13 @@ See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
 {: #faq-ac-audit}
 {: faq}
 
-If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.cloud_notm}} Cloud Logs from the [Observability](https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
+If you need strict governance and accountability within your {{site.data.keyword.appconfig_short}} instance, create an instance of {{site.data.keyword.cloud_notm}} Cloud Logs from the [Observability](https://cloud.ibm.com/observability/overview){: external} section of the {{site.data.keyword.cloud_notm}} console. Use that to record and audit {{site.data.keyword.appconfig_short}} activity.
 
 ## How do I archive {{site.data.keyword.appconfig_short}} activity data?
 {: #faq-ac-archive}
 {: faq}
 
-If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.cloud_notm}} Cloud Logs from the [Observability](https://cloud.ibm.com/observe){: external} section of the {{site.data.keyword.cloud_notm}} console. Then archive events from an {{site.data.keyword.cloud_notm}} Cloud Logs instance into a bucket in an {{site.data.keyword.cloud_notm}} Object Storage (COS) instance. [Learn more](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-configure-data-bucket){: external}.
+If you would like to retain a long-term record of activity within your {{site.data.keyword.appconfig_short}} instance, either for audit purposes or for post-processing and data analysis, including application of machine learning models, create an instance of {{site.data.keyword.cloud_notm}} Cloud Logs from the [Observability](https://cloud.ibm.com/observability/overview){: external} section of the {{site.data.keyword.cloud_notm}} console. Then archive events from an {{site.data.keyword.cloud_notm}} Cloud Logs instance into a bucket in an {{site.data.keyword.cloud_notm}} Object Storage (COS) instance. [Learn more](/docs/cloud-logs?topic=cloud-logs-configure-data-bucket){: external}.
 
 ## In what regions is {{site.data.keyword.appconfig_short}} available?
 {: #faq-ac-regions}
@@ -217,7 +217,7 @@ To see a list of {{site.data.keyword.cloud_notm}} regions where you can provisio
 {: #faq-ac-available}
 {: faq}
 
-Yes. {{site.data.keyword.appconfig_short}} is designed as a high availability service designed for enterprise workloads, and conforming to the [{{site.data.keyword.appconfig_short}} Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8986#detail-documentand) and the [{{site.data.keyword.cloud_notm}} Service Level Agreement](https://cloud.ibm.com/docs/overview?topic=overview-slas){: external} for availability. Within a single region, {{site.data.keyword.appconfig_short}} is deployed across a multi-zone cluster. 
+Yes. {{site.data.keyword.appconfig_short}} is designed as a high availability service designed for enterprise workloads, and conforming to the [{{site.data.keyword.appconfig_short}} Service Description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8986#detail-documentand) and the [{{site.data.keyword.cloud_notm}} Service Level Agreement](/docs/overview?topic=overview-slas){: external} for availability. Within a single region, {{site.data.keyword.appconfig_short}} is deployed across a multi-zone cluster. 
 
 ## Is {{site.data.keyword.appconfig_short}} secure?
 {: #faq-ac-security}

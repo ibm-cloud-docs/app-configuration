@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-10-08"
 
 keywords: app-configuration, app configuration, high availability, ha, monitoring, metrics, monitor apps
 
@@ -39,7 +39,7 @@ Currently, {{site.data.keyword.mon_full_notm}} integration is available for {{si
 | Sao Paulo | Sao Paulo |
 {: caption="Deployment and monitoring regions" caption-side="bottom"}
 
-Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](https://cloud.ibm.com/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
+Before you can start using {{site.data.keyword.appconfig_short}} monitoring metrics, you must first opt in and [enable platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
 {: note}
 
 You can configure only one instance of the {{site.data.keyword.mon_full_notm}} service per region to collect platform metrics.
@@ -73,7 +73,7 @@ To monitor {{site.data.keyword.appconfig_short}} metrics, you must launch the {{
 ## Access your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
 
-1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](https://cloud.ibm.com/docs/monitoring?topic=monitoring-launch){: external} from the **Observability** page.
+1. Launch the [{{site.data.keyword.mon_full_notm}} web UI](/docs/monitoring?topic=monitoring-launch){: external} from the **Observability** page.
 
 1. Click **DASHBOARDS**.
 
