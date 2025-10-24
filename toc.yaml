@@ -17,6 +17,8 @@ toc:
       - ac-about1.md
       - ac-create-appconfig-instance.md
       - ac-responsibilities.md
+      - ac-best-practices.md
+      - ac-use-cases.md
       - topic: release-notes.md
         navtitle: Release notes
   - navgroup:
