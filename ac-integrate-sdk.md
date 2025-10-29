@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-10-29"
 
 keywords: app-configuration, app configuration, integrate sdk, node sdk, npm, sdk, android sdk, android, python sdk, python, go, golang, java server sdk, java, go admin sdk
 
@@ -44,9 +44,9 @@ The currently available Go language Admin SDK integrates with your Go applicatio
 
 |SDK type |Details |Links to SDKs and integration docs |
 | -- | -- | -- |
-|Server side|These SDKs are designed for multi-user systems and are intended to be used in a trusted environment, such as inside a corporate network or on a web server.|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)</br>[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-python)</br>[Go SDK](https://github.com/IBM/appconfiguration-go-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-golang)</br>[Java SDK](https://github.com/IBM/appconfiguration-java-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-java) |
-|Client side|These SDKs are designed for web and mobile applications.|[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)</br>[JavaScript SDK](https://github.com/IBM/appconfiguration-js-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-javascript)</br>[React SDK](https://github.com/IBM/appconfiguration-react-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-react)|
-|Admin SDK|Admin SDK is designed to perform {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags, and Properties.|[App Configuration Admin SDK for Go](https://cloud.ibm.com/apidocs/app-configuration?code=go){: external}|
+|Server side|These SDKs are designed for multi-user systems and are intended to be used in a trusted environment, such as inside a corporate network or on a web server. </br>**Recommended IAM role:** Reader|[Node SDK](https://github.com/IBM/appconfiguration-node-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks)</br>[Python SDK](https://github.com/IBM/appconfiguration-python-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-python)</br>[Go SDK](https://github.com/IBM/appconfiguration-go-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-golang)</br>[Java SDK](https://github.com/IBM/appconfiguration-java-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-java) |
+|Client side|These SDKs are designed for web and mobile applications. </br>**Recommended IAM role:** Client SDK|[Android SDK](https://github.com/IBM/appconfiguration-android-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-integrate-sdks-android)</br>[JavaScript SDK](https://github.com/IBM/appconfiguration-js-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-javascript)</br>[React SDK](https://github.com/IBM/appconfiguration-react-client-sdk){: external}</br>[Documentation](/docs/app-configuration?topic=app-configuration-ac-react)|
+|Admin SDK|Admin SDK is designed to perform {{site.data.keyword.appconfig_short}} service instance management. Use this SDK to create and manage {{site.data.keyword.appconfig_short}} resources like Collections, Environments, Feature flags, and Properties. </br>**Recommended IAM role:** Manager|[App Configuration Admin SDK for Go](https://cloud.ibm.com/apidocs/app-configuration?code=go){: external}|
 {: caption="List of {{site.data.keyword.appconfig_short}} server, client, and admin SDKs" caption-side="bottom"}
 
 For more information about installation and technical concepts, see the 'readme file' document in the SDK.
