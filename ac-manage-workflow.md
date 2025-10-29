@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-10-29"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -33,7 +33,9 @@ To integrate with ServiceNow workflow, perform the following steps:
 1. Click **Feature flags**.
 
 1. Click **Manage Workflow**. The **Manage workflow** side-panel displays. 
-  
+
+   ## External Workflow
+   {: #ac-manage-external-workflow}
 
    ![Manage external workflow](images/ac-sn-19.png "Manage external workflow"){: caption="Manage external workflow" caption-side="bottom"}
 
