@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-09-27"
+lastupdated: "2025-12-08"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## December 2025
+{: #December-2025}
+
+Review the release notes for December 2025.
+
+### 2 December 2025
+{: #app-configuration-Dec22025}
+{: release-note}
+
+Collection of configurations of {{site.data.keyword.sysdigsecure_full_notm}}
+:   Configuration aggregator can now collect configurations of {{site.data.keyword.sysdigsecure_full_notm}}.
 
 ## September 2025
 {: #September-2025}
