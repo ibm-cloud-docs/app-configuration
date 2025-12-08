@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-12-08"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -166,4 +166,5 @@ Configuration Aggregator supports the following services:
 | [IBM Cloud Logs](/docs/cloud-logs) |
 | [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
 | [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
+| [SCC Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
