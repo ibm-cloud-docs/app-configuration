@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-09-27"
+  years: 2026
+lastupdated: "2026-01-08"
 
 keywords: app-configuration, app configuration, about app configuration, scheduling, feature flags, scheduling feature flags
 
@@ -31,11 +31,6 @@ The following steps help a user to schedule the toggle of their feature flags:
 
 1. Create 2 topics with alternating schedules, one to enable the feature flag and another to disable it, with the Periodic timer as the source under the **Topics** tab. To set the cron expression for scheduling, refer to [Periodic Timer](/docs/event-notifications?topic=event-notifications-en-cron-periodic-timer#en-cron-create-topic).
 
-1. Create 2 subscriptions each with one of the topics that were created previously and the {{site.data.keyword.appconfig_short}} destination, under the **Subscriptions** tab. Set one subscription to enable the feature flag and the other to disable the feature flag. You can do this by setting the attribute or [defining a template](/docs/event-notifications?topic=event-notifications-en-appconfig-notification-template&interface=ui), refer [Configuration](/docs/event-notifications?topic=event-notifications-en-destination-app-configuration#en-appconfig-steps-configure).
+1. Create 2 subscriptions each with one of the topics that were created previously and the {{site.data.keyword.appconfig_short}} destination, under the **Subscriptions** tab. Set one subscription to enable the feature flag and the other to disable the feature flag. You can do this by setting the attribute or [defining a template](/docs/event-notifications?topic=event-notifications-en-app-configuration-notification-template&interface=ui), refer [Configuration](/docs/event-notifications?topic=event-notifications-en-destination-app-configuration#en-appconfig-steps-configure).
 
 Your configuration is now complete. Your feature flag should be enabled and disabled automatically as per the schedule you have defined.
-
-
-
-
-
