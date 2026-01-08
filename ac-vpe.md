@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2025
-lastupdated: "2025-08-07"
+  years:  2026
+lastupdated: "2026-01-08"
 
 keywords: app-configuration, app configuration, about app configuration, vpe, virtual private endpoints, virtual private endpoint gateways
 
@@ -24,7 +24,7 @@ You can create an endpoint gateway for an {{site.data.keyword.cloud_notm}} servi
 ## Before you begin
 {: #ac-vpe-prereqs}
 
-Before creating an endpoint gateway, ensure that you review [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations) and have the following prerequisites:
+Before creating an endpoint gateway, ensure that you review [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-vpe-planning-considerations) and have the following prerequisites:
 
 - A VPC
 - A subnet in at least one availability zone if you intend on binding an IP address at the same time you provision the endpoint gateway.You can find the list of allowlisted IPs for each region here [Allowlisted IPs for {{site.data.keyword.appconfig_short}}](/docs/app-configuration?topic=app-configuration-ac-allowlisted-ips).

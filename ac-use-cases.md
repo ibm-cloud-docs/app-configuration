@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-10-24"
+  years: 2026
+lastupdated: "2026-01-08"
 
 keywords: app-configuration, app configuration, about app configuration, use cases
 
@@ -42,7 +42,7 @@ Kill Switch is a mechanism to stop something in an event of failure to avoid wid
 ### Canary / Ring Deployments
 {: #ac-canary-ring-deployments}
 
-Canary or ring deployments are a strategy to release features incrementally to a subset of users. App Configuration supports phased rollout to enable incremental release of features to a subset of users or devices. See [Configure feature rollout percentage](docs/app-configuration?topic=app-configuration-ac-feature-flags#configure-rollout-percentage) for details.
+Canary or ring deployments are a strategy to release features incrementally to a subset of users. App Configuration supports phased rollout to enable incremental release of features to a subset of users or devices. See [Configure feature rollout percentage](/docs/app-configuration?topic=app-configuration-ac-feature-flags#configure-rollout-percentage) for details.
 
 ### Offline Support
 {: #ac-offline-support}
@@ -83,5 +83,3 @@ Keeping the features and properties up-to-date across all clusters at real-time 
 {: #ac-iaac}
 
 Infrastructure as Code (IaC) is the process of managing and provisioning computer data centres through machine readable definition files. IaC tools have conditional logic to turn on/off parts of the infrastructure. Using feature flags in IaC allows you to configure and build infrastructure dynamically based on environments. See [here](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_feature) for details.
-
-
