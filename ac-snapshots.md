@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-07"
+  years: 2022, 2026
+lastupdated: "2026-01-09"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -18,8 +18,7 @@ subcollection: app-configuration
 Snapshots are a way to capture the current configuration of your app or environment and sync the modified config set back to your config git repo. This can help you in versioning, application bootstrapping, rollback, troubleshooting, or audit {{site.data.keyword.appconfig_short}}.
 {: shortdesc}
 
-Every snapshot configuration will have the collection and environment id associated with it, along with this user
-can provide their GitHub details where they would like to promote their configurations.
+Snapshots are a supported feature with an Enterprise pricing plan. Every snapshot configuration will have the collection and environment id associated with it, along with this user can provide their GitHub details where they would like to promote their configurations.
 
 By default, **Snapshots** displays the list of snapshot in the current {{site.data.keyword.appconfig_short}} service instance along with **Name**, **Collection_id** associated, **Environment_id** associated, **Git_branch**, **Git_url**, **Git_file_path**, **Git_token**, **last_sync_time** and the date of creation of the snapshot, and the latest date it was updated.
 {: note}
@@ -29,8 +28,7 @@ By default, **Snapshots** displays the list of snapshot in the current {{site.da
 
 To create a snapshot, complete these steps:
 
-1. From the {{site.data.keyword.appconfig_short}} console, click **Manage Snapshots** from the top menu bar.
-
+1. From the {{site.data.keyword.appconfig_short}} console, click **Manage Snapshots** from the top menu bar. This button is visible only if you selected the Enterprise pricing plan.
    ![Manage snapshots](images/ac-manage-snapshots.png "Manage snapshots"){: caption="Manage snapshots in the current {{site.data.keyword.appconfig_short}} service instance" caption-side="bottom"}
 
 1. Click **Manage Snapshots**. The side panel opens up where you will be seeing the **New +** button.
