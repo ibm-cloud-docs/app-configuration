@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2025
-lastupdated: "2025-04-07"
+   years: 2026
+lastupdated: "2026-01-13"
 
 keywords: app-configuration, app configuration,enable configuration aggregation,tutorial
 
@@ -38,8 +38,10 @@ Ensure that the following prerequisites are in place:
 
 The Enterprise IAM should be enabled in the sub-accounts of an Enterprise to be managed via Enterprise. Ensure that this option is enabled, or you can modify it using the following API.
 
+
+
 ```curl
-curl -s -L -X PATCH "https://accounts.test.cloud.ibm.com/v1/accounts/$ACCOUNT/traits"
+curl -s -L -X PATCH "https://accounts.cloud.ibm.com/v1/accounts/$ACCOUNT/traits"
 -H "Content-Type: application/json"
 -H "Authorization: Bearer $TOKEN"
 -d "{
@@ -47,6 +49,10 @@ curl -s -L -X PATCH "https://accounts.test.cloud.ibm.com/v1/accounts/$ACCOUNT/tr
 }"
 ```
 {: codeblock}
+
+
+
+
 
 If the trusted profile template is applied to an account group, then all the accounts and account group added in the future will also get assigned to the trusted profile template automatically.
 {: note}

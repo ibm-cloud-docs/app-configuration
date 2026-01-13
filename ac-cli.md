@@ -12,8 +12,11 @@ subcollection: app-configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# App Configuration CLI
+# App Configuration CLI commands (Valid only for versions 0.0.1 - 1.0.14)
 {: #app-configuration-cli}
+
+The CLI commands listed here will be valid only for versions 0.0.1 - 1.0.14 which will be deprecated.
+{: deprecated}
 
 The {{site.data.keyword.cloud_notm}} command-line interface (CLI) provides extra capabilities for service offerings. {{site.data.keyword.cloud_notm}} CLI supports a plug-in framework to extend its capability. You can install the {{site.data.keyword.appconfig_short}} CLI plug-in from the {{site.data.keyword.cloud_notm}} plug-in repository. With the {{site.data.keyword.appconfig_short}} service CLI plug-in, you can easily manage {{site.data.keyword.appconfig_short}} service instances by using the CLI commands.
 {: shortdesc}

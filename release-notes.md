@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2021, 2025
+  years: 2021, 2026
 lastupdated: "2025-12-08"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## January 2026
+{: #January-2026}
+
+Review the release notes for January 2026.
+
+### 7 January 2026
+{: #app-configuration-Jan72026}
+{: release-note}
+
+Updated CLI Commands
+:   CLI Commands for {{site.data.keyword.appconfig_full}} have been updated from versions 2.0.0 and above, see [App Configuration CLI (Valid for versions 2.0.0 and above)](/docs/app-configuration?topic=app-configuration-app-configuration-updated-cli).
 
 ## December 2025
 {: #December-2025}
