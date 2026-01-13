@@ -25,12 +25,12 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 
 Review the release notes for January 2026.
 
-### 7 January 2026
+### 12 January 2026
 {: #app-configuration-Jan72026}
 {: release-note}
 
-Updated CLI Commands
-:   CLI Commands for {{site.data.keyword.appconfig_full}} have been updated from versions 2.0.0 and above, see [App Configuration CLI (Valid for versions 2.0.0 and above)](/docs/app-configuration?topic=app-configuration-app-configuration-updated-cli).
+Configuration Aggregator CLI suppprt
+:  Configuration Aggregator is now supported by CLI. File support is added for all commands, see [App Configuration CLI commands (Valid for versions 2.0.0 and above)](/docs/app-configuration?topic=app-configuration-app-configuration-updated-cli).
 
 ## December 2025
 {: #December-2025}

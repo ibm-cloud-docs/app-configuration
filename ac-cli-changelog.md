@@ -44,10 +44,10 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.14     | 15 December 2023  | Update dependencies.                                                   |
 {: caption="Changes in the deprecated versions of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}
 
-## New Versions
-{: #ac-cli-new-versions}
+## Latest Versions
+{: #ac-cli-latest-versions}
 
-| Version    | Release date      | Changes                                                                |
-| ---------- | ----------------- | ---------------------------------------------------------------------- |
-| 2.0.0 | 5 January 2025 | Updated CLI commands |
+| Version    | Release date      | Changes                                                                                |
+| ---------- | ----------------- | ---------------------------------------------------------------------------------------|
+| 2.0.0      | 12 January 2025    | Updated CLI commands. File support for all commands. Configuration Aggregator support. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-10-04"
+  years: 2021, 2026
+lastupdated: "2026-01-13"
 
 keywords: app configuration CLI, app configuration command line, app configuration terminal, app configuration shell
 

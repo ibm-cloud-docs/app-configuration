@@ -10,7 +10,7 @@ keywords: app configuration api, cli, plugin
 
 {{site.data.keyword.attribute-definition-list}}
 
-# App Configuration CLI (Valid for versions 2.0.0 and above)
+# App Configuration CLI commands (Valid for versions 2.0.0 and above)
 {: #app-configuration-updated-cli}
 
 To view the CLI commands for deprecated versions 0.0.1 to 1.0.14, see [App Configuration CLI commands (Valid only for versions 0.0.1 - 1.0.14)](/docs/app-configuration?topic=app-configuration-app-configuration-cli).
@@ -3289,5 +3289,3 @@ ibmcloud app-configuration environment-create \
     --color-code #FDD13A\
     --file-input 'Path to input file'
 ```
-
-

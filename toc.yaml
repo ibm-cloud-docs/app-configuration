@@ -93,7 +93,6 @@ toc:
           topics:
           - topic: ac-cli.md
           - topic: ac-updated-cli.md
-            navtitle: CLI commands
           - topic: ac-cli-changelog.md
             navtitle: CLI change log
       - topicgroup:
