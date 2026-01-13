@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-10-04"
+  years: 2021, 2026
+lastupdated: "2026-01-13"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -17,6 +17,10 @@ subcollection: app-configuration
 
 Find a summary of changes for each version of {{site.data.keyword.appconfig_short}} plug-in. Keep your CLI up to date so that you can use all of the available commands and their options.
 {: shortdesc}
+
+
+## Deprecated Versions
+{: #ac-cli-deprecated-versions}
 
 | Version    | Release date      | Changes                                                                |
 | ---------- | ----------------- | ---------------------------------------------------------------------- |
@@ -38,4 +42,12 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | 1.0.12     | 13 July 2023      | Added plugin installer for arm64 architecture.                         |
 | 1.0.13     | 30 September 2023 | Deprecate config command, enhanced `import` & `export` commands.       |
 | 1.0.14     | 15 December 2023  | Update dependencies.                                                   |
+{: caption="Changes in the deprecated versions of the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}
+
+## Latest Versions
+{: #ac-cli-latest-versions}
+
+| Version    | Release date      | Changes                                                                                |
+| ---------- | ----------------- | ---------------------------------------------------------------------------------------|
+| 2.0.0      | 12 January 2025    | Updated CLI commands. File support for all commands. Configuration Aggregator support. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}

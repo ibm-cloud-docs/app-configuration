@@ -92,7 +92,7 @@ toc:
           label: CLI reference
           topics:
           - topic: ac-cli.md
-            navtitle: CLI commands
+          - topic: ac-updated-cli.md
           - topic: ac-cli-changelog.md
             navtitle: CLI change log
       - topicgroup:
