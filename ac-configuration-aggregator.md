@@ -98,8 +98,6 @@ To enable configuration aggregator for an enterprise account, complete the pre-r
 
 We can query for the configurations of IBM Cloud resources using list API. It will provide with the detailed metadata of the resources when Configuration Aggregator is enabled for an {{site.data.keyword.appconfig_short}} instance.
 
-For more details, refer [API Docs](/apidocs/app-configuration){: external}.
-
 ## List of Services Supported by Configuration Aggregator
 {: #ac-list-of-services-configaggregator}
 
