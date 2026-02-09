@@ -26,7 +26,7 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 
 Review the release notes for February 2026.
 
-### 9 February 2025
+### 9 February 2026
 {: #app-configuration-Feb92026}
 {: release-note}
 
