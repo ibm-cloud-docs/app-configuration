@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-07-31"
+  years: 2021, 2026
+lastupdated: "2026-02-09"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -50,6 +50,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | North America | Toronto (ca-tor)| MZR |
 | Brazil | Sao Paulo (br-sao) | MZR |
 | Montreal | Montreal (ca-mon) | MZR |
+| Chennai | Chennai (in-che) | MZR |
 {: caption="HA status for the regions" caption-side="bottom"}
 
 Where:

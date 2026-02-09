@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-15"
+  years: 2018, 2026
+lastupdated: "2026-02-09"
 
 keywords: activity tracking, app-configuration cloud logs events, app configuration events, app configuration audit, app configuration audit events, app configuration audit logs
 
@@ -48,7 +48,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on event
 
 | Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
 |---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
 {: #at-table-2}
 {: tab-title="Asia Pacific"}
@@ -85,7 +85,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on event
 
 | Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
 |---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
 {: #atracker-table-2}
 {: tab-title="Asia Pacific"}

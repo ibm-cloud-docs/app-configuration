@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2025-12-08"
+lastupdated: "2026-02-09"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+
+## February 2026
+{: #February-2026}
+
+Review the release notes for February 2026.
+
+### 9 February 2025
+{: #app-configuration-Feb92026}
+{: release-note}
+
+Availability in Chennai(India) region
+:   {{site.data.keyword.appconfig_full}} is now available in the Chennai(India) region.
 
 ## January 2026
 {: #January-2026}
@@ -55,7 +68,6 @@ Review the release notes for September 2025.
 
 Support for scheduled flags
 :   {{site.data.keyword.appconfig_full}} now supports scheduling of feature flags, see [Scheduled Flags](/docs/app-configuration?topic=app-configuration-ac-scheduled-flags)
-
 
 ## August 2025
 {: #August-2025}
@@ -191,7 +203,7 @@ Configuration Aggregator available now
 Review the release notes for May 2024.
 
 ### 15 May 2024
-{: #app-configuration-may1524}
+{: #app-configuration-May152024}
 {: release-note}
 
 Change in {{site.data.keyword.appconfig_full}} basic plan
@@ -205,7 +217,7 @@ Change in {{site.data.keyword.appconfig_full}} basic plan
 Review the release notes for March 2024.
 
 ### 15 March 2024
-{: #app-configuration-mar1524}
+{: #app-configuration-Mar152024}
 {: release-note}
 
 Availability in Frankfurt region
@@ -217,7 +229,7 @@ Availability in Frankfurt region
 Review the release notes for January 2024.
 
 ### 15 January 2024
-{: #app-configuration-jan1524}
+{: #app-configuration-Jan152024}
 {: release-note}
 
 Support for Resource Based Access Control
