@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-07-30"
+  years: 2021, 2026
+lastupdated: "2026-02-09"
 
 keywords: app-configuration, app configuration, regions, endpoints, private endpoints
 
@@ -34,6 +34,7 @@ Review region and connectivity options for interacting with {{site.data.keyword.
 - Osaka
 - Sao Paulo
 - Montreal
+- Chennai
 
 You can create {{site.data.keyword.appconfig_notm}} resources in one of the supported {{site.data.keyword.cloud_notm}} regions.
 
@@ -66,6 +67,7 @@ The following table contains the base URLs for the {{site.data.keyword.appconfig
 |Osaka |`https://jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sao Paulo |`https://br-sao.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Montreal | `https://ca-mon.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Chennai | `https://in-che.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Public endpoints" caption-side="top"}
 
 ### Private endpoints
@@ -85,5 +87,6 @@ If you need to manage your {{site.data.keyword.appconfig_notm}} resources over a
 |Tokyo |`https://private.jp-tok.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Osaka |`https://private.jp-osa.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 |Sao Paulo |`https://private.br-sao.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
-|Montreal | `https://ca-mon.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Montreal | `https://private.ca-mon.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
+|Chennai | `https://private.in-che.apprapp.cloud.ibm.com/apprapp/feature/v1/instances/{guid}` |
 {: caption="Private endpoints" caption-side="top"}
