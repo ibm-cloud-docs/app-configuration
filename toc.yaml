@@ -119,7 +119,6 @@ toc:
       - ac-service-credentials.md
       - ac-regions-endpoints.md
       - ac-vpe.md
-      - ac-allowlisted-ips.md
       - ac-sample-apps.md
       - ac-notices.md
   - navgroup:
