@@ -117,6 +117,7 @@ toc:
               href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/app_config_collection
       - data-portability.md
       - ac-service-credentials.md
+      - service-dependency.md
       - ac-regions-endpoints.md
       - ac-vpe.md
       - ac-sample-apps.md
