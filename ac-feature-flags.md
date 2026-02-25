@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-08"
+  years: 2020, 2026
+lastupdated: "2026-02-25"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -173,22 +173,55 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 1. From the {{site.data.keyword.appconfig_short}} console, go to **Feature flags**. This pane displays the list of feature flags available in the current environment of the {{site.data.keyword.appconfig_short}} service instance.
 
-1. Click **Add targeting** in the required feature flag row to display the **Target flag to segments** side-panel.
+1. Click **Add targeting** in the required feature flag row to display the **Add targeting configurations** side-panel.
 
-   ![Target flag to segments](images/ac-feature-flag-to-segments.png "Target flag to segments"){: caption="Target feature flag to segments" caption-side="bottom"}
+1. The **Feature rollout (Default)** section displays the default **Rollout percentage** slider defined when creating the feature flag. You can adjust the rollout percentage value by moving the slider. Changes are saved automatically as you adjust the slider.
 
-1. The **Feature rollout** displays the default **Rollout percentage** slider define when creating the feature flag. Modify the rollout percentage value, if required.
+1. In the **Rules** section, you can define rules that control who sees your feature, and manage multiple rules with ease. The initial view shows the **Create Rule** button and a search field to filter existing rules.
 
-1. In the **Rules** section, define the rule by specifying the following:
+   ![Adding a Rule](images/ac-targeting-configurations-panel.png "Adding a rule"){: caption="Adding a rule" caption-side="bottom"}
 
-   - In the **Rollout percentage**, you can define the value as an **Override** or **Inherit from default**. If the **Override** option is selected, then specify the **Rollout percentage** override value by using the slider.
-   - Select **Segments** from the list. If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
+   When creating the rule specify the following:
+
+   - **Rule Name** - Enter a descriptive name for the rule (maximum 100 characters).
+   - **Rule ID** - Enter a unique identifier for the rule. This must contain only letters, numbers, dots (.), hyphens (-), and underscores (_). Maximum 100 characters.
+   - In the **Rollout percentage**, you can define the value as **Override** or **Inherit from default**. If the **Override** option is selected, adjust the **Rollout percentage** value by using the slider. The percentage is saved automatically as you adjust the slider.
+   - **Select segments** - Choose one or more segments from the list. The selected segments are displayed with a count indicator (e.g., "1 × segment is selected"). If no segments are available to target, click **Create segment**. For more information about creating a segment, see [Create a segment](/docs/app-configuration?topic=app-configuration-ac-segments#ac-create-segment).
    - For the **Enabled value**, you can select **Override** and modify the value or select **Inherit from flag**.
-   - Click to **Save rule**
+   - **Priority** - Set the rule priority to determine the order in which rules are evaluated. You can set the priority to one of the following options:
 
-   You can define more rules by clicking **Add rule**.
+      - Set to Bottom - Sets the priority of the rule to last. This is the default option.
+      - Set to Top - Sets the priority to the top of the rules (i.e. 1).
+      - Specific Position - Sets the priority to specific user defined position. (Priority number can be between 1 to number of rules).
 
-1. Click **Add targeting**.
+   The rule is created and saved when you click **Save Rule**. There is no separate **Create** or **Cancel** button - simply close the panel when you're done configuring the rule.
+   {: note}
+
+1. After creating a rule, it appears in the rules table showing **Priority**, **Rule Name**, **Segments**, and **Rollout** information. You can perform the following actions for each rule by using the overflow menu :
+
+   - **Copy** - Create a new rule by duplicating an existing rule.
+
+   ![Copy Rule overflow menu](images/ac-copy-rule-overflow-menu.png "Copy Rule overflow menu"){: caption="Copy Rule overflow menu" caption-side="bottom"}
+
+   ![Copy rule view](images/ac-copy-rule-view.png "Copy rule view"){: caption="Copy rule view" caption-side="bottom"}
+
+   - **Edit rule** - Modifies an existing rule configuration.
+
+   ![Edit rule overflow menu](images/ac-edit-rule-overflow-menu.png "Edit rule overflow menu"){: caption="Edit rule overflow menu" caption-side="bottom"}
+
+   ![Edit rule view](images/ac-edit-rule-view.png "Edit rule view"){: caption="Edit rule view" caption-side="bottom"}
+
+   - **Edit priority** - Change the rule evaluation order. Priority determines the order in which rules are evaluated. Rules with a lower priority number are evaluated first. You can set the priority to one of the options mentioned previously.
+
+    ![Edit priority overflow menu](images/ac-edit-priority-overflow-menu.png "Edit priority overflow menu"){: caption="Edit priority overflow menu" caption-side="bottom"}
+
+    ![Edit priority rule view](images/ac-edit-priority-rule-view.png "Edit priority rule view"){: caption="Edit priority rule view" caption-side="bottom"}
+
+   - **Delete** - Remove the rule. When you select delete, a confirmation dialog appears to prevent accidental deletion.
+
+   ![Delete rule overflow menu](images/ac-delete-rule-overflow-menu.png "Delete rule overflow menu"){: caption="Delete rule overflow menu" caption-side="bottom"}
+
+   ![Delete confirmation dialog](images/ac-delete-confirmation.png "Delete confirmation"){: caption="Delete rule confirmation dialog" caption-side="bottom"}
 
 If you try to target a feature flag that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}

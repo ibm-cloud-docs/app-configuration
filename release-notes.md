@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-02-25"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -25,6 +25,14 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #February-2026}
 
 Review the release notes for February 2026.
+
+### 25 February 2026
+{: #app-configuration-Feb252026}
+{: release-note}
+
+Rule ID Support for feature segment rules in {{site.data.keyword.appconfig_full}}
+
+:   {{site.data.keyword.appconfig_full}} now supports rule IDs and rule names for feature segment rules, enhancing clarity in the management of rule definitions. We recommend using the dedicated feature rule APIs for all rule-related operations. Feature update and feature patch APIs still accept segment updates and auto‑generate a rule ID when one isn’t provided. This behavior will eventually deprecated for segment rule update in these APIs. These APIs will continue to work normally for other feature attributes. If users have rule ID for feature segments, it’s best to avoid using the feature update or feature patch APIs for feature segment rule related changes, as not passing the rule ID will result in being overridden. See [API Reference](/apidocs/app-configuration#list-features).
 
 ### 9 February 2026
 {: #app-configuration-Feb92026}
