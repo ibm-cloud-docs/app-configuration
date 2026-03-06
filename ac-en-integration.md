@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-18"
+  years: 2023, 2026
+lastupdated: "2026-03-06"
 
 keywords: app-configuration, app configuration, ac, integrations, event notifications, en
 
@@ -30,10 +30,25 @@ When an event of interest takes place in your {{site.data.keyword.appconfig_shor
 
 The following table lists the {{site.data.keyword.appconfig_short}} actions that generate an event.
 
-| Event name | Event type | Subtype | Severity level |
-| :--------- | :--------- | :------ | :------------- |
-| Test event | `com.ibm.cloud.apprapp.test_event` |   | Low |
-| Feature flag toggle | `com.ibm.cloud.apprapp.feature_flag_toggle` | enabled  \n disabled | High |
+| Event name | Event type | Subtype |
+| :--------- | :--------- | :------ |
+| Resource config | `com.ibm.cloud.apprapp.config_aggregator.resource_config` |   |
+| Environments | `com.ibm.cloud.apprapp.feature_flags.environments` | create  \n update  \n delete |
+| Collections | `com.ibm.cloud.apprapp.feature_flags.collections` | create  \n update  \n delete |
+| Features | `com.ibm.cloud.apprapp.feature_flags.features` | create  \n update  \n delete |
+| Feature flag toggle | `com.ibm.cloud.apprapp.feature_flag_toggle` | enabled  \n disabled |
+| Feature rules | `com.ibm.cloud.apprapp.feature_flags.feature_rules` | create  \n update  \n delete |
+| Properties | `com.ibm.cloud.apprapp.feature_flags.properties` | create  \n update  \n delete |
+| Segments | `com.ibm.cloud.apprapp.feature_flags.segments` | create  \n update  \n delete |
+| Gitconfigs | `com.ibm.cloud.apprapp.feature_flags.gitconfigs` | create  \n update  \n delete |
+| Originconfigs | `com.ibm.cloud.apprapp.feature_flags.originconfigs` | update |
+| Integrations | `com.ibm.cloud.apprapp.feature_flags.integrations` | connected  \n disconnected |
+| Instance import | `com.ibm.cloud.apprapp.feature_flags.instance_import` |   |
+| Gitconfig promote | `com.ibm.cloud.apprapp.feature_flags.gitconfig_promote` |   |
+| Gitconfig restore | `com.ibm.cloud.apprapp.feature_flags.gitconfig_restore` |   |
+| Experiments | `com.ibm.cloud.apprapp.feature_flags.experiments` | create  \n update  \n delete |
+| Metrics | `com.ibm.cloud.apprapp.feature_flags.metrics` | create  \n update  \n delete |
+| Variations | `com.ibm.cloud.apprapp.feature_flags.variations` | create  \n update  \n delete |
 {: caption="Actions that generate event notifications" caption-side="bottom"}
 
 ## Enabling notifications with {{site.data.keyword.en_short}}
