@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-03-17"
 
 keywords: app configuration api, cli, plugin
 
@@ -2217,13 +2217,13 @@ ibmcloud app-configuration integration-create --guid GUID --integration-id INTEG
 :   Source description. This description will be shown in your Event Notification instance sources page under above source name. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
 
 `--metadata-kms-instance-crn` (string)
-:   The CRN of the Key Protect or HPCS service instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
+:   The CRN of the Key Protect service instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
 
 `--metadata-kms-endpoint` (string)
-:   The URL endpoint of Key Protect or HPCS instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
+:   The URL endpoint of Key Protect instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
 
 `--metadata-root-key-id` (string)
-:   The rootkey id of Key Protect or HPCS instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
+:   The rootkey id of Key Protect instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
 
 #### Examples
 {: #app-configuration-integration-create-examples}

@@ -166,3 +166,6 @@ Configuration Aggregator supports the following services:
 | [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
 | [SCC Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
+
+Effective 20 March 2026, Hyper Protect Crypto Services will be deprecated. You will not be able to create any new instances starting 28 March 2026. All instances will be terminated by 20 March 2027.
+{: note}
