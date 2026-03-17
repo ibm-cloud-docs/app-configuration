@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-03-17"
 
 keywords: app-configuration, app configuration, about app configuration, use cases
 
@@ -65,7 +65,7 @@ Configuration as Code (CaC) separates the configuration from the code and mainta
 Feature flags help prevent issues using kill switches and also helps to reduce the Mean Time to Respond (MTTR). Dynamically enable diagnostic traces across your applications or microservices using a feature flag to quickly debug any customer incident.
 
 ### Toolchain Integration
-{: #ac-toolchain-integration}
+{: #ac-integrating-toolchains}
 
 Integrate App Configuration to your pipelines to apply specific feature flags or properties to the environment or trigger properties of the pipeline. See [Configuring App Configuration](/docs/ContinuousDelivery?topic=ContinuousDelivery-app-configuration&interface=ui) for details.
 
