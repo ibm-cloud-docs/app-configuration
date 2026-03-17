@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-08"
+  years: 2020, 2026
+lastupdated: "2026-03-17"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -187,7 +187,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | Support | per your IBM Cloud support plan | per your IBM Cloud support plan | per your IBM Cloud support plan |  per your IBM Cloud support plan |
 | Percentage rollout | Supported | Not Supported | Not Supported | Supported |
 | Snapshots | Not Supported | Not Supported | Not Supported | Supported |
-| KMS integration (BYOK and KYOK) | Not Supported | Not Supported | Not Supported | Supported |
+| KMS integration (BYOK) | Not Supported | Not Supported | Not Supported | Supported |
 | Event Notifications integration | Not Supported | Not Supported | Not Supported | Supported |
 | Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Not Supported | Supported |
 {: caption="Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}

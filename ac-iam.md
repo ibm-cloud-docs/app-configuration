@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-06"
+  years: 2020, 2026
+lastupdated: "2026-03-17"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -108,9 +108,9 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.gitconfigs.create` | Manager | The ability to create Git configurations. |
 | `apprapp.gitconfigs.update` | Manager | The ability to update or edit existing Git configurations. |
 | `apprapp.gitconfigs.delete` | Manager | The ability to delete existing Git configurations. |
-| `apprapp.integrations.list` | Manager, Writer, Config Operator, Reader | The ability to view integrations existing between App Configuration service and external services such as Key Protect, HPCS & Event Notifications. |
-| `apprapp.integrations.create` | Manager | The ability to create integrations between App Configuration service and external services such as Key Protect, HPCS and Event Notifications. |
-| `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect, HPCS & Event Notifications. |
+| `apprapp.integrations.list` | Manager, Writer, Config Operator, Reader | The ability to view integrations existing between App Configuration service and external services such as Key Protect & Event Notifications. |
+| `apprapp.integrations.create` | Manager | The ability to create integrations between App Configuration service and external services such as Key Protect and Event Notifications. |
+| `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect & Event Notifications. |
 | `apprapp.originconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view allowlisted origin URLs. |
 | `apprapp.originconfigs.update` | Manager | The ability to add or update origin URLs to the allowlist. |
 | `apprapp.workflowconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view workflow configurations. |

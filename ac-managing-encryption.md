@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-05"
+  years: 2022, 2026
+lastupdated: "2026-03-17"
 
 keywords: app-configuration, app configuration, managing encryption, byok, kyok, integrations
 
@@ -18,7 +18,6 @@ subcollection: app-configuration
 By default, segment data in {{site.data.keyword.appconfig_short}} is encrypted at-rest using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.appconfig_short}} supports customer-managed encryption with the following IBM Cloud® Key Management Services:
 
 - {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) helps you provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}.
-- {{site.data.keyword.hscrypto}} (Keep Your Own Key - KYOK) is a single-tenant, dedicated HSM that is controlled by you. The service is built on FIPS 140-2 Level 4-certified hardware, the highest offered by any cloud provider in the industry. You can find out more about using {{site.data.keyword.hscrypto}} in the [Getting Started tutorial](/docs/hs-crypto?topic=hs-crypto-get-started){: external}.
 
 These services allow the use of a customer-provided key to control encryption. By disabling or deleting this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt it.
 {: shortdesc}
@@ -49,16 +48,16 @@ You are not recommended to use confidential information in client metadata.
 
 Envelope encryption is the practice of encrypting one encryption key with another encryption key. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK.
 
-To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in either [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about){: external} or [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-overview){: external}.
+To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about){: external}.
 
-You own the KEK, which you create as a root key in the {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.appconfig_short}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK is performed entirely within the key management service. If you disable or delete the key, the data can no longer be decrypted.
+You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.appconfig_short}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK is performed entirely within the key management service. If you disable or delete the key, the data can no longer be decrypted.
 
 ## Enabling a customer-managed key for {{site.data.keyword.appconfig_short}}
 {: #ac-enabling-encryption}
 
 Complete the following steps to provision your {{site.data.keyword.appconfig_short}} instance to use a customer-managed key:
 
-1. Provision an instance of [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision){: external} or [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision){: external}.
+1. Provision an instance of [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision){: external}.
 
 1. Create an authorization policy to allow the {{site.data.keyword.appconfig_short}} service to access the key management service instance as a Reader. For more information, see [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth){: external}.
 
@@ -98,7 +97,7 @@ A Cloud Logs event is generated to report the action. For more information, see 
 ### Rotating the key
 {: #rotating_key}
 
-{{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.appconfig_short}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](#ac-encryption-how).
+{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.appconfig_short}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](#ac-encryption-how).
 
 A cloud logs event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/app-configuration?topic=app-configuration-at_events).
 
