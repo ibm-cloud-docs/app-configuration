@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-07"
+  years: 2022, 2026
+lastupdated: "2026-03-20"
 
 keywords: app-configuration, app configuration, integrations, key protect, key management, hyper protect, hpcs, event notifications, en
 
@@ -25,3 +25,6 @@ The **Integrations** page displays the services supported along with integration
 1. **Key Management** - You can encrypt the data that you store in {{site.data.keyword.cloud_notm}} databases by using encryption keys that you can control. Manage the lifecycle of your encryption keys that are used for your {{site.data.keyword.cloud_notm}} resources, services and applications. For more information, see [Integrating with a Key management service](/docs/app-configuration?topic=app-configuration-ac-int-key-management).
 
 1. **{{site.data.keyword.en_short}}** - Enable lifecycle notifications for your {{site.data.keyword.appconfig_short}} instance by connecting an {{site.data.keyword.en_short}} service instance. For more information, see [Integrating with {{site.data.keyword.en_short}} service](/docs/app-configuration?topic=app-configuration-ac-int-en).
+
+You can also use [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} to setup integrations for {{site.data.keyword.appconfig_short}}. Terraform IBM Modules are pre-built, validated, and enterprise-ready modules that follow IBM Cloud best practices, see [creating integrations for {{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest/examples/advanced){: external}.
+{: tip}

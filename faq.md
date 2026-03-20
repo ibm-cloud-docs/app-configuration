@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-20"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -41,6 +41,12 @@ FAQs for {{site.data.keyword.appconfig_short}} provides answers to common questi
 1. Accept the licensing agreements and terms by clicking the checkbox.
 
 1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} service console displayed.
+
+## Can I use Terraform IBM Modules to provision an {{site.data.keyword.appconfig_short}} instance?
+{: #use-terraform-ibm-modules}
+{: faq}
+
+Yes, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) to provision an [{{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} instance. Terraform IBM Modules are pre-built, validated, and enterprise-ready modules that follow IBM Cloud best practices. For more information and available modules, check the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-ibm-modules){: external}.
 
 ## What pricing plans are available with {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-pricing}

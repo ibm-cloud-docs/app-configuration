@@ -22,7 +22,8 @@
   },
   "section_devtools": {
     "api": "/apidocs/app-configuration",
-    "cli": "/docs/app-configuration?topic=app-configuration-app-configuration-cli"
+    "cli": "/docs/app-configuration?topic=app-configuration-app-configuration-cli",
+    "terraform": "https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest"
   },
   "section_updates": {
     "view_more": "/docs/app-configuration?topic=app-configuration-ac-relnotes"
