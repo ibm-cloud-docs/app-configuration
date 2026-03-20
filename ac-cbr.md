@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-01-31"
+  years: 2023, 2026
+lastupdated: "2026-03-20"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
 
@@ -84,6 +84,9 @@ Context-based restrictions check that an access request comes from an allowed co
 {: important}
 
 After you create rules, you can [update](/apidocs/context-based-restrictions#replace-rule) and [delete](/apidocs/context-based-restrictions#delete-rule) them.
+
+You can also use the pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM) for Context Based Restrictions](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest) to automate the provisioning and configuration of context-based restrictions using infrastructure as code.
+{: tip}
 
 ## Next steps
 {: #ac-cbr-next-steps}

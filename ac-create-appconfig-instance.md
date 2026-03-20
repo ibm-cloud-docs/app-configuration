@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-03-20"
 
 keywords: app-configuration, app configuration, create an instance
 
@@ -63,3 +63,6 @@ To create an {{site.data.keyword.appconfig_short}} service instance, follow thes
 1. Click **Create**. A new service instance is created and the {{site.data.keyword.appconfig_short}} console displayed.
 
    ![{{site.data.keyword.appconfig_short}} console](images/ac-console.png "{{site.data.keyword.appconfig_short}} console"){: caption="{{site.data.keyword.appconfig_short}} console" caption-side="bottom"}
+
+Alternatively, you can use pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} to create a new service instance.
+{: note}

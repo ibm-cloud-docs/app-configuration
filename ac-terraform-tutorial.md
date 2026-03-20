@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-03-10"
+  years: 2023, 2026
+lastupdated: "2026-03-20"
 
 keywords: app-configuration, app configuration, tutorials, terraform, infrastructure as code, iac, terraform provider
 
@@ -539,3 +539,6 @@ Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 Validate resources within the {{site.data.keyword.cloud_notm}} by selecting the resource list in [resources](https://cloud.ibm.com/resources){: external}.
 
 For more information on API and SDK references, tutorials, and FAQs, for {{site.data.keyword.cloud_notm}} products and services, see [Documentation](https://cloud.ibm.com/docs).
+
+Alternatively, you can use pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} to create an {{site.data.keyword.appconfig_short}} instance.
+{: note}
