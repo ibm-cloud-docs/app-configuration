@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-03-23"
 
 keywords: configuration aggregator, enterprise accounts, trusted profile template, policy templates, enterprise IAM
 
@@ -203,4 +203,7 @@ The following image shows how the trusted profile appears in child accounts afte
 
 After you assign the trusted profile template to your enterprise accounts, you can enable Configuration Aggregator in your {{site.data.keyword.appconfig_short}} instance.
 
-You can enable Configuration Aggregator by using the [{{site.data.keyword.appconfig_short}} Settings API](/apidocs/app-configuration). 
+You can enable Configuration Aggregator by using the [{{site.data.keyword.appconfig_short}} Settings API](/apidocs/app-configuration).
+
+You can also choose to use [Terraform IBM Modules (TIM) for {{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} that has built-in support for Configuration Aggregator, automatically provisioning the necessary Trusted Profiles, templates, and custom IAM roles which enables a fully-automated approach to configure and manage an {{site.data.keyword.appconfig_short}} instance at Enterprise account level.
+{: note}
