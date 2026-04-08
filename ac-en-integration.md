@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-04-08"
 
 keywords: app-configuration, app configuration, ac, integrations, event notifications, en
 
@@ -462,6 +462,43 @@ Contains additional attributes `environment_id`, `feature_id`, and `collections`
       "collection_id": "blue-charge"
     }
   ]
+}
+```
+{: codeblock}
+
+**Update**
+
+Metadata fields are always present. Does not contain attribute `rules`.
+
+```json
+{
+  "metadata": {
+    "rule_id": "rule_4",
+    "feature_id": "member-only-discount",
+    "environment_id": "prod",
+    "collections": [
+      {
+        "collection_id": "blue-charge"
+      },
+      {
+        "collection_id": "web-app"
+      }
+    ]
+  },
+  "changes": {
+    "rollout_percentage": {
+      "new_value": 100,
+      "old_value": 50
+    },
+    "rule_name": {
+      "new_value": "My Rule 4",
+      "old_value": "Rule 4"
+    },
+    "value": {
+      "new_value": 56,
+      "old_value": 12
+    }
+  }
 }
 ```
 {: codeblock}
