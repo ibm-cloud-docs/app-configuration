@@ -120,7 +120,7 @@ Configuration Aggregator supports the following services:
 | [Databases for ETCD](/docs/databases-for-etcd) |
 | [Databases for MongoDB](/docs/databases-for-mongodb) |
 | [Databases for MySQL](/docs/databases-for-mysql) |
-| [Identity and Access Management](/docs/account?topic=account-cloudaccess) |
+| [Identity and Access Management](/docs/iam?topic=iam-cloudaccess) |
 | [Key Protect](/docs/key-protect) |
 | [Container Registry](/docs/Registry?topic=Registry-getting-started) |
 | [Load Balancer for VPC](/docs/loadbalancer-service) |

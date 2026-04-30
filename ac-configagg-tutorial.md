@@ -2,7 +2,7 @@
 
 copyright:
    years: 2024, 2026
-lastupdated: "2026-03-23"
+lastupdated: "2026-04-30"
 
 keywords: configuration aggregator, enterprise accounts, trusted profile template, policy templates, enterprise IAM
 
@@ -42,7 +42,7 @@ In this tutorial, you complete the following tasks:
 
 Make sure you have the following prerequisites:
 
-- An {{site.data.keyword.cloud_notm}} enterprise account. For more information about creating an enterprise, see [What is an enterprise?](/docs/secure-enterprise?topic=secure-enterprise-what-is-enterprise)
+- An {{site.data.keyword.cloud_notm}} enterprise account. For more information about creating an enterprise, see [What is an enterprise?](/docs/enterprise-management?topic=enterprise-management-what-is-enterprise)
 - An {{site.data.keyword.appconfig_short}} instance created at the enterprise account level. For more information, see [Creating an {{site.data.keyword.appconfig_short}} service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance).
 - Manager access to the {{site.data.keyword.appconfig_short}} service.
 - Administrator access to IAM Account Management services in the enterprise account.
@@ -72,7 +72,7 @@ Policy templates define the access permissions that Configuration Aggregator nee
 - Reader, Viewer, and ConfigReader roles on All IAM-enabled services. 
 - Viewer and ConfigReader roles on All Account Management services.
 
-You can create policy templates by using the {{site.data.keyword.cloud_notm}} console or [API](/docs/secure-enterprise?topic=secure-enterprise-policy-template-create&interface=api).
+You can create policy templates by using the {{site.data.keyword.cloud_notm}} console or [API](/docs/enterprise-management?topic=enterprise-management-policy-template-create&interface=ui).
 
 1. In the {{site.data.keyword.cloud_notm}} console, go to **Manage** > **Access (IAM)** > **Templates**.
 2. Click **Create** to create a new policy template.
@@ -145,7 +145,7 @@ Replace the following values in the payload:
 - `YOUR_APP_CONFIGURATION_INSTANCE_CRN`: The CRN of your {{site.data.keyword.appconfig_short}} instance that you want to configure for Configuration Aggregator
 - `YOUR_POLICY_TEMPLATE_ID_1` and `YOUR_POLICY_TEMPLATE_ID_2`: The IDs of the policy templates that you created in the previous step
 
-When you use `type: crn` for identities, you specify a service instance as a trusted identity. For more information, see [Creating a trusted profile template](/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#create-trusted-profile-template-api).
+When you use `type: crn` for identities, you specify a service instance as a trusted identity. For more information, see [Creating a trusted profile template](/docs/enterprise-management?topic=enterprise-management-tp-template-create&interface=ui#create-trusted-profile-template-api).
 
 After you create the template, it appears in draft mode and is ready for review.
 
@@ -176,7 +176,7 @@ After you commit the template, it becomes available for assignment to enterprise
 
 After you commit the template, you can assign it to enterprise accounts or account groups. You can assign templates only to accounts that have [enterprise-managed IAM enabled](/docs/enterprise-management?topic=enterprise-management-enterprise-managed-opt-in&interface=ui).
 
-You can assign the template by using the {{site.data.keyword.cloud_notm}} console or [API]((/docs/secure-enterprise?topic=secure-enterprise-tp-template-create&interface=api#assign-trusted-profile-template-api))
+You can assign the template by using the {{site.data.keyword.cloud_notm}} console or [API](/docs/enterprise-management?topic=enterprise-management-tp-template-create&interface=ui#assign-trusted-profile-template-api)
 
 1. In the {{site.data.keyword.cloud_notm}} console, go to **Manage** > **Access (IAM)** > **Templates**.
 2. Locate your Configuration Aggregator template and click **Assign**.

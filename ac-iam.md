@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-04-30"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -39,7 +39,7 @@ With {{site.data.keyword.cloud_notm}} IAM, you can manage and define access for 
 
 {{site.data.keyword.appconfig_short}} uses both the **Platform and Service management roles**. You can set policies about who can create an instance at the platform level, and then use the service roles to manage interaction with the instance itself. As the creator of an instance, you do not need to set any IAM policies to view or work with your {{site.data.keyword.appconfig_short}} entities.
 
-For complete IAM documentation, see [Managing access](/docs/account?topic=account-cloudaccess) in {{site.data.keyword.cloud_notm}}.
+For complete IAM documentation, see [Managing access](/docs/iam?topic=iam-cloudaccess) in {{site.data.keyword.cloud_notm}}.
 {: note}
 
 Review the platform and service roles available and the actions that are mapped to each to help you assign access. If you're using the API to assign access, use `apprapp` for the service name.
