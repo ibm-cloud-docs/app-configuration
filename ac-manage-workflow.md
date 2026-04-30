@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-29"
+  years: 2023, 2026
+lastupdated: "2026-04-30"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -49,7 +49,7 @@ To integrate with ServiceNow workflow, perform the following steps:
 
    1. Enter the **Client ID** needed to retrieve the OAuth access token.
 
-      **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/csh?context=CSHelp%3AOAuthSetup){: external}.
+      **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/search?query=OAuthSetup){: external}.
    {: important}
 
    1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.

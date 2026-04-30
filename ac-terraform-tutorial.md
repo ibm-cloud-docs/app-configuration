@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-04-30"
 
 keywords: app-configuration, app configuration, tutorials, terraform, infrastructure as code, iac, terraform provider
 
@@ -41,7 +41,7 @@ Ensure that the following prerequisites are in place:
 
 * You need an {{site.data.keyword.cloud_notm}} account. If you don't have an account, then [Create an IBM Cloud account](https://cloud.ibm.com/registration/){: external}.
 * Log in to your {{site.data.keyword.cloud_notm}} account.
-* Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key. From the {{site.data.keyword.cloud_notm}} console, go to **Manage** > **Access(IAM)**, and then select **API keys**. Create an {{site.data.keyword.cloud_notm}} API Key and save the password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui).
+* Connect to your {{site.data.keyword.cloud_notm}} account with {{site.data.keyword.cloud_notm}} API Key. From the {{site.data.keyword.cloud_notm}} console, go to **Manage** > **Access(IAM)**, and then select **API keys**. Create an {{site.data.keyword.cloud_notm}} API Key and save the password. For more information, see [Managing user API keys](/docs/iam?topic=iam-userapikey&interface=ui).
 
 For more information about the terraform provider plug in, see [Installing the IBM Cloud Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#install_provider).
 {: tip}
@@ -540,5 +540,5 @@ Validate resources within the {{site.data.keyword.cloud_notm}} by selecting the 
 
 For more information on API and SDK references, tutorials, and FAQs, for {{site.data.keyword.cloud_notm}} products and services, see [Documentation](https://cloud.ibm.com/docs).
 
-Alternatively, you can use pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} to create an {{site.data.keyword.appconfig_short}} instance.
+Alternatively, you can use pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.appconfig_short}}](https://registry.terraform.io/modules/terraform-ibm-modules/app-configuration/ibm/latest){: external} to create an {{site.data.keyword.appconfig_short}} instance.
 {: note}
