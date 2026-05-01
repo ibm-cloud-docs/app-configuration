@@ -8,6 +8,8 @@ keywords: app configuration CLI, app configuration command line, app configurati
 
 subcollection: app-configuration
 
+content-type: cli-docs
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
