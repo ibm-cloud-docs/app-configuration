@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-05-11"
 
 keywords: app configuration cloud logs, app configuration logging, app configuration external logs
 
@@ -40,6 +40,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 | Sao Paulo (`br-sao`) | [Yes]{: tag-green} |
 | Montreal (`ca-mon`) | [Yes]{: tag-green} |
 | Chennai (`in-che`) | [Yes]{: tag-green} |
+| Mumbai (`in-mum`) | [Yes]{: tag-green} |
 {: caption="Locations where platform logs are generated" caption-side="top"}
 
 
@@ -58,9 +59,9 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
-|---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) | Mumbai (`in-mum`) |
+|---------------------|------------------|------------------|--------------------|---------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
 {: #logs-table-2}
 {: tab-title="Asia Pacific"}
@@ -69,7 +70,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: row-headers}
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
-|---------------------------------------------------------------|---------------------|------------------|
+|---------------------|---------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #logs-table-3}
@@ -94,9 +95,9 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
-|---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) | Mumbai (`in-mum`) |
+|---------------------|------------------|------------------|--------------------|-------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
 {: #lr-table-2}
 {: tab-title="Asia Pacific"}
