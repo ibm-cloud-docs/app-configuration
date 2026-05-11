@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-05-11"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -51,6 +51,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Brazil | Sao Paulo (br-sao) | MZR |
 | Montreal | Montreal (ca-mon) | MZR |
 | Chennai | Chennai (in-che) | MZR |
+| Mumbai | Mumbai (in-mum) | MZR |
 {: caption="HA status for the regions" caption-side="bottom"}
 
 Where:

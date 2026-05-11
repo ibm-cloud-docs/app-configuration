@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-05-11"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,6 +20,17 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
+## May 2026
+{: #May-2026}
+
+Review the release notes for May 2026.
+
+### 11 May 2026
+{: #app-configuration-May112026}
+{: release-note}
+
+Availability in Mumbai(India) region
+:   {{site.data.keyword.appconfig_full}} is now available in the Mumbai(India) region.
 
 ## March 2026
 {: #March-2026}
