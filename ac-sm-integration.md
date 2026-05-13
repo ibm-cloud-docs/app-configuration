@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-07"
+  years: 2022, 2026
+lastupdated: "2026-05-13"
 
 keywords: app-configuration, app configuration, secrets manager, secrets manager integration
 
@@ -32,7 +32,7 @@ Take these steps to get {{site.data.keyword.secrets-manager_short}} integrated w
 
    Make sure you have a {{site.data.keyword.secrets-manager_short}} instance with *Viewer* access to the resource group where {{site.data.keyword.secrets-manager_short}} instance is created or exists. Also, you need to have *Reader* access to the {{site.data.keyword.secrets-manager_short}} instance.
 
-   For more information about providing user authorizations, see [here](https://{DomainName}/docs/account?topic=account-serviceauth&interface=ui){: external}.
+   For more information about providing user authorizations, see [here](https://{DomainName}/docs/iam?topic=iam-serviceauth&interface=ui&interface=ui){: external}.
 
 1. Create a property of type *Secret reference*. For more information, see [Properties](/docs/app-configuration?topic=app-configuration-ac-properties).
 
