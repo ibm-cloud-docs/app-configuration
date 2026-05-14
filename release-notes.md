@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-05-13"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -43,7 +43,7 @@ Hyper Protect Crypto Services (HPCS) integration deprecated
 :  {{site.data.keyword.appconfig_short}} no longer supports new integrations with Hyper Protect Crypto Services (HPCS) for key management. Existing HPCS integrations continue to work, but creating new HPCS integrations is not supported.
 
 Migrate to Key Protect
-:  If you currently use HPCS, migrate to {{site.data.keyword.keymanagementservicelong_notm}}. Key Protect is a shared key management service with FIPS 140-2 Level 3 certified HSMs that provides Bring Your Own Key (BYOK) capability. For more information, see [Integrating with Key Protect](/docs/app-configuration?topic=app-configuration-ac-integrations#ac-int-key-management) and [Managing encryption](/docs/app-configuration?topic=app-configuration-ac-managing-encryption).
+:  If you currently use HPCS, migrate to {{site.data.keyword.keymanagementservicelong_notm}}. Key Protect is a shared key management service with FIPS 140-2 Level 3 certified HSMs that provides Bring Your Own Key (BYOK) capability. For more information, see [Integrating with Key Protect](/docs/app-configuration?topic=app-configuration-ac-int-key-management) and [Managing encryption](/docs/app-configuration?topic=app-configuration-ac-managing-encryption).
 
 ## February 2026
 {: #February-2026}
