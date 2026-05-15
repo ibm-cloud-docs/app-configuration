@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-05-15"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -225,6 +225,26 @@ You can roll out feature flags to one or more target segments. You can set diffe
 
 If you try to target a feature flag that is not linked to a collection, a window is displayed to add a feature flag to a collection.
 {: note}
+
+## How targeting rules are evaluated
+{: #feature-flag-targeting-rule-evaluation}
+
+When you configure targeting, keep the following evaluation behavior in mind:
+
+- Within a segment, different attributes are evaluated with `AND`.
+- Within a single segment attribute, multiple values are evaluated with `OR`.
+- Within a targeting rule, multiple selected segments are evaluated with `OR`.
+- Across targeting rules, rules are evaluated by priority, and the first matching rule is applied.
+
+For example, if a rule contains the segments `Production - US-East` and `Production - Eu-De`, the rule matches when either segment matches. If you want to roll out to those audiences separately, create separate rules or define each segment with all required attributes and order the rules by priority.
+
+If you want to enable a feature first for production users in `eu-de`, and later for production users in `us-east`, define each segment with all required attributes, such as:
+
+- Segment 1: `environment is production` and `region is eu-de`
+- Segment 2: `environment is production` and `region is us-east`
+
+Then target those segments in separate rules and order the rules by priority in the **Edit targeting** view. This approach helps ensure that each rule matches only the intended audience.
+
 
 
 
