@@ -46,6 +46,7 @@ toc:
           - ac-snapshots.md
           - ac-settings.md
           - ac-configuration-aggregator.md
+          - ac-askai.md
           - ac-api-key-encryption.md
       - topicgroup:
           label: Integrations
