@@ -20,6 +20,18 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
+## June 2026
+{: #June-2026}
+
+Review the release notes for June 2026.
+
+### 1 June 2026
+{: #app-configuration-Jun012026}
+{: release-note}
+
+AskAI: Cloud resource query assistant
+:   {{site.data.keyword.appconfig_full}} now supports AskAI, an intelligent cloud assistant that helps you query aggregated cloud resource configurations using natural language, see [AskAI: Cloud resource query assistant](/docs/app-configuration?topic=app-configuration-ac-askai).
+
 
 ## May 2026
 {: #May-2026}
