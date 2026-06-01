@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-07-31"
+  years: 2026
+lastupdated: "2026-06-01"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -33,7 +33,7 @@ Key features of {{site.data.keyword.appconfig_short}}:
 - **Dark Launch** - Includes features that are not ready for launch into your deployments, and activate them when they are ready.
 - **Segmented Feature Rollout** - Activate features for different segments at different times, or vary features by segment.
 - **Feature Rollback** - Instantly roll back problematic features by toggling feature flags in the {{site.data.keyword.appconfig_short}} cloud dashboard.
-- **Phased Rollout** - Configure feature flag to be enabled for a subset of entities to implement progressive delivery of features.
+- **Manual Rollout** - Configure feature flag to be enabled for a subset of entities to implement progressive delivery of features.
 - **Configuration Aggregator** - Configure to collect the metadata of multiple, distributed resources in IBM Cloud accounts to make available for governance and compliance initiatives.
 
 ## How does {{site.data.keyword.appconfig_short}} work?

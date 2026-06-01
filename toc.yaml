@@ -37,6 +37,11 @@ toc:
           - ac-collections.md
           - ac-segments.md
           - ac-feature-flags.md
+          - topicgroup:
+              label: Enable progressive rollout in feature flags
+              topics:
+              - ac-rollout-strategies.md
+              - ac-progressive-rollout.md
           - ac-properties.md
           - ac-snapshots.md
           - ac-settings.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-15"
+lastupdated: "2026-06-01"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -51,7 +51,7 @@ To create a feature flag, complete these steps:
    - **Flag type** - specify the type of the feature flag. Supported type includes: Boolean, String, and Numeric. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - **Default value** - specify the default value for the feature flag type selected. For more information about flag type and default values, see [Selecting feature flag type](#selecting-feature-flag-type).
    - Optionally, select a collection for applying a feature flag now. Otherwise, you need to add a collection before you toggle a feature flag. You can add the feature flag to one or more collections by selecting in the **Flag availability across collections** list.
-   - **Feature rollout** - specify the `Rollout percentage` by using the slider. For more information about percentage rollout, see [Configure feature rollout percentage](#configure-rollout-percentage).
+   - **Feature rollout** - specify the `Rollout percentage` by using the slider. For more information about manual rollout, see [Configure feature rollout percentage](#configure-rollout-percentage).
    - **Description** - add a description of the feature flag, which is optional.
    - Optionally, define **Tags** that help you to identify the feature flag.
 
@@ -125,31 +125,31 @@ If you try to target a feature flag that is not linked to a collection, a window
 
 You can configure the feature flag with a rollout percentage in the range of 0 to 100, denoting the applicability of the feature to a partial set of users or devices.
 
-Percentage rollout helps to enable a feature to a small percentage of random users or subset of entities, providing more control on the release cycle and achieve progressive delivery. When you are confident on the feature that you want to roll out is working as intended, increase the percentage over time.
+Manual rollout helps to enable a feature to a small percentage of random users or subset of entities, providing more control on the release cycle and achieve progressive delivery. When you are confident on the feature that you want to roll out is working as intended, increase the percentage over time.
 
-Percentage rollout uses a hashing algorithm that generates a hash based on the rule set. This hash is used by the SDK to generate a percentage value for that user. The percentage value generated for that user is compared to the value set for the percentage rollout value, determines whether the user is eligible to receive that feature or not.
+Manual rollout uses a hashing algorithm that generates a hash based on the rule set. This hash is used by the SDK to generate a percentage value for that user. The percentage value generated for that user is compared to the value set for the manual rollout value, determines whether the user is eligible to receive that feature or not.
 
 For example, the hash has partitions from 1 to 100,000. When you assign a feature flag, the hash assigns values from 1 to 100,000 to users in each partition. For example, when you assign 25% to a feature flag, {{site.data.keyword.appconfig_short}} SDK delivers that feature to hash partitions from 1 to 25,000. If you change the percentage of users receiving that feature from 25% to 50%, partitions 25,001 to 50,000 would be added to the set of partitions already receiving that feature.
 
-Percentage rollout capability is available for Lite and Enterprise plans.
+Manual rollout capability is available for Lite and Enterprise plans.
 {: note}
 
-Following are some of the percentage rollout scenarios:
+Following are some of the manual rollout scenarios:
 
 - If the feature flag is disabled, then SDK returns the default **Disabled value**.
-- If the feature flag is enabled without any segment rules and no percentage rollout is set, then the SDK returns default **Enabled value**.
-- If the feature flag is enabled without any segment rule and percentage rollout is set to 0%, then the SDK returns **Disabled value** for all users.
-- If the feature flag is enabled without any segment rule and percentage rollout is set to a percent, say 50%, then the SDK checks if the user belongs to the configured percentage rollout size, if the user belongs to the rollout criteria, then the SDK returns the **Enabled value**. If the user doesn't belong to the rollout criteria, then the SDK returns the **Disabled value**.
-- If the feature flag is enabled with segment rules, then SDK first evaluates the user against the configured rules. If user is part of the configured rule, then the SDK evaluates if the user is eligible for percentage rollout.
+- If the feature flag is enabled without any segment rules and no manual rollout is set, then the SDK returns default **Enabled value**.
+- If the feature flag is enabled without any segment rule and manual rollout is set to 0%, then the SDK returns **Disabled value** for all users.
+- If the feature flag is enabled without any segment rule and manual rollout is set to a percent, say 50%, then the SDK checks if the user belongs to the configured manual rollout size, if the user belongs to the rollout criteria, then the SDK returns the **Enabled value**. If the user doesn't belong to the rollout criteria, then the SDK returns the **Disabled value**.
+- If the feature flag is enabled with segment rules, then SDK first evaluates the user against the configured rules. If user is part of the configured rule, then the SDK evaluates if the user is eligible for manual rollout.
    - If multiple rules are configured and the user is checked for rule match until the first match. If no match found, then the SDK evaluates against the default rollout.
-   - If the user is evaluated to be part of the segment and the segment percentage rollout is 0%, then even if the user is part of the segment, user will not receive the segment value. The SDK returns the default **Disabled value**.
-   - If the user is evaluated to be part of the segment and the segment percentage rollout is set to a percentage, say 50%, then the SDK checks if the user belongs to configured rollout size, if the user belongs to the rollout criteria, then the SDK returns the segment overriding value. If the user doesn't belongs to the rollout criteria, then the SDK returns **Disabled value**.
+   - If the user is evaluated to be part of the segment and the segment manual rollout is 0%, then even if the user is part of the segment, user will not receive the segment value. The SDK returns the default **Disabled value**.
+   - If the user is evaluated to be part of the segment and the segment manual rollout is set to a percentage, say 50%, then the SDK checks if the user belongs to configured rollout size, if the user belongs to the rollout criteria, then the SDK returns the segment overriding value. If the user doesn't belongs to the rollout criteria, then the SDK returns **Disabled value**.
 
 ### View as table
 {: #feature-flags-percentage-rollout-scenarios}
 {: notoc}
 
-| Feature Flag | Is targeting configured? | Percentage  \n rollout | Is user  \n part of  \n configured segment | Is user  \n part of  \n percentage rollout \n criteria | Value  \n returned  \n by SDK |
+| Feature Flag | Is targeting configured? | Manual  \n rollout | Is user  \n part of  \n configured segment | Is user  \n part of  \n manual rollout \n criteria | Value  \n returned  \n by SDK |
 | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- |
 | Disabled | NA | Any % rollout set | NA | NA | Disabled value |
 | Enabled  | No | 0% | NA | No | Disabled value |
