@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-06-01"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -59,7 +59,7 @@ Yes, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terr
 | Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.  \n Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. |
 | Basic | There is no monthly instance cost. Pay only for what you use. | This plan includes property management capabilities only. |
 | Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. |
-| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes percentage rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
+| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes manual rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
 {: caption="Pricing plans" caption-side="bottom"}
 
 ## What are the charges to use {{site.data.keyword.appconfig_short}}?
@@ -200,6 +200,23 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
 {: note}
+
+## What restrictions apply to progressive rollout?
+{: #faq-progressive-rollout-restrictions}
+{: faq}
+
+Progressive rollout is available only with the Enterprise plan. Only one progressive rollout is allowed per feature flag, and it can be configured either at the flag level or at the rule level.
+
+Use the feature flag API for flag-level rollout creation and updates, and use the Rules API for rule-level rollout creation and updates. To stop a rollout, use the dedicated stop rollout APIs.
+
+If a progressive rollout is running, the following restrictions apply:
+
+- You can't start an experiment on the same flag.
+- You can't modify the flag or the targeting rule that contains the rollout.
+- You can't delete a collection if any associated feature flag has a progressive rollout in the running state.
+- You can't update or delete a segment if any associated feature flag has a progressive rollout in the running state.
+
+If an experiment is already running on a flag, you can't create a progressive rollout for that flag. Also, if progressive rollout is configured at the flag level, targeting rules can't inherit `rolloutPercentage` from the flag. If progressive rollout is configured at the rule level, the rule can't inherit its value from the flag.
 
 ## How do I audit {{site.data.keyword.appconfig_short}} activity?
 {: #faq-ac-audit}

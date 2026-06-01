@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-06-01"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,10 +20,18 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
+
 ## May 2026
 {: #May-2026}
 
 Review the release notes for May 2026.
+
+### 25 May 2026
+{: #app-configuration-May252026}
+{: release-note}
+
+Progressive rollout
+:  {{site.data.keyword.appconfig_short}} now supports progressive rollout. With progressive rollout, you can gradually increase feature exposure over time while using flag-level or rule-level APIs, preventing conflicts with experiments, and protecting related collections and segments during active rollouts. For more information, see [Progressive rollout](/docs/app-configuration?topic=app-configuration-ac-progressive-rollout).
 
 ### 11 May 2026
 {: #app-configuration-May112026}
@@ -32,8 +40,11 @@ Review the release notes for May 2026.
 Availability in Mumbai(India) region
 :   {{site.data.keyword.appconfig_full}} is now available in the Mumbai(India) region.
 
+
 ## March 2026
 {: #March-2026}
+
+Review the release notes for March 2026.
 
 ### 17 March 2026
 {: #app-configuration-Mar172026}
@@ -44,6 +55,7 @@ Hyper Protect Crypto Services (HPCS) integration deprecated
 
 Migrate to Key Protect
 :  If you currently use HPCS, migrate to {{site.data.keyword.keymanagementservicelong_notm}}. Key Protect is a shared key management service with FIPS 140-2 Level 3 certified HSMs that provides Bring Your Own Key (BYOK) capability. For more information, see [Integrating with Key Protect](/docs/app-configuration?topic=app-configuration-ac-int-key-management) and [Managing encryption](/docs/app-configuration?topic=app-configuration-ac-managing-encryption).
+
 
 ## February 2026
 {: #February-2026}

@@ -133,7 +133,7 @@ Configuration Aggregator supports the following services:
 | [Client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) |
 | [Dedicated Host for VPC](/docs/vpc?topic=vpc-creating-dedicated-hosts-instances) |
 | [Floating IP for VPC](/docs/vpc?topic=vpc-fip-about) |
-| [Flow Logs](/docs/vpc?topic=vpc-flow-logs) - VPC |
+| [Flow Logs - VPC](/docs/vpc?topic=vpc-flow-logs) |
 | [Custom image for VPC](/docs/vpc?topic=vpc-planning-custom-images) |
 | [Placement Groups for VPC](/docs/vpc?topic=vpc-about-placement-groups-for-vpc) |
 | [Code Engine](/docs/codeengine) |
@@ -146,11 +146,13 @@ Configuration Aggregator supports the following services:
 | [IBM Cloud Direct Link](/docs/dl) |
 | [Transit Gateway](/docs/transit-gateway) |
 | [Toolchain](/docs/ContinuousDelivery) |
-| [IBM Cloudant CLI](/docs/Cloudant-cli-plugin) |
+| [IBM Cloudant](/docs/Cloudant) |
 | [IBM Cloud Internet Services (CIS)](/docs/cis) |
-| [Schematics](/docs/schematics) |
-| [Cloud Monitoring](/docs/monitoring?topic=monitoring-getting-started#getting-started)|
+| [IBM Cloud Logs](/docs/cloud-logs) |
+| [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
+| [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-getting-started#getting-started)|
 | [Security and Compliance Center (SCC)](/docs/security-compliance) |
+| [SCC Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) |
 | [Hyper Protect Crypto Services (HPCS)](/docs/hs-crypto) |
 | [App ID](/docs/appid) |
 | [App Configuration](/docs/app-configuration) |
@@ -159,12 +161,23 @@ Configuration Aggregator supports the following services:
 | [Messages for RabbitMQ](/docs/messages-for-rabbitmq) |
 | [IBM Cloud Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) |
 | [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
-| [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
+| [Enterprise](/docs/enterprise-management) |
 | [IBM Power Virtual Server](/docs/power-iaas) |
-| [IBM Cloud Logs](/docs/cloud-logs) |
-| [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
+| [Power Virtual Server networks](/docs/power-iaas) |
+| [Power Virtual Server network address groups](/docs/power-iaas) |
+| [Power Virtual Server network security groups](/docs/power-iaas) |
+| [Power Virtual Server instances](/docs/power-iaas) |
+| [Power Virtual Server volumes](/docs/power-iaas) |
 | [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
-| [SCC Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) |
+| [IBM Cloud Schematics](/docs/schematics) |
+| [IBM Cloud Schematics Workspace](/docs/schematics) |
+| [Billing](/docs/account?topic=account-billing-overview) |
+| [Global catalog collections](/docs/account?topic=account-restrict-by-user&interface=ui) |
+| [IAM Access Management](/docs/iam?topic=iam-cloudaccess) |
+| [IAM groups](/docs/account?topic=account-account-services&interface=ui) |
+| [IAM identity](/docs/iam?topic=iam-identities) |
+| [User management](/docs/account?topic=account-iamuserinv) |
+| [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
 
 Effective 20 March 2026, Hyper Protect Crypto Services will be deprecated. You will not be able to create any new instances starting 28 March 2026. All instances will be terminated by 20 March 2027.

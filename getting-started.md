@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-03-10"
+  years: 2020, 2026
+lastupdated: "2026-06-01"
 
 keywords: app-configuration, app configuration, getting started, getting started with app configuration
 
@@ -26,7 +26,7 @@ You need an {{site.data.keyword.cloud}} account. If you don't have an account, c
 
 The basic steps that get you started:
 
-1. [Create an {{site.data.keyword.appconfig_short}} service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance)
+1. [Create an {{site.data.keyword.appconfig_short}} service instance](/docs/app-configuration?topic=app-configuration-ac-create-an-instance). Learn about [rollout strategies](/docs/app-configuration?topic=app-configuration-ac-rollout-strategies) to understand how to safely release features to your users.
 
 1. [Create a collection](/docs/app-configuration?topic=app-configuration-ac-collections#ac-create-a-collection)
 
