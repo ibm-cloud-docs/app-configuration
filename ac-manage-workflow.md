@@ -90,7 +90,7 @@ To view your change request, hover over the **CR** icon next to the resource nam
 
 For example, if you selected all flags in the scope, toggling a feature flag to the *On* or *Off* state in that environment initiates a change request that must go through the approval process.
 
-Feature flags or properties that were already enabled before applying the workflow continue to function normally, but any subsequent modifications require approval. If you disable a feature flag, apply the workflow, and then attempt to enable the feature flag, its status changes to *Success! Change request workflow initiated* and a change request is created.
+Feature flags or properties that were already enabled before applying the workflow continue to function normally, but any subsequent modifications require approval. If you disable a feature flag, apply the workflow, and then attempt to enable the feature flag, its status changes to **Success! Change request workflow initiated** and a change request is created.
 
 
 ## How to add a mandatory tag to the External ServiceNow workflow change request?
