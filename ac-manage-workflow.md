@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-06-12"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -28,18 +28,35 @@ The External ServiceNow name follows the standard `https://xxx.service-now.com`,
 
 To integrate with ServiceNow workflow, perform the following steps:
 
-1. From your {{site.data.keyword.appconfig_short}} service instance dashboard, select value for the **Current Environment** field. This value should be the environment for which you want to enable the ServiceNow workflow process.
+1. From your {{site.data.keyword.appconfig_short}} service instance dashboard, click **Settings**.
 
-1. Click **Feature flags**.
+1. In the **Approval workflows** section, click **Create Workflow**.
 
-1. Click **Manage Workflow**. The **Manage workflow** side-panel displays. 
+1. In step 1, define the scope of the workflow:
 
-   ## External Workflow
-   {: #ac-manage-external-workflow}
+   1. Provide the name of the workflow.
 
-   ![Manage external workflow](images/ac-sn-19.png "Manage external workflow"){: caption="Manage external workflow" caption-side="bottom"}
+   1.  Select the resources for which you want to enable the workflow. 
 
-1. For External workflow, below are the steps to follow.
+         - For collections, deletions trigger approval.
+
+         - For segments, edits and deletions trigger approval.
+
+         - For environments approval can be triggered for all feature flag actions, all properties actions and environment deletion.
+
+1. Click **Next**.
+
+1. In step 2, configure the connection to a ServiceNow instance. Select the instance type for the ServiceNow instance as  **[External ServiceNow](#ac-manage-external-workflow)**.
+
+1. Click **Review** to review the workflow configuration.
+
+1. Verify the workflow details and click **Create** to create and apply the workflow.
+
+
+## External Workflow
+{: #ac-manage-external-workflow}
+
+For External workflow, below are the steps to follow.
 
    1. Enter the **URL** of the ServiceNow instance.
 
@@ -49,27 +66,32 @@ To integrate with ServiceNow workflow, perform the following steps:
 
    1. Enter the **Client ID** needed to retrieve the OAuth access token.
 
-      **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/search?query=OAuthSetup){: external}.
-   {: important}
-
    1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.
+
+   **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/csh?context=CSHelp%3AOAuthSetup){: external}.
+   {: important}
 
    1. Enter the approval **Group Name** defined in ServiceNow. The approval Group Name will contain set of people who are authorized to approve the Change Requests created in the ServiceNow workflow.
 
    1. Set the Change request expiration time (in hours). Minimum 1 to maximum 999 hours.
 
-   1. Set the **Enabled** toggle switch to **ON** to enable the workflow for selected environment.
+   1. Set the **Enabled** toggle switch to **ON** to enable the workflow for selected scope.
 
 
 
+Only one approval workflow can be created for a resource.
+{: important}
 
-1. Click **Create** to create and apply the workflow.
+When you create a workflow for an environment, an approval is required for the modification or deletion of the resources in the selected scope during workflow creation (for example, all flags, all properties, or environment deletion).
 
-When you create a workflow in an environment, toggling the feature flags to *On* state or *OFF* state in that environment will initiate a change request and need to go through the workflow approval process.
+A change request is created for each action, and the resource cannot be modified or deleted in that environment until the change request is approved. The resource awaiting approval in one environment can still be modified in other environments.
 
-If you have already enabled some feature flags before applying the workflow approval process, those feature flags will function as usual but further toggling will go through an approval process.
+To view your change request, hover over the **CR** icon next to the resource name being modified. You will see the link to your change request.
 
-If you disable an existing feature flag and apply the workflow, and then enable the feature flag, its status changes to *Workflow initiated* and a change request workflow will be initiated.
+For example, if you selected all flags in the scope, toggling a feature flag to the *On* or *Off* state in that environment initiates a change request that must go through the approval process.
+
+Feature flags or properties that were already enabled before applying the workflow continue to function normally, but any subsequent modifications require approval. If you disable a feature flag, apply the workflow, and then attempt to enable the feature flag, its status changes to *Success! Change request workflow initiated* and a change request is created.
+
 
 ## How to add a mandatory tag to the External ServiceNow workflow change request?
 {: #ac-sn-mandatory-tag}

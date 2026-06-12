@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-12"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #June-2026}
 
 Review the release notes for June 2026.
+
+### 9 June 2026
+{: #app-configuration-Jun92026}
+{: release-note}
+
+Enhanced ServiceNow approval workflow integration
+:   {{site.data.keyword.appconfig_short}} now supports improved ServiceNow approval workflow integration. For more information, see [Integrating with ServiceNow](/docs/app-configuration?topic=app-configuration-ac-manage-workflow).
 
 ### 1 June 2026
 {: #app-configuration-Jun012026}
