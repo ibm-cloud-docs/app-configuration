@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-06-17"
 
 keywords: HA for app-configuration, data model, high availability for app configuration, ha
 
@@ -72,4 +72,4 @@ If an entire MZR becomes inoperative (usually due to a catastrophic disaster or 
 
 When the primary MZR is restored, the secondary deployment is migrated back to the primary site. After the migration is complete, the DNS is restored to its original routing.
 
-If you need zero downtime during a regional disaster recovery, create and maintain backup instances in other regions. To synchronize a service instance in one region with an instance in a different region, you can use the APIs mentioned [API Docs](/apidocs/app-configuration).
+If you need zero downtime during a regional disaster recovery, create and maintain backup instances in other regions. To synchronize a service instance in one region with an instance in a different region, you can use the APIs mentioned [API Docs](/apis/app-configuration).

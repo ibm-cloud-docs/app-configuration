@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-06-17"
 
 keywords: app-configuration, app configuration, create a snapshot, snapshots, git configuration, gitops, git config
 
@@ -70,7 +70,7 @@ To promote a snapshot, complete these steps:
 
 1. Click on the **Create snapshot**, if your configuration is correct then you will see the json file will be either updated if already exists, or it will be created if it does not exist.
 
-   You can update the snapshot information using the API 'https://cloud.ibm.com/apidocs/app-configuration?code=go#update-gitconfig'.
+   You can update the snapshot information using the API 'https://cloud.ibm.com/apis/app-configuration?code=go#update-gitconfig'.
    {: note}
 
 ## Restore a GitHub snapshot

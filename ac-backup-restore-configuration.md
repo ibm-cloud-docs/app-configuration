@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-07"
+  years: 2021, 2026
+lastupdated: "2026-06-17"
 
 keywords: app-configuration, app configuration, set up environments feature flags and properties, feature flags, properties, environments, backup, restore
 
@@ -22,24 +22,24 @@ The ability to import and export data is essential for managing and maintaining 
 {: #import-config}
 
 Users can import whole configuration data into a App configuration instance to ensure accuracy and consistency when configuring complicated systems.
-Refer: [API docs here](/apidocs/app-configuration#import-config){: external}.
+Refer: [API docs here](/apis/app-configuration#import-config){: external}.
 Refer: [CLI docs here](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-import){: external}.
 
 ## Export
 {: #list-instance-config}
 
 In contrast, export functionality gives users the ability to extract current whole configurations for a variety of reasons, including sharing settings with team members, making backups, or moving settings to a new instances. 
-Refer: [here](/apidocs/app-configuration#list-instance-config){: external}.
+Refer: [here](/apis/app-configuration#list-instance-config){: external}.
 Refer: [CLI docs here](/docs/app-configuration?topic=app-configuration-app-configuration-cli#ac-ibmcloud-ac-export){: external}.
 
 ## Promote snapshot
 {: #promote-restore-config-snap}
 
 Users can promote a specific configuration, which is based on the environment and collection id, to Git. For more information, see [Promote Snapshot](/docs/app-configuration?topic=app-configuration-ac-snapshots#ac-promote-a-snapshot)
-Refer: [here](https://cloud.ibm.com/apidocs/app-configuration#promote-restore-config){: external}.
+Refer: [here](https://cloud.ibm.com/apis/app-configuration#promote-restore-config){: external}.
 
 ## Restore snapshot
 {: #promote-restore-config}
 
 Users are able to restore the particular configuration from Git. For more information, see [Restore Snapshot](/docs/app-configuration?topic=app-configuration-ac-snapshots#ac-restore-a-snapshot)
-Refer: [here](https://cloud.ibm.com/apidocs/app-configuration#promote-restore-config){: external}.
+Refer: [here](https://cloud.ibm.com/apis/app-configuration#promote-restore-config){: external}.

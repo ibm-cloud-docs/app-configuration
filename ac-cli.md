@@ -1736,7 +1736,7 @@ ibmcloud ac collection create --name NAME [--collection_id COLLECTION_ID] [--des
 ```
 {: codeblock}
 
-To view the supported JSON format, see the [API Docs](/apidocs/app-configuration).
+To view the supported JSON format, see the [API Docs](/apis/app-configuration).
 
 Use the file flag (cannot be combined with any other flag) to give the path of the file.
 
@@ -1776,7 +1776,7 @@ updated_time    2021-02-02T19:17:07Z
 ```
 {: screen}
 
-The behavior for create and update of a collection or feature or segment is similar as mentioned earlier. For accepted JSON format structure, see the [API Docs](/apidocs/app-configuration)
+The behavior for create and update of a collection or feature or segment is similar as mentioned earlier. For accepted JSON format structure, see the [API Docs](/apis/app-configuration)
 
 ## ibmcloud plug-in uninstall
 {: #ac-ibmcloud-plugin-uninstall}
