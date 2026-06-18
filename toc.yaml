@@ -146,5 +146,8 @@ toc:
           - ac-ts-ff-toggle.md
           - ac-ts-ff-zero-env.md
           - ac-ts-ff-del.md
+          - ac-ts-progressive-rollout-configure.md
+          - ac-ts-progressive-rollout-schedule.md
+          - ac-ts-progressive-rollout-inconsistent.md
           - ac-ts-rate-limiting.md
           - ac-ts-ip-address-cbr.md
