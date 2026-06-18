@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-17"
 
 keywords: app-configuration, app configuration, progressive rollout, automated rollout, feature rollout, rollout configuration, rollout constraints
 
@@ -313,7 +313,7 @@ If users are receiving inconsistent values:
 ## API reference
 {: #ac-progressive-rollout-api}
 
-Progressive rollout can be configured using the {{site.data.keyword.appconfig_short}} API. Refer the [API documentation](/apidocs/app-configuration) for more information.
+Progressive rollout can be configured using the {{site.data.keyword.appconfig_short}} API. Refer the [API documentation](/apis/app-configuration) for more information.
 
 ## Related information
 {: #ac-progressive-rollout-related}
@@ -321,4 +321,4 @@ Progressive rollout can be configured using the {{site.data.keyword.appconfig_sh
 - [Understanding rollout strategies](/docs/app-configuration?topic=app-configuration-ac-rollout-strategies)
 - [Targeting feature flags to segments](/docs/app-configuration?topic=app-configuration-ac-feature-flags)
 - [Managing service access](/docs/app-configuration?topic=app-configuration-ac-service-access-management)
-- [{{site.data.keyword.appconfig_short}} API reference](/apidocs/app-configuration)
+- [{{site.data.keyword.appconfig_short}} API reference](/apis/app-configuration)

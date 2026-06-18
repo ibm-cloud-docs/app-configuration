@@ -171,7 +171,7 @@ Configuration Aggregator supports the following services:
 | [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
 | [IBM Cloud Schematics](/docs/schematics) |
 | [IBM Cloud Schematics Workspace](/docs/schematics) |
-| [Billing](/docs/account?topic=account-billing-overview) |
+| [Billing](/docs/account?topic=account-overview-billing) |
 | [Global catalog collections](/docs/account?topic=account-restrict-by-user&interface=ui) |
 | [IAM Access Management](/docs/iam?topic=iam-cloudaccess) |
 | [IAM groups](/docs/account?topic=account-account-services&interface=ui) |

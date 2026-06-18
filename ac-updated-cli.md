@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-06-17"
 
 keywords: app configuration api, cli, plugin
 
@@ -1303,7 +1303,7 @@ ibmcloud app-configuration property-create --guid GUID --environment-id ENVIRONM
 `--type` (string)
 :   Type of the property (BOOLEAN, STRING, NUMERIC, SECRETREF). If `type` is `STRING`, then `format` attribute is required. Required.
 
-    Allowable values are: `BOOLEAN`, `STRING`, `NUMERIC`, `SECRETREF`. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apidocs/app-configuration#create-property-request).
+    Allowable values are: `BOOLEAN`, `STRING`, `NUMERIC`, `SECRETREF`. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#create-property-request).
 
 `--value` (interface{})
 :   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes. Required.
@@ -1391,7 +1391,7 @@ ibmcloud app-configuration property-update --guid GUID --environment-id ENVIRONM
     The maximum length is `255` characters.
 
 `--value` (interface{})
-:   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apidocs/app-configuration#update-property-request).
+:   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#update-property-request).
 
     Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--value=@path/to/file.json`.
 
@@ -1473,7 +1473,7 @@ ibmcloud app-configuration property-values-update --guid GUID --environment-id E
 
     Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--value=@path/to/file.json`.
 
-    To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apidocs/app-configuration#update-property-values-request).
+    To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#update-property-values-request).
 
 `--segment-rules` ([`SegmentRule[]`](#cli-segment-rule-example-schema))
 :   Specify the targeting rules that is used to set different property values for different segments.

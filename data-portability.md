@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-11"
+lastupdated: "2026-06-17"
 
 keywords:
 
@@ -35,12 +35,12 @@ For more information about your responsibilities for {{site.data.keyword.appconf
 ## Data export procedures
 {: #data-portability-procedures}
 
-All data available within the {{site.data.keyword.appconfig_notm}} service data can be accessed by using the [API documentation](/apidocs/app-configuration). The customer can export the complete customer metadata and the service configurations by using the [export instance configuration](/apidocs/app-configuration#list-instance-config).
+All data available within the {{site.data.keyword.appconfig_notm}} service data can be accessed by using the [API documentation](/apis/app-configuration). The customer can export the complete customer metadata and the service configurations by using the [export instance configuration](/apis/app-configuration#list-instance-config).
 
 ## Exported data formats
 {: #data-portability-data-formats}
 
-{{site.data.keyword.appconfig_notm}} resources export the data via Service APIs in JSON format. The schema of the exported data is described in the {{site.data.keyword.appconfig_notm}} service [API documentation](https://cloud.ibm.com/apidocs/app-configuration).
+{{site.data.keyword.appconfig_notm}} resources export the data via Service APIs in JSON format. The schema of the exported data is described in the {{site.data.keyword.appconfig_notm}} service [API documentation](https://cloud.ibm.com/apis/app-configuration).
 
 ## Data ownership
 {: #data-portability-ownership}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-17"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -195,7 +195,7 @@ Follow these steps to register or add webhook script to your ServiceNow instance
                      gs.addInfoMessage("IBM APP CONFIG INSTANCE ID DECRYPTION COMPLETED");
                      //preparing webhook request to forward
                      var webHookRequest = new sn_ws.RESTMessageV2();
-                     //Refer link https://cloud.ibm.com/apidocs/app-configuration#endpoints-urls for more info on base URL
+                     //Refer link https://cloud.ibm.com/apis/app-configuration#endpoints-urls for more info on base URL
                      //Choose the base url from below based on your AppConfig instance region
                      //Dallas: https://us-south.apprapp.cloud.ibm.com
                      //Washington DC: https://us-east.apprapp.cloud.ibm.com

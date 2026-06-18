@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-06-17"
 
 keywords: app-configuration, app configuration, context-based restrictions, access allowlist, network security
 
@@ -25,7 +25,7 @@ To restrict access, you must be the account owner or have an access policy with 
 
 To restrict access, you must create [zones](/docs/iam?topic=iam-context-restrictions-create&interface=ui#network-zones-create) and [rules](/docs/iam?topic=iam-context-restrictions-create&interface=ui#context-restrictions-create-rules).
 
-First, create a zone with the appropriate details for network or resource definitions. Then, attach that zone to the specified resource to restrict access. You can create zones and rules by using a ReSTful [API](/apidocs/context-based-restrictions#introduction) or with [context-based restrictions](https://cloud.ibm.com/context-based-restrictions/overview){: external}. After you create or update a zone or a rule, it might take a few minutes for the change to take effect.
+First, create a zone with the appropriate details for network or resource definitions. Then, attach that zone to the specified resource to restrict access. You can create zones and rules by using a ReSTful [API](/apis/context-based-restrictions#introduction) or with [context-based restrictions](https://cloud.ibm.com/context-based-restrictions/overview){: external}. After you create or update a zone or a rule, it might take a few minutes for the change to take effect.
 
 CBR rules do not apply to provisioning or deprovision processes.
 {: note}
@@ -40,14 +40,14 @@ After you create a network zone, you can add it to a rule.
 ### Creating network zones by using the CBR API
 {: #ac-cbr-create-zones-api}
 
-The API supports defining [network zones](/apidocs/context-based-restrictions#introduction) by connecting to public (for example, cbr.cloud.ibm.com) and private endpoints (for example, private.cbr.cloud.ibm.com).
+The API supports defining [network zones](/apis/context-based-restrictions#introduction) by connecting to public (for example, cbr.cloud.ibm.com) and private endpoints (for example, private.cbr.cloud.ibm.com).
 
 Use `GET /v1/zones` to list the zones. By using `POST /v1/zones`, you can create a new zone with the appropriate information. For more information, including a request body example, see [Creating network zones by using the API](/docs/iam?topic=iam-context-restrictions-create&interface=api#network-zones-create-api).
 
-You can determine which services are available by checking for [reference targets](/apidocs/context-based-restrictions#list-available-serviceref-targets).
+You can determine which services are available by checking for [reference targets](/apis/context-based-restrictions#list-available-serviceref-targets).
 {: note}
 
-After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/iam?topic=iam-context-restrictions-update&interface=api#network-zones-remove-api) them.
+After you create zones, you can [update](/apis/context-based-restrictions#replace-zone) or [remove](/docs/iam?topic=iam-context-restrictions-update&interface=api#network-zones-remove-api) them.
 
 ### Creating network zones by using the CBR UI
 {: #ac-cbr-create-zone-ui}
@@ -57,7 +57,7 @@ After you set the prerequisites and requirements, you can create zones in the UI
 Instead of creating a zone by using UI inputs, you can use the JSON code form to create a zone by clicking **Enter as JSON code**.
 {: note}
 
-After you create zones, you can [update](/apidocs/context-based-restrictions#replace-zone) or [remove](/docs/iam?topic=iam-context-restrictions-update&interface=ui#network-zones-remove) them.
+After you create zones, you can [update](/apis/context-based-restrictions#replace-zone) or [remove](/docs/iam?topic=iam-context-restrictions-update&interface=ui#network-zones-remove) them.
 
 ## Understanding network rules
 {: #ac-cbr-network-rules}
@@ -71,7 +71,7 @@ You can define network rules with the API by using the information that you coll
 
 By using `GET /v1/rules` with the endpoints that you chose, you can view a list of current rules. Use `POST /v1/rules` to create new rules. For more information, including a request body example, see [Creating rules by using the API](/docs/iam?topic=iam-context-restrictions-create&interface=api#context-restrictions-create-rules-api).
 
-After you create rules, you can [update](/apidocs/context-based-restrictions#replace-rule) and [delete](/apidocs/context-based-restrictions#delete-rule) them.
+After you create rules, you can [update](/apis/context-based-restrictions#replace-rule) and [delete](/apis/context-based-restrictions#delete-rule) them.
 
 ### Creating network rules by using the CBR UI
 {: #ac-cbr-create-rules-ui}
@@ -83,7 +83,7 @@ You can use the CBR UI to [add resources and contexts](/docs/iam?topic=iam-conte
 Context-based restrictions check that an access request comes from an allowed context that you configure. Also, the rules might not take effect immediately due to synchronization and resource availability.
 {: important}
 
-After you create rules, you can [update](/apidocs/context-based-restrictions#replace-rule) and [delete](/apidocs/context-based-restrictions#delete-rule) them.
+After you create rules, you can [update](/apis/context-based-restrictions#replace-rule) and [delete](/apis/context-based-restrictions#delete-rule) them.
 
 You can also use the pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM) for Context Based Restrictions](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest) to automate the provisioning and configuration of context-based restrictions using infrastructure as code.
 {: tip}
