@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-25"
 
 keywords: app-configuration, app configuration, create a feature flag, feature flags
 
@@ -144,10 +144,6 @@ Following are some of the manual rollout scenarios:
    - If multiple rules are configured and the user is checked for rule match until the first match. If no match found, then the SDK evaluates against the default rollout.
    - If the user is evaluated to be part of the segment and the segment manual rollout is 0%, then even if the user is part of the segment, user will not receive the segment value. The SDK returns the default **Disabled value**.
    - If the user is evaluated to be part of the segment and the segment manual rollout is set to a percentage, say 50%, then the SDK checks if the user belongs to configured rollout size, if the user belongs to the rollout criteria, then the SDK returns the segment overriding value. If the user doesn't belongs to the rollout criteria, then the SDK returns **Disabled value**.
-
-### View as table
-{: #feature-flags-percentage-rollout-scenarios}
-{: notoc}
 
 | Feature Flag | Is targeting configured? | Manual  \n rollout | Is user  \n part of  \n configured segment | Is user  \n part of  \n manual rollout \n criteria | Value  \n returned  \n by SDK |
 | :---------- | :---------- | :---------- | :---------- | :---------- | :---------- |
