@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-07-10"
 
 keywords: app-configuration, app configuration, askai, cloud assistant, query resources, configuration aggregator
 
@@ -164,5 +164,8 @@ AskAI supports queries for the following IBM Cloud services and configuration ty
 - **App Configuration** - App Configuration instances
 - **Activity Tracker** - Routes and targets
 - **Cloud Shell** - Account settings
-- **Placement Group** - Server placement groups
+- **Placement Group** - Server placement groups
+- **IKS (IBM Kubernetes Service)** - Kubernetes cluster configurations
 
+IKS uses an older format of resource configuration data and hence will not support some information like - profile, gpu, vcpu, memory, image name, volume id etc.
+{: note}
