@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-14"
 
 keywords: app-configuration, app configuration, managing service access, iam, account
 
@@ -65,6 +65,9 @@ Review the platform and service roles available and the actions that are mapped 
 | Writer | As a writer, you have permissions beyond the reader role, including creating and editing service-specific resources. |
 | Config Operator | As a Config Operator, you can toggle the feature state. |
 | Client SDK | As a Client SDK role, you have permissions to perform evaluation of feature flags and properties in your application integrated with client SDK. |
+| Workflow operator | As a workflow operator, you have permissions beyond the reader role, allowing you to create workflows that initiate an approval process using ServiceNow. |
+| Configuration Aggregator Reader | As a Configuration Aggregator Reader, you have permission to query for the configuration metadata of resources. |
+| Configuration Update Reporter | As a Configuration Update Reporter, you have permissions to report the change in Cloud resource configuration to Configuration aggregator. |
 {: row-headers}
 {: caption="IAM service access roles" caption-side="bottom"}
 {: #service-roles-table1}
@@ -95,6 +98,13 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.features.delete` | Manager | The ability to delete existing feature flags. |
 | `apprapp.features.patch` | Writer | The ability to partially update or edit existing feature flags. |
 | `apprapp.features.toggle` | Manager, Writer, Config Operator | The ability to enable or disable existing feature flags. |
+| `apprapp.features-rules.list` | Manager, Reader, Writer, Configoperator | The ability to list targeting rules of a feature flag. |
+| `apprapp.features-rules.create` | Manager, Writer | The ability to create a new rule in feature flag's targeting. |
+| `apprapp.features-rules.patch` | Manager, Writer | The ability to update an existing rule in feature flag's targeting. |
+| `apprapp.features-rules.delete` | Manager | The ability to delete an existing rule from feature flag's targeting. |
+| `apprapp.features-rules-order.patch` | Manager, Writer | The ability to re-order the rules of feature flag's targeting. |
+| `apprapp.features-rollout-action.patch` | Manager | The ability to update or edit rollout configuration for existing feature flags. |
+| `apprapp.features-rules-rollout-action.patch` | Manager, Writer | The ability to update or edit rollout configuration of any existing feature flag rule. |
 | `apprapp.properties.list` | Manager, Writer, Config Operator, Reader | The ability to view properties. |
 | `apprapp.properties.create` | Manager | The ability to create properties. |
 | `apprapp.properties.update` | Manager | The ability to update or edit existing properties. |
@@ -113,18 +123,33 @@ The following table details actions that are mapped to service access roles. Ser
 | `apprapp.integrations.delete` | Manager | The ability to delete the existing integrations between App Configuration service and an external services such as Key Protect & Event Notifications. |
 | `apprapp.originconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view allowlisted origin URLs. |
 | `apprapp.originconfigs.update` | Manager | The ability to add or update origin URLs to the allowlist. |
-| `apprapp.workflowconfigs.list` | Manager, Writer, Config Operator, Reader | The ability to view workflow configurations. |
-| `apprapp.workflowconfigs.create` | Manager | The ability to create workflow configurations. |
-| `apprapp.workflowconfigs.update` | Manager | The ability to update or edit existing workflow configurations. |
-| `apprapp.workflowconfigs.delete` | Manager | The ability to delete existing workflow configurations. |
+| `apprapp.workflow-configs.list` | Workflowoperator, Manager, Reader | List workflow configurations. |
+| `apprapp.workflow-configs.create` | Workflowoperator, Manager | Create workflow configurations. |
+| `apprapp.workflow-configs.update` | Workflowoperator, Manager | Update workflow configurations. |
+| `apprapp.workflow-configs.delete` | Workflowoperator, Manager | Delete workflow configurations. |
+| `apprapp.workflow-configs.toggle` | Workflowoperator, Manager | Enable/Disable workflow configurations. |
 | `apprapp.changerequest.create` |  Manager | The ability to send ServiceNow change request events to App Configuration instance. |
 | `apprapp.config.export` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to get the JSON export of entire App Configuration instance resources such as collections, environments, feature flags, properties & segments. |
 | `apprapp.config.import` | Manager | The ability to import resources such as collections, environments, feature flags, properties & segments into App Configuration instance. |
 | `apprapp.config.action` | Manager | The ability to promote or restore the existing Git configurations. |
+| `apprapp.config.status` | Configoperator, Manager, Reader, Writer | The ability to view the status of import or export operation. |
 | `apprapp.sse.view` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability for a EventSource to subscribe to server-sent events. This action is used by App Configuration Client SDKs only. |
 | `apprapp.usage.create` | Manager, Writer, Config Operator, Reader, ClientSDK | The ability to submit feature flags & properties evaluation metrics back to App Configuration. |
-| `apprapp.configaggregatorsettings.update` | Manager | The ability to enable configuration aggregator. |
-| `apprapp.configaggregatorsettings.list` | Manager, Writer, Config Operator, Reader | The ability to verify configuration aggregator is enabled or not. |
-| `apprapp.configaggregatorstatus.list` | Manager, Writer, Config Operator, Reader | The ability to view last configuration collection operation status and time. |
-| `apprapp.configaggregator.query` | Configuration Aggregator Reader | The ability to list the IBM cloud resources with their configurations. |
+| `apprapp.clientsdk-apikey.encrypt` | Manager | The ability to obtain the encrypted ClientSDK apikey for a given plain ClientSDK apikey. |
+| `apprapp.config-aggregator.query` | ConfigurationAggregatorReader, Manager | The ability to list the IBM cloud resources with their configurations. |
+| `apprapp.config-aggregator-atevents.ingest` | Manager, ConfigurationUpdateReporter | The ability to ingest events from Activity tracker to Configuration Aggregator. |
+| `apprapp.config-aggregator.filter` | ConfigurationAggregatorReader, Manager | Batch query API to retrieve resource metadata of specified resources from Config Aggregator. |
+| `apprapp.config-aggregator-settings.update` | Manager | Update the settings for the Configuration aggregator. |
+| `apprapp.config-aggregator-settings.list` | Manager, Reader, Writer, Configoperator | Retrieve the settings for the Configuration aggregator. |
+| `apprapp.config-aggregator-status.read` | Manager, Reader, Writer, Configoperator | Retrieve the status of resource collection for the Configuration aggregator. |
+| `apprapp.config-aggregator-scope.read` | Manager, Reader, Writer, Configoperator | Retrieve the account scope of resource collection for the Configuration aggregator. |
+| `apprapp.config-aggregator.reconcile` | Manager | The ability to perform the reconciliation of the resources metadata. |
+| `apprapp.config-aggregator-nlp.query` | ConfigurationAggregatorReader, Manager | The ability to interact with all the NLP APIs of configuration aggregator. |
+| `apprapp.config-aggregator-nlp-history.create` | ConfigurationAggregatorReader, Manager | The ability to store the conversation of NLP query API. |
+| `apprapp.config-aggregator-nlp-history.update` | ConfigurationAggregatorReader, Manager | The ability to edit the conversation of resource config NLP API. |
+| `apprapp.config-aggregator-nlp-history.query` | ConfigurationAggregatorReader, Manager | The ability to list or view older conversations of resource config query API. |
+| `apprapp.config-aggregator-nlp-job-result.query` | ConfigurationAggregatorReader, Manager | The ability to view the result of a job triggered from resource config query. |
+| `apprapp.config-aggregator-nlp-job.query` | ConfigurationAggregatorReader, Manager | The ability to view the details of a job triggered by resource config query. |
+| `apprapp.config-aggregator-nlp-jobs.query` | ConfigurationAggregatorReader, Manager | The ability to list or view all the job triggered from resource config query. |
+| `apprapp.config-aggregator-nlp-jobs.create` | ConfigurationAggregatorReader, Manager | The ability to save or create a job triggered from resource config query. |
 {: caption="Granular IAM action descriptions." caption-side="bottom"}
