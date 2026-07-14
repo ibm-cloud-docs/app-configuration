@@ -1,2 +1,2 @@
 # app-configuration
-Documentation repository for app-configuration
+Documentation repository for app-configuration.
