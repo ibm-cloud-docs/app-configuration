@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-03-25"
+  years: 2020, 2026
+lastupdated: "2026-07-27"
 
 keywords: app-configuration, app configuration, segments
 
@@ -66,7 +66,23 @@ To define a rule, at the time of creating or editing a segment, in **Include use
 
 1. **Enter values** for the operator selected.
 
-1. Click **Save rule**.
+1. Click **Save attribute**.
+
+## How segment attributes are evaluated
+{: #segment-attributes-evaluation}
+
+When you define attributes in a segment, keep the following evaluation behavior in mind:
+
+- Within a segment, different attributes are evaluated with **AND**.
+- Within a single segment attribute, multiple values are evaluated with **OR**.
+
+For example, if you want to match production users in the `eu-de` region, add two attributes to the same segment:
+- `environment` **is** `production`
+- `region` **is** `eu-de`
+
+Both conditions must be true for a user to be included in the segment.
+
+If you want to match users from either `eu-de` or `us-east`, you can supply both values for the `region` attribute. A user that matches any one of those values satisfies that attribute condition.
 
 ## Segments - overflow menu
 {: #segments-overflow-menu}
