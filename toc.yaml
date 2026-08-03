@@ -48,6 +48,7 @@ toc:
           - ac-configuration-aggregator.md
           - ac-askai.md
           - ac-api-key-encryption.md
+          - ac-relay-proxy.md
       - topicgroup:
           label: Integrations
           topics:

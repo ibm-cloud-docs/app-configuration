@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-07-31"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
+
+## July 2026
+{: #July-2026}
+
+Review the release notes for July 2026.
+
+### 31 July 2026
+{: #app-configuration-Jul312026}
+{: release-note}
+
+Relay Proxy
+:   {{site.data.keyword.appconfig_short}} now supports the Relay Proxy, a proxy that caches and fans out configuration to your SDK clients from within your own network. For more information, see [Relay Proxy](/docs/app-configuration?topic=app-configuration-ac-relay-proxy).
 
 ## June 2026
 {: #June-2026}
