@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-05"
 
 keywords: app-configuration, app configuration, relay proxy, proxy, air-gap, sdk, websocket, sse, failover, seed file
 
@@ -18,6 +18,8 @@ subcollection: app-configuration
 
 The {{site.data.keyword.appconfig_short}} Relay Proxy sits between your SDK clients and the {{site.data.keyword.appconfig_notm}} service. Instead of every SDK connecting directly to {{site.data.keyword.cloud_notm}}, SDK clients connect to the proxy within your own network. The proxy fetches and caches configuration from {{site.data.keyword.appconfig_notm}}, then delivers it to all connected clients.
 {: shortdesc}
+
+![Relay Proxy architecture diagram](images/ac-relay-proxy.png "IBM Cloud App Configuration Relay Proxy"){: caption="IBM Cloud App Configuration Relay Proxy" caption-side="bottom"}
 
 ## Why use the Relay Proxy?
 {: #ac-relay-proxy-why}
@@ -111,6 +113,7 @@ When a backup instance is configured, the proxy provides automatic failover for 
 
 - **WebSocket sessions** — Each combination maintains its own upstream WebSocket. When the primary instance becomes unavailable, the proxy immediately connects to the backup. The proxy retries the primary instance every 15 seconds and closes the backup connection as soon as the primary recovers.
 - **Configuration fetches** — HTTP configuration fetches follow a primary-then-backup order.
+
 
 ## Pointing your SDKs at the Relay Proxy
 {: #ac-relay-proxy-sdk-setup}
