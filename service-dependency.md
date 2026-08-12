@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-08-12"
 
 keywords:
 
@@ -45,7 +45,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Disaster recovery, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Operations | No | Both |  Same region  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud and ROVS | Availability, Change management, Operations | No | Both |  Same region  |
 | {{site.data.keyword.cis_full}} | Availability, Change management, Disaster recovery, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud App Configuration - Data and Control plane deployment service dependency information - Critical dependencies" caption-side="top"}
@@ -84,7 +84,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.cos_full}}| Disaster recovery, Operations | No | Both |  Same region  |
 | {{site.data.keyword.en_full}}| configuration-management | Yes | Both |  Customer selected  |
 | {{site.data.keyword.metrics_router_full}}| Operations | No | Both |  Same region  |
-| IBM Log Analysis Log Routing| Operations | No | Both |  Same region  |
+| IBM Cloud Log Routing| Operations | No | Both |  Same region  |
 | IBM Cloud Business Support Services| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.monitoringlong}}| Operations | No | Both |  Same region  |
 | {{site.data.keyword.atracker_full}}| Operations, Security compliance | No | Both |  Same region  |
@@ -106,7 +106,7 @@ The following dependencies apply to the following deployment locations: Montreal
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Disaster recovery, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Operations | No | Both |  Same region  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud and ROVS | Availability, Change management, Operations | No | Both |  Same region  |
 | {{site.data.keyword.cis_full}} | Availability, Change management, Disaster recovery, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud App Configuration - NGDC Data and Control plane deployment service dependency information - Critical dependencies" caption-side="top"}
@@ -144,7 +144,7 @@ The following dependencies apply to the following deployment locations: Montreal
 | {{site.data.keyword.cos_full}}| Disaster recovery, Operations | No | Both |  Same region  |
 | {{site.data.keyword.en_full}}| configuration-management | Yes | Both |  Customer selected  |
 | {{site.data.keyword.metrics_router_full}}| Operations | No | Both |  Same region  |
-| IBM Log Analysis Log Routing| Operations | No | Both |  Same region  |
+| IBM Cloud Log Routing| Operations | No | Both |  Same region  |
 | IBM Cloud Business Support Services| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.monitoringlong}}| Operations | No | Both |  Same region  |
 | {{site.data.keyword.atracker_full}}| Operations, Security compliance | No | Both |  Same region  |
