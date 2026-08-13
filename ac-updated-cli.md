@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-08-13"
 
 keywords: app configuration api, cli, plugin
 
@@ -105,7 +105,7 @@ ibmcloud app-configuration docs
 {: #app-configuration-global-options}
 
 `--region` (string)
-:   The region where you provisioned your App Configuration instance. Available values: us-south, eu-gb, au-syd, us-east, eu-de, ca-tor, jp-tok, jp-osa, eu-es, br-sao, ca-mon.
+:   The region where you provisioned your App Configuration instance. Available values: us-south, eu-gb, au-syd, us-east, eu-de, ca-tor, jp-tok, jp-osa, eu-es, br-sao, ca-mon, in-che, in-mum.
 
 `--output` (string)
 :   Choose an output format - can be 'json', 'yaml', or 'table'. Defaults to 'table'.
@@ -126,7 +126,7 @@ ibmcloud app-configuration docs
 {: #app-configuration-global-options-example}
 
 ```sh
-ibmcloud app-configuration
+ibmcloud app-configuration \
     --region=us-south \
     --output=json \
     --jmes-query="[:10]" \
@@ -232,7 +232,7 @@ List all the environments in the App Configuration service instance.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration environments --guid GUID [--expand=EXPAND] [--sort SORT] [--tags TAGS] [--include INCLUDE] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration environments --guid GUID [--expand=EXPAND] [--sort created_time | updated_time | id | name] [--tags TAGS] [--include features,properties,snapshots,workflow_approval] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -256,7 +256,7 @@ ibmcloud app-configuration environments --guid GUID [--expand=EXPAND] [--sort SO
 `--include` ([]string)
 :   Include feature, property, snapshots details in the response.
 
-    Allowable list items are: `features`, `properties`, `snapshots`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `features`, `properties`, `snapshots`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 `--limit` (int64)
 :   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
@@ -283,7 +283,7 @@ ibmcloud app-configuration environments \
     --expand=true \
     --sort created_time \
     --tags 'version 1.1,pre-release' \
-    --include features,properties,snapshots \
+    --include features,properties,snapshots,workflow_approval \
     --limit 10 \
     --offset 0 \
     --search 'test tag'
@@ -296,7 +296,7 @@ ibmcloud app-configuration environments \
 Create an environment.
 
 ```sh
-ibmcloud app-configuration environment-create --guid GUID --name NAME --environment-id ENVIRONMENT-ID [--description DESCRIPTION] [--tags TAGS] [--color-code COLOR-CODE]
+ibmcloud app-configuration environment-create --guid GUID --name NAME --environment-id ENVIRONMENT-ID [--description DESCRIPTION] [--tags TAGS] [--color-code COLOR-CODE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -324,7 +324,7 @@ ibmcloud app-configuration environment-create --guid GUID --name NAME --environm
 `--tags` (string)
 :   Tags associated with the environment, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--color-code` (string)
 :   Color code to distinguish the environment. The Hex code for the color. For example `#FF0000` for `red`.
@@ -349,7 +349,7 @@ ibmcloud app-configuration environment-create \
 Update an environment.
 
 ```sh
-ibmcloud app-configuration environment-update --guid GUID --environment-id ENVIRONMENT-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--color-code COLOR-CODE]
+ibmcloud app-configuration environment-update --guid GUID --environment-id ENVIRONMENT-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--color-code COLOR-CODE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -375,7 +375,7 @@ ibmcloud app-configuration environment-update --guid GUID --environment-id ENVIR
 `--tags` (string)
 :   Tags associated with the environment, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--color-code` (string)
 :   Color code to distinguish the environment. The Hex code for the color. For example `#FF0000` for `red`.
@@ -400,7 +400,7 @@ ibmcloud app-configuration environment-update \
 Retrieve the details of the environment.
 
 ```sh
-ibmcloud app-configuration environment --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--include INCLUDE]
+ibmcloud app-configuration environment --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--include features,properties,snapshots,workflow_approval] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -419,7 +419,7 @@ ibmcloud app-configuration environment --guid GUID --environment-id ENVIRONMENT-
 `--include` ([]string)
 :   Include feature, property, snapshots details in the response.
 
-    Allowable list items are: `features`, `properties`, `snapshots`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `features`, `properties`, `snapshots`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 #### Example
 {: #app-configuration-environment-examples}
@@ -429,7 +429,7 @@ ibmcloud app-configuration environment \
     --guid exampleString \
     --environment-id environment_id \
     --expand=true \
-    --include features,properties,snapshots
+    --include features,properties,snapshots,workflow_approval
 ```
 {: pre}
 
@@ -439,7 +439,7 @@ ibmcloud app-configuration environment \
 Delete an Environment.
 
 ```sh
-ibmcloud app-configuration environment-delete --guid GUID --environment-id ENVIRONMENT-ID
+ibmcloud app-configuration environment-delete --guid GUID --environment-id ENVIRONMENT-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -462,8 +462,30 @@ ibmcloud app-configuration environment-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+#### Example output
+{: #app-configuration-environment-delete-cli-output}
+
+Generic example for Environment workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for environment operation.",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16659938",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16659938",
+    "resource_type" : "ENVIRONMENT",
+    "resource_id" : "environment-id",
+    "created_time" : "2026-06-17T20:34:13Z",
+    "updated_time" : "2026-06-17T20:34:13Z"
+  }
+}
+```
+{: screen}
 
 ## Collections
 {: #app-configuration-collections-cli}
@@ -477,7 +499,7 @@ List of all the collections in the App Configuration service instance.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration collections --guid GUID [--expand=EXPAND] [--sort SORT] [--tags TAGS] [--features FEATURES] [--properties PROPERTIES] [--include INCLUDE] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration collections --guid GUID [--expand=EXPAND] [--sort created_time | updated_time | id | name] [--tags TAGS] [--features FEATURES] [--properties PROPERTIES] [--include features,properties,snapshots,workflow_approval] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -511,7 +533,7 @@ ibmcloud app-configuration collections --guid GUID [--expand=EXPAND] [--sort SOR
 `--include` ([]string)
 :   Include feature, property, snapshots details in the response.
 
-    Allowable list items are: `features`, `properties`, `snapshots`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `features`, `properties`, `snapshots`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 `--limit` (int64)
 :   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
@@ -540,7 +562,7 @@ ibmcloud app-configuration collections \
     --tags 'version 1.1,pre-release' \
     --features my-feature-id,cycle-rentals \
     --properties my-property-id,email-property \
-    --include features,properties,snapshots \
+    --include features,properties,snapshots,workflow_approval \
     --limit 10 \
     --offset 0 \
     --search 'test tag'
@@ -553,7 +575,7 @@ ibmcloud app-configuration collections \
 Create a collection.
 
 ```sh
-ibmcloud app-configuration collection-create --guid GUID --name NAME --collection-id COLLECTION-ID [--description DESCRIPTION] [--tags TAGS]
+ibmcloud app-configuration collection-create --guid GUID --name NAME --collection-id COLLECTION-ID [--description DESCRIPTION] [--tags TAGS] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -581,7 +603,7 @@ ibmcloud app-configuration collection-create --guid GUID --name NAME --collectio
 `--tags` (string)
 :   Tags associated with the collection, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 #### Example
 {: #app-configuration-collection-create-examples}
@@ -602,7 +624,7 @@ ibmcloud app-configuration collection-create \
 Update the collection name, tags and description. Collection Id cannot be updated.
 
 ```sh
-ibmcloud app-configuration collection-update --guid GUID --collection-id COLLECTION-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS]
+ibmcloud app-configuration collection-update --guid GUID --collection-id COLLECTION-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -628,7 +650,7 @@ ibmcloud app-configuration collection-update --guid GUID --collection-id COLLECT
 `--tags` (string)
 :   Tags associated with the collection, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 #### Example
 {: #app-configuration-collection-update-examples}
@@ -649,7 +671,7 @@ ibmcloud app-configuration collection-update \
 Retrieve the details of the collection.
 
 ```sh
-ibmcloud app-configuration collection --guid GUID --collection-id COLLECTION-ID [--expand=EXPAND] [--include INCLUDE]
+ibmcloud app-configuration collection --guid GUID --collection-id COLLECTION-ID [--expand=EXPAND] [--include features,properties,snapshots,workflow_approval] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -668,7 +690,7 @@ ibmcloud app-configuration collection --guid GUID --collection-id COLLECTION-ID 
 `--include` ([]string)
 :   Include feature, property, snapshots details in the response.
 
-    Allowable list items are: `features`, `properties`, `snapshots`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `features`, `properties`, `snapshots`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 #### Example
 {: #app-configuration-collection-examples}
@@ -678,7 +700,7 @@ ibmcloud app-configuration collection \
     --guid exampleString \
     --collection-id collection_id \
     --expand=true \
-    --include features,properties,snapshots
+    --include features,properties,snapshots,workflow_approval
 ```
 {: pre}
 
@@ -688,7 +710,7 @@ ibmcloud app-configuration collection \
 Delete the collection.
 
 ```sh
-ibmcloud app-configuration collection-delete --guid GUID --collection-id COLLECTION-ID
+ibmcloud app-configuration collection-delete --guid GUID --collection-id COLLECTION-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -711,14 +733,35 @@ ibmcloud app-configuration collection-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+#### Example output
+{: #app-configuration-collection-delete-cli-output}
+
+Generic example for Collection workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for collection operation.",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16659937",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16659937",
+    "resource_type" : "COLLECTION",
+    "resource_id" : "collection-id",
+    "created_time" : "2026-06-17T20:34:13Z",
+    "updated_time" : "2026-06-17T20:34:13Z"
+  }
+}
+```
+{: screen}
 
 ## Features
 {: #app-configuration-features-cli}
 
 Create and manage different types of feature flags for your apps and services.
-
 
 ### `ibmcloud app-configuration features`
 {: #app-configuration-cli-features-command}
@@ -727,7 +770,7 @@ List all the feature flags in the specified environment.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration features --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--sort SORT] [--tags TAGS] [--collections COLLECTIONS] [--segments SEGMENTS] [--include INCLUDE] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration features --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--sort created_time | updated_time | id | name] [--tags TAGS] [--collections COLLECTIONS] [--segments SEGMENTS] [--include collections,rules,workflow_approval] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -764,7 +807,7 @@ ibmcloud app-configuration features --guid GUID --environment-id ENVIRONMENT-ID 
 `--include` ([]string)
 :   Include the associated collections or targeting rules or change request details in the response.
 
-    Allowable list items are: `collections`, `rules`, `change_request`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `collections`, `rules`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 `--limit` (int64)
 :   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
@@ -794,7 +837,7 @@ ibmcloud app-configuration features \
     --tags 'version 1.1,pre-release' \
     --collections my-collection-id,ghzindiapvtltd \
     --segments my-segment-id,beta-users \
-    --include collections,rules,change_request \
+    --include collections,rules,workflow_approval \
     --limit 10 \
     --offset 0 \
     --search 'test tag'
@@ -807,11 +850,9 @@ ibmcloud app-configuration features \
 Create a feature flag.
 
 ```sh
-ibmcloud app-configuration feature-create --guid GUID --environment-id ENVIRONMENT-ID --name NAME --feature-id FEATURE-ID --type TYPE --enabled-value ENABLED-VALUE --disabled-value DISABLED-VALUE [--description DESCRIPTION] [--format FORMAT] [--enabled=ENABLED] [--rollout-percentage ROLLOUT-PERCENTAGE] [--tags TAGS] [--segment-rules SEGMENT-RULES] [--collections COLLECTIONS]
+ibmcloud app-configuration feature-create --guid GUID --environment-id ENVIRONMENT-ID --name NAME --feature-id FEATURE-ID --type BOOLEAN | STRING | NUMERIC --enabled-value (ENABLED-VALUE | @ENABLED-VALUE-FILE) --disabled-value (DISABLED-VALUE | @DISABLED-VALUE-FILE) [--description DESCRIPTION] [--format TEXT | JSON | YAML] [--enabled=ENABLED] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--tags TAGS] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
-If enabled value is set to **"true"**, then the collection must be provided. Else, the collection is optional.
-{: note}
 
 #### Command options
 {: #app-configuration-feature-create-cli-options}
@@ -840,12 +881,12 @@ If enabled value is set to **"true"**, then the collection must be provided. Els
 `--enabled-value` (interface{})
 :   Value of the feature when it is enabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes. Required.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--enabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--enabled-value=@path/to/file.json`.
 
 `--disabled-value` (interface{})
 :   Value of the feature when it is disabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes. Required.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--disabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--disabled-value=@path/to/file.json`.
 
 `--description` (string)
 :   Feature description.
@@ -865,26 +906,49 @@ If enabled value is set to **"true"**, then the collection must be provided. Els
 
     The default value is `100`. The maximum value is `100`. The minimum value is `0`.
 
+`--rollout-type` (string)
+:   The rollout strategy type for the feature flag. `MANUAL` is the default. `PROGRESSIVE` enables automatic phase-based rollout.
+
+    The default value is `MANUAL`. Allowable values are: `MANUAL`, `PROGRESSIVE`.
+
+`--rollout-configuration` ([`RolloutConfiguration`](#cli-rollout-configuration-example-schema))
+:   Configuration that controls the rollout behaviour for a Progressive rollout type. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration=@path/to/file.json`.
+
 `--tags` (string)
 :   Tags associated with the feature, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--segment-rules` ([`FeatureSegmentRule[]`](#cli-feature-segment-rule-example-schema))
-:   Specify the targeting rules that is used to set different feature flag values for different segments.
+:   DEPRECATED: This field is deprecated and will be removed. Use rules api to manage rules. This used to Specify the targeting rules that is used to set different feature flag values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
 `--collections` ([`CollectionRef[]`](#cli-collection-ref-example-schema))
 :   List of collection id representing the collections that are associated with the specified feature flag.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--collections=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--collections=@path/to/file.json`.
 
-#### Example
+`--rollout-configuration-duration-preset` (string)
+:   A predefined duration preset that sets the overall pace of the rollout. Use `CUSTOM` to define phases manually with explicit `duration` and `duration_type` values on each phase. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Allowable values are: `CUSTOM`, `1HRS`, `12HRS`, `24HRS`, `48HRS`.
+
+`--rollout-configuration-start-at` (strfmt.DateTime)
+:   The UTC date and time at which the rollout should start, in ISO 8601 format. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+`--rollout-configuration-phases` ([`RolloutPhase[]`](#cli-rollout-phase-example-schema))
+:   The ordered list of rollout phases. Each phase defines a target percentage and a wait duration before the next phase begins. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration-phases=@path/to/file.json`.
+
+#### Examples
 {: #app-configuration-feature-create-examples}
 
 ```sh
@@ -900,9 +964,35 @@ ibmcloud app-configuration feature-create \
     --format TEXT \
     --enabled=true \
     --rollout-percentage 100 \
+    --rollout-type MANUAL \
+    --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
     --tags 'version: 1.1, pre-release' \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 50}]' \
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 50, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
     --collections '[{"collection_id": "ghzinc"}]'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration feature-create \
+    --guid exampleString \
+    --environment-id environment_id \
+    --name 'Cycle Rentals' \
+    --feature-id cycle-rentals \
+    --type BOOLEAN \
+    --enabled-value "true" \
+    --disabled-value "false" \
+    --description 'Feature flag to enable Cycle Rentals' \
+    --format TEXT \
+    --enabled=true \
+    --rollout-percentage 100 \
+    --rollout-type MANUAL \
+    --tags 'version: 1.1, pre-release' \
+    --segment-rules '[featureSegmentRule]' \
+    --collections '[collectionRef]' \
+    --rollout-configuration-duration-preset CUSTOM \
+    --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
+    --rollout-configuration-phases '[rolloutPhase]'
 ```
 {: pre}
 
@@ -912,10 +1002,9 @@ ibmcloud app-configuration feature-create \
 Update a feature flag details.
 
 ```sh
-ibmcloud app-configuration feature-update --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--name NAME] [--description DESCRIPTION] [--enabled-value ENABLED-VALUE] [--disabled-value DISABLED-VALUE] [--enabled=ENABLED] [--rollout-percentage ROLLOUT-PERCENTAGE] [--tags TAGS] [--segment-rules SEGMENT-RULES] [--collections COLLECTIONS]
+ibmcloud app-configuration feature-update --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--name NAME] [--description DESCRIPTION] [--enabled-value ENABLED-VALUE | @ENABLED-VALUE-FILE] [--disabled-value DISABLED-VALUE | @DISABLED-VALUE-FILE] [--enabled=ENABLED] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--tags TAGS] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
-If enabled value is set to **"true"**, then the collection must be provided. Else, the collection is optional.
-{: note}
+
 
 #### Command options
 {: #app-configuration-feature-update-cli-options}
@@ -942,12 +1031,12 @@ If enabled value is set to **"true"**, then the collection must be provided. Els
 `--enabled-value` (interface{})
 :   Value of the feature when it is enabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--enabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--enabled-value=@path/to/file.json`.
 
 `--disabled-value` (interface{})
 :   Value of the feature when it is disabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--disabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--disabled-value=@path/to/file.json`.
 
 `--enabled` (bool)
 :   The state of the feature flag.
@@ -957,26 +1046,49 @@ If enabled value is set to **"true"**, then the collection must be provided. Els
 
     The default value is `100`. The maximum value is `100`. The minimum value is `0`.
 
+`--rollout-type` (string)
+:   The rollout strategy type for the feature flag. `MANUAL` is the default. `PROGRESSIVE` enables automatic phase-based rollout.
+
+    The default value is `MANUAL`. Allowable values are: `MANUAL`, `PROGRESSIVE`.
+
+`--rollout-configuration` ([`RolloutConfiguration`](#cli-rollout-configuration-example-schema))
+:   Configuration that controls the rollout behaviour for a Progressive rollout type. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration=@path/to/file.json`.
+
 `--tags` (string)
 :   Tags associated with the feature, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--segment-rules` ([`FeatureSegmentRule[]`](#cli-feature-segment-rule-example-schema))
-:   Specify the targeting rules that is used to set different property values for different segments.
+:   DEPRECATED: This field is deprecated and will be removed. Use rules api to manage rules. This used to Specify the targeting rules that is used to set different feature flag values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
 `--collections` ([`CollectionUpdateRef[]`](#cli-collection-update-ref-example-schema))
 :   List of collection id representing the collections that are associated with the specified property.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--collections=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--collections=@path/to/file.json`.
 
-#### Example
+`--rollout-configuration-duration-preset` (string)
+:   A predefined duration preset that sets the overall pace of the rollout. Use `CUSTOM` to define phases manually with explicit `duration` and `duration_type` values on each phase. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Allowable values are: `CUSTOM`, `1HRS`, `12HRS`, `24HRS`, `48HRS`.
+
+`--rollout-configuration-start-at` (strfmt.DateTime)
+:   The UTC date and time at which the rollout should start, in ISO 8601 format. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+`--rollout-configuration-phases` ([`RolloutPhase[]`](#cli-rollout-phase-example-schema))
+:   The ordered list of rollout phases. Each phase defines a target percentage and a wait duration before the next phase begins. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration-phases=@path/to/file.json`.
+
+#### Examples
 {: #app-configuration-feature-update-examples}
 
 ```sh
@@ -990,9 +1102,33 @@ ibmcloud app-configuration feature-update \
     --disabled-value "false" \
     --enabled=true \
     --rollout-percentage 100 \
+    --rollout-type MANUAL \
+    --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
     --tags 'version: 1.1, yet-to-release' \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 90}]' \
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 90, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
     --collections '[{"collection_id": "ghzinc", "deleted": true}]'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration feature-update \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --name 'Cycle Rentals' \
+    --description 'Feature flags to enable Cycle Rentals' \
+    --enabled-value "true" \
+    --disabled-value "false" \
+    --enabled=true \
+    --rollout-percentage 100 \
+    --rollout-type MANUAL \
+    --tags 'version: 1.1, yet-to-release' \
+    --segment-rules '[featureSegmentRule]' \
+    --collections '[collectionUpdateRef]' \
+    --rollout-configuration-duration-preset CUSTOM \
+    --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
+    --rollout-configuration-phases '[rolloutPhase]'
 ```
 {: pre}
 
@@ -1002,7 +1138,7 @@ ibmcloud app-configuration feature-update \
 Update the feature values. This method can be executed only by the `writer` role. This method allows the update of feature name, feature enabled_value, feature disabled_value, tags, description and feature segment rules, however this method does not allow toggling the feature flag and assigning feature to a collection.
 
 ```sh
-ibmcloud app-configuration feature-values-update --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--enabled-value ENABLED-VALUE] [--disabled-value DISABLED-VALUE] [--rollout-percentage ROLLOUT-PERCENTAGE] [--segment-rules SEGMENT-RULES]
+ibmcloud app-configuration feature-values-update --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--enabled-value ENABLED-VALUE | @ENABLED-VALUE-FILE] [--disabled-value DISABLED-VALUE | @DISABLED-VALUE-FILE] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1031,31 +1167,54 @@ ibmcloud app-configuration feature-values-update --guid GUID --environment-id EN
 `--tags` (string)
 :   Tags associated with the feature, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--enabled-value` (interface{})
 :   Value of the feature when it is enabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--enabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--enabled-value=@path/to/file.json`.
 
 `--disabled-value` (interface{})
 :   Value of the feature when it is disabled. The value can be Boolean, Numeric, String - TEXT, String - JSON, String - YAML value as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--disabled-value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--disabled-value=@path/to/file.json`.
 
 `--rollout-percentage` (int64)
 :   Rollout percentage associated with feature flag. Supported only for Lite and Enterprise plans.
 
     The default value is `100`. The maximum value is `100`. The minimum value is `0`.
 
+`--rollout-type` (string)
+:   The rollout strategy type for the feature flag. `MANUAL` is the default. `PROGRESSIVE` enables automatic phase-based rollout.
+
+    The default value is `MANUAL`. Allowable values are: `MANUAL`, `PROGRESSIVE`.
+
+`--rollout-configuration` ([`RolloutConfiguration`](#cli-rollout-configuration-example-schema))
+:   Configuration that controls the rollout behaviour for a Progressive rollout type. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration=@path/to/file.json`.
+
 `--segment-rules` ([`FeatureSegmentRule[]`](#cli-feature-segment-rule-example-schema))
-:   Specify the targeting rules that is used to set different property values for different segments.
+:   DEPRECATED: This field is deprecated and will be removed. Use rules api to manage rules. This used to Specify the targeting rules that is used to set different feature flag values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
-#### Example
+`--rollout-configuration-duration-preset` (string)
+:   A predefined duration preset that sets the overall pace of the rollout. Use `CUSTOM` to define phases manually with explicit `duration` and `duration_type` values on each phase. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Allowable values are: `CUSTOM`, `1HRS`, `12HRS`, `24HRS`, `48HRS`.
+
+`--rollout-configuration-start-at` (strfmt.DateTime)
+:   The UTC date and time at which the rollout should start, in ISO 8601 format. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+`--rollout-configuration-phases` ([`RolloutPhase[]`](#cli-rollout-phase-example-schema))
+:   The ordered list of rollout phases. Each phase defines a target percentage and a wait duration before the next phase begins. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration-phases=@path/to/file.json`.
+
+#### Examples
 {: #app-configuration-feature-values-update-examples}
 
 ```sh
@@ -1069,7 +1228,29 @@ ibmcloud app-configuration feature-values-update \
     --enabled-value "true" \
     --disabled-value "false" \
     --rollout-percentage 100 \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 100}]'
+    --rollout-type MANUAL \
+    --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration feature-values-update \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --name 'Cycle Rentals' \
+    --description 'Feature flags to enable Cycle Rentals' \
+    --tags 'version: 1.1, yet-to-release' \
+    --enabled-value "true" \
+    --disabled-value "false" \
+    --rollout-percentage 100 \
+    --rollout-type MANUAL \
+    --segment-rules '[featureSegmentRule]' \
+    --rollout-configuration-duration-preset CUSTOM \
+    --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
+    --rollout-configuration-phases '[rolloutPhase]'
 ```
 {: pre}
 
@@ -1079,7 +1260,7 @@ ibmcloud app-configuration feature-values-update \
 Retrieve details of a feature.
 
 ```sh
-ibmcloud app-configuration feature --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--include INCLUDE]
+ibmcloud app-configuration feature --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--include collections,rules,workflow_approval] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1098,7 +1279,7 @@ ibmcloud app-configuration feature --guid GUID --environment-id ENVIRONMENT-ID -
 `--include` ([]string)
 :   Include the associated collections or targeting rules or change request details in the response.
 
-    Allowable list items are: `collections`, `rules`, `change_request`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `collections`, `rules`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 #### Example
 {: #app-configuration-feature-examples}
@@ -1108,7 +1289,7 @@ ibmcloud app-configuration feature \
     --guid exampleString \
     --environment-id environment_id \
     --feature-id feature_id \
-    --include collections,rules,change_request
+    --include collections,rules,workflow_approval
 ```
 {: pre}
 
@@ -1118,7 +1299,7 @@ ibmcloud app-configuration feature \
 Delete a feature flag.
 
 ```sh
-ibmcloud app-configuration feature-delete --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID
+ibmcloud app-configuration feature-delete --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1145,8 +1326,31 @@ ibmcloud app-configuration feature-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+#### Example output
+{: #app-configuration-feature-delete-cli-output}
+
+Generic example for Feature workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for feature operation in environment: 'dev'",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16094018",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16094018",
+    "resource_type" : "FEATURE",
+    "resource_id" : "feature-id",
+    "environment_id" : "dev",
+    "created_time" : "2026-06-17T05:48:01Z",
+    "updated_time" : "2026-06-17T05:48:01Z"
+  }
+}
+```
+{: screen}
 
 ### `ibmcloud app-configuration feature-toggle`
 {: #app-configuration-cli-feature-toggle-command}
@@ -1154,7 +1358,7 @@ Use command option `-f` or `--force` if you want to delete without the confirmat
 Toggle a feature.
 
 ```sh
-ibmcloud app-configuration feature-toggle --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --enabled=ENABLED
+ibmcloud app-configuration feature-toggle --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --enabled=ENABLED [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1185,6 +1389,513 @@ ibmcloud app-configuration feature-toggle \
 ```
 {: pre}
 
+### `ibmcloud app-configuration stop-feature-rollout`
+{: #app-configuration-cli-stop-feature-rollout-command}
+
+Stop an in-progress rollout for a feature flag that is in a Progressive rollout state. The rollout is halted at the specified rollout percentage, which becomes the fixed percentage at which the feature is served until the rollout is reconfigured. This operation is not applicable to features in Manual rollout mode.
+
+```sh
+ibmcloud app-configuration stop-feature-rollout --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --action stop --rollout-percentage ROLLOUT-PERCENTAGE [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-stop-feature-rollout-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--action` (string)
+:   The rollout control action to perform. Currently supported value is `stop`. Required.
+
+    Allowable values are: `stop`.
+
+`--rollout-percentage` (int64)
+:   The percentage at which the rollout should be stopped. Must be an integer between 0 and 100 (inclusive). Required.
+
+    The maximum value is `100`. The minimum value is `0`.
+
+#### Example
+{: #app-configuration-stop-feature-rollout-examples}
+
+```sh
+ibmcloud app-configuration stop-feature-rollout \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --action stop \
+    --rollout-percentage 0
+```
+{: pre}
+
+### `ibmcloud app-configuration feature-rule-create`
+{: #app-configuration-cli-feature-rule-create-command}
+
+Create a rule for feature flag.
+
+```sh
+ibmcloud app-configuration feature-rule-create --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --rules (RULES | @RULES-FILE) --value (VALUE | @VALUE-FILE) --rule-id RULE-ID [--rule-name RULE-NAME] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-feature-rule-create-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--rules` ([`TargetSegments[]`](#cli-target-segments-example-schema))
+:   The list of targeted segments. Required.
+
+    The maximum length is `20` items. The minimum length is `0` items.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rules=@path/to/file.json`.
+
+`--value` (interface{})
+:   Value to be used for evaluation for this rule. The value can be Boolean, SecretRef, String - TEXT , String - JSON , String - YAML or a Numeric value as per the `type` and `format` attributes. Required.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--value=@path/to/file.json`.
+
+`--rule-id` (string)
+:   Rule id is an identifier used for identifying the rule. Required.
+
+    The maximum length is `100` characters.
+
+`--rule-name` (string)
+:   Name assigned to a particular rule.
+
+    The maximum length is `100` characters.
+
+`--rollout-percentage` (int64)
+:   Rollout percentage associated with feature flag. Supported only for Lite and Enterprise plans.
+
+    The default value is `100`. The maximum value is `100`. The minimum value is `0`.
+
+`--rollout-type` (string)
+:   The rollout strategy type for the feature flag. `MANUAL` is the default. `PROGRESSIVE` enables automatic phase-based rollout.
+
+    The default value is `MANUAL`. Allowable values are: `MANUAL`, `PROGRESSIVE`.
+
+`--rollout-configuration` ([`RolloutConfiguration`](#cli-rollout-configuration-example-schema))
+:   Configuration that controls the rollout behaviour for a Progressive rollout type. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration=@path/to/file.json`.
+
+`--rollout-configuration-duration-preset` (string)
+:   A predefined duration preset that sets the overall pace of the rollout. Use `CUSTOM` to define phases manually with explicit `duration` and `duration_type` values on each phase. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Allowable values are: `CUSTOM`, `1HRS`, `12HRS`, `24HRS`, `48HRS`.
+
+`--rollout-configuration-start-at` (strfmt.DateTime)
+:   The UTC date and time at which the rollout should start, in ISO 8601 format. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+`--rollout-configuration-phases` ([`RolloutPhase[]`](#cli-rollout-phase-example-schema))
+:   The ordered list of rollout phases. Each phase defines a target percentage and a wait duration before the next phase begins. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration-phases=@path/to/file.json`.
+
+#### Examples
+{: #app-configuration-feature-rule-create-examples}
+
+```sh
+ibmcloud app-configuration feature-rule-create \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rules '[{"segments": ["betausers","premiumusers"]}]' \
+    --value "true" \
+    --rule-id RuleA \
+    --rule-name 'Rule Name' \
+    --rollout-percentage 50 \
+    --rollout-type MANUAL \
+    --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration feature-rule-create \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rules '[targetSegments]' \
+    --value "true" \
+    --rule-id RuleA \
+    --rule-name 'Rule Name' \
+    --rollout-percentage 50 \
+    --rollout-type MANUAL \
+    --rollout-configuration-duration-preset CUSTOM \
+    --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
+    --rollout-configuration-phases '[rolloutPhase]'
+```
+{: pre}
+
+### `ibmcloud app-configuration feature-rules`
+{: #app-configuration-cli-feature-rules-command}
+
+Get all the rules for a feature flag in the specified environment.
+
+```sh
+ibmcloud app-configuration feature-rules --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-feature-rules-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+#### Example
+{: #app-configuration-feature-rules-examples}
+
+```sh
+ibmcloud app-configuration feature-rules \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id
+```
+{: pre}
+
+### `ibmcloud app-configuration feature-rule`
+{: #app-configuration-cli-feature-rule-command}
+
+Get the rule by rule id for the feature flag in the specified environment.
+
+```sh
+ibmcloud app-configuration feature-rule --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --rule-id RULE-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-feature-rule-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--rule-id` (string)
+:   rule id. Required.
+
+#### Example
+{: #app-configuration-feature-rule-examples}
+
+```sh
+ibmcloud app-configuration feature-rule \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rule-id rule_id
+```
+{: pre}
+
+### `ibmcloud app-configuration update-feature-rule`
+{: #app-configuration-cli-update-feature-rule-command}
+
+Update Feature rule.
+
+```sh
+ibmcloud app-configuration update-feature-rule --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --rule-id RULE-ID [--rules RULES | @RULES-FILE] [--value VALUE | @VALUE-FILE] [--rule-name RULE-NAME] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-update-feature-rule-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--rule-id` (string)
+:   rule id. Required.
+
+`--rules` ([`TargetSegments[]`](#cli-target-segments-example-schema))
+:   The list of targeted segments.
+
+    The maximum length is `20` items. The minimum length is `0` items.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rules=@path/to/file.json`.
+
+`--value` (interface{})
+:   Value to be used for evaluation for this rule. The value can be Boolean, SecretRef, String - TEXT , String - JSON , String - YAML or a Numeric value as per the `type` and `format` attributes.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--value=@path/to/file.json`.
+
+`--rule-name` (string)
+:   Name assigned to a particular rule.
+
+    The maximum length is `100` characters.
+
+`--rollout-percentage` (int64)
+:   Rollout percentage associated with feature flag. Supported only for Lite and Enterprise plans.
+
+    The default value is `100`. The maximum value is `100`. The minimum value is `0`.
+
+`--rollout-type` (string)
+:   The rollout strategy type for the feature flag. `MANUAL` is the default. `PROGRESSIVE` enables automatic phase-based rollout.
+
+    The default value is `MANUAL`. Allowable values are: `MANUAL`, `PROGRESSIVE`.
+
+`--rollout-configuration` ([`RolloutConfiguration`](#cli-rollout-configuration-example-schema))
+:   Configuration that controls the rollout behaviour for a Progressive rollout type. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration=@path/to/file.json`.
+
+`--rollout-configuration-duration-preset` (string)
+:   A predefined duration preset that sets the overall pace of the rollout. Use `CUSTOM` to define phases manually with explicit `duration` and `duration_type` values on each phase. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Allowable values are: `CUSTOM`, `1HRS`, `12HRS`, `24HRS`, `48HRS`.
+
+`--rollout-configuration-start-at` (strfmt.DateTime)
+:   The UTC date and time at which the rollout should start, in ISO 8601 format. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+`--rollout-configuration-phases` ([`RolloutPhase[]`](#cli-rollout-phase-example-schema))
+:   The ordered list of rollout phases. Each phase defines a target percentage and a wait duration before the next phase begins. This option provides a value for a sub-field of the JSON option 'rollout-configuration'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rollout-configuration-phases=@path/to/file.json`.
+
+#### Examples
+{: #app-configuration-update-feature-rule-examples}
+
+```sh
+ibmcloud app-configuration update-feature-rule \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rule-id rule_id \
+    --rules '[{"segments": ["betausers","premiumusers"]}]' \
+    --value "true" \
+    --rule-name rule-name-1 \
+    --rollout-percentage 50 \
+    --rollout-type MANUAL \
+    --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration update-feature-rule \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rule-id rule_id \
+    --rules '[targetSegments]' \
+    --value "true" \
+    --rule-name rule-name-1 \
+    --rollout-percentage 50 \
+    --rollout-type MANUAL \
+    --rollout-configuration-duration-preset CUSTOM \
+    --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
+    --rollout-configuration-phases '[rolloutPhase]'
+```
+{: pre}
+
+### `ibmcloud app-configuration feature-rule-delete`
+{: #app-configuration-cli-feature-rule-delete-command}
+
+Delete a feature rule.
+
+```sh
+ibmcloud app-configuration feature-rule-delete --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --rule-id RULE-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-feature-rule-delete-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--rule-id` (string)
+:   rule id. Required.
+
+#### Example
+{: #app-configuration-feature-rule-delete-examples}
+
+```sh
+ibmcloud app-configuration feature-rule-delete \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rule-id rule_id
+```
+{: pre}
+
+#### Example output
+{: #app-configuration-feature-rule-delete-cli-output}
+
+Generic example for Feature workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for feature operation in environment: 'dev'",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16094018",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16094018",
+    "resource_type" : "FEATURE",
+    "resource_id" : "feature-id",
+    "environment_id" : "dev",
+    "created_time" : "2026-06-17T05:48:01Z",
+    "updated_time" : "2026-06-17T05:48:01Z"
+  }
+}
+```
+{: screen}
+
+### `ibmcloud app-configuration stop-feature-rule-rollout`
+{: #app-configuration-cli-stop-feature-rule-rollout-command}
+
+Stop an in-progress rollout for a specific rule of a feature flag that is in a Progressive rollout state. The rollout for the rule is halted at the specified rollout percentage, which becomes the fixed percentage at which the rule is evaluated until the rollout is reconfigured. This operation is not applicable to rules that are in Manual rollout mode.
+
+```sh
+ibmcloud app-configuration stop-feature-rule-rollout --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID --rule-id RULE-ID --action stop --rollout-percentage ROLLOUT-PERCENTAGE [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-stop-feature-rule-rollout-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--rule-id` (string)
+:   rule id. Required.
+
+`--action` (string)
+:   The rollout control action to perform. Currently supported value is `stop`. Required.
+
+    Allowable values are: `stop`.
+
+`--rollout-percentage` (int64)
+:   The percentage at which the rollout should be stopped. Must be an integer between 0 and 100 (inclusive). Required.
+
+    The maximum value is `100`. The minimum value is `0`.
+
+#### Example
+{: #app-configuration-stop-feature-rule-rollout-examples}
+
+```sh
+ibmcloud app-configuration stop-feature-rule-rollout \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --rule-id rule_id \
+    --action stop \
+    --rollout-percentage 0
+```
+{: pre}
+
+### `ibmcloud app-configuration update-feature-rule_order`
+{: #app-configuration-cli-update-feature-rule_order-command}
+
+Update Feature rule order.
+
+```sh
+ibmcloud app-configuration update-feature-rule_order --guid GUID --environment-id ENVIRONMENT-ID --feature-id FEATURE-ID {--update-feature-rule-order (UPDATE-FEATURE-RULE-ORDER | @UPDATE-FEATURE-RULE-ORDER-FILE) | --update-feature-rule-order-action UPDATE-FEATURE-RULE-ORDER-ACTION --update-feature-rule-order-rule-id UPDATE-FEATURE-RULE-ORDER-RULE-ID --update-feature-rule-order-order UPDATE-FEATURE-RULE-ORDER-ORDER --update-feature-rule-order-source-rule-id UPDATE-FEATURE-RULE-ORDER-SOURCE-RULE-ID --update-feature-rule-order-target-rule-id UPDATE-FEATURE-RULE-ORDER-TARGET-RULE-ID} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-update-feature-rule_order-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--environment-id` (string)
+:   Environment Id. Required.
+
+`--feature-id` (string)
+:   Feature Id. Required.
+
+`--update-feature-rule-order` ([`ReorderFeatureRules`](#cli-reorder-feature-rules-example-schema))
+:   The request body to re-order feature rule. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--update-feature-rule-order=@path/to/file.json`.
+
+`--update-feature-rule-order-action` (string)
+:   Rules can be re-ordered either by `swap` or `move`. This option provides a value for a sub-field of the JSON option 'update-feature-rule-order'. It is mutually exclusive with that option.
+
+`--update-feature-rule-order-rule-id` (string)
+:   Rule id which the user want to move. This option provides a value for a sub-field of the JSON option 'update-feature-rule-order'. It is mutually exclusive with that option.
+
+`--update-feature-rule-order-order` (int64)
+:   specify the target order that the rule must be moved. This option provides a value for a sub-field of the JSON option 'update-feature-rule-order'. It is mutually exclusive with that option.
+
+`--update-feature-rule-order-source-rule-id` (string)
+:   Rule id which the user want to swap. This option provides a value for a sub-field of the JSON option 'update-feature-rule-order'. It is mutually exclusive with that option.
+
+`--update-feature-rule-order-target-rule-id` (string)
+:   Rule id which the user want to swap. This option provides a value for a sub-field of the JSON option 'update-feature-rule-order'. It is mutually exclusive with that option.
+
+#### Examples
+{: #app-configuration-update-feature-rule_order-examples}
+
+```sh
+ibmcloud app-configuration update-feature-rule_order \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --update-feature-rule-order '{"action": "move", "rule_id": "RuleA", "order": 1}'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration update-feature-rule_order \
+    --guid exampleString \
+    --environment-id environment_id \
+    --feature-id feature_id \
+    --update-feature-rule-order-action exampleString \
+    --update-feature-rule-order-rule-id exampleString \
+    --update-feature-rule-order-order 38
+```
+{: pre}
+
 ## Properties
 {: #app-configuration-properties-cli}
 
@@ -1197,7 +1908,7 @@ List all the properties in the specified environment.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration properties --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--sort SORT] [--tags TAGS] [--collections COLLECTIONS] [--segments SEGMENTS] [--include INCLUDE] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration properties --guid GUID --environment-id ENVIRONMENT-ID [--expand=EXPAND] [--sort created_time | updated_time | id | name] [--tags TAGS] [--collections COLLECTIONS] [--segments SEGMENTS] [--include collections,rules,workflow_approval] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1234,7 +1945,7 @@ ibmcloud app-configuration properties --guid GUID --environment-id ENVIRONMENT-I
 `--include` ([]string)
 :   Include the associated collections or targeting rules details in the response.
 
-    Allowable list items are: `collections`, `rules`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `collections`, `rules`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 `--limit` (int64)
 :   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
@@ -1264,7 +1975,7 @@ ibmcloud app-configuration properties \
     --tags 'version 1.1,pre-release' \
     --collections my-collection-id,ghzindiapvtltd \
     --segments my-segment-id,beta-users \
-    --include collections,rules \
+    --include collections,rules,workflow_approval \
     --limit 10 \
     --offset 0 \
     --search 'test tag'
@@ -1277,7 +1988,7 @@ ibmcloud app-configuration properties \
 Create a Property.
 
 ```sh
-ibmcloud app-configuration property-create --guid GUID --environment-id ENVIRONMENT-ID --name NAME --property-id PROPERTY-ID --type TYPE --value VALUE [--description DESCRIPTION] [--format FORMAT] [--tags TAGS] [--segment-rules SEGMENT-RULES] [--collections COLLECTIONS]
+ibmcloud app-configuration property-create --guid GUID --environment-id ENVIRONMENT-ID --name NAME --property-id PROPERTY-ID --type BOOLEAN | STRING | NUMERIC | SECRETREF --value (VALUE | @VALUE-FILE) [--description DESCRIPTION] [--format TEXT | JSON | YAML] [--tags TAGS] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1303,12 +2014,12 @@ ibmcloud app-configuration property-create --guid GUID --environment-id ENVIRONM
 `--type` (string)
 :   Type of the property (BOOLEAN, STRING, NUMERIC, SECRETREF). If `type` is `STRING`, then `format` attribute is required. Required.
 
-    Allowable values are: `BOOLEAN`, `STRING`, `NUMERIC`, `SECRETREF`. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#create-property-request).
+    Allowable values are: `BOOLEAN`, `STRING`, `NUMERIC`, `SECRETREF`.
 
 `--value` (interface{})
 :   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes. Required.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--value=@path/to/file.json`.
 
 `--description` (string)
 :   Property description.
@@ -1323,21 +2034,21 @@ ibmcloud app-configuration property-create --guid GUID --environment-id ENVIRONM
 `--tags` (string)
 :   Tags associated with the property, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--segment-rules` ([`SegmentRule[]`](#cli-segment-rule-example-schema))
 :   Specify the targeting rules that is used to set different property values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
 `--collections` ([`CollectionRef[]`](#cli-collection-ref-example-schema))
 :   List of collection id representing the collections that are associated with the specified property.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--collections=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--collections=@path/to/file.json`.
 
 #### Example
 {: #app-configuration-property-create-examples}
@@ -1364,7 +2075,7 @@ ibmcloud app-configuration property-create \
 Update a Property.
 
 ```sh
-ibmcloud app-configuration property-update --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--name NAME] [--description DESCRIPTION] [--value VALUE] [--tags TAGS] [--segment-rules SEGMENT-RULES] [--collections COLLECTIONS]
+ibmcloud app-configuration property-update --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--name NAME] [--description DESCRIPTION] [--value VALUE | @VALUE-FILE] [--tags TAGS] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1391,28 +2102,28 @@ ibmcloud app-configuration property-update --guid GUID --environment-id ENVIRONM
     The maximum length is `255` characters.
 
 `--value` (interface{})
-:   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes. To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#update-property-request).
+:   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--value=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--value=@path/to/file.json`.
 
 `--tags` (string)
 :   Tags associated with the property, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--segment-rules` ([`SegmentRule[]`](#cli-segment-rule-example-schema))
 :   Specify the targeting rules that is used to set different property values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
 `--collections` ([`CollectionUpdateRef[]`](#cli-collection-update-ref-example-schema))
 :   List of collection id representing the collections that are associated with the specified property.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--collections=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--collections=@path/to/file.json`.
 
 #### Example
 {: #app-configuration-property-update-examples}
@@ -1437,7 +2148,7 @@ ibmcloud app-configuration property-update \
 Update the property values. This method can be executed by the `writer` role. Property value and targeting rules can be updated, however this method does not allow assigning property to a collection.
 
 ```sh
-ibmcloud app-configuration property-values-update --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--value VALUE] [--segment-rules SEGMENT-RULES]
+ibmcloud app-configuration property-values-update --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--value VALUE | @VALUE-FILE] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1466,21 +2177,19 @@ ibmcloud app-configuration property-values-update --guid GUID --environment-id E
 `--tags` (string)
 :   Tags associated with the property, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--value` (interface{})
 :   Value of the Property. The value can be Boolean, Numeric, SecretRef, String - TEXT, String - JSON, String - YAML as per the `type` and `format` attributes.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--value=@path/to/file.json`.
-
-    To see example usage of the different types, see [App Configuration API](https://cloud.ibm.com/apis/app-configuration#update-property-values-request).
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--value=@path/to/file.json`.
 
 `--segment-rules` ([`SegmentRule[]`](#cli-segment-rule-example-schema))
 :   Specify the targeting rules that is used to set different property values for different segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segment-rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segment-rules=@path/to/file.json`.
 
 #### Example
 {: #app-configuration-property-values-update-examples}
@@ -1504,7 +2213,7 @@ ibmcloud app-configuration property-values-update \
 Retrieve details of a property.
 
 ```sh
-ibmcloud app-configuration property --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--include INCLUDE]
+ibmcloud app-configuration property --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--include collections,rules,workflow_approval] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1523,7 +2232,7 @@ ibmcloud app-configuration property --guid GUID --environment-id ENVIRONMENT-ID 
 `--include` ([]string)
 :   Include the associated collections or targeting rules details in the response.
 
-    Allowable list items are: `collections`, `rules`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `collections`, `rules`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 #### Example
 {: #app-configuration-property-examples}
@@ -1533,7 +2242,7 @@ ibmcloud app-configuration property \
     --guid exampleString \
     --environment-id environment_id \
     --property-id property_id \
-    --include collections,rules
+    --include collections,rules,workflow_approval
 ```
 {: pre}
 
@@ -1543,7 +2252,7 @@ ibmcloud app-configuration property \
 Delete a Property.
 
 ```sh
-ibmcloud app-configuration property-delete --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID
+ibmcloud app-configuration property-delete --guid GUID --environment-id ENVIRONMENT-ID --property-id PROPERTY-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1570,8 +2279,31 @@ ibmcloud app-configuration property-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+#### Example output
+{: #app-configuration-property-delete-cli-output}
+
+Generic example for Property workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for property operation in environment: 'dev'",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16094019",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16094019",
+    "resource_type" : "PROPERTY",
+    "resource_id" : "property-id",
+    "environment_id" : "dev",
+    "created_time" : "2026-06-17T05:48:01Z",
+    "updated_time" : "2026-06-17T05:48:01Z"
+  }
+}
+```
+{: screen}
 
 ## Segments
 {: #app-configuration-segments-cli}
@@ -1585,7 +2317,7 @@ List all the segments.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration segments --guid GUID [--expand=EXPAND] [--sort SORT] [--tags TAGS] [--include INCLUDE] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration segments --guid GUID [--expand=EXPAND] [--sort created_time | updated_time | id | name] [--tags TAGS] [--include rules,workflow_approval] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1606,10 +2338,10 @@ ibmcloud app-configuration segments --guid GUID [--expand=EXPAND] [--sort SORT] 
 `--tags` (string)
 :   Filter the resources to be returned based on the associated tags. Specify the parameter as a list of comma separated tags. Returns resources associated with any of the specified tags.
 
-`--include` (string)
+`--include` ([]string)
 :   Segment details to include the associated rules in the response.
 
-    Allowable values are: `rules`.
+    Allowable list items are: `rules`, `workflow_approval`.
 
 `--limit` (int64)
 :   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
@@ -1636,7 +2368,7 @@ ibmcloud app-configuration segments \
     --expand=true \
     --sort created_time \
     --tags 'version 1.1,pre-release' \
-    --include rules \
+    --include rules,workflow_approval \
     --limit 10 \
     --offset 0 \
     --search 'test tag'
@@ -1649,7 +2381,7 @@ ibmcloud app-configuration segments \
 Create a segment.
 
 ```sh
-ibmcloud app-configuration segment-create --guid GUID --name NAME --segment-id SEGMENT-ID --rules RULES [--description DESCRIPTION] [--tags TAGS]
+ibmcloud app-configuration segment-create --guid GUID --name NAME --segment-id SEGMENT-ID --rules (RULES | @RULES-FILE) [--description DESCRIPTION] [--tags TAGS] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1674,7 +2406,7 @@ ibmcloud app-configuration segment-create --guid GUID --name NAME --segment-id S
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rules=@path/to/file.json`.
 
 `--description` (string)
 :   Segment description.
@@ -1684,7 +2416,7 @@ ibmcloud app-configuration segment-create --guid GUID --name NAME --segment-id S
 `--tags` (string)
 :   Tags associated with the segments, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 #### Example
 {: #app-configuration-segment-create-examples}
@@ -1706,7 +2438,7 @@ ibmcloud app-configuration segment-create \
 Update the segment properties.
 
 ```sh
-ibmcloud app-configuration segment-update --guid GUID --segment-id SEGMENT-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--rules RULES]
+ibmcloud app-configuration segment-update --guid GUID --segment-id SEGMENT-ID [--name NAME] [--description DESCRIPTION] [--tags TAGS] [--rules RULES | @RULES-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1732,14 +2464,14 @@ ibmcloud app-configuration segment-update --guid GUID --segment-id SEGMENT-ID [-
 `--tags` (string)
 :   Tags associated with segments, allowed special characters are [_. ,-:].
 
-    The value must match regular expression `/^[a-zA-Z0-9_\\. ,\\-]+(:[a-zA-Z0-9_\\. ,\\-]+)*$/`.
+    The value must match regular expression `/^[a-zA-Z0-9_\. ,\-]+(:[a-zA-Z0-9_\. ,\-]+)*$/`.
 
 `--rules` ([`Rule[]`](#cli-rule-example-schema))
 :   List of rules that determine if the entity belongs to the segment during feature / property evaluation. An entity is identified by an unique identifier and the attributes that it defines. Any feature flag and property value evaluation is performed in the context of an entity when it is targeted to segments.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--rules=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--rules=@path/to/file.json`.
 
 #### Example
 {: #app-configuration-segment-update-examples}
@@ -1761,7 +2493,7 @@ ibmcloud app-configuration segment-update \
 Retrieve details of a segment.
 
 ```sh
-ibmcloud app-configuration segment --guid GUID --segment-id SEGMENT-ID [--include INCLUDE]
+ibmcloud app-configuration segment --guid GUID --segment-id SEGMENT-ID [--include features,properties,workflow_approval] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1777,7 +2509,7 @@ ibmcloud app-configuration segment --guid GUID --segment-id SEGMENT-ID [--includ
 `--include` ([]string)
 :   Include feature and property details in the response.
 
-    Allowable list items are: `features`, `properties`. The maximum length is `20` items. The minimum length is `0` items.
+    Allowable list items are: `features`, `properties`, `workflow_approval`. The maximum length is `20` items. The minimum length is `0` items.
 
 #### Example
 {: #app-configuration-segment-examples}
@@ -1786,7 +2518,7 @@ ibmcloud app-configuration segment --guid GUID --segment-id SEGMENT-ID [--includ
 ibmcloud app-configuration segment \
     --guid exampleString \
     --segment-id segment_id \
-    --include features,properties
+    --include features,properties,workflow_approval
 ```
 {: pre}
 
@@ -1796,7 +2528,7 @@ ibmcloud app-configuration segment \
 Delete a segment.
 
 ```sh
-ibmcloud app-configuration segment-delete --guid GUID --segment-id SEGMENT-ID
+ibmcloud app-configuration segment-delete --guid GUID --segment-id SEGMENT-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1819,8 +2551,30 @@ ibmcloud app-configuration segment-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+#### Example output
+{: #app-configuration-segment-delete-cli-output}
+
+Generic example for Segment workflow approval
+
+```json
+{
+  "message" : "Workflow approval initiated for segment operation.",
+  "workflow_approval" : {
+    "workflow_name" : "Resource Approval Workflow",
+    "workflow_id" : "workflow-id-123",
+    "provider_type" : "SERVICENOW_IBM",
+    "change_request_number" : "CHG16659936",
+    "change_request_status" : "PENDING",
+    "execution_status" : "PENDING",
+    "approval_url" : "https://watson.service-now.com/nav_to.do?uri=change_request.do?sys_id=CHG16659936",
+    "resource_type" : "SEGMENT",
+    "resource_id" : "segment-id",
+    "created_time" : "2026-06-17T20:34:13Z",
+    "updated_time" : "2026-06-17T20:34:13Z"
+  }
+}
+```
+{: screen}
 
 ## Snapshots
 {: #app-configuration-snapshots-cli}
@@ -1834,7 +2588,7 @@ List all the Git configs.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration gitconfigs --guid GUID [--sort SORT] [--collection-id COLLECTION-ID] [--environment-id ENVIRONMENT-ID] [--limit LIMIT] [--offset OFFSET] [--search SEARCH]
+ibmcloud app-configuration gitconfigs --guid GUID [--sort created_time | updated_time | id | name] [--collection-id COLLECTION-ID] [--environment-id ENVIRONMENT-ID] [--limit LIMIT] [--offset OFFSET | --all-pages] [--search SEARCH] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1892,7 +2646,7 @@ ibmcloud app-configuration gitconfigs \
 Create a Git config.
 
 ```sh
-ibmcloud app-configuration gitconfig-create --guid GUID --git-config-name GIT-CONFIG-NAME --git-config-id GIT-CONFIG-ID --collection-id COLLECTION-ID --environment-id ENVIRONMENT-ID --git-url GIT-URL --git-branch GIT-BRANCH --git-file-path GIT-FILE-PATH --git-token GIT-TOKEN
+ibmcloud app-configuration gitconfig-create --guid GUID --git-config-name GIT-CONFIG-NAME --git-config-id GIT-CONFIG-ID --collection-id COLLECTION-ID --environment-id ENVIRONMENT-ID --git-url GIT-URL --git-branch GIT-BRANCH --git-file-path GIT-FILE-PATH --git-token GIT-TOKEN [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1905,12 +2659,12 @@ ibmcloud app-configuration gitconfig-create --guid GUID --git-config-name GIT-CO
 `--git-config-name` (string)
 :   Git config name. Allowed special characters are dot ( . ), hyphen( - ), underscore ( _ ) only. Required.
 
-    The maximum length is `100` characters.
+    The maximum length is `256` characters.
 
 `--git-config-id` (string)
 :   Git config id. Allowed special characters are dot ( . ), hyphen( - ), underscore ( _ ) only. Required.
 
-    The maximum length is `30` characters.
+    The maximum length is `256` characters.
 
 `--collection-id` (string)
 :   Collection Id. Required.
@@ -1953,7 +2707,7 @@ ibmcloud app-configuration gitconfig-create \
 Update the gitconfig properties.
 
 ```sh
-ibmcloud app-configuration gitconfig-update --guid GUID --git-config-id GIT-CONFIG-ID [--git-config-name GIT-CONFIG-NAME] [--collection-id COLLECTION-ID] [--environment-id ENVIRONMENT-ID] [--git-url GIT-URL] [--git-branch GIT-BRANCH] [--git-file-path GIT-FILE-PATH] [--git-token GIT-TOKEN]
+ibmcloud app-configuration gitconfig-update --guid GUID --git-config-id GIT-CONFIG-ID [--git-config-name GIT-CONFIG-NAME] [--collection-id COLLECTION-ID] [--environment-id ENVIRONMENT-ID] [--git-url GIT-URL] [--git-branch GIT-BRANCH] [--git-file-path GIT-FILE-PATH] [--git-token GIT-TOKEN] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -1969,7 +2723,7 @@ ibmcloud app-configuration gitconfig-update --guid GUID --git-config-id GIT-CONF
 `--git-config-name` (string)
 :   Git config name. Allowed special characters are dot ( . ), hyphen( - ), underscore ( _ ) only.
 
-    The maximum length is `100` characters.
+    The maximum length is `256` characters.
 
 `--collection-id` (string)
 :   Collection Id.
@@ -2012,7 +2766,7 @@ ibmcloud app-configuration gitconfig-update \
 Retrieve details of a gitconfig.
 
 ```sh
-ibmcloud app-configuration gitconfig --guid GUID --git-config-id GIT-CONFIG-ID
+ibmcloud app-configuration gitconfig --guid GUID --git-config-id GIT-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2041,7 +2795,7 @@ ibmcloud app-configuration gitconfig \
 Delete a gitconfig.
 
 ```sh
-ibmcloud app-configuration gitconfig-delete --guid GUID --git-config-id GIT-CONFIG-ID
+ibmcloud app-configuration gitconfig-delete --guid GUID --git-config-id GIT-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2064,16 +2818,13 @@ ibmcloud app-configuration gitconfig-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
-
 ### `ibmcloud app-configuration gitconfig-promote`
 {: #app-configuration-cli-gitconfig-promote-command}
 
 Promote configuration, this api will write or update your chosen configuration to the GitHub based on the git url, file path and branch data. In simple words this api will create or updates the bootstrap json file.
 
 ```sh
-ibmcloud app-configuration gitconfig-promote --guid GUID --git-config-id GIT-CONFIG-ID
+ibmcloud app-configuration gitconfig-promote --guid GUID --git-config-id GIT-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2102,7 +2853,7 @@ ibmcloud app-configuration gitconfig-promote \
 Restore configuration, this api will write or update your chosen configuration from the GitHub to App configuration instance. The api will read the contents in the json file that was created using promote API and recreate or updates the App configuration instance with the file contents like properties, features and segments.
 
 ```sh
-ibmcloud app-configuration gitconfig-restore --guid GUID --git-config-id GIT-CONFIG-ID
+ibmcloud app-configuration gitconfig-restore --guid GUID --git-config-id GIT-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2137,7 +2888,7 @@ List all the integrations.
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration integrations --guid GUID [--expand=EXPAND] [--limit LIMIT] [--offset OFFSET]
+ibmcloud app-configuration integrations --guid GUID [--expand=EXPAND] [--limit LIMIT] [--offset OFFSET | --all-pages] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2181,7 +2932,7 @@ ibmcloud app-configuration integrations \
 Create an integration with App Configuration service instance.
 
 ```sh
-ibmcloud app-configuration integration-create --guid GUID --integration-id INTEGRATION-ID --integration-type INTEGRATION-TYPE [--metadata METADATA | --metadata-event-notifications-instance-crn METADATA-EVENT-NOTIFICATIONS-INSTANCE-CRN --metadata-event-notifications-endpoint METADATA-EVENT-NOTIFICATIONS-ENDPOINT --metadata-event-notifications-source-name METADATA-EVENT-NOTIFICATIONS-SOURCE-NAME --metadata-event-notifications-source-description METADATA-EVENT-NOTIFICATIONS-SOURCE-DESCRIPTION --metadata-kms-instance-crn METADATA-KMS-INSTANCE-CRN --metadata-kms-endpoint METADATA-KMS-ENDPOINT --metadata-root-key-id METADATA-ROOT-KEY-ID]
+ibmcloud app-configuration integration-create --guid GUID --integration-id INTEGRATION-ID --integration-type KMS | EVENT_NOTIFICATIONS {--metadata (METADATA | @METADATA-FILE) | --metadata-event-notifications-instance-crn METADATA-EVENT-NOTIFICATIONS-INSTANCE-CRN --metadata-event-notifications-endpoint METADATA-EVENT-NOTIFICATIONS-ENDPOINT --metadata-event-notifications-source-name METADATA-EVENT-NOTIFICATIONS-SOURCE-NAME --metadata-event-notifications-source-description METADATA-EVENT-NOTIFICATIONS-SOURCE-DESCRIPTION --metadata-kms-instance-crn METADATA-KMS-INSTANCE-CRN --metadata-kms-endpoint METADATA-KMS-ENDPOINT --metadata-root-key-id METADATA-ROOT-KEY-ID} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2202,7 +2953,7 @@ ibmcloud app-configuration integration-create --guid GUID --integration-id INTEG
 `--metadata` ([`CreateIntegrationMetadata`](#cli-create-integration-metadata-example-schema))
 :   This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--metadata=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--metadata=@path/to/file.json`.
 
 `--metadata-event-notifications-instance-crn` (string)
 :   The CRN of the Event Notifications service instance. This option provides a value for a sub-field of the JSON option 'metadata'. It is mutually exclusive with that option.
@@ -2256,7 +3007,7 @@ ibmcloud app-configuration integration-create \
 Retrieve the details of the integration.
 
 ```sh
-ibmcloud app-configuration integration --guid GUID --integration-id INTEGRATION-ID
+ibmcloud app-configuration integration --guid GUID --integration-id INTEGRATION-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2285,7 +3036,7 @@ ibmcloud app-configuration integration \
 Delete an integration.
 
 ```sh
-ibmcloud app-configuration integration-delete --guid GUID --integration-id INTEGRATION-ID
+ibmcloud app-configuration integration-delete --guid GUID --integration-id INTEGRATION-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2308,9 +3059,6 @@ ibmcloud app-configuration integration-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
-
 ## Origin Config
 {: #app-configuration-origin-config-cli}
 
@@ -2322,7 +3070,7 @@ Use settings to add more configurations required by external applications to acc
 List all the Origin Configs.
 
 ```sh
-ibmcloud app-configuration originconfigs --guid GUID
+ibmcloud app-configuration originconfigs --guid GUID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2347,7 +3095,7 @@ ibmcloud app-configuration originconfigs \
 Update the Origin Configs.
 
 ```sh
-ibmcloud app-configuration originconfigs-update --guid GUID --allowed-origins ALLOWED-ORIGINS
+ibmcloud app-configuration originconfigs-update --guid GUID --allowed-origins ALLOWED-ORIGINS [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2375,7 +3123,7 @@ ibmcloud app-configuration originconfigs-update \
 ## Workflow Configs
 {: #app-configuration-workflow-configs-cli}
 
-Manage feature flags enablement by adding additional workflow with ServiceNow® integration with App Configuration.
+Manage app configuration resources by adding additional approval workflow with ServiceNow® integration with App Configuration.
 
 ### `ibmcloud app-configuration workflowconfig`
 {: #app-configuration-cli-workflowconfig-command}
@@ -2383,7 +3131,7 @@ Manage feature flags enablement by adding additional workflow with ServiceNow® 
 Get the environment specific workflow configs.
 
 ```sh
-ibmcloud app-configuration workflowconfig --guid GUID --environment-id ENVIRONMENT-ID
+ibmcloud app-configuration workflowconfig --guid GUID --environment-id ENVIRONMENT-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2412,7 +3160,7 @@ ibmcloud app-configuration workflowconfig \
 Create a Workflow.
 
 ```sh
-ibmcloud app-configuration workflowconfig-create --guid GUID --environment-id ENVIRONMENT-ID [--workflow-config WORKFLOW-CONFIG | --workflow-config-workflow-url WORKFLOW-CONFIG-WORKFLOW-URL --workflow-config-approval-group-name WORKFLOW-CONFIG-APPROVAL-GROUP-NAME --workflow-config-approval-expiration WORKFLOW-CONFIG-APPROVAL-EXPIRATION --workflow-config-workflow-credentials WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS --workflow-config-enabled=WORKFLOW-CONFIG-ENABLED --workflow-config-service-crn WORKFLOW-CONFIG-SERVICE-CRN --workflow-config-workflow-type WORKFLOW-CONFIG-WORKFLOW-TYPE --workflow-config-sm-instance-crn WORKFLOW-CONFIG-SM-INSTANCE-CRN --workflow-config-secret-id WORKFLOW-CONFIG-SECRET-ID]
+ibmcloud app-configuration workflowconfig-create --guid GUID --environment-id ENVIRONMENT-ID {--workflow-config (WORKFLOW-CONFIG | @WORKFLOW-CONFIG-FILE) | --workflow-config-workflow-url WORKFLOW-CONFIG-WORKFLOW-URL --workflow-config-approval-group-name WORKFLOW-CONFIG-APPROVAL-GROUP-NAME --workflow-config-approval-expiration WORKFLOW-CONFIG-APPROVAL-EXPIRATION (--workflow-config-workflow-credentials WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS | @WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS-FILE) --workflow-config-enabled=WORKFLOW-CONFIG-ENABLED --workflow-config-service-crn WORKFLOW-CONFIG-SERVICE-CRN --workflow-config-workflow-type WORKFLOW-CONFIG-WORKFLOW-TYPE --workflow-config-sm-instance-crn WORKFLOW-CONFIG-SM-INSTANCE-CRN --workflow-config-secret-id WORKFLOW-CONFIG-SECRET-ID} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2428,7 +3176,7 @@ ibmcloud app-configuration workflowconfig-create --guid GUID --environment-id EN
 `--workflow-config` ([`CreateWorkflowConfig`](#cli-create-workflow-config-example-schema))
 :   The request body to create a new workflow config. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--workflow-config=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--workflow-config=@path/to/file.json`.
 
 `--workflow-config-workflow-url` (string)
 :   Only service now url https://xxxxx.service-now.com allowed, xxxxx is the service now instance id. This option provides a value for a sub-field of the JSON option 'workflow-config'. It is mutually exclusive with that option.
@@ -2448,7 +3196,7 @@ ibmcloud app-configuration workflowconfig-create --guid GUID --environment-id EN
 `--workflow-config-workflow-credentials` ([`ExternalServiceNowCredentials`](#cli-external-service-now-credentials-example-schema))
 :   The credentials of the External ServiceNow instance. This option provides a value for a sub-field of the JSON option 'workflow-config'. It is mutually exclusive with that option.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--workflow-config-workflow-credentials=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--workflow-config-workflow-credentials=@path/to/file.json`.
 
 `--workflow-config-enabled` (bool)
 :   This option enables the workflow configuration per environment. User must set it to true if they wish to create Change Request for flag state changes. This option provides a value for a sub-field of the JSON option 'workflow-config'. It is mutually exclusive with that option.
@@ -2503,7 +3251,7 @@ ibmcloud app-configuration workflowconfig-create \
 Update a Workflow.
 
 ```sh
-ibmcloud app-configuration workflowconfig-update --guid GUID --environment-id ENVIRONMENT-ID [--update-workflow-config UPDATE-WORKFLOW-CONFIG | --update-workflow-config-workflow-url UPDATE-WORKFLOW-CONFIG-WORKFLOW-URL --update-workflow-config-approval-group-name UPDATE-WORKFLOW-CONFIG-APPROVAL-GROUP-NAME --update-workflow-config-approval-expiration UPDATE-WORKFLOW-CONFIG-APPROVAL-EXPIRATION --update-workflow-config-workflow-credentials UPDATE-WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS --update-workflow-config-enabled=UPDATE-WORKFLOW-CONFIG-ENABLED --update-workflow-config-service-crn UPDATE-WORKFLOW-CONFIG-SERVICE-CRN --update-workflow-config-sm-instance-crn UPDATE-WORKFLOW-CONFIG-SM-INSTANCE-CRN --update-workflow-config-secret-id UPDATE-WORKFLOW-CONFIG-SECRET-ID]
+ibmcloud app-configuration workflowconfig-update --guid GUID --environment-id ENVIRONMENT-ID {--update-workflow-config (UPDATE-WORKFLOW-CONFIG | @UPDATE-WORKFLOW-CONFIG-FILE) | --update-workflow-config-workflow-url UPDATE-WORKFLOW-CONFIG-WORKFLOW-URL --update-workflow-config-approval-group-name UPDATE-WORKFLOW-CONFIG-APPROVAL-GROUP-NAME --update-workflow-config-approval-expiration UPDATE-WORKFLOW-CONFIG-APPROVAL-EXPIRATION (--update-workflow-config-workflow-credentials UPDATE-WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS | @UPDATE-WORKFLOW-CONFIG-WORKFLOW-CREDENTIALS-FILE) --update-workflow-config-enabled=UPDATE-WORKFLOW-CONFIG-ENABLED --update-workflow-config-service-crn UPDATE-WORKFLOW-CONFIG-SERVICE-CRN --update-workflow-config-sm-instance-crn UPDATE-WORKFLOW-CONFIG-SM-INSTANCE-CRN --update-workflow-config-secret-id UPDATE-WORKFLOW-CONFIG-SECRET-ID} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2519,7 +3267,7 @@ ibmcloud app-configuration workflowconfig-update --guid GUID --environment-id EN
 `--update-workflow-config` ([`UpdateWorkflowConfig`](#cli-update-workflow-config-example-schema))
 :   The request body to update an existing workflow config. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--update-workflow-config=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--update-workflow-config=@path/to/file.json`.
 
 `--update-workflow-config-workflow-url` (string)
 :   ServiceNow instance URL. Only url https://xxxxx.service-now.com allowed, xxxxx is the service now instance id. This option provides a value for a sub-field of the JSON option 'update-workflow-config'. It is mutually exclusive with that option.
@@ -2539,7 +3287,7 @@ ibmcloud app-configuration workflowconfig-update --guid GUID --environment-id EN
 `--update-workflow-config-workflow-credentials` ([`ExternalServiceNowCredentials`](#cli-external-service-now-credentials-example-schema))
 :   The credentials of the External ServiceNow instance. This option provides a value for a sub-field of the JSON option 'update-workflow-config'. It is mutually exclusive with that option.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--update-workflow-config-workflow-credentials=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--update-workflow-config-workflow-credentials=@path/to/file.json`.
 
 `--update-workflow-config-enabled` (bool)
 :   This option enables the workflow configuration per environment. User must set it to true if they wish to create Change Request for flag state changes. This option provides a value for a sub-field of the JSON option 'update-workflow-config'. It is mutually exclusive with that option.
@@ -2591,7 +3339,7 @@ ibmcloud app-configuration workflowconfig-update \
 Delete a Workflow config.
 
 ```sh
-ibmcloud app-configuration workflowconfig-delete --guid GUID --environment-id ENVIRONMENT-ID
+ibmcloud app-configuration workflowconfig-delete --guid GUID --environment-id ENVIRONMENT-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2614,8 +3362,359 @@ ibmcloud app-configuration workflowconfig-delete \
 ```
 {: pre}
 
-Use command option `-f` or `--force` if you want to delete without the confirmation prompt.
-{: note}
+### `ibmcloud app-configuration workflow-configs`
+{: #app-configuration-cli-workflow-configs-command}
+
+List workflow configs.
+Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
+
+```sh
+ibmcloud app-configuration workflow-configs --guid GUID [--sort created_time | updated_time | workflow_id | name] [--search SEARCH] [--limit LIMIT] [--offset OFFSET | --all-pages] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-workflow-configs-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--sort` (string)
+:   Sort the workflow config details based on the specified attribute. By default, items are sorted by name.
+
+    Allowable values are: `created_time`, `updated_time`, `workflow_id`, `name`.
+
+`--search` (string)
+:   Searches for the provided keyword and returns the appropriate row with that value. Here the search happens on the '[Name]' of the entity.
+
+`--limit` (int64)
+:   The number of records to retrieve. By default, the list operation return the first 10 records. To retrieve different set of records, use `limit` with `offset` to page through the available records.
+
+    The default value is `10`. The maximum value is `100`. The minimum value is `1`.
+
+`--offset` (int64)
+:   The number of records to skip. By specifying `offset`, you retrieve a subset of items that starts with the `offset` value. Use `offset` with `limit` to page through the available records.
+
+    The default value is `0`. The minimum value is `0`.
+
+`--all-pages` (bool)
+:   Invoke multiple requests to display all pages of the collection for workflow-configs.
+
+#### Example
+{: #app-configuration-workflow-configs-examples}
+
+```sh
+ibmcloud app-configuration workflow-configs \
+    --guid exampleString \
+    --sort created_time \
+    --search search_string \
+    --limit 10 \
+    --offset 0
+```
+{: pre}
+
+### `ibmcloud app-configuration workflow-configs-create`
+{: #app-configuration-cli-workflow-configs-create-command}
+
+Create a Approval Workflow.
+
+```sh
+ibmcloud app-configuration workflow-configs-create --guid GUID --name NAME --workflow-id WORKFLOW-ID --enabled=ENABLED {--provider (PROVIDER | @PROVIDER-FILE) | --provider-type SERVICENOW_EXTERNAL | SERVICENOW_IBM (--provider-metadata PROVIDER-METADATA | @PROVIDER-METADATA-FILE)} {--scope (SCOPE | @SCOPE-FILE) | (--scope-collections SCOPE-COLLECTIONS | @SCOPE-COLLECTIONS-FILE) (--scope-segments SCOPE-SEGMENTS | @SCOPE-SEGMENTS-FILE) (--scope-environments SCOPE-ENVIRONMENTS | @SCOPE-ENVIRONMENTS-FILE)} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-workflow-configs-create-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--name` (string)
+:   Name of the workflow configuration. Required.
+
+`--workflow-id` (string)
+:   Unique identifier for the workflow configuration. Required.
+
+`--enabled` (bool)
+:   Whether the workflow is enabled. Required.
+
+`--provider` ([`WorkflowProvider`](#cli-workflow-provider-example-schema))
+:   Provider configuration for a workflow. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--provider=@path/to/file.json`.
+
+`--scope` ([`WorkflowScope`](#cli-workflow-scope-example-schema))
+:   Scope configuration for the workflow. At least one of collections, segments, or environments must be specified. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope=@path/to/file.json`.
+
+`--provider-type` (string)
+:   This option provides a value for a sub-field of the JSON option 'provider'. It is mutually exclusive with that option.
+
+    Allowable values are: `SERVICENOW_EXTERNAL`, `SERVICENOW_IBM`.
+
+`--provider-metadata` ([`WorkflowMetadata`](#cli-workflow-metadata-example-schema))
+:   Metadata for a ServiceNow provider. Discriminated by the provider 'type' field. This option provides a value for a sub-field of the JSON option 'provider'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--provider-metadata=@path/to/file.json`.
+
+`--scope-collections` ([`WorkflowScopeMode`](#cli-workflow-scope-mode-example-schema))
+:   Scope mode configuration. Only ALL mode is supported. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-collections=@path/to/file.json`.
+
+`--scope-segments` ([`WorkflowScopeMode`](#cli-workflow-scope-mode-example-schema))
+:   Scope mode configuration. Only ALL mode is supported. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-segments=@path/to/file.json`.
+
+`--scope-environments` ([`WorkflowEnvironment[]`](#cli-workflow-environment-example-schema))
+:   List of environments where the workflow applies. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-environments=@path/to/file.json`.
+
+#### Examples
+{: #app-configuration-workflow-configs-create-examples}
+
+```sh
+ibmcloud app-configuration workflow-configs-create \
+    --guid exampleString \
+    --name ext-service-now \
+    --workflow-id workflow-id-1 \
+    --enabled=true \
+    --provider '{"type": "SERVICENOW_EXTERNAL", "metadata": {"approval_expiration": 7, "approval_group_name": "AppConfiguration Approvers", "sm_secret_id": "63476562-d5b4-02ae-e966-528f8df457bb", "workflow_url": "https://dev339579.service-now.com"}}' \
+    --scope '{"collections": {"mode": "ALL", "ids": []}, "segments": {"mode": "ALL", "ids": []}, "environments": [{"environment_id": "stage", "resources": {"environment": {"enable": true}, "features": {"mode": "ALL", "ids": []}, "properties": {"mode": "ALL", "ids": []}}}]}'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration workflow-configs-create \
+    --guid exampleString \
+    --name ext-service-now \
+    --workflow-id workflow-id-1 \
+    --enabled=true \
+    --provider-type SERVICENOW_IBM \
+    --provider-metadata workflowMetadata \
+    --scope-collections workflowScopeMode \
+    --scope-segments workflowScopeMode \
+    --scope-environments '[workflowEnvironment]'
+```
+{: pre}
+
+### `ibmcloud app-configuration workflow-config`
+{: #app-configuration-cli-workflow-config-command}
+
+get single approval workflow configs.
+
+```sh
+ibmcloud app-configuration workflow-config --guid GUID --workflow-config-id WORKFLOW-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-workflow-config-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--workflow-config-id` (string)
+:   id of workflow configuration. Required.
+
+#### Example
+{: #app-configuration-workflow-config-examples}
+
+```sh
+ibmcloud app-configuration workflow-config \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id
+```
+{: pre}
+
+### `ibmcloud app-configuration workflow-configs-update`
+{: #app-configuration-cli-workflow-configs-update-command}
+
+Update a Approval Workflow.
+
+```sh
+ibmcloud app-configuration workflow-configs-update --guid GUID --workflow-config-id WORKFLOW-CONFIG-ID --name NAME --workflow-id WORKFLOW-ID --enabled=ENABLED {--provider (PROVIDER | @PROVIDER-FILE) | --provider-type SERVICENOW_EXTERNAL | SERVICENOW_IBM (--provider-metadata PROVIDER-METADATA | @PROVIDER-METADATA-FILE)} {--scope (SCOPE | @SCOPE-FILE) | (--scope-collections SCOPE-COLLECTIONS | @SCOPE-COLLECTIONS-FILE) (--scope-segments SCOPE-SEGMENTS | @SCOPE-SEGMENTS-FILE) (--scope-environments SCOPE-ENVIRONMENTS | @SCOPE-ENVIRONMENTS-FILE)} [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-workflow-configs-update-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--workflow-config-id` (string)
+:   id of workflow configuration. Required.
+
+`--name` (string)
+:   Name of the workflow configuration. Required.
+
+`--workflow-id` (string)
+:   Unique identifier for the workflow configuration. Required.
+
+`--enabled` (bool)
+:   Whether the workflow is enabled. Required.
+
+`--provider` ([`WorkflowProvider`](#cli-workflow-provider-example-schema))
+:   Provider configuration for a workflow. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--provider=@path/to/file.json`.
+
+`--scope` ([`WorkflowScope`](#cli-workflow-scope-example-schema))
+:   Scope configuration for the workflow. At least one of collections, segments, or environments must be specified. This JSON option can instead be provided by setting individual fields with other options. It is mutually exclusive with those options.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope=@path/to/file.json`.
+
+`--provider-type` (string)
+:   This option provides a value for a sub-field of the JSON option 'provider'. It is mutually exclusive with that option.
+
+    Allowable values are: `SERVICENOW_EXTERNAL`, `SERVICENOW_IBM`.
+
+`--provider-metadata` ([`WorkflowMetadata`](#cli-workflow-metadata-example-schema))
+:   Metadata for a ServiceNow provider. Discriminated by the provider 'type' field. This option provides a value for a sub-field of the JSON option 'provider'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--provider-metadata=@path/to/file.json`.
+
+`--scope-collections` ([`WorkflowScopeMode`](#cli-workflow-scope-mode-example-schema))
+:   Scope mode configuration. Only ALL mode is supported. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-collections=@path/to/file.json`.
+
+`--scope-segments` ([`WorkflowScopeMode`](#cli-workflow-scope-mode-example-schema))
+:   Scope mode configuration. Only ALL mode is supported. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-segments=@path/to/file.json`.
+
+`--scope-environments` ([`WorkflowEnvironment[]`](#cli-workflow-environment-example-schema))
+:   List of environments where the workflow applies. This option provides a value for a sub-field of the JSON option 'scope'. It is mutually exclusive with that option.
+
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--scope-environments=@path/to/file.json`.
+
+#### Examples
+{: #app-configuration-workflow-configs-update-examples}
+
+```sh
+ibmcloud app-configuration workflow-configs-update \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id \
+    --name ext-service-now-updated \
+    --workflow-id workflow-id-1 \
+    --enabled=true \
+    --provider '{"type": "SERVICENOW_EXTERNAL", "metadata": {"approval_expiration": 10, "approval_group_name": "AppConfiguration Approvers Updated", "sm_secret_id": "63476562-d5b4-02ae-e966-528f8df457bb", "workflow_url": "https://dev339579.service-now.com"}}' \
+    --scope '{"collections": {"mode": "ALL", "ids": []}, "segments": {"mode": "ALL", "ids": []}, "environments": [{"environment_id": "stage", "resources": {"environment": {"enable": true}, "features": {"mode": "ALL", "ids": []}, "properties": {"mode": "ALL", "ids": []}}}]}'
+```
+{: pre}
+
+Alternatively, granular options are available for the sub-fields of JSON string options:
+```sh
+ibmcloud app-configuration workflow-configs-update \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id \
+    --name ext-service-now-updated \
+    --workflow-id workflow-id-1 \
+    --enabled=true \
+    --provider-type SERVICENOW_IBM \
+    --provider-metadata workflowMetadata \
+    --scope-collections workflowScopeMode \
+    --scope-segments workflowScopeMode \
+    --scope-environments '[workflowEnvironment]'
+```
+{: pre}
+
+### `ibmcloud app-configuration workflow-configs-delete`
+{: #app-configuration-cli-workflow-configs-delete-command}
+
+Delete a Approval Workflow config.
+
+```sh
+ibmcloud app-configuration workflow-configs-delete --guid GUID --workflow-config-id WORKFLOW-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-workflow-configs-delete-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--workflow-config-id` (string)
+:   id of workflow configuration. Required.
+
+#### Example
+{: #app-configuration-workflow-configs-delete-examples}
+
+```sh
+ibmcloud app-configuration workflow-configs-delete \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id
+```
+{: pre}
+
+### `ibmcloud app-configuration toggle-workflow-config`
+{: #app-configuration-cli-toggle-workflow-config-command}
+
+Toggle a Approval Workflow.
+
+```sh
+ibmcloud app-configuration toggle-workflow-config --guid GUID --workflow-config-id WORKFLOW-CONFIG-ID --enabled=ENABLED [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-toggle-workflow-config-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--workflow-config-id` (string)
+:   id of workflow configuration. Required.
+
+`--enabled` (bool)
+:   The state of the approval workflow. Required.
+
+#### Example
+{: #app-configuration-toggle-workflow-config-examples}
+
+```sh
+ibmcloud app-configuration toggle-workflow-config \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id \
+    --enabled=true
+```
+{: pre}
+
+### `ibmcloud app-configuration test-workflow-config`
+{: #app-configuration-cli-test-workflow-config-command}
+
+Test a Workflow.
+
+```sh
+ibmcloud app-configuration test-workflow-config --guid GUID --workflow-config-id WORKFLOW-CONFIG-ID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
+```
+
+
+#### Command options
+{: #app-configuration-test-workflow-config-cli-options}
+
+`--guid` (string)
+:   AppConfiguration instance Id. Required.
+
+`--workflow-config-id` (string)
+:   id of workflow configuration. Required.
+
+#### Example
+{: #app-configuration-test-workflow-config-examples}
+
+```sh
+ibmcloud app-configuration test-workflow-config \
+    --guid exampleString \
+    --workflow-config-id workflow_config_id
+```
+{: pre}
 
 ## Config
 {: #app-configuration-config-cli}
@@ -2628,7 +3727,7 @@ Export and Import configurations from and to App Configuration instance.
 Import configuration to the instance.
 
 ```sh
-ibmcloud app-configuration instance-import --guid GUID [--environments ENVIRONMENTS] [--collections COLLECTIONS] [--segments SEGMENTS] [--clean CLEAN]
+ibmcloud app-configuration instance-import --guid GUID [--environments ENVIRONMENTS | @ENVIRONMENTS-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--segments SEGMENTS | @SEGMENTS-FILE] [--clean CLEAN] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2643,21 +3742,21 @@ ibmcloud app-configuration instance-import --guid GUID [--environments ENVIRONME
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--environments=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--environments=@path/to/file.json`.
 
 `--collections` ([`ImportCollectionSchema[]`](#cli-import-collection-schema-example-schema))
 :   Array will contain collections details.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--collections=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--collections=@path/to/file.json`.
 
 `--segments` ([`ImportSegmentSchema[]`](#cli-import-segment-schema-example-schema))
 :   Array will contain segments details.
 
     The maximum length is `20` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--segments=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--segments=@path/to/file.json`.
 
 `--clean` (string)
 :   Full instance import requires query parameter `clean=true` to perform wiping of the existing data.
@@ -2668,7 +3767,7 @@ ibmcloud app-configuration instance-import --guid GUID [--environments ENVIRONME
 ```sh
 ibmcloud app-configuration instance-import \
     --guid exampleString \
-    --environments '[{"name": "Dev", "environment_id": "dev", "description": "Environment created on instance creation", "tags": "exampleString", "color_code": "#FDD13A", "features": [{"name": "Cycle Rentals", "feature_id": "cycle-rentals", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "enabled_value": "1", "disabled_value": "2", "enabled": true, "rollout_percentage": 100, "tags": "exampleString", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "exampleString", "order": 38, "rollout_percentage": 100}], "collections": [{"collection_id": "web-app"}]}], "properties": [{"name": "Daily Discount", "property_id": "daily_discount", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "value": "100", "tags": "pre-release, v1.2", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "200", "order": 1}], "collections": [{"collection_id": "web-app"}]}]}]' \
+    --environments '[{"name": "Dev", "environment_id": "dev", "description": "Environment created on instance creation", "tags": "exampleString", "color_code": "#FDD13A", "features": [{"name": "Cycle Rentals", "feature_id": "cycle-rentals", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "enabled_value": "1", "disabled_value": "2", "enabled": true, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "tags": "exampleString", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "exampleString", "order": 38, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "exampleString", "rule_name": "exampleString"}], "collections": [{"collection_id": "web-app"}]}], "properties": [{"name": "Daily Discount", "property_id": "daily_discount", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "value": "100", "tags": "pre-release, v1.2", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "200", "order": 1}], "collections": [{"collection_id": "web-app"}]}]}]' \
     --collections '[{"collection_id": "web-app", "name": "web-app", "description": "web app collection", "tags": "v1"}]' \
     --segments '[{"name": "Testers", "segment_id": "khpwj68h", "description": "Testers", "tags": "test", "rules": [{"attribute_name": "email", "operator": "is", "values": ["john@bluecharge.com","alice@bluecharge.com"]}]}]' \
     --clean true
@@ -2681,7 +3780,7 @@ ibmcloud app-configuration instance-import \
 Get the instance configuration.
 
 ```sh
-ibmcloud app-configuration instance-export --guid GUID
+ibmcloud app-configuration instance-export --guid GUID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2706,7 +3805,7 @@ ibmcloud app-configuration instance-export \
 This api will either promote or restore your chosen configuration from or to the GitHub based on the git url, file path and branch data.
 
 ```sh
-ibmcloud app-configuration gitconfig-promote-restore --guid GUID --git-config-id GIT-CONFIG-ID --action ACTION
+ibmcloud app-configuration gitconfig-promote-restore --guid GUID --git-config-id GIT-CONFIG-ID --action promote | restore [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2741,7 +3840,7 @@ ibmcloud app-configuration gitconfig-promote-restore \
 Get the status of instance configuration operation.
 
 ```sh
-ibmcloud app-configuration instance-config-status --guid GUID --reference-id REFERENCE-ID --action ACTION
+ibmcloud app-configuration instance-config-status --guid GUID --reference-id REFERENCE-ID --action import | export [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2782,7 +3881,7 @@ This is a beta release-level API. Retrieve the list of resource configurations c
 Note: If the `--all-pages` option is not set, the command will only retrieve a single page of the collection.
 
 ```sh
-ibmcloud app-configuration configs --guid GUID [--config-type CONFIG-TYPE] [--service-name SERVICE-NAME] [--resource-group-id RESOURCE-GROUP-ID] [--location LOCATION] [--resource-crn RESOURCE-CRN] [--limit LIMIT] [--start START] [--sub-account SUB-ACCOUNT] [--access-tags ACCESS-TAGS] [--user-tags USER-TAGS] [--service-tags SERVICE-TAGS]
+ibmcloud app-configuration configs --guid GUID [--config-type CONFIG-TYPE] [--service-name SERVICE-NAME] [--resource-group-id RESOURCE-GROUP-ID] [--location LOCATION] [--resource-crn RESOURCE-CRN] [--limit LIMIT] [--start START | --all-pages] [--sub-account SUB-ACCOUNT] [--access-tags ACCESS-TAGS] [--user-tags USER-TAGS] [--service-tags SERVICE-TAGS] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2795,12 +3894,12 @@ ibmcloud app-configuration configs --guid GUID [--config-type CONFIG-TYPE] [--se
 `--config-type` (string)
 :   The type of resource configuration that is to be fetched.
 
-    The maximum length is `1024` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9 ,\\-_]+$/`.
+    The maximum length is `1024` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9 ,\-_]+$/`.
 
 `--service-name` (string)
 :   The service from which the resource  is to be fetched.
 
-    The maximum length is `1024` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9 ,\\-_]+$/`.
+    The maximum length is `1024` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9 ,\-_]+$/`.
 
 `--resource-group-id` (string)
 :   The resource group id of the service.
@@ -2815,7 +3914,7 @@ ibmcloud app-configuration configs --guid GUID [--config-type CONFIG-TYPE] [--se
 `--resource-crn` (string)
 :   The crn of the resource.
 
-    The maximum length is `1000` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9.\\:\/-]+$/`.
+    The maximum length is `1000` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9.\:\/-]+$/`.
 
 `--limit` (int64)
 :   The number of resources for which the configuration can be fetched.
@@ -2874,7 +3973,7 @@ ibmcloud app-configuration configs \
 This is a beta release-level API. Replace the settings for resource collection as part of the Configuration Aggregator feature.
 
 ```sh
-ibmcloud app-configuration config-settings-update --guid GUID [--resource-collection-enabled=RESOURCE-COLLECTION-ENABLED] [--trusted-profile-id TRUSTED-PROFILE-ID] [--regions REGIONS] [--additional-scope ADDITIONAL-SCOPE]
+ibmcloud app-configuration config-settings-update --guid GUID [--resource-collection-enabled=RESOURCE-COLLECTION-ENABLED] [--trusted-profile-id TRUSTED-PROFILE-ID] [--regions REGIONS] [--additional-scope ADDITIONAL-SCOPE | @ADDITIONAL-SCOPE-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2902,7 +4001,7 @@ ibmcloud app-configuration config-settings-update --guid GUID [--resource-collec
 
     The maximum length is `10` items. The minimum length is `0` items.
 
-    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, e.g. `--additional-scope=@path/to/file.json`.
+    Provide a JSON string option or specify a JSON file to read from by providing a filepath option that begins with a `@`, for example, `--additional-scope=@path/to/file.json`.
 
 #### Example
 {: #app-configuration-config-settings-update-examples}
@@ -2923,7 +4022,7 @@ ibmcloud app-configuration config-settings-update \
 This is a beta release-level API. Retrieve settings for resource collection in Configuration Aggregator.
 
 ```sh
-ibmcloud app-configuration config-settings --guid GUID
+ibmcloud app-configuration config-settings --guid GUID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2948,7 +4047,7 @@ ibmcloud app-configuration config-settings \
 This is a beta release-level API. Retrieve the status of the resource collection as part of Configuration Aggregator.
 
 ```sh
-ibmcloud app-configuration config-resource-collection-status --guid GUID
+ibmcloud app-configuration config-resource-collection-status --guid GUID [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2973,7 +4072,7 @@ ibmcloud app-configuration config-resource-collection-status \
 Manually trigger the recording of the Configuration items as part of Configuration Aggregator.
 
 ```sh
-ibmcloud app-configuration config-manual-reconcile --guid GUID
+ibmcloud app-configuration config-manual-reconcile --guid GUID [--resource-crns RESOURCE-CRNS] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
 
 
@@ -2983,12 +4082,18 @@ ibmcloud app-configuration config-manual-reconcile --guid GUID
 `--guid` (string)
 :   AppConfiguration instance Id. Required.
 
+`--resource-crns` ([]string)
+:   Specific resource CRNs to reconcile (maximum ~20). The resource CRNs should be the instance CRN of the service. Subresource CRNs (such as a Secrets Manager secret) are not supported.
+
+    The list items must match regular expression `/^crn:v[0-9]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]*:([a-z0-9-]+:)?[a-z0-9-]+:.*$/`. The maximum length is `20` items.
+
 #### Example
 {: #app-configuration-config-manual-reconcile-examples}
 
 ```sh
 ibmcloud app-configuration config-manual-reconcile \
-    --guid exampleString
+    --guid exampleString \
+    --resource-crns exampleString,anotherTestString
 ```
 {: pre}
 
@@ -3109,7 +4214,19 @@ The following example shows the format of the FeatureSegmentRule[] object.
   } ],
   "value" : "true",
   "order" : 1,
-  "rollout_percentage" : 50
+  "rollout_percentage" : 50,
+  "rollout_type" : "MANUAL",
+  "rollout_configuration" : {
+    "duration_preset" : "CUSTOM",
+    "start_at" : "2019-01-01T12:00:00.000Z",
+    "phases" : [ {
+      "percentage" : 1,
+      "duration" : 38,
+      "duration_type" : "days"
+    } ]
+  },
+  "rule_id" : "rule-id-1",
+  "rule_name" : "rule-name-1"
 } ]
 ```
 {: codeblock}
@@ -3153,6 +4270,16 @@ The following example shows the format of the ImportEnvironmentSchema[] object.
     "disabled_value" : "2",
     "enabled" : true,
     "rollout_percentage" : 100,
+    "rollout_type" : "MANUAL",
+    "rollout_configuration" : {
+      "duration_preset" : "CUSTOM",
+      "start_at" : "2019-01-01T12:00:00.000Z",
+      "phases" : [ {
+        "percentage" : 1,
+        "duration" : 38,
+        "duration_type" : "days"
+      } ]
+    },
     "tags" : "exampleString",
     "segment_rules" : [ {
       "rules" : [ {
@@ -3160,7 +4287,19 @@ The following example shows the format of the ImportEnvironmentSchema[] object.
       } ],
       "value" : "exampleString",
       "order" : 38,
-      "rollout_percentage" : 100
+      "rollout_percentage" : 100,
+      "rollout_type" : "MANUAL",
+      "rollout_configuration" : {
+        "duration_preset" : "CUSTOM",
+        "start_at" : "2019-01-01T12:00:00.000Z",
+        "phases" : [ {
+          "percentage" : 1,
+          "duration" : 38,
+          "duration_type" : "days"
+        } ]
+      },
+      "rule_id" : "exampleString",
+      "rule_name" : "exampleString"
     } ],
     "collections" : [ {
       "collection_id" : "web-app"
@@ -3210,6 +4349,55 @@ The following example shows the format of the ImportSegmentSchema[] object.
 ```
 {: codeblock}
 
+### ReorderFeatureRules
+{: #cli-reorder-feature-rules-example-schema}
+
+The following example shows the format of the ReorderFeatureRules object.
+
+```json
+
+{
+  "action" : "move",
+  "rule_id" : "RuleA",
+  "order" : 1
+}
+```
+{: codeblock}
+
+### RolloutConfiguration
+{: #cli-rollout-configuration-example-schema}
+
+The following example shows the format of the RolloutConfiguration object.
+
+```json
+
+{
+  "duration_preset" : "CUSTOM",
+  "start_at" : "2019-01-01T12:00:00.000Z",
+  "phases" : [ {
+    "percentage" : 1,
+    "duration" : 38,
+    "duration_type" : "days"
+  } ]
+}
+```
+{: codeblock}
+
+### RolloutPhase
+{: #cli-rollout-phase-example-schema}
+
+The following example shows the format of the RolloutPhase object.
+
+```json
+
+{
+  "percentage" : 25,
+  "duration" : 2,
+  "duration_type" : "hours"
+}
+```
+{: codeblock}
+
 ### Rule[]
 {: #cli-rule-example-schema}
 
@@ -3242,6 +4430,19 @@ The following example shows the format of the SegmentRule[] object.
 ```
 {: codeblock}
 
+### TargetSegments[]
+{: #cli-target-segments-example-schema}
+
+The following example shows the format of the TargetSegments[] object.
+
+```json
+
+[ {
+  "segments" : [ "betausers", "premiumusers" ]
+} ]
+```
+{: codeblock}
+
 ### UpdateWorkflowConfig
 {: #cli-update-workflow-config-example-schema}
 
@@ -3264,28 +4465,100 @@ The following example shows the format of the UpdateWorkflowConfig object.
 ```
 {: codeblock}
 
+### WorkflowEnvironment
+{: #cli-workflow-environment-example-schema}
 
-## Sample input file
-{: #cli-input-sample}
-
-
-The following example shows the process of creating an environment using an input file:
-
-Input File:
+The following example shows the format of the WorkflowEnvironment object.
 
 ```json
-environment_id: "E1"
-name: "TestingEnv"
-```
 
-Command Line:
-
-```sh
-ibmcloud app-configuration environment-create \
-    --guid exampleString \
-    --name 'Dev environment' \
-    --description 'Dev environment description' \
-    --tags development \
-    --color-code #FDD13A\
-    --file-input 'Path to input file'
+{
+  "enable" : true
+}
 ```
+{: codeblock}
+
+### WorkflowMetadata
+{: #cli-workflow-metadata-example-schema}
+
+The following example shows the format of the WorkflowMetadata object.
+
+```json
+
+{
+  "approval_expiration" : 7,
+  "approval_group_name" : "AppConfiguration Approvers",
+  "sm_secret_id" : "63476562-d5b4-02ae-e966-528f8df457bb",
+  "workflow_url" : "https://dev339579.service-now.com"
+}
+```
+{: codeblock}
+
+### WorkflowProvider
+{: #cli-workflow-provider-example-schema}
+
+The following example shows the format of the WorkflowProvider object.
+
+```json
+
+{
+  "type" : "SERVICENOW_EXTERNAL",
+  "metadata" : {
+    "approval_expiration" : 7,
+    "approval_group_name" : "AppConfiguration Approvers",
+    "sm_secret_id" : "63476562-d5b4-02ae-e966-528f8df457bb",
+    "workflow_url" : "https://dev339579.service-now.com"
+  }
+}
+```
+{: codeblock}
+
+### WorkflowScope
+{: #cli-workflow-scope-example-schema}
+
+The following example shows the format of the WorkflowScope object.
+
+```json
+
+{
+  "collections" : {
+    "mode" : "ALL",
+    "ids" : [ ]
+  },
+  "segments" : {
+    "mode" : "ALL",
+    "ids" : [ ]
+  },
+  "environments" : [ {
+    "environment_id" : "stage",
+    "resources" : {
+      "environment" : {
+        "enable" : true
+      },
+      "features" : {
+        "mode" : "ALL",
+        "ids" : [ ]
+      },
+      "properties" : {
+        "mode" : "ALL",
+        "ids" : [ ]
+      }
+    }
+  } ]
+}
+```
+{: codeblock}
+
+### WorkflowScopeMode
+{: #cli-workflow-scope-mode-example-schema}
+
+The following example shows the format of the WorkflowScopeMode object.
+
+```json
+
+{
+  "mode" : "ALL",
+  "ids" : [ ]
+}
+```
+{: codeblock}
