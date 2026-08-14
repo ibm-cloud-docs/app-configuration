@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: app-configuration, app configuration, cli changelog for app configuration, cli version for app configuration, changelog for cli in app configuration, cli history for app configuration
 
@@ -50,6 +50,5 @@ Find a summary of changes for each version of {{site.data.keyword.appconfig_shor
 | Version    | Release date      | Changes                                                                                |
 | ---------- | ----------------- | ---------------------------------------------------------------------------------------|
 | 2.0.0      | 12 January 2025    | Updated CLI commands. File support for all commands. Configuration Aggregator support. |
----------------------------------------------------------------------------------------|
-| 2.0.1      | 13 August 2026    | Added support for workflow apporval and progressive. |
+| 2.0.1      | 13 August 2026    | Added support for workflow approval and progressive. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.appconfig_short}} CLI" caption-side="bottom"}
