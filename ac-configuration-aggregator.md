@@ -116,8 +116,6 @@ Configuration Aggregator supports the following services:
 | [Databases for PostgreSQL](/docs/databases-for-postgresql) |
 | [Databases for Redis](/docs/databases-for-redis) |
 | [Databases for ElasticSearch](/docs/databases-for-elasticsearch) |
-| [Databases for EnterpriseDB](/docs/databases-for-enterprisedb) |
-| [Databases for ETCD](/docs/databases-for-etcd) |
 | [Databases for MongoDB](/docs/databases-for-mongodb) |
 | [Databases for MySQL](/docs/databases-for-mysql) |
 | [Identity and Access Management](/docs/iam?topic=iam-cloudaccess) |
@@ -179,6 +177,9 @@ Configuration Aggregator supports the following services:
 | [User management](/docs/account?topic=account-iamuserinv) |
 | [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
+
+Databases for EnterpriseDB (EDB) and Databases for etcd are deprecated and are no longer supported by Configuration Aggregator.
+{: note}
 
 Effective 20 March 2026, Hyper Protect Crypto Services will be deprecated. You will not be able to create any new instances starting 28 March 2026. All instances will be terminated by 20 March 2027.
 {: note}
