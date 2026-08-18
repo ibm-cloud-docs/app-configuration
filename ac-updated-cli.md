@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-17"
 
 keywords: app configuration api, cli, plugin
 
@@ -852,7 +852,8 @@ Create a feature flag.
 ```sh
 ibmcloud app-configuration feature-create --guid GUID --environment-id ENVIRONMENT-ID --name NAME --feature-id FEATURE-ID --type BOOLEAN | STRING | NUMERIC --enabled-value (ENABLED-VALUE | @ENABLED-VALUE-FILE) --disabled-value (DISABLED-VALUE | @DISABLED-VALUE-FILE) [--description DESCRIPTION] [--format TEXT | JSON | YAML] [--enabled=ENABLED] [--rollout-percentage ROLLOUT-PERCENTAGE] [--rollout-type MANUAL | PROGRESSIVE] [--rollout-configuration (ROLLOUT-CONFIGURATION | @ROLLOUT-CONFIGURATION-FILE) | --rollout-configuration-duration-preset CUSTOM | 1HRS | 12HRS | 24HRS | 48HRS --rollout-configuration-start-at ROLLOUT-CONFIGURATION-START-AT (--rollout-configuration-phases ROLLOUT-CONFIGURATION-PHASES | @ROLLOUT-CONFIGURATION-PHASES-FILE)] [--tags TAGS] [--segment-rules SEGMENT-RULES | @SEGMENT-RULES-FILE] [--collections COLLECTIONS | @COLLECTIONS-FILE] [--region REGION] [-j, --jmes-query JMES-QUERY] [--output OUTPUT] [-q, --quiet]
 ```
-
+If enabled value is set to **"true"**, then the collection must be provided. Else, the collection is optional.
+{: note}
 
 #### Command options
 {: #app-configuration-feature-create-cli-options}
@@ -964,10 +965,10 @@ ibmcloud app-configuration feature-create \
     --format TEXT \
     --enabled=true \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
     --tags 'version: 1.1, pre-release' \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 50, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 50, "rollout_type": "PROGRESSIVE", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
     --collections '[{"collection_id": "ghzinc"}]'
 ```
 {: pre}
@@ -986,7 +987,7 @@ ibmcloud app-configuration feature-create \
     --format TEXT \
     --enabled=true \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --tags 'version: 1.1, pre-release' \
     --segment-rules '[featureSegmentRule]' \
     --collections '[collectionRef]' \
@@ -1102,10 +1103,10 @@ ibmcloud app-configuration feature-update \
     --disabled-value "false" \
     --enabled=true \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
     --tags 'version: 1.1, yet-to-release' \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 90, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 90, "rollout_type": "PROGRESSIVE", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]' \
     --collections '[{"collection_id": "ghzinc", "deleted": true}]'
 ```
 {: pre}
@@ -1122,7 +1123,7 @@ ibmcloud app-configuration feature-update \
     --disabled-value "false" \
     --enabled=true \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --tags 'version: 1.1, yet-to-release' \
     --segment-rules '[featureSegmentRule]' \
     --collections '[collectionUpdateRef]' \
@@ -1228,9 +1229,9 @@ ibmcloud app-configuration feature-values-update \
     --enabled-value "true" \
     --disabled-value "false" \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}' \
-    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]'
+    --segment-rules '[{"rules": [{"segments": ["betausers","premiumusers"]}], "value": "true", "order": 1, "rollout_percentage": 100, "rollout_type": "PROGRESSIVE", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "rule-id-1", "rule_name": "rule-name-1"}]'
 ```
 {: pre}
 
@@ -1246,7 +1247,7 @@ ibmcloud app-configuration feature-values-update \
     --enabled-value "true" \
     --disabled-value "false" \
     --rollout-percentage 100 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --segment-rules '[featureSegmentRule]' \
     --rollout-configuration-duration-preset CUSTOM \
     --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
@@ -1519,7 +1520,7 @@ ibmcloud app-configuration feature-rule-create \
     --rule-id RuleA \
     --rule-name 'Rule Name' \
     --rollout-percentage 50 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}'
 ```
 {: pre}
@@ -1535,7 +1536,7 @@ ibmcloud app-configuration feature-rule-create \
     --rule-id RuleA \
     --rule-name 'Rule Name' \
     --rollout-percentage 50 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration-duration-preset CUSTOM \
     --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
     --rollout-configuration-phases '[rolloutPhase]'
@@ -1695,7 +1696,7 @@ ibmcloud app-configuration update-feature-rule \
     --value "true" \
     --rule-name rule-name-1 \
     --rollout-percentage 50 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration '{"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}'
 ```
 {: pre}
@@ -1711,7 +1712,7 @@ ibmcloud app-configuration update-feature-rule \
     --value "true" \
     --rule-name rule-name-1 \
     --rollout-percentage 50 \
-    --rollout-type MANUAL \
+    --rollout-type PROGRESSIVE \
     --rollout-configuration-duration-preset CUSTOM \
     --rollout-configuration-start-at 2019-01-01T12:00:00.000Z \
     --rollout-configuration-phases '[rolloutPhase]'
@@ -3767,7 +3768,7 @@ ibmcloud app-configuration instance-import --guid GUID [--environments ENVIRONME
 ```sh
 ibmcloud app-configuration instance-import \
     --guid exampleString \
-    --environments '[{"name": "Dev", "environment_id": "dev", "description": "Environment created on instance creation", "tags": "exampleString", "color_code": "#FDD13A", "features": [{"name": "Cycle Rentals", "feature_id": "cycle-rentals", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "enabled_value": "1", "disabled_value": "2", "enabled": true, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "tags": "exampleString", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "exampleString", "order": 38, "rollout_percentage": 100, "rollout_type": "MANUAL", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "rule_id": "exampleString", "rule_name": "exampleString"}], "collections": [{"collection_id": "web-app"}]}], "properties": [{"name": "Daily Discount", "property_id": "daily_discount", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "value": "100", "tags": "pre-release, v1.2", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "200", "order": 1}], "collections": [{"collection_id": "web-app"}]}]}]' \
+    --environments '[{"name": "Dev", "environment_id": "dev", "description": "Environment created on instance creation", "tags": "exampleString", "color_code": "#FDD13A", "features": [{"name": "Cycle Rentals", "feature_id": "cycle-rentals", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "enabled_value": "1", "disabled_value": "2", "enabled": true, "rollout_percentage": 100, "rollout_type": "PROGRESSIVE", "rollout_configuration": {"duration_preset": "CUSTOM", "start_at": "2019-01-01T12:00:00.000Z", "phases": [{"percentage": 1, "duration": 38, "duration_type": "days"}]}, "tags": "exampleString", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "exampleString", "order": 38, "rollout_percentage": 100, "rollout_type": "MANUAL", "rule_id": "exampleString", "rule_name": "exampleString"}], "collections": [{"collection_id": "web-app"}]}], "properties": [{"name": "Daily Discount", "property_id": "daily_discount", "description": "exampleString", "type": "NUMERIC", "format": "TEXT", "value": "100", "tags": "pre-release, v1.2", "segment_rules": [{"rules": [{"segments": ["exampleString","anotherTestString"]}], "value": "200", "order": 1}], "collections": [{"collection_id": "web-app"}]}]}]' \
     --collections '[{"collection_id": "web-app", "name": "web-app", "description": "web app collection", "tags": "v1"}]' \
     --segments '[{"name": "Testers", "segment_id": "khpwj68h", "description": "Testers", "tags": "test", "rules": [{"attribute_name": "email", "operator": "is", "values": ["john@bluecharge.com","alice@bluecharge.com"]}]}]' \
     --clean true
@@ -4215,7 +4216,7 @@ The following example shows the format of the FeatureSegmentRule[] object.
   "value" : "true",
   "order" : 1,
   "rollout_percentage" : 50,
-  "rollout_type" : "MANUAL",
+  "rollout_type" : "PROGRESSIVE",
   "rollout_configuration" : {
     "duration_preset" : "CUSTOM",
     "start_at" : "2019-01-01T12:00:00.000Z",
@@ -4270,7 +4271,7 @@ The following example shows the format of the ImportEnvironmentSchema[] object.
     "disabled_value" : "2",
     "enabled" : true,
     "rollout_percentage" : 100,
-    "rollout_type" : "MANUAL",
+    "rollout_type" : "PROGRESSIVE",
     "rollout_configuration" : {
       "duration_preset" : "CUSTOM",
       "start_at" : "2019-01-01T12:00:00.000Z",
@@ -4288,7 +4289,7 @@ The following example shows the format of the ImportEnvironmentSchema[] object.
       "value" : "exampleString",
       "order" : 38,
       "rollout_percentage" : 100,
-      "rollout_type" : "MANUAL",
+      "rollout_type" : "PROGRESSIVE",
       "rollout_configuration" : {
         "duration_preset" : "CUSTOM",
         "start_at" : "2019-01-01T12:00:00.000Z",
@@ -4562,3 +4563,24 @@ The following example shows the format of the WorkflowScopeMode object.
 }
 ```
 {: codeblock}
+
+## Sample input file
+{: #cli-input-sample}
+
+
+The following example shows the process of creating an environment using an input file:
+
+Input File:
+
+```json
+environment_id: "E1"
+name: "TestingEnv"
+```
+
+Command Line:
+
+```sh
+ibmcloud app-configuration environment-create \
+    --guid exampleString \
+    --file-input 'Path to input file'
+```
