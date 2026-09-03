@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-03"
 
 keywords: app-configuration, app configuration, configuration aggregator, near real-time, activity tracker, event routing, cspm, workload protection
 
@@ -15,7 +15,7 @@ subcollection: app-configuration
 # Near real-time configuration collection
 {: #ac-near-realtime-updates}
 
-Near real-time resource configuration collection is a capability of Configuration Aggregator that supplements scheduled reconciliation by reacting to changes as they happen. Instead of waiting for the next periodic reconciliation cycle, Configuration Aggregator listens for configuration change events published by IBM Cloud services through Activity Tracker Event Routing. When a resource is created, modified, or deleted, the relevant event is forwarded to your {{site.data.keyword.appconfig_short}} instance and the affected resource record is updated within minutes. This allows governance and compliance tooling to act on current configuration state rather than potentially stale data.
+Near real-time resource configuration collection is a capability of Configuration Aggregator that supplements scheduled reconciliation by reacting to changes as they happen. Instead of waiting for the next periodic reconciliation cycle, Configuration Aggregator listens for configuration change events published by IBM Cloud services through Activity Tracker Event Routing. When a resource is created, modified, or deleted, the relevant event is forwarded to your {{site.data.keyword.appconfig_short}} instance and the affected resource record is updated within a few minutes. This allows governance and compliance tooling to act on current configuration state rather than potentially stale data.
 {: shortdesc}
 
 Near real-time resource collection is available only on the Standard and Enterprise plans.
@@ -46,6 +46,12 @@ To enable near real-time configuration collection:
    - Select the regions from which you want to collect configuration change events.
 
 3. Activity Tracker Event Routing automatically forwards configuration change events to {{site.data.keyword.appconfig_short}}, which processes them and updates the configuration database.
+
+To collect near real-time Activity Tracker events for Cloud Object Storage (COS) buckets, you must explicitly enable Activity Tracking for each bucket. For more information, see [Enabling bucket audit events](/docs/cloud-logs?topic=cloud-logs-cos#cos_bucket_audit_events).
+{: note}
+
+For Enterprise accounts, to support near real-time events for sub-accounts, you must create the Activity Tracker target and route in each child account using the parent account's {{site.data.keyword.appconfig_short}} instance CRN.
+{: note}
 
 
 ## Benefits of near real-time configuration collection

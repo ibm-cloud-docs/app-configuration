@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-03"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -34,7 +34,6 @@ Near real-time configuration collection for Configuration Aggregator
 
 Billing introduced for Configuration Aggregator
 :   {{site.data.keyword.appconfig_short}} now meters and bills Configuration Aggregator usage for Standard and Enterprise plan instances. Usage is measured against two metrics: **Config items** and **Accounts reconciled**. For more information, see [Billing and metering for Configuration Aggregator](/docs/app-configuration?topic=app-configuration-ac-configuration-aggregator#ac-configuration-aggregator-billing).
-
 ## July 2026
 {: #July-2026}
 
