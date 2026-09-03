@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-07-31"
+lastupdated: "2026-09-03"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -20,6 +20,20 @@ content-type: release-note
 Use the release notes to learn about the current changes to the {{site.data.keyword.appconfig_full}} documentation by month.
 {: shortdesc}
 
+## September 2026
+{: #September-2026}
+
+Review the release notes for September 2026.
+
+### 1 September 2026
+{: #app-configuration-Sep012026}
+{: release-note}
+
+Near real-time configuration collection for Configuration Aggregator
+:   {{site.data.keyword.appconfig_full}} now supports near real-time configuration collection for Configuration Aggregator, available on Standard and Enterprise plans. For more information, see [Near real-time configuration updates](/docs/app-configuration?topic=app-configuration-ac-near-realtime-updates).
+
+Billing introduced for Configuration Aggregator
+:   {{site.data.keyword.appconfig_short}} now meters and bills Configuration Aggregator usage for Standard and Enterprise plan instances. Usage is measured against two metrics: **Config items** and **Accounts reconciled**. For more information, see [Billing and metering for Configuration Aggregator](/docs/app-configuration?topic=app-configuration-ac-configuration-aggregator#ac-configuration-aggregator-billing).
 ## July 2026
 {: #July-2026}
 
@@ -138,11 +152,6 @@ Review the release notes for December 2025.
 
 Collection of configurations of {{site.data.keyword.sysdigsecure_full_notm}}
 :   Configuration aggregator can now collect configurations of {{site.data.keyword.sysdigsecure_full_notm}}.
-
-## September 2025
-{: #September-2025}
-
-Review the release notes for September 2025.
 
 ### 25 September 2025
 {: #app-configuration-Sep252025}

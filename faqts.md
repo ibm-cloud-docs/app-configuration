@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-12"
+  years: 2020, 2026
+lastupdated: "2026-09-01"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -48,6 +48,12 @@ If resource collection is not enabled for the account and the user tries to acce
 {: faq}
 
 When new resources are added to or removed from IBM Cloud for onboarded accounts, the resource configuration will be updated automatically. If the changes are not updated within 24 hours, you can contact the IBM support.
+
+## What happens if a Configuration Aggregator billing submission fails?
+{: #faq-ac-aggregator-billing-failure}
+{: faq}
+
+If a billing submission fails, the usage data is retained and automatically included in the next billing run. Submissions are retried until they succeed. Your usage is not lost, and you will not be billed twice for the same usage window.
 
 ## How can I troubleshoot client timeouts?
 {: #faq-ac-troubleshoot}

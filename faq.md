@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-09-01"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -155,6 +155,33 @@ TOTAL COST: $500 + $0 + $0 = $500 per month
 You might use the same instance of {{site.data.keyword.appconfig_short}} for both scenarios for a total cost of just over $1600 per month.
 {: note}
 
+## How is Configuration Aggregator usage billed?
+{: #faq-ac-aggregator-billing}
+{: faq}
+
+When Configuration Aggregator is enabled on an {{site.data.keyword.appconfig_short}} instance, usage is measured against two metrics:
+
+- **Config items** — The total number of IBM Cloud resource configuration records stored in the aggregator for your account. At the start of each calendar month, a baseline count is recorded. New resource configurations collected after that point are counted incrementally and added to the baseline. The sum is the billed quantity for the period.
+- **Accounts reconciled** — The number of accounts actively reconciled by the aggregator. For stand-alone accounts this is always 1. For enterprise instances it is 1 (the parent account) plus the number of active sub-accounts. The highest count reached during the billing period is used as the billed quantity.
+
+## What happens to Configuration Aggregator billing if I add or remove sub-accounts mid-month?
+{: #faq-ac-aggregator-subaccounts}
+{: faq}
+
+The **accounts reconciled** metric uses the highest number of accounts active during the billing period. If you add a sub-account mid-period, the count increases from the next billing run. If you remove a sub-account mid-period, the maximum already recorded for that period is still used as the billed quantity.
+
+## What happens to Configuration Aggregator billing if I change my pricing plan mid-month?
+{: #faq-ac-aggregator-plan-change}
+{: faq}
+
+If your pricing plan changes during a billing period, Configuration Aggregator usage is tracked separately for each plan. Each plan's usage is submitted to billing independently.
+
+## Are config items billed if a resource is removed from IBM Cloud after it was collected?
+{: #faq-ac-aggregator-removed-resource}
+{: faq}
+
+Yes. If a resource configuration was collected (that is, it has a collection start date) and then the resource is later removed from IBM Cloud or becomes inactive, it is still counted toward config items for the period in which it was collected.
+
 ## What are the capabilities, quotas, and limits for various aspects of the {{site.data.keyword.appconfig_short}} plans?
 {: #faq-ac-capabilities}
 {: faq}
@@ -196,6 +223,7 @@ You might use the same instance of {{site.data.keyword.appconfig_short}} for bot
 | KMS integration (BYOK) | Not Supported | Not Supported | Not Supported | Supported |
 | Event Notifications integration | Not Supported | Not Supported | Not Supported | Supported |
 | Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Not Supported | Supported |
+| Configuration Aggregator | Not Supported | Supported (no billing) | Supported (billed) | Supported (billed) |
 {: caption="Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
