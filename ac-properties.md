@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-02-19"
+  years: 2021, 2026
+lastupdated: "2026-09-16"
 
 keywords: app-configuration, app configuration, properties, property, create property, secret manager, secret reference
 
@@ -115,7 +115,7 @@ When you select the **Property type** as *Secret reference*, the **{{site.data.k
 
 1. Specify the **Default value**. This value is returned by default and can be overridden while targeting to a segment.
 
-   - **Secret type**: select the secret type from the list. For more information about secret types, see [Working with secrets of different types](https://{DomainName}/docs/secrets-manager?topic=secrets-manager-what-is-secret&interface=ui#secret-types){: external}.
+   - **Secret type**: select the secret type from the list. For more information about secret types, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-secret-types){: external}.
    - **Secret name**: select the secret name from the dropdown.
 
 ## Target collections to properties
