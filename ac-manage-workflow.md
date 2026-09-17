@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-09-16"
 
 keywords: app-configuration, app configuration, feature flags, manage workflow, ServiceNow
 
@@ -68,7 +68,7 @@ For External workflow, below are the steps to follow.
 
    1. Enter the **Client secret** required for authenticating the *Client ID* provided earlier.
 
-   **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/csh?context=CSHelp%3AOAuthSetup){: external}.
+   **Client ID** and **Client secret** are required for accessing your ServiceNow instance. For creating a **Client ID** and **Client secret**, check the service now documentation on how to [create an OAuth API endpoint for external clients](https://www.servicenow.com/docs/r/oL66E_cwDD_tnWQYzYPRdA/my4DhDbkG_dF2uIMwvDvBw){: external}.
    {: important}
 
    1. Enter the approval **Group Name** defined in ServiceNow. The approval Group Name will contain set of people who are authorized to approve the Change Requests created in the ServiceNow workflow.
