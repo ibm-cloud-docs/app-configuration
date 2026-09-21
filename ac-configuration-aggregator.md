@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-09-21"
 
 keywords: app-configuration, app configuration, enable configuration aggregation
 
@@ -28,6 +28,7 @@ Configuration Aggregator uses two methods to collect and maintain up-to-date res
 {: shortdesc}
 
 - **Scheduled reconciliation** - Periodic collection of resource configuration at scheduled intervals to ensure the configuration database remains current. Manual reconciliation (on-demand refresh outside the scheduled interval) is available only on the Enterprise plan.
+
 
 
 ![Default Configuration Aggregator](images/config-aggr-default.png "Default Configuration Aggregator"){: caption="Default Configuration Aggregator" caption-side="bottom"}
@@ -149,78 +150,79 @@ You can query for the configurations of IBM Cloud resources using the list API. 
 Configuration Aggregator supports the following services:
 
 | Name of service |
-|----------------- |
+|-----------------|
 | [Cloud Object Storage](/docs/cloud-object-storage) |
-| [Kubernetes Service](/docs/containers) | |
-| [Red Hat OpenShift](/docs/openshift) | |
-| [Virtual server for VPC](/docs/vpc?topic=vpc-creating-virtual-servers) | |
-| [Virtual Private Cloud](/docs/vpc) | |
+| [Kubernetes Service](/docs/containers) |
+| [Red Hat OpenShift](/docs/openshift) |
+| [Virtual server for VPC](/docs/vpc?topic=vpc-creating-virtual-servers) |
+| [Virtual Private Cloud](/docs/vpc) |
 | [Block storage volume for VPC](/docs/vpc?topic=vpc-creating-block-storage) |
 | [Block storage snapshots for VPC](/docs/vpc?topic=vpc-snapshots-vpc-create) |
 | [Secrets Manager](/docs/secrets-manager) |
-| [Databases for PostgreSQL](/docs/databases-for-postgresql) | |
-| [Databases for Redis](/docs/databases-for-redis) | |
-| [Databases for ElasticSearch](/docs/databases-for-elasticsearch) | |
+| [Databases for PostgreSQL](/docs/databases-for-postgresql) |
+| [Databases for Redis](/docs/databases-for-redis) |
+| [Databases for ElasticSearch](/docs/databases-for-elasticsearch) |
 | [Databases for MongoDB](/docs/databases-for-mongodb) |
-| [Databases for MySQL](/docs/databases-for-mysql) | |
-| [Identity and Access Management (IAM)](/docs/iam?topic=iam-cloudaccess) | |
-| [Key Protect](/docs/key-protect) | |
-| [Container Registry](/docs/Registry?topic=Registry-getting-started) | |
-| [Load Balancer for VPC](/docs/loadbalancer-service) | |
-| [Security Group for VPC](/docs/vpc?topic=vpc-using-security-groups) | |
+| [Databases for MySQL](/docs/databases-for-mysql) |
+| [Identity and Access Management (IAM)](/docs/iam?topic=iam-cloudaccess) |
+| [Key Protect](/docs/key-protect) |
+| [Container Registry](/docs/Registry?topic=Registry-getting-started) |
+| [Load Balancer for VPC](/docs/loadbalancer-service) |
+| [Security Group for VPC](/docs/vpc?topic=vpc-using-security-groups) |
 | [SSH Keys for VPC](/docs/vpc?topic=vpc-ssh-keys) |
 | [Subnet for VPC](/docs/vpc?topic=vpc-about-subnets-vpc) |
 | [Virtual Private Endpoint (VPE) for VPC](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui) |
-| [Auto Scale (Instance Group) for VPC](/docs/vpc?topic=vpc-creating-auto-scale-instance-group) | |
-| [Bare Metal servers for VPC](/docs/vpc?topic=vpc-planning-for-bare-metal-servers) | |
-| [Client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) | |
-| [Dedicated Host for VPC](/docs/vpc?topic=vpc-creating-dedicated-hosts-instances) | |
-| [Floating IP for VPC](/docs/vpc?topic=vpc-fip-about) | |
+| [Auto Scale (Instance Group) for VPC](/docs/vpc?topic=vpc-creating-auto-scale-instance-group) |
+| [Bare Metal servers for VPC](/docs/vpc?topic=vpc-planning-for-bare-metal-servers) |
+| [Client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) |
+| [Dedicated Host for VPC](/docs/vpc?topic=vpc-creating-dedicated-hosts-instances) |
+| [Floating IP for VPC](/docs/vpc?topic=vpc-fip-about) |
 | [Flow Logs - VPC](/docs/vpc?topic=vpc-flow-logs) |
 | [Custom image for VPC](/docs/vpc?topic=vpc-planning-custom-images) |
-| [Placement Groups for VPC](/docs/vpc?topic=vpc-about-placement-groups-for-vpc) | |
-| [Code Engine](/docs/codeengine) | |
+| [Placement Groups for VPC](/docs/vpc?topic=vpc-about-placement-groups-for-vpc) |
+| [Code Engine](/docs/codeengine) |
 | [Network ACL - VPC](/docs/vpc?topic=vpc-using-acls) |
-| [DNS Service - VPC](/docs/dns-svcs) | |
+| [DNS Service - VPC](/docs/dns-svcs) |
 | [VPN for VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#external-connectivity) |
-| [IBM Cloud Backup - VPC](/docs/vpc?topic=vpc-backup-service-about) | |
+| [IBM Cloud Backup - VPC](/docs/vpc?topic=vpc-backup-service-about) |
 | [Public Gateway](/docs/vpc?topic=vpc-about-public-gateways) |
-| [Event Streams (messagehub)](/docs/EventStreams) | |
-| [IBM Cloud Direct Link](/docs/dl) | |
-| [Transit Gateway](/docs/transit-gateway) | |
+| [Event Streams (messagehub)](/docs/EventStreams) |
+| [IBM Cloud Direct Link](/docs/dl) |
+| [Transit Gateway](/docs/transit-gateway) |
 | [Toolchain](/docs/ContinuousDelivery) |
-| [IBM Cloudant](/docs/Cloudant) | |
+| [IBM Cloudant](/docs/Cloudant) |
 | [IBM Cloud Internet Services (CIS)](/docs/cis) |
-| [IBM Cloud Logs](/docs/cloud-logs) | |
+| [IBM Cloud Logs](/docs/cloud-logs) |
 | [IBM Cloud Logs Router](/docs/logs-router) |
 | [IBM Cloud Shell](/docs/cloud-shell?topic=cloud-shell-getting-started) |
 | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-getting-started#getting-started) |
-| [Security and Compliance Center (SCC)](/docs/security-compliance) | |
+| [Security and Compliance Center (SCC)](/docs/security-compliance) |
 | [SCC Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) |
 | [Hyper Protect Crypto Services (HPCS)](/docs/hs-crypto) |
-| [App ID](/docs/appid) | |
+| [App ID](/docs/appid) |
 | [App Configuration](/docs/app-configuration) |
-| [Catalog Management](/docs/account?topic=account-restrict-by-user&interface=ui) | |
-| [Event Notifications](/docs/event-notifications) | |
-| [Messages for RabbitMQ](/docs/messages-for-rabbitmq) | |
+| [Catalog Management](/docs/account?topic=account-restrict-by-user&interface=ui) |
+| [Event Notifications](/docs/event-notifications) |
+| [Messages for RabbitMQ](/docs/messages-for-rabbitmq) |
 | [IBM Cloud Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) |
 | [IBM Cloud Activity Tracker Event Routing](/docs/atracker) |
-| [Enterprise](/docs/enterprise-management) | |
-| [IBM Power Virtual Server](/docs/power-iaas) | |
-| [Power Virtual Server networks](/docs/power-iaas) | |
-| [Power Virtual Server network address groups](/docs/power-iaas) | |
-| [Power Virtual Server network security groups](/docs/power-iaas) | |
-| [Power Virtual Server instances](/docs/power-iaas) | |
-| [Power Virtual Server volumes](/docs/power-iaas) | |
-| [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) | |
+| [Enterprise](/docs/enterprise-management) |
+| [IBM Power Virtual Server](/docs/power-iaas) |
+| [Power Virtual Server networks](/docs/power-iaas) |
+| [Power Virtual Server network address groups](/docs/power-iaas) |
+| [Power Virtual Server network security groups](/docs/power-iaas) |
+| [Power Virtual Server instances](/docs/power-iaas) |
+| [Power Virtual Server volumes](/docs/power-iaas) |
+| [Virtual Network Interfaces for VPC](/docs/vpc?group=virtual-network-interfaces) |
 | [IBM Cloud Schematics](/docs/schematics) |
 | [Billing](docs/account?topic=account-overview-billing) |
-| [Global catalog collections](/docs/account?topic=account-restrict-by-user&interface=ui) | |
-| [IAM Access Management](/docs/iam?topic=iam-cloudaccess) | |
-| [IAM groups](/docs/iam?topic=iam-groups&interface=ui) | |
-| [IAM identity](/docs/iam?topic=iam-identity-overview&interface=ui) | |
-| [User management](/docs/iam?topic=iam-iamuserinv&interface=ui) | |
-| [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) | |
+| [Global catalog collections](/docs/account?topic=account-restrict-by-user&interface=ui) |
+| [IAM Access Management](/docs/iam?topic=iam-cloudaccess) |
+| [IAM groups](/docs/iam?topic=iam-groups&interface=ui) |
+| [IAM identity](/docs/iam?topic=iam-identity-overview&interface=ui) |
+| [User management](/docs/iam?topic=iam-iamuserinv&interface=ui) |
+| [watsonx.ai Runtime](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html?context=cpdaas) |
+
 {: caption="List of services supported by Configuration Aggregator" caption-side="bottom"}
 
 Databases for EnterpriseDB (EDB) and Databases for etcd are deprecated and are no longer supported by Configuration Aggregator.
