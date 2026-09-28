@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-28"
 
 keywords: app-configuration, app configuration, faqs, Frequently Asked Questions, question, billing, service
 
@@ -52,34 +52,38 @@ Yes, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terr
 {: #faq-ac-pricing}
 {: faq}
 
- {{site.data.keyword.appconfig_short}} has three pricing plans:
+ {{site.data.keyword.appconfig_short}} has four pricing plans:
 
 | Plan | Inclusions | Capabilities |
 | :-------------: | :-------------| :-----|
-| Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls.  \n Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. |
-| Basic | There is no monthly instance cost. Pay only for what you use. | This plan includes property management capabilities only. |
-| Standard | The monthly instance price includes 1000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to the property management capabilities. |
-| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes manual rollout and targeting segments in addition to property management and feature flags that are found in the Standard plan. |
+| Lite | This plan is a free evaluation plan that includes 10 active entity IDs and 5,000 API calls. Lite plan services are deleted after 30 days of inactivity. | Includes all {{site.data.keyword.appconfig_short}} capabilities for evaluation only. Not to be used for production. Configuration Aggregator is not supported. |
+| Basic | There is no monthly instance cost. Pay only for what you use. | This plan includes property management capabilities only. Configuration Aggregator is supported at no additional billing charge. |
+| Standard | The monthly instance price includes 1,000 active entity IDs and 100,000 API calls. | This plan includes feature flags in addition to property management. Configuration Aggregator is supported and billed by config items and accounts reconciled. Real-time configuration collection is supported. |
+| Enterprise | The monthly instance price includes 10,000 active entity IDs and 1,000,000 API calls. | This plan includes manual rollout and targeting segments in addition to property management and feature flags. Configuration Aggregator is supported and billed by config items and accounts reconciled. Real-time configuration collection is supported. |
 {: caption="Pricing plans" caption-side="bottom"}
 
 ## What are the charges to use {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-charges}
 {: faq}
 
-The fundamental pricing metrics for {{site.data.keyword.appconfig_short}} are Application Instance, Active Entity ID, and API Call.  
+The fundamental pricing metrics for {{site.data.keyword.appconfig_short}} are Application Instance, Active Entity ID, and API Call. When Configuration Aggregator is enabled on a Standard or Enterprise plan instance, two additional metrics apply: Config Items and Accounts Reconciled.
 
-**Application Instance** - An Application Instance is a uniquely named copy of {{site.data.keyword.appconfig_short}} created by you but managed by {{site.data.keyword.IBM_notm}}. Multiple instances of {{site.data.keyword.appconfig_short}} within a single environment are all considered separate application instances, as are individual {{site.data.keyword.appconfig_short}} instances in multiple environments (such as test, development, staging, or production). 
+**Application Instance** - An Application Instance is a uniquely named copy of {{site.data.keyword.appconfig_short}} created by you but managed by {{site.data.keyword.IBM_notm}}. Multiple instances of {{site.data.keyword.appconfig_short}} within a single environment are all considered separate application instances, as are individual {{site.data.keyword.appconfig_short}} instances in multiple environments (such as test, development, staging, or production).
 
 A single instance of {{site.data.keyword.appconfig_short}} can serve multiple environments, and in fact the service is designed to do so.
 {: note}
 
-**Active Entity ID** - An active entity ID is a unique identifier for each entity that interacts with the {{site.data.keyword.appconfig_short}} service. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID. This task is most easily accomplished by programming your app or microservice to send the Entity ID by using the {{site.data.keyword.appconfig_short}} SDK.
+**Active Entity ID** - An active entity ID is a unique identifier for each entity that interacts with the {{site.data.keyword.appconfig_short}} service. For example, an entity might be an instance of an app that runs on a mobile device, a microservice that runs on the cloud, or a component of infrastructure that runs that microservice. For any entity to interact with {{site.data.keyword.appconfig_short}}, it must provide a unique entity ID. This task is most easily accomplished by programming your app or microservice to send the Entity ID by using the {{site.data.keyword.appconfig_short}} SDK.
 
 **API Call** - An API call is the invocation of the {{site.data.keyword.appconfig_short}} through a programmable interface.
 
-Exactly what constitutes an API call varies depending on the entity type (for example, a microservice or a mobile app). For server-side entities like microservices, when the state of a feature flag or property changes in the {{site.data.keyword.appconfig_short}}, a websocket connection notifies the SDK in the microservice that a state change occurred. The microservice then calls back into the {{site.data.keyword.appconfig_short}} to retrieve the update. This action is an API call.
+Exactly what constitutes an API call varies depending on the entity type (for example, a microservice or a mobile app). For server-side entities like microservices, when the state of a feature flag or property changes in the {{site.data.keyword.appconfig_short}}, a websocket connection notifies the SDK in the microservice that a state change occurred. The microservice then calls back into the {{site.data.keyword.appconfig_short}} to retrieve the update. This action is an API call.
 
 An API call also occurs on startup to the retrieve the initial configuration state. For client-side entities like mobile apps, websockets are not used. Instead, an API call fetches the current configuration state when a user opens the app, or brings it to the foreground. You can also programmatically call the {{site.data.keyword.appconfig_short}} to retrieve the most recent configuration state.
+
+**Config Items** (Configuration Aggregator — Standard and Enterprise plans only) - A config item is one IBM Cloud resource configuration record stored in the Configuration Aggregator for your account. At the start of each calendar month, a baseline snapshot is taken of all resource configurations collected up to the end of the previous day. New resource configurations collected after that point are counted incrementally. The billed quantity is the sum of the baseline plus all incremental additions in the period.
+
+**Accounts Reconciled** (Configuration Aggregator — Standard and Enterprise plans only) - An account reconciled is an account whose resource configurations are actively collected by Configuration Aggregator. For stand-alone accounts this is always 1. For enterprise instances it is 1 (the parent account) plus the number of active sub-accounts. The peak count reached across all billing runs in the period is the billed quantity.
 
 ## How to view usage metrics for {{site.data.keyword.appconfig_short}}?
 {: #faq-ac-metrics}
@@ -108,6 +112,11 @@ Active Entity ID cost can be difficult to predict so you need to closely monitor
 The **API Call** cost is based on the number of API calls sent or received by {{site.data.keyword.appconfig_short}} during the month over all your entities combined. Check section - [What are the charges to use {{site.data.keyword.appconfig_short}}?](#faq-ac-charges) to determine what constitutes an API call.
 
 If your pricing plan includes a free allotment of API calls, then you are not charged until the allotment is exceeded. Closely monitor your historical activity and check out [How to view usage metrics for {{site.data.keyword.appconfig_short}}?](#faq-ac-metrics) Rely on your own domain knowledge, business metrics, and usage forecasts to predict cost.
+
+If you use **Configuration Aggregator** on a Standard or Enterprise plan, two additional costs apply:
+
+- **Config items** — Predict cost based on the total number of IBM Cloud resource configuration records you expect to have stored at the start of the month (the baseline snapshot) plus any net-new resources collected during the month. Monitor your current count on the [Billing and Usage dashboard](https://cloud.ibm.com/billing/usage){: external}.
+- **Accounts reconciled** — Predict cost based on the peak number of accounts your instance will reconcile during the month. For stand-alone accounts this is 1. For enterprise instances, count 1 for the parent account plus the maximum number of active sub-accounts you expect at any point in the month.
 
 ## Can you give some example pricing scenarios?
 {: #faq-ac-sample}
@@ -224,6 +233,13 @@ Yes. If a resource configuration was collected (that is, it has a collection sta
 | Event Notifications integration | Not Supported | Not Supported | Not Supported | Supported |
 | Workflow management of feature flag state with Service Now | Not Supported | Not Supported | Not Supported | Supported |
 | Configuration Aggregator | Not Supported | Supported (no billing) | Supported (billed) | Supported (billed) |
+| Config items included with instance | Not applicable | Not applicable | 2000 | 5000 |
+| Config items overage | Not applicable | Not applicable | Overage allowed | Overage allowed |
+| Max config items per instance | Not applicable | Not applicable | Unlimited | Unlimited |
+| Accounts reconciled included with instance | Not applicable | Not applicable | 0 | 0 |
+| Accounts reconciled overage | Not applicable | Not applicable | Overage allowed | Overage allowed |
+| Max accounts reconciled per instance | Not applicable | Not applicable | Unlimited | Unlimited |
+| Real-time configuration collection | Not Supported | Not Supported | Supported | Supported |
 {: caption="Capabilities, quotas, and limits for various pricing plans" caption-side="bottom"}
 
 See the {{site.data.keyword.appconfig_short}} catalog page for current pricing.
