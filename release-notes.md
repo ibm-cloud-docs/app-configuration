@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-30"
 
 keywords: app-configuration, app configuration, release notes, service updates, service bulletin
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the current changes to the {{site.data.keyw
 {: #September-2026}
 
 Review the release notes for September 2026.
+
+### 30 September 2026
+{: #app-configuration-Sep302026}
+{: release-note}
+
+Guarded rollout
+:   {{site.data.keyword.appconfig_short}} now supports guarded rollout for feature flags on Enterprise plan instances. Guarded rollout gradually exposes a feature flag to users across configurable phases, with metric guardrails that automatically roll back or pause the rollout if a regression is detected. For more information, see [Configuring guarded rollout](/docs/app-configuration?topic=app-configuration-ac-guarded-rollout).
 
 ### 25 September 2026
 {: #app-configuration-Sep252026}
