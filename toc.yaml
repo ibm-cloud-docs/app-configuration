@@ -42,6 +42,7 @@ toc:
               topics:
               - ac-rollout-strategies.md
               - ac-progressive-rollout.md
+          - ac-guarded-rollout.md
           - ac-properties.md
           - ac-snapshots.md
           - ac-settings.md
