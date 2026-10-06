@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-10-06"
 
 keywords: app-configuration, app configuration, about app configuration
 
@@ -121,4 +121,8 @@ Feature flags and properties are targeted to segments based on a set of rules th
 ### {{site.data.keyword.appconfig_short}} SDK
 {: #ac-sdk-concept}
 
-The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. It also provides option to enable or disable the configuration aggregator and query for the resource metadata. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such as being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.
+The {{site.data.keyword.appconfig_short}} SDK handles the automatic delivery of the appropriate flag state or property value into your application. It connects to the endpoints provided by the {{site.data.keyword.appconfig_short}} API, fetches collections, and evaluates segment and targeting rules. It also provides option to enable or disable the configuration aggregator and query for the resource metadata. Server-side SDKs connect to the {{site.data.keyword.appconfig_short}} service through a web socket for real-time updates. Client-side SDKs pull values from the {{site.data.keyword.appconfig_short}} service upon a lifecycle change such as being opened or brought to the foreground. SDKs are available in various client-side and serve-side languages, and more languages are being added all the time.
+
+An {{site.data.keyword.appconfig_short}} instance supports up to 5,000 concurrent SDK connections. An SDK connection is established when an SDK client connects to an {{site.data.keyword.appconfig_short}} instance to receive configuration updates. In a typical deployment, each running application instance, such as a pod, container, virtual machine, or server process, can establish an SDK connection. Deployments that exceed this limit can experience connection rejections, API rate limiting, and degraded configuration delivery performance.
+
+If your deployment requires more than 5,000 concurrent SDK connections, use the [{{site.data.keyword.appconfig_short}} Relay Proxy](/docs/app-configuration?topic=app-configuration-ac-relay-proxy), which allows multiple SDK clients to connect through the proxy while reducing the number of direct connections to the {{site.data.keyword.appconfig_short}} instance.
